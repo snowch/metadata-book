@@ -42,14 +42,29 @@ SQLite records table and view definitions in `sqlite_schema`; its [schema table 
 
 ## Read the calculation
 
-The `on_time_completed` view is a saved query. SQLite calculates its result from the underlying table whenever the view is read. The relevant filter is:
+A view is a named query that you can read like a table. SQLite calculates its result from `deliveries` whenever the view is read. Here is the complete definition of `on_time_completed`:
 
 ```sql
+CREATE VIEW on_time_completed AS
+SELECT
+    COUNT(*) AS completed,
+    SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END) AS on_time,
+    ROUND(
+        100.0 * SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END)
+        / NULLIF(COUNT(*), 0),
+        1
+    ) AS percentage
 FROM deliveries
-WHERE delivered_at IS NOT NULL
+WHERE delivered_at IS NOT NULL;
 ```
 
-This excerpt removes rows without a delivery time before the calculation counts them. With our four records, three have a delivery time; two of those were delivered by their promise time. Reading the view gives:
+The **`WHERE delivered_at IS NOT NULL`** filter excludes unfinished deliveries. `COUNT(*)` counts the three remaining rows; the `SUM(CASE ...)` expression counts the two that arrived on time. The percentage is two out of three, rounded to one decimal place. `NULLIF` makes the percentage `NULL` if there are no completed deliveries.
+
+Read the view with:
+
+```sql
+SELECT * FROM on_time_completed;
+```
 
 <div class="query-result" markdown="1">
 
@@ -74,28 +89,6 @@ A **discovery and governance catalogue**, such as DataHub or OpenMetadata, helps
 A collected definition should identify its source and when it was observed. If the database changes before the catalogue refreshes, the catalogue still describes the earlier version. Collecting metadata makes it easier to find, but keeping it current remains a separate task.
 
 The view recalculates when read. A scheduled process that writes a summary table behaves differently: its stored output may remain visible after a later run fails. To explain that output, we need to connect it to a particular execution and its inputs, the subject of Chapter 3.
-
-<details class="further-detail" markdown="1">
-<summary>Further detail: the complete calculation</summary>
-
-Here is the complete query behind `on_time_completed`:
-
-```sql
-SELECT
-    COUNT(*) AS completed,
-    SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END) AS on_time,
-    ROUND(
-        100.0 * SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END)
-        / NULLIF(COUNT(*), 0),
-        1
-    ) AS percentage
-FROM deliveries
-WHERE delivered_at IS NOT NULL;
-```
-
-`COUNT(*)` counts the filtered rows, and the conditional sum counts those on time. `NULLIF` turns a zero denominator into null, so an empty set has no percentage rather than a misleading zero. The complete setup is in the [source SQL](../examples/deliveries.sql).
-
-</details>
 
 <details class="further-detail" markdown="1">
 <summary>Further detail: SQLite types and timestamps</summary>
