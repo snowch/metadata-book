@@ -1,1 +1,41 @@
-# metadata-book
+# Metadata systems
+
+A concise technical book about understanding, collecting and using metadata. This repository starts with three complete chapters so the writing and depth can be evaluated before the rest of the book is written.
+
+**[Read the book](https://snowch.github.io/metadata-book/)** · [Contents in Markdown](book.md)
+
+## The sample
+
+1. [What the data cannot tell you](chapters/01-why-metadata.md)
+2. [What a database already knows](chapters/02-reading-a-database.md)
+3. [Following a number to its source](chapters/03-following-lineage.md)
+
+The reading path needs no installation or code execution. Worked results are included. The SQLite fixture is runnable with Python's standard library; the lineage incident is explicitly illustrative rather than represented as a captured production trace.
+
+## Evaluate the approach
+
+Read the chapters in order, then consider:
+
+- Where did you have to reread a passage to understand it?
+- Which explanations could be cut without losing understanding?
+- Did the SQLite and lineage examples make the ideas useful beyond this scenario?
+- Would running an example add understanding, or did the worked result do enough?
+
+The outline in [book.md](book.md) is provisional. There is no separate practical part or browser runtime in this sample.
+
+## Build and verify
+
+Requires Python 3.11 or later.
+
+```sh
+python3 -m pip install -r requirements.txt
+python3 scripts/verify_examples.py
+python3 scripts/build.py
+python3 -m http.server 8000 --directory _site
+```
+
+Open `http://localhost:8000`. The generated site uses static HTML and CSS, system fonts and relative links. The Pages workflow builds and publishes pushes to `main` using GitHub Actions.
+
+## Sources and examples
+
+Product-specific references appear beside the relevant explanations. The parcel company and delivery records are original, invented teaching examples. [examples/README.md](examples/README.md) explains the executable fixture and the boundary between computed results and the illustrative lineage incident.
