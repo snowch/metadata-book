@@ -51,6 +51,16 @@ h2, h3, :target { scroll-margin-top: 2rem; }
 .worked-example .table-scroll { margin-block: 1.2rem; }
 .worked-example th, .worked-example td { min-width: 0; padding-inline: .5rem; }
 .worked-example th:last-child, .worked-example td:last-child { white-space: nowrap; }
+.incident-timeline th:last-child, .incident-timeline td:last-child { white-space: normal; }
+.incident-timeline th:first-child, .incident-timeline td:first-child { white-space: nowrap; }
+.query-result th, .query-result td { min-width: 0; padding-inline: .5rem; }
+.lineage-diagram { margin: 2rem 0; break-inside: avoid; }
+.lineage-diagram figcaption { font-family: ui-sans-serif, system-ui, sans-serif; color: var(--muted); font-size: .8rem; }
+.prose .lineage-diagram ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem; padding: 0; list-style: none; }
+.prose .lineage-diagram li { position: relative; padding: .8rem .6rem; border: 1px solid var(--line); font-family: ui-sans-serif, system-ui, sans-serif; font-size: .8rem; line-height: 1.6; }
+.flow-role { display: block; color: var(--muted); font-size: .7rem; margin-bottom: .4rem; }
+.lineage-diagram code { padding: 0; background: none; overflow-wrap: anywhere; font-size: 1em; }
+.flow-arrow { position: absolute; right: -1.35rem; top: 50%; transform: translateY(-50%); color: var(--accent); }
 .prose .key-principle { color: var(--ink); border-left-width: 2px; padding-left: 1.2rem; margin-block: 2rem; }
 .key-principle p { margin-block: .6rem; }
 .further-detail { margin-block: 2rem; padding-block: .35rem; border-block: 1px solid var(--line); }
@@ -86,6 +96,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #17221f; --ink: #e3e7de; --muted: #aab6ac; --accent: #a0d1b9; --line: #3b4b42; --wash: #22312a; }
+}
+@media (max-width: 600px) {
+  .prose .lineage-diagram ol { grid-template-columns: 1fr; gap: 1.6rem; }
+  .flow-arrow { top: auto; right: auto; bottom: -1.5rem; left: 50%; transform: translateX(-50%) rotate(90deg); }
 }
 @media print {
   :root { --paper: white; --ink: black; --muted: #444; --accent: black; --line: #bbb; --wash: #f4f4f4; color-scheme: light; }

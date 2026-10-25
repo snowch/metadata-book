@@ -1,54 +1,64 @@
 # 3. Following a number to its source
 
-The SQLite view `on_time_completed` calculates its result whenever it is queried. Now suppose the parcel company uses a scheduled transformation to write a stored table, `delivery_summary`, which the report **Delivery performance** reads. At 13:00 UTC on 19 October 2026, the report shows 100%, while the current on-time rate among completed deliveries is 66.7%. Both use the completed-delivery denominator. We need to establish which records produced the displayed number.
+Lineage connects data's inputs, processing steps and outputs. It gives us a route from a number in a report back through the work that produced it. Following that route requires two kinds of evidence: declared dependencies describe how data is intended to flow; execution records describe what happened in a particular run.
 
-Lineage describes the relationships through which data is produced and transformed. It connects an output to its inputs and processing steps, giving us a route to investigate.
+## Follow the route
 
-## Follow the value through the incident
+Continue with the parcel company's completed-delivery measure from Chapter 1. The SQLite view `on_time_completed` evaluates its query whenever it is read. Now suppose a scheduled job, `build_delivery_summary`, writes a stored table called `delivery_summary`. That result changes when a new version is published, so it can lag behind its source.
 
-At the observation time, `deliveries` contains four rows, all times UTC:
+<figure class="lineage-diagram" aria-labelledby="lineage-caption">
+<figcaption id="lineage-caption">Declared dependency path</figcaption>
+<ol>
+<li><span class="flow-role">Source table</span><code>deliveries</code><span class="flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="flow-role">Scheduled job</span><code>build_<wbr>delivery_<wbr>summary</code><span class="flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="flow-role">Stored result</span><code>delivery_summary</code><span class="flow-arrow" aria-hidden="true">→</span></li>
+<li><span class="flow-role">Report</span>Delivery performance</li>
+</ol>
+</figure>
 
-| Delivery | Promised | Delivered |
-|---|---:|---:|
-| D101 | 12:00 | 11:50 |
-| D102 | 12:00 | 12:20 |
-| D103 | 12:00 | 11:40 |
-| D104 | 12:00 | NULL |
+The route identifies the transformation to investigate. To explain a displayed value, we also need records connecting a particular execution, its published output and the report that read it.
 
-D104 is unfinished. Among the three completed deliveries, D101 and D103 were on time, so the current rate is 2/3, or 66.7%. The lineage path is:
+## Reconstruct the report's evidence
 
-`deliveries` → `build_delivery_summary` → `delivery_summary` → **Delivery performance**
+In this invented incident, the report shows 100% at 13:00 on 19 October 2026. The current source gives 66.7%. Both calculations count on-time deliveries among completed deliveries, so a different denominator does not explain the disagreement. All times below are UTC on that date.
 
-Suppose the on-call engineer finds a successful transformation run at 12:05 and a failed attempt at 12:30. Merely seeing a 100% value and those two events does not identify the report’s data. The value could be cached, or the report might read a different table. The source’s current rows also cannot establish which snapshot an earlier run read. To connect the number to its origin, gather the run’s input and output evidence, publication history, and the report’s refresh record.
+<figure class="worked-example incident-timeline" markdown="1">
+<figcaption>Worked example · The records behind a stale result</figcaption>
 
-The following records are illustrative, invented for this chapter, and were not captured from deployed tools:
+| Time | Evidence |
+|---|---|
+| 12:05 | Successful run `R1205` captured all four delivery rows. Two were completed on time; the other two delivery times were NULL. It published `summary-R1205`: 2 completed, 2 on time, 100%. |
+| 12:20 | A third parcel's late completion was recorded. The current source now has 3 completed deliveries, 2 on time: 66.7%. |
+| 12:30 | Run `R1230` failed before publishing. The previous output version remained available. |
+| 13:00 | The report refresh explicitly read `summary-R1205`, displaying 100%. |
 
-| Record | Time and status | Evidence |
-|---|---|---|
-| Run R-1205 | 12:05, succeeded | Read a `deliveries` snapshot containing all four IDs; D101 and D103 had delivery times, while D102 and D104 had `delivered_at = NULL`. Published version `summary-R1205`: completed 2, on time 2, rate 100%. |
-| Run R-1230 | 12:30, failed before publication | No output published; the previous successful output remained available. |
-| Report refresh | 13:00 | **Delivery performance** read `summary-R1205`. |
+</figure>
 
-These records make the evidence chain explicit. R-1205 saw only two completed parcels, both on time, and published 2/2 = 100%. D102 was delivered at 12:20, after that captured snapshot. With the 13:00 source state, the same completed-only rule gives 2/3 = 66.7%. The report refresh record ties its displayed 100% to the older output version.
+The captured input establishes what the successful run knew: all four parcels were present, but only two had recorded completions. Its 100% follows from those records. Reading the source after 12:20 gives a different result because a third completion has been recorded. The current table alone cannot reproduce what the earlier run saw.
 
-The supported diagnosis is that the report served a stale successful publication. R-1230 is consistent with why a newer result was not published, since the attempt failed before publication and the old output remained available. The failed attempt alone would not prove that the report read old data or explain why; the publication and refresh records establish that connection. In a live investigation, inspect the report’s cache or extract configuration too, especially if its refresh record does not identify the exact table version it read.
+The publication record identifies the stored output, and the refresh record connects that version to the report. Together they support the diagnosis: the report displayed a stale successful output. The failed run alone would not prove that connection, and these records do not establish why the job failed.
 
-This stored table behaves differently from the earlier SQLite view. A view evaluates its query when read, so a newly delivered parcel can affect the next query. The scheduled transformation writes a result at a point in time; it stays at that version until a later successful publication replaces it. This distinction helps explain why an up-to-date source can coexist with an old report.
+<blockquote class="key-principle" markdown="1">
 
-## Read declared lineage and runtime records
+**To explain a reported number, connect it to a particular run and its inputs.**
 
-The graph above is a map of the route to investigate. A declared dependency graph records project structure, while runtime evidence records what happened during an execution. They answer related but separate questions.
+</blockquote>
 
-dbt is a tool for building and managing data transformations. A dbt model commonly defines a transformation as a SQL query. Its `manifest.json` file describes models and other project resources; `parent_map` and `child_map` record their immediate dependencies. These relationships help identify likely downstream consumers. They do not establish that a particular run executed every model or read a particular physical snapshot. The [dbt manifest reference](https://docs.getdbt.com/reference/artifacts/manifest-json) describes the file's contents.
+## Read tool records with the same distinction
 
-`run_results.json` records timing and status information for resources in a dbt invocation. Results can include skipped resources, so inspect the status before concluding that a model executed. The file does not provide a complete observed input-dataset list for each model and cannot, on its own, substantiate the captured-input claim in our incident. See [dbt's run results reference](https://docs.getdbt.com/reference/artifacts/run-results-json) and its [status schema](https://schemas.getdbt.com/dbt/run-results/v6.json).
+Real tools provide parts of this evidence. dbt is a transformation tool whose manifest describes project resources and their dependencies. Its run results record execution statuses and timings. A resource can appear as skipped, so its presence in the results does not by itself mean its transformation ran.
 
-OpenLineage is an open standard for exchanging lineage information. Integrations in processing tools can emit a `RunEvent` identifying a job, its run, state, and input and output datasets. What arrives depends on the integration: an event may report only some of a run's inputs, with other inputs reported later. The consumer must combine the events for that run where this reporting pattern is used. Dataset names alone still do not identify the exact rows read. See the [OpenLineage object model](https://openlineage.io/docs/spec/object-model/) and [run cycle](https://openlineage.io/docs/spec/run-cycle/).
+OpenLineage is an open standard for exchanging lineage records. Processing tools can report a job's run and its input and output datasets through integrations. These records help connect executions across systems, but reported dataset names do not guarantee complete snapshots of the rows read.
 
-## Trace meaning and possible impact
+For an investigation like this one, preserve captured inputs or references to retained snapshots, run and publication records, and the report's version reference. Check that those references join the same chain before explaining the number. Lineage does not decide whether the metric's definition answers the right business question.
 
-Lineage can show which transformation produced a table and which reports may depend on it. It cannot decide whether an unfinished parcel belongs in a denominator, what time zone defines “on time,” or whether a late correction should change a prior report. Those are semantic rules. Validate the SQL or transformation logic and the report’s metric definition against the stated cutoff and current source records.
+<details class="further-detail" markdown="1">
+<summary>Further detail: artifact fields and accumulating events</summary>
 
-Column-level lineage can make the route more precise. It may map an output such as `on_time_count` to source columns and expressions, narrowing where to look when logic changes. It also supports impact analysis: changing `promised_at` may affect this metric, while changing an unrelated address note may not. That map identifies potential downstream impact; it does not confirm a consumer failure. To establish an actual failure, inspect the consumer’s query, refresh, or displayed result.
+In dbt's [manifest](https://docs.getdbt.com/reference/artifacts/manifest-json), `parent_map` and `child_map` record immediate dependencies. The [run results artifact](https://docs.getdbt.com/reference/artifacts/run-results-json) records resource statuses and timings; its [status schema](https://schemas.getdbt.com/dbt/run-results/v6.json) includes skipped resources. It does not supply a complete observed input-dataset list for each model.
 
-For a useful record, keep run identity, times, status, code version, reported input datasets and snapshot identifiers, output version, and publication outcome together. Where a report reads a stored result, record the version or refresh reference as well. A timestamp without a run identifier is difficult to join reliably to a job log; a run identifier without input and output references says little about the value. These records make an account of the number possible while preserving the distinction between declared relationships, observed execution, and metric meaning.
+An OpenLineage `RunEvent` identifies a job, run, state and reported inputs and outputs. Some integrations report additional inputs in later events, so consumers must combine events for the same run. See the [object model](https://openlineage.io/docs/spec/object-model/) and [run cycle](https://openlineage.io/docs/spec/run-cycle/).
+
+Useful retained fields include run identity, times, status, code version, input snapshot references, output version, publication outcome and report refresh reference. Their availability depends on the tools and retention arrangements; a lineage event alone does not guarantee them.
+
+</details>
