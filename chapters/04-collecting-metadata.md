@@ -35,7 +35,11 @@ The scan establishes the column's presence at 09:00. It does not establish which
 
 ## Keep the source and its times
 
-The source time describes the occurrence reported by the source: here, execution completion or definition revision. The observation time says when a collector inspected something. The collection time says when the catalogue received the record. Keeping these separate exposes delays.
+Keep three times separate to make collection delays visible:
+
+- **Source time** — when the reported occurrence happened: here, execution completion or definition revision.
+- **Observation time** — when a collector inspected something.
+- **Collection time** — when the catalogue received the record.
 
 For the schema scan, we know when the collector saw the column. We do not know when the column was created unless the database supplies that evidence. Recording 09:00 as its creation time would invent a fact.
 

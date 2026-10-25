@@ -42,6 +42,10 @@ Assign the reporting engineer responsibility for collection failures. Delivery O
 
 ## Decide what happens next
 
-If the repository and SQLite pass all four checks at manageable effort, keep them for this scope. If a catalogue passes and measurably reduces collection or investigation work, extend the trial to one additional report. If neither passes, stop expansion and fix the missing evidence or access path first.
+Use the pilot results to decide what happens next:
+
+- **Keep the current approach** if the repository and SQLite pass all four checks at manageable effort.
+- **Extend the catalogue trial** to one additional report if it passes and measurably reduces collection or investigation work.
+- **Fix the gaps first** if neither passes. Stop expansion and address the missing evidence or access path.
 
 Finish the pilot with its check results, collection coverage, named owners and a recorded choice. The next operations meeting should receive a verified all-due calculation with its definition and output reference attached. That is a concrete result against which the platform's continuing cost can be judged.

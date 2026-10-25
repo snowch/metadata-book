@@ -25,7 +25,12 @@ ORDER BY cid;
 
 </figure>
 
-The names identify the fields, and `type` gives their declared type. Here `TEXT` means text. A `notnull` value of 1 forbids null, SQL's marker for a missing value; 0 allows it. `pk` identifies columns in the primary key, which uniquely identifies each row. Here only `delivery_id` belongs to that key; the other columns have `pk` set to zero.
+Read the four fields as follows:
+
+- **`name`** — the column's name.
+- **`type`** — its declared data type; here, all three columns declare `TEXT`.
+- **`notnull`** — `1` means a value is required; `0` allows `NULL`, SQL's marker for a missing value.
+- **`pk`** — the column's position in the primary key, which uniquely identifies each row. Here, `delivery_id` is the only key column (`1`); the others are not part of the key (`0`).
 
 This structure helps us read a query: `promised_at` and `delivered_at` are the available fields for comparing promised and actual times. But names, types and flags do not fully explain business meaning. Allowing a missing `delivered_at` value does not tell us whether it means awaiting delivery, a late update, or an unknown time. In this example we treat null as not yet recorded as completed.
 
