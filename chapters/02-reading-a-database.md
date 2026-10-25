@@ -34,7 +34,9 @@ Read the four fields as follows:
 
 The column list shows which fields a query can use, but not exactly what their values mean. Allowing a missing `delivered_at` value does not tell us whether it means awaiting delivery, a late update, or an unknown time. In our four-row example, `NULL` means the parcel has not yet been delivered.
 
-Similarly, `promised_at` could record the initial estimate or the latest commitment to the customer. Renaming the column changes the table's structure, or **schema**. Changing which promise is stored changes the column's meaning, even if its name and type stay the same. A reader needs the business definition to interpret these values.
+Suppose a customer was promised delivery by noon, then given a revised time of 12:30. A parcel arriving at 12:20 is late against the original promise but on time against the revised one. We need to know which promise `promised_at` stores—the column name alone cannot tell us.
+
+Renaming a column changes the table's structure, or **schema**. Switching from storing the original promise to storing the revised promise changes what the column means, even if its name and type stay the same.
 
 SQLite records table and view definitions in `sqlite_schema`; its [schema table documentation](https://sqlite.org/schematab.html) describes those records. The `table_xinfo` fields are documented in [SQLite's pragma reference](https://sqlite.org/pragma.html#pragma_table_xinfo). Other databases expose similar structural information through their own catalogues.
 
