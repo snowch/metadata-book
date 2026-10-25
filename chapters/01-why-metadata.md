@@ -15,8 +15,8 @@ A parcel company promised four deliveries by noon. At 13:00, two have arrived on
 
 | Question | Calculation | Result |
 |---|---|---:|
-| Of the completed deliveries, how many were on time? | 2 out of 3 | 66.7% |
-| Of all deliveries due, how many arrived on time? | 2 out of 4 | 50.0% |
+| Of the completed deliveries, how many were on time? | 2 out of **3** | 66.7% |
+| Of all deliveries due, how many arrived on time? | 2 out of **4** | 50.0% |
 
 Both calculations are valid for their stated questions. The first measures punctuality among completed deliveries. The second also counts the parcel still waiting to arrive. A dashboard labelled only “on-time delivery” leaves its readers to guess which question it answers.
 
@@ -45,7 +45,7 @@ Suppose Delivery Operations wants to track whether all promised deliveries have 
 
 For our four parcels, this definition selects 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
 
-The responsible team is the contact for questions about meaning. Naming a database account that writes the table would answer a different question. Likewise, a column named `delivered_at` does not establish which event counts as delivery. The definition needs to connect the system's fields to the business event people care about.
+The responsible team is the contact for questions about meaning. The account used to write a table does not tell readers which team to ask about its meaning. Likewise, a column named `delivered_at` does not establish which event counts as delivery. The definition needs to connect the system's fields to the business event people care about.
 
 Keeping that decision beside the report saves each reader from reconstructing it. It also gives reviewers a way to recognise when two similarly named metrics should not be compared.
 

@@ -63,7 +63,7 @@ The function and its result fields are documented in [SQLite's `table_xinfo` ref
 
 Both time columns are declared `TEXT`. SQLite has no dedicated date/time storage class, so this example stores UTC timestamps in a consistent `YYYY-MM-DD HH:MM` format. For these values, text ordering gives the same ordering as time. Mixing time zones or inconsistent date formats would invalidate that assumption.
 
-The table definition does not validate the timestamp format. It also says nothing about whether a promise means the initial estimate or the latest commitment to the customer. The column name makes either interpretation plausible.
+The table definition does not validate the timestamp format. It also says nothing about whether a promise means the initial estimate or the latest commitment to the customer. Renaming the column changes the schema. Recording the latest commitment instead of the initial estimate changes its meaning, even if its name and type stay the same.
 
 SQLite's ordinary tables use type affinity rather than the strict typing many readers expect from other databases. A declaration should therefore be interpreted according to the database's actual rules. SQLite also offers strict tables, but they would not, by themselves, define the business meaning of these timestamps. The [datatype documentation](https://sqlite.org/datatype3.html) describes these distinctions.
 
@@ -104,7 +104,7 @@ The same query also reveals a dependency: it reads `deliveries`, specifically th
 
 ## Collecting metadata creates another copy
 
-A catalogue could periodically collect the object inventory, columns and view definitions. That would make them searchable alongside metadata from other systems. It could also associate `deliveries` with Delivery Operations and link the view to an agreed metric definition.
+A catalogue could periodically collect the object inventory, columns and view definitions. That would make them searchable alongside metadata from other systems. It could also associate `deliveries` with Delivery Operations and link the view to an agreed metric definition. The descriptions are data for the catalogue and metadata about the source tables.
 
 Each collected description needs enough context to locate its source. A table name alone is ambiguous if development and production both contain `deliveries`. A source identifier, database and object name distinguish those assets. The collection time then tells a reader when the catalogue last checked the database.
 
