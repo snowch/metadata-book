@@ -45,7 +45,9 @@ Suppose Delivery Operations uses the second definition: of all deliveries promis
 
 For our four parcels, this definition selects 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
 
-The responsible team is the contact for questions about meaning. The account used to write a table does not tell readers which team to ask about its meaning. Likewise, a column named `delivered_at` does not establish which event counts as delivery. The definition needs to connect the system's fields to the business event people care about.
+The definition should name the team that can explain what the metric means—for example, Delivery Operations.
+
+Column names also need explanation. Does `delivered_at` record when a parcel reached a depot or when it reached the customer? Both are plausible meanings; the name alone cannot tell us which one applies.
 
 Keeping that decision beside the report saves each reader from reconstructing it. It also gives reviewers a way to recognise when two similarly named metrics should not be compared.
 
