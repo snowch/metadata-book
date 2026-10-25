@@ -32,7 +32,7 @@ Read the four fields as follows:
 - **`notnull`** — `1` means a value is required; `0` allows `NULL`, SQL's marker for a missing value.
 - **`pk`** — the column's position in the primary key, which uniquely identifies each row. Here, `delivery_id` is the only key column (`1`); the others are not part of the key (`0`).
 
-This structure helps us read a query: `promised_at` and `delivered_at` are the available fields for comparing promised and actual times. But names, types and flags do not fully explain business meaning. Allowing a missing `delivered_at` value does not tell us whether it means awaiting delivery, a late update, or an unknown time. In this example we treat null as not yet recorded as completed.
+This structure helps us read a query: `promised_at` and `delivered_at` are the available fields for comparing promised and actual times. But names, types and flags do not fully explain business meaning. Allowing a missing `delivered_at` value does not tell us whether it means awaiting delivery, a late update, or an unknown time. In our four-row example, `NULL` means the parcel has not yet been delivered.
 
 Similarly, `promised_at` could record the initial estimate or the latest commitment to the customer. Renaming the column changes the table's structure, or **schema**. Changing which promise fills it changes its meaning, even if the name and type stay the same. A reader needs the business definition to interpret these values.
 
