@@ -32,7 +32,7 @@ The disagreement comes from the denominator: the group against which we count su
 
 ## Record the decision
 
-Suppose Delivery Operations wants to track whether all promised deliveries have arrived on time. A useful definition would record:
+Suppose Delivery Operations uses the second definition: of all deliveries promised by noon, what proportion arrived on time? A useful definition would record:
 
 | Property | Recorded definition |
 |---|---|
