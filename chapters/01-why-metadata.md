@@ -49,7 +49,9 @@ The definition should name the team that can explain what the metric means—for
 
 Column names also need explanation. Does `delivered_at` record when a parcel reached a depot or when it reached the customer? Both are plausible meanings; the name alone cannot tell us which one applies.
 
-Keeping that decision beside the report saves each reader from reconstructing it. It also gives reviewers a way to recognise when two similarly named metrics should not be compared.
+A recorded definition helps readers understand what a number measures. It also reveals when similarly named metrics count different things and should not be compared directly.
+
+*Later in the book, [Chapter 7](07-choosing-a-platform.md) compares ways to store and maintain these definitions, from reviewed documents to a metadata catalogue.*
 
 ## Check the calculation against the definition
 
