@@ -34,7 +34,7 @@ python3 scripts/build.py
 python3 -m http.server 8000 --directory _site
 ```
 
-Open `http://localhost:8000`. The generated site uses static HTML and CSS, system fonts and relative links. The Pages workflow builds and publishes pushes to `main` using GitHub Actions.
+Open `http://localhost:8000`. The generated site uses static HTML and CSS, a locally hosted Newsreader typeface and relative links. The Pages workflow builds and publishes pushes to `main` using GitHub Actions.
 
 ## Sources and examples
 

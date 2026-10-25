@@ -4,6 +4,7 @@
 from html import escape, unescape
 from html.parser import HTMLParser
 import os
+import math
 from pathlib import Path
 import re
 import shutil
@@ -43,6 +44,38 @@ def read_source(source):
     if not heading:
         raise ValueError(f"Source needs a level-one title: {source}")
     return heading.group(1).strip(), text[:heading.start()] + text[heading.end():]
+
+
+def clean_title(title):
+    return re.sub(r"^\d+\.\s+", "", title)
+
+
+class ReadingText(HTMLParser):
+    """Count the core reading text, excluding optional detail and code."""
+
+    def __init__(self, html):
+        super().__init__(convert_charrefs=True)
+        self.hidden = 0
+        self.words = 0
+        self.feed(html)
+
+    def handle_starttag(self, tag, attributes):
+        if tag in ("details", "pre"):
+            self.hidden += 1
+
+    def handle_endtag(self, tag):
+        if tag in ("details", "pre"):
+            self.hidden -= 1
+
+    def handle_data(self, data):
+        if not self.hidden:
+            self.words += len(re.findall(r"\b[\w’'-]+\b", data))
+
+
+BOOK_MARK = '''<svg class="brand-mark" width="28" height="32" viewBox="0 0 28 32" fill="none" aria-hidden="true"><path d="M2 5 14 2l12 3v22l-12 3-12-3V5Z" stroke="currentColor" stroke-width="1.5"/><path d="m2 5 12 3 12-3M14 8v22M7 12l4 1m-4 4 4 1m6-5 4-1m-4 6 4-1" stroke="currentColor" stroke-width="1.5"/></svg>'''
+
+
+LINK_ARROW = '<svg class="external-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 9 6-6M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg>'
 
 
 class Document(HTMLParser):
@@ -94,8 +127,7 @@ def build():
     reading_order = [Path("book.md"), *chapters]
     if OUT.exists():
         shutil.rmtree(OUT)
-    (OUT / "assets").mkdir(parents=True)
-    shutil.copy2(ROOT / "assets/book.css", OUT / "assets/book.css")
+    shutil.copytree(ROOT / "assets", OUT / "assets")
     if (ROOT / "examples").exists():
         shutil.copytree(ROOT / "examples", OUT / "examples")
     for source, (title, text) in content.items():
@@ -104,23 +136,36 @@ def build():
                                       extension_configs={"toc": {"toc_depth": "2-3"}})
         body = converter.convert(text)
         body = re.sub(r'\b(href|src)="([^"]*)"', rewrite_link, body)
+        reading_time = max(1, math.ceil(ReadingText(body).words / 220))
         body = body.replace("<pre>", '<pre tabindex="0" role="region" aria-label="Code example">')
+        body = re.sub(r'(<pre\b[^>]*><code class="language-sql">.*?</code></pre>)',
+                      r'<div class="code-example"><div class="code-label" aria-hidden="true">SQL</div>\1</div>',
+                      body, flags=re.DOTALL)
         body = body.replace("<table>", '<div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>')
         body = body.replace("</table>", "</table></div>")
         nav = []
-        for item in reading_order:
+        for number, item in enumerate(reading_order):
             active = ' aria-current="page"' if item == source else ""
-            label = "Introduction" if item == Path("book.md") else content[item][0]
-            nav.append(f'<li><a href="{escape(relative(destination(item), page))}"{active}>{escape(label)}</a></li>')
+            label = "Introduction" if item == Path("book.md") else clean_title(content[item][0])
+            nav_number = f'{number:02}' if number else '—'
+            nav.append(f'<li><a href="{escape(relative(destination(item), page))}"{active}><span class="nav-number">{nav_number}</span><span class="nav-title">{escape(label)}</span></a></li>')
         pagination = []
         if source in reading_order:
             index = reading_order.index(source)
             for offset, label in [(-1, "Previous"), (1, "Next")]:
                 if 0 <= index + offset < len(reading_order):
                     item = reading_order[index + offset]
-                    pagination.append(f'<a rel="{label.lower()}" href="{relative(destination(item), page)}"><span>{label}</span>{escape(content[item][0])}</a>')
+                    caption = "START READING" if index == 0 else f"{label.upper()} CHAPTER"
+                    if item == Path("book.md"):
+                        caption = "INTRODUCTION"
+                    arrow = "←" if offset < 0 else "→"
+                    pagination.append(f'<a class="pagination-{label.lower()}" rel="{label.lower()}" href="{relative(destination(item), page)}"><span class="pagination-label">{caption}</span><span class="pagination-title">{escape(clean_title(content[item][0]))}<span class="pagination-arrow" aria-hidden="true">{arrow}</span></span></a>')
         description = f"{title}. Read {book_title}, a practical guide to understanding data through its metadata."
-        toc = f'<details class="page-contents" open><summary>On this page</summary>{converter.toc}</details>' if converter.toc_tokens else ""
+        toc = f'<details class="page-contents"><summary>On this page</summary>{converter.toc}</details>' if converter.toc_tokens else ""
+        page_type = "introduction" if source == Path("book.md") else "chapter" if source in chapters else "reference"
+        chapter_number = f'{chapters.index(source) + 1:02}' if source in chapters else ""
+        chapter_meta = f"CHAPTER {chapter_number}" if chapter_number else "A PRACTICAL GUIDE" if page_type == "introduction" else "REFERENCE"
+        decoration = f'<span class="chapter-number" aria-hidden="true">{chapter_number}</span>' if chapter_number else ""
         html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -129,20 +174,22 @@ def build():
   <meta name="description" content="{escape(description, quote=True)}">
   <meta name="color-scheme" content="light dark">
   <title>{escape(title)} · {escape(book_title)}</title>
+  <link rel="icon" type="image/svg+xml" href="{relative(Path('assets/favicon.svg'), page)}">
   <link rel="stylesheet" href="{relative(Path('assets/book.css'), page)}">
 </head>
-<body>
+<body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a href="{relative(Path('index.html'), page)}">{escape(book_title)}</a><span>A practical book about data</span></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-link" href="{relative(Path('index.html'), page)}#read-the-sample">Contents {LINK_ARROW}</a></header>
+<details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
-  <aside class="book-sidebar"><details class="chapter-menu" open><summary>Contents</summary><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav></details></aside>
+  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav><p class="sidebar-note">Reading sample · {len(chapters)} chapters</p></aside>
   <main id="main" tabindex="-1">
-    <article><header class="chapter-header"><p class="eyebrow">{'Introduction' if source == Path('book.md') else 'The book'}</p><h1>{escape(title)}</h1></header>
+    <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span><span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span></p><h1>{escape(clean_title(title))}</h1></header>
     {toc}
     <div class="prose">{body}</div>
     </article>
     <nav class="pagination" aria-label="Continue reading">{''.join(pagination)}</nav>
-    <footer class="page-footer"><a href="https://github.com/snowch/metadata-book">Source on GitHub</a></footer>
+    <footer class="page-footer"><span>{escape(book_title)}</span><a href="https://github.com/snowch/metadata-book">Source on GitHub {LINK_ARROW}</a></footer>
   </main>
 </div>
 </body>
