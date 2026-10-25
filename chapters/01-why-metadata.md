@@ -15,8 +15,8 @@ A parcel company promised four deliveries by noon. At 13:00, two have arrived on
 
 | Question | Calculation | Result |
 |---|---|---:|
-| Of the completed deliveries, how many were on time? | 2 out of **3** | 66.7% |
-| Of all deliveries due, how many arrived on time? | 2 out of **4** | 50.0% |
+| Of the **completed deliveries**, how many were on time? | 2 out of **3** | 66.7% |
+| Of **all deliveries due**, how many arrived on time? | 2 out of **4** | 50.0% |
 
 Both calculations are valid for their stated questions. The first measures punctuality among completed deliveries. The second also counts the parcel still waiting to arrive. A dashboard labelled only “on-time delivery” leaves its readers to guess which question it answers.
 
