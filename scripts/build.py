@@ -100,7 +100,7 @@ def build():
         shutil.copytree(ROOT / "examples", OUT / "examples")
     for source, (title, text) in content.items():
         page = destination(source)
-        converter = markdown.Markdown(extensions=["fenced_code", "tables", "toc", "sane_lists"],
+        converter = markdown.Markdown(extensions=["fenced_code", "tables", "toc", "sane_lists", "md_in_html"],
                                       extension_configs={"toc": {"toc_depth": "2-3"}})
         body = converter.convert(text)
         body = re.sub(r'\b(href|src)="([^"]*)"', rewrite_link, body)

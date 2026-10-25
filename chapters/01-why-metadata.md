@@ -1,63 +1,67 @@
 # 1. What the data cannot tell you
 
-Consider a regional parcel delivery company taking a snapshot at 13:00 UTC on 19 October 2026. In this invented example, four deliveries were promised for noon. Three have a delivery time, one does not. A quick calculation says that two of the three completed deliveries arrived on time. That is 66.7 per cent. A different calculation says two of the four deliveries due arrived on time: 50.0 per cent.
+A dashboard shows a number. To use it, we need to know what it measures, where it came from, and how it was calculated. The values alone rarely supply those answers.
 
-Both calculations follow from the same rows. The choice between them depends on what the company means by “on-time delivery”. Is it measuring punctuality among parcels that have already been delivered, or the proportion of all due parcels that have been delivered on time by a stated point in the day? The table alone does not settle that question. To answer it, we need information about the data: what its fields mean, how it was produced, and how it should be used. That information is metadata.
+**Metadata is information that describes data:** its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. These descriptions may live inside a database, alongside a report, or in a separate catalogue.
 
-## A small table, two answers
+## What a number means
 
-The snapshot contains these records. All timestamps are in UTC.
+Even a familiar label such as “on-time delivery” leaves room for different calculations.
 
-| Delivery ID | Promised at | Delivered at |
-|---|---|---|
-| D101 | 2026-10-19 12:00 | 2026-10-19 11:50 |
-| D102 | 2026-10-19 12:00 | 2026-10-19 12:20 |
-| D103 | 2026-10-19 12:00 | 2026-10-19 11:40 |
-| D104 | 2026-10-19 12:00 | NULL |
+<figure class="worked-example" markdown="1">
+<figcaption>Worked example · Two ways to count deliveries</figcaption>
 
-For the first measure, exclude D104 because it has no delivery time. D101 and D103 were delivered before their promised times, while D102 was delivered afterwards. The result is 2/3, or 66.7 per cent, on time among completed deliveries.
+A parcel company promised four deliveries by noon. At 13:00, two have arrived on time, one arrived late, and one has not arrived. This is an invented example; assume the delivery records are complete at that moment.
 
-For the second measure, count all four deliveries due that day. D104 had not been delivered by the 13:00 snapshot, so it had not met the promise by the cutoff. The result is 2/4, or 50.0 per cent, on time among deliveries due. Neither denominator is inherently correct. They answer different business questions, and a report should make clear which question it is intended to answer.
+| Question | Calculation | Result |
+|---|---|---:|
+| Of the completed deliveries, how many were on time? | 2 out of 3 | 66.7% |
+| Of all deliveries due, how many arrived on time? | 2 out of 4 | 50.0% |
 
-The values support these calculations only under some assumptions. “Promised at” must represent the applicable commitment for each parcel; “delivered at” must record the relevant delivery event; and a blank must mean that no qualifying delivery had occurred by the snapshot, rather than a missing or delayed update. A timestamp also needs a time zone or other clear convention. Here the snapshot explicitly supplies UTC, so there is no need to guess how to compare the times.
+Both calculations are valid for their stated questions. The first measures punctuality among completed deliveries. The second also counts the parcel still waiting to arrive. A dashboard labelled only “on-time delivery” leaves its readers to guess which question it answers.
 
-## Metadata describes data in context
+</figure>
 
-Metadata is information describing data: its meaning, structure, and how it is produced or managed. The label is relational. A column name such as `delivered_at` is metadata about a field; a table schema is metadata about a table; and a catalogue entry describing that schema is metadata about the catalogue object. The same item can be data in one context and metadata in another.
+The disagreement comes from the denominator: the group against which we count successful deliveries. Choosing that group is a business decision. A correct calculation can still answer the wrong question for the person reading the report.
 
-Metadata does not have to live in a separate catalogue or document. A column name, a database constraint, a timestamp stored alongside an event, a transformation definition, and a steward’s written metric definition can all carry metadata. Some of it is formal and machine-readable; some exists in operational procedures or in the knowledge of the people who maintain a system. Keeping it discoverable matters, because otherwise people infer meaning from names, values, and local custom.
+<blockquote class="key-principle" markdown="1">
 
-The rows show values and a rough shape: one identifier and two timestamps per delivery. They do not explain whether the promise is the original estimate or the latest customer commitment, whether “delivered” means handed to the recipient or left at a safe place, or when a parcel counts as due. A familiar column name can conceal these choices. Two systems can both have a `delivered_at` field and use it for different events.
+**A metric's definition must say what counts.**
 
-## Record the decision behind a metric
+</blockquote>
 
-A short definition makes the intended calculation inspectable. For this example, a metric record could be:
+## Record the decision
 
-| Property | Definition |
+Suppose Delivery Operations wants to track whether all promised deliveries have arrived on time. A useful definition would record:
+
+| Property | Recorded definition |
 |---|---|
-| Metric | On-time among deliveries due |
-| Business definition | Deliveries due on the reporting date with a qualifying delivery at or before the promised time, divided by all deliveries due on that date |
-| Denominator | All deliveries due on the reporting date, including those not yet delivered |
-| Cutoff | Snapshot taken at 13:00 UTC on 2026-10-19 |
-| Owner | Delivery Operations |
-| Source | `deliveries` |
+| Measure | Percentage of deliveries due that arrived on time |
+| Counts as on time | Delivered at or before the promised time |
+| Denominator | All deliveries due by noon, including those not yet delivered |
+| Measured at | 13:00 UTC on the reporting date |
+| Responsible team | Delivery Operations |
+| Source | The `deliveries` table |
 
-The record makes the denominator explicit and fixes the evaluation time. The owner is the responsible team for the business meaning and its use. It is not necessarily the database account that reads or writes the table. The source points to the table that supplies the records, while a fuller definition would identify the relevant columns and the rule for interpreting null values.
+For our four parcels, this definition selects 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
 
-Recording this definition resolves ambiguity for readers of the metric: the 50.0 per cent figure is the one that matches this stated denominator and cutoff. It does not prove that a dashboard or query implements the definition. A query might drop null delivery times before counting the denominator, use a different cutoff, or join to a source that has duplicate rows. The metadata gives implementers and reviewers something concrete to compare with the calculation; data quality checks and inspection of the implementation are still needed.
+The responsible team is the contact for questions about meaning. Naming a database account that writes the table would answer a different question. Likewise, a column named `delivered_at` does not establish which event counts as delivery. The definition needs to connect the system's fields to the business event people care about.
 
-## Structure is not the same as meaning
+Keeping that decision beside the report saves each reader from reconstructing it. It also gives reviewers a way to recognise when two similarly named metrics should not be compared.
 
-A database schema describes structural properties that a database can enforce or expose: table and column names, data types, nullability, keys, and relationships. For example, the schema might say that `promised_at` and `delivered_at` are timestamps and that `delivery_id` is a key. Those facts help software read and validate the table. They do not fully define the business events those columns represent.
+## Check the calculation against the definition
 
-Meaning usually spans more than the schema. A type of timestamp cannot tell us which promise applies after a customer reschedules, what counts as a completed delivery, or whether a late-arriving update changes a previously reported result. Those rules may be captured in data contracts, metric definitions, transformation logic, or operational policy. Each is metadata when it describes the data or how it is handled, even if stored in a different place.
+Recording a rule does not ensure that a query follows it. If the dashboard removes unfinished deliveries before counting, it will show 66.7% even though the recorded definition requires 50.0%.
 
-It is useful to keep the layers connected. A metric definition can name a source table and its fields; the schema can provide the physical names and types; and the production process can explain where the values originate. If one of these changes, a definition may need review. Renaming a column is a structural change. Changing which delivery event populates it is a change in meaning, even if the column name and type remain untouched.
+The definition makes this disagreement testable. A reviewer can inspect the query's filters and denominator, then compare its output with the four-parcel example. If the intended rule changes, both the definition and the calculation need review.
 
-## A snapshot is not a history
+A database already records some of the information that helps with this check: its table structure and saved query definitions. Those records are the starting point for the database example in Chapter 2.
 
-At 13:00, D104 has a null delivery time in the supplied snapshot. That tells us the value recorded in that snapshot, subject to the source’s update behaviour. It does not by itself tell us whether D104 was delivered at 13:05, whether an earlier update was corrected, or whether the row was absent from a previous extract. A current table can describe current records while losing the evidence needed to reconstruct what was known earlier.
+<details class="further-detail" markdown="1">
+<summary>Further detail: late updates and historical cutoffs</summary>
 
-Historical questions need historical evidence: for example, timestamped snapshots, an append-only event log, or an audit trail that records changes. Such records can show when an event occurred and when the system learned of it, which are not always the same time. The 13:00 cutoff in the metric definition is therefore meaningful only if the source or its retained snapshots let the company reproduce what it knew at that cutoff.
+In a real system, an empty delivery time might mean an update has not arrived yet. A parcel delivered at 12:50 could be recorded at 13:10. Its event time and the time the system learned about it are different.
 
-The database already holds some of the information we need: its table structure and any saved queries that calculate the metric. Inspecting those records lets us compare the implemented calculation with the business definition.
+Reproducing what a report knew at 13:00 requires retained evidence, such as a timestamped snapshot or a change log. Reading the current table later may include information that was unavailable then. Chapter 3 uses captured inputs and execution records to investigate an older report.
+
+</details>

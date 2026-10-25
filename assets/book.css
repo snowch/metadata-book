@@ -45,6 +45,18 @@ h2, h3, :target { scroll-margin-top: 2rem; }
 .prose li { padding-left: .25rem; }
 .prose strong { font-weight: 700; }
 .prose blockquote { border-left: 3px solid var(--accent); margin-inline: 0; padding-left: 1.5rem; color: var(--muted); }
+.worked-example { margin: 2rem 0; padding: 1.2rem 1.4rem; background: var(--wash); }
+.worked-example figcaption { color: var(--accent); font-family: ui-sans-serif, system-ui, sans-serif; font-size: .8rem; font-weight: 650; line-height: 1.5; }
+.worked-example > :last-child { margin-bottom: 0; }
+.worked-example .table-scroll { margin-block: 1.2rem; }
+.worked-example th, .worked-example td { min-width: 0; padding-inline: .5rem; }
+.worked-example th:last-child, .worked-example td:last-child { white-space: nowrap; }
+.prose .key-principle { color: var(--ink); border-left-width: 2px; padding-left: 1.2rem; margin-block: 2rem; }
+.key-principle p { margin-block: .6rem; }
+.further-detail { margin-block: 2rem; padding-block: .35rem; border-block: 1px solid var(--line); }
+.further-detail summary { min-height: 44px; padding-block: .65rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .88rem; font-weight: 600; line-height: 1.6; }
+.further-detail summary::marker { color: var(--accent); }
+.further-detail[open] { padding-bottom: .6rem; }
 code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; font-size: .83em; }
 code { background: var(--wash); padding: .15em .3em; border-radius: .15rem; }
 pre { padding: 1.2rem; overflow-x: auto; background: var(--wash); border: 1px solid var(--line); line-height: 1.7; }
@@ -69,6 +81,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .chapter-menu a { padding-block: .45rem; }
   main { margin: 0 auto; }
   .prose { font-size: 1.06rem; }
+  .worked-example { padding: 1rem; }
   h1 { margin-bottom: 1.5rem; }
 }
 @media (prefers-color-scheme: dark) {
@@ -86,6 +99,12 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .table-scroll { overflow: visible; }
   table { font-size: 9pt; }
   th, td { min-width: 0; padding: .4rem; }
+  .worked-example { padding: 1rem; print-color-adjust: exact; }
+  .worked-example figcaption, .further-detail summary { break-after: avoid; }
+  .further-detail::details-content { content-visibility: visible; display: block; }
+  .further-detail > :not(summary) { display: block; }
+  .further-detail summary { list-style: none; }
+  .further-detail summary::-webkit-details-marker { display: none; }
   a { text-decoration: underline; }
   @page { margin: 18mm; }
 }
