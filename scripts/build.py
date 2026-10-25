@@ -184,7 +184,7 @@ def build():
 <header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
-  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav><p class="sidebar-note">{len(chapters)} short chapters</p></aside>
+  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav></aside>
   <main id="main" tabindex="-1">
     <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span><span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span></p><h1>{escape(clean_title(title))}</h1></header>
     {toc}

@@ -45,10 +45,9 @@ a:hover { text-decoration-thickness: .1em; }
 .mobile-contents { display: none; }
 .book-layout { display: grid; grid-template-columns: 204px minmax(0, 760px); gap: clamp(3rem, 7vw, 7rem); max-width: 1260px; padding: 4.5rem 3rem 2rem; margin: auto; }
 .book-sidebar { align-self: start; position: sticky; top: 2rem; max-height: calc(100dvh - 4rem); overflow-y: auto; padding-inline: .7rem; margin-inline: -.7rem; scrollbar-width: thin; }
-.sidebar-label, .sidebar-note { color: var(--muted); font-size: .65rem; line-height: 1.7; }
+.sidebar-label { color: var(--muted); font-size: .65rem; line-height: 1.7; }
 .sidebar-label { letter-spacing: .15em; margin: 0 0 .75rem; }
 .sidebar-title { font: 500 1.6rem/1.2 var(--serif); letter-spacing: -.02em; margin: 0 0 2rem; }
-.sidebar-note { border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 2rem; }
 .book-sidebar ol, .mobile-contents ol { list-style: none; padding: 0; margin: 0; }
 .book-sidebar li { margin: 0 0 .45rem; }
 .book-sidebar a, .mobile-contents nav a { display: grid; grid-template-columns: 1.5rem 1fr; gap: .6rem; padding: .8rem .7rem; margin-left: -.7rem; border-left: 2px solid transparent; text-decoration: none; color: var(--muted); font-size: .8rem; line-height: 1.5; }
