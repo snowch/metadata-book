@@ -2,7 +2,7 @@
 
 A database keeps descriptions of its tables so it can run queries. Those records include column names, declared types and rules about allowed values. We can query them through the same interface used to read business data.
 
-The examples use SQLite with the four deliveries from Chapter 1. The [source SQL](../examples/deliveries.sql) contains the setup and saved query. Every result needed to follow the explanation is shown here.
+The examples use SQLite, with the four deliveries from Chapter 1 stored in a table named `deliveries`. Each row represents one delivery. The [source SQL](../examples/deliveries.sql) contains the setup and saved query. Every result needed to follow the explanation is shown here.
 
 ## Inspect the columns
 
