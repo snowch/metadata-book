@@ -10,7 +10,7 @@ Suppose both the production database and a testing database contain `delivery_su
 
 An identifier must distinguish those locations. In this company, `prod/parcels/delivery_summary` names the table in the production `parcels` database; `test/parcels/delivery_summary` names its test counterpart. These identifiers follow an agreed naming rule. If the company adds another database system, that rule must distinguish it too.
 
-The scheduler's output reference must resolve to the same production object that the database collector describes. A collector is the process that reads descriptions from a source and sends them to the catalogue. If each collector invents a different name, someone must establish the mapping before their records can be connected reliably.
+The scheduler's output reference and the database collector's record must identify the same production table. A collector is the process that reads descriptions from a source and sends them to the catalogue. If collectors use different names, record which names refer to the same table before connecting their records.
 
 ## Collect different kinds of evidence
 
@@ -31,14 +31,14 @@ This invented collection takes place on 20 October 2026, after the incident in C
 
 </figure>
 
-The scan establishes the column's presence at 09:00. It does not establish which run last wrote its values. The scheduler supplies publication evidence for a particular run. The definition explains the denominator but does not prove that the published calculation follows it. Their connection makes each record more useful without making their claims interchangeable.
+The scan establishes the column's presence at 09:00. It does not establish which run last wrote its values. The scheduler supplies publication evidence for a particular run. The definition explains the denominator but does not prove that the published calculation follows it. Together, they describe the table's structure, its publication and its intended meaning.
 
 ## Keep the source and its times
 
 Keep three times separate to make collection delays visible:
 
-- **Source time** — when the reported occurrence happened: here, execution completion or definition revision.
-- **Observation time** — when a collector inspected something.
+- **Source time** — when the job finished or the definition was revised.
+- **Observation time** — when a collector checked the source.
 - **Collection time** — when the catalogue received the record.
 
 For the schema scan, we know when the collector saw the column. We do not know when the column was created unless the database supplies that evidence. Recording 09:00 as its creation time would invent a fact.

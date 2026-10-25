@@ -34,9 +34,9 @@ In this invented incident, the report shows 100% at 13:00 on 19 October 2026. Th
 
 </figure>
 
-The captured input establishes what the successful run knew: all four parcels were present, but only two had recorded completions. Its 100% follows from those records. Reading the source after 12:20 gives a different result because a third completion has been recorded. The current table alone cannot reproduce what the earlier run saw.
+The saved input rows show what the successful run read: all four deliveries, but only two with a delivery time. Both were on time, giving 100%. Reading the source after 12:20 gives a different result because a third completion has been recorded. The current table alone cannot reproduce what the earlier run saw.
 
-The publication record identifies the stored output, and the refresh record connects that version to the report. Together they support the diagnosis: the report displayed a stale successful output. The failed run alone would not prove that connection, and these records do not establish why the job failed.
+The publication record identifies the stored output, and the refresh record connects that version to the report. Together they show that the report displayed the result from an earlier successful run. The failed run alone would not prove that connection, and these records do not establish why the job failed.
 
 <blockquote class="key-principle" markdown="1">
 
@@ -46,7 +46,7 @@ The publication record identifies the stored output, and the refresh record conn
 
 ## Keep the evidence connected
 
-For an investigation like this one, preserve captured inputs or references to retained snapshots, run and publication records, and the report's version reference. Check that those references join the same chain before explaining the number. Lineage does not decide whether the metric's definition answers the right business question.
+Keep a copy of the input rows, or a link to a saved version, along with the run and publication records and the report's refresh record. Check that they connect the inputs, run, output and report before using them to explain the number. Lineage does not decide whether the metric's definition answers the right business question.
 
 <details class="further-detail" markdown="1">
 <summary>Further detail: records from dbt and OpenLineage</summary>

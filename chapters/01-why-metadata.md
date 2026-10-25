@@ -22,7 +22,7 @@ Both calculations are valid for their stated questions. The first measures punct
 
 </figure>
 
-The disagreement comes from the denominator: the group against which we count successful deliveries. Choosing that group is a business decision. A correct calculation can still answer the wrong question for the person reading the report.
+The disagreement comes from the denominator: the total number of deliveries included—three completed deliveries or all four deliveries due. Choosing that group is a business decision. A correct calculation can still answer the wrong question for the person reading the report.
 
 <blockquote class="key-principle" markdown="1">
 
@@ -43,7 +43,7 @@ Suppose Delivery Operations uses the second definition: of all deliveries promis
 | Responsible team | Delivery Operations |
 | Source | The `deliveries` table |
 
-For our four parcels, this definition selects 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
+For our four parcels, using this definition gives 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
 
 The definition should name the team that can explain what the metric means—for example, Delivery Operations.
 
