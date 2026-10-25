@@ -4,7 +4,7 @@ Lineage connects data's inputs, processing steps and outputs. It gives us a rout
 
 ## Follow the route
 
-Continue with the parcel company's completed-delivery measure from Chapter 1. The SQLite view `on_time_completed` evaluates its query whenever it is read. Now suppose a scheduled job, `build_delivery_summary`, writes a stored table called `delivery_summary`. That result changes when a new version is published, so it can lag behind its source.
+Suppose another team, Service Analytics, uses the completed-delivery measure: the first question in Chapter 1's table, also calculated by the view in Chapter 2. The SQLite view `on_time_completed` evaluates its query whenever it is read. Now suppose a scheduled job, `build_delivery_summary`, uses that same calculation to write a stored table called `delivery_summary`. Publishing a new result makes it available to reports. If a run fails before publishing, reports can still read the previous result.
 
 <figure class="lineage-diagram" aria-labelledby="lineage-caption">
 <figcaption id="lineage-caption">Declared dependency path</figcaption>
@@ -16,11 +16,11 @@ Continue with the parcel company's completed-delivery measure from Chapter 1. Th
 </ol>
 </figure>
 
-The route identifies the transformation to investigate. To explain a displayed value, we also need records connecting a particular execution, its published output and the report that read it.
+The route identifies the job to investigate. To explain a displayed value, we also need records connecting a particular execution, its published output and the report that read it.
 
 ## Reconstruct the report's evidence
 
-In this invented incident, the report shows 100% at 13:00 on 19 October 2026. The current source gives 66.7%. Both calculations count on-time deliveries among completed deliveries, so a different denominator does not explain the disagreement. All times below are UTC on that date.
+In this invented incident, the report shows 100% at 13:00 on 19 October 2026. The current source gives 66.7%. Both calculations use the same rule: count on-time deliveries among completed deliveries. We need to check whether they used the same records. All times below are UTC on that date.
 
 <figure class="worked-example incident-timeline" markdown="1">
 <figcaption>Worked example · The records behind a stale result</figcaption>
@@ -44,20 +44,16 @@ The publication record identifies the stored output, and the refresh record conn
 
 </blockquote>
 
-## Read tool records with the same distinction
-
-Real tools provide parts of this evidence. dbt is a transformation tool whose manifest describes project resources and their dependencies. Its run results record execution statuses and timings. A resource can appear as skipped, so its presence in the results does not by itself mean its transformation ran.
-
-OpenLineage is an open standard for exchanging lineage records. Processing tools can report a job's run and its input and output datasets through integrations. These records help connect executions across systems, but reported dataset names do not guarantee complete snapshots of the rows read.
+## Keep the evidence connected
 
 For an investigation like this one, preserve captured inputs or references to retained snapshots, run and publication records, and the report's version reference. Check that those references join the same chain before explaining the number. Lineage does not decide whether the metric's definition answers the right business question.
 
 <details class="further-detail" markdown="1">
-<summary>Further detail: artifact fields and accumulating events</summary>
+<summary>Further detail: records from dbt and OpenLineage</summary>
 
-In dbt's [manifest](https://docs.getdbt.com/reference/artifacts/manifest-json), `parent_map` and `child_map` record immediate dependencies. The [run results artifact](https://docs.getdbt.com/reference/artifacts/run-results-json) records resource statuses and timings; its [status schema](https://schemas.getdbt.com/dbt/run-results/v6.json) includes skipped resources. It does not supply a complete observed input-dataset list for each model.
+dbt runs SQL queries to build tables and views. Its [manifest](https://docs.getdbt.com/reference/artifacts/manifest-json) describes these planned steps; `parent_map` and `child_map` record their immediate dependencies. Its [run results file](https://docs.getdbt.com/reference/artifacts/run-results-json) records statuses and timings. The [status schema](https://schemas.getdbt.com/dbt/run-results/v6.json) includes skipped steps, so appearing in this file does not prove a query ran. It does not supply a complete list of the inputs actually read by each query.
 
-An OpenLineage `RunEvent` identifies a job, run, state and reported inputs and outputs. Some integrations report additional inputs in later events, so consumers must combine events for the same run. See the [object model](https://openlineage.io/docs/spec/object-model/) and [run cycle](https://openlineage.io/docs/spec/run-cycle/).
+OpenLineage is an open standard for exchanging lineage records. A processing tool can send a `RunEvent` identifying a job, run, state and reported input and output datasets. Some tools report additional inputs in later events, so readers must combine events for the same run. Dataset names alone do not preserve the rows read. See the [object model](https://openlineage.io/docs/spec/object-model/) and [run cycle](https://openlineage.io/docs/spec/run-cycle/).
 
 Useful retained fields include run identity, times, status, code version, input snapshot references, output version, publication outcome and report refresh reference. Their availability depends on the tools and retention arrangements; a lineage event alone does not guarantee them.
 

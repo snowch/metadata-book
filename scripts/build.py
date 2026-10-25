@@ -15,7 +15,9 @@ import markdown
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "_site"
 REQUIRED = ["book.md", "chapters/01-why-metadata.md",
-            "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md"]
+            "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md",
+            "chapters/04-collecting-metadata.md", "chapters/05-unreliable-records.md",
+            "chapters/06-using-metadata.md", "chapters/07-choosing-a-platform.md"]
 
 
 def destination(source):
@@ -179,10 +181,10 @@ def build():
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-link" href="{relative(Path('index.html'), page)}#read-the-sample">Contents {LINK_ARROW}</a></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
-  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav><p class="sidebar-note">Reading sample · {len(chapters)} chapters</p></aside>
+  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav><p class="sidebar-note">{len(chapters)} short chapters</p></aside>
   <main id="main" tabindex="-1">
     <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span><span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span></p><h1>{escape(clean_title(title))}</h1></header>
     {toc}

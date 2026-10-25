@@ -44,7 +44,7 @@ a:hover { text-decoration-thickness: .1em; }
 .header-link .external-arrow { color: var(--accent); margin-left: .5rem; }
 .mobile-contents { display: none; }
 .book-layout { display: grid; grid-template-columns: 204px minmax(0, 760px); gap: clamp(3rem, 7vw, 7rem); max-width: 1260px; padding: 4.5rem 3rem 2rem; margin: auto; }
-.book-sidebar { align-self: start; position: sticky; top: 2rem; }
+.book-sidebar { align-self: start; position: sticky; top: 2rem; max-height: calc(100dvh - 4rem); overflow-y: auto; padding-inline: .7rem; margin-inline: -.7rem; scrollbar-width: thin; }
 .sidebar-label, .sidebar-note { color: var(--muted); font-size: .65rem; line-height: 1.7; }
 .sidebar-label { letter-spacing: .15em; margin: 0 0 .75rem; }
 .sidebar-title { font: 500 1.6rem/1.2 var(--serif); letter-spacing: -.02em; margin: 0 0 2rem; }
@@ -97,12 +97,12 @@ th { font-weight: 600; background: var(--wash); color: var(--ink); }
 td { color: var(--ink); }
 tbody tr:last-child td { border-bottom: 1px solid var(--line); }
 .worked-example th, .worked-example td { padding-inline: .5rem; }
-.worked-example th:last-child, .worked-example td:last-child { white-space: nowrap; }
 .incident-timeline th:last-child, .incident-timeline td:last-child { white-space: normal; }
 .incident-timeline th:first-child, .incident-timeline td:first-child { white-space: nowrap; font-family: var(--mono); color: var(--accent); font-size: .75rem; }
 .query-result th, .query-result td { padding-inline: .5rem; }
 code, pre { font-family: var(--mono); }
 code { font-size: .72em; padding: .12em .25em; background: var(--wash); border-radius: 2px; }
+table code { font-size: .9em; overflow-wrap: anywhere; }
 pre { font-size: .78rem; line-height: 1.8; padding: 1.2rem; overflow-x: auto; background: var(--code-paper); color: var(--code-ink); }
 pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .code-example { margin: 1.5rem 0; background: var(--code-paper); border-radius: 3px; overflow: hidden; }

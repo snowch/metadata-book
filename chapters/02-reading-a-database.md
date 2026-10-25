@@ -1,12 +1,12 @@
 # 2. What a database already knows
 
-A database keeps descriptions of its tables so it can run queries. Those records include column names, declared types and constraints. We can query them through the same interface used to read business data.
+A database keeps descriptions of its tables so it can run queries. Those records include column names, declared types and rules about allowed values. We can query them through the same interface used to read business data.
 
 The examples use SQLite with the four deliveries from Chapter 1. The [source SQL](../examples/deliveries.sql) contains the setup and saved query. Every result needed to follow the explanation is shown here.
 
 ## Inspect the columns
 
-SQLite's `table_xinfo` function returns one row for each column. Its table-valued form lets us select fields and sort them into table order:
+In SQLite, querying `pragma_table_xinfo('deliveries')` returns one row for each column in `deliveries`. We select four fields and sort the rows into column order:
 
 <figure class="worked-example" markdown="1">
 <figcaption>Worked example · Inspecting the deliveries table</figcaption>
@@ -25,11 +25,11 @@ ORDER BY cid;
 
 </figure>
 
-The names identify the fields, and `type` gives their declared type. A `notnull` value of 1 means a column cannot contain null; 0 means it can. `pk` is the column's position in the primary key, or zero if it is not part of the key. Here `delivery_id` is the sole key column.
+The names identify the fields, and `type` gives their declared type. Here `TEXT` means text. A `notnull` value of 1 forbids null, SQL's marker for a missing value; 0 allows it. `pk` identifies columns in the primary key, which uniquely identifies each row. Here only `delivery_id` belongs to that key; the other columns have `pk` set to zero.
 
-This structure helps us read a query: `promised_at` and `delivered_at` are the available fields for comparing promised and actual times. But names, types and flags describe implementation; they do not fully explain business meaning. The nullable `delivered_at` column permits a missing value, but does not say whether null means awaiting delivery, a late update, or an unknown time. In this example we treat null as not yet recorded as completed.
+This structure helps us read a query: `promised_at` and `delivered_at` are the available fields for comparing promised and actual times. But names, types and flags do not fully explain business meaning. Allowing a missing `delivered_at` value does not tell us whether it means awaiting delivery, a late update, or an unknown time. In this example we treat null as not yet recorded as completed.
 
-Similarly, `promised_at` could record the initial estimate or the latest commitment to the customer. Renaming the column changes the schema. Changing which promise fills it changes its meaning, even if the name and type stay the same. A reader needs the business definition to interpret these values.
+Similarly, `promised_at` could record the initial estimate or the latest commitment to the customer. Renaming the column changes the table's structure, or **schema**. Changing which promise fills it changes its meaning, even if the name and type stay the same. A reader needs the business definition to interpret these values.
 
 SQLite records table and view definitions in `sqlite_schema`; its [schema table documentation](https://sqlite.org/schematab.html) describes those records. The `table_xinfo` fields are documented in [SQLite's pragma reference](https://sqlite.org/pragma.html#pragma_table_xinfo). Other databases expose similar structural information through their own catalogues.
 
@@ -52,7 +52,7 @@ This excerpt removes rows without a delivery time before the calculation counts 
 
 </div>
 
-That denominator means the view measures punctuality among completed deliveries. It does not include a delivery still awaiting completion. The query therefore makes the implementation's choice visible, while the metric definition from Chapter 1 tells us whether that choice matches the intended question. Database records let us inspect the calculation; they do not supply the business decision.
+The view measures punctuality among completed deliveries. It answers the first question in Chapter 1's table, giving 66.7%. Delivery Operations chose the second question, counting all deliveries due, which gives 50.0%. This view therefore does not implement that team's definition. Database records let us inspect the calculation; they do not supply the business decision.
 
 The on-time comparison uses timestamps stored as text in the same fixed UTC format, `YYYY-MM-DD HH:MM`. For these values, text order matches time order. This is an assumption of the example, not something the `TEXT` declaration enforces.
 
