@@ -1,6 +1,6 @@
 # 4. Collecting metadata from several systems
 
-The parcel company's database describes `deliveries`. Its scheduler records executions of `build_delivery_summary`. Service Analytics maintains the completed-delivery definition used by that job. A catalogue brings those descriptions together so a reader can follow the connections established in Chapter 3.
+The parcel company's database describes `deliveries`. Its scheduler records executions of `build_delivery_summary`. Service Analytics maintains the completed-delivery definition used by that job. A discovery catalogue brings those descriptions together so a reader can follow the connections established in Chapter 3.
 
 Collecting them requires more than copying names. Each record must identify what it describes, where the description came from and when it was observed or reported.
 
@@ -13,6 +13,8 @@ An identifier must distinguish those locations. In this company, `prod/parcels/d
 The scheduler's output reference must resolve to the same production object that the database collector describes. A collector is the process that reads descriptions from a source and sends them to the catalogue. If each collector invents a different name, someone must establish the mapping before their records can be connected reliably.
 
 ## Collect different kinds of evidence
+
+If the company later stores delivery data in Hive, its metastore describes the tables and where their data lives. Tools such as [DataHub](https://docs.datahub.com/docs/generated/ingestion/sources/hive-metastore/) and [OpenMetadata](https://docs.open-metadata.org/latest/connectors/database/hive) can collect those descriptions. In the discovery catalogue, the company can link `deliveries` to the definition of “delivered” and the team responsible for it. Collecting the description does not copy the delivery rows or replace the metastore used to query them.
 
 Different collection methods answer different questions. A scheduled schema scan reads database descriptions at intervals: tables, columns and saved query definitions. A run event reports something about a particular execution, such as its completion. A human definition records a decision about meaning.
 

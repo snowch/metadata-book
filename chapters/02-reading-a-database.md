@@ -56,9 +56,13 @@ The view measures punctuality among completed deliveries. It answers the first q
 
 The on-time comparison uses timestamps stored as text in the same fixed UTC format, `YYYY-MM-DD HH:MM`. For these values, text order matches time order. This is an assumption of the example, not something the `TEXT` declaration enforces.
 
-## Collecting metadata
+## Two jobs for a catalogue
 
-A catalogue can collect table structure and saved query definitions, then connect them with metadata such as the responsible team and an agreed metric definition. Those descriptions are data in the catalogue and metadata about the source.
+The word **catalogue** covers different jobs. A database or query-engine catalogue helps software find and read data. SQLite's schema records serve this purpose. [Hive Metastore](https://hive.apache.org/development/designdocs/design/#metastore) also describes table schemas, partitions—groups such as one day's deliveries—storage locations and file formats. It connects table names to stored data, rather than simply listing files.
+
+A **discovery and governance catalogue**, such as DataHub or OpenMetadata, helps people find, understand and manage data. It connects technical records with definitions, responsible teams and lineage. These roles overlap: a database catalogue can also hold comments or ownership information. The distinction is their main purpose, not a strict division between technical and business metadata.
+
+[Chapter 4](04-collecting-metadata.md) shows how a discovery catalogue collects descriptions from other systems. Those descriptions are data in the catalogue and metadata about the source.
 
 A collected definition should identify its source and when it was observed. If the database changes before the catalogue refreshes, the catalogue still describes the earlier version. Collecting metadata makes it easier to find, but keeping it current remains a separate task.
 
