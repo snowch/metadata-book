@@ -43,15 +43,16 @@ Keep three times separate to make collection delays visible:
 
 For the schema scan, we know when the collector saw the column. We do not know when the column was created unless the database supplies that evidence. Recording 09:00 as its creation time would invent a fact.
 
-<blockquote class="key-principle" markdown="1">
-
-**Connect collected records by identity, while preserving what each source actually establishes.**
-
-</blockquote>
-
 Collection also does not appoint an owner. Service Analytics must accept responsibility for this definition; the catalogue can record that agreement. Importing the description does not make the person running the collector responsible for what the metric means.
 
 The catalogue now connects descriptions of the summary, its publication and its intended meaning. Next we need to decide how to present this evidence when collection is incomplete or records disagree.
+
+## Core points
+
+- **Connect records using agreed identifiers.** A table name alone can confuse production data with test data.
+- **Each source establishes different facts.** A schema scan describes structure, a run event describes an execution, and a definition records intended meaning.
+- **Keep sources and times visible.** When something happened, when a collector observed it and when the catalogue received the record may differ.
+- **Collection does not assign responsibility.** The team responsible for a definition must accept that role; importing its name is not enough.
 
 <details class="further-detail" markdown="1">
 <summary>Further detail: identifiers in OpenLineage</summary>

@@ -106,6 +106,13 @@ A collected definition should identify its source and when it was observed. If t
 
 The view recalculates when read. A scheduled process that writes a summary table behaves differently: its stored output may remain visible after a later run fails. To explain that output, we need to connect it to a particular execution and its inputs, the subject of Chapter 3.
 
+## Core points
+
+- **Database records describe structure.** Column names, declared types and constraints do not fully explain what values mean.
+- **Meaning can change without a schema change.** Storing a revised promise instead of the original promise changes the measure even if the column's name and type stay the same.
+- **Read the calculation to see what it counts.** The completed-delivery view excludes unfinished deliveries, so it cannot answer the all-due question.
+- **Catalogues serve different purposes.** Database catalogues help software find and read data; discovery catalogues connect technical records with definitions, owners and lineage. These roles overlap.
+
 <details class="further-detail" markdown="1">
 <summary>Further detail: SQLite types and timestamps</summary>
 

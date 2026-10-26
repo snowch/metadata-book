@@ -18,6 +18,6 @@ This book is for software and data engineers who can read a table and a simple S
 
 Chapters 1–3 explain how to question a number and inspect the evidence behind it. They form a useful stopping point if your main task is reading reports or reviewing calculations. Continue through Chapters 4–7 if you also collect, maintain or choose tools for metadata.
 
-Worked examples carry the explanation. Highlighted principles mark the central idea; **Further detail** boxes are optional. You can skip them without losing the argument. Chapter 3 also links to a separate optional [practical walkthrough](examples/lineage/walkthrough.md) for readers who want to investigate the records with SQL.
+Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons; **Further detail** boxes are optional. You can skip them without losing the argument. Chapter 3 also links to a separate optional [practical walkthrough](examples/lineage/walkthrough.md) for readers who want to investigate the records with SQL.
 
 The company and its records are invented. The database examples and Chapter 3's incident simulation use the real SQLite engine. Other incident histories are illustrative, and the platform pilot is a suggested exercise. Product-specific explanations link to the tools' documentation. To run the examples yourself, see [Reproducing the worked results](examples/README.md).

@@ -29,12 +29,6 @@ The reverse also matters. A definition can match the request while its report di
 
 Record which data version a check covered and when it ran. A successful check on yesterday's output says little about today's publication. An empty `delivered_at` is also allowed in this example: treating every missing delivery time as a defect would reject a legitimate unfinished parcel.
 
-<blockquote class="key-principle" markdown="1">
-
-**Match each decision to evidence that can support it, and state what remains unknown.**
-
-</blockquote>
-
 ## Scope a proposed change
 
 Suppose `promised_at` currently records the original customer promise. A proposed change would use the latest revised promise instead. A parcel arriving at 12:20 is late against a noon promise but on time against a revised 12:30 promise. The column's name and type would not reveal this change. Both teams need to review how it affects their measures before the reporting engineer changes the source.
@@ -46,3 +40,10 @@ This path identifies places to check, but collection may have missed others. A r
 ## Leave a decision someone can act on
 
 For the meeting, record: Delivery Operations requires the all-due rule; the reporting engineer will verify the four-parcel result and the published version before supplying it. For the promise change, record the affected jobs and reports, any gaps in the investigation and who will check them. Metadata has done useful work when another person can see the evidence, the remaining uncertainty and the next action.
+
+## Core points
+
+- **Choose data by the question it answers.** A familiar name does not establish that a measure uses the required definition.
+- **Quality checks support specific claims.** Passing checks does not prove that a measure answers the business question or that a report is current.
+- **Dependencies identify places to investigate.** They do not prove that every affected report or spreadsheet has been found.
+- **Leave an actionable decision.** Record the evidence, remaining uncertainty, next action and who will take it.

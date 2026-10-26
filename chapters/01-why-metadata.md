@@ -24,12 +24,6 @@ Both calculations are valid for their stated questions. The first measures punct
 
 The disagreement comes from the denominator: the total number of deliveries included—three completed deliveries or all four deliveries due. Choosing that group is a business decision. A correct calculation can still answer the wrong question for the person reading the report.
 
-<blockquote class="key-principle" markdown="1">
-
-**A metric's definition must say what counts.**
-
-</blockquote>
-
 ## Record the decision
 
 Suppose Delivery Operations uses the second definition: of all deliveries promised by noon, what proportion arrived on time? A useful definition would record:
@@ -60,6 +54,12 @@ Recording a rule does not ensure that a query follows it. If the dashboard remov
 The definition makes this disagreement testable. A reviewer can inspect the query's filters and denominator, then compare its output with the four-parcel example. If the intended rule changes, both the definition and the calculation need review.
 
 A database already records some of the information that helps with this check: its table structure and saved query definitions. Those records are the starting point for the database example in Chapter 2.
+
+## Core points
+
+- **A metric must say what counts.** Completed deliveries and all deliveries due answer different questions, even when both are labelled “on-time delivery.”
+- **Record the definition and responsible team.** Readers need to know what is included, when it is measured and whom to ask about its meaning.
+- **A definition is something to check against.** Inspect the calculation to verify that its filters and denominator follow the recorded rule.
 
 <details class="further-detail" markdown="1">
 <summary>Further detail: late updates and historical cutoffs</summary>

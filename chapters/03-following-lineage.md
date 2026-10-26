@@ -80,11 +80,12 @@ Keeping evidence has a cost. Agree how far back the team needs to investigate re
 
 If the original inputs are deleted, a run record may still identify the source, but it cannot supply the missing rows. We can trace the result's recorded history without being able to reproduce its calculation.
 
-<blockquote class="key-principle" markdown="1">
+## Core points
 
-**To explain a reported number, connect it to the run, inputs and processing code that produced it. A recently refreshed report can still contain an old result.**
-
-</blockquote>
+- **Lineage shows the route** from source data through processing to a report.
+- **A particular result needs particular evidence:** the run, inputs and code that produced it.
+- **Refreshing a report does not guarantee fresh data.** It may still read an older saved result.
+- **Reproducing a calculation requires retained inputs and code**, not just references to them.
 
 ## Check your understanding
 

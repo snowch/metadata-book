@@ -28,12 +28,6 @@ Run these checks with someone who did not assemble the records. Ask them to show
 
 For collection, name the exact systems covered: database structure, scheduled jobs and report refreshes may require different collectors. A collector is software that reads metadata from a source. Check which records each one actually supplies and which this pilot entered by hand. Preserve the source identifier, observation time and version references when importing or exporting records; otherwise a platform move can break the incident's evidence chain.
 
-<blockquote class="key-principle" markdown="1">
-
-**Choose the smallest arrangement that passes the team's evidence and access checks.**
-
-</blockquote>
-
 ## Budget for the work after setup
 
 A repository makes definitions easy to review alongside code. SQLite can join the incident records by identifier. Someone must still collect changes, maintain links, control access and help readers find them. Evaluate a catalogue when those jobs slow the team down; use the pilot to measure whether it helps.
@@ -49,3 +43,10 @@ Use the pilot results to decide what happens next:
 - **Fix the gaps first** if neither passes. Stop expansion and address the missing evidence or access path.
 
 Finish the pilot with its check results, collection coverage, named owners and a recorded choice. The next operations meeting should receive a verified all-due calculation with its definition and output reference attached. That is a concrete result against which the platform's continuing cost can be judged.
+
+## Core points
+
+- **Start with a small task and known answers.** Test whether a reader can find a suitable measure and explain a reported result.
+- **Check evidence, collection coverage and access.** Verify what each collector supplies and what each reader can retrieve.
+- **Plan for continuing work.** Assign responsibility for definitions and collection failures, monitor freshness, and maintain access and history.
+- **Choose the smallest arrangement that passes the checks.** Expand only when it works and reduces the team's effort; fix evidence or access gaps first.

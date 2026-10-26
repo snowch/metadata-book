@@ -37,10 +37,11 @@ The [CloudEvents specification](https://github.com/cloudevents/spec/blob/v1.0.2/
 
 At 10:03, the table still names an older version, `summary-R0940`, even though the scheduler reports publishing `summary-R1000` at 10:00. The version label could be wrong; the scheduler could also have reported publication incorrectly. These records alone do not resolve the disagreement.
 
-<blockquote class="key-principle" markdown="1">
-
-**Keep conflicting evidence with its source and times; make uncertainty visible.**
-
-</blockquote>
-
 The catalogue should show both claims and flag the latest publication as disputed. Metadata has [provenance](03-following-lineage.md#provenance) too: keep who or what supplied each claim and when. An investigator can then inspect the job's write logs and saved output versions. If that investigation resolves the conflict, record the supporting evidence alongside the conclusion. Choosing whichever message arrived last would make the display simpler while discarding the reason to investigate.
+
+## Core points
+
+- **Missing from a scan does not necessarily mean deleted.** Check collection scope, permissions and outcome before drawing that conclusion.
+- **A repeated message is not another event.** Use the source and a stable event identifier to recognise duplicates.
+- **Arrival order is not event order.** Keep event and receipt times so delayed messages do not obscure what happened.
+- **Preserve conflicting claims and show uncertainty.** Keep their sources and times, then record the evidence used to resolve the disagreement.
