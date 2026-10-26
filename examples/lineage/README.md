@@ -1,6 +1,6 @@
 # A local lineage incident
 
-For the evidence and its interpretation, read [The metadata behind an outdated report](walkthrough.md). This supporting reference describes the simulation and its records. [Chapter 3](../../chapters/03-following-lineage.md) teaches the core ideas without requiring execution.
+For the evidence and its interpretation, read [Chapter 3: Where did this number come from?](../../chapters/03-following-lineage.md) and [Chapter 4: Why is this report out of date?](../../chapters/04-outdated-reports.md). Both show the records inline without requiring execution. This supporting reference describes the simulation and its records.
 
 To reproduce the invented incident, use Python 3 from the repository root:
 

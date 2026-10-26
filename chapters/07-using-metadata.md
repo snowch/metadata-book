@@ -1,4 +1,4 @@
-# 6. Using metadata to make decisions
+# 7. Using metadata to make decisions
 
 Metadata helps someone choose a dataset, decide whether to use a result, or prepare a change. Each decision needs different evidence. A definition explains what a measure counts; a test result describes a particular check; a dependency record points to a possible consumer. Useful decisions keep those differences visible.
 
@@ -25,7 +25,7 @@ Finding a definition is not the same as finding a working report. Delivery Opera
 
 Suppose checks find no duplicate delivery identifiers and confirm that all four promised times are present. Those results support specific claims about the checked records. They do not establish that a completed-delivery measure answers the all-due question. A fresh, correctly calculated 66.7% would still answer a different question.
 
-The reverse also matters. A definition can match the request while its report displays an old output. In Chapter 3, the 13:00 refresh read `summary-R1205` after the 12:30 run failed. The reporting engineer must inspect the publication and refresh records before presenting that value as current.
+The reverse also matters. A definition can match the request while its report displays an old output. In Chapter 4, the 13:00 refresh read `summary-R1205` after the 12:30 run failed. The reporting engineer must inspect the publication and refresh records before presenting that value as current.
 
 Record which data version a check covered and when it ran. A successful check on yesterday's output says little about today's publication. An empty `delivered_at` is also allowed in this example: treating every missing delivery time as a defect would reject a legitimate unfinished parcel.
 

@@ -100,7 +100,7 @@ Helps people find, understand and manage data. Tools such as DataHub and OpenMet
 
 These roles overlap: a database catalogue can also hold comments or ownership information. The distinction is their main purpose, not a strict division between technical and business metadata.
 
-[Chapter 4](04-collecting-metadata.md) shows how a discovery catalogue collects descriptions from other systems. Those descriptions are data in the catalogue and metadata about the source.
+[Chapter 5](05-collecting-metadata.md) shows how a discovery catalogue collects descriptions from other systems. Those descriptions are data in the catalogue and metadata about the source.
 
 A collected definition should identify its source and when it was observed. If the database changes before the catalogue refreshes, the catalogue still describes the earlier version. Collecting metadata makes it easier to find, but keeping it current remains a separate task.
 

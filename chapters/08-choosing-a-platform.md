@@ -1,4 +1,4 @@
-# 7. Choosing and operating a metadata platform
+# 8. Choosing and operating a metadata platform
 
 A metadata platform should help a team complete a task it currently struggles with. Start with that task and a small body of evidence.
 

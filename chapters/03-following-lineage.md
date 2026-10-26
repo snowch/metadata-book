@@ -1,8 +1,6 @@
-# 3. Following a number to its source
+# 3. Where did this number come from?
 
-A report shows **100% of completed deliveries arrived on time**. A calculation using the current delivery records gives **66.7%**. Both use the same definition. Why do they disagree?
-
-To answer, we need to follow the number back to the data and calculation that produced it.
+Service Analytics measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery. At 13:00, its Delivery performance report shows **100%**. What produced that number?
 
 ## Lineage and provenance
 
@@ -24,11 +22,9 @@ Records the history of a particular dataset or result: who or what created or ch
 
 Lineage emphasises **data flow**; provenance emphasises **creation and change history**. Both can describe transformations and the people or systems involved, so the distinction is not simply “how” versus “who.” The terms overlap in practice; lineage tools can also capture provenance.
 
-## Follow the report's number
+## Follow the route
 
-Another department, Service Analytics, measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery.
-
-A scheduled job calculates this percentage from the delivery records and saves the result. The Delivery performance report reads that saved result whenever someone refreshes it. Refreshing the report does not rerun the calculation.
+A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result whenever someone refreshes it. Refreshing the report does not rerun the calculation.
 
 <figure class="lineage-diagram" aria-labelledby="lineage-caption">
 <figcaption id="lineage-caption">How the number reaches the report</figcaption>
@@ -40,62 +36,75 @@ A scheduled job calculates this percentage from the delivery records and saves t
 </ol>
 </figure>
 
-This route tells us which job to investigate. It does not tell us which run of that job produced the number a reader saw.
+This lineage shows the route to the report. To explain its particular 100%, we need the run, inputs and processing code that produced it. Looking only at the latest successful run could lead us to a result the report never read.
 
-Start with the report's refresh record: **which saved result did it read?** Then follow that result to the run that produced it. Looking only at the latest successful run could lead us to a result the report never read.
+The following cards show selected records from an invented incident, checked with SQLite. Field names belong to this example; real tools may use different names. All times are UTC on 19 October 2026.
 
-## Why 100% stayed on screen
+## Which result did the report read?
 
-In this invented incident, all four parcels were promised by noon. The delivery records are complete at each observation. All times below are UTC on 19 October 2026.
+Start with the refresh record. `output_version` identifies the saved result read by this refresh.
 
-<figure class="worked-example incident-timeline" markdown="1">
-<figcaption>Worked example · A fresh page, an old result</figcaption>
+<figure class="metadata-record" data-table="report_refreshes">
+<figcaption><span class="record-kind">Report refresh</span><span class="record-source">Recorded in <code>report_refreshes</code></span></figcaption>
+<dl>
+<div><dt><code>refresh_id</code></dt><dd><code>F1300</code></dd></div>
+<div><dt><code>report_name</code></dt><dd><code>Delivery performance</code></dd></div>
+<div><dt><code>refreshed_at</code></dt><dd><code>2026-10-19 13:00</code></dd></div>
+<div class="record-focus"><dt><code>output_version</code></dt><dd><strong><code>summary-R1205</code></strong></dd></div>
+</dl>
+</figure>
+<p class="evidence-reading"><strong>What this tells us</strong> The report refreshed at 13:00, but it read <code>summary-R1205</code>. The refresh time alone does not tell us when that result was produced.</p>
 
-| Time | What happened |
-|---|---|
-| 12:05 | Two parcels had arrived, both on time. The job saved **2 out of 2: 100%**. |
-| 12:20 | A third parcel arrived late. The current records now gave **2 out of 3: 66.7%**. The fourth parcel was still undelivered. |
-| 12:30 | The next job run failed before saving a new result. The earlier 100% remained available. |
-| 13:00 | The report refreshed and read the result saved at 12:05: **100%**. |
+Follow that output identifier to the published result. `run_id` identifies the execution that produced it.
+
+<figure class="metadata-record" data-table="outputs">
+<figcaption><span class="record-kind">Published output</span><span class="record-source">Recorded in <code>outputs</code></span></figcaption>
+<dl>
+<div><dt><code>output_version</code></dt><dd><code>summary-R1205</code></dd></div>
+<div class="record-focus"><dt><code>run_id</code></dt><dd><strong><code>R1205</code></strong></dd></div>
+<div class="record-focus"><dt><code>published_at</code></dt><dd><strong><code>2026-10-19 12:05</code></strong></dd></div>
+<div><dt><code>percentage</code></dt><dd><code>100.0</code></dd></div>
+</dl>
+</figure>
+<p class="evidence-reading"><strong>What this tells us</strong> The displayed 100% came from run <code>R1205</code>, published 55 minutes before the refresh. Matching <code>output_version</code> connects these two records.</p>
+<p class="evidence-limit"><strong>What it does not tell us</strong> A stored percentage does not establish whether its calculation was correct. For that, we need the inputs and code.</p>
+
+## Which inputs and calculation produced 100%?
+
+The run record identifies both. A **snapshot** is a retained copy of the input data at a particular time; `input_snapshot_id` tells us which copy this run read.
+
+<figure class="metadata-record" data-table="runs">
+<figcaption><span class="record-kind">Producing run</span><span class="record-source">Recorded in <code>runs</code></span></figcaption>
+<dl>
+<div><dt><code>run_id</code></dt><dd><code>R1205</code></dd></div>
+<div><dt><code>job_name</code></dt><dd><code>build_delivery_summary</code></dd></div>
+<div><dt><code>status</code></dt><dd><code>success</code></dd></div>
+<div class="record-focus"><dt><code>input_snapshot_id</code></dt><dd><strong><code>S1205</code></strong></dd></div>
+<div class="record-focus"><dt><code>code_version</code></dt><dd><strong><code>completed-v1</code></strong></dd></div>
+</dl>
+</figure>
+<p class="evidence-reading"><strong>What this tells us</strong> Inspect saved input <code>S1205</code> and retained code <code>completed-v1</code>. The current table and today’s code may differ from what this run used.</p>
+
+The retained [calculation for `completed-v1`](../examples/lineage/completed-v1.sql) excludes unfinished deliveries, then divides the number delivered on time by the number completed. All four parcels were promised by noon. These are the delivery rows it read, with timestamps shortened to show the time:
+
+<figure class="worked-example" markdown="1">
+<figcaption>Saved input · S1205, captured at 12:05</figcaption>
+
+| Delivery | Promised by | Delivered at |
+|---|---|---|
+| `D101` | 12:00 | 11:50 |
+| `D102` | 12:00 | `NULL` |
+| `D103` | 12:00 | 11:40 |
+| `D104` | 12:00 | `NULL` |
 
 </figure>
 
-The earlier calculation was correct for its inputs. The report was showing an older result, not calculating the current percentage incorrectly.
+These rows are the input data; the run's reference to them is metadata. In this complete example, `NULL` means the parcel had not yet arrived. The calculation includes D101 and D103: **2 on time out of 2 completed = 100%**.
 
-The failed run alone would not prove this. The report's refresh record connects the displayed 100% to the earlier saved result. Together, the records explain both how the number was calculated and why it remained on screen.
-
-After fixing the failure, the team must check that a new run uses the updated delivery records, saves its result, and that the report actually reads it. A successful job alone does not establish what readers now see.
-
-## Keep the evidence behind the result
-
-To check the earlier 100%, we need more than today's delivery table:
-
-- **The inputs that run read.** Today's records include a late delivery that was absent at 12:05.
-- **The processing code it executed.** Today's query might use a different definition. A version label helps only if the corresponding code is still available.
-- **The records connecting run, result and report.** These establish which calculation supplied the displayed number.
-
-Running the original calculation against the retained 12:05 inputs reproduces 100%. Running it against the current inputs gives 66.7%. Different inputs explain the difference; we do not need to guess.
-
-Keeping evidence has a cost. Agree how far back the team needs to investigate reports, then retain the necessary data, code and records for that period. Existing stored versions may avoid making extra copies, provided they remain available.
-
-If the original inputs are deleted, a run record may still identify the source, but it cannot supply the missing rows. We can trace the result's recorded history without being able to reproduce its calculation.
+The records now connect the report to a specific calculation and its inputs. That is provenance for the displayed number. We have established why the saved result was 100%; [Chapter 4](04-outdated-reports.md) examines whether it was still current when readers saw it.
 
 ## Core points
 
-- **Lineage shows the route** from source data through processing to a report.
-- **A particular result needs particular evidence:** the run, inputs and code that produced it.
-- **Refreshing a report does not guarantee fresh data.** It may still read an older saved result.
-- **Reproducing a calculation requires retained inputs and code**, not just references to them.
-
-## Check your understanding
-
-The processing job succeeds at 13:10. Is that enough to say the report now shows 66.7%?
-
-<details class="further-detail" markdown="1">
-<summary>Show answer</summary>
-
-No. Check that the job used the updated inputs and saved the new result, then check that the report read that result. It could still be displaying the earlier 100%.
-
-</details>
-
-*Worked example: [The metadata behind an outdated report](../examples/lineage/walkthrough.md) shows the records that explain the displayed number, with each field and connection explained. No code execution is needed.*
+- **Lineage shows the route; provenance explains a result's history.** The terms overlap, but a dependency path alone does not identify the run behind a displayed number.
+- **Follow the report to its saved output, then to the producing run.** The matching identifiers connect the records.
+- **Check the run's inputs and code.** Today's data and calculation may differ from those that produced the result.

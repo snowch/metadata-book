@@ -62,12 +62,14 @@ def verify_lineage():
         assert db.execute(printed_query).fetchall() == trace
 
         # Check the displayed evidence against actual simulation records.
-        walkthrough = (path.parent / "walkthrough.md").read_text()
-        cards = re.findall(
-            r'<figure class="metadata-record" data-table="([a-z_]+)">(.*?)</figure>',
-            walkthrough, re.S,
-        )
-        assert len(cards) == 4, "Expected four metadata records in the worked example"
+        cards = []
+        for chapter, expected_count in [("03-following-lineage.md", 3), ("04-outdated-reports.md", 1)]:
+            chapter_cards = re.findall(
+                r'<figure class="metadata-record" data-table="([a-z_]+)">(.*?)</figure>',
+                (ROOT / "chapters" / chapter).read_text(), re.S,
+            )
+            assert len(chapter_cards) == expected_count, chapter
+            cards.extend(chapter_cards)
         keys = {"report_refreshes": "refresh_id", "outputs": "output_version", "runs": "run_id"}
         for table, body in cards:
             pairs = re.findall(r"<dt>(.*?)</dt><dd>(.*?)</dd>", body, re.S)

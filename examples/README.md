@@ -12,9 +12,9 @@ The four delivery records are invented. All timestamps share the format `YYYY-MM
 
 The verifier checks the catalogue queries and view result printed in Chapter 2, both denominators from Chapter 1, and the empty-input behaviour.
 
-## Investigate the report in Chapter 3
+## Investigate the report in Chapters 3–4
 
-The [worked example](lineage/walkthrough.md) shows the metadata records and explains how they resolve the investigation. No execution is required to read it. Its [lineage simulation](lineage/README.md) uses real SQLite tables for saved inputs, code versions, runs, published outputs and report refreshes. Run it with:
+[Chapter 3](../chapters/03-following-lineage.md) traces the original result, and [Chapter 4](../chapters/04-outdated-reports.md) explains the later publication failure and recovery. Both show the metadata records inline; no execution is required to read them. The supporting [lineage simulation](lineage/README.md) uses real SQLite tables for saved inputs, code versions, runs, published outputs and report refreshes. Run it with:
 
 ```sh
 python3 examples/lineage/simulate.py
@@ -24,6 +24,6 @@ It computes the earlier 100% result, injects a publication failure, and then rec
 
 The incident's times and fault are scripted. The program demonstrates the evidence and publication behaviour locally; it does not connect to a live scheduler, reporting tool, dbt or OpenLineage service. It does not send alerts or enforce the simulation reference's suggested retention policy.
 
-Chapters 4–6 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 7 proposes a platform pilot; its acceptance checks are instructions for a trial, not reported results from testing DataHub or OpenMetadata.
+Chapters 5–7 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 8 proposes a platform pilot; its acceptance checks are instructions for a trial, not reported results from testing DataHub or OpenMetadata.
 
 The SQL example runs natively for verification. A browser WASM database is not included; that would be a separate optional reading feature, subject to measuring its usefulness and loading cost.

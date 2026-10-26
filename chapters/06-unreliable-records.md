@@ -1,4 +1,4 @@
-# 5. When the records are unreliable
+# 6. When the records are unreliable
 
 A catalogue can contain accurate observations and still give a misleading picture. A scan may cover only part of a database. An event may arrive twice, or after a newer event. Two sources may disagree. Readers need to see what the evidence supports and where the answer remains uncertain.
 
@@ -17,7 +17,7 @@ A scheduler may resend a publication message if the catalogue does not acknowled
 <figure class="worked-example" markdown="1">
 <figcaption>Worked example · One delayed event and one repeated delivery</figcaption>
 
-These invented records concern production `delivery_summary` on 21 October 2026, a separate day from Chapter 3. All times are UTC. The scheduler gives each event a stable identifier. In this example, the summary table also has a version label naming the run that published it.
+These invented records concern production `delivery_summary` on 21 October 2026, a separate day from the incident in Chapters 3–4. All times are UTC. The scheduler gives each event a stable identifier. In this example, the summary table also has a version label naming the run that published it.
 
 | Record | What the source reports | Received by catalogue |
 |---|---|---|

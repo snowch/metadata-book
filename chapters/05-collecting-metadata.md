@@ -1,4 +1,4 @@
-# 4. Collecting metadata from several systems
+# 5. Collecting metadata from several systems
 
 The parcel company's database describes `deliveries`. Its scheduler records executions of `build_delivery_summary`. Service Analytics maintains the completed-delivery definition used by that job. A discovery catalogue brings those descriptions together so a reader can follow the connections established in Chapter 3.
 
@@ -21,7 +21,7 @@ Different collection methods answer different questions. A scheduled schema scan
 <figure class="worked-example" markdown="1">
 <figcaption>Worked example · Three records about one production summary</figcaption>
 
-This invented collection takes place on 20 October 2026, after the incident in Chapter 3. All times are UTC. Each record explicitly refers to the production `delivery_summary`.
+This invented collection takes place on 20 October 2026, after the incident in Chapters 3–4. All times are UTC. Each record explicitly refers to the production `delivery_summary`.
 
 | Record | Claim | Timing evidence |
 |---|---|---|

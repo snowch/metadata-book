@@ -45,7 +45,7 @@ Column names also need explanation. Does `delivered_at` record when a parcel rea
 
 A recorded definition helps readers understand what a number measures. It also reveals when similarly named metrics count different things and should not be compared directly.
 
-*Later in the book, [Chapter 7](07-choosing-a-platform.md) compares ways to store and maintain these definitions, from reviewed documents to a metadata catalogue.*
+*Later in the book, [Chapter 8](08-choosing-a-platform.md) compares ways to store and maintain these definitions, from reviewed documents to a metadata catalogue.*
 
 ## Check the calculation against the definition
 
@@ -66,6 +66,6 @@ A database already records some of the information that helps with this check: i
 
 In a real system, an empty delivery time might mean an update has not arrived yet. A parcel delivered at 12:50 could be recorded at 13:10. Its event time and the time the system learned about it are different.
 
-Reproducing what a report knew at 13:00 requires retained evidence, such as a timestamped snapshot or a change log. Reading the current table later may include information that was unavailable then. Chapter 3 uses captured inputs and execution records to investigate an older report.
+Reproducing what a report knew at 13:00 requires retained evidence, such as a timestamped snapshot or a change log. Reading the current table later may include information that was unavailable then. Chapters 3–4 use captured inputs and execution records to investigate an older report.
 
 </details>

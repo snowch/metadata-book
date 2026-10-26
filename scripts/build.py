@@ -16,8 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "_site"
 REQUIRED = ["book.md", "chapters/01-why-metadata.md",
             "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md",
-            "chapters/04-collecting-metadata.md", "chapters/05-unreliable-records.md",
-            "chapters/06-using-metadata.md", "chapters/07-choosing-a-platform.md"]
+            "chapters/04-outdated-reports.md", "chapters/05-collecting-metadata.md",
+            "chapters/06-unreliable-records.md", "chapters/07-using-metadata.md",
+            "chapters/08-choosing-a-platform.md"]
+REDIRECTS = {
+    "chapters/04-collecting-metadata.html": "chapters/05-collecting-metadata.html",
+    "chapters/05-unreliable-records.html": "chapters/06-unreliable-records.html",
+    "chapters/06-using-metadata.html": "chapters/07-using-metadata.html",
+    "chapters/07-choosing-a-platform.html": "chapters/08-choosing-a-platform.html",
+    "examples/lineage/walkthrough.html": "chapters/03-following-lineage.html",
+}
 
 
 def destination(source):
@@ -116,6 +124,28 @@ def check_links():
     return len(documents)
 
 
+def write_redirects():
+    for old, new in REDIRECTS.items():
+        page = Path(old)
+        target = escape(relative(Path(new), page), quote=True)
+        html = f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={target}">
+  <link rel="canonical" href="{target}">
+  <title>Page moved · Metadata systems</title>
+</head>
+<body>
+  <main><h1>This page has moved</h1><p><a href="{target}">Continue to the updated page</a>.</p></main>
+</body>
+</html>
+'''
+        (OUT / page).parent.mkdir(parents=True, exist_ok=True)
+        (OUT / page).write_text(html, encoding="utf-8")
+
+
 def build():
     for name in REQUIRED:
         if not (ROOT / name).is_file():
@@ -200,6 +230,7 @@ def build():
 '''
         (OUT / page).parent.mkdir(parents=True, exist_ok=True)
         (OUT / page).write_text(html, encoding="utf-8")
+    write_redirects()
     (OUT / ".nojekyll").touch()
     print(f"Built {check_links()} pages in {OUT}; all local links and anchors resolve.")
 
