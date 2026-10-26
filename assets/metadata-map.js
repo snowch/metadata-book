@@ -17,6 +17,8 @@
   const paneTabs = root.querySelector('.map-section-tabs');
   const paneButtons = [...paneTabs.querySelectorAll('[data-pane]')];
   const selection = root.querySelector('.map-selection');
+  let focusNodes = new Map();
+  const focusLayer = root.querySelector('.map-focus-nodes');
   const svg = root.querySelector('.map-connections');
   const viewport = root.querySelector('.map-viewport');
   const canvas = root.querySelector('.map-canvas');
@@ -99,7 +101,7 @@
         } else paneTabs.scrollIntoView({block: 'start'});
       }
       if (focusContent) {
-        const target = pane === 'map' ? nodes.get(selected).querySelector('[data-select-record]') : panel.querySelector('h2');
+        const target = pane === 'map' ? (view === 'map' ? focusNodes.get(selected).querySelector('[data-focus-record]') : nodes.get(selected).querySelector('[data-select-record]')) : panel.querySelector('h2');
         target.focus({preventScroll: compact.matches});
       }
     });
@@ -153,6 +155,32 @@
     panel.scrollTop = 0;
   }
 
+  function renderFocus() {
+    const related = new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
+    focusLayer.replaceChildren();
+    focusNodes = new Map();
+    related.forEach(id => {
+      const node = nodes.get(id).cloneNode(true);
+      node.className = 'map-focus-node';
+      node.classList.toggle('is-selected', id === selected);
+      node.classList.toggle('is-chapter', chapter !== 'all' && chapterMatch(id));
+      delete node.dataset.node;
+      node.dataset.focusNode = id;
+      const button = node.querySelector('[data-select-record]');
+      button.dataset.focusRecord = id;
+      delete button.dataset.selectRecord;
+      button.className = 'map-focus-select';
+      button.removeAttribute('aria-pressed');
+      if (id === selected) {
+        button.prepend(element('span', 'Selected record type', 'map-focus-kicker'));
+        button.append(element('span', 'View example and fields →', 'map-focus-description'));
+        button.setAttribute('aria-label', `View record: ${records.get(id).label}`);
+      }
+      focusLayer.append(node);
+      focusNodes.set(id, node);
+    });
+  }
+
   function renderSummary() {
     summary.replaceChildren();
     const edges = relationships();
@@ -173,16 +201,15 @@
     if (!edges.length) list.append(element('li', 'Select a related record type in the details to continue exploring.'));
     summary.append(list);
     summary.hidden = false;
+    summary.parentElement.hidden = false;
   }
 
   function updateNodes() {
-    const connected = new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
     selection.querySelector('.map-selection-label').textContent = records.get(selected).label;
     selection.querySelector('button').setAttribute('aria-label', `View record: ${records.get(selected).label}`);
     nodes.forEach((node, id) => {
       const matching = chapterMatch(id);
       node.classList.toggle('is-selected', id === selected);
-      node.classList.toggle('is-unrelated', !connected.has(id));
       node.classList.toggle('is-chapter', chapter !== 'all' && matching);
       node.classList.toggle('is-outside-chapter', chapter !== 'all' && !matching);
       const button = node.querySelector('[data-select-record]');
@@ -202,17 +229,24 @@
     currentTab = 'example';
     updateNodes();
     renderDetail();
+    renderFocus();
     renderSummary();
     scheduleDraw();
     saveState();
     applyPane();
     if (intentional && focusDetail) showPane('details', true);
+    else if (intentional && view === 'map') requestAnimationFrame(() => {
+      focusNodes.get(selected).querySelector('[data-focus-record]').focus({preventScroll: true});
+      viewport.scrollIntoView({block: 'nearest'});
+    });
   }
 
   function applyView() {
     root.dataset.view = view;
     root.querySelectorAll('[data-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === view)));
     zoomControls.hidden = view !== 'map';
+    viewport.hidden = view !== 'map';
+    summary.parentElement.open = view === 'list';
     viewport.setAttribute('aria-label', view === 'map' ? 'Record map. Scroll to explore the diagram.' : 'Records grouped by purpose');
     if (view === 'map') viewport.tabIndex = 0; else viewport.removeAttribute('tabindex');
     scheduleDraw();
@@ -221,14 +255,14 @@
   function draw() {
     if (view !== 'map' || explorer.hidden) return;
     // Keep labels readable at normal zoom; narrower screens can scroll or use the list.
-    canvas.style.width = `${Math.max(840, viewport.clientWidth - 2)}px`;
+    canvas.style.width = `${Math.max(760, viewport.clientWidth - 2)}px`;
+    window.layoutMetadataFocus(svg, canvas, focusNodes, relationships(), selected);
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
     if (fitToWidth) scale = Math.max(.25, Math.min(1, (viewport.clientWidth - 2) / width));
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
-    if (window.drawMetadataConnections) window.drawMetadataConnections(svg, canvas, nodes, relationships(), scale, chapterMatch, chapter);
     root.querySelector('.map-zoom-value').textContent = `${Math.round(scale * 100)}%`;
   }
 
@@ -248,10 +282,12 @@
     link.replaceWith(button);
   });
   root.addEventListener('click', event => {
-    const target = event.target.closest('[data-select-record], [data-record-target]');
+    const target = event.target.closest('[data-select-record], [data-record-target], [data-focus-record]');
     if (target && root.contains(target)) {
       event.preventDefault();
-      selectRecord(target.dataset.selectRecord || target.dataset.recordTarget, true, Boolean(target.closest('.map-detail')));
+      const id = target.dataset.selectRecord || target.dataset.recordTarget || target.dataset.focusRecord;
+      if (target.dataset.focusRecord === selected) showPane('details', true);
+      else selectRecord(id, true, Boolean(target.closest('.map-detail')));
     }
   });
   selection.querySelector('button').addEventListener('click', () => showPane('details', true));

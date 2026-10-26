@@ -14,26 +14,36 @@ Thread(target=server.serve_forever,daemon=True).start()
 base=f'http://127.0.0.1:{server.server_port}/'
 data=json.loads((ROOT / 'assets/metadata-map.json').read_text())
 GEOMETRY_CHECK = r"""() => {
-    const svg=document.querySelector('.map-connections'),canvas=document.querySelector('.map-canvas');
-    const bounds=canvas.getBoundingClientRect(),scale=bounds.width/canvas.offsetWidth;
-    const box=el=>{const r=el.getBoundingClientRect();return {left:(r.left-bounds.left)/scale,right:(r.right-bounds.left)/scale,top:(r.top-bounds.top)/scale,bottom:(r.bottom-bounds.top)/scale}};
-    const cards=[...document.querySelectorAll('.map-node')].map(el=>({id:el.dataset.node,...box(el)}));
-    const headings=[...document.querySelectorAll('.map-group > h2')].map(box);
-    const labels=[...svg.querySelectorAll('.map-connection-label')].map(el=>({from:el.dataset.from,to:el.dataset.to,...box(el)}));
-    const cross=(a,b,r)=>Math.abs(a.y-b.y)<.1?a.y>r.top+.1&&a.y<r.bottom-.1&&Math.max(a.x,b.x)>r.left+.1&&Math.min(a.x,b.x)<r.right-.1:a.x>r.left+.1&&a.x<r.right-.1&&Math.max(a.y,b.y)>r.top+.1&&Math.min(a.y,b.y)<r.bottom-.1;
-    const overlap=(a,b)=>a.left<b.right-.1&&a.right>b.left+.1&&a.top<b.bottom-.1&&a.bottom>b.top+.1;
-    let problems=[];
-    for(const path of svg.querySelectorAll('.map-connection')) {
-      const values=path.getAttribute('d').match(/-?[\d.]+/g).map(Number),points=[];
-      for(let i=0;i<values.length;i+=2)points.push({x:values[i],y:values[i+1]});
-      for(let i=1;i<points.length;i++) {
-        for(const card of [...cards,...headings])if(cross(points[i-1],points[i],card))problems.push('path crosses '+(card.id||'heading'));
-        for(const label of labels)if((label.from!==path.dataset.from||label.to!==path.dataset.to)&&cross(points[i-1],points[i],label))problems.push('path crosses label');
-      }
-    }
-    for(const label of labels)for(const obstacle of [...cards,...headings,...labels.filter(other=>other!==label)])if(overlap(label,obstacle))problems.push('label overlap '+(obstacle.id||'other'));
-    return {paths:svg.querySelectorAll('.map-connection').length,labels:labels.length,problems};
-  }"""
+ const svg=document.querySelector('.map-connections'),canvas=document.querySelector('.map-canvas');
+ const bounds=canvas.getBoundingClientRect(),scale=bounds.width/canvas.offsetWidth;
+ const box=el=>{const r=el.getBoundingClientRect();return {left:(r.left-bounds.left)/scale,right:(r.right-bounds.left)/scale,top:(r.top-bounds.top)/scale,bottom:(r.bottom-bounds.top)/scale}};
+ const cards=[...canvas.querySelectorAll('.map-focus-node')].map(el=>({id:el.dataset.focusNode,...box(el)}));
+ const labels=[...svg.querySelectorAll('.map-connection-label')].map(el=>({from:el.dataset.from,to:el.dataset.to,...box(el)}));
+ const inside=(p,r)=>p.x>r.left+.2&&p.x<r.right-.2&&p.y>r.top+.2&&p.y<r.bottom-.2;
+ const overlap=(a,b)=>a.left<b.right-.2&&a.right>b.left+.2&&a.top<b.bottom-.2&&a.bottom>b.top+.2;
+ const onBoundary=(p,r)=>p.x>=r.left-.3&&p.x<=r.right+.3&&p.y>=r.top-.3&&p.y<=r.bottom+.3&&!inside(p,r);
+ const paths=[...svg.querySelectorAll('.map-connection')],samples=[],problems=[];
+ for(const path of paths){
+  const length=path.getTotalLength(),points=[];
+  for(let t=0;t<=length;t+=2){
+   const point=path.getPointAtLength(t);points.push(point);
+   for(const card of cards)if(inside(point,card))problems.push('path enters '+card.id);
+   for(const label of labels)if((label.from!==path.dataset.from||label.to!==path.dataset.to)&&inside(point,label))problems.push('path enters another label');
+  }
+  points.push(path.getPointAtLength(length));samples.push(points);
+  if(!onBoundary(points[0],cards.find(c=>c.id===path.dataset.from)))problems.push('wrong source');
+  if(!onBoundary(points[points.length-1],cards.find(c=>c.id===path.dataset.to)))problems.push('wrong target');
+ }
+ const orient=(a,b,c)=>(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);
+ for(let i=0;i<samples.length;i++)for(let j=i+1;j<samples.length;j++){
+  const a=samples[i],b=samples[j];
+  for(let x=1;x<a.length;x++)for(let y=1;y<b.length;y++){
+   if(orient(a[x-1],a[x],b[y-1])*orient(a[x-1],a[x],b[y])<-.001&&orient(b[y-1],b[y],a[x-1])*orient(b[y-1],b[y],a[x])<-.001)problems.push('arrows cross');
+  }
+ }
+ for(const label of labels)for(const obstacle of [...cards,...labels.filter(other=>other!==label)])if(overlap(label,obstacle))problems.push('label overlap');
+ return {paths:paths.length,labels:labels.length,problems};
+}"""
 errors=[]
 with sync_playwright() as p:
  browser=p.chromium.launch()
@@ -80,25 +90,9 @@ with sync_playwright() as p:
   expect(page.locator('.map-connection')).to_have_count(len(expected_edges))
   actual=page.locator('.map-connection').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
   assert sorted(actual)==sorted([[e['from'],e['to']] for e in expected_edges])
-  if record['id'] in ('responsible-team','metric-definition'):
-   owned_by=page.locator('.map-connection[data-from="metric-definition"][data-to="responsible-team"]')
-   points=owned_by.evaluate("el=>el.getAttribute('d').match(/-?[\\d.]+/g).map(Number)")
-   assert len(points)==4 and abs(points[0]-points[2])<.1,('ownership should be straight',points)
-  if record['id']=='metric-definition':
-   shared=page.locator('.map-connection').evaluate_all(r"""els=>{
-    const segments=el=>{const v=el.getAttribute('d').match(/-?[\d.]+/g).map(Number),s=[];for(let i=2;i<v.length;i+=2)s.push([v[i-2],v[i-1],v[i],v[i+1]]);return s};
-    let longest=0;
-    for(let i=0;i<els.length;i++)for(let j=i+1;j<els.length;j++)for(const a of segments(els[i]))for(const b of segments(els[j])){
-     const horizontal=Math.abs(a[1]-a[3])<.1;
-     if(horizontal!==(Math.abs(b[1]-b[3])<.1))continue;
-     const k=horizontal?0:1,other=horizontal?1:0;
-     if(Math.abs(a[other]-b[other])>.1)continue;
-     longest=Math.max(longest,Math.min(Math.max(a[k],a[k+2]),Math.max(b[k],b[k+2]))-Math.max(Math.min(a[k],a[k+2]),Math.min(b[k],b[k+2])));
-    }return longest;
-   }""")
-   assert shared<=14.1,('connections must not share a long stretch of line',shared)
   connected={record['id']}|{e[k] for e in expected_edges for k in ('from','to')}
-  assert page.locator('.map-node.is-unrelated').count()==15-len(connected)
+  assert page.locator('.map-focus-node').count()==len(connected)
+  assert page.locator('.map-overview .map-node').count()==15
   geometry=page.evaluate(GEOMETRY_CHECK)
   assert geometry['labels']==len(expected_edges) and not geometry['problems'],(record['id'],geometry)
  for chapter in data['chapters']:
@@ -139,7 +133,7 @@ with sync_playwright() as p:
     assert not page.locator('.map-explorer').is_visible()
     assert 'panel=details' in page.url
     page.locator('.map-back-to-records').click()
-    expect(page.locator('[data-select-record="report-refresh"]')).to_be_focused()
+    expect(page.locator('[data-focus-record="report-refresh"]')).to_be_focused()
     assert page.locator('.map-zoom-value').inner_text()==zoom
     assert page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')==scroll_left
     page.locator('button[data-pane="map"]').press('ArrowRight')
@@ -158,6 +152,10 @@ with sync_playwright() as p:
    expect(page.locator('.map-connection')).to_have_count(7)
    geometry=page.evaluate(GEOMETRY_CHECK)
    assert geometry['labels']==7 and not geometry['problems'],(width,scheme,geometry)
+   assert page.locator('.map-canvas').evaluate('(el)=>el.offsetHeight')<=650
+   page.locator('[data-focus-record="column"]').click()
+   assert page.locator('.map-selection-label').inner_text()=='Column'
+   assert page.locator('.map-focus-node').count()==2
    page.goto(base+'index.html')
    assert page.locator('.reader-action').is_visible()
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'contents')
@@ -181,6 +179,7 @@ with sync_playwright() as p:
  edges=page.locator('.map-relationship-summary li')
  produced=edges.filter(has=page.locator('.map-relationship-verb',has_text='produced by'))
  assert produced.locator('a').all_text_contents()==['Published output','Run']
+ page.locator('.map-relationship-text > summary').click()
  produced.locator('a').last.click()
  assert page.locator('.map-detail h2').inner_text()=='Run'
  page.emulate_media(media='print')
