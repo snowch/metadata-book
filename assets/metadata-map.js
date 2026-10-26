@@ -15,7 +15,6 @@
   const viewport = root.querySelector('.map-viewport');
   const canvas = root.querySelector('.map-canvas');
   const frame = root.querySelector('.map-scale-frame');
-  const svg = root.querySelector('.map-connections');
   const filter = root.querySelector('#map-chapter-filter');
   const status = root.querySelector('.map-status');
   const summary = root.querySelector('.map-relationship-summary');
@@ -31,7 +30,6 @@
   let scale = 1;
   let currentTab = 'example';
   let drawPending = false;
-  const ns = 'http://www.w3.org/2000/svg';
   const trace = [['report-refresh', 'published-output', 'reads'], ['published-output', 'run', 'produced by'], ['run', 'input-snapshot', 'read'], ['run', 'code-version', 'executed']];
   const traceNodes = new Set(trace.flatMap(edge => edge.slice(0, 2)));
 
@@ -97,7 +95,14 @@
       tablist.append(button);
     }
     chooseTab(currentTab);
-    panel.replaceChildren(content);
+    const backToRecords = element('button', '← Back to records', 'map-back-to-records');
+    backToRecords.type = 'button';
+    backToRecords.addEventListener('click', () => {
+      const button = nodes.get(selected).querySelector('[data-select-record]');
+      button.focus({preventScroll: true});
+      button.scrollIntoView({block: 'center', inline: 'nearest'});
+    });
+    panel.replaceChildren(backToRecords, content);
     panel.hidden = false;
     panel.scrollTop = 0;
   }
@@ -108,12 +113,13 @@
     const explanation = traceNodes.has(selected)
       ? 'Report provenance: follow matching identifiers from the refresh to its output, run, inputs and code.'
       : 'Record-type relationships: these associations may refer to different examples.';
+    summary.append(element('h2', traceNodes.has(selected) ? 'Follow the report’s evidence' : `Connections · ${records.get(selected).label}`));
     summary.append(element('p', explanation));
     const list = element('ul');
     edges.forEach(edge => {
       const item = element('li');
-      for (const [id, prefix] of [[edge.from, ''], [edge.to, ` — ${edge.label} → `]]) {
-        if (prefix) item.append(document.createTextNode(prefix));
+      for (const [id, prefix] of [[edge.from, ''], [edge.to, `${edge.label} →`]]) {
+        if (prefix) item.append(element('span', prefix, 'map-relationship-verb'));
         const link = element('a', records.get(id).label);
         link.href = `#record-${id}`;
         link.dataset.recordTarget = id;
@@ -138,8 +144,8 @@
     });
     const count = data.records.filter(record => chapterMatch(record.id)).length;
     status.textContent = chapter === 'all'
-      ? `All ${data.records.length} record types shown. Selected: ${records.get(selected).label}.`
-      : `${count} of ${data.records.length} record types highlighted for Chapter ${chapter}. All records remain available. Selected: ${records.get(selected).label}.`;
+      ? `${data.records.length} record types · Selected: ${records.get(selected).label}`
+      : `Chapter ${chapter}: ${count} highlighted · Selected: ${records.get(selected).label}`;
     filter.value = chapter;
   }
 
@@ -152,7 +158,7 @@
     renderSummary();
     scheduleDraw();
     saveState();
-    const belowExplorer = window.matchMedia('(max-width: 1100px)').matches;
+    const belowExplorer = window.matchMedia('(max-width: 1199px)').matches;
     if (intentional && (belowExplorer || focusDetail)) {
       requestAnimationFrame(() => {
         if (belowExplorer) panel.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
@@ -170,72 +176,15 @@
     scheduleDraw();
   }
 
-  function svgElement(tag, attrs) {
-    const node = document.createElementNS(ns, tag);
-    Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
-    return node;
-  }
-
   function draw() {
     if (view !== 'map') return;
+    // Keep labels readable at normal zoom; narrower screens can scroll or use the list.
+    canvas.style.width = `${Math.max(660, viewport.clientWidth - 2)}px`;
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
-    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-    svg.replaceChildren();
-    const defs = svgElement('defs', {});
-    for (const [id, className] of [['map-arrow', 'map-arrow'], ['map-arrow-chapter', 'map-arrow-chapter']]) {
-      const marker = svgElement('marker', {id, viewBox: '0 0 8 8', refX: '7', refY: '4', markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse'});
-      marker.append(svgElement('path', {d: 'M 0 0 L 8 4 L 0 8 z', class: className}));
-      defs.append(marker);
-    }
-    svg.append(defs);
-    const canvasRect = canvas.getBoundingClientRect();
-    const box = id => {
-      const rect = nodes.get(id).getBoundingClientRect();
-      return {x: (rect.left - canvasRect.left) / scale, y: (rect.top - canvasRect.top) / scale, w: rect.width / scale, h: rect.height / scale};
-    };
-    relationships().forEach((edge, index) => {
-      const from = box(edge.from), to = box(edge.to);
-      const dx = to.x + to.w / 2 - from.x - from.w / 2;
-      const dy = to.y + to.h / 2 - from.y - from.h / 2;
-      let sx, sy, tx, ty, path, lx, ly;
-      const differentGroups = records.get(edge.from).group !== records.get(edge.to).group;
-      if (differentGroups && Math.abs(dy) > 120) {
-        // Long associations use the outer margin rather than crossing record cards.
-        sx = from.x + from.w / 2;
-        sy = dy < 0 ? from.y - 3 : from.y + from.h + 3;
-        tx = to.x + to.w / 2;
-        ty = to.y - 5;
-        const sourceLane = dy < 0 ? from.y - 12 : from.y + from.h + 12;
-        const targetLane = to.y - 12;
-        const outerLane = width - 8 - index * 5;
-        path = `M ${sx} ${sy} L ${sx} ${sourceLane} L ${outerLane} ${sourceLane} L ${outerLane} ${targetLane} L ${tx} ${targetLane} L ${tx} ${ty}`;
-        lx = (outerLane + tx) / 2; ly = targetLane - 4;
-      } else if (Math.abs(dx) > 100) {
-        sx = dx > 0 ? from.x + from.w + 3 : from.x - 3;
-        sy = from.y + from.h / 2;
-        tx = dx > 0 ? to.x - 5 : to.x + to.w + 5;
-        ty = to.y + to.h / 2;
-        const middle = (sx + tx) / 2;
-        path = `M ${sx} ${sy} C ${middle} ${sy}, ${middle} ${ty}, ${tx} ${ty}`;
-        lx = middle; ly = (sy + ty) / 2 - 7 - (index % 2) * 2;
-      } else {
-        sx = from.x + from.w / 2; tx = to.x + to.w / 2;
-        sy = dy > 0 ? from.y + from.h + 3 : from.y - 3;
-        ty = dy > 0 ? to.y - 5 : to.y + to.h + 5;
-        const middle = (sy + ty) / 2;
-        path = `M ${sx} ${sy} C ${sx} ${middle}, ${tx} ${middle}, ${tx} ${ty}`;
-        lx = (sx + tx) / 2 + 30; ly = middle - 3;
-      }
-      const highlighted = chapter !== 'all' && chapterMatch(edge.from) && chapterMatch(edge.to);
-      svg.append(svgElement('path', {d: path, class: `map-connection${highlighted ? ' is-chapter' : ''}`, 'marker-end': `url(#${highlighted ? 'map-arrow-chapter' : 'map-arrow'})`}));
-      const label = svgElement('text', {x: lx, y: ly, class: `map-connection-label${highlighted ? ' is-chapter' : ''}`});
-      label.textContent = edge.label;
-      svg.append(label);
-    });
     root.querySelector('.map-zoom-value').textContent = `${Math.round(scale * 100)}%`;
   }
 

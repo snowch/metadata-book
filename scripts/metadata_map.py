@@ -67,7 +67,7 @@ def render_map(data):
                 continue
             primary = next((chapter for chapter in record['chapters'] if chapter['number'] == record['primaryChapter']), record['chapters'][0])
             nodes.append(f'''<article class="map-node" data-node="{_e(record['id'])}">
-              <a class="map-node-select" href="#record-{_e(record['id'])}" data-select-record="{_e(record['id'])}"><span>{_e(record['label'])}</span><span class="map-node-action">View record <span aria-hidden="true">↗</span></span></a>
+              <a class="map-node-select" href="#record-{_e(record['id'])}" data-select-record="{_e(record['id'])}"><span>{_e(record['label'])}</span></a>
               <a class="map-chapter-badge" href="{_e(primary['href'])}" title="Main chapter: {_e(primary['label'])}" aria-label="Read about {_e(record['label'])} in Chapter {_e(primary['number'])}">Ch. {_e(primary['number'])}</a>
             </article>''')
         groups.append(f'<section class="map-group" data-group="{_e(group["id"])}"><h2>{_e(group["title"])}</h2><div class="map-group-nodes">{"".join(nodes)}</div></section>')
@@ -76,7 +76,7 @@ def render_map(data):
     safe_json = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return f'''<section class="metadata-map" aria-label="Interactive metadata map">
       <a class="map-return" hidden></a>
-      <p class="map-explainer">These are <strong>relationships between metadata record types</strong>, not a processing order or a physical database schema. Main-chapter badges open the relevant section. Examples are labelled by their evidence.</p>
+      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. Select one to see its connections and an example. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
       <div class="map-controls" hidden>
         <div class="map-filter"><label for="map-chapter-filter">Highlight chapter</label><select id="map-chapter-filter"><option value="all">Show all chapters</option>{chapter_options}</select></div>
         <div class="map-view-switch" role="group" aria-label="Record display"><button type="button" data-view="map" aria-pressed="false">Map</button><button type="button" data-view="list" aria-pressed="false">Record list</button></div>
@@ -85,9 +85,9 @@ def render_map(data):
       <div class="map-workspace">
         <div class="map-explorer">
           <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div>
-          <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><svg class="map-connections" aria-hidden="true"></svg><div class="map-groups">{''.join(groups)}</div></div></div></div>
+          <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><div class="map-groups">{''.join(groups)}</div></div></div></div>
           <div class="map-relationship-summary" hidden></div>
-          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Arrows describe the selected record’s relationships.</span></p>
+          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Chapter badges open the explanation.</span></p>
         </div>
         <aside class="map-detail" aria-label="Selected record details" hidden></aside>
       </div>

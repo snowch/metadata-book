@@ -4,6 +4,15 @@ Understand what your data means, where it came from, and how much you can trust 
 
 This book is for software and data engineers who can read a table and a simple SQL query. It follows a parcel-delivery company from a disputed percentage to the decisions involved in running a metadata system. Every result needed to follow the explanation is included on the page. There is nothing to install before reading.
 
+<aside class="reader-action" aria-labelledby="before-you-start">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="before-you-start">Before you start</p>
+<p><a href="metadata-map.md"><strong>Open the Metadata map</strong></a> for an overview of the book. Select a record to inspect its example values and fields. Select its chapter badge to read the explanation.</p>
+<p>Return using the header’s <strong>Metadata map</strong> button as you read; it highlights your current chapter.</p>
+</div>
+</aside>
+
 ## Contents
 
 1. [What the data cannot tell you](chapters/01-why-metadata.md) — decide what a number should mean and record that decision.
@@ -14,8 +23,6 @@ This book is for software and data engineers who can read a table and a simple S
 6. [When the records are unreliable](chapters/06-unreliable-records.md) — handle missing, repeated, late and conflicting observations.
 7. [Using metadata to make decisions](chapters/07-using-metadata.md) — choose a suitable dataset and investigate the effects of a proposed change.
 8. [Choosing and operating a metadata platform](chapters/08-choosing-a-platform.md) — test a platform against useful tasks and plan the work of keeping it reliable.
-
-Use the [Metadata map](metadata-map.md) to explore the record types and jump to their explanations. The header button opens it with your current chapter highlighted.
 
 ## How to read
 

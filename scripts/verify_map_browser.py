@@ -70,6 +70,8 @@ with sync_playwright() as p:
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,scheme)
    assert page.locator('.header-map').is_visible()
    page.evaluate('document.fonts.ready')
+   if width >= 768:
+    assert page.locator('.map-canvas').bounding_box()['height'] < 700,(width,'compact overview')
    page.locator('button[data-view="map"]').click()
    page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text('110%')
    page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text('100%')
@@ -77,6 +79,15 @@ with sync_playwright() as p:
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'zoom')
    page.locator('[data-select-record="report-refresh"]').press('Enter')
    assert page.locator('.map-detail h2').inner_text()=='Report refresh'
+   if width < 1200:
+    page.locator('.map-back-to-records').click()
+    expect(page.locator('[data-select-record="report-refresh"]')).to_be_focused()
+   page.goto(base+'index.html')
+   assert page.locator('.reader-action').is_visible()
+   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'contents')
+   page.locator('.reader-action a').click()
+   page.wait_for_selector('.metadata-map.is-ready')
+   assert page.locator('#map-chapter-filter').input_value()=='all'
  page.goto(base+'metadata-map.html#record-column')
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Column'
@@ -90,6 +101,13 @@ with sync_playwright() as p:
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('#map-chapter-filter').input_value()=='all'
  assert not page.locator('.map-return').is_visible()
+ page.locator('[data-select-record="report-refresh"]').click()
+ edges=page.locator('.map-relationship-summary li')
+ assert edges.count()==4
+ assert edges.nth(1).locator('a').all_text_contents()==['Published output','Run']
+ assert edges.nth(1).locator('.map-relationship-verb').inner_text()=='produced by →'
+ edges.nth(1).locator('a').last.click()
+ assert page.locator('.map-detail h2').inner_text()=='Run'
  page.emulate_media(media='print')
  assert page.locator('.map-fallback').is_visible()
  page.close()

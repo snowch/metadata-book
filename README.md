@@ -32,7 +32,7 @@ Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8
 
 ## Metadata map
 
-The header links to a [visual index](metadata-map.md), highlighting the originating chapter. Its map and record-list views show field explanations, examples and section links. The mobile default is the record list; without JavaScript, the records remain readable.
+The header links to a [visual index](metadata-map.md), highlighting the originating chapter. Its compact map and record-list views show field explanations, examples and section links. Selecting a record shows its connections as clickable paths beneath the overview. A blue “Before you start” panel on the contents page introduces these controls. The mobile default is the record list; without JavaScript, the records remain readable.
 
 The map uses local HTML, CSS and JavaScript with no third-party runtime or network requests. Its illustrative model lives in `assets/metadata-map.json`; computed examples are checked against SQLite. Only the map page loads its interactive code.
 
