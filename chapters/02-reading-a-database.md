@@ -80,9 +80,25 @@ The on-time comparison uses timestamps stored as text in the same fixed UTC form
 
 ## Two jobs for a catalogue
 
-The word **catalogue** covers different jobs. A database or query-engine catalogue helps software find and read data. SQLite's schema records serve this purpose. [Hive Metastore](https://hive.apache.org/development/designdocs/design/#metastore) also describes table schemas, partitions—groups such as one day's deliveries—storage locations and file formats. It connects table names to stored data, rather than simply listing files.
+The word **catalogue** covers different jobs.
 
-A **discovery and governance catalogue**, such as DataHub or OpenMetadata, helps people find, understand and manage data. It connects technical records with definitions, responsible teams and lineage. These roles overlap: a database catalogue can also hold comments or ownership information. The distinction is their main purpose, not a strict division between technical and business metadata.
+<div class="definition-box" markdown="1">
+
+**Database or query-engine catalogue**
+
+Helps software find and read data. SQLite's schema records serve this purpose. [Hive Metastore](https://hive.apache.org/development/designdocs/design/#metastore) also describes table schemas, partitions—groups such as one day's deliveries—storage locations and file formats. It connects table names to stored data, rather than simply listing files.
+
+</div>
+
+<div class="definition-box" markdown="1">
+
+**Discovery and governance catalogue**
+
+Helps people find, understand and manage data. Tools such as DataHub and OpenMetadata connect technical records with definitions, responsible teams and lineage.
+
+</div>
+
+These roles overlap: a database catalogue can also hold comments or ownership information. The distinction is their main purpose, not a strict division between technical and business metadata.
 
 [Chapter 4](04-collecting-metadata.md) shows how a discovery catalogue collects descriptions from other systems. Those descriptions are data in the catalogue and metadata about the source.
 

@@ -89,6 +89,10 @@ summary { cursor: pointer; }
 .worked-example p { font-size: 1.15rem; line-height: 1.6; }
 .worked-example > :last-child { margin-bottom: 0; }
 .worked-example .table-scroll { margin-block: 1.1rem; }
+.definition-box { margin: 1.25rem 0; padding: 1.1rem 1.3rem; background: var(--wash); border: 1px solid var(--line); break-inside: avoid; }
+.definition-box p { margin: .75rem 0; font-size: 1.15rem; line-height: 1.6; }
+.definition-box > p:first-child { margin-top: 0; font: 600 .85rem/1.5 var(--sans); }
+.definition-box > :last-child { margin-bottom: 0; }
 .table-scroll { max-width: 100%; overflow-x: auto; margin-block: 1.6rem; }
 table { width: 100%; border-collapse: collapse; font: .8rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 th, td { padding: .8rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
@@ -195,7 +199,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .chapter-meta { margin-bottom: 1rem; }
   h1 { font-size: 30pt; }
   .chapter-number { font-size: 50pt; }
-  .prose, .prose > p:first-child, .worked-example p { font-size: 11pt; line-height: 1.45; }
+  .prose, .prose > p:first-child, .worked-example p, .definition-box p { font-size: 11pt; line-height: 1.45; }
   h2 { font-size: 18pt; }
   h2, h3, figcaption { break-after: avoid; }
   .prose .key-principle { font-size: 15pt; }
