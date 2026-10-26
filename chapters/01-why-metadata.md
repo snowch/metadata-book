@@ -28,16 +28,21 @@ The disagreement comes from the denominator: the total number of deliveries incl
 
 Suppose Delivery Operations uses the second definition: of all deliveries promised by noon, what proportion arrived on time? A useful definition would record:
 
-| Property | Recorded definition |
-|---|---|
-| Measure | Percentage of deliveries due that arrived on time |
-| Counts as on time | Delivered at or before the promised time |
-| Denominator | All deliveries due by noon, including those not yet delivered |
-| Measured at | 13:00 UTC on the reporting date |
-| Responsible team | Delivery Operations |
-| Source | The `deliveries` table |
+<figure class="metadata-record">
+<figcaption><span class="record-kind">Metric definition</span><span class="record-source">Decision by Delivery Operations</span></figcaption>
+<dl>
+<div><dt>Measure</dt><dd>Percentage of deliveries due that arrived on time</dd></div>
+<div><dt>Counts as on time</dt><dd>Delivered at or before the promised time</dd></div>
+<div class="record-focus"><dt>Denominator</dt><dd><strong>All deliveries due by noon, including those not yet delivered</strong></dd></div>
+<div><dt>Measured at</dt><dd>13:00 UTC on the reporting date</dd></div>
+<div><dt>Responsible team</dt><dd>Delivery Operations</dd></div>
+<div><dt>Source</dt><dd>The <code>deliveries</code> table</dd></div>
+</dl>
+</figure>
 
-For our four parcels, using this definition gives 50.0%. Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
+<p class="evidence-reading"><strong>What this tells us</strong> All four parcels belong in the denominator, including the unfinished delivery. Two arrived on time, so the defined measure gives 50.0%.</p>
+
+Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
 
 The definition should name the team that can explain what the metric means—for example, Delivery Operations.
 

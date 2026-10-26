@@ -1,52 +1,60 @@
 # 8. Choosing and operating a metadata platform
 
-A metadata platform should help a team complete a task it currently struggles with. Start with that task and a small body of evidence.
+A metadata platform should help a team complete a task it currently struggles with. Start with a small collection whose answers are known, then judge what a reader can establish.
 
-## Set a small pilot
+## Define a bounded pilot
 
-Give the reporting engineer and a Delivery Operations reviewer one week to answer two questions: which measure belongs in the operations meeting, and why did Delivery performance show 100% at 13:00 on 19 October?
+Consider a one-week pilot for the reporting engineer and a Delivery Operations reviewer. Its two questions are concrete: which measure belongs in the operations meeting, and why did Delivery performance show 100% at 13:00 on 19 October?
 
-Use the definitions, `deliveries` and `on_time_completed` structure, the `build_delivery_summary` dependency path, and the incident's run, publication and refresh records. Include references to the retained inputs. These are a deliberately small collection with known answers: the meeting requires the all-due rule, while the incident report read `summary-R1205` after a later run failed.
+Include both definitions, the `deliveries` and `on_time_completed` structure, the `build_delivery_summary` dependency path, and the incident's run, publication and refresh records. Preserve references to retained inputs and code. The expected answers are the all-due rule, giving 50.0% for the four parcels, and a refresh that read `summary-R1205` after a later run failed.
 
-Try the investigation with a repository of reviewed documents and a few SQLite tables, then assess whether DataHub or OpenMetadata would solve a problem encountered during that investigation. No installation is needed to follow this chapter. The [DataHub documentation](https://docs.datahub.com/docs/) and [OpenMetadata documentation](https://docs.open-metadata.org/) describe current capabilities; verify support for the exact source and version you need.
+The assessment below is **an invented teaching outcome**, showing how a completed pilot could inform a decision. It does not report a real pilot or tests of DataHub or OpenMetadata.
 
-## Test what the reader can establish
+## Read the assessment
+
+In this scenario, reviewed documents and SQLite records sit behind the team's existing access controls. A reviewer who did not assemble them follows the evidence.
 
 <figure class="worked-example" markdown="1">
-<figcaption>Worked example · Acceptance checks for the parcel pilot</figcaption>
+<figcaption>Illustrative pilot assessment · Observations and gaps</figcaption>
 
-| Task | Pass condition |
+| Check | Recorded outcome |
 |---|---|
-| Choose the meeting measure | The reviewer finds both denominator definitions, selects all-due and explains the expected 50.0%. |
-| Explain the incident | The reviewer follows the refresh to `summary-R1205`, its successful run and retained inputs, and identifies the later run that failed before publishing. |
-| Recognise incomplete collection | A deliberately failed metadata collection leaves the last successful observation time and a visible failure; the reviewer recognises the records may be outdated. |
-| Respect access boundaries | A permitted reviewer can follow the necessary evidence; a restricted account cannot retrieve protected descriptions through search, links or an API. |
+| Choose the measure | **Pass.** Reviewer selects all-due and explains 2 out of 4 = 50.0%; recognises that completed deliveries give 66.7%. |
+| Explain the incident | **Pass.** Reviewer traces the refresh to the output, run, retained input and code, then finds the later failed run. Export preserves source identifiers, observation times and version references. |
+| Recognise outdated collection | **Pass.** A simulated collection failure leaves the last successful observation time visible beside a failure notice. Reviewer recognises the records may be outdated. Job and report updates still require manual work. |
+| Respect access | **Pass for tested accounts and paths.** Permitted reviewer opens the retained evidence. Restricted account cannot retrieve protected descriptions through search, direct links or the API. Repeat checks when permissions or interfaces change. |
 
 </figure>
+<p class="evidence-reading"><strong>What this supports</strong> In the scenario, the small arrangement answers both questions and exposes collection failure. The reviewer can open the evidence, not merely see links to it.</p>
+<p class="evidence-limit"><strong>What remains unknown</strong> These observations do not establish coverage of another database, report tool or permission model. No catalogue product has been assessed.</p>
 
-Run these checks with someone who did not assemble the records. Ask them to show the evidence behind each answer. A link to saved input data is useful only if the reviewer can open it.
+Coverage explains the remaining work. Here, a database collector supplies table and view structure; the engineer enters job dependencies, publications and report refreshes by hand. A collector reads metadata from a source, but its presence does not establish which records it supplies. Exported identifiers, times and versions must remain connected to their sources so a move preserves the evidence chain.
 
-For collection, name the exact systems covered: database structure, scheduled jobs and report refreshes may require different collectors. A collector is software that reads metadata from a source. Check which records each one actually supplies and which this pilot entered by hand. Preserve the source identifier, observation time and version references when importing or exporting records; otherwise a platform move can break the incident's evidence chain.
+## Budget for continuing work
 
-## Budget for the work after setup
+The illustrative team sets a budget of two engineer-hours per week for collection and link maintenance. It agrees that metadata changes must appear within one working day. The reporting engineer owns collection failures and checks the age of the last successful observation; Delivery Operations owns the all-due definition, and Service Analytics owns the completed-delivery definition.
 
-A repository makes definitions easy to review alongside code. SQLite can join the incident records by identifier. Someone must still collect changes, maintain links, control access and help readers find them. Evaluate a catalogue when those jobs slow the team down; use the pilot to measure whether it helps.
+The team must also maintain access credentials and retain the history needed to explain past reports. Collector upgrades trigger another check of identifiers, fields, permissions and evidence links. The pilot's acceptable effort does not establish the cost of wider coverage.
 
-Assign the reporting engineer responsibility for collection failures. Delivery Operations owns the all-due definition; Service Analytics owns the completed-delivery definition. Agree how soon source changes must appear. Review the age of the last successful collection, investigate failures and renew access credentials when needed. When upgrading a collector, rerun the pilot checks: changed identifiers, missing fields or altered permissions can silently break an investigation. Retain enough history to explain past reports after current definitions change.
+## Record the choice
 
-## Decide what happens next
+<figure class="metadata-record">
+<figcaption><span class="record-kind">Illustrative platform decision</span><span class="record-source">End-of-week pilot review</span></figcaption>
+<dl>
+<div class="record-focus"><dt>Decision</dt><dd><strong>Keep reviewed documents and SQLite for the two pilot questions</strong></dd></div>
+<div><dt>Observed effort</dt><dd>90 minutes of weekly maintenance; within the two-hour budget</dd></div>
+<div><dt>Observed freshness</dt><dd>Changes recorded the same working day; within the one-day limit</dd></div>
+<div><dt>Remaining gap</dt><dd>Job and report records depend on manual updates; additional sources are untested</dd></div>
+<div><dt>Next review</dt><dd>Reporting engineer reviews weekly; trial a catalogue if updates take longer than one working day or maintenance exceeds two hours per week</dd></div>
+</dl>
+</figure>
+<p class="evidence-reading"><strong>Why this choice follows</strong> The smallest arrangement passes the scoped checks within budget. Wider adoption needs evidence that it remains useful and maintainable.</p>
 
-Use the pilot results to decide what happens next:
-
-- **Keep the current approach** if the repository and SQLite pass all four checks at manageable effort.
-- **Extend the catalogue trial** to one additional report if it passes and measurably reduces collection or investigation work.
-- **Fix the gaps first** if neither passes. Stop expansion and address the missing evidence or access path.
-
-Finish the pilot with its check results, collection coverage, named owners and a recorded choice. The next operations meeting should receive a verified all-due calculation with its definition and output reference attached. That is a concrete result against which the platform's continuing cost can be judged.
+If a catalogue trial becomes worthwhile, verify exact source and version support in the [DataHub documentation](https://docs.datahub.com/docs/) or [OpenMetadata documentation](https://docs.open-metadata.org/). Expand to one additional report only after the trial passes the same checks and measurably reduces work. Fix missing evidence or access gaps before expanding.
 
 ## Core points
 
-- **Start with a small task and known answers.** Test whether a reader can find a suitable measure and explain a reported result.
-- **Check evidence, collection coverage and access.** Verify what each collector supplies and what each reader can retrieve.
-- **Plan for continuing work.** Assign responsibility for definitions and collection failures, monitor freshness, and maintain access and history.
-- **Choose the smallest arrangement that passes the checks.** Expand only when it works and reduces the team's effort; fix evidence or access gaps first.
+- **Start with a small task and known answers.** Assess what an independent reader can establish.
+- **Check coverage, export and access.** Record manual work and untested sources.
+- **Budget for ongoing ownership and freshness.** Maintenance continues after setup.
+- **Choose the smallest arrangement that passes.** Expand only with evidence that it works and reduces effort.

@@ -24,6 +24,6 @@ It computes the earlier 100% result, injects a publication failure, and then rec
 
 The incident's times and fault are scripted. The program demonstrates the evidence and publication behaviour locally; it does not connect to a live scheduler, reporting tool, dbt or OpenLineage service. It does not send alerts or enforce the simulation reference's suggested retention policy.
 
-Chapters 5–7 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 8 proposes a platform pilot; its acceptance checks are instructions for a trial, not reported results from testing DataHub or OpenMetadata.
+Chapters 5–7 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 8 shows an illustrative pilot assessment and decision. These are invented teaching records, not reported results from testing DataHub or OpenMetadata.
 
 The SQL example runs natively for verification. A browser WASM database is not included; that would be a separate optional reading feature, subject to measuring its usefulness and loading cost.

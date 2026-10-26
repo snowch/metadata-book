@@ -66,15 +66,18 @@ Read the view with:
 SELECT * FROM on_time_completed;
 ```
 
-<div class="query-result" markdown="1">
+<figure class="worked-example query-result" markdown="1">
+<figcaption>Calculated output · Completed-delivery view</figcaption>
 
 | completed | on_time | percentage |
 |---:|---:|---:|
-| 3 | 2 | 66.7 |
+| 3 | 2 | **66.7** |
 
-</div>
+</figure>
 
-The view measures punctuality among completed deliveries. It answers the first question in Chapter 1's table, giving 66.7%. Delivery Operations chose the second question, counting all deliveries due, which gives 50.0%. This view therefore does not implement that team's definition. Database records let us inspect the calculation; they do not supply the business decision.
+<p class="evidence-reading"><strong>What this tells us</strong> The view counts three completed deliveries and returns 66.7%. Delivery Operations needs all four deliveries due to be counted, giving 50.0%. This view does not implement that team’s definition.</p>
+
+The saved query is metadata describing a calculation; the returned percentage is its output data. Inspecting the query reveals what it counts, but does not establish which rule the business needs.
 
 The on-time comparison uses timestamps stored as text in the same fixed UTC format, `YYYY-MM-DD HH:MM`. For these values, text order matches time order. This is an assumption of the example, not something the `TEXT` declaration enforces.
 

@@ -26,7 +26,7 @@ Read the chapters in order, then consider:
 - Did the SQLite and lineage examples make the ideas useful beyond this scenario?
 - Would running an example add understanding, or did the worked result do enough?
 
-Chapters 3–4 present metadata records beside the questions they answer, using styled cards and comparisons in the main reading path. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup.
+The chapters present definitions, database outputs, execution records, catalogue entries and decisions beside the questions they answer, using styled cards and comparisons in the main reading path. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup.
 
 Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8 cover collecting, using and operating metadata. Optional detail stays outside the core explanation; there is no separate lab requirement or browser runtime.
 
