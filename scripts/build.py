@@ -218,6 +218,7 @@ def build():
         map_current = ' aria-current="page"' if is_map else ''
         map_assets = (
             f'<link rel="stylesheet" href="{asset_url("assets/metadata-map.css", page)}">'
+            f'<script defer src="{asset_url("assets/metadata-map-arrows.js", page)}"></script>'
             f'<script defer src="{asset_url("assets/metadata-map.js", page)}"></script>'
         ) if is_map else ""
         if is_map:

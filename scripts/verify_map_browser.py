@@ -13,6 +13,27 @@ server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT / '_
 Thread(target=server.serve_forever,daemon=True).start()
 base=f'http://127.0.0.1:{server.server_port}/'
 data=json.loads((ROOT / 'assets/metadata-map.json').read_text())
+GEOMETRY_CHECK = r"""() => {
+    const svg=document.querySelector('.map-connections'),canvas=document.querySelector('.map-canvas');
+    const bounds=canvas.getBoundingClientRect(),scale=bounds.width/canvas.offsetWidth;
+    const box=el=>{const r=el.getBoundingClientRect();return {left:(r.left-bounds.left)/scale,right:(r.right-bounds.left)/scale,top:(r.top-bounds.top)/scale,bottom:(r.bottom-bounds.top)/scale}};
+    const cards=[...document.querySelectorAll('.map-node')].map(el=>({id:el.dataset.node,...box(el)}));
+    const headings=[...document.querySelectorAll('.map-group > h2')].map(box);
+    const labels=[...svg.querySelectorAll('.map-connection-label')].map(el=>({from:el.dataset.from,to:el.dataset.to,...box(el)}));
+    const cross=(a,b,r)=>Math.abs(a.y-b.y)<.1?a.y>r.top+.1&&a.y<r.bottom-.1&&Math.max(a.x,b.x)>r.left+.1&&Math.min(a.x,b.x)<r.right-.1:a.x>r.left+.1&&a.x<r.right-.1&&Math.max(a.y,b.y)>r.top+.1&&Math.min(a.y,b.y)<r.bottom-.1;
+    const overlap=(a,b)=>a.left<b.right-.1&&a.right>b.left+.1&&a.top<b.bottom-.1&&a.bottom>b.top+.1;
+    let problems=[];
+    for(const path of svg.querySelectorAll('.map-connection')) {
+      const values=path.getAttribute('d').match(/-?[\d.]+/g).map(Number),points=[];
+      for(let i=0;i<values.length;i+=2)points.push({x:values[i],y:values[i+1]});
+      for(let i=1;i<points.length;i++) {
+        for(const card of [...cards,...headings])if(cross(points[i-1],points[i],card))problems.push('path crosses '+(card.id||'heading'));
+        for(const label of labels)if((label.from!==path.dataset.from||label.to!==path.dataset.to)&&cross(points[i-1],points[i],label))problems.push('path crosses label');
+      }
+    }
+    for(const label of labels)for(const obstacle of [...cards,...headings,...labels.filter(other=>other!==label)])if(overlap(label,obstacle))problems.push('label overlap '+(obstacle.id||'other'));
+    return {paths:svg.querySelectorAll('.map-connection').length,labels:labels.length,problems};
+  }"""
 errors=[]
 with sync_playwright() as p:
  browser=p.chromium.launch()
@@ -55,6 +76,14 @@ with sync_playwright() as p:
   assert page.locator('.map-detail .map-example-values > div').count()==len(record['fields'])
   page.locator('[data-tab="fields"]').click()
   assert page.locator('.map-detail tbody tr').count()>=len(record['fields'])
+  expected_edges=[e for e in data['relationships'] if record['id'] in (e['from'],e['to'])]
+  expect(page.locator('.map-connection')).to_have_count(len(expected_edges))
+  actual=page.locator('.map-connection').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
+  assert sorted(actual)==sorted([[e['from'],e['to']] for e in expected_edges])
+  connected={record['id']}|{e[k] for e in expected_edges for k in ('from','to')}
+  assert page.locator('.map-node.is-unrelated').count()==15-len(connected)
+  geometry=page.evaluate(GEOMETRY_CHECK)
+  assert geometry['labels']==len(expected_edges) and not geometry['problems'],(record['id'],geometry)
  for chapter in data['chapters']:
   page.locator('#map-chapter-filter').select_option(str(chapter['number']))
   expected=sum(any(c['number']==chapter['number'] for c in r['chapters']) for r in data['records'])
@@ -71,7 +100,7 @@ with sync_playwright() as p:
    assert page.locator('.header-map').is_visible()
    page.evaluate('document.fonts.ready')
    if width >= 768:
-    assert page.locator('.map-canvas').bounding_box()['height'] < 700,(width,'compact overview')
+    assert page.locator('.map-canvas').bounding_box()['height'] < 850,(width,'compact overview')
    page.locator('button[data-view="map"]').click()
    page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text('110%')
    page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text('100%')
@@ -80,8 +109,36 @@ with sync_playwright() as p:
    page.locator('[data-select-record="report-refresh"]').press('Enter')
    assert page.locator('.map-detail h2').inner_text()=='Report refresh'
    if width < 1200:
+    assert page.locator('.map-explorer').is_visible()
+    assert not page.locator('.map-detail').is_visible()
+    zoom=page.locator('.map-zoom-value').inner_text()
+    page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft=25')
+    scroll_left=page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')
+    page.locator('.map-view-record').click()
+    expect(page.locator('.map-detail h2')).to_be_focused()
+    assert page.locator('.map-detail').is_visible()
+    assert not page.locator('.map-explorer').is_visible()
+    assert 'panel=details' in page.url
     page.locator('.map-back-to-records').click()
     expect(page.locator('[data-select-record="report-refresh"]')).to_be_focused()
+    assert page.locator('.map-zoom-value').inner_text()==zoom
+    assert page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')==scroll_left
+    page.locator('button[data-pane="map"]').press('ArrowRight')
+    expect(page.locator('button[data-pane="details"]')).to_be_focused()
+    assert page.locator('.map-detail').is_visible()
+    page.reload();page.wait_for_selector('.metadata-map.is-ready')
+    assert page.locator('.map-detail').is_visible()
+    page.locator('button[data-pane="details"]').press('Home')
+    expect(page.locator('button[data-pane="map"]')).to_be_focused()
+    assert page.locator('.map-explorer').is_visible()
+   else:
+    assert not page.locator('.map-section-tabs').is_visible()
+    assert page.locator('.map-detail').is_visible()
+    assert page.locator('.map-explorer').is_visible()
+   page.locator('[data-select-record="dataset"]').click()
+   expect(page.locator('.map-connection')).to_have_count(7)
+   geometry=page.evaluate(GEOMETRY_CHECK)
+   assert geometry['labels']==7 and not geometry['problems'],(width,scheme,geometry)
    page.goto(base+'index.html')
    assert page.locator('.reader-action').is_visible()
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'contents')
@@ -101,12 +158,11 @@ with sync_playwright() as p:
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('#map-chapter-filter').input_value()=='all'
  assert not page.locator('.map-return').is_visible()
- page.locator('[data-select-record="report-refresh"]').click()
+ page.locator('[data-select-record="published-output"]').click()
  edges=page.locator('.map-relationship-summary li')
- assert edges.count()==4
- assert edges.nth(1).locator('a').all_text_contents()==['Published output','Run']
- assert edges.nth(1).locator('.map-relationship-verb').inner_text()=='produced by →'
- edges.nth(1).locator('a').last.click()
+ produced=edges.filter(has=page.locator('.map-relationship-verb',has_text='produced by'))
+ assert produced.locator('a').all_text_contents()==['Published output','Run']
+ produced.locator('a').last.click()
  assert page.locator('.map-detail h2').inner_text()=='Run'
  page.emulate_media(media='print')
  assert page.locator('.map-fallback').is_visible()

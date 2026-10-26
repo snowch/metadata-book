@@ -76,20 +76,26 @@ def render_map(data):
     safe_json = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return f'''<section class="metadata-map" aria-label="Interactive metadata map">
       <a class="map-return" hidden></a>
-      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. Select one to see its connections and an example. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
+      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. Select a record to highlight its direct connections. Choose View record to inspect its example and fields. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
       <div class="map-controls" hidden>
         <div class="map-filter"><label for="map-chapter-filter">Highlight chapter</label><select id="map-chapter-filter"><option value="all">Show all chapters</option>{chapter_options}</select></div>
-        <div class="map-view-switch" role="group" aria-label="Record display"><button type="button" data-view="map" aria-pressed="false">Map</button><button type="button" data-view="list" aria-pressed="false">Record list</button></div>
       </div>
       <p class="map-status" role="status" aria-live="polite"></p>
+      <div class="map-section-tabs" role="tablist" aria-label="Metadata explorer" hidden>
+        <button type="button" id="map-section-map" role="tab" data-pane="map" aria-controls="map-explorer-panel" aria-selected="true">Map</button>
+        <button type="button" id="map-section-details" role="tab" data-pane="details" aria-controls="map-record-panel" aria-selected="false" tabindex="-1">Record details</button>
+      </div>
       <div class="map-workspace">
-        <div class="map-explorer">
-          <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div>
-          <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><div class="map-groups">{''.join(groups)}</div></div></div></div>
+        <div class="map-explorer" id="map-explorer-panel">
+          <div class="map-selection" hidden><span class="map-selection-label"></span><button type="button" class="map-view-record">View record <span aria-hidden="true">→</span></button></div>
+          <div class="map-tools" hidden>
+        <div class="map-view-switch" role="group" aria-label="Record display"><button type="button" data-view="map" aria-pressed="false">Diagram</button><button type="button" data-view="list" aria-pressed="false">Record list</button></div>
+          <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div></div>
+          <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><svg class="map-connections" aria-hidden="true"></svg><div class="map-groups">{''.join(groups)}</div></div></div></div>
           <div class="map-relationship-summary" hidden></div>
-          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Chapter badges open the explanation.</span></p>
+          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Arrows show the selected record’s direct connections.</span></p>
         </div>
-        <aside class="map-detail" aria-label="Selected record details" hidden></aside>
+        <aside class="map-detail" id="map-record-panel" aria-label="Selected record details" hidden></aside>
       </div>
       <section class="map-fallback"><h2>All example records</h2><p>Each record includes its chapter links, example values and field descriptions. Enable JavaScript to use the interactive map and detail tabs.</p>{fallback}</section>
       <script type="application/json" id="metadata-map-data">{safe_json}</script>

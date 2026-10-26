@@ -12,6 +12,12 @@
   const nodes = new Map([...root.querySelectorAll('[data-node]')].map(node => [node.dataset.node, node]));
   const fallback = new Map([...root.querySelectorAll('.map-fallback-record')].map(node => [node.id.slice(7), node]));
   const panel = root.querySelector('.map-detail');
+  const compact = window.matchMedia('(max-width: 1199px)');
+  const explorer = root.querySelector('.map-explorer');
+  const paneTabs = root.querySelector('.map-section-tabs');
+  const paneButtons = [...paneTabs.querySelectorAll('[data-pane]')];
+  const selection = root.querySelector('.map-selection');
+  const svg = root.querySelector('.map-connections');
   const viewport = root.querySelector('.map-viewport');
   const canvas = root.querySelector('.map-canvas');
   const frame = root.querySelector('.map-scale-frame');
@@ -27,12 +33,11 @@
   const hashRecord = window.location.hash.startsWith('#record-') ? window.location.hash.slice(8) : null;
   let selected = records.has(initial.get('record')) ? initial.get('record') : records.has(hashRecord) ? hashRecord : records.has(preferred) ? preferred : data.records[0].id;
   let view = ['map', 'list'].includes(initial.get('view')) ? initial.get('view') : window.matchMedia('(max-width: 700px)').matches ? 'list' : 'map';
+  let pane = initial.get('panel') === 'details' || records.has(hashRecord) ? 'details' : 'map';
+  let mapPosition = {y: 0, left: 0, top: 0};
   let scale = 1;
   let currentTab = 'example';
   let drawPending = false;
-  const trace = [['report-refresh', 'published-output', 'reads'], ['published-output', 'run', 'produced by'], ['run', 'input-snapshot', 'read'], ['run', 'code-version', 'executed']];
-  const traceNodes = new Set(trace.flatMap(edge => edge.slice(0, 2)));
-
   const element = (tag, text, className) => {
     const node = document.createElement(tag);
     if (text !== undefined) node.textContent = text;
@@ -40,9 +45,8 @@
     return node;
   };
   const chapterMatch = id => chapter === 'all' || records.get(id).chapters.some(item => String(item.number) === chapter);
-  const relationships = () => traceNodes.has(selected)
-    ? trace.filter(edge => records.has(edge[0]) && records.has(edge[1])).map(([from, to, label]) => ({from, to, label}))
-    : data.relationships.filter(edge => (edge.from === selected || edge.to === selected) && records.has(edge.from) && records.has(edge.to));
+  const relationships = () => data.relationships.filter(edge =>
+    (edge.from === selected || edge.to === selected) && records.has(edge.from) && records.has(edge.to));
 
   function saveState() {
     const url = new URL(window.location.href);
@@ -50,8 +54,54 @@
     if (chapter === (origin || 'all')) url.searchParams.delete('focus'); else url.searchParams.set('focus', chapter);
     url.searchParams.set('record', selected);
     url.searchParams.set('view', view);
+    if (pane === 'details') url.searchParams.set('panel', pane); else url.searchParams.delete('panel');
     if (url.hash.startsWith('#record-')) url.hash = '';
     window.history.replaceState(null, '', url);
+  }
+
+  function applyPane() {
+    const tabbed = compact.matches;
+    paneTabs.hidden = !tabbed;
+    root.dataset.pane = pane;
+    paneButtons.forEach(button => {
+      const active = button.dataset.pane === pane;
+      button.setAttribute('aria-selected', String(active));
+      button.tabIndex = active ? 0 : -1;
+    });
+    for (const [name, item] of [['map', explorer], ['details', panel]]) {
+      item.hidden = tabbed && pane !== name;
+      if (tabbed) {
+        item.setAttribute('role', 'tabpanel');
+        item.setAttribute('aria-labelledby', `map-section-${name}`);
+      } else {
+        item.removeAttribute('role');
+        item.removeAttribute('aria-labelledby');
+      }
+    }
+    scheduleDraw();
+  }
+
+  function showPane(next, focusContent = false) {
+    const changing = pane !== next;
+    if (changing && pane === 'map' && compact.matches) {
+      mapPosition = {y: window.scrollY, left: viewport.scrollLeft, top: viewport.scrollTop};
+    }
+    pane = next;
+    applyPane();
+    saveState();
+    requestAnimationFrame(() => {
+      if (compact.matches && changing) {
+        if (pane === 'map') {
+          viewport.scrollLeft = mapPosition.left;
+          viewport.scrollTop = mapPosition.top;
+          window.scrollTo({top: mapPosition.y, behavior: 'instant'});
+        } else paneTabs.scrollIntoView({block: 'start'});
+      }
+      if (focusContent) {
+        const target = pane === 'map' ? nodes.get(selected).querySelector('[data-select-record]') : panel.querySelector('h2');
+        target.focus({preventScroll: compact.matches});
+      }
+    });
   }
 
   function renderDetail() {
@@ -95,26 +145,18 @@
       tablist.append(button);
     }
     chooseTab(currentTab);
-    const backToRecords = element('button', '← Back to records', 'map-back-to-records');
+    const backToRecords = element('button', '← Back to map', 'map-back-to-records');
     backToRecords.type = 'button';
-    backToRecords.addEventListener('click', () => {
-      const button = nodes.get(selected).querySelector('[data-select-record]');
-      button.focus({preventScroll: true});
-      button.scrollIntoView({block: 'center', inline: 'nearest'});
-    });
+    backToRecords.addEventListener('click', () => showPane('map', true));
     panel.replaceChildren(backToRecords, content);
-    panel.hidden = false;
     panel.scrollTop = 0;
   }
 
   function renderSummary() {
     summary.replaceChildren();
     const edges = relationships();
-    const explanation = traceNodes.has(selected)
-      ? 'Report provenance: follow matching identifiers from the refresh to its output, run, inputs and code.'
-      : 'Record-type relationships: these associations may refer to different examples.';
-    summary.append(element('h2', traceNodes.has(selected) ? 'Follow the report’s evidence' : `Connections · ${records.get(selected).label}`));
-    summary.append(element('p', explanation));
+    summary.append(element('h2', `Connections · ${records.get(selected).label}`));
+    summary.append(element('p', 'Relationships between record types. Linked example values in Record details connect matching records.'));
     const list = element('ul');
     edges.forEach(edge => {
       const item = element('li');
@@ -133,14 +175,18 @@
   }
 
   function updateNodes() {
+    const connected = new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
+    selection.querySelector('.map-selection-label').textContent = records.get(selected).label;
+    selection.querySelector('button').setAttribute('aria-label', `View record: ${records.get(selected).label}`);
     nodes.forEach((node, id) => {
       const matching = chapterMatch(id);
       node.classList.toggle('is-selected', id === selected);
+      node.classList.toggle('is-unrelated', !connected.has(id));
       node.classList.toggle('is-chapter', chapter !== 'all' && matching);
       node.classList.toggle('is-outside-chapter', chapter !== 'all' && !matching);
       const button = node.querySelector('[data-select-record]');
       button.setAttribute('aria-pressed', String(id === selected));
-      button.setAttribute('aria-label', `${records.get(id).label}: ${id === selected ? 'selected record' : 'view record'}${chapter !== 'all' && matching ? `; highlighted for Chapter ${chapter}` : ''}`);
+      button.setAttribute('aria-label', `${records.get(id).label}: ${id === selected ? 'selected record' : 'show connections'}${chapter !== 'all' && matching ? `; highlighted for Chapter ${chapter}` : ''}`);
     });
     const count = data.records.filter(record => chapterMatch(record.id)).length;
     status.textContent = chapter === 'all'
@@ -158,13 +204,8 @@
     renderSummary();
     scheduleDraw();
     saveState();
-    const belowExplorer = window.matchMedia('(max-width: 1199px)').matches;
-    if (intentional && (belowExplorer || focusDetail)) {
-      requestAnimationFrame(() => {
-        if (belowExplorer) panel.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
-        panel.querySelector('h2').focus({preventScroll: belowExplorer});
-      });
-    }
+    applyPane();
+    if (intentional && focusDetail) showPane('details', true);
   }
 
   function applyView() {
@@ -177,14 +218,15 @@
   }
 
   function draw() {
-    if (view !== 'map') return;
+    if (view !== 'map' || explorer.hidden) return;
     // Keep labels readable at normal zoom; narrower screens can scroll or use the list.
-    canvas.style.width = `${Math.max(660, viewport.clientWidth - 2)}px`;
+    canvas.style.width = `${Math.max(840, viewport.clientWidth - 2)}px`;
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
+    if (window.drawMetadataConnections) window.drawMetadataConnections(svg, canvas, nodes, relationships(), scale, chapterMatch, chapter);
     root.querySelector('.map-zoom-value').textContent = `${Math.round(scale * 100)}%`;
   }
 
@@ -207,7 +249,24 @@
     const target = event.target.closest('[data-select-record], [data-record-target]');
     if (target && root.contains(target)) {
       event.preventDefault();
-      selectRecord(target.dataset.selectRecord || target.dataset.recordTarget, true, Boolean(target.dataset.recordTarget));
+      selectRecord(target.dataset.selectRecord || target.dataset.recordTarget, true, Boolean(target.closest('.map-detail')));
+    }
+  });
+  selection.querySelector('button').addEventListener('click', () => showPane('details', true));
+  paneButtons.forEach(button => {
+    button.addEventListener('click', () => showPane(button.dataset.pane));
+    button.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? paneButtons[0] : event.key === 'End' ? paneButtons[1] : paneButtons.find(item => item !== button);
+      showPane(next.dataset.pane);
+      next.focus();
+    });
+  });
+  compact.addEventListener('change', () => {
+    applyPane();
+    if (compact.matches && document.activeElement.closest('.map-explorer, .map-detail')?.hidden) {
+      paneButtons.find(button => button.dataset.pane === pane).focus();
     }
   });
   filter.addEventListener('change', () => {
@@ -235,7 +294,9 @@
     back.hidden = false;
   }
   root.classList.add('is-ready');
+  selection.hidden = false;
   root.querySelector('.map-controls').hidden = false;
+  root.querySelector('.map-tools').hidden = false;
   root.querySelector('.map-legend').hidden = false;
   applyView();
   selectRecord(selected);

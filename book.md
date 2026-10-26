@@ -8,7 +8,7 @@ This book is for software and data engineers who can read a table and a simple S
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
 <p class="reader-action-title" id="before-you-start">Before you start</p>
-<p><a href="metadata-map.md"><strong>Open the Metadata map</strong></a> for an overview of the book. Select a record to inspect its example values and fields. Select its chapter badge to read the explanation.</p>
+<p><a href="metadata-map.md"><strong>Open the Metadata map</strong></a> for an overview of the book. Select a record to see its connections, then choose <strong>View record</strong> to inspect example values and fields. Select its chapter badge to read the explanation.</p>
 <p>Return using the header’s <strong>Metadata map</strong> button as you read; it highlights your current chapter.</p>
 </div>
 </aside>
