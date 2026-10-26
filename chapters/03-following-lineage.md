@@ -24,7 +24,9 @@ Knowing which table and calculation a report normally uses is only part of the e
 
 ## Follow the route
 
-Suppose another team, Service Analytics, uses the completed-delivery measure: the first question in Chapter 1's table, also calculated by the view in Chapter 2. The SQLite view `on_time_completed` evaluates its query whenever it is read. Now suppose a scheduled job, `build_delivery_summary`, uses that same calculation to write a stored table called `delivery_summary`. Publishing a new result makes it available to reports. If a run fails before publishing, reports can still read the previous result.
+Another department, Service Analytics, measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery. The `on_time_completed` view calculates this percentage whenever it is read.
+
+Now suppose a scheduled job, `build_delivery_summary`, uses that same calculation to write a stored table called `delivery_summary`. Publishing a new result makes it available to reports. If a run fails before publishing, reports can still read the previous result.
 
 <figure class="lineage-diagram" aria-labelledby="lineage-caption">
 <figcaption id="lineage-caption">Declared dependency path</figcaption>
