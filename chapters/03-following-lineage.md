@@ -6,7 +6,7 @@ To explain a number in a report, we need to know both the route from its sources
 
 **Lineage**
 
-Shows how data is connected: which sources, jobs and outputs depend on one another.
+Records where data comes from, how it is transformed, and which datasets or reports depend on it.
 
 </div>
 
@@ -14,7 +14,7 @@ Shows how data is connected: which sources, jobs and outputs depend on one anoth
 
 **Provenance**
 
-Records how a particular result came to exist: which inputs and code produced it, when, and through which execution.
+Records the history of a particular dataset or result: who or what created or changed it, when, and using which sources and methods.
 
 </div>
 
@@ -55,6 +55,8 @@ In this invented incident, the report shows 100% at 13:00 on 19 October 2026. Th
 The saved input rows show what the successful run read: all four deliveries, but only two with a delivery time. Both were on time, giving 100%. Reading the source after 12:20 gives a different result because a third completion has been recorded. The current table alone cannot reproduce what the earlier run saw.
 
 The publication record identifies the stored output, and the refresh record connects that version to the report. Together they show that the report displayed the result from an earlier successful run. The failed run alone would not prove that connection, and these records do not establish why the job failed.
+
+Lineage shows the route from `deliveries` to the report. Provenance identifies the run and input records behind the displayed 100%.
 
 <blockquote class="key-principle" markdown="1">
 
