@@ -20,7 +20,7 @@ Records the history of a particular dataset or result: who or what created or ch
 
 Lineage emphasises **data flow**; provenance emphasises **creation and change history**. Both can describe transformations and the people or systems involved, so the distinction is not simply “how” versus “who.” The terms overlap in practice; lineage tools can also capture provenance.
 
-A diagram can show that a report depends on a table and a processing job. To explain the number displayed in that report, we also need to know which run produced it and which data that run used.
+Knowing which table and calculation a report uses is only part of the explanation. To explain a displayed number, we also need to know which run produced it and which data that run used.
 
 ## Follow the route
 
