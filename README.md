@@ -25,7 +25,7 @@ Read the chapters in order, then consider:
 - Did the SQLite and lineage examples make the ideas useful beyond this scenario?
 - Would running an example add understanding, or did the worked result do enough?
 
-Chapter 3 keeps the core explanation in the main reading path. A separate optional [practical walkthrough](examples/lineage/walkthrough.md) provides the SQL investigation, recovery mechanics, retention tradeoffs and implementation exercises. This separation is the approach to evaluate before extending the other chapters.
+Chapter 3 keeps the core explanation in the main reading path. A separate [worked example](examples/lineage/walkthrough.md) presents metadata records beside the questions they answer, using styled cards and comparisons. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup.
 
 Chapters 1–3 form a short reading path about interpreting data. Chapters 4–7 cover collecting, using and operating metadata. Optional detail stays outside the core explanation; there is no separate lab requirement or browser runtime.
 

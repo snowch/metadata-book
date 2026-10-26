@@ -98,4 +98,4 @@ No. Check that the job used the updated inputs and saved the new result, then ch
 
 </details>
 
-*Optional practical: [Investigate the report with SQLite](../examples/lineage/walkthrough.md) walks through the saved records, SQL, failure recovery and retention choices. You can continue to Chapter 4 without doing it.*
+*Worked example: [The metadata behind an outdated report](../examples/lineage/walkthrough.md) shows the records that explain the displayed number, with each field and connection explained. No code execution is needed.*

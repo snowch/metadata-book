@@ -1,6 +1,7 @@
 """Check the book's worked database results with real SQLite."""
 
 from pathlib import Path
+from html import unescape
 import importlib.util
 import re
 import sqlite3
@@ -56,9 +57,31 @@ def verify_lineage():
         )
         trace = db.execute((path.parent / "trace-report.sql").read_text()).fetchall()
         assert trace == [("R1205", "completed-v1", "S1205")], trace
-        walkthrough = (ROOT / "examples/lineage/walkthrough.md").read_text()
-        printed_query = re.findall(r"```sql\n(.*?)\n```", walkthrough, re.S)[0]
+        reference = (path.parent / "README.md").read_text()
+        printed_query = re.findall(r"```sql\n(.*?)\n```", reference, re.S)[0]
         assert db.execute(printed_query).fetchall() == trace
+
+        # Check the displayed evidence against actual simulation records.
+        walkthrough = (path.parent / "walkthrough.md").read_text()
+        cards = re.findall(
+            r'<figure class="metadata-record" data-table="([a-z_]+)">(.*?)</figure>',
+            walkthrough, re.S,
+        )
+        assert len(cards) == 4, "Expected four metadata records in the worked example"
+        keys = {"report_refreshes": "refresh_id", "outputs": "output_version", "runs": "run_id"}
+        for table, body in cards:
+            pairs = re.findall(r"<dt>(.*?)</dt><dd>(.*?)</dd>", body, re.S)
+            fields = {unescape(re.sub(r"<[^>]+>", "", key)).strip():
+                      unescape(re.sub(r"<[^>]+>", "", value)).strip()
+                      for key, value in pairs}
+            key = keys[table]
+            cursor = db.execute(f'SELECT * FROM "{table}" WHERE "{key}" = ?', (fields[key],))
+            row = cursor.fetchone()
+            assert row is not None, fields
+            actual = dict(zip((column[0] for column in cursor.description), row))
+            assert len(fields) >= 4, fields
+            for field, value in fields.items():
+                assert value == str(actual[field]), (table, field, value, actual[field])
         ages = db.execute("""
             SELECT f.refresh_id,
                    (strftime('%s', f.refreshed_at) - strftime('%s', o.published_at)) / 60
