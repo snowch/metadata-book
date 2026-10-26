@@ -15,6 +15,8 @@ This book is for software and data engineers who can read a table and a simple S
 7. [Using metadata to make decisions](chapters/07-using-metadata.md) — choose a suitable dataset and investigate the effects of a proposed change.
 8. [Choosing and operating a metadata platform](chapters/08-choosing-a-platform.md) — test a platform against useful tasks and plan the work of keeping it reliable.
 
+Use the [Metadata map](metadata-map.md) to explore the record types and jump to their explanations. The header button opens it with your current chapter highlighted.
+
 ## How to read
 
 Chapters 1–4 explain how to question a number and inspect the evidence behind it. They form a useful stopping point if your main task is reading reports or reviewing calculations. Continue through Chapters 5–8 if you also collect, maintain or choose tools for metadata.

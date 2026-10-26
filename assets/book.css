@@ -40,6 +40,8 @@ a:hover { text-decoration-thickness: .1em; }
 .brand-name { font: 500 1.5rem/1 var(--serif); letter-spacing: -.035em; }
 .header-note { margin-left: auto; color: var(--muted); font-size: .75rem; }
 .header-link { display: inline-flex; align-items: center; min-height: 44px; border-left: 1px solid var(--line); padding: .6rem 0 .6rem 2rem; color: var(--ink); text-decoration: none; font-size: .75rem; }
+.header-map { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .5rem .85rem; border: 1px solid var(--accent); border-radius: 3px; font: 500 .75rem/1.4 var(--sans); color: var(--accent); text-decoration: none; white-space: nowrap; }
+.header-map:hover, .header-map[aria-current] { background: var(--accent-wash); }
 .external-arrow { display: inline-block; width: .9em; height: .9em; vertical-align: -.05em; flex: none; }
 .header-link .external-arrow { color: var(--accent); margin-left: .5rem; }
 .mobile-contents { display: none; }
@@ -158,6 +160,14 @@ pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .page-introduction .prose > ol > li a { font-size: 1.4rem; font-weight: 500; }
 img { max-width: 100%; height: auto; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.page-map .book-layout { display: block; max-width: 1600px; padding-top: 1.5rem; }
+.page-map .book-sidebar { display: none; }
+.page-map main { max-width: none; }
+.page-map .chapter-header { padding: 0 0 1rem; }
+.page-map .chapter-meta { display: none; }
+.page-map .prose > p:first-child { font: 1.15rem/1.5 var(--serif); margin: .8rem 0; }
+.page-map h1 { font-size: clamp(2.3rem, 4vw, 3rem); }
+.page-map .pagination { display: none; }
 @media (max-width: 1000px) and (min-width: 801px) {
   .book-layout { grid-template-columns: 170px minmax(0, 1fr); gap: 2.8rem; padding-inline: 2rem; }
   .chapter-header { padding-right: 4.5rem; }
@@ -168,6 +178,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .brand-mark { width: 25px; height: 25px; }
   .brand-name { font-size: 1.35rem; }
   .header-note, .header-link, .book-sidebar { display: none; }
+  .header-map { margin-left: auto; padding-inline: .65rem; }
   .mobile-contents { display: block; border-bottom: 1px solid var(--line); padding-inline: 1.4rem; }
   .mobile-contents > summary { font-size: .7rem; color: var(--muted); padding: .85rem 0; min-height: 44px; }
   .mobile-contents > summary::marker { color: var(--accent); }
@@ -193,6 +204,12 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .pagination { gap: 1rem; }
   .pagination-title { font-size: 1.15rem; }
   .page-footer { font-size: .6rem; }
+}
+@media (max-width: 380px) {
+  .site-header { gap: .5rem; }
+  .brand-mark { display: none; }
+  .brand-name { font-size: 1.2rem; }
+  .header-map { font-size: .7rem; padding-inline: .5rem; }
 }
 @media (max-width: 600px) {
   .metadata-record figcaption { display: block; }

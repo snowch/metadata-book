@@ -1,0 +1,103 @@
+"""Browser checks for the metadata map. Build first; requires Playwright + Chromium."""
+
+from pathlib import Path
+from functools import partial
+from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
+from threading import Thread
+from playwright.sync_api import sync_playwright, expect
+import json
+class Quiet(SimpleHTTPRequestHandler):
+ def log_message(self,*args):pass
+ROOT = Path(__file__).resolve().parents[1]
+server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT / '_site')))
+Thread(target=server.serve_forever,daemon=True).start()
+base=f'http://127.0.0.1:{server.server_port}/'
+data=json.loads((ROOT / 'assets/metadata-map.json').read_text())
+errors=[]
+with sync_playwright() as p:
+ browser=p.chromium.launch()
+ page=browser.new_page(viewport={'width':1440,'height':1100})
+ page.on('pageerror',lambda e:errors.append(str(e)))
+ for chapter in data['chapters']:
+  page.goto(base+chapter['href'])
+  assert page.locator('.header-map').get_attribute('href')==f'../metadata-map.html?chapter={chapter["number"]}'
+  page.locator('.header-map').click()
+  page.wait_for_selector('.metadata-map.is-ready')
+  assert page.locator('#map-chapter-filter').input_value()==str(chapter['number'])
+  assert page.locator('.map-return').get_attribute('href')==chapter['href']
+ page.goto(base+'chapters/05-collecting-metadata.html')
+ assert page.locator('.header-map').get_attribute('href')=='../metadata-map.html?chapter=5'
+ page.locator('.header-map').click()
+ page.wait_for_selector('.metadata-map.is-ready')
+ assert page.locator('#map-chapter-filter').input_value()=='5'
+ assert 'Chapter 5' in page.locator('.map-return').inner_text()
+ assert page.locator('.map-detail h2').inner_text()=='Source observation'
+ page.locator('#map-chapter-filter').select_option('3')
+ assert 'chapter=5' in page.url and 'focus=3' in page.url
+ assert page.locator('.map-detail h2').inner_text()=='Report refresh'
+ page.locator('.map-detail [data-record-target="published-output"]').first.click()
+ assert page.locator('.map-detail h2').inner_text()=='Published output'
+ page.locator('.map-detail [data-record-target="run"]').first.click()
+ assert page.locator('.map-detail h2').inner_text()=='Run'
+ page.locator('[data-tab="fields"]').click()
+ assert page.locator('.map-detail .map-fields-panel').is_visible()
+ page.locator('[data-tab="fields"]').press('ArrowLeft')
+ assert page.locator('[data-tab="example"]').get_attribute('aria-selected')=='true'
+ page.reload();page.wait_for_selector('.metadata-map.is-ready')
+ assert page.locator('.map-detail h2').inner_text()=='Run'
+ assert 'Chapter 5' in page.locator('.map-return').inner_text()
+ for record in data['records']:
+  page.locator(f'[data-select-record="{record["id"]}"]').click()
+  assert page.locator('.map-detail h2').inner_text()==record['label']
+  assert page.locator('.map-detail .map-example-values > div').count()==len(record['fields'])
+  page.locator('[data-tab="fields"]').click()
+  assert page.locator('.map-detail tbody tr').count()>=len(record['fields'])
+ for chapter in data['chapters']:
+  page.locator('#map-chapter-filter').select_option(str(chapter['number']))
+  expected=sum(any(c['number']==chapter['number'] for c in r['chapters']) for r in data['records'])
+  assert page.locator('.map-node.is-chapter').count()==expected
+ page.locator('#map-chapter-filter').select_option('all')
+ assert page.locator('.map-node.is-chapter').count()==0
+ page.locator('.map-return').click();assert page.url==base+'chapters/05-collecting-metadata.html'
+ for width in (320,390,768,1440):
+  for scheme in ('light','dark'):
+   page.set_viewport_size({'width':width,'height':1100});page.emulate_media(color_scheme=scheme)
+   page.goto(base+'metadata-map.html?chapter=4');page.wait_for_selector('.metadata-map.is-ready')
+   assert page.locator('.metadata-map').get_attribute('data-view')==('list' if width<=700 else 'map')
+   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,scheme)
+   assert page.locator('.header-map').is_visible()
+   page.evaluate('document.fonts.ready')
+   page.locator('button[data-view="map"]').click()
+   page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text('110%')
+   page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text('100%')
+   page.locator('[data-zoom="fit"]').click()
+   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'zoom')
+   page.locator('[data-select-record="report-refresh"]').press('Enter')
+   assert page.locator('.map-detail h2').inner_text()=='Report refresh'
+ page.goto(base+'metadata-map.html#record-column')
+ page.wait_for_selector('.metadata-map.is-ready')
+ assert page.locator('.map-detail h2').inner_text()=='Column'
+ assert 'record=column' in page.url and '#record-' not in page.url
+ page.goto(base+'metadata-map.html?record=report-refresh')
+ page.wait_for_selector('.metadata-map.is-ready')
+ page.locator('.map-detail [data-record-target="published-output"]').first.focus()
+ page.keyboard.press('Enter')
+ expect(page.locator('.map-detail h2')).to_be_focused()
+ page.goto(base+'metadata-map.html?chapter=999&focus=bad&record=%3Cscript%3E&view=no')
+ page.wait_for_selector('.metadata-map.is-ready')
+ assert page.locator('#map-chapter-filter').input_value()=='all'
+ assert not page.locator('.map-return').is_visible()
+ page.emulate_media(media='print')
+ assert page.locator('.map-fallback').is_visible()
+ page.close()
+ nojs=browser.new_page(java_script_enabled=False,viewport={'width':390,'height':900})
+ nojs.goto(base+'metadata-map.html')
+ assert nojs.locator('.map-fallback-record').count()==15
+ assert nojs.locator('#record-report-refresh').is_visible()
+ assert nojs.evaluate('document.documentElement.scrollWidth<=innerWidth')
+ nojs.locator('[data-select-record="report-refresh"]').click()
+ assert nojs.url.endswith('#record-report-refresh')
+ browser.close()
+server.shutdown()
+assert not errors,errors
+print('Map interaction, linked records, tabs/keyboard, all chapters, origin return, URL reload, 8 viewport/theme combinations, invalid parameters, print and no-JS fallback passed.')

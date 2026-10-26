@@ -1,0 +1,1197 @@
+{
+  "groups": [
+    {
+      "id": "meaning",
+      "title": "Meaning"
+    },
+    {
+      "id": "structure",
+      "title": "Structure"
+    },
+    {
+      "id": "production",
+      "title": "Production"
+    },
+    {
+      "id": "collection",
+      "title": "Collection & decisions"
+    }
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "title": "What the data cannot tell you",
+      "href": "chapters/01-why-metadata.html"
+    },
+    {
+      "number": 2,
+      "title": "What a database already knows",
+      "href": "chapters/02-reading-a-database.html"
+    },
+    {
+      "number": 3,
+      "title": "Where did this number come from?",
+      "href": "chapters/03-following-lineage.html"
+    },
+    {
+      "number": 4,
+      "title": "Why is this report out of date?",
+      "href": "chapters/04-outdated-reports.html"
+    },
+    {
+      "number": 5,
+      "title": "Collecting metadata from several systems",
+      "href": "chapters/05-collecting-metadata.html"
+    },
+    {
+      "number": 6,
+      "title": "When the records are unreliable",
+      "href": "chapters/06-unreliable-records.html"
+    },
+    {
+      "number": 7,
+      "title": "Using metadata to make decisions",
+      "href": "chapters/07-using-metadata.html"
+    },
+    {
+      "number": 8,
+      "title": "Choosing and operating a metadata platform",
+      "href": "chapters/08-choosing-a-platform.html"
+    }
+  ],
+  "records": [
+    {
+      "id": "metric-definition",
+      "label": "Metric definition",
+      "group": "meaning",
+      "description": "Records what a measure includes and the question it answers.",
+      "primaryChapter": 1,
+      "chapters": [
+        {
+          "number": 1,
+          "href": "chapters/01-why-metadata.html#record-the-decision",
+          "label": "Read the agreed definition"
+        },
+        {
+          "number": 2,
+          "href": "chapters/02-reading-a-database.html#read-the-calculation",
+          "label": "Compare definition with query"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#find-the-measure-that-answers-the-question",
+          "label": "Choose the right measure"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#define-a-bounded-pilot",
+          "label": "Test both definitions"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "All deliveries due",
+      "fields": [
+        {
+          "name": "Measure",
+          "type": "text",
+          "description": "The business quantity being defined.",
+          "value": "Percentage of deliveries due that arrived on time"
+        },
+        {
+          "name": "Counts as on time",
+          "type": "text",
+          "description": "The comparison that qualifies a delivery.",
+          "value": "Delivered at or before the promised time"
+        },
+        {
+          "name": "Denominator",
+          "type": "text",
+          "description": "The full population included in the calculation.",
+          "value": "All deliveries due by noon, including those not yet delivered"
+        },
+        {
+          "name": "Measured at",
+          "type": "time",
+          "description": "The agreed reporting cutoff.",
+          "value": "13:00 UTC on the reporting date"
+        },
+        {
+          "name": "Responsible team",
+          "type": "text",
+          "description": "The team accountable for this definition.",
+          "value": "Delivery Operations",
+          "target": "responsible-team"
+        },
+        {
+          "name": "Source",
+          "type": "text",
+          "description": "The table containing the delivery records.",
+          "value": "deliveries",
+          "target": "dataset"
+        }
+      ],
+      "interpretation": "This is Delivery Operations’ all-due rule: two on time out of four due gives 50.0%. The incident’s Service Analytics report uses a different, completed-delivery definition.",
+      "limit": "An agreed definition does not prove that a saved query or published output implements it.",
+      "related": [
+        {
+          "target": "responsible-team",
+          "label": "Definition owned by"
+        },
+        {
+          "target": "dataset",
+          "label": "Describes deliveries"
+        },
+        {
+          "target": "decision",
+          "label": "Chosen for the meeting"
+        }
+      ]
+    },
+    {
+      "id": "responsible-team",
+      "label": "Responsible team",
+      "group": "meaning",
+      "description": "Names who can explain and approve the meaning of a measure.",
+      "primaryChapter": 1,
+      "chapters": [
+        {
+          "number": 1,
+          "href": "chapters/01-why-metadata.html#record-the-decision",
+          "label": "Identify definition responsibility"
+        },
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#read-the-assembled-entry",
+          "label": "Distinguish collection from ownership"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#leave-a-decision-someone-can-act-on",
+          "label": "Assign the next action"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
+          "label": "Assign ongoing ownership"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "Delivery Operations",
+      "fields": [
+        {
+          "name": "Team",
+          "type": "text",
+          "description": "The team responsible for the all-due meaning.",
+          "value": "Delivery Operations"
+        },
+        {
+          "name": "Definition responsibility",
+          "type": "text",
+          "description": "The specific agreement this team maintains.",
+          "value": "Confirm the denominator and original-promise rule"
+        },
+        {
+          "name": "Measure",
+          "type": "text",
+          "description": "The measure whose meaning this team owns.",
+          "value": "Percentage of deliveries due that arrived on time",
+          "target": "metric-definition"
+        }
+      ],
+      "interpretation": "Delivery Operations confirms which deliveries belong in the measure. Chapter 8 separately assigns Service Analytics the completed-delivery definition and the reporting engineer collection maintenance.",
+      "limit": "A collected team name alone does not establish that the team accepted responsibility.",
+      "related": [
+        {
+          "target": "metric-definition",
+          "label": "Owns the all-due definition"
+        }
+      ]
+    },
+    {
+      "id": "dataset",
+      "label": "Dataset",
+      "group": "structure",
+      "description": "Identifies a table and the kind of rows it contains.",
+      "primaryChapter": 2,
+      "chapters": [
+        {
+          "number": 2,
+          "href": "chapters/02-reading-a-database.html#inspect-the-columns",
+          "label": "Inspect the source table"
+        },
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#follow-the-route",
+          "label": "Follow its dependency path"
+        },
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#identify-the-same-thing-consistently",
+          "label": "Distinguish datasets and versions"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
+          "label": "Review affected uses"
+        }
+      ],
+      "evidence": "SQLite schema",
+      "exampleLabel": "deliveries",
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "description": "The SQLite table name.",
+          "value": "deliveries"
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "description": "The object kind recorded by SQLite.",
+          "value": "table"
+        },
+        {
+          "name": "Row represents",
+          "type": "text",
+          "description": "The unit described by each source row.",
+          "value": "One delivery"
+        },
+        {
+          "name": "Columns",
+          "type": "text",
+          "description": "The fields declared by the source SQL.",
+          "value": "delivery_id, promised_at, delivered_at"
+        }
+      ],
+      "interpretation": "The schema describes the source table used by the saved view and the incident’s retained inputs. The book also describes a different dataset, prod/parcels/delivery_summary, which receives published summaries.",
+      "limit": "The current table does not establish which rows a historical run read.",
+      "related": [
+        {
+          "target": "column",
+          "label": "Contains a column"
+        },
+        {
+          "target": "saved-query",
+          "label": "Read by the saved view"
+        },
+        {
+          "target": "input-snapshot",
+          "label": "Historical input retained separately"
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "label": "Column",
+      "group": "structure",
+      "description": "Describes one field’s declared type and constraints.",
+      "primaryChapter": 2,
+      "chapters": [
+        {
+          "number": 2,
+          "href": "chapters/02-reading-a-database.html#inspect-the-columns",
+          "label": "Read the column metadata"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
+          "label": "Consider a change of meaning"
+        }
+      ],
+      "evidence": "SQLite schema",
+      "exampleLabel": "delivered_at",
+      "fields": [
+        {
+          "name": "name",
+          "type": "TEXT",
+          "description": "The declared column name.",
+          "value": "delivered_at"
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "description": "The type declared in SQLite.",
+          "value": "TEXT"
+        },
+        {
+          "name": "notnull",
+          "type": "INTEGER",
+          "description": "Whether SQLite requires a value: 0 permits NULL.",
+          "value": "0"
+        },
+        {
+          "name": "pk",
+          "type": "INTEGER",
+          "description": "Position in the primary key: 0 means not a key column.",
+          "value": "0"
+        },
+        {
+          "name": "Table",
+          "type": "text",
+          "description": "The table containing this column.",
+          "value": "deliveries",
+          "target": "dataset"
+        }
+      ],
+      "interpretation": "The database allows delivered_at to be NULL. In this complete teaching example, that marks a parcel that has not yet arrived; the declaration alone does not supply that meaning.",
+      "limit": "A column name and type cannot establish whether a timestamp records depot arrival or customer delivery.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Belongs to deliveries"
+        }
+      ]
+    },
+    {
+      "id": "saved-query",
+      "label": "Saved query",
+      "group": "structure",
+      "description": "Retains the SQL definition of a named calculation.",
+      "primaryChapter": 2,
+      "chapters": [
+        {
+          "number": 2,
+          "href": "chapters/02-reading-a-database.html#read-the-calculation",
+          "label": "Inspect the full view definition"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#find-the-measure-that-answers-the-question",
+          "label": "Compare candidate measures"
+        }
+      ],
+      "evidence": "SQLite schema",
+      "exampleLabel": "on_time_completed",
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "description": "The saved view’s name.",
+          "value": "on_time_completed"
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "description": "The object kind recorded by SQLite.",
+          "value": "view"
+        },
+        {
+          "name": "Source",
+          "type": "text",
+          "description": "The table read by this SQL.",
+          "value": "deliveries",
+          "target": "dataset"
+        },
+        {
+          "name": "Filter",
+          "type": "SQL expression",
+          "description": "The condition that removes unfinished parcels.",
+          "value": "delivered_at IS NOT NULL"
+        },
+        {
+          "name": "Denominator",
+          "type": "SQL expression",
+          "description": "The count after applying the filter.",
+          "value": "COUNT(*) of completed deliveries"
+        }
+      ],
+      "interpretation": "The view counts completed deliveries. With the four 13:00 teaching rows it returns 66.7%, whereas Delivery Operations’ all-due rule requires 50.0%.",
+      "limit": "Reading a saved query explains its calculation but does not establish the business rule the reader needs.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Reads deliveries"
+        },
+        {
+          "target": "code-version",
+          "label": "Compare retained incident SQL"
+        }
+      ],
+      "code": "CREATE VIEW on_time_completed AS\nSELECT\n    COUNT(*) AS completed,\n    SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END) AS on_time,\n    ROUND(\n        100.0 * SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END)\n        / NULLIF(COUNT(*), 0),\n        1\n    ) AS percentage\nFROM deliveries\nWHERE delivered_at IS NOT NULL;"
+    },
+    {
+      "id": "job",
+      "label": "Job",
+      "group": "production",
+      "description": "Describes a repeatable process that calculates and saves a result.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#follow-the-route",
+          "label": "Follow the scheduled process"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#why-was-the-report-still-using-the-old-result",
+          "label": "Investigate a failed execution"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
+          "label": "Find consumers to review"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "build_delivery_summary",
+      "fields": [
+        {
+          "name": "job_name",
+          "type": "text",
+          "description": "The process name used by the simulation’s run records.",
+          "value": "build_delivery_summary"
+        },
+        {
+          "name": "Input",
+          "type": "text",
+          "description": "The source records captured before each run.",
+          "value": "deliveries",
+          "target": "dataset"
+        },
+        {
+          "name": "Purpose",
+          "type": "text",
+          "description": "What this scheduled process produces.",
+          "value": "Save the completed-delivery percentage for Delivery performance"
+        }
+      ],
+      "interpretation": "The same job has several executions with different inputs and outcomes. Its R1205 execution succeeded; the later R1230 execution failed before publication.",
+      "limit": "A job-level dependency identifies a route but cannot identify which execution supplied a displayed number.",
+      "related": [
+        {
+          "target": "run",
+          "label": "Has a particular execution"
+        },
+        {
+          "target": "dataset",
+          "label": "Reads delivery data"
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "label": "Run",
+      "group": "production",
+      "description": "Records one execution, its outcome, and the input and code it used.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#which-inputs-and-calculation-produced-100",
+          "label": "Inspect the producing execution"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#why-was-the-report-still-using-the-old-result",
+          "label": "Compare the later failed run"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#define-a-bounded-pilot",
+          "label": "Preserve the execution evidence"
+        }
+      ],
+      "evidence": "Computed example",
+      "exampleLabel": "R1205",
+      "fields": [
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "description": "The identifier of this execution.",
+          "value": "R1205"
+        },
+        {
+          "name": "job_name",
+          "type": "TEXT",
+          "description": "The job that was executed.",
+          "value": "build_delivery_summary",
+          "target": "job"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "description": "The recorded execution outcome.",
+          "value": "success"
+        },
+        {
+          "name": "input_snapshot_id",
+          "type": "TEXT",
+          "description": "The retained input this execution read.",
+          "value": "S1205",
+          "target": "input-snapshot"
+        },
+        {
+          "name": "code_version",
+          "type": "TEXT",
+          "description": "The retained SQL this execution ran.",
+          "value": "completed-v1",
+          "target": "code-version"
+        },
+        {
+          "name": "finished_at",
+          "type": "TEXT",
+          "description": "The completion timestamp in UTC.",
+          "value": "2026-10-19 12:05"
+        }
+      ],
+      "interpretation": "R1205 used S1205 and completed-v1 to publish the 100.0% output. This reference chain explains the calculation that supplied the 13:00 refresh.",
+      "limit": "A successful run alone does not prove that a later report refresh read its output.",
+      "related": [
+        {
+          "target": "job",
+          "label": "Execution of this job"
+        },
+        {
+          "target": "input-snapshot",
+          "label": "Read this retained input"
+        },
+        {
+          "target": "code-version",
+          "label": "Executed this code"
+        },
+        {
+          "target": "published-output",
+          "label": "Produced this output"
+        }
+      ]
+    },
+    {
+      "id": "input-snapshot",
+      "label": "Input snapshot",
+      "group": "production",
+      "description": "Identifies a retained copy of the source rows read by a run.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#which-inputs-and-calculation-produced-100",
+          "label": "Inspect the retained rows"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#keep-the-earlier-evidence",
+          "label": "Understand retention limits"
+        }
+      ],
+      "evidence": "Computed example",
+      "exampleLabel": "S1205",
+      "fields": [
+        {
+          "name": "snapshot_id",
+          "type": "TEXT",
+          "description": "The identifier of the retained input copy.",
+          "value": "S1205"
+        },
+        {
+          "name": "captured_at",
+          "type": "TEXT",
+          "description": "When the input was copied, in UTC.",
+          "value": "2026-10-19 12:05"
+        },
+        {
+          "name": "row_count",
+          "type": "INTEGER",
+          "description": "The number of rows originally captured.",
+          "value": "4"
+        }
+      ],
+      "interpretation": "S1205 contains four parcels, with only D101 and D103 completed. Its retained rows are input data; the capture time, identifier and run reference are metadata about that input.",
+      "limit": "A snapshot identifier without the retained rows cannot reproduce the historical calculation.",
+      "related": [
+        {
+          "target": "run",
+          "label": "Read by R1205"
+        },
+        {
+          "target": "dataset",
+          "label": "Captures deliveries"
+        }
+      ],
+      "rows": {
+        "columns": [
+          "delivery_id",
+          "promised_at",
+          "delivered_at"
+        ],
+        "values": [
+          [
+            "D101",
+            "2026-10-19 12:00",
+            "2026-10-19 11:50"
+          ],
+          [
+            "D102",
+            "2026-10-19 12:00",
+            "NULL"
+          ],
+          [
+            "D103",
+            "2026-10-19 12:00",
+            "2026-10-19 11:40"
+          ],
+          [
+            "D104",
+            "2026-10-19 12:00",
+            "NULL"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "code-version",
+      "label": "Code version",
+      "group": "production",
+      "description": "Retains the exact calculation associated with a historical execution.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#which-inputs-and-calculation-produced-100",
+          "label": "Read the retained calculation"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#keep-the-earlier-evidence",
+          "label": "Retain enough evidence to reproduce"
+        }
+      ],
+      "evidence": "Computed example",
+      "exampleLabel": "completed-v1",
+      "fields": [
+        {
+          "name": "code_version",
+          "type": "TEXT",
+          "description": "The version identifier stored by the simulation.",
+          "value": "completed-v1"
+        },
+        {
+          "name": "Calculation",
+          "type": "TEXT",
+          "description": "Plain-language summary of the retained SQL shown below.",
+          "value": "Completed deliveries only; on-time count divided by completed count"
+        },
+        {
+          "name": "Filter",
+          "type": "SQL expression",
+          "description": "The retained condition that excludes unfinished parcels.",
+          "value": "delivered_at IS NOT NULL"
+        }
+      ],
+      "interpretation": "Executing this retained SQL against S1205 yields two completed deliveries, both on time: 100.0%. It implements Service Analytics’ completed-delivery rule.",
+      "limit": "A version label without its retained code cannot establish which calculation ran.",
+      "related": [
+        {
+          "target": "run",
+          "label": "Executed by R1205"
+        },
+        {
+          "target": "input-snapshot",
+          "label": "Replay against S1205"
+        }
+      ],
+      "code": "SELECT\n    COUNT(*) AS completed,\n    SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END) AS on_time,\n    ROUND(\n        100.0 * SUM(CASE WHEN delivered_at <= promised_at THEN 1 ELSE 0 END)\n        / NULLIF(COUNT(*), 0),\n        1\n    ) AS percentage\nFROM deliveries\nWHERE delivered_at IS NOT NULL;"
+    },
+    {
+      "id": "published-output",
+      "label": "Published output",
+      "group": "production",
+      "description": "Records a saved result and the execution that produced it.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#which-result-did-the-report-read",
+          "label": "Trace the saved result"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#what-confirms-the-report-recovered",
+          "label": "Compare publication with refresh"
+        },
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#identify-the-same-thing-consistently",
+          "label": "Distinguish an output version from a dataset"
+        }
+      ],
+      "evidence": "Computed example",
+      "exampleLabel": "summary-R1205",
+      "fields": [
+        {
+          "name": "output_version",
+          "type": "TEXT",
+          "description": "The identifier of this saved output.",
+          "value": "summary-R1205"
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT",
+          "description": "The execution that produced this result.",
+          "value": "R1205",
+          "target": "run"
+        },
+        {
+          "name": "completed",
+          "type": "INTEGER",
+          "description": "The completed deliveries included in the calculation.",
+          "value": "2"
+        },
+        {
+          "name": "on_time",
+          "type": "INTEGER",
+          "description": "The included deliveries at or before their promise.",
+          "value": "2"
+        },
+        {
+          "name": "percentage",
+          "type": "REAL",
+          "description": "The calculated percentage.",
+          "value": "100.0"
+        },
+        {
+          "name": "published_at",
+          "type": "TEXT",
+          "description": "When this output was published, in UTC.",
+          "value": "2026-10-19 12:05"
+        }
+      ],
+      "interpretation": "This result was produced at 12:05 and read by F1300 at 13:00. The later R1230 failure left this earlier output available to the report.",
+      "limit": "A published percentage does not establish that its definition fits the meeting’s question.",
+      "related": [
+        {
+          "target": "run",
+          "label": "Produced by R1205"
+        },
+        {
+          "target": "report-refresh",
+          "label": "Read by F1300"
+        }
+      ]
+    },
+    {
+      "id": "report-refresh",
+      "label": "Report refresh",
+      "group": "production",
+      "description": "Records which saved output a report read at a particular time.",
+      "primaryChapter": 3,
+      "chapters": [
+        {
+          "number": 3,
+          "href": "chapters/03-following-lineage.html#which-result-did-the-report-read",
+          "label": "Trace a displayed number"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#what-confirms-the-report-recovered",
+          "label": "Check which version reached the report"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#separate-quality-checks-from-meaning",
+          "label": "Separate quality from currency"
+        }
+      ],
+      "evidence": "Computed example",
+      "exampleLabel": "F1300",
+      "fields": [
+        {
+          "name": "refresh_id",
+          "type": "TEXT",
+          "description": "The identifier of this report refresh.",
+          "value": "F1300"
+        },
+        {
+          "name": "report_name",
+          "type": "TEXT",
+          "description": "The report that refreshed.",
+          "value": "Delivery performance"
+        },
+        {
+          "name": "refreshed_at",
+          "type": "TEXT",
+          "description": "When the report read its saved result, in UTC.",
+          "value": "2026-10-19 13:00"
+        },
+        {
+          "name": "output_version",
+          "type": "TEXT",
+          "description": "The exact output read by this refresh.",
+          "value": "summary-R1205",
+          "target": "published-output"
+        }
+      ],
+      "interpretation": "The 13:00 refresh read the output published at 12:05, so it displayed 100.0%. Refreshing the report did not rerun the calculation.",
+      "limit": "A recent refresh timestamp does not establish that its input was recently produced.",
+      "related": [
+        {
+          "target": "published-output",
+          "label": "Reads summary-R1205"
+        }
+      ]
+    },
+    {
+      "id": "quality-check",
+      "label": "Quality check",
+      "group": "production",
+      "description": "Records checks and their results for a named input and scope.",
+      "primaryChapter": 7,
+      "chapters": [
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#separate-quality-checks-from-meaning",
+          "label": "Read the quality review"
+        },
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#find-the-measure-that-answers-the-question",
+          "label": "Check the intended question"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "decision-input-1300",
+      "fields": [
+        {
+          "name": "Source",
+          "type": "text",
+          "description": "The table and teaching input actually reviewed.",
+          "value": "deliveries; decision-input-1300"
+        },
+        {
+          "name": "Scope",
+          "type": "text",
+          "description": "The population included in this review.",
+          "value": "All four parcels due by noon"
+        },
+        {
+          "name": "Checked at",
+          "type": "time",
+          "description": "The review time in UTC.",
+          "value": "2026-10-19 13:05"
+        },
+        {
+          "name": "Identifier check",
+          "type": "text",
+          "description": "The result of checking uniqueness.",
+          "value": "Four rows, four distinct delivery identifiers"
+        },
+        {
+          "name": "Time checks",
+          "type": "text",
+          "description": "The result of the recorded timestamp checks.",
+          "value": "Four promised times present; one delivery time empty, allowed for an unfinished parcel"
+        }
+      ],
+      "interpretation": "The review supports uniqueness and the presence of promised times in decision-input-1300. This is the four-parcel 13:00 teaching input, separate from retained snapshot S1205.",
+      "limit": "The checks establish neither timestamp accuracy, the correct denominator, nor which input reached a report.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Checks deliveries"
+        },
+        {
+          "target": "decision",
+          "label": "Evidence considered in the meeting"
+        }
+      ]
+    },
+    {
+      "id": "source-observation",
+      "label": "Source observation",
+      "group": "collection",
+      "description": "Preserves a source’s claim and when a collector observed it.",
+      "primaryChapter": 5,
+      "chapters": [
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#read-the-assembled-entry",
+          "label": "Read the assembled claims"
+        },
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#keep-the-source-and-its-times",
+          "label": "Distinguish observation and collection"
+        },
+        {
+          "number": 6,
+          "href": "chapters/06-unreliable-records.html#show-the-decision-and-its-evidence",
+          "label": "Keep conflicting claims visible"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "Production schema observation",
+      "fields": [
+        {
+          "name": "Dataset identifier",
+          "type": "text",
+          "description": "The production summary dataset described by this observation.",
+          "value": "prod/parcels/delivery_summary"
+        },
+        {
+          "name": "Source",
+          "type": "text",
+          "description": "The system supplying the structural claim.",
+          "value": "Production database scan"
+        },
+        {
+          "name": "Claim",
+          "type": "text",
+          "description": "What the collector actually observed.",
+          "value": "Column percentage exists"
+        },
+        {
+          "name": "Observed at",
+          "type": "time",
+          "description": "When the source was checked, in UTC.",
+          "value": "2026-10-20 09:00"
+        },
+        {
+          "name": "Collected at",
+          "type": "time",
+          "description": "When the catalogue received the observation, in UTC.",
+          "value": "2026-10-20 09:02"
+        }
+      ],
+      "interpretation": "The scan supports a structural claim about delivery_summary on 20 October. It is separate from the 19 October incident and does not identify the run that produced the table’s values.",
+      "limit": "This observation describes delivery_summary, whereas the Dataset card’s example is deliveries; its observation time is not a creation time.",
+      "related": [
+        {
+          "target": "collection-run",
+          "label": "Collected by the schema scan"
+        },
+        {
+          "target": "dataset",
+          "label": "Dataset record type"
+        }
+      ]
+    },
+    {
+      "id": "collection-run",
+      "label": "Collection run",
+      "group": "collection",
+      "description": "Records the scope and timing of a collector’s work.",
+      "primaryChapter": 5,
+      "chapters": [
+        {
+          "number": 5,
+          "href": "chapters/05-collecting-metadata.html#keep-the-source-and-its-times",
+          "label": "Read collection timing"
+        },
+        {
+          "number": 6,
+          "href": "chapters/06-unreliable-records.html#absence-needs-an-explanation",
+          "label": "Interpret an absent observation"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
+          "label": "Plan collection maintenance"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "Production database scan",
+      "fields": [
+        {
+          "name": "Collector",
+          "type": "text",
+          "description": "The collector whose work is being described.",
+          "value": "Production database schema scan"
+        },
+        {
+          "name": "Scope",
+          "type": "text",
+          "description": "The dataset explicitly described by the chapter’s observation.",
+          "value": "prod/parcels/delivery_summary"
+        },
+        {
+          "name": "Observed at",
+          "type": "time",
+          "description": "When the collector checked the database, in UTC.",
+          "value": "2026-10-20 09:00"
+        },
+        {
+          "name": "Collected at",
+          "type": "time",
+          "description": "When its observation reached the catalogue, in UTC.",
+          "value": "2026-10-20 09:02"
+        },
+        {
+          "name": "Collected claim",
+          "type": "text",
+          "description": "The structural observation supplied by this scan.",
+          "value": "Column percentage exists",
+          "target": "source-observation"
+        }
+      ],
+      "interpretation": "This card models the scan described in Chapter 5; it is not an additional SQLite simulation table. A collection process preserves observations while its scope and outcome determine how omissions can be interpreted.",
+      "limit": "One observed column does not prove a complete scan, and missing from a scan does not by itself mean deleted.",
+      "related": [
+        {
+          "target": "source-observation",
+          "label": "Collects this observation"
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "label": "Decision",
+      "group": "collection",
+      "description": "Records a chosen rule, the remaining evidence gap and who acts next.",
+      "primaryChapter": 7,
+      "chapters": [
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#leave-a-decision-someone-can-act-on",
+          "label": "Read the meeting decision"
+        },
+        {
+          "number": 1,
+          "href": "chapters/01-why-metadata.html#record-the-decision",
+          "label": "Read its chosen definition"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#record-the-choice",
+          "label": "See a separate platform decision"
+        },
+        {
+          "number": 8,
+          "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
+          "label": "Plan ongoing ownership"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "Operations meeting decision",
+      "fields": [
+        {
+          "name": "Decision",
+          "type": "text",
+          "description": "The rule selected for the operations meeting.",
+          "value": "Use the all-due rule; expected four-parcel result: 50.0%",
+          "target": "metric-definition"
+        },
+        {
+          "name": "Current gap",
+          "type": "text",
+          "description": "The evidence still missing before the measure can be used.",
+          "value": "No verified all-due publication is attached"
+        },
+        {
+          "name": "Next action and owner",
+          "type": "text",
+          "description": "The person and work needed to close that gap.",
+          "value": "Reporting engineer verifies the calculation and attaches the published output identifier and report refresh evidence before the next meeting"
+        },
+        {
+          "name": "Definition owner",
+          "type": "text",
+          "description": "The team confirming the agreed meaning.",
+          "value": "Delivery Operations confirms the denominator and original-promise rule",
+          "target": "responsible-team"
+        }
+      ],
+      "interpretation": "The decision selects the all-due definition and makes the publication gap explicit. Chapter 8 records a separate decision about how to maintain the evidence.",
+      "limit": "This meeting decision remains pending until the calculation and publication are verified; the incident’s completed-delivery output does not close the gap.",
+      "related": [
+        {
+          "target": "metric-definition",
+          "label": "Chooses the all-due rule"
+        },
+        {
+          "target": "responsible-team",
+          "label": "Confirms the definition"
+        },
+        {
+          "target": "quality-check",
+          "label": "Considers scoped quality evidence"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "to": "responsible-team",
+      "label": "owned by",
+      "from": "metric-definition"
+    },
+    {
+      "to": "dataset",
+      "label": "describes",
+      "from": "metric-definition"
+    },
+    {
+      "to": "dataset",
+      "label": "belongs to",
+      "from": "column"
+    },
+    {
+      "to": "dataset",
+      "label": "reads",
+      "from": "saved-query"
+    },
+    {
+      "to": "dataset",
+      "label": "reads",
+      "from": "job"
+    },
+    {
+      "to": "job",
+      "label": "execution of",
+      "from": "run"
+    },
+    {
+      "to": "input-snapshot",
+      "label": "read",
+      "from": "run"
+    },
+    {
+      "to": "code-version",
+      "label": "executed",
+      "from": "run"
+    },
+    {
+      "to": "dataset",
+      "label": "captures",
+      "from": "input-snapshot"
+    },
+    {
+      "to": "run",
+      "label": "produced by",
+      "from": "published-output"
+    },
+    {
+      "to": "published-output",
+      "label": "reads",
+      "from": "report-refresh"
+    },
+    {
+      "to": "dataset",
+      "label": "checks",
+      "from": "quality-check"
+    },
+    {
+      "to": "source-observation",
+      "label": "collects",
+      "from": "collection-run"
+    },
+    {
+      "to": "dataset",
+      "label": "describes",
+      "from": "source-observation"
+    },
+    {
+      "to": "metric-definition",
+      "label": "chooses",
+      "from": "decision"
+    },
+    {
+      "to": "responsible-team",
+      "label": "assigns definition responsibility to",
+      "from": "decision"
+    },
+    {
+      "to": "quality-check",
+      "label": "considers",
+      "from": "decision"
+    }
+  ]
+}

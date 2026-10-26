@@ -4,6 +4,7 @@
 from html import escape, unescape
 from html.parser import HTMLParser
 import os
+import json
 import math
 from pathlib import Path
 import re
@@ -12,9 +13,11 @@ from urllib.parse import unquote, urlsplit, urlunsplit
 
 import markdown
 
+from metadata_map import render_map
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "_site"
-REQUIRED = ["book.md", "chapters/01-why-metadata.md",
+REQUIRED = ["book.md", "metadata-map.md", "chapters/01-why-metadata.md",
             "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md",
             "chapters/04-outdated-reports.md", "chapters/05-collecting-metadata.md",
             "chapters/06-unreliable-records.md", "chapters/07-using-metadata.md",
@@ -150,7 +153,7 @@ def build():
     for name in REQUIRED:
         if not (ROOT / name).is_file():
             raise ValueError(f"Missing required source: {name}")
-    sources = [Path("book.md"), *sorted(p.relative_to(ROOT) for p in (ROOT / "chapters").glob("*.md"))]
+    sources = [Path("book.md"), Path("metadata-map.md"), *sorted(p.relative_to(ROOT) for p in (ROOT / "chapters").glob("*.md"))]
     if (ROOT / "examples").exists():
         sources.extend(sorted(p.relative_to(ROOT) for p in (ROOT / "examples").rglob("*.md")))
     content = {source: read_source(source) for source in sources}
@@ -168,6 +171,9 @@ def build():
         converter = markdown.Markdown(extensions=["fenced_code", "tables", "toc", "sane_lists", "md_in_html"],
                                       extension_configs={"toc": {"toc_depth": "2-3"}})
         body = converter.convert(text)
+        is_map = source == Path("metadata-map.md")
+        if is_map:
+            body += render_map(json.loads((ROOT / "assets/metadata-map.json").read_text()))
         body = re.sub(r'\b(href|src)="([^"]*)"', rewrite_link, body)
         reading_time = max(1, math.ceil(ReadingText(body).words / 220))
         body = body.replace("<pre>", '<pre tabindex="0" role="region" aria-label="Code example">')
@@ -194,11 +200,22 @@ def build():
                     arrow = "←" if offset < 0 else "→"
                     pagination.append(f'<a class="pagination-{label.lower()}" rel="{label.lower()}" href="{relative(destination(item), page)}"><span class="pagination-label">{caption}</span><span class="pagination-title">{escape(clean_title(content[item][0]))}<span class="pagination-arrow" aria-hidden="true">{arrow}</span></span></a>')
         description = f"{title}. Read {book_title}, a practical guide to understanding data through its metadata."
-        toc = f'<details class="page-contents"><summary>On this page</summary>{converter.toc}</details>' if converter.toc_tokens else ""
-        page_type = "introduction" if source == Path("book.md") else "chapter" if source in chapters else "reference"
+        toc = f'<details class="page-contents"><summary>On this page</summary>{converter.toc}</details>' if converter.toc_tokens and not is_map else ""
+        page_type = "map" if is_map else "introduction" if source == Path("book.md") else "chapter" if source in chapters else "reference"
         chapter_number = f'{chapters.index(source) + 1:02}' if source in chapters else ""
         chapter_meta = f"CHAPTER {chapter_number}" if chapter_number else "A PRACTICAL GUIDE" if page_type == "introduction" else "REFERENCE"
         decoration = f'<span class="chapter-number" aria-hidden="true">{chapter_number}</span>' if chapter_number else ""
+        map_href = relative(Path("metadata-map.html"), page)
+        if source in chapters:
+            map_href += f"?chapter={chapters.index(source) + 1}"
+        map_current = ' aria-current="page"' if is_map else ''
+        map_assets = (
+            f'<link rel="stylesheet" href="{relative(Path("assets/metadata-map.css"), page)}">'
+            f'<script defer src="{relative(Path("assets/metadata-map.js"), page)}"></script>'
+        ) if is_map else ""
+        if is_map:
+            chapter_meta = "VISUAL INDEX"
+        reading_badge = "" if is_map else f'<span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span>'
         html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -209,15 +226,16 @@ def build():
   <title>{escape(title)} · {escape(book_title)}</title>
   <link rel="icon" type="image/svg+xml" href="{relative(Path('assets/favicon.svg'), page)}">
   <link rel="stylesheet" href="{relative(Path('assets/book.css'), page)}">
+  {map_assets}
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
   <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav></aside>
   <main id="main" tabindex="-1">
-    <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span><span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span></p><h1>{escape(clean_title(title))}</h1></header>
+    <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span>{reading_badge}</p><h1>{escape(clean_title(title))}</h1></header>
     {toc}
     <div class="prose">{body}</div>
     </article>
