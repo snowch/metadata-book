@@ -1,6 +1,8 @@
 # A local lineage incident
 
-Read Chapter 3 without installing or running anything. To reproduce its invented incident, use Python 3 from the repository root:
+For a guided investigation, read the optional [practical walkthrough](walkthrough.md). This page describes the simulation and its records. [Chapter 3](../../chapters/03-following-lineage.md) teaches the core ideas without requiring execution.
+
+To reproduce the invented incident, use Python 3 from the repository root:
 
 ```sh
 python3 examples/lineage/simulate.py

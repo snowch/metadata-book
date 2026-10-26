@@ -56,8 +56,8 @@ def verify_lineage():
         )
         trace = db.execute((path.parent / "trace-report.sql").read_text()).fetchall()
         assert trace == [("R1205", "completed-v1", "S1205")], trace
-        chapter = (ROOT / "chapters/03-following-lineage.md").read_text()
-        printed_query = re.findall(r"```sql\n(.*?)\n```", chapter, re.S)[0]
+        walkthrough = (ROOT / "examples/lineage/walkthrough.md").read_text()
+        printed_query = re.findall(r"```sql\n(.*?)\n```", walkthrough, re.S)[0]
         assert db.execute(printed_query).fetchall() == trace
         ages = db.execute("""
             SELECT f.refresh_id,
