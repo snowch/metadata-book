@@ -3,6 +3,8 @@
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
   const CLEARANCE = 6;
+  const STUB = 14;
+  const BEND_COST = 96;
   const EPSILON = .05;
   let instance = 0;
 
@@ -72,15 +74,17 @@
 
   function ports(box) {
     const result = [];
-    for (const fraction of [.22, .5, .78]) {
+    for (const fraction of [.5, .22, .78]) {
       const x = round(box.left + (box.right - box.left) * fraction);
       const y = round(box.top + (box.bottom - box.top) * fraction);
+      const penalty = fraction === .5 ? 0 : 24;
       result.push(
-        {x, y: box.top - CLEARANCE, anchor: {x, y: box.top}},
-        {x, y: box.bottom + CLEARANCE, anchor: {x, y: box.bottom}},
-        {x: box.left - CLEARANCE, y, anchor: {x: box.left, y}},
-        {x: box.right + CLEARANCE, y, anchor: {x: box.right, y}}
+        {x, y: box.top - STUB, anchor: {x, y: box.top}},
+        {x, y: box.bottom + STUB, anchor: {x, y: box.bottom}},
+        {x: box.left - STUB, y, anchor: {x: box.left, y}},
+        {x: box.right + STUB, y, anchor: {x: box.right, y}}
       );
+      result.slice(-4).forEach(port => { port.penalty = penalty; });
     }
     return result;
   }
@@ -120,11 +124,11 @@
       if (horizontal === otherHorizontal) {
         if (Math.abs((horizontal ? a.y : a.x) - (horizontal ? c.y : c.x)) > 2) continue;
         const overlap = Math.min(horizontal ? Math.max(a.x, b.x) : Math.max(a.y, b.y), horizontal ? Math.max(c.x, d.x) : Math.max(c.y, d.y)) - Math.max(horizontal ? Math.min(a.x, b.x) : Math.min(a.y, b.y), horizontal ? Math.min(c.x, d.x) : Math.min(c.y, d.y));
-        if (overlap > 0) cost += overlap * 2;
+        if (overlap > 0) cost += overlap * 4;
       } else {
         const h1 = horizontal ? a : c, h2 = horizontal ? b : d;
         const v1 = horizontal ? c : a, v2 = horizontal ? d : b;
-        if (v1.x > Math.min(h1.x, h2.x) && v1.x < Math.max(h1.x, h2.x) && h1.y > Math.min(v1.y, v2.y) && h1.y < Math.max(v1.y, v2.y)) cost += 24;
+        if (v1.x > Math.min(h1.x, h2.x) && v1.x < Math.max(h1.x, h2.x) && h1.y > Math.min(v1.y, v2.y) && h1.y < Math.max(v1.y, v2.y)) cost += 12;
       }
     }
     return cost;
@@ -142,9 +146,9 @@
       const index = network.index(start);
       if (!Number.isFinite(index)) return;
       const state = index * 3 + 2;
-      costs[state] = CLEARANCE;
+      costs[state] = STUB + (start.penalty || 0);
       sources.set(state, start);
-      queue.push({state, cost: CLEARANCE, priority: CLEARANCE + distance(start, end)});
+      queue.push({state, cost: costs[state], priority: costs[state] + distance(start, end)});
     });
     while (queue.items.length) {
       const item = queue.pop();
@@ -166,7 +170,7 @@
       const p = network.point(current);
       for (const next of network.neighbors(current)) {
         const state = next.index * 3 + next.direction;
-        const cost = item.cost + next.length + (direction !== 2 && direction !== next.direction ? 14 : 0) + trafficPenalty(p, next.point, segments);
+        const cost = item.cost + next.length + (direction !== 2 && direction !== next.direction ? BEND_COST : 0) + trafficPenalty(p, next.point, segments);
         if (cost >= costs[state]) continue;
         costs[state] = cost;
         previous[state] = item.state;
@@ -232,6 +236,81 @@
     return candidates.sort((a, b) => a.score - b.score);
   }
 
+  // Choose the line first. A vertical connection keeps its label beside the
+  // line; a long horizontal run can carry a label with clear arrow stubs.
+  function labelAlong(points, size, obstacles, segments, width, height) {
+    const candidates = [];
+    for (let index = 1; index < points.length; index++) {
+      const a = points[index - 1], b = points[index];
+      const horizontal = Math.abs(a.y - b.y) < EPSILON;
+      for (const fraction of [.5, .35, .65]) {
+        const x = a.x + (b.x - a.x) * fraction, y = a.y + (b.y - a.y) * fraction;
+        if (horizontal) {
+          if (Math.abs(b.x - a.x) >= size.width + STUB * 2 + 4 && x - size.width / 2 >= Math.min(a.x, b.x) + STUB && x + size.width / 2 <= Math.max(a.x, b.x) - STUB) candidates.push({x, y, inline: index, cost: Math.abs(fraction - .5) * 10});
+          for (const direction of [-1, 1]) candidates.push({x, y: y + direction * (size.height / 2 + 5), cost: 8 + Math.abs(fraction - .5) * 10});
+        } else {
+          if (y - size.height / 2 < Math.min(a.y, b.y) + 4 || y + size.height / 2 > Math.max(a.y, b.y) - 4) continue;
+          for (const direction of [1, -1]) candidates.push({x: x + direction * (size.width / 2 + 5), y, cost: 3 + Math.abs(fraction - .5) * 10});
+        }
+      }
+    }
+    candidates.sort((a, b) => a.cost - b.cost);
+    for (const candidate of candidates) {
+      const box = {left: candidate.x - size.width / 2 - 2, right: candidate.x + size.width / 2 + 2, top: candidate.y - size.height / 2 - 1, bottom: candidate.y + size.height / 2 + 1};
+      if (box.left < 3 || box.right > width - 3 || box.top < 3 || box.bottom > height - 3 || obstacles.some(obstacle => overlaps(box, obstacle)) || segments.some(([a, b]) => crosses(a, b, box))) continue;
+      if (points.slice(1).some((point, index) => index + 1 !== candidate.inline && crosses(points[index], point, box))) continue;
+      return {...candidate, box};
+    }
+    return null;
+  }
+
+  function routeFirst(fromPorts, toPorts, size, obstacles, segments, width, height) {
+    // Prefer centers, with offset ports available to separate crowded lines.
+    const starts = fromPorts.filter(port => !obstacles.some(box => !inside(port.anchor, box) && crosses(port.anchor, port, box)));
+    const ends = toPorts.filter(port => !obstacles.some(box => !inside(port.anchor, box) && crosses(port.anchor, port, box)));
+    const network = grid(obstacles, [...starts, ...ends], {left: width / 2, right: width / 2, y: height / 2}, width, height);
+    let chosen = null;
+    function consider(rawPoints, sourcePenalty, targetPenalty) {
+      const points = simplify(rawPoints);
+      if (points.slice(2).some((point, index) => {
+        const a = points[index], b = points[index + 1];
+        return (b.x - a.x) * (point.x - b.x) + (b.y - a.y) * (point.y - b.y) < -EPSILON;
+      })) return;
+      if (points.slice(1).some((point, index) => obstacles.some(box => {
+        if (index === 0 && inside(points[0], box)) return false;
+        if (index === points.length - 2 && inside(point, box)) return false;
+        return crosses(points[index], point, box);
+      }))) return;
+      const station = labelAlong(points, size, obstacles, segments, width, height);
+      if (!station) return;
+      const cost = points.slice(1).reduce((sum, point, index) => sum + distance(points[index], point) + trafficPenalty(points[index], point, segments), 0) + Math.max(0, points.length - 2) * BEND_COST + sourcePenalty + targetPenalty + station.cost;
+      if (!chosen || cost < chosen.cost) chosen = {points, station, cost};
+    }
+    // A lane halfway between facing ports leaves room for a label and avoids
+    // wrapping a line around a neighboring card merely to fit its text.
+    for (const start of starts.filter(port => !port.penalty)) {
+      for (const end of ends.filter(port => !port.penalty)) {
+        const x = round((start.x + end.x) / 2), y = round((start.y + end.y) / 2);
+        consider([start.anchor, start, {x: start.x, y}, {x: end.x, y}, end, end.anchor], 0, 0);
+        consider([start.anchor, start, {x, y: start.y}, {x, y: end.y}, end, end.anchor], 0, 0);
+      }
+    }
+    for (const end of ends) {
+      const found = route(network, starts, end, obstacles, segments);
+      if (!found) continue;
+      const points = simplify([...found.points, end.anchor]);
+      // A route must approach each card normally, without doubling back at a
+      // port. Its final visible segment therefore stays at least STUB long.
+      if (points.slice(2).some((point, index) => {
+        const a = points[index], b = points[index + 1];
+        return (b.x - a.x) * (point.x - b.x) + (b.y - a.y) * (point.y - b.y) < -EPSILON;
+      })) continue;
+      const start = starts.find(port => distance(port.anchor, points[0]) < EPSILON);
+      consider(points, start ? start.penalty : 0, end.penalty || 0);
+    }
+    return chosen;
+  }
+
   window.drawMetadataConnections = function (svg, canvas, nodes, edges, scale, chapterMatch, chapter) {
     svg.replaceChildren();
     svg.setAttribute('aria-hidden', 'true');
@@ -253,8 +332,8 @@
     canvas.querySelectorAll('.map-group > h2').forEach(heading => { const box = measured(heading); if (box) obstacles.push(inflate(box, CLEARANCE)); });
     const defs = svgElement('defs');
     const markerId = `map-arrow-${++instance}`;
-    const marker = svgElement('marker', {id: markerId, viewBox: '0 0 8 8', refX: 7, refY: 4, markerWidth: 7, markerHeight: 7, orient: 'auto', markerUnits: 'userSpaceOnUse'});
-    marker.append(svgElement('path', {d: 'M 0 1 L 7 4 L 0 7 Z', fill: 'var(--accent, #a44932)'}));
+    const marker = svgElement('marker', {id: markerId, viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 9, markerHeight: 9, orient: 'auto', markerUnits: 'userSpaceOnUse'});
+    marker.append(svgElement('path', {d: 'M 0 1 L 9 5 L 0 9 Z', fill: 'var(--accent, #a44932)'}));
     defs.append(marker);
     svg.append(defs);
     const segments = [];
@@ -267,8 +346,8 @@
       if (!source || !target || edge.from === edge.to) continue;
       const size = labelSize(svg, edge.label);
       const fromPorts = ports(source), toPorts = ports(target);
-      const candidates = stations(size, obstacles, segments, center(source), center(target), width, height);
-      let chosen = null;
+      let chosen = routeFirst(fromPorts, toPorts, size, obstacles, segments, width, height);
+      const candidates = chosen ? [] : stations(size, obstacles, segments, center(source), center(target), width, height);
       for (const station of candidates) {
         const blocked = [...obstacles, station.box];
         const network = grid(blocked, [...fromPorts, ...toPorts], station, width, height);

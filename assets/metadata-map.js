@@ -36,6 +36,7 @@
   let pane = initial.get('panel') === 'details' || records.has(hashRecord) ? 'details' : 'map';
   let mapPosition = {y: 0, left: 0, top: 0};
   let scale = 1;
+  let fitToWidth = true;
   let currentTab = 'example';
   let drawPending = false;
   const element = (tag, text, className) => {
@@ -223,6 +224,7 @@
     canvas.style.width = `${Math.max(840, viewport.clientWidth - 2)}px`;
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
+    if (fitToWidth) scale = Math.max(.25, Math.min(1, (viewport.clientWidth - 2) / width));
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
@@ -280,7 +282,8 @@
     saveState();
   }));
   root.querySelectorAll('[data-zoom]').forEach(button => button.addEventListener('click', () => {
-    if (button.dataset.zoom === 'fit') {
+    fitToWidth = button.dataset.zoom === 'fit';
+    if (fitToWidth) {
       scale = Math.max(.25, Math.min(1, (viewport.clientWidth - 2) / canvas.offsetWidth));
       viewport.scrollLeft = 0;
       viewport.scrollTop = 0;

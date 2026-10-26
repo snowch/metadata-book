@@ -80,6 +80,23 @@ with sync_playwright() as p:
   expect(page.locator('.map-connection')).to_have_count(len(expected_edges))
   actual=page.locator('.map-connection').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
   assert sorted(actual)==sorted([[e['from'],e['to']] for e in expected_edges])
+  if record['id'] in ('responsible-team','metric-definition'):
+   owned_by=page.locator('.map-connection[data-from="metric-definition"][data-to="responsible-team"]')
+   points=owned_by.evaluate("el=>el.getAttribute('d').match(/-?[\\d.]+/g).map(Number)")
+   assert len(points)==4 and abs(points[0]-points[2])<.1,('ownership should be straight',points)
+  if record['id']=='metric-definition':
+   shared=page.locator('.map-connection').evaluate_all(r"""els=>{
+    const segments=el=>{const v=el.getAttribute('d').match(/-?[\d.]+/g).map(Number),s=[];for(let i=2;i<v.length;i+=2)s.push([v[i-2],v[i-1],v[i],v[i+1]]);return s};
+    let longest=0;
+    for(let i=0;i<els.length;i++)for(let j=i+1;j<els.length;j++)for(const a of segments(els[i]))for(const b of segments(els[j])){
+     const horizontal=Math.abs(a[1]-a[3])<.1;
+     if(horizontal!==(Math.abs(b[1]-b[3])<.1))continue;
+     const k=horizontal?0:1,other=horizontal?1:0;
+     if(Math.abs(a[other]-b[other])>.1)continue;
+     longest=Math.max(longest,Math.min(Math.max(a[k],a[k+2]),Math.max(b[k],b[k+2]))-Math.max(Math.min(a[k],a[k+2]),Math.min(b[k],b[k+2])));
+    }return longest;
+   }""")
+   assert shared<=14.1,('connections must not share a long stretch of line',shared)
   connected={record['id']}|{e[k] for e in expected_edges for k in ('from','to')}
   assert page.locator('.map-node.is-unrelated').count()==15-len(connected)
   geometry=page.evaluate(GEOMETRY_CHECK)
@@ -102,8 +119,10 @@ with sync_playwright() as p:
    if width >= 768:
     assert page.locator('.map-canvas').bounding_box()['height'] < 850,(width,'compact overview')
    page.locator('button[data-view="map"]').click()
-   page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text('110%')
-   page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text('100%')
+   page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
+   initial_zoom=int(page.locator('.map-zoom-value').inner_text().rstrip('%'))
+   page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text(f'{initial_zoom+10}%')
+   page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text(f'{initial_zoom}%')
    page.locator('[data-zoom="fit"]').click()
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'zoom')
    page.locator('[data-select-record="report-refresh"]').press('Enter')
