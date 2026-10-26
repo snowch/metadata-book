@@ -43,4 +43,4 @@ At 10:03, the table still names an older version, `summary-R0940`, even though t
 
 </blockquote>
 
-The catalogue should show both claims and flag the latest publication as disputed. This preserves provenance: the record of where each claim came from. An investigator can then inspect the job's write logs and saved output versions. If that investigation resolves the conflict, record the supporting evidence alongside the conclusion. Choosing whichever message arrived last would make the display simpler while discarding the reason to investigate.
+The catalogue should show both claims and flag the latest publication as disputed. Metadata has [provenance](03-following-lineage.md#provenance) too: keep who or what supplied each claim and when. An investigator can then inspect the job's write logs and saved output versions. If that investigation resolves the conflict, record the supporting evidence alongside the conclusion. Choosing whichever message arrived last would make the display simpler while discarding the reason to investigate.

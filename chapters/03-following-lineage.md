@@ -1,6 +1,24 @@
 # 3. Following a number to its source
 
-Lineage connects data's inputs, processing steps and outputs. It gives us a route from a number in a report back through the work that produced it. Following that route requires two kinds of evidence: declared dependencies describe how data is intended to flow; execution records describe what happened in a particular run.
+To explain a number in a report, we need to know both the route from its sources and what happened when that result was produced.
+
+<div class="definition-box" markdown="1">
+
+**Lineage**
+
+Shows how data is connected: which sources, jobs and outputs depend on one another.
+
+</div>
+
+<div class="definition-box" id="provenance" markdown="1">
+
+**Provenance**
+
+Records how a particular result came to exist: which inputs and code produced it, when, and through which execution.
+
+</div>
+
+The terms overlap in practice; lineage tools can also capture provenance. In this chapter, declared dependencies describe the intended route, while saved inputs and execution records help explain a particular run.
 
 ## Follow the route
 
