@@ -18,7 +18,9 @@ Records the history of a particular dataset or result: who or what created or ch
 
 </div>
 
-The terms overlap in practice; lineage tools can also capture provenance. In this chapter, declared dependencies describe the intended route, while saved inputs and execution records help explain a particular run.
+Lineage emphasises **data flow**; provenance emphasises **creation and change history**. Both can describe transformations and the people or systems involved, so the distinction is not simply “how” versus “who.” The terms overlap in practice; lineage tools can also capture provenance.
+
+In this chapter, declared dependencies describe the intended route, while saved inputs and execution records help explain a particular run.
 
 ## Follow the route
 
