@@ -8,7 +8,7 @@ This book is for software and data engineers who can read a table and a simple S
 
 1. [What the data cannot tell you](chapters/01-why-metadata.md) — decide what a number should mean and record that decision.
 2. [What a database already knows](chapters/02-reading-a-database.md) — inspect SQLite's records and check what a saved query actually counts.
-3. [Following a number to its source](chapters/03-following-lineage.md) — trace an outdated report to the run and inputs that produced it.
+3. [Following a number to its source](chapters/03-following-lineage.md) — investigate an outdated report through saved records, verify recovery and decide what evidence to retain.
 4. [Collecting metadata from several systems](chapters/04-collecting-metadata.md) — connect descriptions without confusing different tables, sources or times.
 5. [When the records are unreliable](chapters/05-unreliable-records.md) — handle missing, repeated, late and conflicting observations.
 6. [Using metadata to make decisions](chapters/06-using-metadata.md) — choose a suitable dataset and investigate the effects of a proposed change.
@@ -20,4 +20,4 @@ Chapters 1–3 explain how to question a number and inspect the evidence behind 
 
 Worked examples carry the explanation. Highlighted principles mark the central idea; **Further detail** boxes are optional. You can skip them without losing the argument.
 
-The company and its records are invented. The SQLite examples use the real database engine; the incident histories are illustrative, and the platform pilot is a suggested exercise. Product-specific explanations link to the tools' documentation. To run the database example yourself, see [Reproducing the worked results](examples/README.md).
+The company and its records are invented. The database examples and Chapter 3's incident simulation use the real SQLite engine. Other incident histories are illustrative, and the platform pilot is a suggested exercise. Product-specific explanations link to the tools' documentation. To run the examples yourself, see [Reproducing the worked results](examples/README.md).

@@ -131,7 +131,8 @@ def build():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "assets", OUT / "assets")
     if (ROOT / "examples").exists():
-        shutil.copytree(ROOT / "examples", OUT / "examples")
+        shutil.copytree(ROOT / "examples", OUT / "examples",
+                        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     for source, (title, text) in content.items():
         page = destination(source)
         converter = markdown.Markdown(extensions=["fenced_code", "tables", "toc", "sane_lists", "md_in_html"],
