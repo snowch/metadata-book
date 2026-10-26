@@ -20,9 +20,12 @@ with sync_playwright() as p:
  page.on('pageerror',lambda e:errors.append(str(e)))
  for chapter in data['chapters']:
   page.goto(base+chapter['href'])
+  assert page.locator('.book-sidebar').count()==1
   assert page.locator('.header-map').get_attribute('href')==f'../metadata-map.html?chapter={chapter["number"]}'
   page.locator('.header-map').click()
   page.wait_for_selector('.metadata-map.is-ready')
+  assert page.locator('.book-sidebar').count()==0
+  assert page.locator('.book-layout').evaluate('(el)=>getComputedStyle(el).display')=='block'
   assert page.locator('#map-chapter-filter').input_value()==str(chapter['number'])
   assert page.locator('.map-return').get_attribute('href')==chapter['href']
  page.goto(base+'chapters/05-collecting-metadata.html')
@@ -59,7 +62,7 @@ with sync_playwright() as p:
  page.locator('#map-chapter-filter').select_option('all')
  assert page.locator('.map-node.is-chapter').count()==0
  page.locator('.map-return').click();assert page.url==base+'chapters/05-collecting-metadata.html'
- for width in (320,390,768,1440):
+ for width in (320,390,768,900,1024,1440):
   for scheme in ('light','dark'):
    page.set_viewport_size({'width':width,'height':1100});page.emulate_media(color_scheme=scheme)
    page.goto(base+'metadata-map.html?chapter=4');page.wait_for_selector('.metadata-map.is-ready')
@@ -100,4 +103,4 @@ with sync_playwright() as p:
  browser.close()
 server.shutdown()
 assert not errors,errors
-print('Map interaction, linked records, tabs/keyboard, all chapters, origin return, URL reload, 8 viewport/theme combinations, invalid parameters, print and no-JS fallback passed.')
+print('Map interaction, linked records, tabs/keyboard, all chapters, origin return, URL reload, 12 viewport/theme combinations, invalid parameters, print and no-JS fallback passed.')

@@ -5,6 +5,7 @@ from html import escape, unescape
 from html.parser import HTMLParser
 import os
 import json
+import hashlib
 import math
 from pathlib import Path
 import re
@@ -37,6 +38,12 @@ def destination(source):
 
 def relative(target, page):
     return Path(os.path.relpath(target, page.parent)).as_posix()
+
+
+def asset_url(path, page):
+    """Change asset URLs with their contents so readers receive matching styles/code."""
+    digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+    return f"{relative(Path(path), page)}?v={digest}"
 
 
 def rewrite_link(match):
@@ -210,11 +217,16 @@ def build():
             map_href += f"?chapter={chapters.index(source) + 1}"
         map_current = ' aria-current="page"' if is_map else ''
         map_assets = (
-            f'<link rel="stylesheet" href="{relative(Path("assets/metadata-map.css"), page)}">'
-            f'<script defer src="{relative(Path("assets/metadata-map.js"), page)}"></script>'
+            f'<link rel="stylesheet" href="{asset_url("assets/metadata-map.css", page)}">'
+            f'<script defer src="{asset_url("assets/metadata-map.js", page)}"></script>'
         ) if is_map else ""
         if is_map:
             chapter_meta = "VISUAL INDEX"
+        sidebar = "" if is_map else (
+            f'<aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p>'
+            f'<p class="sidebar-title">{escape(book_title)}</p>'
+            f'<nav aria-label="Book chapters"><ol>{"".join(nav)}</ol></nav></aside>'
+        )
         reading_badge = "" if is_map else f'<span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span>'
         html = f'''<!doctype html>
 <html lang="en">
@@ -225,7 +237,7 @@ def build():
   <meta name="color-scheme" content="light dark">
   <title>{escape(title)} · {escape(book_title)}</title>
   <link rel="icon" type="image/svg+xml" href="{relative(Path('assets/favicon.svg'), page)}">
-  <link rel="stylesheet" href="{relative(Path('assets/book.css'), page)}">
+  <link rel="stylesheet" href="{asset_url('assets/book.css', page)}">
   {map_assets}
 </head>
 <body class="page-{page_type}">
@@ -233,7 +245,7 @@ def build():
 <header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
-  <aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p><p class="sidebar-title">{escape(book_title)}</p><nav aria-label="Book chapters"><ol>{''.join(nav)}</ol></nav></aside>
+  {sidebar}
   <main id="main" tabindex="-1">
     <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span>{reading_badge}</p><h1>{escape(clean_title(title))}</h1></header>
     {toc}

@@ -160,14 +160,6 @@ pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .page-introduction .prose > ol > li a { font-size: 1.4rem; font-weight: 500; }
 img { max-width: 100%; height: auto; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
-.page-map .book-layout { display: block; max-width: 1600px; padding-top: 1.5rem; }
-.page-map .book-sidebar { display: none; }
-.page-map main { max-width: none; }
-.page-map .chapter-header { padding: 0 0 1rem; }
-.page-map .chapter-meta { display: none; }
-.page-map .prose > p:first-child { font: 1.15rem/1.5 var(--serif); margin: .8rem 0; }
-.page-map h1 { font-size: clamp(2.3rem, 4vw, 3rem); }
-.page-map .pagination { display: none; }
 @media (max-width: 1000px) and (min-width: 801px) {
   .book-layout { grid-template-columns: 170px minmax(0, 1fr); gap: 2.8rem; padding-inline: 2rem; }
   .chapter-header { padding-right: 4.5rem; }
