@@ -42,7 +42,6 @@ def _details(record, records):
       <h2 tabindex="-1">{_e(record['label'])}</h2>
       <p class="map-record-description">{_e(record['description'])}</p>
       <p class="map-evidence">{_e(record['evidence'])}</p>
-      <div class="map-detail-tabs" hidden></div>
       <section class="map-example-panel"><h3>Example · {_e(record.get('exampleLabel', record['label']))}</h3>
         <p class="map-value-hint">Linked values open the matching example record.</p>
         <dl class="map-example-values">{example}</dl>{row_html}{code}
@@ -76,18 +75,19 @@ def render_map(data):
     safe_json = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return f'''<section class="metadata-map" aria-label="Interactive metadata map">
       <a class="map-return" hidden></a>
-      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. The whole map keeps all record types and their relationships visible. Select a record to highlight its connections. Choose View record to inspect its example and fields. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
+      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. The whole map keeps all record types and their relationships visible. Select a record to highlight its connections. Choose Example record to inspect its values, or Fields &amp; types to read the field definitions. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
       <div class="map-controls" hidden>
         <div class="map-filter"><label for="map-chapter-filter">Highlight chapter</label><select id="map-chapter-filter"><option value="all">Show all chapters</option>{chapter_options}</select></div>
       </div>
       <p class="map-status" role="status" aria-live="polite"></p>
+      <div class="map-selection" hidden><div><span class="map-selection-context">Selected record</span><span class="map-selection-label"></span></div><button type="button" class="map-view-record">View example <span aria-hidden="true">→</span></button></div>
       <div class="map-section-tabs" role="tablist" aria-label="Metadata explorer" hidden>
         <button type="button" id="map-section-map" role="tab" data-pane="map" aria-controls="map-explorer-panel" aria-selected="true">Map</button>
-        <button type="button" id="map-section-details" role="tab" data-pane="details" aria-controls="map-record-panel" aria-selected="false" tabindex="-1">Record details</button>
+        <button type="button" id="map-section-example" role="tab" data-pane="example" aria-controls="map-example-panel" aria-selected="false" tabindex="-1">Example record</button>
+        <button type="button" id="map-section-fields" role="tab" data-pane="fields" aria-controls="map-fields-panel" aria-selected="false" tabindex="-1">Fields &amp; types</button>
       </div>
       <div class="map-workspace">
         <div class="map-explorer" id="map-explorer-panel">
-          <div class="map-selection" hidden><span class="map-selection-label"></span><button type="button" class="map-view-record">View record <span aria-hidden="true">→</span></button></div>
           <div class="map-tools" hidden>
           <p class="map-navigation-hint" hidden>Zoom in to read the labels; drag or scroll to move around. <strong>Fit</strong> brings the diagram back into view.</p>
           <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div></div>

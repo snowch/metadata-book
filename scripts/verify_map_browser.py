@@ -74,10 +74,10 @@ with sync_playwright() as p:
  assert page.locator('.map-detail h2').inner_text()=='Published output'
  page.locator('.map-detail [data-record-target="run"]').first.click()
  assert page.locator('.map-detail h2').inner_text()=='Run'
- page.locator('[data-tab="fields"]').click()
+ page.locator('button[data-pane="fields"]').click()
  assert page.locator('.map-detail .map-fields-panel').is_visible()
- page.locator('[data-tab="fields"]').press('ArrowLeft')
- assert page.locator('[data-tab="example"]').get_attribute('aria-selected')=='true'
+ page.locator('button[data-pane="fields"]').press('ArrowLeft')
+ assert page.locator('button[data-pane="example"]').get_attribute('aria-selected')=='true'
  page.reload();page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Run'
  assert 'Chapter 5' in page.locator('.map-return').inner_text()
@@ -90,7 +90,7 @@ with sync_playwright() as p:
   page.locator('.map-view-record').click()
   assert page.locator('.map-detail h2').inner_text()==record['label']
   assert page.locator('.map-detail .map-example-values > div').count()==len(record['fields'])
-  page.locator('[data-tab="fields"]').click()
+  page.locator('button[data-pane="fields"]').click()
   assert page.locator('.map-detail tbody tr').count()>=len(record['fields'])
   page.locator('.map-back-to-records').click()
   page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
@@ -115,6 +115,13 @@ with sync_playwright() as p:
    expect(page.locator('.map-focus-node')).to_have_count(15)
    expect(page.locator('.map-connection')).to_have_count(17)
    assert page.locator('.map-section-tabs').is_visible()
+   assert page.locator('[role="tablist"]').count()==1
+   assert page.locator('[role="tab"]').all_text_contents()==['Map','Example record','Fields & types']
+   assert page.locator('.map-selection').is_visible()
+   for name in ('map','example','fields'):
+    tab=page.locator(f'button[data-pane="{name}"]')
+    target=tab.get_attribute('aria-controls')
+    assert page.locator(f'#{target}').get_attribute('aria-labelledby')==tab.get_attribute('id')
    assert not page.locator('.map-detail').is_visible()
    page.evaluate('document.fonts.ready')
    page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
@@ -129,6 +136,19 @@ with sync_playwright() as p:
    assert not whole_geometry['problems'],(width,scheme,'whole',whole_geometry)
    page.locator('.map-view-record').click()
    assert page.locator('.map-detail h2').inner_text()=='Dataset'
+   assert page.locator('.map-selection-label').is_visible()
+   page.locator('button[data-pane="example"]').press('ArrowRight')
+   expect(page.locator('button[data-pane="fields"]')).to_be_focused()
+   assert page.locator('.map-detail .map-fields-panel').is_visible()
+   assert not page.locator('.map-detail .map-example-panel').is_visible()
+   assert 'panel=fields' in page.url
+   page.reload();page.wait_for_selector('.metadata-map.is-ready')
+   assert page.locator('button[data-pane="fields"]').get_attribute('aria-selected')=='true'
+   assert page.locator('.map-selection-label').inner_text()=='Dataset'
+   page.locator('button[data-pane="fields"]').press('ArrowRight')
+   expect(page.locator('button[data-pane="map"]')).to_be_focused()
+   page.locator('button[data-pane="map"]').press('ArrowLeft')
+   expect(page.locator('button[data-pane="fields"]')).to_be_focused()
    page.locator('.map-back-to-records').click()
    expect(page.locator('[data-focus-record="dataset"]')).to_be_focused()
    page.reload();page.wait_for_selector('.metadata-map.is-ready')
@@ -157,17 +177,17 @@ with sync_playwright() as p:
    expect(page.locator('.map-detail h2')).to_be_focused()
    assert page.locator('.map-detail').is_visible()
    assert not page.locator('.map-explorer').is_visible()
-   assert 'panel=details' in page.url
+   assert 'panel=example' in page.url
    page.locator('.map-back-to-records').click()
    expect(page.locator('[data-focus-record="report-refresh"]')).to_be_focused()
    assert page.locator('.map-zoom-value').inner_text()==zoom
    assert page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')==scroll_left
    page.locator('button[data-pane="map"]').press('ArrowRight')
-   expect(page.locator('button[data-pane="details"]')).to_be_focused()
+   expect(page.locator('button[data-pane="example"]')).to_be_focused()
    assert page.locator('.map-detail').is_visible()
    page.reload();page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('.map-detail').is_visible()
-   page.locator('button[data-pane="details"]').press('Home')
+   page.locator('button[data-pane="example"]').press('Home')
    expect(page.locator('button[data-pane="map"]')).to_be_focused()
    assert page.locator('.map-explorer').is_visible()
    page.goto(base+'index.html')
@@ -185,9 +205,11 @@ with sync_playwright() as p:
  page.goto(base+'metadata-map.html#record-column')
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Column'
+ assert 'panel=example' in page.url
  assert 'record=column' in page.url and '#record-' not in page.url
  page.goto(base+'metadata-map.html?record=report-refresh&panel=details')
  page.wait_for_selector('.metadata-map.is-ready')
+ assert 'panel=example' in page.url
  page.locator('.map-detail [data-record-target="published-output"]').first.focus()
  page.keyboard.press('Enter')
  expect(page.locator('.map-detail h2')).to_be_focused()

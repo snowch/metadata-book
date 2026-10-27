@@ -33,11 +33,11 @@
   const preferred = chapter !== 'all' ? defaults[chapter] : 'report-refresh';
   const hashRecord = window.location.hash.startsWith('#record-') ? window.location.hash.slice(8) : null;
   let selected = records.has(initial.get('record')) ? initial.get('record') : records.has(hashRecord) ? hashRecord : records.has(preferred) ? preferred : data.records[0].id;
-  let pane = initial.get('panel') === 'details' || records.has(hashRecord) ? 'details' : 'map';
+  let pane = ['example', 'fields'].includes(initial.get('panel')) ? initial.get('panel')
+    : initial.get('panel') === 'details' || records.has(hashRecord) ? 'example' : 'map';
   let mapPosition = {y: 0, left: 0, top: 0};
   let scale = 1;
   let fitToWidth = true;
-  let currentTab = 'example';
   let drawPending = false;
   const element = (tag, text, className) => {
     const node = document.createElement(tag);
@@ -55,7 +55,7 @@
     if (chapter === (origin || 'all')) url.searchParams.delete('focus'); else url.searchParams.set('focus', chapter);
     url.searchParams.set('record', selected);
     url.searchParams.delete('view');
-    if (pane === 'details') url.searchParams.set('panel', pane); else url.searchParams.delete('panel');
+    if (pane !== 'map') url.searchParams.set('panel', pane); else url.searchParams.delete('panel');
     if (url.hash.startsWith('#record-')) url.hash = '';
     window.history.replaceState(null, '', url);
   }
@@ -68,7 +68,9 @@
       button.setAttribute('aria-selected', String(active));
       button.tabIndex = active ? 0 : -1;
     });
-    for (const [name, item] of [['map', explorer], ['details', panel]]) {
+    panel.hidden = pane === 'map';
+    selection.querySelector('button').hidden = pane !== 'map';
+    for (const [name, item] of [['map', explorer], ['example', panel.querySelector('.map-example-panel')], ['fields', panel.querySelector('.map-fields-panel')]]) {
       item.hidden = pane !== name;
       item.setAttribute('role', 'tabpanel');
       item.setAttribute('aria-labelledby', `map-section-${name}`);
@@ -103,43 +105,8 @@
     const original = fallback.get(selected);
     if (!original) return;
     const content = original.querySelector('.map-record-content').cloneNode(true);
-    const tablist = content.querySelector('.map-detail-tabs');
-    tablist.hidden = false;
-    tablist.setAttribute('role', 'tablist');
-    tablist.setAttribute('aria-label', 'Record information');
-    const panels = {example: content.querySelector('.map-example-panel'), fields: content.querySelector('.map-fields-panel')};
-    const buttons = [];
-    const chooseTab = name => {
-      currentTab = name;
-      buttons.forEach(button => {
-        const active = button.dataset.tab === name;
-        button.setAttribute('aria-selected', String(active));
-        button.tabIndex = active ? 0 : -1;
-      });
-      Object.entries(panels).forEach(([key, item]) => { item.hidden = key !== name; });
-    };
-    for (const [name, label] of [['example', 'Example'], ['fields', 'Fields & types']]) {
-      const button = element('button', label);
-      button.type = 'button';
-      button.dataset.tab = name;
-      button.id = `map-tab-${name}`;
-      button.setAttribute('role', 'tab');
-      button.setAttribute('aria-controls', `map-panel-${name}`);
-      panels[name].id = `map-panel-${name}`;
-      panels[name].setAttribute('role', 'tabpanel');
-      panels[name].setAttribute('aria-labelledby', button.id);
-      button.addEventListener('click', () => chooseTab(name));
-      button.addEventListener('keydown', event => {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        const next = event.key === 'Home' ? buttons[0] : event.key === 'End' ? buttons[buttons.length - 1] : buttons.find(item => item !== button);
-        chooseTab(next.dataset.tab);
-        next.focus();
-      });
-      buttons.push(button);
-      tablist.append(button);
-    }
-    chooseTab(currentTab);
+    content.querySelector('.map-example-panel').id = 'map-example-panel';
+    content.querySelector('.map-fields-panel').id = 'map-fields-panel';
     const backToRecords = element('button', '← Back to map', 'map-back-to-records');
     backToRecords.type = 'button';
     backToRecords.addEventListener('click', () => showPane('map', true));
@@ -173,7 +140,7 @@
     summary.replaceChildren();
     const edges = relationships();
     summary.append(element('h2', `Connections · ${records.get(selected).label}`));
-    summary.append(element('p', 'Relationships between record types. Linked example values in Record details connect matching records.'));
+    summary.append(element('p', 'Relationships between record types. Linked values in Example record connect matching records.'));
     const list = element('ul');
     edges.forEach(edge => {
       const item = element('li');
@@ -194,7 +161,7 @@
 
   function updateNodes() {
     selection.querySelector('.map-selection-label').textContent = records.get(selected).label;
-    selection.querySelector('button').setAttribute('aria-label', `View record: ${records.get(selected).label}`);
+    selection.querySelector('button').setAttribute('aria-label', `View example: ${records.get(selected).label}`);
     nodes.forEach((node, id) => {
       const matching = chapterMatch(id);
       node.classList.toggle('is-selected', id === selected);
@@ -214,7 +181,6 @@
   function selectRecord(id, intentional = false, focusDetail = false) {
     if (!records.has(id)) return;
     selected = id;
-    currentTab = 'example';
     updateNodes();
     renderDetail();
     renderFocus();
@@ -222,7 +188,7 @@
     scheduleDraw();
     saveState();
     applyPane();
-    if (intentional && focusDetail) showPane('details', true);
+    if (intentional && focusDetail) showPane('example', true);
     else if (intentional) requestAnimationFrame(() => {
       focusNodes.get(selected).querySelector('[data-focus-record]').focus({preventScroll: true});
       viewport.scrollIntoView({block: 'nearest'});
@@ -262,17 +228,20 @@
     if (target && root.contains(target)) {
       event.preventDefault();
       const id = target.dataset.selectRecord || target.dataset.recordTarget || target.dataset.focusRecord;
-      if (target.dataset.focusRecord === selected) showPane('details', true);
+      if (target.dataset.focusRecord === selected) showPane('example', true);
       else selectRecord(id, true, Boolean(target.closest('.map-detail')));
     }
   });
-  selection.querySelector('button').addEventListener('click', () => showPane('details', true));
+  selection.querySelector('button').addEventListener('click', () => showPane('example', true));
   paneButtons.forEach(button => {
     button.addEventListener('click', () => showPane(button.dataset.pane));
     button.addEventListener('keydown', event => {
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
-      const next = event.key === 'Home' ? paneButtons[0] : event.key === 'End' ? paneButtons[1] : paneButtons.find(item => item !== button);
+      const index = paneButtons.indexOf(button);
+      const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? paneButtons.length - 1
+        : (index + (event.key === 'ArrowRight' ? 1 : -1) + paneButtons.length) % paneButtons.length;
+      const next = paneButtons[nextIndex];
       showPane(next.dataset.pane);
       next.focus();
     });
