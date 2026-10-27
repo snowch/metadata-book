@@ -277,6 +277,10 @@
         {
           "target": "input-snapshot",
           "label": "Historical input retained separately"
+        },
+        {
+          "target": "data-contract",
+          "label": "Read the snapshot agreement"
         }
       ]
     },
@@ -830,10 +834,174 @@
       ]
     },
     {
+      "id": "data-contract",
+      "label": "Data contract",
+      "group": "meaning",
+      "description": "Records the versioned agreement between a data producer and its consumers: what will be supplied, when, and how changes are handled.",
+      "primaryChapter": 7,
+      "chapters": [
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#record-what-producers-and-consumers-agree",
+          "label": "Read the contract"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "deliveries-v1",
+      "fields": [
+        {
+          "name": "Contract",
+          "type": "text",
+          "description": "The identifier of this contract version.",
+          "value": "deliveries-v1"
+        },
+        {
+          "name": "Dataset",
+          "type": "text",
+          "description": "The table whose snapshots the agreement covers.",
+          "value": "deliveries",
+          "target": "dataset"
+        },
+        {
+          "name": "Producer",
+          "type": "text",
+          "description": "The role responsible for supplying the snapshots and investigating failed checks.",
+          "value": "Reporting engineer"
+        },
+        {
+          "name": "Consumers",
+          "type": "text",
+          "description": "The teams that agree to the supplied data and review changes.",
+          "value": "Delivery Operations; Service Analytics"
+        },
+        {
+          "name": "Structure",
+          "type": "text",
+          "description": "The declared fields and agreed timestamp representation.",
+          "value": "delivery_id TEXT; promised_at TEXT; delivered_at TEXT. Timestamps: YYYY-MM-DD HH:MM in UTC."
+        },
+        {
+          "name": "Meaning",
+          "type": "text",
+          "description": "The meaning consumers rely on, beyond names and types.",
+          "value": "One row per delivery. promised_at is the original customer promise; an unfinished delivery has no completion time."
+        },
+        {
+          "name": "Identifier rule",
+          "type": "text",
+          "description": "The versioned uniqueness rule included in this contract.",
+          "value": "delivery-ids-unique-v1",
+          "target": "quality-rule"
+        },
+        {
+          "name": "Required values",
+          "type": "text",
+          "description": "Additional completeness requirements; delivered_at may be missing for an unfinished delivery.",
+          "value": "Identifiers and promised times must be present."
+        },
+        {
+          "name": "Delivery commitment",
+          "type": "text",
+          "description": "The cutoff and deadline; a check timestamp alone cannot prove delivery by this deadline.",
+          "value": "A daily snapshot of records known at 13:00 UTC, available by 13:05 UTC."
+        },
+        {
+          "name": "Changes",
+          "type": "text",
+          "description": "The review required before consumers receive a changed interface.",
+          "value": "Agree changes to structure or meaning with both consuming teams before publishing a new contract version."
+        }
+      ],
+      "interpretation": "Both teams can use the same original-promise field while choosing different denominators. The agreement makes a switch to revised promises a change requiring consumer review.",
+      "limit": "This is an invented agreement, not a guarantee implemented by the simulation. Check results and delivery evidence are needed to establish whether its commitments were met.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Covers deliveries snapshots"
+        },
+        {
+          "target": "quality-rule",
+          "label": "Includes the identifier rule"
+        },
+        {
+          "target": "quality-check",
+          "label": "Inspect the illustrative review"
+        }
+      ]
+    },
+    {
+      "id": "quality-rule",
+      "label": "Quality rule",
+      "group": "meaning",
+      "description": "States a versioned expectation to check against data, such as the absence of duplicate identifiers.",
+      "primaryChapter": 7,
+      "chapters": [
+        {
+          "number": 7,
+          "href": "chapters/07-using-metadata.html#separate-quality-checks-from-meaning",
+          "label": "Distinguish a rule from a result"
+        }
+      ],
+      "evidence": "Illustrative record",
+      "exampleLabel": "delivery-ids-unique-v1",
+      "fields": [
+        {
+          "name": "Rule",
+          "type": "text",
+          "description": "The identifier of the rule version used in the review.",
+          "value": "delivery-ids-unique-v1"
+        },
+        {
+          "name": "Dataset",
+          "type": "text",
+          "description": "The dataset to which this rule applies.",
+          "value": "deliveries",
+          "target": "dataset"
+        },
+        {
+          "name": "Contract",
+          "type": "text",
+          "description": "The agreement that includes this rule.",
+          "value": "deliveries-v1",
+          "target": "data-contract"
+        },
+        {
+          "name": "Dimension",
+          "type": "text",
+          "description": "The aspect of data quality this rule addresses.",
+          "value": "Uniqueness"
+        },
+        {
+          "name": "Scope",
+          "type": "text",
+          "description": "The records within which uniqueness must hold; identifiers may recur across snapshots.",
+          "value": "Each snapshot of deliveries"
+        },
+        {
+          "name": "Expectation",
+          "type": "text",
+          "description": "The criterion used to judge the identifier check.",
+          "value": "No delivery_id appears in more than one row; expected duplicate count: zero."
+        }
+      ],
+      "interpretation": "The same rule can be checked on many snapshots, producing a separate result each time. Recording its version makes past results interpretable if the rule later changes.",
+      "limit": "The rule is an expectation, not evidence of a pass. Required values, accurate timestamps, freshness and suitability for a particular metric need their own evidence.",
+      "related": [
+        {
+          "target": "data-contract",
+          "label": "Included in deliveries-v1"
+        },
+        {
+          "target": "quality-check",
+          "label": "Read the result for decision-input-1300"
+        }
+      ]
+    },
+    {
       "id": "quality-check",
-      "label": "Quality check",
+      "label": "Quality check result",
       "group": "production",
-      "description": "Records checks and their results for a named input and scope.",
+      "description": "Records what checks found on a named input, when they ran, and which rule version the identifier check used.",
       "primaryChapter": 7,
       "chapters": [
         {
@@ -869,6 +1037,13 @@
           "value": "2026-10-19 13:05"
         },
         {
+          "name": "Identifier rule",
+          "type": "text",
+          "description": "The rule version evaluated by the identifier check; the time checks address separate requirements.",
+          "value": "delivery-ids-unique-v1",
+          "target": "quality-rule"
+        },
+        {
           "name": "Identifier check",
           "type": "text",
           "description": "The result of checking uniqueness.",
@@ -881,9 +1056,17 @@
           "value": "Four promised times present; one delivery time empty, allowed for an unfinished parcel"
         }
       ],
-      "interpretation": "The review supports uniqueness and the presence of promised times in decision-input-1300. This is the four-parcel 13:00 teaching input, separate from retained snapshot S1205.",
-      "limit": "The checks establish neither timestamp accuracy, the correct denominator, nor which input reached a report.",
+      "interpretation": "The review found four rows and four distinct delivery identifiers, meeting delivery-ids-unique-v1 for decision-input-1300. It also found all promised times present. This is the four-parcel 13:00 teaching input, separate from retained snapshot S1205.",
+      "limit": "These checks establish neither timestamp accuracy, delivery by the contract deadline, the correct denominator, nor which input reached a report.",
       "related": [
+        {
+          "target": "quality-rule",
+          "label": "Evaluates delivery-ids-unique-v1"
+        },
+        {
+          "target": "data-contract",
+          "label": "Read the agreed commitments"
+        },
         {
           "target": "dataset",
           "label": "Checks deliveries"
@@ -1192,6 +1375,26 @@
       "to": "quality-check",
       "label": "considers",
       "from": "decision"
+    },
+    {
+      "from": "data-contract",
+      "to": "dataset",
+      "label": "covers"
+    },
+    {
+      "from": "data-contract",
+      "to": "quality-rule",
+      "label": "includes"
+    },
+    {
+      "from": "quality-rule",
+      "to": "dataset",
+      "label": "applies to"
+    },
+    {
+      "from": "quality-check",
+      "to": "quality-rule",
+      "label": "evaluates"
     }
   ]
 }

@@ -130,10 +130,10 @@ with sync_playwright() as p:
   page.locator('.map-back-to-records').click()
   page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
   expected_edges=[e for e in data['relationships'] if record['id'] in (e['from'],e['to'])]
-  expect(page.locator('.map-connection')).to_have_count(17)
+  expect(page.locator('.map-connection')).to_have_count(len(data['relationships']))
   actual=page.locator('.map-connection[data-highlighted="true"]').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
   assert sorted(actual)==sorted([[e['from'],e['to']] for e in expected_edges])
-  assert page.locator('.map-focus-node').count()==15
+  assert page.locator('.map-focus-node').count()==len(data['records'])
  for chapter in data['chapters']:
   page.locator('#map-chapter-filter').select_option(str(chapter['number']))
   expected=sum(any(c['number']==chapter['number'] for c in r['chapters']) for r in data['records'])
@@ -147,8 +147,8 @@ with sync_playwright() as p:
    page.goto(base+'metadata-map.html?chapter=4');page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
    assert page.locator('button[data-view]').count()==0
-   expect(page.locator('.map-focus-node')).to_have_count(15)
-   expect(page.locator('.map-connection')).to_have_count(17)
+   expect(page.locator('.map-focus-node')).to_have_count(len(data['records']))
+   expect(page.locator('.map-connection')).to_have_count(len(data['relationships']))
    assert page.locator('.map-section-tabs').is_visible()
    assert page.locator('[role="tablist"]').count()==1
    assert page.locator('[role="tab"]').all_text_contents()==['Map','Example record','Fields & types']
@@ -165,8 +165,8 @@ with sync_playwright() as p:
    page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
    after=page.locator('.map-focus-node').evaluate_all('(els)=>els.map(el=>[el.dataset.focusNode,el.style.left,el.style.top])')
    assert before==after,'Whole map moved after selection'
-   expect(page.locator('.map-connection[data-highlighted="true"]')).to_have_count(7)
-   expect(page.locator('.map-connection')).to_have_count(17)
+   expect(page.locator('.map-connection[data-highlighted="true"]')).to_have_count(sum('dataset' in (edge['from'],edge['to']) for edge in data['relationships']))
+   expect(page.locator('.map-connection')).to_have_count(len(data['relationships']))
    whole_geometry=page.evaluate(GEOMETRY_CHECK)
    assert not whole_geometry['problems'],(width,scheme,'whole',whole_geometry)
    page.locator('.map-view-record').click()
@@ -236,7 +236,7 @@ with sync_playwright() as p:
   page.wait_for_selector('.metadata-map.is-ready')
   assert 'view=' not in page.url
   assert page.locator('.map-selection-label').inner_text()=='Column'
-  expect(page.locator('.map-focus-node')).to_have_count(15)
+  expect(page.locator('.map-focus-node')).to_have_count(len(data['records']))
  page.goto(base+'metadata-map.html#record-column')
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Column'
@@ -264,7 +264,7 @@ with sync_playwright() as p:
  page.close()
  nojs=browser.new_page(java_script_enabled=False,viewport={'width':390,'height':900})
  nojs.goto(base+'metadata-map.html')
- assert nojs.locator('.map-fallback-record').count()==15
+ assert nojs.locator('.map-fallback-record').count()==len(data['records'])
  assert nojs.locator('#record-report-refresh').is_visible()
  assert nojs.evaluate('document.documentElement.scrollWidth<=innerWidth')
  assert nojs.locator('.header-map').get_attribute('href')=='index.html#contents'

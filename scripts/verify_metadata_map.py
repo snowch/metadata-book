@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def verify():
     data = json.loads((ROOT / 'assets/metadata-map.json').read_text())
     records = {record['id']: record for record in data['records']}
-    assert len(records) == len(data['records']) == 15, 'Missing or duplicate record type'
+    assert len(records) == len(data['records']) == 17, 'Missing or duplicate record type'
     groups = {group['id'] for group in data['groups']}
     chapters = {chapter['number']: chapter for chapter in data['chapters']}
     assert set(chapters) == set(range(1, 9)), 'Map must cover all eight chapters'
@@ -42,6 +42,13 @@ def verify():
 
     def fields(record_id):
         return {field['name']: field['value'] for field in records[record_id]['fields']}
+
+    assert fields('data-contract')['Identifier rule'] == fields('quality-rule')['Rule']
+    assert fields('quality-check')['Identifier rule'] == fields('quality-rule')['Rule']
+    assert fields('quality-rule')['Contract'] == fields('data-contract')['Contract']
+    assert fields('quality-rule')['Dataset'] == fields('data-contract')['Dataset'] == fields('dataset')['name']
+    for edge in [('data-contract', 'quality-rule', 'includes'), ('quality-check', 'quality-rule', 'evaluates')]:
+        assert dict(zip(('from', 'to', 'label'), edge)) in data['relationships']
 
     path = ROOT / 'examples/lineage/simulate.py'
     spec = importlib.util.spec_from_file_location('map_simulation', path)
@@ -86,7 +93,7 @@ def verify():
         assert db.execute('SELECT * FROM on_time_completed').fetchone() == (3, 2, 66.7)
     finally:
         db.close()
-    print('Verified metadata map: 15 record types, chapter references, directed relationships and SQLite examples.')
+    print('Verified metadata map: 17 record types, chapter references, directed relationships and SQLite examples.')
 
 
 if __name__ == '__main__':

@@ -136,6 +136,10 @@ def generate(source: dict) -> dict:
                       for axis in (0, 1)] for fraction in (1 / 3, 2 / 3)]
         path += " C " + " ".join(coord(pair) for pair in [*extension, tip])
         center = point(list(map(float, edge["lp"].split(","))))
+        # Leave room for the adjacent job-to-dataset curve; dot's label box
+        # does not include the background padding used by the browser.
+        if (relationship["from"], relationship["to"]) == ("source-observation", "dataset"):
+            center[0] += 8
         text_ops = [op for op in edge["_ldraw_"] if op["op"] == "T"]
         lines = label_lines(relationship["label"])
         geometries[index] = {

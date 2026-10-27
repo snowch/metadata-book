@@ -1,6 +1,6 @@
 # 7. Using metadata to make decisions
 
-Metadata helps someone choose a dataset, judge a result or prepare a change. Each decision needs different evidence: a definition explains what a measure counts; a quality check describes particular records; a dependency points to a possible consumer.
+Metadata helps someone choose a dataset, judge a result or prepare a change. Each decision needs different evidence: a definition explains what a measure counts; a quality check result describes particular records; a dependency points to a possible consumer.
 
 ## Find the measure that answers the question
 
@@ -21,9 +21,31 @@ Use the same four complete parcel records at 13:00: two arrived on time, one arr
 
 Delivery Operations confirms which parcels the measure must include. The reporting engineer must check that a proposed calculation includes unfinished parcels and reproduces 50.0%, then verify which published output reaches the meeting.
 
+## Record what producers and consumers agree
+
+A **data contract** records what a producer agrees to provide and what consumers can depend on: structure, meaning, quality rules, delivery timing and how changes are handled. A schema alone does not capture that agreement.
+
+The contract, quality review and meeting decision below are illustrative teaching records, not additional results from the incident simulation.
+
+<figure class="metadata-record">
+<figcaption><span class="record-kind">Illustrative data contract</span><span class="record-source">deliveries-v1</span></figcaption>
+<dl>
+<div><dt>Dataset and parties</dt><dd><code>deliveries</code>; the reporting engineer supplies snapshots to Delivery Operations and Service Analytics</dd></div>
+<div><dt>Structure</dt><dd><code>delivery_id TEXT</code>, <code>promised_at TEXT</code>, <code>delivered_at TEXT</code>; timestamps use <code>YYYY-MM-DD HH:MM</code> in UTC</dd></div>
+<div class="record-focus"><dt>Meaning</dt><dd><strong>One row per delivery. <code>promised_at</code> is the original customer promise; an unfinished delivery has no completion time.</strong></dd></div>
+<div><dt>Quality rules</dt><dd><code>delivery-ids-unique-v1</code>: no duplicate delivery identifiers. Identifiers and promised times must be present.</dd></div>
+<div><dt>Delivery commitment</dt><dd>A daily snapshot of records known at 13:00 UTC, available by 13:05 UTC</dd></div>
+<div><dt>Changes</dt><dd>Agree changes to structure or meaning with both consuming teams before publishing a new contract version</dd></div>
+</dl>
+</figure>
+<p class="evidence-reading"><strong>What this settles</strong> Both teams can rely on the same original-promise field while choosing different denominators for their measures.</p>
+<p class="evidence-limit"><strong>What still needs evidence</strong> Writing a commitment does not enforce it. Checks, delivery records and consumer review establish whether it was met.</p>
+
 ## Separate quality checks from meaning
 
-The following review and decision are illustrative records for this teaching example, not additional results from the incident simulation.
+A **quality rule** states what should hold. A **quality check result** records what was observed, on which input, when, and against which rule version. For example, `delivery-ids-unique-v1` requires zero duplicate delivery identifiers; the review below records the count actually found.
+
+Uniqueness checks look for duplicates; completeness checks look for missing required values. Freshness checks compare an update or delivery time with an agreed deadline. Passing one kind of check says nothing about the others.
 
 <figure class="metadata-record">
 <figcaption><span class="record-kind">Illustrative quality review</span><span class="record-source">Four-parcel input at 13:00 UTC, 19 October 2026</span></figcaption>
@@ -31,14 +53,17 @@ The following review and decision are illustrative records for this teaching exa
 <div><dt>Source</dt><dd><code>deliveries</code>; teaching input <code>decision-input-1300</code></dd></div>
 <div><dt>Scope</dt><dd>All four parcels due by noon</dd></div>
 <div><dt>Checked at</dt><dd>13:05 UTC, 19 October 2026</dd></div>
+<div><dt>Identifier rule</dt><dd><code>delivery-ids-unique-v1</code>; expected duplicate count: zero</dd></div>
 <div class="record-focus"><dt>Identifier check</dt><dd><strong>Four rows, four distinct delivery identifiers</strong></dd></div>
 <div class="record-focus"><dt>Time checks</dt><dd><strong>Four promised times present; one delivery time empty, allowed for an unfinished parcel</strong></dd></div>
 </dl>
 </figure>
 <p class="evidence-reading"><strong>What this supports</strong> The checked input has no duplicate delivery identifiers or missing promised times. Its version and cutoff identify the records covered.</p>
-<p class="evidence-limit"><strong>What it does not establish</strong> These checks do not prove the times are accurate, the measure answers the meeting's question or the report read this input. A correctly calculated 66.7% still uses the wrong denominator for that question.</p>
+<p class="evidence-limit"><strong>What it does not establish</strong> These checks establish neither the accuracy of the times nor delivery by the contract deadline. They also do not show that the measure answers the meeting's question or that the report read this input. A correctly calculated 66.7% still uses the wrong denominator for that question.</p>
 
 Currency requires separate evidence. The incident's 13:00 refresh read `summary-R1205`, containing 100%, after the 12:30 run failed. A successful quality check cannot establish that a later publication reached the report.
+
+If a check fails, retain its result and input reference. The reporting engineer investigates and notifies both consuming teams; a corrected snapshot and a new check result should remain distinguishable from the failed ones.
 
 ## Scope a proposed change
 
@@ -64,6 +89,6 @@ Recorded dependencies may omit a monthly report or downloaded spreadsheet. Recor
 ## Core points
 
 - **Choose data by the question it answers.** Names alone do not establish the required definition.
-- **Quality checks support specific claims.** Record their scope; meaning and currency need separate evidence.
+- **Contracts state commitments; check results supply evidence.** Keep the rule version, input and check time. Passing checks does not establish fitness for every purpose.
 - **Dependencies identify places to investigate.** Collection may miss consumers.
 - **Leave an actionable decision.** Name the evidence gap, next action and owner.
