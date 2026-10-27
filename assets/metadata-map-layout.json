@@ -1,0 +1,323 @@
+{
+  "sourceFingerprint": "228e91eff4e983b7501923fa8e1ac368a21630d81366d370f10b8ca75d12d6ca",
+  "width": 1210.0,
+  "height": 895.0,
+  "labelFontSize": 13,
+  "labelLineHeight": 15,
+  "nodes": {
+    "metric-definition": {
+      "x": 673.0,
+      "y": 87.0,
+      "width": 200,
+      "height": 70
+    },
+    "responsible-team": {
+      "x": 986.0,
+      "y": 24.0,
+      "width": 200,
+      "height": 70
+    },
+    "dataset": {
+      "x": 986.0,
+      "y": 393.0,
+      "width": 200,
+      "height": 70
+    },
+    "column": {
+      "x": 673.0,
+      "y": 597.0,
+      "width": 200,
+      "height": 70
+    },
+    "saved-query": {
+      "x": 673.0,
+      "y": 699.0,
+      "width": 200,
+      "height": 70
+    },
+    "job": {
+      "x": 673.0,
+      "y": 291.0,
+      "width": 200,
+      "height": 70
+    },
+    "run": {
+      "x": 350.0,
+      "y": 393.0,
+      "width": 200,
+      "height": 70
+    },
+    "input-snapshot": {
+      "x": 673.0,
+      "y": 393.0,
+      "width": 200,
+      "height": 70
+    },
+    "code-version": {
+      "x": 673.0,
+      "y": 495.0,
+      "width": 200,
+      "height": 70
+    },
+    "published-output": {
+      "x": 24.0,
+      "y": 393.0,
+      "width": 200,
+      "height": 70
+    },
+    "report-refresh": {
+      "x": 24.0,
+      "y": 259.0,
+      "width": 200,
+      "height": 70
+    },
+    "quality-check": {
+      "x": 673.0,
+      "y": 189.0,
+      "width": 200,
+      "height": 70
+    },
+    "source-observation": {
+      "x": 673.0,
+      "y": 801.0,
+      "width": 200,
+      "height": 70
+    },
+    "collection-run": {
+      "x": 350.0,
+      "y": 801.0,
+      "width": 200,
+      "height": 70
+    },
+    "decision": {
+      "x": 350.0,
+      "y": 87.0,
+      "width": 200,
+      "height": 70
+    }
+  },
+  "edges": [
+    {
+      "to": "responsible-team",
+      "label": "owned by",
+      "from": "metric-definition",
+      "path": "M 873,101.89 C 906.02,95.26 942.63,87.84 976.08,81.06 C 979.39,80.4 982.69,79.74 986,79.08",
+      "labelX": 929.5,
+      "labelY": 78.0,
+      "labelLines": [
+        "owned by"
+      ],
+      "labelWidth": 61.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "describes",
+      "from": "metric-definition",
+      "path": "M 849.34,157 C 857.6,161.97 865.67,167.31 873,173 C 951.81,234.12 1021.04,329.29 1057.56,384.44 C 1059.41,387.29 1061.25,390.15 1063.1,393",
+      "labelX": 929.5,
+      "labelY": 189.0,
+      "labelLines": [
+        "describes"
+      ],
+      "labelWidth": 58.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "belongs to",
+      "from": "column",
+      "path": "M 845.29,597 C 854.73,591.79 864.18,586.41 873,581 C 929.4,546.39 990.31,501.58 1032.31,469.42 C 1035.01,467.28 1037.7,465.14 1040.4,463",
+      "labelX": 929.5,
+      "labelY": 519.0,
+      "labelLines": [
+        "belongs to"
+      ],
+      "labelWidth": 65.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "reads",
+      "from": "saved-query",
+      "path": "M 849.31,699 C 857.58,694 865.65,688.67 873,683 C 951.96,622.08 1021.14,526.84 1057.61,471.63 C 1059.47,468.75 1061.34,465.88 1063.2,463",
+      "labelX": 929.5,
+      "labelY": 595.0,
+      "labelLines": [
+        "reads"
+      ],
+      "labelWidth": 35.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "reads",
+      "from": "job",
+      "path": "M 873,358.55 C 906.02,369.3 942.63,381.31 976.08,392.28 C 979.39,393.35 982.69,394.42 986,395.49",
+      "labelX": 929.5,
+      "labelY": 361.0,
+      "labelLines": [
+        "reads"
+      ],
+      "labelWidth": 35.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "job",
+      "label": "execution of",
+      "from": "run",
+      "path": "M 550,396.43 C 586.12,385.07 626.62,372.19 663.14,360.59 C 666.43,359.56 669.71,358.54 673,357.51",
+      "labelX": 611.5,
+      "labelY": 361.0,
+      "labelLines": [
+        "execution of"
+      ],
+      "labelWidth": 75.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "input-snapshot",
+      "label": "read",
+      "from": "run",
+      "path": "M 550,428 C 585.96,428 626.28,428 662.67,428 C 666.11,428 669.56,428 673,428",
+      "labelX": 611.5,
+      "labelY": 421.0,
+      "labelLines": [
+        "read"
+      ],
+      "labelWidth": 29.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "code-version",
+      "label": "executed",
+      "from": "run",
+      "path": "M 550,459.57 C 586.12,470.93 626.62,483.81 663.14,495.41 C 666.43,496.44 669.71,497.46 673,498.49",
+      "labelX": 611.5,
+      "labelY": 463.0,
+      "labelLines": [
+        "executed"
+      ],
+      "labelWidth": 56.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "captures",
+      "from": "input-snapshot",
+      "path": "M 873,428 C 905.88,428 942.32,428 975.65,428 C 979.1,428 982.55,428 986,428",
+      "labelX": 929.5,
+      "labelY": 421.0,
+      "labelLines": [
+        "captures"
+      ],
+      "labelWidth": 54.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "run",
+      "label": "produced by",
+      "from": "published-output",
+      "path": "M 224,428 C 260.8,428 302.16,428 339.39,428 C 342.93,428 346.46,428 350,428",
+      "labelX": 287.0,
+      "labelY": 421.0,
+      "labelLines": [
+        "produced by"
+      ],
+      "labelWidth": 78.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "published-output",
+      "label": "reads",
+      "from": "report-refresh",
+      "path": "M 124,329 C 124,345.65 124,365.06 124,382.35 C 124,385.9 124,389.45 124,393",
+      "labelX": 114.0,
+      "labelY": 361.0,
+      "labelLines": [
+        "reads"
+      ],
+      "labelWidth": 35.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "checks",
+      "from": "quality-check",
+      "path": "M 845.29,259 C 854.73,264.21 864.18,269.59 873,275 C 929.4,309.61 990.31,354.42 1032.31,386.58 C 1035.01,388.72 1037.7,390.86 1040.4,393",
+      "labelX": 929.5,
+      "labelY": 288.0,
+      "labelLines": [
+        "checks"
+      ],
+      "labelWidth": 41.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "source-observation",
+      "label": "collects",
+      "from": "collection-run",
+      "path": "M 550,836 C 585.96,836 626.28,836 662.67,836 C 666.11,836 669.56,836 673,836",
+      "labelX": 611.5,
+      "labelY": 829.0,
+      "labelLines": [
+        "collects"
+      ],
+      "labelWidth": 44.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "dataset",
+      "label": "describes",
+      "from": "source-observation",
+      "path": "M 849.65,801 C 857.82,795.98 865.77,790.66 873,785 C 979.58,701.51 1043.88,548.37 1070.58,472.72 C 1071.69,469.48 1072.79,466.24 1073.9,463",
+      "labelX": 929.5,
+      "labelY": 689.0,
+      "labelLines": [
+        "describes"
+      ],
+      "labelWidth": 58.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "metric-definition",
+      "label": "chooses",
+      "from": "decision",
+      "path": "M 550,122 C 585.96,122 626.28,122 662.67,122 C 666.11,122 669.56,122 673,122",
+      "labelX": 611.5,
+      "labelY": 115.0,
+      "labelLines": [
+        "chooses"
+      ],
+      "labelWidth": 49.0,
+      "labelHeight": 15
+    },
+    {
+      "to": "responsible-team",
+      "label": "assigns definition responsibility to",
+      "from": "decision",
+      "path": "M 550,95.02 C 588.15,85.74 632.32,76.35 673,71 C 771.77,58.01 797.42,65.84 897,63 C 922.5,62.27 949.94,61.62 975.77,61.06 C 979.18,60.99 982.59,60.91 986,60.84",
+      "labelX": 773.0,
+      "labelY": 50.0,
+      "labelLines": [
+        "assigns definition",
+        "responsibility to"
+      ],
+      "labelWidth": 107.0,
+      "labelHeight": 30
+    },
+    {
+      "to": "quality-check",
+      "label": "considers",
+      "from": "decision",
+      "path": "M 550,153.57 C 586.12,164.93 626.62,177.81 663.14,189.41 C 666.43,190.44 669.71,191.46 673,192.49",
+      "labelX": 611.5,
+      "labelY": 157.0,
+      "labelLines": [
+        "considers"
+      ],
+      "labelWidth": 58.0,
+      "labelHeight": 15
+    }
+  ]
+}

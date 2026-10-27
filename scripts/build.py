@@ -180,7 +180,9 @@ def build():
         body = converter.convert(text)
         is_map = source == Path("metadata-map.md")
         if is_map:
-            body += render_map(json.loads((ROOT / "assets/metadata-map.json").read_text()))
+            map_data = json.loads((ROOT / "assets/metadata-map.json").read_text())
+            map_data["layout"] = json.loads((ROOT / "assets/metadata-map-layout.json").read_text())
+            body += render_map(map_data)
         body = re.sub(r'\b(href|src)="([^"]*)"', rewrite_link, body)
         reading_time = max(1, math.ceil(ReadingText(body).words / 220))
         body = body.replace("<pre>", '<pre tabindex="0" role="region" aria-label="Code example">')

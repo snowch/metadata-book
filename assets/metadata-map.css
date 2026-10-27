@@ -161,3 +161,22 @@
   .map-fallback-record { break-inside: auto; max-width: none; }
   .map-example-values, .map-reading, .map-limit { break-inside: avoid; }
 }
+
+/* The overview keeps its geometry when selection or chapter highlighting changes. */
+.metadata-map[data-view="whole"] .map-workspace { display: block; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 8px 8px; background: var(--surface); padding: 1rem; }
+.metadata-map[data-view="whole"] .map-detail { position: static; max-height: none; border: 0; padding: 0; }
+.metadata-map[data-view="whole"] .map-back-to-records { display: inline-flex; margin-bottom: 1rem; }
+.metadata-map[data-view="whole"] .map-viewport { max-height: 72dvh; }
+.metadata-map[data-view="whole"] .map-focus-node { border-radius: 5px; }
+.metadata-map[data-view="whole"] .map-focus-select,
+.metadata-map[data-view="whole"] .map-focus-node.is-selected .map-focus-select { font: 500 18px/1.2 var(--serif); padding: 8px 50px 8px 12px; gap: 5px; }
+.metadata-map[data-view="whole"] .map-focus-kicker { font: 10px/1.2 var(--sans); text-transform: none; letter-spacing: 0; }
+.metadata-map[data-view="whole"] .map-focus-node.is-selected .map-focus-select { color: var(--accent); }
+.metadata-map .map-navigation-hint { font-size: .7rem; color: var(--muted); margin: .3rem 0 .65rem; }
+.map-viewport { cursor: grab; }
+.map-viewport:active { cursor: grabbing; }
+.map-view-switch { flex-wrap: wrap; }
+@media (max-width: 700px) {
+  .metadata-map[data-view="whole"] .map-workspace { padding: .7rem; }
+  .map-view-switch button { padding-inline: .55rem; }
+}

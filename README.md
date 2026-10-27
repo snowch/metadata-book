@@ -32,9 +32,9 @@ Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8
 
 ## Metadata map
 
-The header links to a [visual index](metadata-map.md), highlighting the originating chapter. Its compact map and record-list views show field explanations, examples and section links. The diagram arranges the selected record beside its immediate neighbours, with a separate labelled arrow for each connection. A chapter-grouped overview below keeps all 15 record types available. On tablets and phones, Map / Record details tabs keep navigation in one place; View record opens the example while preserving the map’s selection and zoom. Wide screens show both panels together. A text list of connections remains available beneath the diagram. A blue “Before you start” panel on the contents page introduces these controls. The mobile default is the record list; without JavaScript, the records remain readable.
+The header links to a [visual index](metadata-map.md), highlighting the originating chapter. **Whole map** shows all 15 record types and 17 relationships in a stable layout. Selecting a record highlights its direct connections without moving or hiding the others. Zoom and scroll (or drag the background) to explore; Fit restores the overview. **Connections** isolates one record’s neighbours, and **Record list** offers a text-based alternative. Map / Record details tabs preserve the diagram’s space and selection; the focused view also supports side-by-side details on wide screens. Chapter badges link to the explanations in the book. A blue “Before you start” panel on the contents page introduces the map. Without JavaScript, the records remain readable.
 
-The map uses local HTML, CSS and JavaScript with no third-party runtime or network requests. Its illustrative model lives in `assets/metadata-map.json`; computed examples are checked against SQLite. Only the map page loads its interactive code.
+The map uses local HTML, CSS and JavaScript with no third-party browser runtime or network requests. Its illustrative model lives in `assets/metadata-map.json`; computed examples are checked against SQLite. The whole-map geometry is precomputed in `assets/metadata-map-layout.json`. After changing record types or relationships, install Graphviz and run `python3 scripts/generate_map_layout.py`. Normal builds and `--check` use the saved layout without Graphviz. Only the map page loads its interactive code.
 
 ## Build and verify
 
@@ -44,6 +44,7 @@ Requires Python 3.11 or later.
 python3 -m pip install -r requirements.txt
 python3 scripts/verify_examples.py
 python3 scripts/verify_metadata_map.py
+python3 scripts/generate_map_layout.py --check
 python3 scripts/build.py
 python3 -m http.server 8000 --directory _site
 ```

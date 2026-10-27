@@ -34,7 +34,8 @@
   const preferred = chapter !== 'all' ? defaults[chapter] : 'report-refresh';
   const hashRecord = window.location.hash.startsWith('#record-') ? window.location.hash.slice(8) : null;
   let selected = records.has(initial.get('record')) ? initial.get('record') : records.has(hashRecord) ? hashRecord : records.has(preferred) ? preferred : data.records[0].id;
-  let view = ['map', 'list'].includes(initial.get('view')) ? initial.get('view') : window.matchMedia('(max-width: 700px)').matches ? 'list' : 'map';
+  let view = ['whole', 'map', 'list'].includes(initial.get('view')) ? initial.get('view') : 'whole';
+  const isTabbed = () => compact.matches || view === 'whole';
   let pane = initial.get('panel') === 'details' || records.has(hashRecord) ? 'details' : 'map';
   let mapPosition = {y: 0, left: 0, top: 0};
   let scale = 1;
@@ -63,7 +64,7 @@
   }
 
   function applyPane() {
-    const tabbed = compact.matches;
+    const tabbed = isTabbed();
     paneTabs.hidden = !tabbed;
     root.dataset.pane = pane;
     paneButtons.forEach(button => {
@@ -86,14 +87,14 @@
 
   function showPane(next, focusContent = false) {
     const changing = pane !== next;
-    if (changing && pane === 'map' && compact.matches) {
+    if (changing && pane === 'map' && isTabbed()) {
       mapPosition = {y: window.scrollY, left: viewport.scrollLeft, top: viewport.scrollTop};
     }
     pane = next;
     applyPane();
     saveState();
     requestAnimationFrame(() => {
-      if (compact.matches && changing) {
+      if (isTabbed() && changing) {
         if (pane === 'map') {
           viewport.scrollLeft = mapPosition.left;
           viewport.scrollTop = mapPosition.top;
@@ -101,8 +102,8 @@
         } else paneTabs.scrollIntoView({block: 'start'});
       }
       if (focusContent) {
-        const target = pane === 'map' ? (view === 'map' ? focusNodes.get(selected).querySelector('[data-focus-record]') : nodes.get(selected).querySelector('[data-select-record]')) : panel.querySelector('h2');
-        target.focus({preventScroll: compact.matches});
+        const target = pane === 'map' ? (view !== 'list' ? focusNodes.get(selected).querySelector('[data-focus-record]') : nodes.get(selected).querySelector('[data-select-record]')) : panel.querySelector('h2');
+        target.focus({preventScroll: isTabbed()});
       }
     });
   }
@@ -156,7 +157,7 @@
   }
 
   function renderFocus() {
-    const related = new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
+    const related = view === 'whole' ? new Set(records.keys()) : new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
     focusLayer.replaceChildren();
     focusNodes = new Map();
     related.forEach(id => {
@@ -171,7 +172,11 @@
       delete button.dataset.selectRecord;
       button.className = 'map-focus-select';
       button.removeAttribute('aria-pressed');
-      if (id === selected) {
+      if (view === 'whole') {
+        button.prepend(element('span', data.groups.find(group => group.id === records.get(id).group).title, 'map-focus-kicker'));
+        button.setAttribute('aria-pressed', String(id === selected));
+      }
+      if (id === selected && view !== 'whole') {
         button.prepend(element('span', 'Selected record type', 'map-focus-kicker'));
         button.append(element('span', 'View example and fields →', 'map-focus-description'));
         button.setAttribute('aria-label', `View record: ${records.get(id).label}`);
@@ -235,7 +240,7 @@
     saveState();
     applyPane();
     if (intentional && focusDetail) showPane('details', true);
-    else if (intentional && view === 'map') requestAnimationFrame(() => {
+    else if (intentional && view !== 'list') requestAnimationFrame(() => {
       focusNodes.get(selected).querySelector('[data-focus-record]').focus({preventScroll: true});
       viewport.scrollIntoView({block: 'nearest'});
     });
@@ -244,22 +249,25 @@
   function applyView() {
     root.dataset.view = view;
     root.querySelectorAll('[data-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === view)));
-    zoomControls.hidden = view !== 'map';
-    viewport.hidden = view !== 'map';
+    zoomControls.hidden = view === 'list';
+    viewport.hidden = view === 'list';
+    root.querySelector('.map-overview').hidden = view === 'whole';
+    root.querySelector('.map-navigation-hint').hidden = view === 'list';
     summary.parentElement.open = view === 'list';
-    viewport.setAttribute('aria-label', view === 'map' ? 'Record map. Scroll to explore the diagram.' : 'Records grouped by purpose');
-    if (view === 'map') viewport.tabIndex = 0; else viewport.removeAttribute('tabindex');
+    viewport.setAttribute('aria-label', view !== 'list' ? 'Record map. Scroll to explore the diagram.' : 'Records grouped by purpose');
+    if (view !== 'list') viewport.tabIndex = 0; else viewport.removeAttribute('tabindex');
     scheduleDraw();
   }
 
   function draw() {
-    if (view !== 'map' || explorer.hidden) return;
+    if (view === 'list' || explorer.hidden) return;
     // Keep labels readable at normal zoom; narrower screens can scroll or use the list.
-    canvas.style.width = `${Math.max(760, viewport.clientWidth - 2)}px`;
-    window.layoutMetadataFocus(svg, canvas, focusNodes, relationships(), selected);
+    canvas.style.width = `${view === 'whole' ? data.layout.width : Math.max(760, viewport.clientWidth - 2)}px`;
+    if (view === 'whole') window.layoutMetadataWhole(svg, canvas, focusNodes, data.layout, selected);
+    else window.layoutMetadataFocus(svg, canvas, focusNodes, relationships(), selected);
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
-    if (fitToWidth) scale = Math.max(.25, Math.min(1, (viewport.clientWidth - 2) / width));
+    if (fitToWidth) scale = Math.max(.1, Math.min(1, (viewport.clientWidth - 2) / width, view === 'whole' ? (window.innerHeight * .72 - 2) / height : 1));
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
@@ -303,7 +311,7 @@
   });
   compact.addEventListener('change', () => {
     applyPane();
-    if (compact.matches && document.activeElement.closest('.map-explorer, .map-detail')?.hidden) {
+    if (isTabbed() && document.activeElement.closest('.map-explorer, .map-detail')?.hidden) {
       paneButtons.find(button => button.dataset.pane === pane).focus();
     }
   });
@@ -314,7 +322,11 @@
   });
   root.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
     view = button.dataset.view;
+    fitToWidth = true;
+    viewport.scrollLeft = viewport.scrollTop = 0;
     applyView();
+    renderFocus();
+    applyPane();
     saveState();
   }));
   root.querySelectorAll('[data-zoom]').forEach(button => button.addEventListener('click', () => {
@@ -323,9 +335,24 @@
       scale = Math.max(.25, Math.min(1, (viewport.clientWidth - 2) / canvas.offsetWidth));
       viewport.scrollLeft = 0;
       viewport.scrollTop = 0;
-    } else scale = Math.max(.25, Math.min(1.5, Math.round((scale + (button.dataset.zoom === 'in' ? .1 : -.1)) * 100) / 100));
+    } else scale = Math.max(.1, Math.min(1.5, Math.round((scale + (button.dataset.zoom === 'in' ? .1 : -.1)) * 100) / 100));
     scheduleDraw();
   }));
+  let drag = null;
+  viewport.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch' || event.button !== 0 || event.target.closest('button, a')) return;
+    drag = {id: event.pointerId, x: event.clientX, y: event.clientY, left: viewport.scrollLeft, top: viewport.scrollTop};
+    viewport.setPointerCapture(event.pointerId);
+  });
+  viewport.addEventListener('pointermove', event => {
+    if (!drag || drag.id !== event.pointerId) return;
+    viewport.scrollLeft = drag.left - (event.clientX - drag.x);
+    viewport.scrollTop = drag.top - (event.clientY - drag.y);
+  });
+  const releaseDrag = () => { drag = null; };
+  viewport.addEventListener('pointerup', releaseDrag);
+  viewport.addEventListener('pointercancel', releaseDrag);
+  viewport.addEventListener('lostpointercapture', releaseDrag);
   if (origin) {
     const back = root.querySelector('.map-return');
     back.textContent = `← Back to Chapter ${origin}: ${chapters.get(origin).title}`;

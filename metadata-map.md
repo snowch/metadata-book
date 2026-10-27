@@ -1,3 +1,3 @@
 # Explore the metadata
 
-Select a record type to see its direct connections. Follow a connected record to explore further, or choose **View record** for its example and fields.
+See how the book’s metadata fits together. Select a record type to highlight its connections, then choose **View record** for example values and fields. Chapter badges open the explanation in the book.

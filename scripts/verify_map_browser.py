@@ -66,6 +66,7 @@ with sync_playwright() as p:
  assert page.locator('#map-chapter-filter').input_value()=='5'
  assert 'Chapter 5' in page.locator('.map-return').inner_text()
  assert page.locator('.map-detail h2').inner_text()=='Source observation'
+ page.locator('button[data-view="map"]').click()
  page.locator('#map-chapter-filter').select_option('3')
  assert 'chapter=5' in page.url and 'focus=3' in page.url
  assert page.locator('.map-detail h2').inner_text()=='Report refresh'
@@ -106,7 +107,29 @@ with sync_playwright() as p:
   for scheme in ('light','dark'):
    page.set_viewport_size({'width':width,'height':1100});page.emulate_media(color_scheme=scheme)
    page.goto(base+'metadata-map.html?chapter=4');page.wait_for_selector('.metadata-map.is-ready')
-   assert page.locator('.metadata-map').get_attribute('data-view')==('list' if width<=700 else 'map')
+   assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
+   expect(page.locator('.map-focus-node')).to_have_count(15)
+   expect(page.locator('.map-connection')).to_have_count(17)
+   assert page.locator('.map-section-tabs').is_visible()
+   assert not page.locator('.map-detail').is_visible()
+   page.evaluate('document.fonts.ready')
+   page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
+   before=page.locator('.map-focus-node').evaluate_all('(els)=>els.map(el=>[el.dataset.focusNode,el.style.left,el.style.top])')
+   page.locator('[data-focus-record="dataset"]').click()
+   page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
+   after=page.locator('.map-focus-node').evaluate_all('(els)=>els.map(el=>[el.dataset.focusNode,el.style.left,el.style.top])')
+   assert before==after,'Whole map moved after selection'
+   expect(page.locator('.map-connection[data-highlighted="true"]')).to_have_count(7)
+   expect(page.locator('.map-connection')).to_have_count(17)
+   whole_geometry=page.evaluate(GEOMETRY_CHECK)
+   assert not whole_geometry['problems'],(width,scheme,'whole',whole_geometry)
+   page.locator('.map-view-record').click()
+   assert page.locator('.map-detail h2').inner_text()=='Dataset'
+   page.locator('.map-back-to-records').click()
+   expect(page.locator('[data-focus-record="dataset"]')).to_be_focused()
+   page.reload();page.wait_for_selector('.metadata-map.is-ready')
+   assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
+   assert page.locator('.map-selection-label').inner_text()=='Dataset'
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,scheme)
    assert page.locator('.header-map').is_visible()
    page.evaluate('document.fonts.ready')
@@ -166,7 +189,7 @@ with sync_playwright() as p:
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Column'
  assert 'record=column' in page.url and '#record-' not in page.url
- page.goto(base+'metadata-map.html?record=report-refresh')
+ page.goto(base+'metadata-map.html?record=report-refresh&panel=details')
  page.wait_for_selector('.metadata-map.is-ready')
  page.locator('.map-detail [data-record-target="published-output"]').first.focus()
  page.keyboard.press('Enter')
@@ -175,7 +198,7 @@ with sync_playwright() as p:
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('#map-chapter-filter').input_value()=='all'
  assert not page.locator('.map-return').is_visible()
- page.locator('[data-select-record="published-output"]').click()
+ page.locator('[data-focus-record="published-output"]').click()
  edges=page.locator('.map-relationship-summary li')
  produced=edges.filter(has=page.locator('.map-relationship-verb',has_text='produced by'))
  assert produced.locator('a').all_text_contents()==['Published output','Run']
