@@ -12,7 +12,6 @@
   const nodes = new Map([...root.querySelectorAll('[data-node]')].map(node => [node.dataset.node, node]));
   const fallback = new Map([...root.querySelectorAll('.map-fallback-record')].map(node => [node.id.slice(7), node]));
   const panel = root.querySelector('.map-detail');
-  const compact = window.matchMedia('(max-width: 1199px)');
   const explorer = root.querySelector('.map-explorer');
   const paneTabs = root.querySelector('.map-section-tabs');
   const paneButtons = [...paneTabs.querySelectorAll('[data-pane]')];
@@ -34,8 +33,6 @@
   const preferred = chapter !== 'all' ? defaults[chapter] : 'report-refresh';
   const hashRecord = window.location.hash.startsWith('#record-') ? window.location.hash.slice(8) : null;
   let selected = records.has(initial.get('record')) ? initial.get('record') : records.has(hashRecord) ? hashRecord : records.has(preferred) ? preferred : data.records[0].id;
-  let view = ['whole', 'map', 'list'].includes(initial.get('view')) ? initial.get('view') : 'whole';
-  const isTabbed = () => compact.matches || view === 'whole';
   let pane = initial.get('panel') === 'details' || records.has(hashRecord) ? 'details' : 'map';
   let mapPosition = {y: 0, left: 0, top: 0};
   let scale = 1;
@@ -57,15 +54,14 @@
     if (origin) url.searchParams.set('chapter', origin); else url.searchParams.delete('chapter');
     if (chapter === (origin || 'all')) url.searchParams.delete('focus'); else url.searchParams.set('focus', chapter);
     url.searchParams.set('record', selected);
-    url.searchParams.set('view', view);
+    url.searchParams.delete('view');
     if (pane === 'details') url.searchParams.set('panel', pane); else url.searchParams.delete('panel');
     if (url.hash.startsWith('#record-')) url.hash = '';
     window.history.replaceState(null, '', url);
   }
 
   function applyPane() {
-    const tabbed = isTabbed();
-    paneTabs.hidden = !tabbed;
+    paneTabs.hidden = false;
     root.dataset.pane = pane;
     paneButtons.forEach(button => {
       const active = button.dataset.pane === pane;
@@ -73,28 +69,23 @@
       button.tabIndex = active ? 0 : -1;
     });
     for (const [name, item] of [['map', explorer], ['details', panel]]) {
-      item.hidden = tabbed && pane !== name;
-      if (tabbed) {
-        item.setAttribute('role', 'tabpanel');
-        item.setAttribute('aria-labelledby', `map-section-${name}`);
-      } else {
-        item.removeAttribute('role');
-        item.removeAttribute('aria-labelledby');
-      }
+      item.hidden = pane !== name;
+      item.setAttribute('role', 'tabpanel');
+      item.setAttribute('aria-labelledby', `map-section-${name}`);
     }
     scheduleDraw();
   }
 
   function showPane(next, focusContent = false) {
     const changing = pane !== next;
-    if (changing && pane === 'map' && isTabbed()) {
+    if (changing && pane === 'map') {
       mapPosition = {y: window.scrollY, left: viewport.scrollLeft, top: viewport.scrollTop};
     }
     pane = next;
     applyPane();
     saveState();
     requestAnimationFrame(() => {
-      if (isTabbed() && changing) {
+      if (changing) {
         if (pane === 'map') {
           viewport.scrollLeft = mapPosition.left;
           viewport.scrollTop = mapPosition.top;
@@ -102,8 +93,8 @@
         } else paneTabs.scrollIntoView({block: 'start'});
       }
       if (focusContent) {
-        const target = pane === 'map' ? (view !== 'list' ? focusNodes.get(selected).querySelector('[data-focus-record]') : nodes.get(selected).querySelector('[data-select-record]')) : panel.querySelector('h2');
-        target.focus({preventScroll: isTabbed()});
+        const target = pane === 'map' ? focusNodes.get(selected).querySelector('[data-focus-record]') : panel.querySelector('h2');
+        target.focus({preventScroll: true});
       }
     });
   }
@@ -157,10 +148,10 @@
   }
 
   function renderFocus() {
-    const related = view === 'whole' ? new Set(records.keys()) : new Set([selected, ...relationships().flatMap(edge => [edge.from, edge.to])]);
+    const related = records.keys();
     focusLayer.replaceChildren();
     focusNodes = new Map();
-    related.forEach(id => {
+    for (const id of related) {
       const node = nodes.get(id).cloneNode(true);
       node.className = 'map-focus-node';
       node.classList.toggle('is-selected', id === selected);
@@ -171,19 +162,11 @@
       button.dataset.focusRecord = id;
       delete button.dataset.selectRecord;
       button.className = 'map-focus-select';
-      button.removeAttribute('aria-pressed');
-      if (view === 'whole') {
-        button.prepend(element('span', data.groups.find(group => group.id === records.get(id).group).title, 'map-focus-kicker'));
-        button.setAttribute('aria-pressed', String(id === selected));
-      }
-      if (id === selected && view !== 'whole') {
-        button.prepend(element('span', 'Selected record type', 'map-focus-kicker'));
-        button.append(element('span', 'View example and fields →', 'map-focus-description'));
-        button.setAttribute('aria-label', `View record: ${records.get(id).label}`);
-      }
+      button.prepend(element('span', data.groups.find(group => group.id === records.get(id).group).title, 'map-focus-kicker'));
+      button.setAttribute('aria-pressed', String(id === selected));
       focusLayer.append(node);
       focusNodes.set(id, node);
-    });
+    }
   }
 
   function renderSummary() {
@@ -240,34 +223,19 @@
     saveState();
     applyPane();
     if (intentional && focusDetail) showPane('details', true);
-    else if (intentional && view !== 'list') requestAnimationFrame(() => {
+    else if (intentional) requestAnimationFrame(() => {
       focusNodes.get(selected).querySelector('[data-focus-record]').focus({preventScroll: true});
       viewport.scrollIntoView({block: 'nearest'});
     });
   }
 
-  function applyView() {
-    root.dataset.view = view;
-    root.querySelectorAll('[data-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === view)));
-    zoomControls.hidden = view === 'list';
-    viewport.hidden = view === 'list';
-    root.querySelector('.map-overview').hidden = view === 'whole';
-    root.querySelector('.map-navigation-hint').hidden = view === 'list';
-    summary.parentElement.open = view === 'list';
-    viewport.setAttribute('aria-label', view !== 'list' ? 'Record map. Scroll to explore the diagram.' : 'Records grouped by purpose');
-    if (view !== 'list') viewport.tabIndex = 0; else viewport.removeAttribute('tabindex');
-    scheduleDraw();
-  }
-
   function draw() {
-    if (view === 'list' || explorer.hidden) return;
-    // Keep labels readable at normal zoom; narrower screens can scroll or use the list.
-    canvas.style.width = `${view === 'whole' ? data.layout.width : Math.max(760, viewport.clientWidth - 2)}px`;
-    if (view === 'whole') window.layoutMetadataWhole(svg, canvas, focusNodes, data.layout, selected);
-    else window.layoutMetadataFocus(svg, canvas, focusNodes, relationships(), selected);
+    if (explorer.hidden) return;
+    canvas.style.width = `${data.layout.width}px`;
+    window.layoutMetadataWhole(svg, canvas, focusNodes, data.layout, selected);
     const width = canvas.offsetWidth;
     const height = canvas.offsetHeight;
-    if (fitToWidth) scale = Math.max(.1, Math.min(1, (viewport.clientWidth - 2) / width, view === 'whole' ? (window.innerHeight * .72 - 2) / height : 1));
+    if (fitToWidth) scale = Math.max(.1, Math.min(1, (viewport.clientWidth - 2) / width, (window.innerHeight * .72 - 2) / height));
     frame.style.width = `${width * scale}px`;
     frame.style.height = `${height * scale}px`;
     canvas.style.transform = `scale(${scale})`;
@@ -309,26 +277,11 @@
       next.focus();
     });
   });
-  compact.addEventListener('change', () => {
-    applyPane();
-    if (isTabbed() && document.activeElement.closest('.map-explorer, .map-detail')?.hidden) {
-      paneButtons.find(button => button.dataset.pane === pane).focus();
-    }
-  });
   filter.addEventListener('change', () => {
     chapter = chapters.has(filter.value) ? filter.value : 'all';
     const next = chapter === 'all' ? selected : chapterMatch(selected) ? selected : defaults[chapter];
     selectRecord(records.has(next) ? next : selected);
   });
-  root.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
-    view = button.dataset.view;
-    fitToWidth = true;
-    viewport.scrollLeft = viewport.scrollTop = 0;
-    applyView();
-    renderFocus();
-    applyPane();
-    saveState();
-  }));
   root.querySelectorAll('[data-zoom]').forEach(button => button.addEventListener('click', () => {
     fitToWidth = button.dataset.zoom === 'fit';
     if (fitToWidth) {
@@ -364,7 +317,10 @@
   root.querySelector('.map-controls').hidden = false;
   root.querySelector('.map-tools').hidden = false;
   root.querySelector('.map-legend').hidden = false;
-  applyView();
+  root.dataset.view = 'whole';
+  zoomControls.hidden = false;
+  root.querySelector('.map-overview').hidden = true;
+  root.querySelector('.map-navigation-hint').hidden = false;
   selectRecord(selected);
   if (window.ResizeObserver) new ResizeObserver(scheduleDraw).observe(canvas);
   window.addEventListener('resize', scheduleDraw, {passive: true});

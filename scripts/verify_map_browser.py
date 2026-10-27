@@ -66,10 +66,10 @@ with sync_playwright() as p:
  assert page.locator('#map-chapter-filter').input_value()=='5'
  assert 'Chapter 5' in page.locator('.map-return').inner_text()
  assert page.locator('.map-detail h2').inner_text()=='Source observation'
- page.locator('button[data-view="map"]').click()
  page.locator('#map-chapter-filter').select_option('3')
  assert 'chapter=5' in page.url and 'focus=3' in page.url
  assert page.locator('.map-detail h2').inner_text()=='Report refresh'
+ page.locator('.map-view-record').click()
  page.locator('.map-detail [data-record-target="published-output"]').first.click()
  assert page.locator('.map-detail h2').inner_text()=='Published output'
  page.locator('.map-detail [data-record-target="run"]').first.click()
@@ -82,20 +82,23 @@ with sync_playwright() as p:
  assert page.locator('.map-detail h2').inner_text()=='Run'
  assert 'Chapter 5' in page.locator('.map-return').inner_text()
  for record in data['records']:
-  page.locator(f'[data-select-record="{record["id"]}"]').click()
+  if page.locator('.map-detail').is_visible():
+   page.locator('.map-back-to-records').click()
+  button=page.locator(f'[data-focus-record="{record["id"]}"]')
+  if page.locator('.map-selection-label').inner_text()!=record['label']:
+   button.click()
+  page.locator('.map-view-record').click()
   assert page.locator('.map-detail h2').inner_text()==record['label']
   assert page.locator('.map-detail .map-example-values > div').count()==len(record['fields'])
   page.locator('[data-tab="fields"]').click()
   assert page.locator('.map-detail tbody tr').count()>=len(record['fields'])
+  page.locator('.map-back-to-records').click()
+  page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
   expected_edges=[e for e in data['relationships'] if record['id'] in (e['from'],e['to'])]
-  expect(page.locator('.map-connection')).to_have_count(len(expected_edges))
-  actual=page.locator('.map-connection').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
+  expect(page.locator('.map-connection')).to_have_count(17)
+  actual=page.locator('.map-connection[data-highlighted="true"]').evaluate_all('(els)=>els.map(el=>[el.dataset.from,el.dataset.to])')
   assert sorted(actual)==sorted([[e['from'],e['to']] for e in expected_edges])
-  connected={record['id']}|{e[k] for e in expected_edges for k in ('from','to')}
-  assert page.locator('.map-focus-node').count()==len(connected)
-  assert page.locator('.map-overview .map-node').count()==15
-  geometry=page.evaluate(GEOMETRY_CHECK)
-  assert geometry['labels']==len(expected_edges) and not geometry['problems'],(record['id'],geometry)
+  assert page.locator('.map-focus-node').count()==15
  for chapter in data['chapters']:
   page.locator('#map-chapter-filter').select_option(str(chapter['number']))
   expected=sum(any(c['number']==chapter['number'] for c in r['chapters']) for r in data['records'])
@@ -108,6 +111,7 @@ with sync_playwright() as p:
    page.set_viewport_size({'width':width,'height':1100});page.emulate_media(color_scheme=scheme)
    page.goto(base+'metadata-map.html?chapter=4');page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
+   assert page.locator('button[data-view]').count()==0
    expect(page.locator('.map-focus-node')).to_have_count(15)
    expect(page.locator('.map-connection')).to_have_count(17)
    assert page.locator('.map-section-tabs').is_visible()
@@ -129,62 +133,55 @@ with sync_playwright() as p:
    expect(page.locator('[data-focus-record="dataset"]')).to_be_focused()
    page.reload();page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
+   assert page.locator('button[data-view]').count()==0
    assert page.locator('.map-selection-label').inner_text()=='Dataset'
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,scheme)
    assert page.locator('.header-map').is_visible()
    page.evaluate('document.fonts.ready')
    if width >= 768:
     assert page.locator('.map-canvas').bounding_box()['height'] < 850,(width,'compact overview')
-   page.locator('button[data-view="map"]').click()
    page.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))')
    initial_zoom=int(page.locator('.map-zoom-value').inner_text().rstrip('%'))
    page.locator('[data-zoom="in"]').click();expect(page.locator('.map-zoom-value')).to_have_text(f'{initial_zoom+10}%')
    page.locator('[data-zoom="out"]').click();expect(page.locator('.map-zoom-value')).to_have_text(f'{initial_zoom}%')
    page.locator('[data-zoom="fit"]').click()
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'zoom')
-   page.locator('[data-select-record="report-refresh"]').press('Enter')
+   page.locator('[data-focus-record="report-refresh"]').press('Enter')
    assert page.locator('.map-detail h2').inner_text()=='Report refresh'
-   if width < 1200:
-    assert page.locator('.map-explorer').is_visible()
-    assert not page.locator('.map-detail').is_visible()
-    zoom=page.locator('.map-zoom-value').inner_text()
-    page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft=25')
-    scroll_left=page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')
-    page.locator('.map-view-record').click()
-    expect(page.locator('.map-detail h2')).to_be_focused()
-    assert page.locator('.map-detail').is_visible()
-    assert not page.locator('.map-explorer').is_visible()
-    assert 'panel=details' in page.url
-    page.locator('.map-back-to-records').click()
-    expect(page.locator('[data-focus-record="report-refresh"]')).to_be_focused()
-    assert page.locator('.map-zoom-value').inner_text()==zoom
-    assert page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')==scroll_left
-    page.locator('button[data-pane="map"]').press('ArrowRight')
-    expect(page.locator('button[data-pane="details"]')).to_be_focused()
-    assert page.locator('.map-detail').is_visible()
-    page.reload();page.wait_for_selector('.metadata-map.is-ready')
-    assert page.locator('.map-detail').is_visible()
-    page.locator('button[data-pane="details"]').press('Home')
-    expect(page.locator('button[data-pane="map"]')).to_be_focused()
-    assert page.locator('.map-explorer').is_visible()
-   else:
-    assert not page.locator('.map-section-tabs').is_visible()
-    assert page.locator('.map-detail').is_visible()
-    assert page.locator('.map-explorer').is_visible()
-   page.locator('[data-select-record="dataset"]').click()
-   expect(page.locator('.map-connection')).to_have_count(7)
-   geometry=page.evaluate(GEOMETRY_CHECK)
-   assert geometry['labels']==7 and not geometry['problems'],(width,scheme,geometry)
-   assert page.locator('.map-canvas').evaluate('(el)=>el.offsetHeight')<=650
-   page.locator('[data-focus-record="column"]').click()
-   assert page.locator('.map-selection-label').inner_text()=='Column'
-   assert page.locator('.map-focus-node').count()==2
+   assert page.locator('.map-explorer').is_visible()
+   assert not page.locator('.map-detail').is_visible()
+   zoom=page.locator('.map-zoom-value').inner_text()
+   page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft=25')
+   scroll_left=page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')
+   page.locator('.map-view-record').click()
+   expect(page.locator('.map-detail h2')).to_be_focused()
+   assert page.locator('.map-detail').is_visible()
+   assert not page.locator('.map-explorer').is_visible()
+   assert 'panel=details' in page.url
+   page.locator('.map-back-to-records').click()
+   expect(page.locator('[data-focus-record="report-refresh"]')).to_be_focused()
+   assert page.locator('.map-zoom-value').inner_text()==zoom
+   assert page.locator('.map-viewport').evaluate('(el)=>el.scrollLeft')==scroll_left
+   page.locator('button[data-pane="map"]').press('ArrowRight')
+   expect(page.locator('button[data-pane="details"]')).to_be_focused()
+   assert page.locator('.map-detail').is_visible()
+   page.reload();page.wait_for_selector('.metadata-map.is-ready')
+   assert page.locator('.map-detail').is_visible()
+   page.locator('button[data-pane="details"]').press('Home')
+   expect(page.locator('button[data-pane="map"]')).to_be_focused()
+   assert page.locator('.map-explorer').is_visible()
    page.goto(base+'index.html')
    assert page.locator('.reader-action').is_visible()
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,'contents')
    page.locator('.reader-action a').click()
    page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('#map-chapter-filter').input_value()=='all'
+ for legacy_view in ('whole','map','list'):
+  page.goto(base+f'metadata-map.html?view={legacy_view}&record=column')
+  page.wait_for_selector('.metadata-map.is-ready')
+  assert 'view=' not in page.url
+  assert page.locator('.map-selection-label').inner_text()=='Column'
+  expect(page.locator('.map-focus-node')).to_have_count(15)
  page.goto(base+'metadata-map.html#record-column')
  page.wait_for_selector('.metadata-map.is-ready')
  assert page.locator('.map-detail h2').inner_text()=='Column'

@@ -76,7 +76,7 @@ def render_map(data):
     safe_json = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return f'''<section class="metadata-map" aria-label="Interactive metadata map">
       <a class="map-return" hidden></a>
-      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. The whole map keeps all record types and their relationships visible. Select a record to highlight its connections, or choose Connections to focus on those alone. Choose View record to inspect its example and fields. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
+      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. The whole map keeps all record types and their relationships visible. Select a record to highlight its connections. Choose View record to inspect its example and fields. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
       <div class="map-controls" hidden>
         <div class="map-filter"><label for="map-chapter-filter">Highlight chapter</label><select id="map-chapter-filter"><option value="all">Show all chapters</option>{chapter_options}</select></div>
       </div>
@@ -89,9 +89,8 @@ def render_map(data):
         <div class="map-explorer" id="map-explorer-panel">
           <div class="map-selection" hidden><span class="map-selection-label"></span><button type="button" class="map-view-record">View record <span aria-hidden="true">→</span></button></div>
           <div class="map-tools" hidden>
-        <div class="map-view-switch" role="group" aria-label="Record display"><button type="button" data-view="whole" aria-pressed="false">Whole map</button><button type="button" data-view="map" aria-pressed="false">Connections</button><button type="button" data-view="list" aria-pressed="false">Record list</button></div>
-          <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div></div>
           <p class="map-navigation-hint" hidden>Zoom in to read the labels; drag or scroll to move around. <strong>Fit</strong> brings the diagram back into view.</p>
+          <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output class="map-zoom-value" aria-label="Zoom level">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="fit">Fit</button></div></div>
           <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><svg class="map-connections" aria-hidden="true"></svg><div class="map-focus-nodes"></div></div></div></div>
           <details class="map-relationship-text" hidden><summary>Connections as text</summary><div class="map-relationship-summary" hidden></div></details>
           <section class="map-overview" aria-label="All metadata record types"><h2>Explore another record type</h2><div class="map-groups">{''.join(groups)}</div></section>
