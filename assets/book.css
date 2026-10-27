@@ -18,9 +18,9 @@
   --folio: #ded7c9;
   --code-paper: #26352e;
   --code-ink: #e8eee4;
-  --action-paper: #eaf3fa;
-  --action-ink: #234f70;
-  --action-line: #5485aa;
+  --action-paper: var(--accent-wash);
+  --action-ink: var(--ink);
+  --action-line: var(--accent);
   --serif: Newsreader, Georgia, "Times New Roman", serif;
   --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
@@ -99,11 +99,11 @@ summary { cursor: pointer; }
 .definition-box > p:first-child { margin-top: 0; font: 600 .85rem/1.5 var(--sans); }
 .definition-box > :last-child { margin-bottom: 0; }
 .reader-action { display: flex; align-items: flex-start; gap: 1rem; margin: 2rem 0; padding: 1.2rem 1.4rem; border-left: 4px solid var(--action-line); background: var(--action-paper); color: var(--action-ink); break-inside: avoid; }
-.reader-action-icon { flex: none; width: 1.4rem; height: 1.4rem; margin-top: .15rem; }
+.reader-action-icon { color: var(--accent); flex: none; width: 1.4rem; height: 1.4rem; margin-top: .15rem; }
 .reader-action > div { min-width: 0; }
 .prose .reader-action p { margin: .65rem 0 0; font-size: 1.1rem; line-height: 1.55; }
-.prose .reader-action .reader-action-title { margin: 0; font: 600 .85rem/1.5 var(--sans); }
-.prose .reader-action a { color: inherit; text-decoration-color: currentColor; }
+.prose .reader-action .reader-action-title { color: var(--accent); margin: 0; font: 600 .85rem/1.5 var(--sans); }
+.prose .reader-action a { color: var(--accent); text-decoration-color: currentColor; }
 .table-scroll { max-width: 100%; overflow-x: auto; margin-block: 1.6rem; }
 table { width: 100%; border-collapse: collapse; font: .8rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 th, td { padding: .8rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
@@ -224,7 +224,6 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #1f2522; --surface: #262e29; --ink: #ece9dd; --muted: #b0b3a7; --accent: #e8a489; --accent-wash: #3b332a; --line: #41483e; --wash: #2d352f; --folio: #4a5045; --code-paper: #18221c; --code-ink: #e5eddf; }
-  :root { --action-paper: #263b4a; --action-ink: #d2e7f7; --action-line: #89b8d9; }
 }
 @media print {
   :root { --paper: white; --surface: white; --ink: black; --muted: #444; --accent: #733523; --line: #bbb; --wash: #f4f4f4; --folio: #ddd; --code-paper: #f4f4f4; --code-ink: black; color-scheme: light; }
