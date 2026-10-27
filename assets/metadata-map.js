@@ -275,6 +275,25 @@
   viewport.addEventListener('pointerup', releaseDrag);
   viewport.addEventListener('pointercancel', releaseDrag);
   viewport.addEventListener('lostpointercapture', releaseDrag);
+  // Close returns to the reading page; direct visits have a book-local fallback.
+  const toggle = document.querySelector('.header-map');
+  if (toggle) {
+    const bookBase = new URL('.', window.location.href);
+    let readingPage = null;
+    try {
+      const referrer = new URL(document.referrer);
+      if (referrer.origin === bookBase.origin && referrer.pathname.startsWith(bookBase.pathname)
+          && referrer.pathname !== window.location.pathname) readingPage = referrer;
+    } catch (_) { /* A direct visit has no referrer. */ }
+    toggle.href = readingPage ? readingPage.href : origin ? chapters.get(origin).href : 'index.html#contents';
+    toggle.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (readingPage && window.history.length > 1) {
+        event.preventDefault();
+        window.history.back(); // Restores the chapter's anchor and reading position.
+      }
+    });
+  }
   if (origin) {
     const back = root.querySelector('.map-return');
     back.textContent = `← Back to Chapter ${origin}: ${chapters.get(origin).title}`;

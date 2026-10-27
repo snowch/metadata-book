@@ -59,6 +59,41 @@ with sync_playwright() as p:
   assert page.locator('.book-layout').evaluate('(el)=>getComputedStyle(el).display')=='block'
   assert page.locator('#map-chapter-filter').input_value()==str(chapter['number'])
   assert page.locator('.map-return').get_attribute('href')==chapter['href']
+  assert page.locator('.header-map').get_attribute('aria-label')=='Close metadata map'
+  page.locator('.header-map').click()
+  page.wait_for_url(base+chapter['href'])
+ # Close works after changing context, switching tabs and reloading the map.
+ page.goto(base+data['chapters'][0]['href'])
+ anchor=page.locator('main h2[id]').first.get_attribute('id')
+ page.goto(base+data['chapters'][0]['href']+'#'+anchor)
+ page.evaluate('window.scrollTo(0, 500)')
+ reading_y=page.evaluate('window.scrollY')
+ page.locator('.header-map').evaluate('(el)=>el.click()')
+ page.wait_for_selector('.metadata-map.is-ready')
+ page.locator('#map-chapter-filter').select_option('7')
+ page.locator('button[data-pane="fields"]').click()
+ page.reload();page.wait_for_selector('.metadata-map.is-ready')
+ page.locator('.header-map').press('Enter')
+ page.wait_for_url(base+data['chapters'][0]['href']+'#'+anchor)
+ page.wait_for_function('(y)=>Math.abs(window.scrollY-y)<2',arg=reading_y)
+ # Opening from a reference page returns there, too.
+ page.goto(base+'examples/README.html')
+ page.locator('.header-map').click();page.wait_for_selector('.metadata-map.is-ready')
+ page.locator('.header-map').click();page.wait_for_url(base+'examples/README.html')
+ page.goto(base+'index.html#contents')
+ page.locator('.header-map').click();page.wait_for_selector('.metadata-map.is-ready')
+ page.locator('.header-map').click();page.wait_for_url(base+'index.html#contents')
+ # A fresh tab has no reading history to return through.
+ direct=browser.new_page()
+ direct.goto(base+'metadata-map.html?chapter=2')
+ direct.wait_for_selector('.metadata-map.is-ready')
+ direct.locator('.header-map').click();direct.wait_for_url(base+data['chapters'][1]['href'])
+ direct.close()
+ direct=browser.new_page()
+ direct.goto(base+'metadata-map.html')
+ direct.wait_for_selector('.metadata-map.is-ready')
+ direct.locator('.header-map').click();direct.wait_for_url(base+'index.html#contents')
+ direct.close()
  page.goto(base+'chapters/05-collecting-metadata.html')
  assert page.locator('.header-map').get_attribute('href')=='../metadata-map.html?chapter=5'
  page.locator('.header-map').click()
@@ -232,6 +267,7 @@ with sync_playwright() as p:
  assert nojs.locator('.map-fallback-record').count()==15
  assert nojs.locator('#record-report-refresh').is_visible()
  assert nojs.evaluate('document.documentElement.scrollWidth<=innerWidth')
+ assert nojs.locator('.header-map').get_attribute('href')=='index.html#contents'
  nojs.locator('[data-select-record="report-refresh"]').click()
  assert nojs.url.endswith('#record-report-refresh')
  browser.close()

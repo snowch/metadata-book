@@ -217,7 +217,10 @@ def build():
         map_href = relative(Path("metadata-map.html"), page)
         if source in chapters:
             map_href += f"?chapter={chapters.index(source) + 1}"
-        map_current = ' aria-current="page"' if is_map else ''
+        if is_map:
+            map_href = relative(Path('index.html'), page) + '#contents'
+        map_current = ' aria-label="Close metadata map" title="Close metadata map"' if is_map else ''
+        map_close = '<span aria-hidden="true"> ×</span>' if is_map else ''
         map_assets = (
             f'<link rel="stylesheet" href="{asset_url("assets/metadata-map.css", page)}">'
             f'<script defer src="{asset_url("assets/metadata-map-arrows.js", page)}"></script>'
@@ -245,7 +248,7 @@ def build():
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map{map_close}</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
   {sidebar}

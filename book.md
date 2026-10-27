@@ -9,7 +9,7 @@ This book is for software and data engineers who can read a table and a simple S
 <div>
 <p class="reader-action-title" id="before-you-start">Before you start</p>
 <p><a href="metadata-map.md"><strong>Open the Metadata map</strong></a> for an overview of the book. The whole map shows how the records fit together. Select a record to highlight its connections, then choose <strong>Example record</strong> for its values or <strong>Fields &amp; types</strong> for its field definitions. Select its chapter badge to read the explanation.</p>
-<p>Return using the header’s <strong>Metadata map</strong> button as you read; it highlights your current chapter.</p>
+<p>Return using the header’s <strong>Metadata map</strong> button as you read; it highlights your current chapter. Click the button again to return to your reading.</p>
 </div>
 </aside>
 
