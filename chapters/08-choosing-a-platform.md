@@ -14,6 +14,8 @@ The assessment below is **an invented teaching outcome**, showing how a complete
 
 In this scenario, reviewed documents and SQLite records sit behind the team's existing access controls. A reviewer who did not assemble them follows the evidence.
 
+Metadata can reveal protected information even when a reader cannot open the underlying table: a column name may reveal what is collected, SQL may contain a customer identifier, and sample values may expose personal details. Decide who may see those descriptions, queries and samples, including through search, exports and APIs. Permission to discover a dataset does not automatically grant permission to read its rows.
+
 <figure class="worked-example" markdown="1">
 <figcaption>Illustrative pilot assessment · Observations and gaps</figcaption>
 

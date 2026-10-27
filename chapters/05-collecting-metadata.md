@@ -13,6 +13,8 @@ Production and testing both contain a table called `delivery_summary`. The catal
 
 The naming rule distinguishes the environment, database and table. It must also distinguish database systems if the company adds another. A **collector** reads descriptions from a source and sends them to the catalogue. The scheduler's output reference and the database collector must resolve to the same production identifier. Where sources use different names, record their correspondence before joining their claims.
 
+A name is not a permanent identity. Renaming `delivery_summary` may preserve the same dataset; dropping it and creating an unrelated table under that name does not. Keep a source identifier or recorded change history where available, and check that this is still the same dataset before reusing its definitions or lineage. Otherwise, old explanations can become attached to new data merely because the name matches.
+
 ## Read the assembled entry
 
 This catalogue entry combines three invented records on **20 October 2026**. All times are UTC. The layout is illustrative; field names vary by tool.
