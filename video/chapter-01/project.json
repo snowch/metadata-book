@@ -14,5 +14,11 @@
   "min_seconds": 150,
   "max_seconds": 240,
   "font_dir": "/usr/share/fonts/truetype/dejavu",
-  "illustration_sheet": null
+  "illustration_sheet": null,
+  "pronunciation_review_terms": [
+    "Metadata",
+    "denominator",
+    "Delivery Operations",
+    "reviewer"
+  ]
 }

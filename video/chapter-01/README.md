@@ -21,8 +21,11 @@ Use Python 3.12, FFmpeg/ffprobe and the DejaVu fonts specified in `project.json`
 
 ```sh
 python3 -m venv /tmp/metadata-video-venv
-/tmp/metadata-video-venv/bin/pip install -r video/chapter-01/requirements.txt
+/tmp/metadata-video-venv/bin/pip install -r video/chapter-01/requirements-audit.txt
 /tmp/metadata-video-venv/bin/python video/chapter-01/synthesize.py
+/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-01
+# Review out/chapter-01/pronunciation-audit/index.html before rendering.
+/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-01 --check
 /tmp/metadata-video-venv/bin/python video/chapter-01/render.py
 ```
 
@@ -31,6 +34,10 @@ The default output is ignored `out/chapter-01/`. Set `EXPLAINER_OUT` to the same
 The online speech client uses `HTTPS_PROXY` when configured. It adds the environment's trusted CA bundle (`SSL_CERT_FILE`, or `/etc/ssl/certs/ca-certificates.crt`) while retaining TLS verification. No service credential is stored. Hosted speech may change; preserve the rendered audio for reproducible visual edits.
 
 Outputs include `chapter-01.mp4`, `captions.srt`, `captions.vtt`, `transcript.txt`, `narration.wav` and `timings.json`. Video is 1280×720, 24 fps, H.264/yuv420p, AAC with selectable English captions and faststart. Captions are also provided separately. No permanent subtitle strip or music is used.
+
+## Pronunciation audit before rendering
+
+Follow the [pronunciation audit workflow](../README.md#audit-pronunciation-after-generating-narration) after generating speech. The shared helper extracts technical-term clips and transcribes them without vocabulary hints. Review the intended pronunciations, inspect differences, and record any unresolved terms. A spelling match is not proof of pronunciation.
 
 ## Review
 
