@@ -1,6 +1,6 @@
 # Export review — 28 October 2026
 
-Delivered export: **3:05**, 1280×720, 24 fps; 10 scenes; 46 selectable caption cues; five-second silent closing card. MP4 size: 4,766,447 bytes. SHA-256: `02fb469370ef333b5f9c39d791cde83fa17327ba82f40848a32cc6decba747d1`.
+Delivered export: **3:05**, 1280×720, 24 fps; 10 scenes; 46 selectable caption cues; five-second silent closing card. MP4 size: 4,769,069 bytes. SHA-256: `eb049f729eb2d05da3011c66fede41f2acb9a5be3820e6a02c7eccf522038092`.
 
 ## Checks performed
 
@@ -8,9 +8,13 @@ Delivered export: **3:05**, 1280×720, 24 fps; 10 scenes; 46 selectable caption 
 - Provider word alignment checked by the synthesis helper. Display captions concatenate exactly to the canonical narration; all 46 cue intervals are ordered and non-overlapping.
 - Encoded frames from all ten scene clips visually reviewed. Long identifiers fit their cards; snapshot status and calculation inclusion have different headings. Reference arrows start from the producing run; investigation arrows are distinguished from processing flow. No customer records or external artwork are used.
 - Full narration transcribed with faster-whisper `base.en`; isolated `small.en` checks covered definitions, refresh, publication, run and recap. Key numbers, negations and spoken identifiers agree. Full-track boundary repetitions did not recur in isolated passages. Homophones such as “our”/“R”, “root”/“route” and “red”/“read” remain transcription ambiguities, not evidence of different spoken words.
-- ffprobe confirms H.264/yuv420p, AAC at 48 kHz, English mov_text captions and 185.125 seconds of video versus 185.2 seconds of audio/container. Full FFmpeg decode passed.
+- ffprobe confirms H.264/yuv420p, AAC at 48 kHz, English mov_text captions and 184.958333 seconds of video versus 185.0 seconds of audio/container. Full FFmpeg decode passed.
 - Embedded player checked in Chromium at 320, 768 and 1024 pixels, light and dark: no overflow or initial MP4 request, no autoplay, all 46 WebVTT cues load, seeking and playback work, and the player is hidden in print.
 - All eleven chapter map activities checked at 320 and 900 pixels: chapter context, record example and field tabs, return to the exercise, collapsed answers and no JavaScript errors. SQLite examples, map records/layout, build and local links pass.
+
+## SQLite pronunciation correction
+
+The speech mapping originally expanded SQLite to “S Q Lite”, omitting the L. It now uses “sequel lite”. Only the opening speech was regenerated; hashes confirm that every other scene retains its original audio. The revised opening and an isolated final phrase were transcribed with `small.en`; the isolated check used no vocabulary prompt and recognised SQLite. Captions still spell the product name SQLite and were retimed for the shorter opening. The replacement MP4 passed full decoding, exact caption-text and timing checks, plus browser caption loading, seeking and playback. Automated recognition does not establish a listening review.
 
 ## Limits and retained material
 
