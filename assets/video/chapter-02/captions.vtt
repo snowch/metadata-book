@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.330 --> 00:04.233
+A database records descriptions of its tables: column names,
+
+00:04.437 --> 00:07.447
+declared types, and rules about allowed values.
+
+00:07.831 --> 00:09.017
+We can query them.
+
+00:09.386 --> 00:12.129
+But do they tell us what a delivery measure means?
+
+00:12.538 --> 00:15.242
+Let’s inspect four invented deliveries stored
+
+00:15.254 --> 00:18.367
+in a table named deliveries, using SQLite.
+
+00:19.413 --> 00:21.799
+The column records describe three fields:
+
+00:22.130 --> 00:25.995
+a delivery identifier, a promise time, and a delivery time.
+
+00:26.379 --> 00:28.062
+All three declare TEXT.
+
+00:28.470 --> 00:29.988
+In this SQLite table,
+
+00:30.269 --> 00:34.261
+that declaration does not strictly enforce the type of every stored value.
+
+00:34.669 --> 00:39.784
+The not-null flag is one for the identifier and promise: a value is required.
+
+00:40.167 --> 00:44.491
+Zero for delivery time allows NULL, the marker for a missing value.
+
+00:44.899 --> 00:48.177
+The primary key uniquely identifies each row.
+
+00:48.573 --> 00:51.889
+Here, the delivery identifier is the sole key.
+
+00:52.913 --> 00:56.013
+Those records describe structure, or schema.
+
+00:56.423 --> 00:58.553
+They do not explain every value.
+
+00:58.936 --> 01:01.882
+A missing delivery time could mean an unfinished parcel,
+
+01:02.163 --> 01:04.407
+a late update, or an unknown time.
+
+01:04.816 --> 01:07.979
+Assume these invented records are complete: here,
+
+01:08.247 --> 01:10.823
+NULL means the parcel has not yet been delivered.
+
+01:11.206 --> 01:14.369
+Meaning can also change without changing the schema.
+
+01:15.413 --> 01:19.457
+Suppose the original promise was noon, revised to twelve thirty.
+
+01:19.866 --> 01:22.213
+A parcel arrives at twelve twenty.
+
+01:22.621 --> 01:26.945
+It is late against the original promise, but on time against the revision.
+
+01:27.353 --> 01:29.955
+We need to know which promise the column stores.
+
+01:30.363 --> 01:32.697
+Its name and type cannot settle that.
+
+01:33.747 --> 01:35.915
+Now read the complete saved query.
+
+01:36.324 --> 01:39.513
+A view is a named query, readable like a table.
+
+01:39.921 --> 01:43.901
+This SQLite view calculates its result whenever it is read.
+
+01:44.309 --> 01:47.651
+Its filter removes rows with a missing delivery time.
+
+01:48.059 --> 01:52.829
+It counts the remaining deliveries, counts those arriving by the stored promise, and
+
+01:52.842 --> 01:54.322
+calculates a percentage.
+
+01:54.730 --> 01:58.505
+The zero-denominator guard returns NULL if none are completed.
+
+01:59.538 --> 02:02.549
+Here are the four deliveries, all promised by noon.
+
+02:02.919 --> 02:07.090
+Two arrived on time, one arrived late, and one is unfinished.
+
+02:07.499 --> 02:10.215
+The filter leaves three completed deliveries.
+
+02:10.585 --> 02:15.100
+Two on time out of three completed gives 66.7%.
+
+02:15.483 --> 02:19.680
+Delivery Operations needs all four deliveries due in the denominator.
+
+02:20.049 --> 02:22.332
+Two out of four gives 50.0%.
+
+02:22.741 --> 02:24.948
+The view answers a different question.
+
+02:25.997 --> 02:31.048
+The comparison assumes every timestamp uses the same fixed UTC text format,
+
+02:31.379 --> 02:33.165
+year first, through minutes.
+
+02:33.561 --> 02:36.776
+For these values, text order matches time order.
+
+02:37.184 --> 02:40.373
+The TEXT declaration does not enforce that assumption.
+
+02:40.742 --> 02:44.530
+The saved query is metadata describing a calculation.
+
+02:44.939 --> 02:47.745
+The percentage it returns is output data.
+
+02:48.141 --> 02:52.822
+Reading the query reveals what it counts; it does not establish the business rule.
+
+02:53.872 --> 02:56.410
+Catalogues have two overlapping jobs.
+
+02:56.820 --> 03:01.424
+Database and query-engine catalogues help software find and read data.
+
+03:01.833 --> 03:06.858
+Hive Metastore describes schemas, partitions such as a day’s deliveries, storage
+
+03:06.871 --> 03:09.052
+locations, and file formats.
+
+03:09.435 --> 03:14.167
+Discovery and governance catalogues help people understand and manage data.
+
+03:14.575 --> 03:19.129
+DataHub and OpenMetadata connect technical records with definitions,
+
+03:19.422 --> 03:21.603
+responsible teams, and lineage.
+
+03:22.011 --> 03:24.384
+These are main purposes, with overlap:
+
+03:24.703 --> 03:28.070
+database catalogues can hold comments or ownership too.
+
+03:29.080 --> 03:32.958
+Inspect the structure, then check the meaning and the calculation.
+
+03:33.367 --> 03:36.632
+Ask which promise is stored, what a missing time means,
+
+03:36.900 --> 03:39.170
+and which deliveries enter the denominator.
+
+03:39.539 --> 03:42.537
+Database metadata gives useful evidence.
+
+03:42.946 --> 03:46.504
+A trustworthy measure also needs an explicit definition.

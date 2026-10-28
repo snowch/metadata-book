@@ -1,0 +1,31 @@
+{
+  "title": "What a database already knows",
+  "source_url": "https://snowch.github.io/metadata-book/chapters/02-reading-a-database.html",
+  "source_commit": "8a7f7e7516b2940d3ffbd5a32245c6fa144df77f",
+  "book_url": "https://snowch.github.io/metadata-book/",
+  "attribution": "Adapted from Metadata systems \u00b7 Chapter 2",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "-2%",
+  "pronunciation": {
+    "SQLite": "sequel lite",
+    "66.7%": "sixty six point seven percent",
+    "50.0%": "fifty percent",
+    "NULL": "null",
+    "TEXT": "text",
+    "UTC": "U T C",
+    "DataHub": "Data Hub",
+    "OpenMetadata": "Open Metadata"
+  },
+  "min_seconds": 180,
+  "max_seconds": 280,
+  "font_dir": "/usr/share/fonts/truetype/dejavu",
+  "illustration_sheet": null,
+  "pronunciation_review_terms": [
+    "Hive Metastore",
+    "schema",
+    "primary key",
+    "not-null",
+    "denominator",
+    "lineage"
+  ]
+}

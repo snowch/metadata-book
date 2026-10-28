@@ -1,0 +1,23 @@
+What a database already knows
+
+Display narration, preserved in full.
+Synthetic voice: en-GB-SoniaNeural.
+Source: https://snowch.github.io/metadata-book/chapters/02-reading-a-database.html
+
+A database records descriptions of its tables: column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let’s inspect four invented deliveries stored in a table named deliveries, using SQLite.
+
+The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare TEXT. In this SQLite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows NULL, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.
+
+Those records describe structure, or schema. They do not explain every value. A missing delivery time could mean an unfinished parcel, a late update, or an unknown time. Assume these invented records are complete: here, NULL means the parcel has not yet been delivered. Meaning can also change without changing the schema.
+
+Suppose the original promise was noon, revised to twelve thirty. A parcel arrives at twelve twenty. It is late against the original promise, but on time against the revision. We need to know which promise the column stores. Its name and type cannot settle that.
+
+Now read the complete saved query. A view is a named query, readable like a table. This SQLite view calculates its result whenever it is read. Its filter removes rows with a missing delivery time. It counts the remaining deliveries, counts those arriving by the stored promise, and calculates a percentage. The zero-denominator guard returns NULL if none are completed.
+
+Here are the four deliveries, all promised by noon. Two arrived on time, one arrived late, and one is unfinished. The filter leaves three completed deliveries. Two on time out of three completed gives 66.7%. Delivery Operations needs all four deliveries due in the denominator. Two out of four gives 50.0%. The view answers a different question.
+
+The comparison assumes every timestamp uses the same fixed UTC text format, year first, through minutes. For these values, text order matches time order. The TEXT declaration does not enforce that assumption. The saved query is metadata describing a calculation. The percentage it returns is output data. Reading the query reveals what it counts; it does not establish the business rule.
+
+Catalogues have two overlapping jobs. Database and query-engine catalogues help software find and read data. Hive Metastore describes schemas, partitions such as a day’s deliveries, storage locations, and file formats. Discovery and governance catalogues help people understand and manage data. DataHub and OpenMetadata connect technical records with definitions, responsible teams, and lineage. These are main purposes, with overlap: database catalogues can hold comments or ownership too.
+
+Inspect the structure, then check the meaning and the calculation. Ask which promise is stored, what a missing time means, and which deliveries enter the denominator. Database metadata gives useful evidence. A trustworthy measure also needs an explicit definition.
