@@ -94,12 +94,3 @@ A database already records some of the information that helps with this check: i
 </details>
 </div>
 </aside>
-
-<details class="further-detail" markdown="1">
-<summary>Further detail: late updates and historical cutoffs</summary>
-
-In a real system, an empty delivery time might mean an update has not arrived yet. A parcel delivered at 12:50 could be recorded at 13:10. Its event time and the time the system learned about it are different.
-
-Reproducing what a report knew at 13:00 requires retained evidence, such as a timestamped snapshot or a change log. Reading the current table later may include information that was unavailable then. Chapters 3–4 use captured inputs and execution records to investigate an older report.
-
-</details>

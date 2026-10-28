@@ -44,8 +44,6 @@ Clear titles, descriptions, glossary terms and active or retired status make dis
 
 “Trusted” needs a purpose and supporting evidence. For the operations meeting, ask whether the definition includes every parcel due, whether the input covers the required cutoff, which quality checks ran, and which output reached the report. Also check that the intended use is permitted. A dataset can be suitable for one task and unsuitable for another.
 
-The decision at the end of this chapter therefore records a gap instead of awarding a general trust badge: the all-due definition is agreed, but its implementation and publication remain unverified.
-
 ## Record what producers and consumers agree
 
 A **data contract** records what a producer agrees to provide and what consumers can depend on: structure, meaning, quality rules, delivery timing and how changes are handled. A schema alone does not capture that agreement.
@@ -85,8 +83,6 @@ Uniqueness checks look for duplicates; completeness checks look for missing requ
 </figure>
 <p class="evidence-reading"><strong>What this supports</strong> The checked input has no duplicate delivery identifiers or missing promised times. Its version and cutoff identify the records covered.</p>
 <p class="evidence-limit"><strong>What it does not establish</strong> These checks establish neither the accuracy of the times nor delivery by the contract deadline. They also do not show that the measure answers the meeting's question or that the report read this input. A correctly calculated 66.7% still uses the wrong denominator for that question.</p>
-
-Currency requires separate evidence. The incident's 13:00 refresh read `summary-R1205`, containing 100%, after the 12:30 run failed. A successful quality check cannot establish that a later publication reached the report.
 
 If a check fails, retain its result and input reference. The reporting engineer investigates and notifies both consuming teams; a corrected snapshot and a new check result should remain distinguishable from the failed ones.
 

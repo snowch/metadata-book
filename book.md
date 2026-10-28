@@ -41,6 +41,6 @@ People need different evidence from the same system. One person may hold several
 | Security, privacy or audit reviewer | Which uses are approved, where are restrictions enforced, and what evidence is retained? |
 | Researcher or external consumer | Can I find, cite, access and reuse this version under its stated conditions? |
 
-Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons; **Further detail** boxes are optional. You can skip them without losing the argument. Records, query outputs and decisions appear beside the questions they answer, with highlighted fields and short explanations. No code execution is needed.
+Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons. Records, query outputs and decisions appear beside the questions they answer, with highlighted fields and short explanations. No code execution is needed.
 
 The company and its records are invented. The database examples and the incident simulation supporting Chapters 3–4 use the real SQLite engine. The additional debugging scenario, collection histories, decisions, pilot assessment and publication descriptions are illustrative. The OpenLineage event is checked against its schema; it is not captured from a running integration. Product-specific explanations link to the tools' documentation. To run the examples yourself, see [Reproducing the worked results](examples/README.md).

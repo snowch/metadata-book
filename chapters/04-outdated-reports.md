@@ -71,11 +71,11 @@ If the original inputs are deleted, a run record may still identify their source
 
 In a working system, the reporting tool records which output it read, the publisher identifies the output it made available, and the processing job records its inputs and code version. A database schema scan cannot supply those execution records. [Chapter 5](05-collecting-metadata.md) explains how to bring records from different systems together.
 
+*Supporting material: the [simulation reference and source code](../examples/lineage/README.md) show how the records in Chapters 3 and 4 were produced. No code execution is required to read either chapter.*
+
 ## Core points
 
 - **Refreshing a report does not guarantee fresh data.** It may still read an older saved result after a processing failure.
 - **Verify that recovery reaches the report.** A successful run is not enough: the report must read the newly published output.
 - **A successful run can use the wrong logic.** Trace the affected field, inspect filters and joins, and correlate logs with the producing execution.
 - **Keep the evidence needed to explain earlier reports.** Reproducing an old calculation requires its inputs and code, not just references to them.
-
-*Supporting material: the [simulation reference and source code](../examples/lineage/README.md) show how the records in Chapters 3 and 4 were produced. No code execution is required to read either chapter.*

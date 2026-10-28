@@ -31,7 +31,7 @@ Read the chapters in order, then consider:
 
 The chapters present definitions, database outputs, execution records, catalogue entries and decisions beside the questions they answer, using styled cards and comparisons in the main reading path. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup.
 
-Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8 cover collecting, using and operating metadata. Chapters 9–11 cover exchange and APIs, governance, access and FAIR reuse. The contents explain different readers’ roles; Chapter 9 diagrams the system that maintains and serves the records. Optional detail stays outside the core explanation; there is no separate lab requirement or browser database runtime.
+Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8 cover collecting, using and operating metadata. Chapters 9–11 cover exchange and APIs, governance, access and FAIR reuse. The contents explain different readers’ roles; Chapter 9 diagrams the system that maintains and serves the records. Implementation notes and reproduction instructions remain in the supporting examples; there is no separate lab requirement or browser database runtime.
 
 ## Metadata map
 

@@ -12,6 +12,12 @@ The four delivery records are invented. All timestamps share the format `YYYY-MM
 
 The verifier checks the catalogue queries and view result printed in Chapter 2, both denominators from Chapter 1, and the empty-input behaviour.
 
+## SQLite types and timestamps
+
+SQLite has no dedicated date/time storage class. This example stores timestamps as text in the same fixed UTC format, `YYYY-MM-DD HH:MM`, so text order matches time order. Other SQLite applications may use numeric representations. Mixing formats or time zones would invalidate this example's simple text comparison.
+
+Ordinary SQLite tables use type affinity rather than strict type enforcement. SQLite also offers strict tables, but neither approach establishes a timestamp's business meaning. The [datatype documentation](https://sqlite.org/datatype3.html) describes these rules.
+
 ## Investigate the report in Chapters 3–4
 
 [Chapter 3](../chapters/03-following-lineage.md) traces the original result, and [Chapter 4](../chapters/04-outdated-reports.md) explains the later publication failure and recovery. Both show the metadata records inline; no execution is required to read them. The supporting [lineage simulation](lineage/README.md) uses real SQLite tables for saved inputs, code versions, runs, published outputs and report refreshes. Run it with:
