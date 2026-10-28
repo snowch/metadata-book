@@ -77,6 +77,24 @@ A database already records some of the information that helps with this check: i
 - **Record the definition and responsible team.** Readers need to know what is included, when it is measured and whom to ask about its meaning.
 - **A definition is something to check against.** Inspect the calculation to verify that its filters and denominator follow the recorded rule.
 
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore the metadata map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=1"><strong>Open the Metadata map</strong></a>, with Chapter 1 highlighted.</p>
+<ol>
+<li>Select <strong>Metric definition</strong>, then <strong>Example record</strong>. Find the denominator. Does it include unfinished deliveries?</li>
+<li>In the <strong>Responsible team</strong> row, select <strong>Delivery Operations</strong> to open its record. What responsibility does this team have?</li>
+<li>Return to this chapter using the header’s <strong>Metadata map</strong> button.</li>
+</ol>
+<p><strong>Think about it:</strong> Does the recorded definition prove that the calculation follows the rule?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>The denominator includes <strong>all deliveries due by noon</strong>, including unfinished deliveries. <strong>Delivery Operations</strong> can explain and approve the measure’s meaning. The definition does not prove that the calculation follows it: a reviewer still needs to check the query’s filters and denominator.</p>
+</details>
+</div>
+</aside>
+
 <details class="further-detail" markdown="1">
 <summary>Further detail: late updates and historical cutoffs</summary>
 

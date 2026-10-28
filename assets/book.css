@@ -104,6 +104,9 @@ summary { cursor: pointer; }
 .prose .reader-action p { margin: .65rem 0 0; font-size: 1.1rem; line-height: 1.55; }
 .prose .reader-action .reader-action-title { color: var(--accent); margin: 0; font: 600 .85rem/1.5 var(--sans); }
 .prose .reader-action a { color: var(--accent); text-decoration-color: currentColor; }
+.prose .reader-action ol { margin: .8rem 0; padding-left: 1.4rem; font-size: 1.1rem; line-height: 1.55; }
+.reader-action-answer { margin-top: 1rem; padding-top: .7rem; border-top: 1px solid var(--line); }
+.reader-action-answer summary { cursor: pointer; color: var(--accent); font: 600 .8rem/1.5 var(--sans); }
 .table-scroll { max-width: 100%; overflow-x: auto; margin-block: 1.6rem; }
 table { width: 100%; border-collapse: collapse; font: .8rem/1.65 var(--sans); font-variant-numeric: tabular-nums; }
 th, td { padding: .8rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
