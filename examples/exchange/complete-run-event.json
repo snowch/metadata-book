@@ -1,0 +1,25 @@
+{
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-19T12:05:00Z",
+  "run": {
+    "runId": "019a9d87-d960-7000-8000-000000001205"
+  },
+  "job": {
+    "namespace": "https://scheduler.example.invalid/prod",
+    "name": "build_delivery_summary"
+  },
+  "inputs": [
+    {
+      "namespace": "postgresql://warehouse.example.invalid:5432",
+      "name": "parcels.public.deliveries"
+    }
+  ],
+  "outputs": [
+    {
+      "namespace": "postgresql://warehouse.example.invalid:5432",
+      "name": "parcels.public.delivery_summary"
+    }
+  ],
+  "producer": "https://example.invalid/integrations/scheduler/1.0",
+  "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+}

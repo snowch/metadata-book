@@ -3,6 +3,7 @@
 from pathlib import Path
 from html import unescape
 import importlib.util
+import json
 import re
 import sqlite3
 
@@ -122,6 +123,10 @@ def verify_lineage():
                 "all-due-exercise", original_sql.replace("WHERE delivered_at IS NOT NULL", "")
             ))
             assert simulation.replay(db, "S1205", "all-due-exercise") == (4, 2, 50.0)
+            # Chapter 4's separate debugging scenario: the same later input
+            # yields different answers when the completed-only filter is lost.
+            assert simulation.replay(db, "S1310", "all-due-exercise") == (4, 2, 50.0)
+            assert simulation.replay(db, "S1310", "completed-v1") == (3, 2, 66.7)
             db.execute("DELETE FROM snapshot_rows WHERE snapshot_id = 'S1205' AND delivery_id = 'D101'")
             expect_replay_error("S1205", "completed-v1", "expected 4 rows, found 3")
             db.execute("DELETE FROM snapshot_rows WHERE snapshot_id = 'S1205'")
@@ -183,6 +188,13 @@ def verify():
         assert empty == (0, None, None), empty
     print(f"Verified with SQLite {sqlite3.sqlite_version}: schema, 66.7%, 50.0%, 100.0%, empty input.")
     verify_lineage()
+    # Keep the downloadable exchange event identical to the printed example.
+    # Full OpenLineage schema validation is documented in examples/exchange/README.md.
+    chapter = (ROOT / "chapters/09-sharing-metadata.md").read_text()
+    printed = re.search(r"```json\n(.*?)\n```", chapter, re.S)
+    event = json.loads((ROOT / "examples/exchange/complete-run-event.json").read_text())
+    assert printed and json.loads(printed.group(1)) == event
+    print("Verified the printed OpenLineage event matches its downloadable JSON.")
 
 
 if __name__ == "__main__":

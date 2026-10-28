@@ -12,10 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 def verify():
     data = json.loads((ROOT / 'assets/metadata-map.json').read_text())
     records = {record['id']: record for record in data['records']}
-    assert len(records) == len(data['records']) == 17, 'Missing or duplicate record type'
+    assert len(records) == len(data['records']) == 19, 'Missing or duplicate record type'
     groups = {group['id'] for group in data['groups']}
     chapters = {chapter['number']: chapter for chapter in data['chapters']}
-    assert set(chapters) == set(range(1, 9)), 'Map must cover all eight chapters'
+    assert set(chapters) == set(range(1, 12)), 'Map must cover all eleven chapters'
     covered = set()
     for record in records.values():
         assert re.fullmatch(r'[a-z][a-z-]*', record['id'])
@@ -93,7 +93,7 @@ def verify():
         assert db.execute('SELECT * FROM on_time_completed').fetchone() == (3, 2, 66.7)
     finally:
         db.close()
-    print('Verified metadata map: 17 record types, chapter references, directed relationships and SQLite examples.')
+    print('Verified metadata map: 19 record types, chapter references, directed relationships and SQLite examples.')
 
 
 if __name__ == '__main__':

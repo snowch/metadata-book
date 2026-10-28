@@ -138,7 +138,7 @@ def generate(source: dict) -> dict:
         center = point(list(map(float, edge["lp"].split(","))))
         # Leave room for the adjacent job-to-dataset curve; dot's label box
         # does not include the background padding used by the browser.
-        if (relationship["from"], relationship["to"]) == ("source-observation", "dataset"):
+        if relationship["to"] == "dataset" and relationship["from"] in {"source-observation", "access-policy"}:
             center[0] += 8
         text_ops = [op for op in edge["_ldraw_"] if op["op"] == "T"]
         lines = label_lines(relationship["label"])

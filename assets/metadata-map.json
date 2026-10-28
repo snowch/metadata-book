@@ -57,6 +57,21 @@
       "number": 8,
       "title": "Choosing and operating a metadata platform",
       "href": "chapters/08-choosing-a-platform.html"
+    },
+    {
+      "number": 9,
+      "title": "Sharing metadata between systems",
+      "href": "chapters/09-sharing-metadata.html"
+    },
+    {
+      "number": 10,
+      "title": "Managing definitions and dataset changes",
+      "href": "chapters/10-managing-changes.html"
+    },
+    {
+      "number": 11,
+      "title": "Controlling access and enabling reuse",
+      "href": "chapters/11-access-and-reuse.html"
     }
   ],
   "records": [
@@ -86,6 +101,11 @@
           "number": 8,
           "href": "chapters/08-choosing-a-platform.html#define-a-bounded-pilot",
           "label": "Test both definitions"
+        },
+        {
+          "number": 10,
+          "href": "chapters/10-managing-changes.html#approve-a-version-with-an-effective-date",
+          "label": "Review and release an agreed change"
         }
       ],
       "evidence": "Illustrative record",
@@ -173,6 +193,11 @@
           "number": 8,
           "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
           "label": "Assign ongoing ownership"
+        },
+        {
+          "number": 10,
+          "href": "chapters/10-managing-changes.html#approve-a-version-with-an-effective-date",
+          "label": "Review and release an agreed change"
         }
       ],
       "evidence": "Illustrative record",
@@ -233,6 +258,16 @@
           "number": 7,
           "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
           "label": "Review affected uses"
+        },
+        {
+          "number": 9,
+          "href": "chapters/09-sharing-metadata.html#interpret-what-arrived",
+          "label": "Follow an exchanged run claim"
+        },
+        {
+          "number": 11,
+          "href": "chapters/11-access-and-reuse.html#keep-evidence-for-an-agreed-period",
+          "label": "Plan retention and access"
         }
       ],
       "evidence": "SQLite schema",
@@ -300,6 +335,11 @@
           "number": 7,
           "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
           "label": "Consider a change of meaning"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#what-if-the-run-succeeds-but-the-number-is-wrong",
+          "label": "Debug a successful but incorrect calculation"
         }
       ],
       "evidence": "SQLite schema",
@@ -434,6 +474,11 @@
           "number": 7,
           "href": "chapters/07-using-metadata.html#scope-a-proposed-change",
           "label": "Find consumers to review"
+        },
+        {
+          "number": 9,
+          "href": "chapters/09-sharing-metadata.html#interpret-what-arrived",
+          "label": "Follow an exchanged run claim"
         }
       ],
       "evidence": "Illustrative record",
@@ -493,6 +538,16 @@
           "number": 8,
           "href": "chapters/08-choosing-a-platform.html#define-a-bounded-pilot",
           "label": "Preserve the execution evidence"
+        },
+        {
+          "number": 9,
+          "href": "chapters/09-sharing-metadata.html#interpret-what-arrived",
+          "label": "Follow an exchanged run claim"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#what-if-the-run-succeeds-but-the-number-is-wrong",
+          "label": "Debug a successful but incorrect calculation"
         }
       ],
       "evidence": "Computed example",
@@ -575,6 +630,11 @@
           "number": 4,
           "href": "chapters/04-outdated-reports.html#keep-the-earlier-evidence",
           "label": "Understand retention limits"
+        },
+        {
+          "number": 11,
+          "href": "chapters/11-access-and-reuse.html#keep-evidence-for-an-agreed-period",
+          "label": "Plan retention and access"
         }
       ],
       "evidence": "Computed example",
@@ -657,6 +717,16 @@
           "number": 4,
           "href": "chapters/04-outdated-reports.html#keep-the-earlier-evidence",
           "label": "Retain enough evidence to reproduce"
+        },
+        {
+          "number": 11,
+          "href": "chapters/11-access-and-reuse.html#keep-evidence-for-an-agreed-period",
+          "label": "Plan retention and access"
+        },
+        {
+          "number": 4,
+          "href": "chapters/04-outdated-reports.html#what-if-the-run-succeeds-but-the-number-is-wrong",
+          "label": "Debug a successful but incorrect calculation"
         }
       ],
       "evidence": "Computed example",
@@ -844,6 +914,11 @@
           "number": 7,
           "href": "chapters/07-using-metadata.html#record-what-producers-and-consumers-agree",
           "label": "Read the contract"
+        },
+        {
+          "number": 10,
+          "href": "chapters/10-managing-changes.html#approve-a-version-with-an-effective-date",
+          "label": "Review and release an agreed change"
         }
       ],
       "evidence": "Illustrative record",
@@ -1098,6 +1173,11 @@
           "number": 6,
           "href": "chapters/06-unreliable-records.html#show-the-decision-and-its-evidence",
           "label": "Keep conflicting claims visible"
+        },
+        {
+          "number": 9,
+          "href": "chapters/09-sharing-metadata.html#interpret-what-arrived",
+          "label": "Follow an exchanged run claim"
         }
       ],
       "evidence": "Illustrative record",
@@ -1168,6 +1248,11 @@
           "number": 8,
           "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
           "label": "Plan collection maintenance"
+        },
+        {
+          "number": 9,
+          "href": "chapters/09-sharing-metadata.html#interpret-what-arrived",
+          "label": "Follow an exchanged run claim"
         }
       ],
       "evidence": "Illustrative record",
@@ -1240,6 +1325,11 @@
           "number": 8,
           "href": "chapters/08-choosing-a-platform.html#budget-for-continuing-work",
           "label": "Plan ongoing ownership"
+        },
+        {
+          "number": 10,
+          "href": "chapters/10-managing-changes.html#approve-a-version-with-an-effective-date",
+          "label": "Review and release an agreed change"
         }
       ],
       "evidence": "Illustrative record",
@@ -1286,6 +1376,141 @@
         {
           "target": "quality-check",
           "label": "Considers scoped quality evidence"
+        }
+      ]
+    },
+    {
+      "id": "access-policy",
+      "label": "Access decision",
+      "group": "collection",
+      "description": "Records an approved purpose, scope and the controls that must implement it.",
+      "primaryChapter": 11,
+      "chapters": [
+        {
+          "number": 11,
+          "href": "chapters/11-access-and-reuse.html#decide-who-may-do-what",
+          "label": "Connect approval to enforced access"
+        }
+      ],
+      "evidence": "Illustrative policy decision; enforcement not tested",
+      "exampleLabel": "Delivery investigation",
+      "fields": [
+        {
+          "name": "Dataset",
+          "type": "text",
+          "description": "Dataset whose access is being decided.",
+          "value": "deliveries",
+          "target": "dataset"
+        },
+        {
+          "name": "Classification",
+          "type": "text",
+          "description": "Handling category; a label does not enforce permissions.",
+          "value": "Restricted operational data"
+        },
+        {
+          "name": "Permitted purpose",
+          "type": "text",
+          "description": "Approved use, separate from technical read permission.",
+          "value": "Investigating delivery performance"
+        },
+        {
+          "name": "Readers",
+          "type": "text",
+          "description": "Identities eligible for scoped access.",
+          "value": "Approved Delivery Operations analysts"
+        },
+        {
+          "name": "Approval",
+          "type": "text",
+          "description": "Decision maker for purpose and scope; separate from the metric definition owner role.",
+          "value": "Delivery Operations data owner"
+        },
+        {
+          "name": "Controls",
+          "type": "text",
+          "description": "Controls that operators must apply and verify.",
+          "value": "Identity group, scoped database reads, catalogue visibility and managed exports"
+        },
+        {
+          "name": "Review trigger",
+          "type": "text",
+          "description": "When the decision needs reassessment.",
+          "value": "Purpose change, role change or approval expiry"
+        }
+      ],
+      "interpretation": "The decision connects an allowed use to responsible people and required controls. Effective grants and access tests are still needed to show enforcement.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Controls access to a dataset"
+        }
+      ]
+    },
+    {
+      "id": "reuse-description",
+      "label": "Reuse description",
+      "group": "meaning",
+      "description": "Describes a dataset version so another reader can find, cite and assess its reuse conditions.",
+      "primaryChapter": 11,
+      "chapters": [
+        {
+          "number": 11,
+          "href": "chapters/11-access-and-reuse.html#describe-a-planned-research-release",
+          "label": "Read the planned FAIR publication record"
+        }
+      ],
+      "evidence": "Illustrative planned release; not published",
+      "exampleLabel": "Synthetic delivery measures · 1.0",
+      "fields": [
+        {
+          "name": "Dataset version",
+          "type": "text",
+          "description": "A separate synthetic research dataset, not the operational deliveries table.",
+          "value": "Synthetic delivery measures, version 1.0"
+        },
+        {
+          "name": "Identifier status",
+          "type": "text",
+          "description": "A repository would assign a persistent identifier; no deposit has occurred.",
+          "value": "Persistent identifier pending"
+        },
+        {
+          "name": "Citation",
+          "type": "text",
+          "description": "Planned citation; persistent identifier remains pending.",
+          "value": "Example Research Team (2026). Synthetic delivery measures, version 1.0. Example Repository."
+        },
+        {
+          "name": "License and access",
+          "type": "text",
+          "description": "Proposed reuse terms, subject to release approval.",
+          "value": "Proposed CC BY 4.0; planned public HTTPS download"
+        },
+        {
+          "name": "Provenance",
+          "type": "text",
+          "description": "Origin and method claimed by this teaching example.",
+          "value": "Invented parcels; generator version 1.0; no customer records"
+        },
+        {
+          "name": "Meaning",
+          "type": "text",
+          "description": "Population, time convention and missing-value meaning.",
+          "value": "All deliveries due by noon against original promises; UTC; missing completion means unfinished"
+        },
+        {
+          "name": "Machine-readable description",
+          "type": "text",
+          "description": "A plan, not evidence of a schema-valid repository deposit.",
+          "value": "Planned DataCite properties and versioned field dictionary"
+        }
+      ],
+      "interpretation": "This separate synthetic example describes the information needed for discovery and reuse. FAIR principles do not by themselves establish quality, publication approval or legal compliance.",
+      "related": [
+        {
+          "target": "dataset",
+          "label": "Describes a dataset version (a separate synthetic example)"
         }
       ]
     }
@@ -1395,6 +1620,16 @@
       "from": "quality-check",
       "to": "quality-rule",
       "label": "evaluates"
+    },
+    {
+      "from": "access-policy",
+      "to": "dataset",
+      "label": "governs access to"
+    },
+    {
+      "from": "reuse-description",
+      "to": "dataset",
+      "label": "describes reuse of"
     }
   ]
 }

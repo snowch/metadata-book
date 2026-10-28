@@ -146,6 +146,7 @@ pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .lineage-diagram { margin: 2rem 0; break-inside: avoid; }
 .lineage-diagram figcaption { font: .7rem/1.5 var(--sans); color: var(--muted); margin-bottom: 1rem; }
 .prose .lineage-diagram ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; margin: 0; padding: 0; list-style: none; }
+.prose .metadata-architecture ol { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .prose .lineage-diagram li { position: relative; padding: .85rem .65rem; border: 1px solid var(--line); background: var(--surface); font: .76rem/1.55 var(--sans); }
 .lineage-diagram li:last-child { border-top: 2px solid var(--accent); }
 .flow-role { display: block; color: var(--muted); font-size: .65rem; margin-bottom: .55rem; }

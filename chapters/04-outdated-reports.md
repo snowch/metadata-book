@@ -39,6 +39,28 @@ After the simulated permission problem is removed, a new run uses the same calcu
 
 <p class="evidence-reading"><strong>What confirms recovery</strong> The 13:12 refresh read the newly published output containing 66.7%. A successful run alone would not establish this.</p>
 
+## What if the run succeeds but the number is wrong?
+
+A successful run means the process completed according to its own success criteria. It does not establish that its calculation follows the agreed definition. Consider a separate, hypothetical fault: a developer removes the filter that excludes unfinished deliveries from the completed-delivery measure.
+
+At 13:00, the four delivery records contain two on-time arrivals, one late arrival and one unfinished parcel. The changed calculation divides by all four rows and produces **50.0%**, although Service Analytics expects **66.7%**. Here 50.0% happens to answer Delivery Operations' question; it is wrong for this report.
+
+<figure class="worked-example" markdown="1">
+<figcaption>Illustrative debugging evidence · A successful run with the wrong denominator</figcaption>
+
+| Evidence to follow | What the engineer inspects |
+|---|---|
+| Report refresh → output → run | Identify the execution behind the displayed number before opening its logs. |
+| Run → retained code | Compare the SQL version with the previous version: `WHERE delivered_at IS NOT NULL` has disappeared. |
+| Output column `percentage` → input columns | The numerator compares `delivered_at` with `promised_at`; the denominator now counts every row. |
+| Run identifier in execution logs | Inspect messages from this execution and its individual attempts, rather than a different retry or today's run. |
+
+</figure>
+
+This is **column-level lineage**: it connects an output field to the input fields and transformations that contribute to it. Row filters and joins matter too, because they change which records contribute. A list of table dependencies alone cannot reveal the missing filter. A parser may miss dynamic SQL or external code, so retain the executed logic and state what the lineage covers.
+
+The engineer checks the suspected cause against the saved input: restoring the filter gives 2 out of 3. A corrected publication and report refresh still need verification. Logs help diagnose the execution; retained inputs and code establish why its calculation produced that result.
+
 ## Keep the earlier evidence
 
 Publishing the new result should not erase the old output or its report refresh record. They explain what readers saw at 13:00. The later 66.7% does not make the earlier calculation incorrect for its inputs.
@@ -53,6 +75,7 @@ In a working system, the reporting tool records which output it read, the publis
 
 - **Refreshing a report does not guarantee fresh data.** It may still read an older saved result after a processing failure.
 - **Verify that recovery reaches the report.** A successful run is not enough: the report must read the newly published output.
+- **A successful run can use the wrong logic.** Trace the affected field, inspect filters and joins, and correlate logs with the producing execution.
 - **Keep the evidence needed to explain earlier reports.** Reproducing an old calculation requires its inputs and code, not just references to them.
 
 *Supporting material: the [simulation reference and source code](../examples/lineage/README.md) show how the records in Chapters 3 and 4 were produced. No code execution is required to read either chapter.*

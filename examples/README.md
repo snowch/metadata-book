@@ -27,3 +27,7 @@ The incident's times and fault are scripted. The program demonstrates the eviden
 Chapters 5–7 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 8 shows an illustrative pilot assessment and decision. These are invented teaching records, not reported results from testing DataHub or OpenMetadata.
 
 The SQL example runs natively for verification. A browser WASM database is not included; that would be a separate optional reading feature, subject to measuring its usefulness and loading cost.
+
+## Sharing and governance examples
+
+[Chapter 9’s OpenLineage event](exchange/README.md) is checked against the official JSON schema. It is an invented exchange record, not a captured message or live integration. The supplementary successful-but-wrong calculation in Chapter 4 and the change, access and research-release records in Chapters 10–11 are explicitly illustrative; they do not modify the simulation or publish data.

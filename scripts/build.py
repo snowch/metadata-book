@@ -22,7 +22,8 @@ REQUIRED = ["book.md", "metadata-map.md", "chapters/01-why-metadata.md",
             "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md",
             "chapters/04-outdated-reports.md", "chapters/05-collecting-metadata.md",
             "chapters/06-unreliable-records.md", "chapters/07-using-metadata.md",
-            "chapters/08-choosing-a-platform.md"]
+            "chapters/08-choosing-a-platform.md", "chapters/09-sharing-metadata.md",
+            "chapters/10-managing-changes.md", "chapters/11-access-and-reuse.md"]
 REDIRECTS = {
     "chapters/04-collecting-metadata.html": "chapters/05-collecting-metadata.html",
     "chapters/05-unreliable-records.html": "chapters/06-unreliable-records.html",

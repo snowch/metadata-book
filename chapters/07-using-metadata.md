@@ -21,6 +21,31 @@ Use the same four complete parcel records at 13:00: two arrived on time, one arr
 
 Delivery Operations confirms which parcels the measure must include. The reporting engineer must check that a proposed calculation includes unfinished parcels and reproduces 50.0%, then verify which published output reaches the meeting.
 
+## Make the right candidate discoverable
+
+A new analyst might search for “late parcels” instead of “on-time delivery.” A catalogue can connect those terms through a maintained business glossary, but it must still distinguish completed deliveries from all deliveries due. Synonyms help discovery; they do not make different definitions equivalent.
+
+An illustrative search result should expose enough information to reject an unsuitable candidate before opening its data:
+
+<figure class="metadata-record">
+<figcaption><span class="record-kind">Illustrative search result</span><span class="record-source">Completed-delivery measure</span></figcaption>
+<dl>
+<div><dt>Title and search terms</dt><dd>On-time completed deliveries; delivery performance; late parcels</dd></div>
+<div class="record-focus"><dt>Scope</dt><dd><strong>Completed deliveries only. Excludes unfinished parcels.</strong></dd></div>
+<div><dt>Responsible team</dt><dd>Service Analytics; contact for the definition</dd></div>
+<div><dt>Status and currency</dt><dd>Active definition; report publication must be checked separately</dd></div>
+<div><dt>Access</dt><dd>Request access to the report through the reporting team; search visibility does not grant data access</dd></div>
+</dl>
+</figure>
+
+Clear titles, descriptions, glossary terms and active or retired status make discovery useful. Search ranking and popularity can help order results, but neither establishes suitability.
+
+## Judge suitability for this use
+
+“Trusted” needs a purpose and supporting evidence. For the operations meeting, ask whether the definition includes every parcel due, whether the input covers the required cutoff, which quality checks ran, and which output reached the report. Also check that the intended use is permitted. A dataset can be suitable for one task and unsuitable for another.
+
+The decision at the end of this chapter therefore records a gap instead of awarding a general trust badge: the all-due definition is agreed, but its implementation and publication remain unverified.
+
 ## Record what producers and consumers agree
 
 A **data contract** records what a producer agrees to provide and what consumers can depend on: structure, meaning, quality rules, delivery timing and how changes are handled. A schema alone does not capture that agreement.
@@ -89,6 +114,7 @@ Recorded dependencies may omit a monthly report or downloaded spreadsheet. Recor
 ## Core points
 
 - **Choose data by the question it answers.** Names alone do not establish the required definition.
+- **Make suitability visible in discovery.** Show scope, responsibility, status and access conditions; popularity is not evidence of fitness.
 - **Contracts state commitments; check results supply evidence.** Keep the rule version, input and check time. Passing checks does not establish fitness for every purpose.
 - **Dependencies identify places to investigate.** Collection may miss consumers.
 - **Leave an actionable decision.** Name the evidence gap, next action and owner.
