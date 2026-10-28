@@ -143,6 +143,13 @@ pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .further-detail[open] { padding-bottom: 1rem; }
 .further-detail[open] summary { color: var(--accent); }
 .further-detail p { font-size: 1.1rem; }
+.chapter-video { margin: 2rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.chapter-video figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; margin-bottom: .8rem; color: var(--accent); font: 600 .8rem/1.5 var(--sans); }
+.chapter-video-duration { color: var(--muted); font-weight: 400; }
+.chapter-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 6px; background: #292d29; }
+.prose .chapter-video-note { margin: .8rem 0; color: var(--muted); font: .75rem/1.6 var(--sans); }
+.prose .chapter-video-links { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: 0; font: .75rem/1.6 var(--sans); }
+.chapter-video-links span { color: var(--muted); }
 .lineage-diagram { margin: 2rem 0; break-inside: avoid; }
 .lineage-diagram figcaption { font: .7rem/1.5 var(--sans); color: var(--muted); margin-bottom: 1rem; }
 .prose .lineage-diagram ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; margin: 0; padding: 0; list-style: none; }
@@ -227,6 +234,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   :root { --paper: #1f2522; --surface: #262e29; --ink: #ece9dd; --muted: #b0b3a7; --accent: #e8a489; --accent-wash: #3b332a; --line: #41483e; --wash: #2d352f; --folio: #4a5045; --code-paper: #18221c; --code-ink: #e5eddf; }
 }
 @media print {
+  .chapter-video { display: none; }
   :root { --paper: white; --surface: white; --ink: black; --muted: #444; --accent: #733523; --line: #bbb; --wash: #f4f4f4; --folio: #ddd; --code-paper: #f4f4f4; --code-ink: black; color-scheme: light; }
   :root { --action-paper: white; --action-ink: black; --action-line: #555; }
   body { border: 0; }

@@ -16,6 +16,6 @@ Delivered export: **3:08**, 1280×720, 24 fps; 12 scenes; 50 selectable caption 
 
 ## Limits and retained material
 
-No human listening review was performed. Transcription can misrecognise words or repeat them at segment boundaries; it is an additional check, not a guarantee of pronunciation or prosody. A voice preview is included for the viewer. This video has not been embedded in the published chapter or uploaded to a media host.
+No human listening review was performed. Transcription can misrecognise words or repeat them at segment boundaries; it is an additional check, not a guarantee of pronunciation or prosody. A voice preview is included for the viewer. The initial export was delivered separately. It is now embedded in Chapter 1, with final media hosted alongside the book under `assets/video/chapter-01/`.
 
 The ignored `out/chapter-01/` build keeps raw and padded scene audio, provider word boundaries, timings, layers, independently encoded clips, captions, transcript, frames, contact sheet and audit reports. The viewing package contains the final MP4, SRT, WebVTT, transcript, poster, voice preview, review and a local preview page. The source package contains the script, scene plan, settings, pinned dependencies and rebuild helpers.

@@ -48,6 +48,6 @@ For a partial visual rebuild, `render.py --only 1 --no-mux` renders only scene 1
 
 ## Sharing and embedding
 
-Keep generated media and model weights out of git. The delivered MP4, captions, poster and transcript can be hosted together on the chosen media host. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. Verify actual media URLs before adding an embed to the published chapter.
+Chapter 1 embeds the final MP4, captions, poster and transcript from `assets/video/chapter-01/`, published with the book. This deliberate final-media copy is about 5 MB; working audio, clips, generated layers and model weights remain outside git. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. The chapter embed uses `preload="none"` so the video is not fetched until requested; the poster and resource links remain visible. Check actual media URLs after each publication.
 
 See `out/chapter-01/review.md` for the measured result and checks performed on this export. No human listening review is claimed.

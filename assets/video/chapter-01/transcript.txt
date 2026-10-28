@@ -1,0 +1,27 @@
+What the data cannot tell you
+
+Display narration, preserved in full.
+Synthetic voice: en-GB-SoniaNeural.
+Source: https://snowch.github.io/metadata-book/chapters/01-why-metadata.html
+
+A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.
+
+First, ask: of the completed deliveries, how many were on time? Three parcels have arrived. Two were on time. Two out of three gives 66.7%. The unfinished delivery is outside this calculation.
+
+Now ask: of all deliveries due, how many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives 50.0%.
+
+Both calculations are valid for their stated questions. The difference is the denominator: the total number of deliveries included. Three completed deliveries, or all four deliveries due. A dashboard labelled only on-time delivery leaves readers to guess.
+
+Metadata is information that describes data: its structure, meaning, origin and use. Column names and types are metadata. So are a metric’s definition and a record of the job that produced it. The values alone rarely explain what they measure.
+
+Suppose Delivery Operations wants to know whether all promised deliveries arrived on time. Record the decision: on time means delivered at or before the promised time. Include every delivery due by noon, even if it has not arrived. Measure at one in the afternoon, and name Delivery Operations as the team responsible for the definition.
+
+This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives 50.0%. Another team can legitimately use completed deliveries, provided its definition makes that choice clear.
+
+Field names need explanation too. A column named delivered_at could record when a parcel reached a depot, or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies.
+
+But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows 66.7%, even though Delivery Operations’ definition requires 50.0%. The query can run successfully and still answer the wrong question.
+
+The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation.
+
+When you see a number, ask what counts, when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable.

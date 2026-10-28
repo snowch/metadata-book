@@ -110,7 +110,7 @@ class Document(HTMLParser):
         attrs = dict(attributes)
         if attrs.get("id"):
             self.ids.add(attrs["id"])
-        for attr in ("href", "src"):
+        for attr in ("href", "src", "poster"):
             if attrs.get(attr):
                 self.links.append(attrs[attr])
 

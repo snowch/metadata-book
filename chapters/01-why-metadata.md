@@ -4,6 +4,17 @@ A dashboard shows a number. To use it, we need to know what it measures, where i
 
 **Metadata is information that describes data:** its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. These descriptions may live inside a database, alongside a report, or in a separate catalogue.
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">3 min 8 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-01/poster.jpg" aria-label="What the data cannot tell you: narrated Chapter 1 explainer" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-01/chapter-01.mp4" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-01/captions.vtt" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-01/chapter-01.mp4">Download the video</a> or <a href="../assets/video/chapter-01/transcript.txt">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-01/transcript.txt">Read the transcript</a><a href="../assets/video/chapter-01/chapter-01.mp4" download>Download video <span>(5 MB)</span></a></p>
+</figure>
+
 ## What a number means
 
 Even a familiar label such as “on-time delivery” leaves room for different calculations.

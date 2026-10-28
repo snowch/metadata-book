@@ -67,3 +67,7 @@ This checks chapter context, linked examples, keyboard tabs, URL state, mobile l
 ## Sources and examples
 
 Product-specific references appear beside the relevant explanations. The parcel company and delivery records are original, invented teaching examples. [examples/README.md](examples/README.md) explains the executable fixture, local incident simulation and their limits.
+
+## Chapter video
+
+Chapter 1 includes a 3:08 narrated explainer with optional English captions and a transcript. Final media is published from `assets/video/chapter-01/`; the [source and rebuild instructions](video/chapter-01/README.md) retain the narration, scene plan and rendering workflow. The player does not autoplay or preload the MP4. Working media and caches remain in ignored `out/`.
