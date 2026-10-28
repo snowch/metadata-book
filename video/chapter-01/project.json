@@ -1,0 +1,18 @@
+{
+  "title": "What the data cannot tell you",
+  "source_url": "https://snowch.github.io/metadata-book/chapters/01-why-metadata.html",
+  "source_commit": "46e8224334d69d9ef9eee103f0b4def368a9f807",
+  "book_url": "https://snowch.github.io/metadata-book/",
+  "attribution": "Adapted from Metadata systems · Chapter 1",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "-2%",
+  "pronunciation": {
+    "66.7%": "sixty six point seven percent",
+    "50.0%": "fifty percent",
+    "delivered_at": "delivered at"
+  },
+  "min_seconds": 150,
+  "max_seconds": 240,
+  "font_dir": "/usr/share/fonts/truetype/dejavu",
+  "illustration_sheet": null
+}
