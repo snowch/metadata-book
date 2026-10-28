@@ -62,3 +62,21 @@ Whether to recalculate history is a policy decision for the definition owner and
 - **Separate proposal, approval and release.** Record dates, responsible parties and consumer evidence.
 - **Version agreements and publications explicitly.** Dataset identity does not describe every change.
 - **Preserve accepted ownership and historical decisions.** Restatement requires a traceable revised publication.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=10&amp;record=data-contract"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find <code>deliveries-v1</code>’s meaning of <code>promised_at</code> and its change agreement rule.</li>
+<li>Find the teams named in the agreement. Identify who must agree before the meaning changes.</li>
+</ol>
+<p><strong>Think about it:</strong> Could a producer start putting revised delivery promises into this column while keeping its name and type?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>That would violate the recorded agreement. <code>deliveries-v1</code> specifies the original customer promise and requires agreement with both consuming teams before a new contract version. An unchanged schema does not establish that the meaning remains compatible. The contract records the requirement; it does not prove that approval, validation or release has happened.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

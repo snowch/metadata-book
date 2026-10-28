@@ -117,3 +117,21 @@ OpenLineage supplies the lineage objects and event vocabulary. [CloudEvents](htt
 - **Configure a producer and a receiver.** Format compatibility does not establish transport, permission or delivery guarantees.
 - **Read events as sourced claims.** Retain additional evidence needed to explain a particular result.
 - **Separate event models, envelopes and query APIs.** Each solves a different part of sharing metadata.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=9&amp;record=run"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find <code>run_id</code> and <code>job_name</code>. Follow the job reference and check that its name matches.</li>
+<li>Look at the fields that identify the run and job. Does this example include a job namespace or an OpenLineage run UUID?</li>
+</ol>
+<p><strong>Think about it:</strong> Would sending these short identifiers alone reliably identify the execution in another system?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>No. Names such as <code>build_delivery_summary</code> can occur in different schedulers. The receiver needs the namespaced job identity and an explicit mapping from <code>R1205</code> to the exchange run UUID. Those mappings are additional metadata; this map example does not contain them. A shared format also does not establish transport or access permission.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

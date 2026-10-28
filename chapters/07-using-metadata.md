@@ -114,3 +114,21 @@ Recorded dependencies may omit a monthly report or downloaded spreadsheet. Recor
 - **Contracts state commitments; check results supply evidence.** Keep the rule version, input and check time. Passing checks does not establish fitness for every purpose.
 - **Dependencies identify places to investigate.** Collection may miss consumers.
 - **Leave an actionable decision.** Name the evidence gap, next action and owner.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=7&amp;record=quality-check"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find the checked input, identifier rule and observed identifier count. Distinguish the recorded result from the rule’s expectation.</li>
+<li>Select <strong>Decision</strong>. Read the chosen rule, current gap and next action with its owner.</li>
+</ol>
+<p><strong>Think about it:</strong> Do the passed checks make the meeting’s all-due publication ready to use?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>No. The review covers <code>decision-input-1300</code>: four rows and four distinct identifiers satisfy <code>delivery-ids-unique-v1</code>. That supports uniqueness for this input. The meeting chooses all-due, expecting 50.0%, but its decision still has no verified all-due publication attached. The reporting engineer must verify the calculation and attach the output identifier and report refresh evidence. Passing checks does not establish the denominator or delivery to the report.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

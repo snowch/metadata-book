@@ -52,3 +52,21 @@ If the company later stores delivery data in Hive, its metastore describes table
 - **Each source establishes different facts.** Structure, execution and intended meaning need their own evidence.
 - **Keep sources and times visible.** Occurrence, observation and collection may happen at different times.
 - **Collection does not assign responsibility.** Record the responsible team's agreement.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=5&amp;record=source-observation"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find the dataset identifier, source, observation time and collection time. Follow <strong>Collection run</strong> to compare its scope.</li>
+<li>Select <strong>Run</strong> and compare its date and identity with the scan. These are separate examples, not one joined execution.</li>
+</ol>
+<p><strong>Think about it:</strong> Can the scan establish which run produced the summary’s values, or when the column was created?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>The production database scan observed <code>percentage</code> in <code>prod/parcels/delivery_summary</code> at 09:00 on 20 October; collection followed at 09:02. Neither time is the column’s creation time. The map’s run <code>R1205</code> belongs to the 19 October incident. Matching record types or nearby cards cannot join those examples; identifying the producing run needs explicit execution and publication references.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

@@ -48,3 +48,21 @@ Metadata has [provenance](03-following-lineage.md#provenance) too. Keep each cla
 - **A repeated message is not another event.** Use the source and a stable event identifier to recognise duplicates.
 - **Arrival order is not event order.** Retain run identities, event times and receipt times.
 - **Preserve conflicting claims and show uncertainty.** Record the evidence used to resolve the disagreement.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=6&amp;record=source-observation"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find what the database scan actually claimed and compare <strong>Observed at</strong> with <strong>Collected at</strong>.</li>
+<li>Open <strong>Collection run</strong>. Read its scope and evidence limit. Suppose tomorrow’s scan omits this dataset: list what you would investigate.</li>
+</ol>
+<p><strong>Think about it:</strong> Does this observation establish creation at 09:02, or would a later omission establish deletion?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>Neither follows. The scan saw <code>percentage</code> in <code>prod/parcels/delivery_summary</code> at 09:00 on 20 October; the catalogue received that observation two minutes later. Those times describe observation and receipt, not creation. A later omission needs investigation of scope, permissions and collection outcome. Keep the last observation visible and mark current status unverified until deletion has supporting evidence; this map supplies no later scan or deletion record.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

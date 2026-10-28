@@ -29,7 +29,7 @@ Read the chapters in order, then consider:
 - Did the SQLite and lineage examples make the ideas useful beyond this scenario?
 - Would running an example add understanding, or did the worked result do enough?
 
-The chapters present definitions, database outputs, execution records, catalogue entries and decisions beside the questions they answer, using styled cards and comparisons in the main reading path. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup.
+The chapters present definitions, database outputs, execution records, catalogue entries and decisions beside the questions they answer, using styled cards and comparisons in the main reading path. Runnable code and implementation notes remain supporting material. This approach makes the evidence concrete without requiring exercises or setup. Each chapter also ends with an optional map activity: two exploration steps, one question and a collapsed answer.
 
 Chapters 1–4 form a short reading path about interpreting data. Chapters 5–8 cover collecting, using and operating metadata. Chapters 9–11 cover exchange and APIs, governance, access and FAIR reuse. The contents explain different readers’ roles; Chapter 9 diagrams the system that maintains and serves the records. Implementation notes and reproduction instructions remain in the supporting examples; there is no separate lab requirement or browser database runtime.
 
@@ -68,6 +68,6 @@ This checks chapter context, linked examples, keyboard tabs, URL state, mobile l
 
 Product-specific references appear beside the relevant explanations. The parcel company and delivery records are original, invented teaching examples. [examples/README.md](examples/README.md) explains the executable fixture, local incident simulation and their limits.
 
-## Chapter video
+## Chapter videos
 
-Chapter 1 includes a 3:08 narrated explainer with optional English captions and a transcript. Final media is published from `assets/video/chapter-01/`; the [source and rebuild instructions](video/chapter-01/README.md) retain the narration, scene plan and rendering workflow. The player does not autoplay or preload the MP4. Working media and caches remain in ignored `out/`.
+Chapters 1 and 3 include narrated explainers (3:08 and 3:05) with optional English captions and transcripts. Final media is published from `assets/video/chapter-01/` and `assets/video/chapter-03/`. Source and rebuild instructions for [Chapter 1](video/chapter-01/README.md) and [Chapter 3](video/chapter-03/README.md) retain the narration, scene plans and rendering workflow. The players do not autoplay or preload the MP4. Working media and caches remain in ignored `out/`.

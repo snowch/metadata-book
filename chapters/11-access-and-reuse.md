@@ -76,3 +76,21 @@ FAIR does not require public access: authentication and a documented approval ro
 - **Protect metadata and copies.** Samples, queries, indexes and exports need deliberate handling.
 - **Retain by purpose.** State what deletion prevents you from reproducing.
 - **Make reuse explicit.** Identifiers, versions, licenses and provenance help; FAIR alone grants no permission.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=11&amp;record=access-policy"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Read the dataset, permitted purpose, readers and controls. Distinguish the recorded approval from evidence that permissions are enforced.</li>
+<li>Select <strong>Reuse description</strong>. Compare its dataset version, identifier status and proposed license with the access decision’s operational dataset.</li>
+</ol>
+<p><strong>Think about it:</strong> Does the planned public research release authorise sharing the operational deliveries table?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>No. The access decision concerns restricted <code>deliveries</code> records for approved Delivery Operations analysts investigating performance. Grants and access tests are still needed. The reuse description concerns a separate synthetic dataset, version 1.0, with a persistent identifier pending and proposed CC BY 4.0 access. It is a planned release, not a published deposit or permission to export operational records. Purpose, dataset identity and release status must remain explicit.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

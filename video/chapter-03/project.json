@@ -1,0 +1,23 @@
+{
+  "title": "Where did this number come from?",
+  "source_url": "https://snowch.github.io/metadata-book/chapters/03-following-lineage.html",
+  "source_commit": "0fcdc702f0559c363876b5777b7034ea929a17b6",
+  "book_url": "https://snowch.github.io/metadata-book/",
+  "attribution": "Adapted from Metadata systems · Chapter 3",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "-2%",
+  "pronunciation": {
+    "100%": "one hundred percent",
+    "SQLite": "S Q Lite",
+    "F1300": "F thirteen hundred",
+    "summary-R1205": "summary R twelve oh five",
+    "R1205": "R twelve oh five",
+    "S1205": "S twelve oh five",
+    "completed-v1": "completed version one",
+    "Chapter 4": "Chapter four"
+  },
+  "min_seconds": 160,
+  "max_seconds": 260,
+  "font_dir": "/usr/share/fonts/truetype/dejavu",
+  "illustration_sheet": null
+}

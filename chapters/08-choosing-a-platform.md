@@ -60,3 +60,21 @@ If a catalogue trial becomes worthwhile, verify exact source and version support
 - **Check coverage, export and access.** Record manual work and untested sources.
 - **Budget for ongoing ownership and freshness.** Maintenance continues after setup.
 - **Choose the smallest arrangement that passes.** Expand only with evidence that it works and reduces effort.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=8&amp;record=collection-run"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Read the collector’s scope and claim. Name one supported fact and one missing kind of evidence.</li>
+<li>Select <strong>Responsible team</strong>. Compare its definition responsibility with the chapter’s assignment of collection maintenance to the reporting engineer.</li>
+</ol>
+<p><strong>Think about it:</strong> Would installing this collector establish complete incident coverage or transfer definition ownership to its operator?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>No. This scan supports a structural observation about <code>prod/parcels/delivery_summary</code>: <code>percentage</code> exists. It does not supply the run-to-output-to-refresh chain or establish a complete scan. Delivery Operations confirms the all-due denominator and original-promise rule; collection maintenance is separate work. A pilot should test evidence access and maintenance against its budget. The map records do not measure that effort or assess a catalogue product.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

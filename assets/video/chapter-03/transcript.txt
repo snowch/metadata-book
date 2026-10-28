@@ -1,0 +1,23 @@
+Where did this number come from?
+
+Display narration, preserved in full.
+Synthetic voice: en-GB-SoniaNeural.
+Source: https://snowch.github.io/metadata-book/chapters/03-following-lineage.html
+
+Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At one in the afternoon, its Delivery performance report shows 100%. What produced that number? This is an invented incident, checked using SQLite.
+
+A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them.
+
+Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result: who or what created or changed it, when, and using which sources and methods. The terms overlap, but a route alone does not explain this particular number.
+
+Start with the report refresh record, F1300. It says the report refreshed at one in the afternoon and read output summary-R1205. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced.
+
+The matching published output contains 100%. It was published at twelve oh five, fifty-five minutes before the report refresh. Its run identifier is R1205. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct.
+
+The run record supplies two more references: input snapshot S1205, and code version completed-v1. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today’s table and code may be different.
+
+The saved input was captured at twelve oh five. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data; the run’s reference to them is metadata.
+
+The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives 100%. The saved input and code explain why this run produced that result.
+
+Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was 100%. Whether it was still current when the report refreshed is a separate question, explored in Chapter 4.

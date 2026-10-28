@@ -79,3 +79,21 @@ In a working system, the reporting tool records which output it read, the publis
 - **Verify that recovery reaches the report.** A successful run is not enough: the report must read the newly published output.
 - **A successful run can use the wrong logic.** Trace the affected field, inspect filters and joins, and correlate logs with the producing execution.
 - **Keep the evidence needed to explain earlier reports.** Reproducing an old calculation requires its inputs and code, not just references to them.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=4&amp;record=report-refresh"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Compare <code>F1300</code>’s refresh time with its linked <strong>Published output</strong>’s publication time and percentage.</li>
+<li>Follow that output to <strong>Run</strong>. Note which execution succeeded; compare these map examples with the recovery table in this chapter.</li>
+</ol>
+<p><strong>Think about it:</strong> Do the map’s records establish recovery? Which publication and refresh references would you need?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p>The map shows the earlier evidence: <code>F1300</code> at 13:00 read <code>summary-R1205</code>, published at 12:05 with 100.0%. Its successful run <code>R1205</code> does not establish recovery. The chapter’s later evidence connects <code>F1312</code> to <code>summary-R1310</code>, containing 66.7%. That new publication and the refresh that read it are both needed; they are not additional examples in this map.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

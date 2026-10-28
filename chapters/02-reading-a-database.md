@@ -113,3 +113,21 @@ This view recalculates when read. [Chapter 3](03-following-lineage.md) follows a
 - **Meaning can change without a schema change.** Storing a revised promise instead of the original promise changes the measure even if the column's name and type stay the same.
 - **Read the calculation to see what it counts.** The completed-delivery view excludes unfinished deliveries, so it cannot answer the all-due question.
 - **Catalogues serve different purposes.** Database catalogues help software find and read data; discovery catalogues connect technical records with definitions, owners and lineage. These roles overlap.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=2&amp;record=column"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find <code>delivered_at</code>’s declared type and <code>notnull</code> value. What does the database permit?</li>
+<li>Select <strong>Saved query</strong>. Compare its filter and denominator with <strong>Metric definition</strong>.</li>
+</ol>
+<p><strong>Think about it:</strong> Can the saved query implement the all-due definition, and does the column declaration explain a missing delivery time?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p><code>TEXT</code> declares a text field; <code>notnull: 0</code> allows <code>NULL</code>, SQL’s marker for a missing value. They do not explain its meaning. The saved query filters out those rows with <code>delivered_at IS NOT NULL</code> and counts completed deliveries; the all-due definition includes unfinished parcels. The schema describes allowed structure; the filter reveals the calculation’s narrower population.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>

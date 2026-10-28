@@ -2,6 +2,17 @@
 
 Service Analytics measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery. At 13:00, its Delivery performance report shows **100%**. What produced that number?
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">3 min 5 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-03/poster.jpg" aria-label="Where did this number come from?: narrated Chapter 3 explainer" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-03/chapter-03.mp4" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-03/captions.vtt" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The incident is invented and assumes complete records at the input capture time. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4" download>Download video <span>(5 MB)</span></a></p>
+</figure>
+
 ## Lineage and provenance
 
 <div class="definition-box" markdown="1">
@@ -108,3 +119,21 @@ The records now connect the report to a specific calculation and its inputs. Tha
 - **Lineage shows the route; provenance explains a result's history.** The terms overlap, but a dependency path alone does not identify the run behind a displayed number.
 - **Follow the report to its saved output, then to the producing run.** The matching identifiers connect the records.
 - **Check the run's inputs and code.** Today's data and calculation may differ from those that produced the result.
+
+<aside class="reader-action" aria-labelledby="explore-metadata-map">
+<svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
+<div>
+<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
+<p><a href="../metadata-map.md?chapter=3&amp;record=report-refresh"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<ol>
+<li>Find refresh <code>F1300</code>’s <code>output_version</code>, then follow that value to <strong>Published output</strong>. Compare refresh and publication times.</li>
+<li>Follow the output’s <code>run_id</code> to <strong>Run</strong>. Note the input snapshot and code version it used.</li>
+</ol>
+<p><strong>Think about it:</strong> Which execution explains the displayed 100%, and would the current deliveries table be enough to reproduce it?</p>
+<details class="reader-action-answer">
+<summary>Check your answer</summary>
+<p><code>F1300</code> read <code>summary-R1205</code>, published at 12:05 and refreshed at 13:00. Its producing execution was <code>R1205</code>, using <code>S1205</code> and <code>completed-v1</code>. Reproduction needs the retained input rows and executed code, not just today’s table or the version labels. The matching identifiers establish the chain behind this particular result.</p>
+</details>
+<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+</div>
+</aside>
