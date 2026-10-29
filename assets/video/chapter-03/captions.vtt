@@ -1,139 +1,127 @@
 WEBVTT
 
-00:00.527 --> 00:02.966
-Service Analytics measures the percentage of
+00:00.255 --> 00:05.547
+At one in the afternoon, Service Analytics' report shows 100%: the percentage of
 
-00:02.966 --> 00:05.330
+00:05.547 --> 00:07.782
 completed deliveries that arrived on time.
 
-00:05.330 --> 00:08.133
-It excludes parcels still awaiting delivery.
+00:07.782 --> 00:09.934
+Unfinished parcels are excluded.
 
-00:08.133 --> 00:12.390
-At one in the afternoon, its Delivery performance report shows 100%.
+00:09.934 --> 00:12.012
+This is the page's invented incident.
 
-00:12.390 --> 00:14.148
-What produced that number?
+00:12.012 --> 00:15.252
+Does the report's refresh time tell us when the number was calculated?
 
-00:14.148 --> 00:17.152
-This is an invented incident, checked using SQLite.
+00:15.252 --> 00:16.426
+Pause and explain.
 
-00:17.977 --> 00:20.127
-A scheduled job calculates the percentage from
+00:21.425 --> 00:22.041
+No.
 
-00:20.127 --> 00:22.477
-the delivery records and saves the result.
+00:22.041 --> 00:24.404
+This report reads a saved result.
 
-00:22.477 --> 00:25.932
-The report reads that saved result when someone refreshes it.
+00:24.404 --> 00:26.718
+Refreshing it does not rerun the job.
 
-00:25.932 --> 00:28.801
-Refreshing the report does not rerun the calculation.
+00:26.718 --> 00:31.041
+To explain this number, follow the matching identifiers, starting with the refresh
 
-00:28.801 --> 00:31.914
-Those are separate steps, so we need evidence connecting them.
+00:31.041 --> 00:34.232
+record, rather than simply inspecting the latest successful run.
 
-00:32.714 --> 00:35.523
-Lineage records where data comes from, how it is
+00:35.281 --> 00:39.973
+Refresh F1300 read summary-R1205.
 
-00:35.523 --> 00:39.206
-transformed, and which datasets or reports depend on it.
+00:39.973 --> 00:42.778
+Follow that exact output identifier.
 
-00:39.206 --> 00:43.970
-Provenance records the history of a particular dataset or result: who or what created
+00:42.778 --> 00:47.466
+Its matching output was published at twelve oh five, fifty-five minutes before the
 
-00:43.970 --> 00:47.478
-or changed it, when, and using which sources and methods.
+00:47.466 --> 00:50.962
+refresh, and names producing run R1205.
 
-00:47.478 --> 00:51.622
-The terms overlap, but a route alone does not explain this particular number.
+00:50.962 --> 00:53.089
+We now have the execution to investigate.
 
-00:52.542 --> 00:56.264
-Start with the report refresh record, F1300.
+00:54.083 --> 00:59.658
+The run points to saved input S1205 and retained code completed-v1.
 
-00:56.264 --> 01:01.776
-It says the report refreshed at one in the afternoon and read output summary-R1205.
+00:59.658 --> 01:03.606
+A snapshot is a saved copy of the input at a particular time.
 
-01:01.776 --> 01:04.852
-That output identifier is the link to follow.
+01:03.606 --> 01:07.012
+Would today's deliveries table be enough to reproduce this result?
 
-01:04.852 --> 01:08.080
-The refresh time alone does not tell us when the result was produced.
+01:07.012 --> 01:08.621
+Explain before continuing.
 
-01:09.042 --> 01:12.212
-The matching published output contains 100%.
+01:13.737 --> 01:14.662
+No.
 
-01:12.212 --> 01:16.821
-It was published at twelve oh five, fifty-five minutes before the report refresh.
+01:14.662 --> 01:16.798
+Today's data and code may differ.
 
-01:16.821 --> 01:19.777
-Its run identifier is R1205.
+01:16.798 --> 01:19.665
+Inspect this run's retained input and calculation.
 
-01:19.777 --> 01:24.187
-We have connected the report to a producing execution, but the stored percentage does
+01:19.665 --> 01:24.134
+At twelve oh five, two parcels had arrived on time and two were unfinished.
 
-01:24.187 --> 01:26.462
-not establish whether the calculation was correct.
+01:24.134 --> 01:26.047
+All four were due by noon.
 
-01:27.248 --> 01:30.443
-The run record supplies two more references: input
+01:26.047 --> 01:28.040
+Assume the invented records are complete.
 
-01:30.443 --> 01:34.530
-snapshot S1205, and code version completed-v1.
+01:29.063 --> 01:32.427
+The retained calculation excludes the unfinished parcels.
 
-01:34.530 --> 01:38.704
-A snapshot is a retained copy of the input data at a particular time.
+01:32.427 --> 01:35.975
+Two completed deliveries remain, and both were on time.
 
-01:38.704 --> 01:42.704
-These references tell us which saved input and calculation to inspect.
+01:35.975 --> 01:38.411
+Two out of two gives 100%.
 
-01:42.704 --> 01:44.773
-Today’s table and code may be different.
+01:38.411 --> 01:42.072
+The stored input and executed code explain this particular result.
 
-01:45.745 --> 01:48.776
-The saved input was captured at twelve oh five.
+01:42.917 --> 01:46.057
+This is how matching records establish provenance for a number.
 
-01:48.776 --> 01:51.418
-All four parcels were promised by noon.
+01:46.057 --> 01:50.566
+Lineage describes the data's route and dependencies; provenance records a particular
 
-01:51.418 --> 01:53.113
-Two had arrived on time.
+01:50.566 --> 01:52.454
+dataset or result's history.
 
-01:53.113 --> 01:54.788
-Two had not yet arrived.
+01:52.454 --> 01:53.629
+The terms overlap.
 
-01:54.788 --> 01:58.863
-In this complete example, an empty delivery time means unfinished.
+01:53.629 --> 01:56.993
+Explaining why the result was 100% does not establish
 
-01:58.863 --> 02:03.284
-These saved rows are input data; the run’s reference to them is metadata.
+01:56.993 --> 01:59.575
+whether it was still current at the report refresh.
 
-02:04.263 --> 02:07.942
-The retained calculation excludes unfinished deliveries.
+01:59.575 --> 02:01.187
+Chapter 4 examines that.
 
-02:07.942 --> 02:12.035
-Only the two completed parcels remain, and both were on time.
+02:02.178 --> 02:04.667
+Try the page's metadata-map exercise.
 
-02:12.035 --> 02:15.655
-Two on time out of two completed gives 100%.
+02:04.667 --> 02:08.954
+Start at Report refresh, choose Example record, and
 
-02:15.655 --> 02:19.743
-The saved input and code explain why this run produced that result.
+02:08.954 --> 02:11.728
+follow its output to Published output, then Run.
 
-02:20.853 --> 02:26.015
-Follow the report refresh to its output, the output to its producing run, and the run
+02:11.728 --> 02:14.231
+Find the retained input and code version.
 
-02:26.015 --> 02:28.034
-to its retained input and code.
-
-02:28.034 --> 02:30.479
-Matching identifiers connect the evidence.
-
-02:30.479 --> 02:33.917
-We now know why the saved result was 100%.
-
-02:33.917 --> 02:36.447
-Whether it was still current when the report refreshed
-
-02:36.447 --> 02:39.197
-is a separate question, explored in Chapter 4.
+02:14.231 --> 02:19.250
+Explain why the displayed result was 100%, then use Check your answer on the page.

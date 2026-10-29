@@ -1045,14 +1045,16 @@
     },
     {
       "chapter": "03",
-      "duration_seconds": 164.79166666666666,
-      "caption_cues": 46,
+      "duration_seconds": 144.9,
+      "caption_cues": 42,
       "end_card_seconds": 5,
+      "purpose": "Page learning aid: follow matching identifiers from report to retained input and code; explain 100% without confusing refresh with recalculation or currency.",
+      "video_sha256": "d31544467a031f1ce4be54e4734eda602217e0fd5f86fcfadc3bb245c2600c73",
       "scenes": [
         {
           "scene": 0,
-          "kind": "opening",
-          "raw_seconds": 16.96,
+          "kind": "report-question",
+          "raw_seconds": 16.4,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1061,164 +1063,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At one in the afternoon, its Delivery performance report shows one hundred percent. What produced that number? This is an invented incident, checked using sequel lite.",
+            "spoken_text": "At one in the afternoon, Service Analytics' report shows one hundred percent: the percentage of completed deliveries that arrived on time. Unfinished parcels are excluded. This is the page's invented incident. Does the report's refresh time tell us when the number was calculated? Pause and explain.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "9893cb005fd1884e4ec27940b4b08fdb7622f5ccd91fe16b695471fe1a575bed",
-            "seed": 54,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
-              },
-              {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 16.96,
-            "sha256": "67814dbd7f460ef2ae264ca434d5c117afa82db55a931e2caf9efed7bb120bf1"
-          },
-          "unprompted_asr": "Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At 1 in the afternoon its delivery performance report shows 100%. What produced that number? This is an invented incident checked using SQLite.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 1,
-          "kind": "route",
-          "raw_seconds": 14.08,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "9f636f368ed7de54d63d95a24451a45c8c69c65bdfdd82dc37b4287281c4fa04",
-            "seed": 54,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
-              },
-              {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 14.08,
-            "sha256": "3dbecb73ad0ccee38db7df476d0f2bf533c3919f2c692d8184d1e706244a6dd9"
-          },
-          "unprompted_asr": "A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 2,
-          "kind": "distinction",
-          "raw_seconds": 19.12,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result: who or what created or changed it, when, and using which sources and methods. The terms overlap, but a route alone does not explain this particular number.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "93b7c1eb08c94542f9e056570c476d2b3dacd6efcd0a9816a1d7ecf05407daef",
+            "signature": "d686ec43c340cca814c348531b9d5e3cbbc1af787e781b37f6665349a485f8b4",
             "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
               },
               {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
               },
               {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
               },
               {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
               },
               {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
               },
               {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
               }
             ],
             "sdk_versions": {
@@ -1229,33 +1103,134 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 19.12,
-            "sha256": "0453354667a2218380cecdb27920e45d4ee600e7ba157e53460678a3f640717c"
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 16.4,
+            "sha256": "3d3c75ee2b466b631116fee0b64dce78d72ec88adb0aaad51028d533435fa0d8"
           },
-          "unprompted_asr": "Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result, who or what created or changed it, when and using which sources and methods. The terms overlap, but a root alone does not explain this particular number.",
-          "asr_model": "small.en",
+          "unprompted_asr": "At 1 in the afternoon, Service Analytics report shows 100 percent, the percentage of completed deliveries that arrived on time. Unfinished parcels are excluded. This is the page's invented incident. Does the report's refresh time tell us when the number was calculated? Pause and explain.",
           "alignment": {
-            "matched_character_fraction": 0.9924242424242424,
-            "differences": [
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "route",
+          "raw_seconds": 13.04,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "No. This report reads a saved result. Refreshing it does not rerun the job. To explain this number, follow the matching identifiers, starting with the refresh record, rather than simply inspecting the latest successful run.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "bd9c0ed2126c1d4b896cfa88e730ce6358f4aba516b91ac42f8018779335c5f6",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
               {
-                "operation": "replace",
-                "expected": "u",
-                "recognised": "o"
+                "spoken_sha256": "7e3c866e7fba1ee7b0bec85e87588735083b257ae8a106ef37c5724d9732ce2d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-01.wav"
               },
               {
-                "operation": "delete",
-                "expected": "e",
-                "recognised": ""
+                "spoken_sha256": "c35f61d53a5f08251286b1156d5ba49f381b93239a16125f5fe4093dfe28f41e",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-05.wav"
               }
             ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 91.15465303400015,
+            "seconds": 13.04,
+            "sha256": "2d40fbde5e9e2e8e56656bd0b37c6632c580a836adf5894e15864914af1fa633"
+          },
+          "unprompted_asr": "No. This report reads a saved result, refreshing it does not rerun the job. To explain this number, follow the matching identifiers, starting with the refresh record rather than simply inspecting the latest successful run.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "output",
+          "raw_seconds": 18.24,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Refresh F thirteen hundred read summary R twelve oh five. Follow that exact output identifier. Its matching output was published at twelve oh five, fifty-five minutes before the refresh, and names producing run R twelve oh five. We now have the execution to investigate.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "98111006deba8806ba01b09a239783b6c23180d92741985a039441c481007557",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 18.24,
+            "sha256": "2c6031aee4f6f11069e3dfe8ea8570901a8aebfe53098b6ea3f54d2d07278463"
+          },
+          "unprompted_asr": "Refresh F1300, read summary R1205, follow that exact output identifier. Its matching output was published at 1205, 55 minutes before the refresh, and names producing run R1205, we now have the execution to investigate.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 3,
-          "kind": "refresh",
-          "raw_seconds": 15.76,
+          "kind": "run-question",
+          "raw_seconds": 14.72,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1264,36 +1239,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Start with the report refresh record, F thirteen hundred. It says the report refreshed at one in the afternoon and read output summary R twelve oh five. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced.",
+            "spoken_text": "The run points to saved input S twelve oh five and retained code completed version one. A snapshot is a saved copy of the input at a particular time. Would today's deliveries table be enough to reproduce this result? Explain before continuing.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "3c6267b7bdbaeab7e28f8666827f5a14db41aaefcce068fe832914c60b0b9ac3",
-            "seed": 48,
+            "signature": "19d007e27735306b4af24f02fb251bceb5bdc7ab075cc74da73f8242a08af869",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
               },
               {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
               },
               {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
               },
               {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
               },
               {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
               },
               {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
               }
             ],
             "sdk_versions": {
@@ -1304,22 +1279,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 15.76,
-            "sha256": "df258430b07bc78d35f2a27a6538bd297d2b128252035131f51345f227d9ba6f"
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 14.72,
+            "sha256": "1c05616444b475a38d931d6cd38b2ef4835e0562048cb6830557d3bcbd0ae4e5"
           },
-          "unprompted_asr": "Start with the report refresh record. F1300. It says the report refreshed at 1 in the afternoon and read output summary R1205. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced.",
-          "asr_model": "small.en",
+          "unprompted_asr": "The run points to saved input S1205 and retained code completed version 1. A snapshot is a saved copy of the input at a particular time. Would today's deliveries table be enough to reproduce this result? Explain before continuing.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 4
         },
         {
           "scene": 4,
-          "kind": "output",
-          "raw_seconds": 17.44,
+          "kind": "snapshot",
+          "raw_seconds": 14.64,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1328,36 +1303,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The matching published output contains one hundred percent. It was published at twelve oh five, fifty-five minutes before the report refresh. Its run identifier is R twelve oh five. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct.",
+            "spoken_text": "No. Today's data and code may differ. Inspect this run's retained input and calculation. At twelve oh five, two parcels had arrived on time and two were unfinished. All four were due by noon. Assume the invented records are complete.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "e121e638aa85aef5067ca0489a6d64c0f81ce8db78032ee5c7c5262d8a087932",
-            "seed": 48,
+            "signature": "6e6f2f0a45fa777d2c9c7870f1d0f98683336a107578c0e58cbd883ddc36c2ed",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
               },
               {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
               },
               {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
               },
               {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
               },
               {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
               },
               {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
               }
             ],
             "sdk_versions": {
@@ -1368,22 +1343,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 17.44,
-            "sha256": "feb76756faf1f90c8df0f816d906f9c2e15eeaa3b987dcc7cf15ef3e3c8fa489"
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 14.64,
+            "sha256": "c6c7ce5bdb8a0b48ecddc7f31447dd9c6e3ba0c3b4257dc05f28d32f0ba6d0ae"
           },
-          "unprompted_asr": "The matching published output contains 100%. It was published at 12.05, 55 minutes before the report refresh. Its run identifier is R12.05. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct.",
-          "asr_model": "small.en",
+          "unprompted_asr": "No. Today's data and code may differ. Inspect this run's retained input and calculation. At 12.05, two parcels had arrived on time and two were unfinished. All four were due by noon. Assume the invented records are complete.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 5,
-          "kind": "run",
-          "raw_seconds": 17.68,
+          "kind": "calculation",
+          "raw_seconds": 13.28,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1392,36 +1367,20 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The run record supplies two more references: input snapshot S twelve oh five, and code version completed version one. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today's table and code may be different.",
+            "spoken_text": "The retained calculation excludes the unfinished parcels. Two completed deliveries remain, and both were on time. Two out of two gives one hundred percent. The stored input and executed code explain this particular result.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "ffd119aacad80635c19dda28e02d6e45cc69d6e0afe40904b7dbdaf6f3bf5bb9",
+            "signature": "1e0e0f6572282f6cb8aa5160342fabf6710f982e9056114e17a1969a2ab25a36",
             "seed": 48,
-            "batch_size": 6,
+            "batch_size": 2,
             "batch_members": [
               {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
+                "spoken_sha256": "7e3c866e7fba1ee7b0bec85e87588735083b257ae8a106ef37c5724d9732ce2d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-01.wav"
               },
               {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
-              },
-              {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
-              },
-              {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
+                "spoken_sha256": "c35f61d53a5f08251286b1156d5ba49f381b93239a16125f5fe4093dfe28f41e",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-05.wav"
               }
             ],
             "sdk_versions": {
@@ -1432,22 +1391,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 17.68,
-            "sha256": "ecd3c60a44cd1b549cda7d17451ae319009394dd455c6049c32252873a9e69cb"
+            "generation_batch_seconds": 91.15465303400015,
+            "seconds": 13.28,
+            "sha256": "6bb374becb63deec2b3aa84b76d791a23b81356233256c36d0a42f84e6124219"
           },
-          "unprompted_asr": "The run record supplies two more references, input snapshot S1205 and code version completed version 1. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today's table and code may be different.",
-          "asr_model": "small.en",
+          "unprompted_asr": "The retained calculation excludes the unfinished parcels. Two completed deliveries remain, and both were on time. Two out of two gives 100 percent. The stored input and executed code explain this particular result.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 6,
-          "kind": "snapshot",
-          "raw_seconds": 17.92,
+          "kind": "meaning",
+          "raw_seconds": 18.48,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1456,36 +1415,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The saved input was captured at twelve oh five. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data; the run's reference to them is metadata.",
+            "spoken_text": "This is how matching records establish provenance for a number. Lineage describes the data's route and dependencies; provenance records a particular dataset or result's history. The terms overlap. Explaining why the result was one hundred percent does not establish whether it was still current at the report refresh. Chapter four examines that.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "f4a3bf6e228cc19f121f45d37acb26f3a99cfdca6928cff9f35a1c88dd8aecc9",
-            "seed": 48,
+            "signature": "2a2e738b0d973c110beae82c851cc87b37473d748c75a06a0a724e324c18179f",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
               },
               {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
               },
               {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
               },
               {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
               },
               {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
               },
               {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
               }
             ],
             "sdk_versions": {
@@ -1496,22 +1455,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 17.92,
-            "sha256": "69742a7dfeb21480baab06d15a39bf667f94cbccd2022f2b4219a1852b67e7a6"
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 18.48,
+            "sha256": "e9a6cd36a6023a4d3236264552c063c16e467d128d585ed8a4e05997799c9b34"
           },
-          "unprompted_asr": "The saved input was captured at 12.05. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data. The run's reference to them is metadata.",
-          "asr_model": "small.en",
+          "unprompted_asr": "This is how matching records establish provenance for a number. Lineage describes the data's route and dependencies. Provenance records a particular data set or results history. The terms overlap. Explaining why the result was 100% does not establish whether it was still current at the report refresh. Chapter 4 examines that.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 7,
-          "kind": "calculation",
-          "raw_seconds": 15.68,
+          "kind": "practice",
+          "raw_seconds": 17.28,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -1520,36 +1479,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives one hundred percent. The saved input and code explain why this run produced that result.",
+            "spoken_text": "Try the page's metadata-map exercise. Start at Report refresh, choose Example record, and follow its output to Published output, then Run. Find the retained input and code version. Explain why the displayed result was one hundred percent, then use Check your answer on the page.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "bf39df69ef0cf68ef2e6b0d3ec7fbe73cb05f5af3b974333dfe8ab29a568654c",
-            "seed": 60,
+            "signature": "e548da34d11bd64e144851fe98c5a7b2cdb50287381ac7237640b4e988b14cb9",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
+                "spoken_sha256": "485178cf290bf2d34fe8934ad661638907c32c8b1918f593c776b8cb14aa5c26",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-06.wav"
               },
               {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
+                "spoken_sha256": "01c2fe328b07c4d9646954185423898ffd9747190cb6902a5749fe70cbfc295b",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-00.wav"
               },
               {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
+                "spoken_sha256": "e27b4fabd212baa0ed40165d15c287c928342800a92e1001dabe7ba230ada6f1",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-07.wav"
               },
               {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
+                "spoken_sha256": "c9ea2f29e134217d00b39ad2eb031f8f61df136bbd8e184a9f9b4dc5dd8e79f0",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-02.wav"
               },
               {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
+                "spoken_sha256": "86c7480403c3c44fa2b88ab1cb8fc061ef424330ecd91f7c3233b02db21adb7d",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-03.wav"
               },
               {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
+                "spoken_sha256": "76b1fdf3a53feb21bb9e8cb6af9ddcc1b3f3f617dcdbaebb16728581cb28eeb5",
+                "path": "/workspace/metadata-book/out/q1-chapter-03/raw-04.wav"
               }
             ],
             "sdk_versions": {
@@ -1560,102 +1519,19 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 15.68,
-            "sha256": "5c84cc9fa29063a74b15dcd5bbbe3db2f60f461d222da52b9c72863f00e09f82"
+            "generation_batch_seconds": 218.01908509400027,
+            "seconds": 17.28,
+            "sha256": "397f5bb42391f522b77a1287ba9b6a08d51bcfbfde7f44cda03f8fdd88412b38"
           },
-          "unprompted_asr": "The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives 100 percent. The saved input and code explain why this run produced that result.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Try the pages metadata map exercise start at report refresh choose example record and follow its output to published output then run Find the retained input and code version explain why the displayed result was 100% then use check your answer on the page",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 8,
-          "kind": "recap",
-          "raw_seconds": 18.64,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was one hundred percent. Whether it was still current when the report refreshed is a separate question, explored in Chapter four.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "bc159a86f4fb19b51478241a648e528c26be6a35ffff7f26f906b35e452312fc",
-            "seed": 48,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
-              },
-              {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
-              },
-              {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
-              },
-              {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 18.64,
-            "sha256": "bc1c9d51ec87b0cc80e011ae54c5d33c0c1f56d4416eae419811374445e8f13e"
           },
-          "unprompted_asr": "Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was 100 percent. Whether it was still current when the report refreshed is a separate question, explored in Chapter 4.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          "hold_seconds": 0
         }
-      ],
-      "spoken_wpm": 169.88517745302718,
-      "final_export": {
-        "chapter": "03",
-        "file": "chapter-03.mp4",
-        "sha256": "0cd3b391d2d4f0e487aa6fc1ee8196bc420029b2eaab410c8b9b3785f61fd33e",
-        "bytes": 4392238,
-        "duration_seconds": 164.8,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "caption_codec": "mov_text",
-        "dimensions": [
-          1280,
-          720
-        ],
-        "fps": "24/1",
-        "full_ffmpeg_decode": "passed",
-        "poster": "/workspace/metadata-book/out/q1-chapter-03/poster.jpg",
-        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-03/encoded-frames/contact-sheet.jpg"
-      }
+      ]
     }
   ]
 }

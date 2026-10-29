@@ -1,42 +1,11 @@
 [
-  {
-    "kind": "opening",
-    "text": "Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At one in the afternoon, its Delivery performance report shows 100%. What produced that number? This is an invented incident, checked using SQLite."
-  },
-  {
-    "kind": "route",
-    "text": "A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them."
-  },
-  {
-    "kind": "distinction",
-    "text": "Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result: who or what created or changed it, when, and using which sources and methods. The terms overlap, but a route alone does not explain this particular number."
-  },
-  {
-    "kind": "refresh",
-    "text": "Start with the report refresh record, F1300. It says the report refreshed at one in the afternoon and read output summary-R1205. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced."
-  },
-  {
-    "kind": "output",
-    "text": "The matching published output contains 100%. It was published at twelve oh five, fifty-five minutes before the report refresh. Its run identifier is R1205. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct."
-  },
-  {
-    "kind": "run",
-    "text": "The run record supplies two more references: input snapshot S1205, and code version completed-v1. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today’s table and code may be different."
-  },
-  {
-    "kind": "snapshot",
-    "text": "The saved input was captured at twelve oh five. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data; the run’s reference to them is metadata."
-  },
-  {
-    "kind": "calculation",
-    "text": "The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives 100%. The saved input and code explain why this run produced that result."
-  },
-  {
-    "kind": "recap",
-    "text": "Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was 100%. Whether it was still current when the report refreshed is a separate question, explored in Chapter 4."
-  },
-  {
-    "kind": "end",
-    "text": ""
-  }
+  {"kind":"report-question","text":"At one in the afternoon, Service Analytics' report shows 100%: the percentage of completed deliveries that arrived on time. Unfinished parcels are excluded. This is the page's invented incident. Does the report's refresh time tell us when the number was calculated? Pause and explain.","hold_seconds":4},
+  {"kind":"route","text":"No. This report reads a saved result. Refreshing it does not rerun the job. To explain this number, follow the matching identifiers, starting with the refresh record, rather than simply inspecting the latest successful run."},
+  {"kind":"output","text":"Refresh F1300 read summary-R1205. Follow that exact output identifier. Its matching output was published at twelve oh five, fifty-five minutes before the refresh, and names producing run R1205. We now have the execution to investigate."},
+  {"kind":"run-question","text":"The run points to saved input S1205 and retained code completed-v1. A snapshot is a saved copy of the input at a particular time. Would today's deliveries table be enough to reproduce this result? Explain before continuing.","hold_seconds":4},
+  {"kind":"snapshot","text":"No. Today's data and code may differ. Inspect this run's retained input and calculation. At twelve oh five, two parcels had arrived on time and two were unfinished. All four were due by noon. Assume the invented records are complete."},
+  {"kind":"calculation","text":"The retained calculation excludes the unfinished parcels. Two completed deliveries remain, and both were on time. Two out of two gives 100%. The stored input and executed code explain this particular result."},
+  {"kind":"meaning","text":"This is how matching records establish provenance for a number. Lineage describes the data's route and dependencies; provenance records a particular dataset or result's history. The terms overlap. Explaining why the result was 100% does not establish whether it was still current at the report refresh. Chapter 4 examines that."},
+  {"kind":"practice","text":"Try the page's metadata-map exercise. Start at Report refresh, choose Example record, and follow its output to Published output, then Run. Find the retained input and code version. Explain why the displayed result was 100%, then use Check your answer on the page."},
+  {"kind":"end","text":""}
 ]
