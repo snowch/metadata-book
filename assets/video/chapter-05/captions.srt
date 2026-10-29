@@ -1,0 +1,175 @@
+1
+00:00:00,450 --> 00:00:04,153
+Production and testing both have a table called delivery_summary.
+
+2
+00:00:04,153 --> 00:00:07,445
+A database scan and a scheduler describe that name.
+
+3
+00:00:07,445 --> 00:00:10,480
+Is the matching table name enough to join their claims?
+
+4
+00:00:10,480 --> 00:00:12,275
+Pause and explain what else you need.
+
+5
+00:00:17,125 --> 00:00:20,008
+Distinguish the environment, database and table.
+
+6
+00:00:20,008 --> 00:00:22,979
+The catalogue uses prod/parcels/delivery_summary
+
+7
+00:00:22,979 --> 00:00:25,933
+for production and a separate test identifier.
+
+8
+00:00:25,933 --> 00:00:28,744
+Sources must agree which dataset they mean,
+
+9
+00:00:28,744 --> 00:00:31,261
+recording a correspondence when names differ.
+
+10
+00:00:31,261 --> 00:00:35,941
+A reused name may identify an unrelated replacement, so check identity before
+
+11
+00:00:35,941 --> 00:00:37,203
+attaching old explanations.
+
+12
+00:00:38,337 --> 00:00:41,133
+Now assemble the page's invented catalogue entry.
+
+13
+00:00:41,133 --> 00:00:44,758
+The database scan establishes that a percentage column exists.
+
+14
+00:00:44,758 --> 00:00:48,216
+The scheduler reports which run published an output version.
+
+15
+00:00:48,216 --> 00:00:52,419
+Service Analytics supplies the intended completed-delivery definition.
+
+16
+00:00:52,419 --> 00:00:55,935
+These are separate claims about the same production dataset.
+
+17
+00:00:55,935 --> 00:01:00,827
+An output version identifies one result; it does not replace the dataset identifier.
+
+18
+00:01:01,833 --> 00:01:03,299
+Look at the scan's times.
+
+19
+00:01:03,299 --> 00:01:06,079
+It observed the column at nine in the morning; the
+
+20
+00:01:06,079 --> 00:01:08,858
+catalogue received the record at two minutes past nine.
+
+21
+00:01:08,858 --> 00:01:10,860
+When was the column created?
+
+22
+00:01:10,860 --> 00:01:13,772
+Explain what those two times can establish before continuing.
+
+23
+00:01:18,722 --> 00:01:22,833
+Its creation time is unknown unless the source supplies that evidence.
+
+24
+00:01:22,833 --> 00:01:27,718
+Nine is the observation time; two minutes past nine is collection time.
+
+25
+00:01:27,718 --> 00:01:32,135
+For the scheduler record, completion occurred at five minutes past nine and collection
+
+26
+00:01:32,135 --> 00:01:33,875
+followed a minute later.
+
+27
+00:01:33,875 --> 00:01:37,266
+Arrival at the catalogue does not change when the source event occurred.
+
+28
+00:01:38,184 --> 00:01:40,568
+Keep each source attached to its claim.
+
+29
+00:01:40,568 --> 00:01:43,799
+The scan cannot identify the run that wrote the values.
+
+30
+00:01:43,799 --> 00:01:48,317
+The definition explains intended meaning, but does not prove the calculation follows
+
+31
+00:01:48,317 --> 00:01:51,333
+it; inspect the run's inputs and code for that.
+
+32
+00:01:51,333 --> 00:01:55,074
+The last record collected is not automatically an authority for every fact.
+
+33
+00:01:56,082 --> 00:01:58,637
+Keep responsibility explicit too.
+
+34
+00:01:58,637 --> 00:02:02,388
+Service Analytics accepted responsibility in its definition record.
+
+35
+00:02:02,388 --> 00:02:06,518
+Importing a team name alone does not establish that agreement or make the collector's
+
+36
+00:02:06,518 --> 00:02:08,882
+operator responsible for the metric's meaning.
+
+37
+00:02:08,882 --> 00:02:13,017
+Collecting descriptions brings evidence together; it does not settle every question.
+
+38
+00:02:14,253 --> 00:02:16,232
+Try the page's map exercise.
+
+39
+00:02:16,232 --> 00:02:19,185
+In Source observation's Example record, find the
+
+40
+00:02:19,185 --> 00:02:23,056
+dataset, source, observation time and collection time.
+
+41
+00:02:23,056 --> 00:02:25,654
+Follow Collection run to check its scope.
+
+42
+00:02:25,654 --> 00:02:29,318
+Then inspect Run: it belongs to a different day's incident.
+
+43
+00:02:29,318 --> 00:02:33,164
+Those examples cannot be joined just because nearby cards look related.
+
+44
+00:02:33,164 --> 00:02:35,968
+Explain the scan's limits, then use Check your answer.

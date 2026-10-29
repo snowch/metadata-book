@@ -2033,6 +2033,520 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "05",
+      "duration_seconds": 161.7,
+      "caption_cues": 44,
+      "end_card_seconds": 5,
+      "purpose": "Page learning aid: connect agreed dataset identities while preserving separate source claims, observation/collection times and accepted responsibility.",
+      "video_sha256": "d3c519e363b90607c748800ee724241a1920241be508bd52220bd79d319f128a",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "identity-question",
+          "raw_seconds": 12.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Production and testing both have a table called delivery summary. A database scan and a scheduler describe that name. Is the matching table name enough to join their claims? Pause and explain what else you need.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "869e8311119ea00d157953f14960f9a14389e2c09f137c77c3da22ea3635a3c5",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "51ec1a5c413ef29ba47efe7e8ba4a6a38d6c3fb45fcdcc104ef13a5b6959075b",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "e654a32878bdcf1c78990be60e312f45a678f01f8a417ebf5fbca8a010b013d0",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 84.01022059500065,
+            "seconds": 12.16,
+            "sha256": "d086b6b66b087c689c9841332dae8b56c7e8f2573fa3f833130b334af8b6ce82"
+          },
+          "unprompted_asr": "Production and testing both have a table called delivery summary. A database scan and a scheduler describe that name. Is the matching table name enough to join their claims? Pause and explain what else you need.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "identity-answer",
+          "raw_seconds": 20.48,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Distinguish the environment, database and table. The catalogue uses production parcels delivery summary for production and a separate test identifier. Sources must agree which dataset they mean, recording a correspondence when names differ. A reused name may identify an unrelated replacement, so check identity before attaching old explanations.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d38a97938819fe41114fa05e7b7e5d19f54969c6e4fbd9899cd96682e96fa946",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 20.48,
+            "sha256": "3766525bbfcb34fd34a99b21738eb91be697d43f03494f98535ac88a14882dee"
+          },
+          "unprompted_asr": "Distinguish the environment, database, and table. The catalog uses production parcels delivery summary for production and a separate test identifier. Sources must agree which data set they mean, recording a correspondence when names differ. A reused name may identify an unrelated replacement, so check identity before attaching old explanations.",
+          "alignment": {
+            "matched_character_fraction": 0.9931506849315068,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "claims",
+          "raw_seconds": 22.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now assemble the page's invented catalogue entry. The database scan establishes that a percentage column exists. The scheduler reports which run published an output version. Service Analytics supplies the intended completed-delivery definition. These are separate claims about the same production dataset. An output version identifies one result; it does not replace the dataset identifier.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "07a4db57411d580f849b3ed5dd8e85318ef0a03d3d49a539ce1ecc3088aff29b",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 22.8,
+            "sha256": "789906fa6698a47711b8347d6ba3d4d7b25aae5ed41baf82a775b81fbc5cfeae"
+          },
+          "unprompted_asr": "Now assemble the page's invented catalog entry. The database scan establishes that a percentage column exists, the scheduler reports which run published an output version, service analytics supplies the intended completed delivery definition. These are separate claims about the same production data set. An output version identifies one result. It does not replace the data set identifier.",
+          "alignment": {
+            "matched_character_fraction": 0.9939024390243902,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 3,
+          "kind": "time-question",
+          "raw_seconds": 12.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Look at the scan's times. It observed the column at nine in the morning; the catalogue received the record at two minutes past nine. When was the column created? Explain what those two times can establish before continuing.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "acc8e4ac1db33b29b42c067a6e47a1861c417b20ae8f5f8a50bde8401f9557eb",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "51ec1a5c413ef29ba47efe7e8ba4a6a38d6c3fb45fcdcc104ef13a5b6959075b",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "e654a32878bdcf1c78990be60e312f45a678f01f8a417ebf5fbca8a010b013d0",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 84.01022059500065,
+            "seconds": 12.16,
+            "sha256": "3d3332affa9e687f2da735a7fe39acec46848cbeb595807a8915ac5b33102fc5"
+          },
+          "unprompted_asr": "Look at the scans times. It observed the column at nine in the morning. The catalog received the record at two minutes past nine. When was the column created? Explain what those two times can establish before continuing.",
+          "alignment": {
+            "matched_character_fraction": 0.9888888888888889,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 4,
+          "kind": "time-answer",
+          "raw_seconds": 18.72,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Its creation time is unknown unless the source supplies that evidence. Nine is the observation time; two minutes past nine is collection time. For the scheduler record, completion occurred at five minutes past nine and collection followed a minute later. Arrival at the catalogue does not change when the source event occurred.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "338fb9c0d232f8ad9796ed9e9dc42b37e37962dbad5c39073ab3835c056448ab",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 18.72,
+            "sha256": "2b3d9c0db4c74888e81d7214ad02b588f9ead95c91823c9ae7f6491b4f38c484"
+          },
+          "unprompted_asr": "Its creation time is unknown unless the source supplies that evidence. Nine is the observation time. Two minutes past nine is collection time. For the scheduler record, completion occurred at five minutes past nine and collection followed a minute later. Arrival at the catalog does not change when the source event occurred.",
+          "alignment": {
+            "matched_character_fraction": 0.9925925925925926,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "limits",
+          "raw_seconds": 17.04,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Keep each source attached to its claim. The scan cannot identify the run that wrote the values. The definition explains intended meaning, but does not prove the calculation follows it; inspect the run's inputs and code for that. The last record collected is not automatically an authority for every fact.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "57457aa61ec3aaa4db634ec50737cf90939cd5b138e0d83f8292c11fd0a77a95",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 17.04,
+            "sha256": "0a8539c3327a5262eae7dd1b40c4a9b7d7d46b297c28805f4a16f5067afc6f12"
+          },
+          "unprompted_asr": "Keep each source attached to its claim. The scan cannot identify the run that wrote the values. The definition explains intended meaning, but does not prove the calculation follows it. Inspect the run's inputs and code for that. The last record collected is not automatically an authority for every fact.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 6,
+          "kind": "responsibility",
+          "raw_seconds": 17.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Keep responsibility explicit too. Service Analytics accepted responsibility in its definition record. Importing a team name alone does not establish that agreement or make the collector's operator responsible for the metric's meaning. Collecting descriptions brings evidence together; it does not settle every question.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "a267c341ee943eed5c9f793dabede7e397bdcccf5e6d3226d3da4ffe3611ad98",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 17.36,
+            "sha256": "75eea3f3ffe3a720be33640c1571eadb8085bf949fbfa8587c85294b9bc05d1b"
+          },
+          "unprompted_asr": "Keep responsibility explicit too. Service analytics accepted responsibility in its definition record. Importing a team name alone does not establish that agreement or make the collector's operator responsible for the metric's meaning. Collecting descriptions brings evidence together. It does not settle every question.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 7,
+          "kind": "practice",
+          "raw_seconds": 22.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. In Source observation's Example record, find the dataset, source, observation time and collection time. Follow Collection run to check its scope. Then inspect Run: it belongs to a different day's incident. Those examples cannot be joined just because nearby cards look related. Explain the scan's limits, then use Check your answer.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "381ab57717e60228ff828fc7a057b1b087a6a12a33d054f9f42f5cde032c8b8c",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "b5350a9ba47a38275d87a7d1718a34fb851177fc34bc86720a13bffa5881b114",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "f093148dd7105e5d593e89415872f96f63c6195f74a9622924dfefefacf725a9",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f2f4c476e78d464976ed745acdcbc339f1377938b4db014394fb1e65d6fce162",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "8877622f793c4999bd6c07f15a3e860f637aa159bb436d0d54428e18f58fa167",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "48cb5e35bac524f02c3ada35b818cbdaf3b7fd3af4ee850bf8a58f725a373431",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "3d56dfc592b68e90c146e577f9205d32a8b8d03153320e427c9f38a4fd7ba8eb",
+                "path": "/workspace/metadata-book/out/q1-chapter-05/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 250.8365691910003,
+            "seconds": 22.16,
+            "sha256": "eec54cbd82bca9fd2af78b57a22e84e91a9a4963ac467c5ea08dfa708e84779b"
+          },
+          "unprompted_asr": "Try the page's map exercise. In source observations example record, find the data set, source, observation time, and collection time. Follow collection run to check its scope. Then inspect run. It belongs to a different day's incident. Those examples cannot be joined just because nearby cards look related. Explain the scan's limits. Then use check your answer.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }
