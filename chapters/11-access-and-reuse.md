@@ -2,6 +2,17 @@
 
 A reader can find the right delivery dataset and still lack permission to use it for a particular purpose. Metadata should explain that boundary, identify who decides, and connect the decision to controls that enforce it. The same records can help another reader reuse an approved dataset without guessing its meaning.
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 40 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-11/poster.jpg?v=8c0f742575d5" aria-label="Controlling access and enabling reuse: narrated Chapter 11 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-11/captions.vtt?v=40392cd03c43" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88">Download the video</a> or <a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">Read the transcript</a><a href="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88" download>Download video <span>(4.4 MB)</span></a></p>
+</figure>
+
 ## Decide who may do what
 
 Delivery Operations needs parcel records to investigate late arrivals. A request to use those records for an unrelated marketing analysis needs its own decision. Membership of a team does not settle every permitted use.

@@ -1,0 +1,17 @@
+Controlling access and enabling reuse
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/11-access-and-reuse.html
+
+The page's illustrative decision labels operational deliveries restricted. Approved Delivery Operations analysts may read necessary records to investigate performance, in a managed workspace. Does recording that purpose and classification establish that other accounts cannot retrieve the records? Pause and name the evidence needed to show that controls work.
+
+The label does not enforce access. Connect approval to identity groups, scoped database grants and catalogue visibility. Test permitted and restricted accounts through database access, search, APIs and exports. Team membership does not approve every purpose: an unrelated marketing analysis needs its own decision. Revoking a grant cannot retrieve an already downloaded spreadsheet, and technical access rarely proves why someone used it.
+
+Now consider the page's separate synthetic research dataset, version one point zero. Its identifier is pending, its public download is planned, and its proposed license is CC BY 4.0. No release has occurred. Does that planned publication authorise sharing the operational deliveries table? Explain which dataset and status each record concerns, then pause.
+
+No. The synthetic dataset contains invented parcels, not customer records. Its proposed license does not authorise exporting the operational table. FAIR means Findable, Accessible, Interoperable and Reusable. Documented retrieval, meaning, provenance and versions support reuse, but FAIR neither requires public access nor grants permission. A planned identifier and license do not establish a completed repository deposit.
+
+Protect the evidence itself: saved queries and samples may reveal individual details. Use parameters and synthetic samples where appropriate, and check indexes and exported copies too. Agree retention by artifact and purpose, including copies. Once the input snapshot is deleted, metadata may explain which input was used without enabling an exact rerun. A deletion record does not prove every unmanaged copy disappeared.
+
+Try the page's map exercise. In Access decision's Example record, distinguish approved purpose from evidence of enforced controls. Then open Reuse description. Compare its dataset version, pending identifier and proposed license with the operational access decision. Explain why these records do not authorise sharing operational rows, then use Check your answer. The page keeps the full controls, retention choices and publication requirements.

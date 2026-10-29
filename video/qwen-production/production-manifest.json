@@ -4814,6 +4814,409 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "11",
+      "duration_seconds": 160.3,
+      "caption_cues": 43,
+      "end_card_seconds": 5,
+      "purpose": "Distinguish recorded access approval from enforced controls, and a planned synthetic release from permission to share operational records.",
+      "video_sha256": "365ec1fb4f8884e7911baae96a51d3722deeb25f69fdce6e863efb6620973bb9",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "access-question",
+          "raw_seconds": 19.52,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The page's illustrative decision labels operational deliveries restricted. Approved Delivery Operations analysts may read necessary records to investigate performance, in a managed workspace. Does recording that purpose and classification establish that other accounts cannot retrieve the records? Pause and name the evidence needed to show that controls work.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "330613ba975131ae4498ee0f90b71904ba77a6347a961231f103534e9b27463e",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "26f1196c8e51ba6649d1f2d2b1f2f15149719ec17745b972cbb140fb9eb07958",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "5e9273c6860ac0681a2dcc0998ceb87f366212d79731d528cdd8bbcbd1363485",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ca2d856b257168a2be2d5debb504d957e99aa61373965dfe2d78d56d5ca8f533",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "3f0f02c32e94fa1a296bb5d29b332ba63aad100f260dd348fe429e140e2d4995",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "8e61c2119e03388340dd25b9f8ba8c56cf0951b8cdb76afecd8c9d6741f4d8fb",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b5381eb75e620d13fee9240cf1ef7e02bbf2d95f822a4d919c45c009acbd01ea",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 270.3665948939997,
+            "seconds": 19.52,
+            "sha256": "9f82a6a98bc8576a3366c90ad8f7593d28b09f4da011ce258d4bb8db44c4b64f"
+          },
+          "unprompted_asr": "The page's illustrative decision labels operational deliveries restricted. Approved delivery operations analysts may read necessary records to investigate performance in a managed workspace. Does recording that purpose and classification establish that other accounts cannot retrieve the records? Pause and name the evidence needed to show that controls work.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "access-answer",
+          "raw_seconds": 24.32,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The label does not enforce access. Connect approval to identity groups, scoped database grants and catalogue visibility. Test permitted and restricted accounts through database access, search, A P I s and exports. Team membership does not approve every purpose: an unrelated marketing analysis needs its own decision. Revoking a grant cannot retrieve an already downloaded spreadsheet, and technical access rarely proves why someone used it.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "9631cbe6884019d94d6d0c914fd601af5c2e32695459bdac546eb54f8059c120",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "26f1196c8e51ba6649d1f2d2b1f2f15149719ec17745b972cbb140fb9eb07958",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "5e9273c6860ac0681a2dcc0998ceb87f366212d79731d528cdd8bbcbd1363485",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ca2d856b257168a2be2d5debb504d957e99aa61373965dfe2d78d56d5ca8f533",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "3f0f02c32e94fa1a296bb5d29b332ba63aad100f260dd348fe429e140e2d4995",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "8e61c2119e03388340dd25b9f8ba8c56cf0951b8cdb76afecd8c9d6741f4d8fb",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b5381eb75e620d13fee9240cf1ef7e02bbf2d95f822a4d919c45c009acbd01ea",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 270.3665948939997,
+            "seconds": 24.32,
+            "sha256": "448d5539df3d961a28ad613e7d8498dd95da8917adfdacab1c7d7b07e0baacf7"
+          },
+          "unprompted_asr": "The label does not enforce access. Connect approval to identity groups, scoped database grants and catalog visibility, test permitted and restricted accounts through database access, search, APIS and exports, team membership does not approve every purpose. An unrelated marketing analysis needs its own decision. Revoking a grant cannot retrieve an already downloaded spreadsheet and technical access rarely proves why someone used it.",
+          "alignment": {
+            "matched_character_fraction": 0.9945504087193461,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "reuse-question",
+          "raw_seconds": 23.44,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now consider the page's separate synthetic research dataset, version one point zero. Its identifier is pending, its public download is planned, and its proposed license is see see by four point zero. No release has occurred. Does that planned publication authorise sharing the operational deliveries table? Explain which dataset and status each record concerns, then pause.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "52348a7104eb454e281ace6c60f7ac39482d72de4860978b7080a9ff7d4498f6",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "26f1196c8e51ba6649d1f2d2b1f2f15149719ec17745b972cbb140fb9eb07958",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "5e9273c6860ac0681a2dcc0998ceb87f366212d79731d528cdd8bbcbd1363485",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ca2d856b257168a2be2d5debb504d957e99aa61373965dfe2d78d56d5ca8f533",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "3f0f02c32e94fa1a296bb5d29b332ba63aad100f260dd348fe429e140e2d4995",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "8e61c2119e03388340dd25b9f8ba8c56cf0951b8cdb76afecd8c9d6741f4d8fb",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b5381eb75e620d13fee9240cf1ef7e02bbf2d95f822a4d919c45c009acbd01ea",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 270.3665948939997,
+            "seconds": 23.44,
+            "sha256": "6adc778f2a6c4a4fc12660e743847ad436fb1c296728519470190664f0753919"
+          },
+          "unprompted_asr": "Now, consider the pages Separate Synthetic Research Dataset, version 1.0. Its identifier is pending, its public download is planned, and its proposed license is CC by 4.0. No release has occurred. Does that planned publication authorize sharing the operational deliveries table? Explain which dataset and status each record concerns, then pause.",
+          "alignment": {
+            "matched_character_fraction": 0.9772727272727273,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "seesee",
+                "recognised": "cc"
+              },
+              {
+                "operation": "replace",
+                "expected": "s",
+                "recognised": "z"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 3,
+          "kind": "reuse-answer",
+          "raw_seconds": 24.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "No. The synthetic dataset contains invented parcels, not customer records. Its proposed license does not authorise exporting the operational table. fair means Findable, Accessible, Interoperable and Reusable. Documented retrieval, meaning, provenance and versions support reuse, but fair neither requires public access nor grants permission. A planned identifier and license do not establish a completed repository deposit.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "3263fe0e3f74771556e73fe16c60f43fd4e63604e8784cb96f830eb7deedb6d0",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "26f1196c8e51ba6649d1f2d2b1f2f15149719ec17745b972cbb140fb9eb07958",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "5e9273c6860ac0681a2dcc0998ceb87f366212d79731d528cdd8bbcbd1363485",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ca2d856b257168a2be2d5debb504d957e99aa61373965dfe2d78d56d5ca8f533",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "3f0f02c32e94fa1a296bb5d29b332ba63aad100f260dd348fe429e140e2d4995",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "8e61c2119e03388340dd25b9f8ba8c56cf0951b8cdb76afecd8c9d6741f4d8fb",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b5381eb75e620d13fee9240cf1ef7e02bbf2d95f822a4d919c45c009acbd01ea",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 270.3665948939997,
+            "seconds": 24.96,
+            "sha256": "2ba77e0f9f22a6c76b563e3ff7d3036408615918705e1aad5ed522d1e274c7d4"
+          },
+          "unprompted_asr": "No. The synthetic dataset contains invented parcels, not customer records. Its proposed license does not authorize exporting the operational table. FAIR means findable, accessible, interoperable, and reusable. Documented retrieval, meaning provenance and versions support reuse, but FAIR neither requires public access nor grants permission. A planned identifier and license do not establish a completed repository deposit.",
+          "alignment": {
+            "matched_character_fraction": 0.9971910112359551,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "s",
+                "recognised": "z"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "retention",
+          "raw_seconds": 24.48,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Protect the evidence itself: saved queries and samples may reveal individual details. Use parameters and synthetic samples where appropriate, and check indexes and exported copies too. Agree retention by artifact and purpose, including copies. Once the input snapshot is deleted, metadata may explain which input was used without enabling an exact rerun. A deletion record does not prove every unmanaged copy disappeared.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "c46f763b0b81200afecf9a53b9a80f69dd496bf219c70e0237513332dfd4cd0a",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "26f1196c8e51ba6649d1f2d2b1f2f15149719ec17745b972cbb140fb9eb07958",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "5e9273c6860ac0681a2dcc0998ceb87f366212d79731d528cdd8bbcbd1363485",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ca2d856b257168a2be2d5debb504d957e99aa61373965dfe2d78d56d5ca8f533",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "3f0f02c32e94fa1a296bb5d29b332ba63aad100f260dd348fe429e140e2d4995",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "8e61c2119e03388340dd25b9f8ba8c56cf0951b8cdb76afecd8c9d6741f4d8fb",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b5381eb75e620d13fee9240cf1ef7e02bbf2d95f822a4d919c45c009acbd01ea",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 270.3665948939997,
+            "seconds": 24.48,
+            "sha256": "9652246cdb4ce5bf852b70715525fa751813230fd11796c09202a4fea390db65"
+          },
+          "unprompted_asr": "Protect the evidence itself. Saved queries and samples may reveal individual details. Use parameters and synthetic samples where appropriate and check indexes and exported copies too. Agree retention by artifact and purpose, including copies. Once the input snapshot is deleted, metadata may explain which input was used without enabling an exact rerun. A deletion record does not prove every unmanaged copy disappeared.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "practice",
+          "raw_seconds": 26.240041666666666,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. In Access decision's Example record, distinguish approved purpose from evidence of enforced controls. Then open Reuse description. Compare its dataset version, pending identifier and proposed license with the operational access decision. Explain why these records do not authorise sharing operational rows, then use Check your answer. The page keeps the full controls, retention choices and publication requirements.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "24cbf7ed446d2ce35102561c6404397ddeaf8317c1a6711c62bc978689df5f10",
+            "seed": 42,
+            "batch_size": 1,
+            "batch_members": [
+              {
+                "spoken_sha256": "3f7f11c677584641af5c15fe40c4d9c35ca5a8700c2084876a6e1592862922a2",
+                "path": "/workspace/metadata-book/out/q1-chapter-11/raw-05.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 107.31660587000079,
+            "seconds": 26.240041666666666,
+            "sha256": "e6ed53a5b93f4646af58976b4812d88e1f501d528283d524f79082a5d711c548"
+          },
+          "unprompted_asr": "Try the page's map exercise. In Access Decisions Example Record, distinguish approved purpose from evidence of enforced controls, then open Reuse Description. Compare its dataset version, pending identifier and proposed license with the operational access decision. Explain why these records do not authorize sharing operational rows, then use Check Your Answer. The page keeps the full controls, retention choices, and publication requirements.",
+          "alignment": {
+            "matched_character_fraction": 0.9973118279569892,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "s",
+                "recognised": "z"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }
