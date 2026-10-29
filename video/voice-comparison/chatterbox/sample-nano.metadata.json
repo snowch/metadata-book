@@ -1,0 +1,61 @@
+{
+  "started_at": "2026-10-29T17:26:28.184871+00:00",
+  "repository": "ResembleAI/chatterbox-nano",
+  "revision": "71ccd1d0081b430592cea481f4307e764e07bc64",
+  "weights_license": "mit",
+  "code_license": "MIT",
+  "code_repository": "https://github.com/resemble-ai/chatterbox",
+  "code_revision": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+  "voice": "Model-packaged default conditionals from pinned conds.pt; no reference recording",
+  "input_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+  "provider_normalized_text": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise, a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+  "punctuation_note": "Upstream punc_norm changes colons to commas; input words unchanged; actual speech requires review",
+  "request_unit": "one complete passage",
+  "device": "cpu",
+  "torch_threads": 2,
+  "seed": 20261029,
+  "settings": {
+    "repetition_penalty": 1.2,
+    "min_p": 0.0,
+    "top_p": 0.95,
+    "audio_prompt_path": null,
+    "exaggeration": 0.0,
+    "cfg_weight": 0.0,
+    "temperature": 0.8,
+    "top_k": 1000,
+    "norm_loudness": true
+  },
+  "versions": {
+    "chatterbox-tts": "0.1.7",
+    "torch": "2.6.0+cpu",
+    "torchaudio": "2.6.0+cpu",
+    "transformers": "5.2.0",
+    "numpy": "1.26.4",
+    "soundfile": "0.14.0",
+    "resemble-perth": "1.1.0"
+  },
+  "quality_review": "No listening or pronunciation approval asserted; parent audits final sample",
+  "load_seconds": 14.344740024999965,
+  "generation_seconds": 93.89168233200007,
+  "completed_at": "2026-10-29T17:28:16.440537+00:00",
+  "file": "sample-nano.wav",
+  "sha256": "10f857186de4d33787e9df31f176ed1608a114afd94c9970083b53839dfe3b3a",
+  "sample_rate": 24000,
+  "channels": 1,
+  "sample_format": "32-bit float WAV",
+  "frames": 719040,
+  "duration_seconds": 29.96,
+  "peak_absolute_amplitude": 0.6510125398635864,
+  "sampling": {
+    "maximum_generation_tokens": 1000,
+    "generated_tokens_after_eos_removal": 746
+  },
+  "generation_limit_reached": false,
+  "peak_process_rss_kib": 4357164,
+  "watermark": "Official Chatterbox PerTh watermark preserved",
+  "postprocessing": "No silence trimming, padding, time stretch, or loudness change added by trial script",
+  "container_validation": {
+    "ffprobe": "24kHz mono pcm_f32le, 29.96 seconds",
+    "ffmpeg_full_decode": "passed"
+  }
+}

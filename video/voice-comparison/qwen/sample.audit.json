@@ -1,0 +1,82 @@
+{
+  "name": "qwen",
+  "method": "faster-whisper small.en CPU int8; no prompt; beam 5",
+  "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+  "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+  "differences": [
+    {
+      "kind": "replace",
+      "expected": "sequel lite",
+      "heard": "sql light"
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.52,
+      "text": " The column records describe three fields,"
+    },
+    {
+      "start": 2.52,
+      "end": 5.32,
+      "text": " a delivery identifier, a promise time,"
+    },
+    {
+      "start": 5.32,
+      "end": 7.28,
+      "text": " and a delivery time."
+    },
+    {
+      "start": 7.28,
+      "end": 9.26,
+      "text": " All three declare text."
+    },
+    {
+      "start": 9.26,
+      "end": 11.08,
+      "text": " In this SQL light table,"
+    },
+    {
+      "start": 11.08,
+      "end": 13.36,
+      "text": " that declaration does not strictly enforce"
+    },
+    {
+      "start": 13.36,
+      "end": 15.76,
+      "text": " the type of every stored value."
+    },
+    {
+      "start": 15.76,
+      "end": 19.2,
+      "text": " The not null flag is one for the identifier and promise."
+    },
+    {
+      "start": 19.2,
+      "end": 21.56,
+      "text": " A value is required."
+    },
+    {
+      "start": 21.56,
+      "end": 23.72,
+      "text": " Zero for delivery time allows null,"
+    },
+    {
+      "start": 23.72,
+      "end": 25.86,
+      "text": " the marker for a missing value."
+    },
+    {
+      "start": 25.86,
+      "end": 29.36,
+      "text": " The primary key uniquely identifies each row."
+    },
+    {
+      "start": 29.36,
+      "end": 32.48,
+      "text": " Here, the delivery identifier is the sole key."
+    }
+  ],
+  "pronunciation_verified": false,
+  "note": "ASR is an error screen, not a listening review. Check every flagged span by ear."
+}

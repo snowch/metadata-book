@@ -1,0 +1,6 @@
+**/model/
+chatterbox/source/
+*.wav
+**/*.wav
+*.log
+**/*.log

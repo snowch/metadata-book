@@ -1,0 +1,59 @@
+[
+  {
+    "sample": "A",
+    "voice": "Current voice \u00b7 Edge Sonia",
+    "duration_seconds": 33.552,
+    "source": "baseline.wav",
+    "source_sha256": "45aec64c314152cc4f0b599aa733f215ff896d70f470300f18de7c92de619281",
+    "loudness_analysis": {
+      "input_i": "-18.97",
+      "input_tp": "-4.04",
+      "input_lra": "2.00",
+      "input_thresh": "-29.29",
+      "output_i": "-17.73",
+      "output_tp": "-2.71",
+      "output_lra": "2.40",
+      "output_thresh": "-28.02",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.27"
+    }
+  },
+  {
+    "sample": "B",
+    "voice": "Qwen3-TTS \u00b7 designed British narrator",
+    "duration_seconds": 32.544,
+    "source": "qwen/sample.wav",
+    "source_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+    "loudness_analysis": {
+      "input_i": "-20.40",
+      "input_tp": "-2.75",
+      "input_lra": "3.80",
+      "input_thresh": "-30.94",
+      "output_i": "-18.34",
+      "output_tp": "-2.00",
+      "output_lra": "2.90",
+      "output_thresh": "-28.87",
+      "normalization_type": "dynamic",
+      "target_offset": "0.34"
+    }
+  },
+  {
+    "sample": "C",
+    "voice": "Chatterbox Nano \u00b7 built-in voice",
+    "duration_seconds": 30.024,
+    "source": "chatterbox/sample.wav",
+    "source_sha256": "10f857186de4d33787e9df31f176ed1608a114afd94c9970083b53839dfe3b3a",
+    "loudness_analysis": {
+      "input_i": "-24.16",
+      "input_tp": "-3.67",
+      "input_lra": "4.60",
+      "input_thresh": "-34.67",
+      "output_i": "-18.26",
+      "output_tp": "-2.00",
+      "output_lra": "3.60",
+      "output_thresh": "-28.79",
+      "normalization_type": "dynamic",
+      "target_offset": "0.26"
+    }
+  }
+]
