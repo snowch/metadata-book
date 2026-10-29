@@ -7,14 +7,16 @@
   "chapters": [
     {
       "chapter": "01",
-      "duration_seconds": 167.79166666666666,
-      "caption_cues": 50,
+      "duration_seconds": 142.8,
+      "caption_cues": 39,
       "end_card_seconds": 5,
+      "purpose": "Embedded learning aid: choose the denominator, check the implementation, practise with the page and metadata map.",
+      "video_sha256": "7e12b061b56bbbc3156a926f28f83d752f8feba4b91a6f20f515879e36f92d85",
       "scenes": [
         {
           "scene": 0,
-          "kind": "opening",
-          "raw_seconds": 13.12,
+          "kind": "puzzle",
+          "raw_seconds": 11.04,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -23,36 +25,24 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.",
+            "spoken_text": "The same four deliveries give two results: sixty six point seven percent and fifty percent. Which belongs on the dashboard? The missing piece is the question we want the number to answer.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "c258d1f69c9cdb164ee97c22cf04c03f726d4cfdd69518ce68926a5584b100dd",
-            "seed": 60,
-            "batch_size": 6,
+            "signature": "518c0605d1105d83a7f99d2f4dbd6daf18a981097d920bb053ff807955d1729c",
+            "seed": 48,
+            "batch_size": 3,
             "batch_members": [
               {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
+                "spoken_sha256": "a99fca46dd604570d35d1e754ba360576e0ebf26a5cbb59f0b7e624e2feff0cf",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-00.wav"
               },
               {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
+                "spoken_sha256": "ae892f85825855429125014c24478722f366d1e60394fa1d5c7e79497e5f016a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-03.wav"
               },
               {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
-              },
-              {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
+                "spoken_sha256": "e79518f80a2ce19ed1081c92431ef673d2b97f298ce56b64bcfa9dd5387fab9b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-02.wav"
               }
             ],
             "sdk_versions": {
@@ -63,22 +53,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 13.12,
-            "sha256": "6138970a7d22112d7d2f35895c8cd194197e32836bcf29b02b8d04c9719273c3"
+            "generation_batch_seconds": 100.25823057499997,
+            "seconds": 11.04,
+            "sha256": "69e00981b17aed70f3f5834f1a00cebfe8efd58e227a0db3c9bc5a10cc5c40b9"
           },
-          "unprompted_asr": "A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.",
-          "asr_model": "small.en",
+          "unprompted_asr": "The same four deliveries give two results, 66.7% and 50%. Which belongs on the dashboard? The missing piece is the question we want the number to answer.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 1,
-          "kind": "completed",
-          "raw_seconds": 14.8,
+          "kind": "parcels",
+          "raw_seconds": 12.8,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -87,36 +77,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "First, ask: of the completed deliveries, how many were on time? Three parcels have arrived. Two were on time. Two out of three gives sixty six point seven percent. The unfinished delivery is outside this calculation.",
+            "spoken_text": "Use the invented example on this page. Four parcels were promised by noon. At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. Assume the records are complete at that moment.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "d4157f511760c37c6e84f15d361292a3902977cfc0a773edf70d2aba735acdde",
-            "seed": 60,
+            "signature": "53b51542166c52b3e2c2f477d21b5cda7b15caceb5ffbe83112901457c730647",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
               },
               {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
               },
               {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
               },
               {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
               },
               {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
               },
               {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
               }
             ],
             "sdk_versions": {
@@ -127,22 +117,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 14.8,
-            "sha256": "89df0b0d262da0a13c835a31e4d98d2a7c73c453fe8cf3a5517f3de2d8f5b71a"
+            "generation_batch_seconds": 204.37357354300002,
+            "seconds": 12.8,
+            "sha256": "1dfd6f910784a23a8c6e1ad9a8fdab38c70c3a6da45d49ee6a4463e11fc5342a"
           },
-          "unprompted_asr": "First, ask of the completed deliveries, how many were on time? Three parcels have arrived, two were on time. Two out of three gives 66.7 percent. The unfinished delivery is outside this calculation.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Use the invented example on this page. Four parcels were promised by noon. At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. Assume the records are complete at that moment.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 2,
-          "kind": "due",
-          "raw_seconds": 10.56,
+          "kind": "predict",
+          "raw_seconds": 8.72,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -151,24 +141,24 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Now ask: of all deliveries due, how many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives fifty percent.",
+            "spoken_text": "First, count only completed deliveries. How many parcels belong in the denominator, the total we divide by? Make your choice before we count.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "b3acb71a4401ed277464d0257e290730bb11af347bd71ced72bf32acebf18ed3",
-            "seed": 42,
+            "signature": "fa6f3dbe91d7bee0233ce3648b496b7b7694fcf052c989b41a454c935062a190",
+            "seed": 48,
             "batch_size": 3,
             "batch_members": [
               {
-                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
-                "path": "out/q1-chapter-01/raw-02.wav"
+                "spoken_sha256": "a99fca46dd604570d35d1e754ba360576e0ebf26a5cbb59f0b7e624e2feff0cf",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-00.wav"
               },
               {
-                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
-                "path": "out/q1-chapter-01/raw-06.wav"
+                "spoken_sha256": "ae892f85825855429125014c24478722f366d1e60394fa1d5c7e79497e5f016a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-03.wav"
               },
               {
-                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
-                "path": "out/q1-chapter-01/raw-10.wav"
+                "spoken_sha256": "e79518f80a2ce19ed1081c92431ef673d2b97f298ce56b64bcfa9dd5387fab9b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-02.wav"
               }
             ],
             "sdk_versions": {
@@ -179,22 +169,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 312.2053978650001,
-            "seconds": 10.56,
-            "sha256": "e215ca43f6ec5ccdc201cf67d926e82cfef201e3a5cd062eb736cf5f71b2f8e2"
+            "generation_batch_seconds": 100.25823057499997,
+            "seconds": 8.72,
+            "sha256": "34dc048492e81f4a56cefc7a2f5374823162fd94d8278045195d0435567e5b5c"
           },
-          "unprompted_asr": "Now ask of all deliveries due. How many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives 50 percent.",
-          "asr_model": "small.en",
+          "unprompted_asr": "First, count only completed deliveries. How many parcels belong in the denominator, the total we divide by? Make your choice before we count.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 4
         },
         {
           "scene": 3,
-          "kind": "compare",
-          "raw_seconds": 14.64,
+          "kind": "completed",
+          "raw_seconds": 11.68,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -203,222 +193,24 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Both calculations are valid for their stated questions. The difference is the denominator: the total number of deliveries included. Three completed deliveries, or all four deliveries due. A dashboard labelled only on-time delivery leaves readers to guess.",
+            "spoken_text": "Three parcels have arrived. Keep the late parcel, because it is completed. Leave the unfinished parcel outside this group. Two on time out of three completed gives sixty six point seven percent.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "cf730b01887aaa11c2fcdf24d69f051e7a3afe4411539690468bda8a4a7f4081",
-            "seed": 60,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
-              },
-              {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 14.64,
-            "sha256": "a82b3fd4273c80cd671d8a2bb5c6cff7831cb174a5349d1e91e6c76ee8248ec7"
-          },
-          "unprompted_asr": "Both calculations are valid for their stated questions. The difference is the denominator, the total number of deliveries included, three completed deliveries or all four deliveries due. A dashboard labeled only on-time delivery leaves readers to guess.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 0.9952830188679245,
-            "differences": [
-              {
-                "operation": "delete",
-                "expected": "l",
-                "recognised": ""
-              }
-            ],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 4,
-          "kind": "metadata",
-          "raw_seconds": 15.76,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Metadata is information that describes data: its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. The values alone rarely explain what they measure.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "fa597b278ed64e0debac7c648c1e605c7485e5d9b4829adfbf0e637193e21eff",
-            "seed": 54,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
-              },
-              {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 15.76,
-            "sha256": "17a810b55883f1129e636092af7c4cd6b06d9bf488ac43198b01d743b827da39"
-          },
-          "unprompted_asr": "Metadata is information that describes data, its structure, meaning, origin, and use. Column names and types are metadata, so are a metric's definition and a record of the job that produced it. The values alone rarely explain what they measure.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 5,
-          "kind": "definition",
-          "raw_seconds": 18.96,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Suppose Delivery Operations wants to know whether all promised deliveries arrived on time. Record the decision: on time means delivered at or before the promised time. Include every delivery due by noon, even if it has not arrived. Measure at one in the afternoon, and name Delivery Operations as the team responsible for the definition.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "9c2c88a6bfecd9eb5b2cdc0af16d9111748532c75d76ad758deac27862494b6d",
-            "seed": 42,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
-              },
-              {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 18.96,
-            "sha256": "4c27d0782d17e1537f7910f5d185512ef35386fd5557b7f83d3b8e0238d37998"
-          },
-          "unprompted_asr": "Suppose delivery operations wants to know whether all promised deliveries arrived on time. Record the decision. On time means delivered at or before the promised time. Include every delivery due by noon. Even if it has not arrived, measure at 1 in the afternoon and name delivery operations as the team responsible for the definition.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 6,
-          "kind": "owner",
-          "raw_seconds": 12.4,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives fifty percent. Another team can legitimately use completed deliveries, provided its definition makes that choice clear.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "23638de862ab622b812217a4ca616fcc8555e70fef75db6741744d83daf457b9",
-            "seed": 42,
+            "signature": "ca177f29ccd6b0238f6092ecba0ae8b410c89df8c7e2e5799beeac2810ca61f3",
+            "seed": 48,
             "batch_size": 3,
             "batch_members": [
               {
-                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
-                "path": "out/q1-chapter-01/raw-02.wav"
+                "spoken_sha256": "a99fca46dd604570d35d1e754ba360576e0ebf26a5cbb59f0b7e624e2feff0cf",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-00.wav"
               },
               {
-                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
-                "path": "out/q1-chapter-01/raw-06.wav"
+                "spoken_sha256": "ae892f85825855429125014c24478722f366d1e60394fa1d5c7e79497e5f016a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-03.wav"
               },
               {
-                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
-                "path": "out/q1-chapter-01/raw-10.wav"
+                "spoken_sha256": "e79518f80a2ce19ed1081c92431ef673d2b97f298ce56b64bcfa9dd5387fab9b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-02.wav"
               }
             ],
             "sdk_versions": {
@@ -429,155 +221,21 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 312.2053978650001,
-            "seconds": 12.4,
-            "sha256": "57f9d86edbc369221fb6b16de37cdc0795f6a70512dfea88c1df21d06c5a6cb9"
+            "generation_batch_seconds": 100.25823057499997,
+            "seconds": 11.68,
+            "sha256": "d245b645fcf7ca52dcab549d1b3e5a44f19c98970474cabd8c3030b5ce8d1ba7"
           },
-          "unprompted_asr": "This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives 50%. Another team can legitimately use completed deliveries, provided its definition makes that choice clear.",
-          "asr_model": "small.en",
+          "unprompted_asr": "3 parcels have arrived. Keep the late parcel because it is completed. Leave the unfinished parcel outside this group. 2 on timeout of 3 completed gives 66.7%.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 7,
-          "kind": "field",
-          "raw_seconds": 14.24,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Field names need explanation too. A column named delivered at could record when a parcel reached a depot, or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "aa42d8d842ff9d68b3dfecbe3aeaa47aa072fc9c122a7c1f0674d42ad53f7465",
-            "seed": 60,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
-              },
-              {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 14.24,
-            "sha256": "23d8bba8b7d311a5dec7da1b8869ccb4bc8e4e309df0cf3139fce461c121580c"
           },
-          "unprompted_asr": "Field names need explanation too. A column name delivered at could record when a parcel reached a depot or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 0.9942857142857143,
-            "differences": [
-              {
-                "operation": "delete",
-                "expected": "d",
-                "recognised": ""
-              }
-            ],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          "hold_seconds": 0
         },
         {
-          "scene": 8,
-          "kind": "mismatch",
-          "raw_seconds": 15.36,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows sixty six point seven percent, even though Delivery Operations' definition requires fifty percent. The query can run successfully and still answer the wrong question.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "ba4f9890eadc18612e0d8b11ed50ac5192aff28b1a681b718f3608cff9a7a8a9",
-            "seed": 54,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
-              },
-              {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 15.36,
-            "sha256": "2b8f73543afd74198eb2c485eee5d144388631a14498d4012ddb705458c3135e"
-          },
-          "unprompted_asr": "But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows 66.7%. Even though delivery operations definition requires 50%, the query can run successfully and still answer the wrong question.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 9,
-          "kind": "verify",
+          "scene": 4,
+          "kind": "due",
           "raw_seconds": 13.2,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
@@ -587,16 +245,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation.",
+            "spoken_text": "Now count all deliveries due by noon. The unfinished parcel was due too, so bring it into the group. The two on-time parcels stay the same. Two out of four gives fifty percent. Same data, different questions.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "1e08723660b3bbe7c9e476858d0f42d1c007d986e763c21367ea08bf6bb69f55",
-            "seed": 66,
-            "batch_size": 1,
+            "signature": "c811ac703c823b298eca0cbc94cedac437f928ca0187c26f05ace09fc2feca16",
+            "seed": 42,
+            "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "dca0fb17a435d8a22075ac62f1f04a10d6d475c4ad36e5a878582da9ba208add",
-                "path": "out/q1-chapter-01/raw-09.wav"
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
               }
             ],
             "sdk_versions": {
@@ -607,22 +285,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 195.99278457699984,
+            "generation_batch_seconds": 204.37357354300002,
             "seconds": 13.2,
-            "sha256": "dd0c523dee255a17f02af1cc312a42f2830b20b16c79715abe01dbdab28ec270"
+            "sha256": "439fef68310cb4c42c5973d19ac2fae17a0d45f7e7e9f0d9fc91ccf024df5a02"
           },
-          "unprompted_asr": "The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Now count all deliveries due by noon. The unfinished parcel was due too so bring it into the group. The two on-time parcels stay the same. 2 out of 4 gives 50%. Same data, different questions.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
-          "scene": 10,
-          "kind": "recap",
-          "raw_seconds": 11.84,
+          "scene": 5,
+          "kind": "rule",
+          "raw_seconds": 16.48,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -631,24 +309,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "When you see a number, ask what counts, when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable.",
+            "spoken_text": "Delivery Operations chooses the all-due question. Its recorded definition includes unfinished deliveries, measures at one in the afternoon, and names the responsible team. This is metadata: information describing what the measure means. The full definition is on the page.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "4f28fdad24cca3a51f53101acd95509857bd5e26a3c3e28746b8f03be3db167c",
+            "signature": "ddccc1b970a605543cb56a82f0c54bf1168cd874cc4db1bfdf3badf9de1d6dad",
             "seed": 42,
-            "batch_size": 3,
+            "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
-                "path": "out/q1-chapter-01/raw-02.wav"
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
               },
               {
-                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
-                "path": "out/q1-chapter-01/raw-06.wav"
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
               },
               {
-                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
-                "path": "out/q1-chapter-01/raw-10.wav"
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
               }
             ],
             "sdk_versions": {
@@ -659,38 +349,217 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 312.2053978650001,
-            "seconds": 11.84,
-            "sha256": "5e81ccd112f63be891510817239fd3de1b1ee757f8839e077662a0853cae8db3"
+            "generation_batch_seconds": 204.37357354300002,
+            "seconds": 16.48,
+            "sha256": "446a4f0bb0b97d08bf9af5018cf14350540fed018e1a2e2ffbc984bbfccd752e"
           },
-          "unprompted_asr": "When you see a number, ask what counts when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Delivery Operations chooses the all-do question. Its recorded definition includes unfinished deliveries, measures at one in the afternoon, and names the responsible team. This is metadata, information describing what the measure means. The full definition is on the page.",
+          "alignment": {
+            "matched_character_fraction": 0.9911504424778761,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "ue",
+                "recognised": "o"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 6,
+          "kind": "challenge",
+          "raw_seconds": 15.28,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Check your understanding. The definition includes all four deliveries due, but the dashboard shows sixty six point seven percent. Its query ran successfully. Does that prove the dashboard follows the definition? Pause and explain your answer.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "459520f9d57e4d8e262ace510eff02d15475a107fe94b88c3535a58fe10fb7ad",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 204.37357354300002,
+            "seconds": 15.28,
+            "sha256": "ff01091f7c7c25ae109cadd407b7f5bfec8e6599d595a6aef64ad43f0a57dea6"
+          },
+          "unprompted_asr": "Check your understanding. The definition includes all four deliveries due, but the dashboard shows 66.7%. Its query ran successfully. Does that prove the dashboard follows the definition? Pause and explain your answer.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 5
+        },
+        {
+          "scene": 7,
+          "kind": "answer",
+          "raw_seconds": 14.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "No. This calculation removed the unfinished parcel and counted only three. The recorded rule requires four, giving fifty percent. A successful query can answer the wrong question. Compare the filter and denominator with the definition.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "df152434da04d640d8ec2257f9c91cc6b2195fa6ba00dcdce658e148223234ea",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 204.37357354300002,
+            "seconds": 14.96,
+            "sha256": "f69d224ab7755d1098c5b932b5c3630d906aee801fccc4fb4c77d956238eeb83"
+          },
+          "unprompted_asr": "No, this calculation removed the unfinished parcel and counted only three. The recorded rule requires four, giving 50 percent. A successful query can answer the wrong question. Compare the filter and denominator with the definition.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 8,
+          "kind": "practice",
+          "raw_seconds": 18.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Back on the page, open the metadata map. Find Metric definition, then Example record. Identify what counts, when it is measured, and which team can explain it. Then ask: does recording the rule prove the calculation follows it? Use the page's Check your answer to test your explanation.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "70e31558c309c3298b4533ca60a873cf3127275d79553daefd17a6ce720b5900",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "2287ee6288b1ca6d10f8cef00717092f60f968ea5235d49dbb61d38a463b1eea",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "aa9ea43362f9831375cf5c36da92cc21219cd27a597872e7ed360f18dc59652a",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9b92869c0ffb7564f34b16d59465583dd3fc95df49da4fdf3f6081d9bd9a30bc",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "1f2169e5a348d77601f3b3d24fa353eec58f22412360374836cf222a83d26da4",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "4c9ca2a7070b33281ae8786471c12b425973e258b0b458643ca64d7b94efbc2b",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "eb5ee04413a27aee11dca137e0f46631b23d776010dd75ab64f1d770dcb44dae",
+                "path": "/workspace/metadata-book/out/q1-chapter-01/raw-07.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 204.37357354300002,
+            "seconds": 18.16,
+            "sha256": "6f3acb517c40242ae01e235ec3e268ff68fc03c0cd6b12c9155e7b1df786ccd6"
+          },
+          "unprompted_asr": "Back on the page, open the metadata map. Find metric definition, then example record. Identify what counts when it is measured and which team can explain it. Then ask, does recording the rule prove the calculation follows it? Use the pages check your answer to test your explanation.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
         }
-      ],
-      "spoken_wpm": 161.5444214876033,
-      "final_export": {
-        "chapter": "01",
-        "file": "chapter-01.mp4",
-        "sha256": "c52d425a02964507c915f31bf3186426e82c8ad0e25ac9c918ebebe5fbbf20ec",
-        "bytes": 4710935,
-        "duration_seconds": 167.8,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "caption_codec": "mov_text",
-        "dimensions": [
-          1280,
-          720
-        ],
-        "fps": "24/1",
-        "full_ffmpeg_decode": "passed",
-        "poster": "/workspace/metadata-book/out/q1-chapter-01/poster.jpg",
-        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-01/encoded-frames/contact-sheet.jpg"
-      }
+      ]
     },
     {
       "chapter": "02",

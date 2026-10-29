@@ -1,6 +1,6 @@
 # Chapter 1 explainer video
 
-A standalone narrated adaptation of [What the data cannot tell you](../../chapters/01-why-metadata.md). The same four parcels explain completed-delivery and all-due denominators, a recorded definition, ambiguous field meaning and checking a calculation.
+An embedded learning aid for [What the data cannot tell you](../../chapters/01-why-metadata.md). The same four parcels explain completed-delivery and all-due denominators. Prediction and explanation pauses reinforce choosing the denominator and checking a calculation against its recorded definition. The closing activity connects to the page’s metadata map.
 
 Production follows the [authored video workflow](https://github.com/snowch/explainer-video-generator/blob/20ef33571f5b737c4fa267427964593836182205/docs/agent-video-workflow.md). Speech synthesis and audio-audit helpers are adapted from that repository's `examples/approved-narration/`; the renderer and scene plan are specific to this chapter. No reference-video artwork or unrelated narrative is reused.
 
@@ -9,11 +9,11 @@ Production follows the [authored video workflow](https://github.com/snowch/expla
 - `narration.json`: exact display narration, in complete scene passages.
 - `project.json`: source, attribution, voice, pronunciation and duration contract.
 - `scene-plan.md`: chapter-to-scene source trail and visual interpretation checks.
-- `render.py`: coded parcel/building illustrations, staged highlights and layouts.
+- `render.py` and `../learning_aid.py`: coded parcel illustrations, timed denominator brackets, staged results and practice layouts.
 - `synthesize.py`: cached scene speech, fresh ASR alignment estimates, sentence cues and captions.
 - `audit_audio.py`: automated transcription; it does not establish a listening review.
 
-The source is pinned to metadata-book commit `46e8224334d69d9ef9eee103f0b4def368a9f807`. The optional historical-cutoff discussion is omitted from narration; the complete-record assumption is stated explicitly. No actual customer records appear.
+The source is pinned to metadata-book commit `476c510abafeb8fc94a847b43595d3ae0d21e487`. The page retains the full definition, metric record and field-name discussion; the complete-record assumption is stated explicitly. No actual customer records appear.
 
 ## Rebuild
 
@@ -53,6 +53,9 @@ For a partial visual rebuild, `render.py --only 1 --no-mux` renders only scene 1
 
 ## Sharing and embedding
 
-Chapter 1 embeds the final MP4, captions, poster and transcript from `assets/video/chapter-01/`, published with the book. This deliberate final-media copy is about 5 MB; working audio, clips, generated layers and model weights remain outside git. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. The chapter embed uses `preload="none"` so the video is not fetched until requested; the poster and resource links remain visible. Check actual media URLs after each publication.
+Chapter 1 embeds the final MP4, captions, poster and transcript from `assets/video/chapter-01/`, published with the book. This deliberate final-media copy is packaged with the chapter; working audio, clips, generated layers and model weights remain outside git. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. The chapter embed uses `preload="none"` so the video is not fetched until requested; the poster and resource links remain visible. Check actual media URLs after each publication.
 
-See `out/q1-chapter-01/review.md` for the measured result and checks performed on this export. No human listening review is claimed.
+See `video/chapter-01/review.md` for the measured result and checks performed on this export. No human listening review is claimed.
+
+Question scenes declare `hold_seconds` in narration.json. This adds thinking time
+after speech and captions, before the answer. Keep these pauses in rebuilds.

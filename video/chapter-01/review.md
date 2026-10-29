@@ -1,23 +1,57 @@
-# Chapter 1 Q1 export review — 29 October 2026
+# Chapter 1 page-learning-aid review — 29 October 2026
 
-The narration now uses the approved original synthetic **Q1 warm British female** voice. The canonical narration, chapter artwork, scene meanings and five-second silent closing card are retained. New passages use the pinned Qwen Base model with one reusable prompt from the approved Q1 reference, rather than a new voice design for each scene.
+Replaces the standalone summary with a focused denominator demonstration, two
+retrieval pauses, and a return to the page's metric-definition/map exercise.
+The full metric record, metadata definition and field-name discussion remain on
+the page. Source: `476c510abafeb8fc94a847b43595d3ae0d21e487`.
 
-Export: **2:48**, 1280×720, 24 fps, H.264/yuv420p, AAC and English selectable mov_text captions. There are 50 caption cues; MP4 size is 4,710,935 bytes. SHA-256: `c52d425a02964507c915f31bf3186426e82c8ad0e25ac9c918ebebe5fbbf20ec`. Measured spoken pace is about 161.5 words per minute, including raw passage pauses. The existing project duration bounds pass; no tempo alteration or padding was used to meet them.
+## Actual export
 
-## Speech and timing review
+2:23 (142.8 seconds), 1280×720, 24 fps, H.264/yuv420p, AAC and selectable English
+captions. 39 caption cues; 3,869,754 bytes. Video SHA-256:
+`7e12b061b56bbbc3156a926f28f83d752f8feba4b91a6f20f515879e36f92d85`.
+The approved original synthetic Q1 reference and pinned Qwen Base model are
+retained. No speech tempo alteration. Nine new complete narration passages.
 
-All spoken scenes received independent unprompted `small.en` transcription without vocabulary hints or digit suppression. Source ASR text and real timestamps are retained separately from canonical timing metadata. No meaningful omission, wrong number or changed logical distinction was identified in that automated screening.
+## Learning and source review
 
-The pronunciation pack ran after final synthesis and before encoding. It contains 16 contextual clips and 3 transcription differences: three 50.0% clips were recognised as “50 percent”. These are spelling/notation differences consistent with the intended speech. Some short clips contain ASR additions near cut context boundaries; the complete scene transcripts were used to assess meaning. The pack freshness check passed before rendering and again after the resumed exports.
+Manually compared the script and each visual with Chapter 1. The two on-time
+parcels remain the numerator; the late arrival belongs to completed deliveries;
+the unfinished parcel remains visible while the denominator expands from three
+to four. Both percentages are valid for their stated questions. Only Delivery
+Operations' all-due definition requires 50.0%. Definition excerpts name the
+measurement time and responsible team; they do not claim to replace the full
+record or prove implementation correctness. Questions precede their answer
+scenes. The final activity uses the existing Metric definition → Example record
+route and page answer.
 
-The field passage has an unresolved recognition detail: both unprompted full-passage small.en and an independent base.en recheck write “A column name delivered at…”, while the extracted context clip writes “A column named Delivered At…”. Adjacent /d/ sounds may explain the difference. The field-meaning contrast is retained; no uncertain recognition ending was used to rewrite the speech.
+## Speech screening
 
-**No human listening review was performed for these new passages.** Recognition cannot certify phonetics, accent or prosody, including a correct-looking term spelling. All pronunciation remains screened rather than listening-approved.
+Independent full-scene unprompted small.en ASR preserves the narration's numbers,
+questions, negation and qualifications. Alignment coverage is 100% except the
+rule passage (99.1%): “all-due” is recognised as “all-do”, a homophone spelling
+difference. A short term clip writes “all-day”; full-scene context is retained
+for inspection. Other short excerpts include boundary hallucinations; these
+were checked against full-scene recognition rather than treated as extra spoken
+words. The pronunciation pack has 11 clips and three transcription differences,
+including 50.0% rendered as “50 percent”. Its freshness check passed before
+rendering. Recognition does not establish phonetic correctness.
 
-Qwen supplies no word boundaries. Fresh ASR timestamps anchor estimated canonical-word timing; unmatched characters interpolate between adjacent anchors and are marked in `words-NN.json`. Numeric spelling reconciliation does not rewrite original ASR or literal spoken “point”/“zero” words. No old provider timestamps were reused. Captions concatenate exactly to canonical narration, remain ordered and do not overlap; sentence cues follow the new timing.
+**No human listening review was performed.** Voice expressiveness and precise
+pronunciation remain screened rather than listening-approved. No learner study
+or delayed-recall test has been performed; retrieval opportunities are design
+choices, not measured learning gains.
 
-## Media verification and retained evidence
+## Completed checks
 
-Full FFmpeg decoding passed. ffprobe confirms the expected video, audio and caption streams. The complete chapter has a five-second silent closing card. Parent independent media/source QC also passed. The parent inspected all actual encoded contact sheets and confirmed staged-site playback, seeking and caption loading at 820px and 390px with no overflow. Posters, actual encoded scene frames and contact sheets are retained alongside each export; the unchanged full-size scene layouts support detailed visual review.
+- Full FFmpeg decode; video/audio duration agreement, expected streams and five-second closing hold.
+- All captions concatenate exactly to the canonical narration; ordered, non-overlapping cues.
+- Four- and five-second response holds leave 4.592 and 5.630 seconds after the last caption, respectively.
+- Inspected actual encoded frames for every scene, both response holds and a 390-pixel rendering; no clipping or answer shown during thinking time.
+- Chromium at 960px and 390px: playback advances, seeking works, captions load, response holds have no active caption, no page overflow, and the map's Example record opens.
+- Existing pronunciation-audit tests, SQL/example checks, metadata-map validation, layout consistency and complete site build pass.
 
-Working evidence is in `out/q1-chapter-01/`: raw/cached speech and generation metadata, independent scene ASR, pronunciation clips/report, timing and caption files, `media-verification.json`, `parent-quality-check.json`, `poster.jpg` and `encoded-frames/`. The [production manifest](../qwen-production/production-manifest.json) retains scene hashes, reference/model provenance, SDK versions, seeds, batch membership, original ASR text and matching coverage. Exact Q1 reference bytes and transcript are retained with production source. Live publication is handled by the publishing workflow.
+Evidence remains in ignored `out/q1-chapter-01/`: raw scene audio and model
+metadata, independent ASR, aligned words, pronunciation pack, timings, encoded
+frames/contact sheet, media-verification.json, browser-verification.json and
+browser screenshots. The committed production manifest retains scene provenance.

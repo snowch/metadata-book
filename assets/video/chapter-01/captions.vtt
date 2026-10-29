@@ -1,151 +1,118 @@
 WEBVTT
 
-00:00.490 --> 00:03.565
-A parcel company promises four deliveries by noon.
+00:00.313 --> 00:06.211
+The same four deliveries give two results: 66.7% and 50.0%.
 
-00:03.565 --> 00:05.951
-At one in the afternoon, two have arrived on
+00:06.211 --> 00:08.057
+Which belongs on the dashboard?
 
-00:05.951 --> 00:09.253
-time, one arrived late, and one has not arrived.
+00:08.057 --> 00:11.123
+The missing piece is the question we want the number to answer.
 
-00:09.253 --> 00:11.012
-This is an invented example.
+00:12.323 --> 00:14.751
+Use the invented example on this page.
 
-00:11.012 --> 00:13.162
+00:14.751 --> 00:16.961
+Four parcels were promised by noon.
+
+00:16.961 --> 00:22.440
+At one in the afternoon, two arrived on time, one arrived late, and one is unfinished.
+
+00:22.440 --> 00:24.630
 Assume the records are complete at that moment.
 
-00:14.377 --> 00:18.926
-First, ask: of the completed deliveries, how many were on time?
+00:25.508 --> 00:28.295
+First, count only completed deliveries.
 
-00:18.926 --> 00:20.912
+00:28.295 --> 00:32.471
+How many parcels belong in the denominator, the total we divide by?
+
+00:32.471 --> 00:34.116
+Make your choice before we count.
+
+00:39.276 --> 00:41.149
 Three parcels have arrived.
 
-00:20.912 --> 00:22.602
-Two were on time.
+00:41.149 --> 00:43.775
+Keep the late parcel, because it is completed.
 
-00:22.602 --> 00:25.888
-Two out of three gives 66.7%.
+00:43.775 --> 00:46.980
+Leave the unfinished parcel outside this group.
 
-00:25.888 --> 00:28.532
-The unfinished delivery is outside this calculation.
+00:46.980 --> 00:50.624
+Two on time out of three completed gives 66.7%.
 
-00:29.587 --> 00:33.002
-Now ask: of all deliveries due, how many arrived on time?
+00:51.575 --> 00:54.404
+Now count all deliveries due by noon.
 
-00:33.002 --> 00:35.939
-All four parcels were promised by noon, so all
+00:54.404 --> 00:58.138
+The unfinished parcel was due too, so bring it into the group.
 
-00:35.939 --> 00:38.134
-four count, including the unfinished delivery.
+00:58.138 --> 01:00.543
+The two on-time parcels stay the same.
 
-00:38.134 --> 00:39.903
+01:00.543 --> 01:02.641
 Two out of four gives 50.0%.
 
-00:40.885 --> 00:44.021
-Both calculations are valid for their stated questions.
+01:02.641 --> 01:04.294
+Same data, different questions.
 
-00:44.021 --> 00:48.316
-The difference is the denominator: the total number of deliveries included.
+01:05.292 --> 01:08.470
+Delivery Operations chooses the all-due question.
 
-00:48.316 --> 00:51.828
-Three completed deliveries, or all four deliveries due.
+01:08.470 --> 01:12.996
+Its recorded definition includes unfinished deliveries, measures at one in the
 
-00:51.828 --> 00:55.295
-A dashboard labelled only on-time delivery leaves readers to guess.
+01:12.996 --> 01:15.443
+afternoon, and names the responsible team.
 
-00:56.254 --> 01:02.675
-Metadata is information that describes data: its structure, meaning, origin and use.
+01:15.443 --> 01:19.611
+This is metadata: information describing what the measure means.
 
-01:02.675 --> 01:05.194
-Column names and types are metadata.
+01:19.611 --> 01:21.539
+The full definition is on the page.
 
-01:05.194 --> 01:09.388
-So are a metric’s definition and a record of the job that produced it.
+01:22.692 --> 01:24.322
+Check your understanding.
 
-01:09.388 --> 01:11.930
-The values alone rarely explain what they measure.
+01:24.322 --> 01:30.570
+The definition includes all four deliveries due, but the dashboard shows 66.7%.
 
-01:12.750 --> 01:14.965
-Suppose Delivery Operations wants to know
+01:30.570 --> 01:32.688
+Its query ran successfully.
 
-01:14.965 --> 01:17.878
-whether all promised deliveries arrived on time.
+01:32.688 --> 01:35.772
+Does that prove the dashboard follows the definition?
 
-01:17.878 --> 01:22.484
-Record the decision: on time means delivered at or before the promised time.
+01:35.772 --> 01:37.620
+Pause and explain your answer.
 
-01:22.484 --> 01:26.272
-Include every delivery due by noon, even if it has not arrived.
+01:43.925 --> 01:44.659
+No.
 
-01:26.272 --> 01:28.814
-Measure at one in the afternoon, and name Delivery
+01:44.659 --> 01:48.956
+This calculation removed the unfinished parcel and counted only three.
 
-01:28.814 --> 01:31.433
-Operations as the team responsible for the definition.
+01:48.956 --> 01:52.726
+The recorded rule requires four, giving 50.0%.
 
-01:32.417 --> 01:34.814
-This definition makes the choice inspectable.
+01:52.726 --> 01:55.682
+A successful query can answer the wrong question.
 
-01:34.814 --> 01:39.160
-All four parcels belong in the denominator, so the measure gives 50.0%.
+01:55.682 --> 01:58.163
+Compare the filter and denominator with the definition.
 
-01:39.160 --> 01:42.243
-Another team can legitimately use completed deliveries,
+01:59.167 --> 02:01.902
+Back on the page, open the metadata map.
 
-01:42.243 --> 01:44.629
-provided its definition makes that choice clear.
+02:01.902 --> 02:05.382
+Find Metric definition, then Example record.
 
-01:45.904 --> 01:48.512
-Field names need explanation too.
+02:05.382 --> 02:09.808
+Identify what counts, when it is measured, and which team can explain it.
 
-01:48.512 --> 01:51.581
-A column named delivered_at could record when a parcel
+02:09.808 --> 02:13.848
+Then ask: does recording the rule prove the calculation follows it?
 
-01:51.581 --> 01:54.757
-reached a depot, or when it reached the customer.
-
-01:54.757 --> 01:56.829
-Both are plausible meanings.
-
-01:56.829 --> 01:59.496
-The name alone cannot tell us which one applies.
-
-02:00.620 --> 02:02.668
-But a definition is not proof.
-
-02:02.668 --> 02:08.958
-If the dashboard removes unfinished deliveries before counting, it shows 66.7%, even
-
-02:08.958 --> 02:12.105
-though Delivery Operations’ definition requires 50.0%.
-
-02:12.105 --> 02:15.639
-The query can run successfully and still answer the wrong question.
-
-02:16.583 --> 02:19.485
-The recorded rule gives a reviewer something to check.
-
-02:19.485 --> 02:20.863
-Inspect the filter.
-
-02:20.863 --> 02:22.656
-Inspect the denominator.
-
-02:22.656 --> 02:25.583
-Compare the calculation with the four-parcel example.
-
-02:25.583 --> 02:29.485
-If the intended rule changes, review both the definition and the calculation.
-
-02:30.760 --> 02:33.763
-When you see a number, ask what counts, when it was
-
-02:33.763 --> 02:36.685
-measured, and which team can explain its meaning.
-
-02:36.685 --> 02:40.140
-Then check that the calculation follows the recorded rule.
-
-02:40.140 --> 02:42.289
-Metadata makes those questions answerable.
+02:13.848 --> 02:16.928
+Use the page's Check your answer to test your explanation.
