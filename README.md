@@ -18,6 +18,8 @@ A technical book about understanding, collecting and using metadata. Eleven focu
 10. [Managing definitions and dataset changes](chapters/10-managing-changes.md)
 11. [Controlling access and enabling reuse](chapters/11-access-and-reuse.md)
 
+[Putting it all together](summary.md) closes the reading path with a recap of all eleven chapters, an evidence trail and a recall exercise with feedback.
+
 The reading path needs no installation or code execution. Worked results are included. The SQLite fixture and the incident simulation supporting Chapters 3–4 run with Python's standard library. The simulation records inputs, code versions, failed publication and recovery locally; it is not a captured production trace.
 
 ## Evaluate the approach

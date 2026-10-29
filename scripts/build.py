@@ -18,7 +18,7 @@ from metadata_map import render_map
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "_site"
-REQUIRED = ["book.md", "metadata-map.md", "chapters/01-why-metadata.md",
+REQUIRED = ["book.md", "summary.md", "metadata-map.md", "chapters/01-why-metadata.md",
             "chapters/02-reading-a-database.md", "chapters/03-following-lineage.md",
             "chapters/04-outdated-reports.md", "chapters/05-collecting-metadata.md",
             "chapters/06-unreliable-records.md", "chapters/07-using-metadata.md",
@@ -161,13 +161,13 @@ def build():
     for name in REQUIRED:
         if not (ROOT / name).is_file():
             raise ValueError(f"Missing required source: {name}")
-    sources = [Path("book.md"), Path("metadata-map.md"), *sorted(p.relative_to(ROOT) for p in (ROOT / "chapters").glob("*.md"))]
+    sources = [Path("book.md"), Path("summary.md"), Path("metadata-map.md"), *sorted(p.relative_to(ROOT) for p in (ROOT / "chapters").glob("*.md"))]
     if (ROOT / "examples").exists():
         sources.extend(sorted(p.relative_to(ROOT) for p in (ROOT / "examples").rglob("*.md")))
     content = {source: read_source(source) for source in sources}
     book_title = content[Path("book.md")][0]
     chapters = [p for p in sources if p.parent == Path("chapters")]
-    reading_order = [Path("book.md"), *chapters]
+    reading_order = [Path("book.md"), *chapters, Path("summary.md")]
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "assets", OUT / "assets")
@@ -196,7 +196,7 @@ def build():
         for number, item in enumerate(reading_order):
             active = ' aria-current="page"' if item == source else ""
             label = "Introduction" if item == Path("book.md") else clean_title(content[item][0])
-            nav_number = f'{number:02}' if number else '—'
+            nav_number = f'{number:02}' if item in chapters else '—'
             nav.append(f'<li><a href="{escape(relative(destination(item), page))}"{active}><span class="nav-number">{nav_number}</span><span class="nav-title">{escape(label)}</span></a></li>')
         pagination = []
         if source in reading_order:
@@ -207,6 +207,8 @@ def build():
                     caption = "START READING" if index == 0 else f"{label.upper()} CHAPTER"
                     if item == Path("book.md"):
                         caption = "INTRODUCTION"
+                    elif item == Path("summary.md"):
+                        caption = "BOOK SUMMARY"
                     arrow = "←" if offset < 0 else "→"
                     pagination.append(f'<a class="pagination-{label.lower()}" rel="{label.lower()}" href="{relative(destination(item), page)}"><span class="pagination-label">{caption}</span><span class="pagination-title">{escape(clean_title(content[item][0]))}<span class="pagination-arrow" aria-hidden="true">{arrow}</span></span></a>')
         description = f"{title}. Read {book_title}, a practical guide to understanding data through its metadata."
@@ -229,6 +231,8 @@ def build():
         ) if is_map else ""
         if is_map:
             chapter_meta = "VISUAL INDEX"
+        elif source == Path("summary.md"):
+            chapter_meta = "BOOK SUMMARY"
         sidebar = "" if is_map else (
             f'<aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p>'
             f'<p class="sidebar-title">{escape(book_title)}</p>'

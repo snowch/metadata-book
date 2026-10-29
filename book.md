@@ -27,6 +27,8 @@ This book is for software and data engineers who can read a table and a simple S
 10. [Managing definitions and dataset changes](chapters/10-managing-changes.md) — review changes, approve versions and preserve responsibility and history.
 11. [Controlling access and enabling reuse](chapters/11-access-and-reuse.md) — connect permitted uses to controls, retention and research publication descriptions.
 
+[Putting it all together](summary.md) — revisit all eleven chapters, connect the evidence and check what you can explain.
+
 ## How to read
 
 Chapters 1–4 explain how to question a number and inspect the evidence behind it. They form a useful stopping point if your main task is reading reports or reviewing calculations. Chapters 5–8 cover collecting, using and operating metadata. Chapters 9–11 follow the records across system boundaries, organisational changes and access or reuse decisions.
@@ -41,6 +43,6 @@ People need different evidence from the same system. One person may hold several
 | Security, privacy or audit reviewer | Which uses are approved, where are restrictions enforced, and what evidence is retained? |
 | Researcher or external consumer | Can I find, cite, access and reuse this version under its stated conditions? |
 
-Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons. Records, query outputs and decisions appear beside the questions they answer, with highlighted fields and short explanations. No code execution is needed. Each chapter ends with a short, optional map activity and a collapsible answer. Chapters 1–3 also offer captioned videos with transcripts.
+Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons. Records, query outputs and decisions appear beside the questions they answer, with highlighted fields and short explanations. No code execution is needed. Each chapter ends with a short, optional map activity and a collapsible answer. All eleven chapters also offer captioned videos with transcripts. The [closing summary](summary.md) connects the lessons and provides a final recall exercise.
 
 The company and its records are invented. The database examples and the incident simulation supporting Chapters 3–4 use the real SQLite engine. The additional debugging scenario, collection histories, decisions, pilot assessment and publication descriptions are illustrative. The OpenLineage event is checked against its schema; it is not captured from a running integration. Product-specific explanations link to the tools' documentation. To run the examples yourself, see [Reproducing the worked results](examples/README.md).
