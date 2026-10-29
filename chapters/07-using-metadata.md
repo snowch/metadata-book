@@ -2,6 +2,17 @@
 
 Metadata helps someone choose a dataset, judge a result or prepare a change. Each decision needs different evidence: a definition explains what a measure counts; a quality check result describes particular records; a dependency points to a possible consumer.
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 19 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-07/poster.jpg?v=fe4ede1ff430" aria-label="Using metadata to make decisions: narrated Chapter 7 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-07/captions.vtt?v=41664263dded" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7">Download the video</a> or <a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">Read the transcript</a><a href="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7" download>Download video <span>(3.8 MB)</span></a></p>
+</figure>
+
 ## Find the measure that answers the question
 
 Delivery Operations asks: “Of all parcels due by noon, how many arrived on time?” Searching for “on-time delivery” finds the `on_time_completed` view and Service Analytics' Delivery performance report. Their definitions determine whether either fits.

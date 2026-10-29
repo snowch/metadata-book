@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00.250 --> 00:05.679
+Delivery Operations asks: of all parcels due by noon, how many arrived on time?
+
+00:05.679 --> 00:11.476
+At one in the afternoon, two arrived on time, one arrived late, and one is unfinished.
+
+00:11.476 --> 00:15.261
+The completed-delivery view shows sixty six point seven percent.
+
+00:15.261 --> 00:17.281
+Does that answer the meeting's question?
+
+00:17.281 --> 00:19.408
+Explain your denominator before continuing.
+
+00:24.373 --> 00:28.740
+The meeting needs all four parcels due, including the unfinished one.
+
+00:28.740 --> 00:30.983
+Two out of four gives fifty percent.
+
+00:30.983 --> 00:34.089
+Two out of three completed answers a different question.
+
+00:34.089 --> 00:38.222
+Refreshing the older report cannot change its completed-delivery definition.
+
+00:38.222 --> 00:40.789
+Search synonyms may help find a candidate, but
+
+00:40.789 --> 00:42.694
+they cannot make different definitions equivalent.
+
+00:43.912 --> 00:47.166
+Now inspect the page's illustrative quality review.
+
+00:47.166 --> 00:50.910
+The checked input has four rows and four distinct identifiers.
+
+00:50.910 --> 00:54.104
+All promised times are present; one empty completion
+
+00:54.104 --> 00:56.489
+time is allowed for the unfinished parcel.
+
+00:56.489 --> 00:57.896
+These checks pass.
+
+00:57.896 --> 01:00.789
+Is the all-due publication now ready for the meeting?
+
+01:00.789 --> 01:03.512
+Name the evidence still needed, then pause to think.
+
+01:08.358 --> 01:13.094
+Passed checks support uniqueness and required-value completeness for that input.
+
+01:13.094 --> 01:17.688
+They establish neither accurate timestamps nor delivery by the contract deadline.
+
+01:17.688 --> 01:20.536
+They do not prove that the calculation uses the all-due
+
+01:20.536 --> 01:23.493
+denominator, or that the report read its output.
+
+01:23.493 --> 01:26.456
+A contract records commitments; check results and
+
+01:26.456 --> 01:28.903
+delivery records show whether those commitments were met.
+
+01:29.708 --> 01:31.366
+Leave an actionable decision.
+
+01:31.366 --> 01:35.570
+Delivery Operations confirms the all-due rule and original customer promise.
+
+01:35.570 --> 01:40.145
+The reporting engineer verifies fifty percent, then attaches the published output
+
+01:40.145 --> 01:42.664
+identifier and report refresh evidence.
+
+01:42.664 --> 01:44.905
+The page's decision remains pending because
+
+01:44.905 --> 01:47.365
+no verified all-due publication is attached.
+
+01:47.365 --> 01:51.498
+Being discoverable or passing checks does not make a dataset suitable for every use.
+
+01:52.417 --> 01:54.140
+Try the page's map exercise.
+
+01:54.140 --> 01:58.652
+In Quality check's Example record, distinguish the rule's expected duplicate count
+
+01:58.652 --> 02:00.941
+from the observed four distinct identifiers.
+
+02:00.941 --> 02:02.502
+Then open Decision.
+
+02:02.502 --> 02:06.242
+Find the chosen rule, evidence gap, next action and owner.
+
+02:06.242 --> 02:09.890
+Explain why the meeting is not ready, then use Check your answer.
+
+02:09.890 --> 02:12.974
+The page keeps the full contract and change-review guidance.

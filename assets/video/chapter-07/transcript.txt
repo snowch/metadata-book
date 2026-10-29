@@ -1,0 +1,17 @@
+Using metadata to make decisions
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/07-using-metadata.html
+
+Delivery Operations asks: of all parcels due by noon, how many arrived on time? At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. The completed-delivery view shows sixty six point seven percent. Does that answer the meeting's question? Explain your denominator before continuing.
+
+The meeting needs all four parcels due, including the unfinished one. Two out of four gives fifty percent. Two out of three completed answers a different question. Refreshing the older report cannot change its completed-delivery definition. Search synonyms may help find a candidate, but they cannot make different definitions equivalent.
+
+Now inspect the page's illustrative quality review. The checked input has four rows and four distinct identifiers. All promised times are present; one empty completion time is allowed for the unfinished parcel. These checks pass. Is the all-due publication now ready for the meeting? Name the evidence still needed, then pause to think.
+
+Passed checks support uniqueness and required-value completeness for that input. They establish neither accurate timestamps nor delivery by the contract deadline. They do not prove that the calculation uses the all-due denominator, or that the report read its output. A contract records commitments; check results and delivery records show whether those commitments were met.
+
+Leave an actionable decision. Delivery Operations confirms the all-due rule and original customer promise. The reporting engineer verifies fifty percent, then attaches the published output identifier and report refresh evidence. The page's decision remains pending because no verified all-due publication is attached. Being discoverable or passing checks does not make a dataset suitable for every use.
+
+Try the page's map exercise. In Quality check's Example record, distinguish the rule's expected duplicate count from the observed four distinct identifiers. Then open Decision. Find the chosen rule, evidence gap, next action and owner. Explain why the meeting is not ready, then use Check your answer. The page keeps the full contract and change-review guidance.

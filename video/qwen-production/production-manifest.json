@@ -3137,6 +3137,406 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "07",
+      "duration_seconds": 138.7,
+      "caption_cues": 38,
+      "end_card_seconds": 5,
+      "purpose": "Choose a measure by its denominator and explain why passed input checks do not establish a ready report publication.",
+      "video_sha256": "46791fb8f2c73cd634b9f4253a1aa69b5affae1ece6e65c588139dacd44a73fa",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "measure-question",
+          "raw_seconds": 19.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Delivery Operations asks: of all parcels due by noon, how many arrived on time? At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. The completed-delivery view shows sixty six point seven percent. Does that answer the meeting's question? Explain your denominator before continuing.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "27edd6d40d3ff4e9b123a3e683120f2f2264db498d481a4ba887c754eddf00e8",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 19.36,
+            "sha256": "c985d241741b250ac192c0fe699b4ffc3a00268c566426d3d4abac71a6609d3c"
+          },
+          "unprompted_asr": "Delivery Operations asks, of all parcels due by noon, how many arrived on time? At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. The completed delivery view shows 66.7%. Does that answer the meeting's question? Explain your denominator before continuing.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "measure-answer",
+          "raw_seconds": 18.64,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The meeting needs all four parcels due, including the unfinished one. Two out of four gives fifty percent. Two out of three completed answers a different question. Refreshing the older report cannot change its completed-delivery definition. Search synonyms may help find a candidate, but they cannot make different definitions equivalent.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "f3002ec45b983c676ce7b2e98cbd09fcd79a0a65044d9c00e547a45327e4c188",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 18.64,
+            "sha256": "9f6ef8f56fa8d7aa837fad21d233917b491ee79c69430b200527f7eb3a187517"
+          },
+          "unprompted_asr": "The meeting needs all four parcels due, including the unfinished one. Two out of four gives 50 percent. Two out of three completed answers a different question. Refreshing the older report cannot change its completed delivery definition. Search synonyms may help find a candidate, but they cannot make different definitions equivalent.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "checks-question",
+          "raw_seconds": 19.92,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now inspect the page's illustrative quality review. The checked input has four rows and four distinct identifiers. All promised times are present; one empty completion time is allowed for the unfinished parcel. These checks pass. Is the all-due publication now ready for the meeting? Name the evidence still needed, then pause to think.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "aa2816fb9642a3ca07bf91fca1ea016f63d2e56d7c2a563665a6d5f71414fa81",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 19.92,
+            "sha256": "0575553c4a992654d6860968b4802874be5d1dc678282583ab46c50f9b055dae"
+          },
+          "unprompted_asr": "Now, inspect the page's Illustrative Quality Review. The checked input has four rows and four distinct identifiers. All promised times are present. One empty completion time is allowed for the unfinished parcel. These checks pass. Is the all-due publication now ready for the meeting? Name the evidence still needed, then pause to think.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 3,
+          "kind": "checks-answer",
+          "raw_seconds": 20.64,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Passed checks support uniqueness and required-value completeness for that input. They establish neither accurate timestamps nor delivery by the contract deadline. They do not prove that the calculation uses the all-due denominator, or that the report read its output. A contract records commitments; check results and delivery records show whether those commitments were met.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "5324f61de6a7ddfe52a4d00ae5de19ebcefb338a2c9c04112e51dd8eb24a52bc",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 20.64,
+            "sha256": "e39bd638e54b4168b52fa3b5d3410daad1141bd3093e4952e2012e1e264caa7a"
+          },
+          "unprompted_asr": "Past checks support uniqueness and required value completeness for that input. They establish neither accurate timestamps nor delivery by the contract deadline. They do not prove that the calculation uses the all-due denominator, or that the report read its output. A contract records commitments. Check results and delivery records show whether those commitments were met.",
+          "alignment": {
+            "matched_character_fraction": 0.9904458598726115,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "sed",
+                "recognised": "t"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "decision",
+          "raw_seconds": 22.0,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Leave an actionable decision. Delivery Operations confirms the all-due rule and original customer promise. The reporting engineer verifies fifty percent, then attaches the published output identifier and report refresh evidence. The page's decision remains pending because no verified all-due publication is attached. Being discoverable or passing checks does not make a dataset suitable for every use.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "622204b50356fefe8e90d8bed68b9b1399d45fb0668b3cebcf3ad928443daebf",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 22.0,
+            "sha256": "a2f66547974e002c123d88bda3d16fde3d8ec180cade801b0bafe81d7fe1f893"
+          },
+          "unprompted_asr": "Leave an actionable decision. Delivery operations confirms the all due rule and original customer promise. The reporting engineer verifies 50%, then attaches the published output identifier and report refresh evidence. The page's decision remains pending because no verified all due publication is attached. Being discoverable or passing checks does not make a dataset suitable for every use.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "practice",
+          "raw_seconds": 20.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. In Quality check's Example record, distinguish the rule's expected duplicate count from the observed four distinct identifiers. Then open Decision. Find the chosen rule, evidence gap, next action and owner. Explain why the meeting is not ready, then use Check your answer. The page keeps the full contract and change-review guidance.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "6c6dac83ddb4545b331ce6b663920428588ecf58d4f792b03f7e79cb908c03b1",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4be7da54c7dfd4038fa05a64877b364f7ad65c557bcdb6d5e3ed8d8722a727b8",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7d02b9e5ea856192a2f7e6c72ba40b8c1e9a0a63e211773e848cc206c354bc93",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "211e70d80adc8562bbd6a3823eacfc86cbfc5ba059822b2edac095dd09023768",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "9257d398e6f63f3fc59d5b106ff674811c35858ba6460b1e7bcb014320f2e554",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "0f8d0be790214029dc3c2e22026d4c377db5693b996aa8b1011c4b02733db0e7",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "d802add4c490d65838adeb6baf033f63740582340afa3502c3fb95a53f25e836",
+                "path": "/workspace/metadata-book/out/q1-chapter-07/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 230.43571433299985,
+            "seconds": 20.8,
+            "sha256": "5145ee7c5ec4fdfe755a0d5cab4fce7fa6ea8a536721efcff8e5829873b4b3b1"
+          },
+          "unprompted_asr": "Try the page's map exercise. In quality checks example record, distinguish the rules expected duplicate count from the observed four distinct identifiers. Then open decision. Find the chosen rule evidence gap, next action, and owner. Explain why the meeting is not ready, then use check your answer. The page keeps the full contract and change review guidance.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }
