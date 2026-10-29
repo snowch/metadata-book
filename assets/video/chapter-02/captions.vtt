@@ -1,187 +1,115 @@
 WEBVTT
 
-00:00.310 --> 00:03.628
-A database records descriptions of its tables: column
+00:00.263 --> 00:02.688
+The page's database records say delivered_at
 
-00:03.628 --> 00:07.013
-names, declared types, and rules about allowed values.
+00:02.688 --> 00:06.088
+declares TEXT and allows NULL, a missing value.
 
-00:07.013 --> 00:08.424
-We can query them.
+00:06.088 --> 00:08.997
+In this SQLite table, the type declaration
 
-00:08.424 --> 00:11.148
-But do they tell us what a delivery measure means?
+00:08.997 --> 00:11.822
+does not strictly enforce every stored value.
 
-00:11.148 --> 00:13.756
-Let’s inspect four invented deliveries stored
+00:11.822 --> 00:14.111
+What does a missing delivery time mean?
 
-00:13.756 --> 00:16.260
-in a table named deliveries, using SQLite.
+00:14.111 --> 00:15.807
+Predict an answer before continuing.
 
-00:17.125 --> 00:20.070
-The column records describe three fields: a delivery
+00:20.750 --> 00:22.841
+The column record cannot settle that.
 
-00:20.070 --> 00:24.036
-identifier, a promise time, and a delivery time.
+00:22.841 --> 00:25.800
+The parcel might be unfinished, the record might be
 
-00:24.036 --> 00:25.990
-All three declare TEXT.
+00:25.800 --> 00:29.572
+awaiting an update, or the arrival time might be unknown.
 
-00:25.990 --> 00:29.401
-In this SQLite table, that declaration does not
+00:29.572 --> 00:34.192
+For this page's complete invented records, NULL means not yet delivered.
 
-00:29.401 --> 00:32.454
-strictly enforce the type of every stored value.
+00:34.192 --> 00:37.474
+Structure permits the value; the definition explains its meaning.
 
-00:32.454 --> 00:38.303
-The not-null flag is one for the identifier and promise: a value is required.
+00:38.333 --> 00:40.679
+Meaning can change without a schema change.
 
-00:38.303 --> 00:42.578
-Zero for delivery time allows NULL, the marker for a missing value.
-
-00:42.578 --> 00:45.855
-The primary key uniquely identifies each row.
-
-00:45.855 --> 00:49.458
-Here, the delivery identifier is the sole key.
-
-00:50.333 --> 00:52.934
-Those records describe structure, or schema.
-
-00:52.934 --> 00:55.001
-They do not explain every value.
-
-00:55.001 --> 00:57.504
-A missing delivery time could mean an unfinished
-
-00:57.504 --> 01:01.032
-parcel, a late update, or an unknown time.
-
-01:01.032 --> 01:04.347
-Assume these invented records are complete: here,
-
-01:04.347 --> 01:06.896
-NULL means the parcel has not yet been delivered.
-
-01:06.896 --> 01:09.152
-Meaning can also change without changing the schema.
-
-01:10.000 --> 01:14.237
-Suppose the original promise was noon, revised to twelve thirty.
-
-01:14.237 --> 01:16.796
+00:40.679 --> 00:42.890
 A parcel arrives at twelve twenty.
 
-01:16.796 --> 01:20.914
-It is late against the original promise, but on time against the revision.
+00:42.890 --> 00:45.662
+Against the original noon promise, it is late.
 
-01:20.914 --> 01:23.435
-We need to know which promise the column stores.
+00:45.662 --> 00:49.314
+Against a revised twelve thirty promise, it is on time.
 
-01:23.435 --> 01:25.450
-Its name and type cannot settle that.
+00:49.314 --> 00:52.096
+The column name and type can stay the same.
 
-01:26.420 --> 01:28.798
-Now read the complete saved query.
+00:52.096 --> 00:53.988
+We must know which promise is stored.
 
-01:28.798 --> 01:32.006
-A view is a named query, readable like a table.
+00:55.045 --> 00:57.214
+Now inspect the saved query.
 
-01:32.006 --> 01:35.605
-This SQLite view calculates its result whenever it is read.
+00:57.214 --> 01:01.950
+A view is a named query; this SQLite view recalculates when read.
 
-01:35.605 --> 01:38.676
-Its filter removes rows with a missing delivery time.
+01:01.950 --> 01:05.929
+Focus on its filter: keep rows whose delivery time is not missing.
 
-01:38.676 --> 01:42.996
-It counts the remaining deliveries, counts those arriving by the stored promise, and
+01:05.929 --> 01:07.618
+Which parcel will that remove?
 
-01:42.996 --> 01:44.330
-calculates a percentage.
+01:07.618 --> 01:08.825
+Pause and point to it.
 
-01:44.330 --> 01:47.821
-The zero-denominator guard returns NULL if none are completed.
+01:13.583 --> 01:17.560
+The unfinished parcel has the missing time, so the filter removes it.
 
-01:49.075 --> 01:52.152
-Here are the four deliveries, all promised by noon.
+01:17.560 --> 01:21.212
+Three completed deliveries remain, including the late one.
 
-01:52.152 --> 01:56.270
-Two arrived on time, one arrived late, and one is unfinished.
+01:21.212 --> 01:22.710
+Two were on time.
 
-01:56.270 --> 01:59.025
-The filter leaves three completed deliveries.
+01:22.710 --> 01:25.779
+Two out of three gives 66.7%.
 
-01:59.025 --> 02:02.972
-Two on time out of three completed gives 66.7%.
+01:25.779 --> 01:30.308
+The example uses complete records and the page's fixed UTC time format.
 
-02:02.972 --> 02:06.743
-Delivery Operations needs all four deliveries due in the denominator.
+01:31.399 --> 01:36.052
+Delivery Operations needs all four deliveries due, giving 50.0%.
 
-02:06.743 --> 02:08.868
-Two out of four gives 50.0%.
+01:36.052 --> 01:39.310
+This view answers the completed-delivery question instead.
 
-02:08.868 --> 02:10.688
-The view answers a different question.
+01:39.310 --> 01:43.178
+The saved query describes the calculation: that is metadata.
 
-02:11.625 --> 02:14.448
-The comparison assumes every timestamp uses the same
+01:43.178 --> 01:45.792
+Its returned percentage is output data.
 
-02:14.448 --> 02:17.758
-fixed UTC text format, year first, through minutes.
+01:45.792 --> 01:49.775
+Reading the query reveals what it counts; it does not choose the business rule.
 
-02:17.758 --> 02:20.635
-For these values, text order matches time order.
+01:50.878 --> 01:53.199
+Try the page's metadata-map exercise.
 
-02:20.635 --> 02:23.532
-The TEXT declaration does not enforce that assumption.
+01:53.199 --> 01:55.963
+In Column's Example record, find delivered_at,
 
-02:23.532 --> 02:26.647
-The saved query is metadata describing a calculation.
+01:55.963 --> 01:58.562
+its declared type, and its not-null value.
 
-02:26.647 --> 02:29.054
-The percentage it returns is output data.
+01:58.562 --> 02:02.971
+Then select Saved query and compare its filter with Metric definition.
 
-02:29.054 --> 02:33.125
-Reading the query reveals what it counts; it does not establish the business rule.
+02:02.971 --> 02:07.781
+Explain what the database permits, what the values mean, and what the query counts.
 
-02:34.157 --> 02:36.855
-Catalogues have two overlapping jobs.
-
-02:36.855 --> 02:41.206
-Database and query-engine catalogues help software find and read data.
-
-02:41.206 --> 02:46.149
-Hive Metastore describes schemas, partitions such as a day’s deliveries, storage
-
-02:46.149 --> 02:48.241
-locations, and file formats.
-
-02:48.241 --> 02:52.277
-Discovery and governance catalogues help people understand and manage data.
-
-02:52.277 --> 02:55.221
-DataHub and OpenMetadata connect technical records
-
-02:55.221 --> 02:58.134
-with definitions, responsible teams, and lineage.
-
-02:58.134 --> 03:01.210
-These are main purposes, with overlap: database
-
-03:01.210 --> 03:03.642
-catalogues can hold comments or ownership too.
-
-03:04.619 --> 03:08.152
-Inspect the structure, then check the meaning and the calculation.
-
-03:08.152 --> 03:11.068
-Ask which promise is stored, what a missing time
-
-03:11.068 --> 03:14.363
-means, and which deliveries enter the denominator.
-
-03:14.363 --> 03:17.297
-Database metadata gives useful evidence.
-
-03:17.297 --> 03:20.386
-A trustworthy measure also needs an explicit definition.
+02:07.781 --> 02:11.912
+The page keeps the full SQL and catalogue comparison for reference.

@@ -563,14 +563,16 @@
     },
     {
       "chapter": "02",
-      "duration_seconds": 206.125,
-      "caption_cues": 62,
+      "duration_seconds": 137.7,
+      "caption_cues": 38,
       "end_card_seconds": 5,
+      "purpose": "Page learning aid: distinguish structure and meaning, predict the filter, compare with the business definition.",
+      "video_sha256": "e5a199d333e14961c0be6e1c9880703f1fa7f561a62058bbae731e0fb9548809",
       "scenes": [
         {
           "scene": 0,
-          "kind": "opening",
-          "raw_seconds": 16.16,
+          "kind": "schema",
+          "raw_seconds": 15.76,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -579,36 +581,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "A database records descriptions of its tables: column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let's inspect four invented deliveries stored in a table named deliveries, using sequel lite.",
+            "spoken_text": "The page's database records say delivered at declares text and allows null, a missing value. In this sequel lite table, the type declaration does not strictly enforce every stored value. What does a missing delivery time mean? Predict an answer before continuing.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "50e8efaa9653a5ea95f051c7f4b876e22550a3fe716bccbe5d64d59b006cabba",
-            "seed": 54,
+            "signature": "11c95b70d26ceac72cdccba333b0100fc41a205f76bc1dd1deec62fb5ad2218b",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
               },
               {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
               },
               {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
             "sdk_versions": {
@@ -619,22 +621,43 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 16.16,
-            "sha256": "772b4d00f19fad982548a72e06bb9176513fb6cfadf14f225e3a8a41fcada1cb"
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 15.76,
+            "sha256": "3969f15896e67797c00b98a5136b9aa3c8b07b9160e0f7b2020f2bf734409912"
           },
-          "unprompted_asr": "A database records descriptions of its tables, column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let's inspect four invented deliveries stored in a table named deliveries using SQLite.",
-          "asr_model": "small.en",
+          "unprompted_asr": "The page's database records say delivered at declares text and allows null, a missing value. In this SQL light table, the type declaration does not strictly enforce every stored value. What does a missing delivery time mean? Predict an answer before continuing.",
           "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
+            "matched_character_fraction": 0.9813953488372092,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "gh"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              }
+            ],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 4
         },
         {
           "scene": 1,
-          "kind": "columns",
-          "raw_seconds": 32.48,
+          "kind": "meaning",
+          "raw_seconds": 16.88,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -643,53 +666,62 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+            "spoken_text": "The column record cannot settle that. The parcel might be unfinished, the record might be awaiting an update, or the arrival time might be unknown. For this page's complete invented records, null means not yet delivered. Structure permits the value; the definition explains its meaning.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "2fbf50b5e3fac6a7942b6172535da663d420096d6bd9c924f5dec494b0fd30f5",
-            "reused_approved_reference": true,
-            "generation_method": "reused approved reference",
-            "original_generation": {
-              "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-              "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
-              "seed": 42
-            },
-            "sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "batch_members": []
-          },
-          "unprompted_asr": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 0.9893048128342246,
-            "differences": [
+            "signature": "82be34d63fc4d78097edfc4c4206043161f899e076cc51952c3e504561280ca1",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
               {
-                "operation": "delete",
-                "expected": "e",
-                "recognised": ""
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "operation": "delete",
-                "expected": "ue",
-                "recognised": ""
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "operation": "insert",
-                "expected": "",
-                "recognised": "gh"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "operation": "delete",
-                "expected": "e",
-                "recognised": ""
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 16.88,
+            "sha256": "845dc2a36e6b3fdb07b5b43a2bea97c3e60f5c78e2134d845dd931794c817634"
+          },
+          "unprompted_asr": "The column record cannot settle that. The parcel might be unfinished, the record might be awaiting an update, or the arrival time might be unknown. For this page's complete invented records, null means not yet delivered. Structure permits the value, the definition explains its meaning.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 2,
-          "kind": "meaning",
-          "raw_seconds": 18.96,
+          "kind": "promise",
+          "raw_seconds": 15.84,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -698,36 +730,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Those records describe structure, or schema. They do not explain every value. A missing delivery time could mean an unfinished parcel, a late update, or an unknown time. Assume these invented records are complete: here, null means the parcel has not yet been delivered. Meaning can also change without changing the schema.",
+            "spoken_text": "Meaning can change without a schema change. A parcel arrives at twelve twenty. Against the original noon promise, it is late. Against a revised twelve thirty promise, it is on time. The column name and type can stay the same. We must know which promise is stored.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "7de1582559a9773383eb22df10f92025dacde8913d6482e234c37159f4de20fd",
-            "seed": 48,
+            "signature": "21cca9754816cdad25332ad41c2ab8ea9c557be668dba244e5d562ebdfe55b45",
+            "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
-                "path": "out/q1-chapter-03/raw-08.wav"
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
-                "path": "out/q1-chapter-02/raw-02.wav"
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
-                "path": "out/q1-chapter-03/raw-05.wav"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
-                "path": "out/q1-chapter-03/raw-04.wav"
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
               },
               {
-                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
-                "path": "out/q1-chapter-03/raw-06.wav"
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
               },
               {
-                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
-                "path": "out/q1-chapter-03/raw-03.wav"
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
             "sdk_versions": {
@@ -738,22 +770,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 658.1016848320005,
-            "seconds": 18.96,
-            "sha256": "58a7b767b8a4293bb5990f86bad143d4e58df1a25081f845728b8737c284d79b"
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 15.84,
+            "sha256": "7fab2a5443de8aaf8a77a2c13a3dc1e357ec07c323c25fe27c4ac4a82ec7281c"
           },
-          "unprompted_asr": "Those records describe structure or schema. They do not explain every value. A missing delivery time could mean an unfinished parcel, a late update, or an unknown time. Assume these invented records are complete. Here, null means the parcel has not yet been delivered, meaning can also change without changing the schema.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Meaning can change without a schema change. A parcel arrives at 1220, against the original noon promise, it is late. Against a revised 1230 promise, it is on time. The column name and type can stay the same. We must know which promise is stored.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 3,
-          "kind": "promise",
-          "raw_seconds": 15.52,
+          "kind": "filter-question",
+          "raw_seconds": 14.0,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -762,36 +794,16 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Suppose the original promise was noon, revised to twelve thirty. A parcel arrives at twelve twenty. It is late against the original promise, but on time against the revision. We need to know which promise the column stores. Its name and type cannot settle that.",
+            "spoken_text": "Now inspect the saved query. A view is a named query; this sequel lite view recalculates when read. Focus on its filter: keep rows whose delivery time is not missing. Which parcel will that remove? Pause and point to it.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "c9e854f64e8cfabfda943ce07dde02e15fac11a6b35f68871aa8404d7a322fab",
-            "seed": 54,
-            "batch_size": 6,
+            "signature": "a48583a2d6bfcf01e73053d0eb9115887bf85b51ec035be84a3f035a3e3be281",
+            "seed": 42,
+            "batch_size": 1,
             "batch_members": [
               {
-                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
-                "path": "out/q1-chapter-02/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
-                "path": "out/q1-chapter-02/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
-                "path": "out/q1-chapter-03/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
-                "path": "out/q1-chapter-03/raw-01.wav"
-              },
-              {
-                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
-                "path": "out/q1-chapter-01/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
-                "path": "out/q1-chapter-01/raw-08.wav"
+                "spoken_sha256": "9084f3ed038feb3709338ca24f96338369710e6b924dbe527544162a2899eb66",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-03.wav"
               }
             ],
             "sdk_versions": {
@@ -802,22 +814,33 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 645.4415433430013,
-            "seconds": 15.52,
-            "sha256": "9505159b28287660ba1bed83f41113b4455957ca5b8acb2904808d235b229dc4"
+            "generation_batch_seconds": 68.80455335299985,
+            "seconds": 14.0,
+            "sha256": "267604bad773aa88d7000a44c3c933ec71eeeb264024c286a5b8ad1ffc94d3d0"
           },
-          "unprompted_asr": "Suppose the original promise was noon, revised to 1230. A parcel arrives at 1220. It is late against the original promise, but on time against the revision, we need to know which promise the column stores. Its name and type cannot settle that.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Now inspect the saved query. A view is a named query. This SQL lite view recalculates when read. Focus on its filter. Keep rows whose delivery time is not missing. Which parcel will that remove? Pause and point to it.",
           "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
+            "matched_character_fraction": 0.9827586206896551,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 4
         },
         {
           "scene": 4,
-          "kind": "view",
-          "raw_seconds": 21.76,
+          "kind": "filter-result",
+          "raw_seconds": 16.96,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -826,36 +849,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Now read the complete saved query. A view is a named query, readable like a table. This sequel lite view calculates its result whenever it is read. Its filter removes rows with a missing delivery time. It counts the remaining deliveries, counts those arriving by the stored promise, and calculates a percentage. The zero-denominator guard returns null if none are completed.",
+            "spoken_text": "The unfinished parcel has the missing time, so the filter removes it. Three completed deliveries remain, including the late one. Two were on time. Two out of three gives sixty six point seven percent. The example uses complete records and the page's fixed U T C time format.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "4d781af03ff6e32f034ac5643f5ee3ebf2b86128ca226d15ab6fd56c7adb0e8f",
+            "signature": "8b65a75e6073ed222ed3023ae7c679af5958849fc24678fb3fb61f2321326a2c",
             "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
               },
               {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
               },
               {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
             "sdk_versions": {
@@ -866,43 +889,28 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 21.76,
-            "sha256": "f2f4b0c4bbdc96b66097246a5e2d594abef36dccc95ec10004c09d56a7d789e8"
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 16.96,
+            "sha256": "381affd1ffa58f9d09c6f883c6c435b7530c0b6989aad8791c40c564a8e9c767"
           },
-          "unprompted_asr": "Now read the complete saved query. A view is a named query, readable like a table. This SQL light view calculates its result whenever it is read. Its filter removes rows with a missing delivery time. It counts the remaining deliveries, counts those arriving by the stored promise and calculates a percentage. The zero denominator guard returns null if none are completed.",
-          "asr_model": "small.en",
+          "unprompted_asr": "The unfinished parcel has the missing time, so the filter removes it. Three completed deliveries remain, including the late one. Two were on time. Two out of three gives 66.7 percent. The example uses complete records, and the page is fixed UTC time format.",
           "alignment": {
-            "matched_character_fraction": 0.9868421052631579,
+            "matched_character_fraction": 1.0,
             "differences": [
-              {
-                "operation": "delete",
-                "expected": "e",
-                "recognised": ""
-              },
-              {
-                "operation": "delete",
-                "expected": "ue",
-                "recognised": ""
-              },
               {
                 "operation": "insert",
                 "expected": "",
-                "recognised": "gh"
-              },
-              {
-                "operation": "delete",
-                "expected": "e",
-                "recognised": ""
+                "recognised": "i"
               }
             ],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 5,
-          "kind": "count",
-          "raw_seconds": 22.16,
+          "kind": "compare",
+          "raw_seconds": 18.64,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -911,36 +919,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "Here are the four deliveries, all promised by noon. Two arrived on time, one arrived late, and one is unfinished. The filter leaves three completed deliveries. Two on time out of three completed gives sixty six point seven percent. Delivery Operations needs all four deliveries due in the denominator. Two out of four gives fifty percent. The view answers a different question.",
+            "spoken_text": "Delivery Operations needs all four deliveries due, giving fifty percent. This view answers the completed-delivery question instead. The saved query describes the calculation: that is metadata. Its returned percentage is output data. Reading the query reveals what it counts; it does not choose the business rule.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "c807d6e8764a2671e502a6bfd02c68c88f82b055dd19ee8f49c473a0fb2890d9",
+            "signature": "b7b485b92beb2289513edaabdfcef308c914fa2176817e344020a7fad0e6892f",
             "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
               },
               {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
               },
               {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
             "sdk_versions": {
@@ -951,22 +959,22 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 22.16,
-            "sha256": "bee35a07225fe130600bf7ffa4837d180495f45c60f20a82b0c4dc3cbb9655cd"
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 18.64,
+            "sha256": "8a41609c4538adc7451b590fd8919ea2270ae3c3da619fbcd794389622a5e0c2"
           },
-          "unprompted_asr": "Here are the four deliveries, all promised by noon. Two arrived on time, one arrived late, and one is unfinished. The filter leaves three completed deliveries. Two on time out of three completed gives 66.7%. Delivery operations needs all four deliveries due in the denominator. Two out of four gives 50%. The view answers a different question.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Delivery operations needs all four deliveries due, giving 50 percent. This view answers the completed delivery question instead. The saved query describes the calculation, that is metadata. Its returned percentage is output data. Reading the query reveals what it counts. It does not choose the business rule.",
           "alignment": {
             "matched_character_fraction": 1.0,
             "differences": [],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          },
+          "hold_seconds": 0
         },
         {
           "scene": 6,
-          "kind": "assumptions",
-          "raw_seconds": 21.6,
+          "kind": "practice",
+          "raw_seconds": 21.52,
           "generation": {
             "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
             "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
@@ -975,36 +983,36 @@
             "device": "cpu",
             "dtype": "bfloat16",
             "threads": 4,
-            "spoken_text": "The comparison assumes every timestamp uses the same fixed U T C text format, year first, through minutes. For these values, text order matches time order. The text declaration does not enforce that assumption. The saved query is metadata describing a calculation. The percentage it returns is output data. Reading the query reveals what it counts; it does not establish the business rule.",
+            "spoken_text": "Try the page's metadata-map exercise. In Column's Example record, find delivered at, its declared type, and its not-null value. Then select Saved query and compare its filter with Metric definition. Explain what the database permits, what the values mean, and what the query counts. The page keeps the full SQL and catalogue comparison for reference.",
             "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
             "max_new_tokens": 1600,
-            "signature": "a3e88f1d5f40224018e5097f99215d6de29f04a0a2b4afbbecdc3834ff1a9285",
+            "signature": "46e6ad542f5e5b43dae3f8659d4bfc50c5a0e0c33127b75052924fb38d808d5f",
             "seed": 42,
             "batch_size": 6,
             "batch_members": [
               {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
+                "spoken_sha256": "25597da574b82fa6c9311bdf309e81bbdbed95fd398f1af21dbb324b875fe556",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-06.wav"
               },
               {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
+                "spoken_sha256": "51240efc773c700be12e78d2a27f2e66597542e7704355b13719e4406023246b",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-04.wav"
               },
               {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
+                "spoken_sha256": "dd1273582d1c4f71a54eed969b5ca7ba0dcf6f77892bd48c1e694ff2a173792e",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-02.wav"
               },
               {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
+                "spoken_sha256": "9ffaf042d412b5ac02d287bfe5d4231fbec43f91c0f46277ce1493e3f0a22ad3",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-05.wav"
               },
               {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
+                "spoken_sha256": "8aef61563013381a585b43a67ab064dfbc90e0919b2ea88521198338f3ab9e3d",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-01.wav"
               },
               {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
+                "spoken_sha256": "d2d4bd94289aff1d45b111ee962d4a774558b402001efa991e45dafc6ee9feee",
+                "path": "/workspace/metadata-book/out/q1-chapter-02/raw-00.wav"
               }
             ],
             "sdk_versions": {
@@ -1015,187 +1023,25 @@
               "numpy": "2.5.4",
               "soundfile": "0.14.0"
             },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 21.6,
-            "sha256": "cc92ebbe1ecb0fc5a3d258dca2d68837feb2133ff3afa67dc77fd5a837897676"
+            "generation_batch_seconds": 261.07158462999996,
+            "seconds": 21.52,
+            "sha256": "4975e7844d7f4ce6a2f7f3bbc4f202c91a67249dc072324cb843c85dd48bd91b"
           },
-          "unprompted_asr": "The comparison assumes every timestamp uses the same fixed UTC text format, year-first through minutes. For these values, text order matches time order. The text declaration does not enforce that assumption. The saved query is metadata describing a calculation. The percentage it returns is output data. Reading the query reveals what it counts. It does not establish the business rule.",
-          "asr_model": "small.en",
+          "unprompted_asr": "Try the page's metadata map exercise in columns example record find delivered at it's declared type and it's not null value Then select saved query and compare its filter with metric definition Explain what the database permits what the values mean and what the query counts The page keeps the full SQL and catalog comparison for reference",
           "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 7,
-          "kind": "catalogues",
-          "raw_seconds": 29.84,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Catalogues have two overlapping jobs. Database and query-engine catalogues help software find and read data. Hive Metastore describes schemas, partitions such as a day's deliveries, storage locations, and file formats. Discovery and governance catalogues help people understand and manage data. Data Hub and Open Metadata connect technical records with definitions, responsible teams, and lineage. These are main purposes, with overlap: database catalogues can hold comments or ownership too.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "7eee412400eaeeae08cafb0f105fb50e4870cf4e39db92dfe583a6292b924c69",
-            "seed": 42,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
-                "path": "out/q1-chapter-02/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
-                "path": "out/q1-chapter-02/raw-06.wav"
-              },
-              {
-                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
-                "path": "out/q1-chapter-02/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
-                "path": "out/q1-chapter-02/raw-04.wav"
-              },
-              {
-                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
-                "path": "out/q1-chapter-01/raw-05.wav"
-              },
-              {
-                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
-                "path": "out/q1-chapter-03/raw-02.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 811.1340120670002,
-            "seconds": 29.84,
-            "sha256": "057e85ced34fac0b7540e88c07530b15c54baf2f1a6726aa0f67e5214d7ef3e9"
-          },
-          "unprompted_asr": "Catalogs have two overlapping jobs. Database and Query Engine catalogs help software find and read data. Hive Metastore describes schemas, partitions such as a day's deliveries, storage locations, and file formats. Discovery and governance catalogs help people understand and manage data. Data Hub and Open Metadata connect technical records with definitions, responsible teams, and lineage. These are main purposes. With overlap, database catalogs can hold comments or ownership too.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 0.9804878048780488,
+            "matched_character_fraction": 0.9929078014184397,
             "differences": [
               {
                 "operation": "delete",
                 "expected": "ue",
                 "recognised": ""
-              },
-              {
-                "operation": "delete",
-                "expected": "ue",
-                "recognised": ""
-              },
-              {
-                "operation": "delete",
-                "expected": "ue",
-                "recognised": ""
-              },
-              {
-                "operation": "delete",
-                "expected": "ue",
-                "recognised": ""
               }
             ],
             "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
-        },
-        {
-          "scene": 8,
-          "kind": "recap",
-          "raw_seconds": 16.16,
-          "generation": {
-            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
-            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
-            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
-            "device": "cpu",
-            "dtype": "bfloat16",
-            "threads": 4,
-            "spoken_text": "Inspect the structure, then check the meaning and the calculation. Ask which promise is stored, what a missing time means, and which deliveries enter the denominator. Database metadata gives useful evidence. A trustworthy measure also needs an explicit definition.",
-            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
-            "max_new_tokens": 1600,
-            "signature": "208c3d24840e233542e9f19dd7fc198e975e1e000bc26b7760538988ed49eafc",
-            "seed": 60,
-            "batch_size": 6,
-            "batch_members": [
-              {
-                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
-                "path": "out/q1-chapter-03/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
-                "path": "out/q1-chapter-01/raw-00.wav"
-              },
-              {
-                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
-                "path": "out/q1-chapter-02/raw-08.wav"
-              },
-              {
-                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
-                "path": "out/q1-chapter-01/raw-03.wav"
-              },
-              {
-                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
-                "path": "out/q1-chapter-01/raw-07.wav"
-              },
-              {
-                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
-                "path": "out/q1-chapter-01/raw-01.wav"
-              }
-            ],
-            "sdk_versions": {
-              "qwen-tts": "0.1.1",
-              "torch": "2.15.0+cpu",
-              "torchaudio": "2.11.1+cpu",
-              "transformers": "4.57.3",
-              "numpy": "2.5.4",
-              "soundfile": "0.14.0"
-            },
-            "generation_batch_seconds": 530.6921104860012,
-            "seconds": 16.16,
-            "sha256": "a7418fb11b4c8ee68bf9bf66a2c25f383ff00cb093d355a0fa89a82878873fee"
           },
-          "unprompted_asr": "Inspect the structure, then check the meaning and the calculation. Ask which promise is stored, what a missing time means, and which deliveries enter the denominator. Database metadata gives useful evidence. A trustworthy measure also needs an explicit definition.",
-          "asr_model": "small.en",
-          "alignment": {
-            "matched_character_fraction": 1.0,
-            "differences": [],
-            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
-          }
+          "hold_seconds": 0
         }
-      ],
-      "spoken_wpm": 157.8298397040691,
-      "final_export": {
-        "chapter": "02",
-        "file": "chapter-02.mp4",
-        "sha256": "f6c16f5b25b6684c9cda95b3f4a7d889d894eb02731c7ee9c499597edadf9171",
-        "bytes": 5776153,
-        "duration_seconds": 206.2,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "caption_codec": "mov_text",
-        "dimensions": [
-          1280,
-          720
-        ],
-        "fps": "24/1",
-        "full_ffmpeg_decode": "passed",
-        "poster": "/workspace/metadata-book/out/q1-chapter-02/poster.jpg",
-        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-02/encoded-frames/contact-sheet.jpg"
-      }
+      ]
     },
     {
       "chapter": "03",

@@ -1,7 +1,7 @@
 {
   "title": "What a database already knows",
   "source_url": "https://snowch.github.io/metadata-book/chapters/02-reading-a-database.html",
-  "source_commit": "8a7f7e7516b2940d3ffbd5a32245c6fa144df77f",
+  "source_commit": "2e8ef28ff22e9416377dba77a7819ab6e397e57f",
   "book_url": "https://snowch.github.io/metadata-book/",
   "attribution": "Adapted from Metadata systems · Chapter 2",
   "voice": "Q1 — original warm British female (Qwen3-TTS)",
@@ -14,19 +14,19 @@
     "TEXT": "text",
     "UTC": "U T C",
     "DataHub": "Data Hub",
-    "OpenMetadata": "Open Metadata"
+    "OpenMetadata": "Open Metadata",
+    "delivered_at": "delivered at"
   },
-  "min_seconds": 180,
-  "max_seconds": 280,
+  "min_seconds": 100,
+  "max_seconds": 220,
   "font_dir": "/usr/share/fonts/truetype/dejavu",
   "illustration_sheet": null,
   "pronunciation_review_terms": [
-    "Hive Metastore",
     "schema",
-    "primary key",
     "not-null",
-    "denominator",
-    "lineage"
+    "Delivery Operations",
+    "metadata",
+    "SQL"
   ],
   "speech_engine": {
     "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
@@ -34,5 +34,7 @@
     "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
     "reference_origin": "Original synthetic Q1 voice, designed with Qwen3-TTS-12Hz-1.7B-VoiceDesign at revision 5ecdb67327fd37bb2e042aab12ff7391903235d3; user approved",
     "timing_source": "Independent unprompted ASR aligned to canonical spoken text"
-  }
+  },
+  "purpose": "Page learning aid: distinguish structure and meaning, predict the filter, compare with the business definition.",
+  "practice_label": "Column → Saved query → Metric definition: explain the differences."
 }

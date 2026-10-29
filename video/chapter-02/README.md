@@ -23,6 +23,16 @@ Working outputs are ignored `out/q1-chapter-02/`. Set `EXPLAINER_OUT` for the ch
 
 Speech uses the local pinned Qwen Base model and approved synthetic Q1 reference. See the [Q1 production instructions](../qwen-production/README.md) for model download, reference provenance and alignment limitations.
 
-The [shared pronunciation workflow](../README.md) is mandatory after synthesis and before rendering, including after pronunciation changes. Automated ASR is not proof that a term sounds correct; do not claim a listening review without one. Final content, visual, caption and playback checks are also required. No publication or final-media copy is performed by these source scripts.
+The [shared pronunciation workflow](../README.md) is mandatory after synthesis and before rendering, including after pronunciation changes. Automated ASR is not proof that a term sounds correct; do not claim a listening review without one. Final content, visual, caption and playback checks are also required. Synthesis and rendering do not publish; the explicit packaging step below copies final media locally.
 
 `preview.py` composes static PNGs and a contact sheet from the real timings without encoding video. Use it for visual review before the full render. The [export review](review.md) records the checks and limitations for the published version. Final media is embedded in Chapter 2 from `assets/video/chapter-02/`, with no autoplay or MP4 preload, captions and a transcript. `watch.html` can be copied alongside the exported media for a local preview.
+
+## Page learning aid revision
+
+The new script reinforces structure versus meaning and the saved query's filter.
+It includes two four-second prediction holds and returns to the existing page
+exercise. Full SQL and the catalogue comparison remain on the page. The renderer
+uses `../learning_aid.py`; the Q1 speech workflow is unchanged. After the standard
+pronunciation check and render, run the shared `verify_learning_aid.py`,
+`package_learning_aid.py` and `verify_learning_aid_browser.py` with `--chapter 02`,
+as documented in `video/README.md`. See `review.md` for actual export evidence.
