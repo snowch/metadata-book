@@ -1,0 +1,32 @@
+{
+  "title": "Using metadata to make decisions",
+  "source_url": "https://snowch.github.io/metadata-book/chapters/07-using-metadata.html",
+  "source_commit": "3d0bc41bfaf84375181b5fb35aebe8a4346c0d7a",
+  "book_url": "https://snowch.github.io/metadata-book/",
+  "attribution": "Adapted from Metadata systems · Chapter 7",
+  "voice": "Q1 — original warm British female (Qwen3-TTS)",
+  "rate": "natural",
+  "pronunciation": {},
+  "min_seconds": 90,
+  "max_seconds": 260,
+  "font_dir": "/usr/share/fonts/truetype/dejavu",
+  "illustration_sheet": null,
+  "pronunciation_review_terms": [
+    "denominator",
+    "identifiers",
+    "uniqueness",
+    "completeness",
+    "contract",
+    "publication"
+  ],
+  "speech_engine": {
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+    "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+    "reference_origin": "Original synthetic Q1 voice, designed with Qwen3-TTS-12Hz-1.7B-VoiceDesign at revision 5ecdb67327fd37bb2e042aab12ff7391903235d3; user approved",
+    "timing_source": "Independent unprompted ASR aligned to canonical spoken text"
+  },
+  "purpose": "Choose a measure by its denominator and explain why passed input checks do not establish a ready report publication.",
+  "practice_label": "Map: Quality check → Decision; name the missing publication evidence.",
+  "example_note": "The examples are invented. Narration uses the approved synthetic Q1 voice."
+}
