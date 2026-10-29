@@ -1,0 +1,17 @@
+Managing definitions and dataset changes
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/10-managing-changes.html
+
+Use the page's separate hypothetical change, not a change to the book's database. A parcel arrives at twelve twenty. Its original promise was noon; its revised promise is twelve thirty. The producer wants promised_at to mean the revised promise, keeping the same name and type. What changes for an on-time measure and an all-due denominator? Pause and explain.
+
+The parcel is late against noon, but on time against twelve thirty. Changing the promise also moves it outside deliveries due by noon. An unchanged schema does not preserve agreed meaning. Keep the proposal pending beside the current agreement until reviewed. The producer and both consuming teams must review their calculations and affected uses, including consumers missing from recorded dependencies.
+
+The hypothetical alternative keeps promised_at and adds revised_promise_at. The producer and both consumers approve the design on second November, with effect from fifth November at one in the afternoon, UTC. Consumer attachments, validation results and a rollout plan are still required. Does design approval alone permit publication? Explain what must happen first, then pause.
+
+Release remains pending. The steward must confirm the consumer evidence, and the producer must supply validation and a rollout plan. Each consumer records its chosen promise rule, including treatment of an absent revision. Adding a field does not migrate consumers. After release, attach actual run, input, output and report refresh references; a planned date cannot prove delivery.
+
+Keep responsibilities and history explicit. The steward coordinates review; business teams decide their definitions. An ownership transfer remains pending until the new team accepts it. If owners and consumers approve restating history, publish a new output linked to the old one, the definition, retained inputs, code and approval. Preserve the earlier report so readers can still explain what they saw.
+
+Try the page's map exercise. In Data contract's Example record, read deliveries-v1: what does promised_at mean, and who must agree before it changes? Explain why keeping the column name and type is insufficient, then use Check your answer. The contract records a requirement; it does not establish approval or release. The page retains the complete alternative field definition and evidence requirements.

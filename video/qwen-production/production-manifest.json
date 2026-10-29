@@ -4387,6 +4387,433 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "10",
+      "duration_seconds": 152.2,
+      "caption_cues": 40,
+      "end_card_seconds": 5,
+      "purpose": "Explain semantic incompatibility despite an unchanged schema, and distinguish an approved design from evidence-backed release.",
+      "video_sha256": "fcbd3ca3df09ab879b8512286edb11a08bdffb6a289a34cd22198ed3699fcd4f",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "meaning-question",
+          "raw_seconds": 20.32,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Use the page's separate hypothetical change, not a change to the book's database. A parcel arrives at twelve twenty. Its original promise was noon; its revised promise is twelve thirty. The producer wants promised at to mean the revised promise, keeping the same name and type. What changes for an on-time measure and an all-due denominator? Pause and explain.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "f0929d660799b5f69f39279ba22a61d66880a637e845ee379cc96814cae86f29",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 20.32,
+            "sha256": "710d37e84afd10a0a3c24c563cc26b37b8e73376803eaa9add5a119e28605740"
+          },
+          "unprompted_asr": "Use the page's separate hypothetical change, not a change to the book's database. A parcel arrives at 1220. Its original promise was noon. Its revised promise is 1230. The producer wants promised at to mean the revised promise, keeping the same name and type. What changes for an on-time measure and an all-due denominator? Pause and explain.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "meaning-answer",
+          "raw_seconds": 21.2,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The parcel is late against noon, but on time against twelve thirty. Changing the promise also moves it outside deliveries due by noon. An unchanged schema does not preserve agreed meaning. Keep the proposal pending beside the current agreement until reviewed. The producer and both consuming teams must review their calculations and affected uses, including consumers missing from recorded dependencies.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "0d82240b6d39bd72da4006536d52ae6eb5d56bb5a62e3898074bc3e1e998b816",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 21.2,
+            "sha256": "19026ff810eaf94a20ca3fd8a7f72ce59717de57f96553343a99b1661ccada45"
+          },
+          "unprompted_asr": "The parcel is late against noon, but on time against 12.30. Changing the promise also moves it outside deliveries due by noon. An unchanged schema does not preserve agreed meaning, keep the proposal pending beside the current agreement until reviewed. The producer and both consuming teams must review their calculations and affected uses, including consumers missing from recorded dependencies.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "release-question",
+          "raw_seconds": 23.52,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The hypothetical alternative keeps promised at and adds revised promise at. The producer and both consumers approve the design on second November, with effect from fifth November at one in the afternoon, U T C. Consumer attachments, validation results and a rollout plan are still required. Does design approval alone permit publication? Explain what must happen first, then pause.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "31ea0dc3d554c56583e86bb771ffd8c0350fa3a9f04793f5feb1684586a91531",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 23.52,
+            "sha256": "a51b3ac0edc43118783a905c5c049a23a45a38cb5621cf86eb99a8b7c9eb771d"
+          },
+          "unprompted_asr": "The hypothetical alternative keeps promised at and adds revised promise at. The producer and both consumers approved the design on 2nd November, with effect from 5th November at 1 in the afternoon. UTC. Consumer attachments, validation results, and a rollout plan are still required. Does design approval alone permit publication? Explain what must happen first, then pause.",
+          "alignment": {
+            "matched_character_fraction": 0.9872611464968153,
+            "differences": [
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "d"
+              },
+              {
+                "operation": "replace",
+                "expected": "sec",
+                "recognised": "tw"
+              },
+              {
+                "operation": "replace",
+                "expected": "f",
+                "recognised": "ve"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 3,
+          "kind": "release-answer",
+          "raw_seconds": 21.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Release remains pending. The steward must confirm the consumer evidence, and the producer must supply validation and a rollout plan. Each consumer records its chosen promise rule, including treatment of an absent revision. Adding a field does not migrate consumers. After release, attach actual run, input, output and report refresh references; a planned date cannot prove delivery.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d3525b0ce84ebc869a2abe4d033c448251775420dfacd109a3495e8ab2c24fe6",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 21.36,
+            "sha256": "a786ebba370a31130510337cc63c65b151f486b756c9e5da3df78c5a8db64a2a"
+          },
+          "unprompted_asr": "Release remains pending. The steward must confirm the consumer evidence and the producer must supply validation and a rollout plan. Each consumer records its chosen promise rule, including treatment of an absent revision. Adding a field does not migrate consumers. After release, attach actual run, input, output and report refresh references. A plan date cannot prove delivery.",
+          "alignment": {
+            "matched_character_fraction": 0.9904761904761905,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ned",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "history",
+          "raw_seconds": 23.6,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Keep responsibilities and history explicit. The steward coordinates review; business teams decide their definitions. An ownership transfer remains pending until the new team accepts it. If owners and consumers approve restating history, publish a new output linked to the old one, the definition, retained inputs, code and approval. Preserve the earlier report so readers can still explain what they saw.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "4186ee7d9ed2fb38884a366728f493e149aab701d40c99e33d77c6ee2b86c230",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 23.6,
+            "sha256": "5b505b6317b8ddbe99adaab8a1adec418d2a918c41bbb092769f06f2ebd4dda2"
+          },
+          "unprompted_asr": "Keep responsibilities and history explicit. The steward coordinates review. Business teams decide their definitions. An ownership transfer remains pending until the new team accepts it. If owners and consumers approve restating history, publish a new output linked to the old one. The definition, retained inputs, code, and approval. Preserve the earlier report so readers can still explain what they saw.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "practice",
+          "raw_seconds": 24.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. In Data contract's Example record, read deliveries version one: what does promised at mean, and who must agree before it changes? Explain why keeping the column name and type is insufficient, then use Check your answer. The contract records a requirement; it does not establish approval or release. The page retains the complete alternative field definition and evidence requirements.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "4d8940a280a3d8c7d5b961ded285fdcd93f4c406d4667f62c9eba52c44bb6fdf",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "5d92e7142163b0e0f40f61c9ed9a1bbbb32181cc267f71bcc460517a57a9130e",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "c3ed865fb5eb54d3933e91813ee3b9ee22098ef755ddcb114a36245e8cd39b3c",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "f1c3130730d5526163fe4b7f14fb41e9297ed95faae97a2dcbae0db63efccc20",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9517c47135e468e3cbfc86f664422d5a071e39f10542d8a12710e4019432b779",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "4743f581c5e5ac939c764dc9cccb22b221fe62f14e009dd4ec0a07a4d720dcb1",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "e28e39a2ac72a539806bafecd9a44bb869de45b08f32ee9549ed9e568f5a8af7",
+                "path": "/workspace/metadata-book/out/q1-chapter-10/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 262.53208167900084,
+            "seconds": 24.8,
+            "sha256": "2bba18b42b95366a72beb612d6c971922effc000df219a29660e8db386c57fa4"
+          },
+          "unprompted_asr": "Try the page's map exercise. In data contracts example record, red deliveries version 1, what does promised it mean, and who must agree before it changes. Explain why keeping the column name and type is insufficient, then use check your answer. The contract records a requirement, it does not establish approval or release. The page retains the complete alternative field definition and evidence requirements.",
+          "alignment": {
+            "matched_character_fraction": 0.9940828402366864,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "a",
+                "recognised": ""
+              },
+              {
+                "operation": "replace",
+                "expected": "a",
+                "recognised": "i"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }

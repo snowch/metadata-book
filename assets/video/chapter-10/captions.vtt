@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00.253 --> 00:04.440
+Use the page's separate hypothetical change, not a change to the book's database.
+
+00:04.440 --> 00:06.620
+A parcel arrives at twelve twenty.
+
+00:06.620 --> 00:10.767
+Its original promise was noon; its revised promise is twelve thirty.
+
+00:10.767 --> 00:12.912
+The producer wants promised_at to mean the
+
+00:12.912 --> 00:15.731
+revised promise, keeping the same name and type.
+
+00:15.731 --> 00:19.280
+What changes for an on-time measure and an all-due denominator?
+
+00:19.280 --> 00:20.446
+Pause and explain.
+
+00:25.292 --> 00:28.947
+The parcel is late against noon, but on time against twelve thirty.
+
+00:28.947 --> 00:32.805
+Changing the promise also moves it outside deliveries due by noon.
+
+00:32.805 --> 00:35.846
+An unchanged schema does not preserve agreed meaning.
+
+00:35.846 --> 00:39.204
+Keep the proposal pending beside the current agreement until reviewed.
+
+00:39.204 --> 00:43.227
+The producer and both consuming teams must review their calculations and affected
+
+00:43.227 --> 00:46.249
+uses, including consumers missing from recorded dependencies.
+
+00:47.208 --> 00:51.715
+The hypothetical alternative keeps promised_at and adds revised_promise_at.
+
+00:51.715 --> 00:56.474
+The producer and both consumers approve the design on second November, with effect
+
+00:56.474 --> 01:00.162
+from fifth November at one in the afternoon, UTC.
+
+01:00.162 --> 01:04.777
+Consumer attachments, validation results and a rollout plan are still required.
+
+01:04.777 --> 01:07.581
+Does design approval alone permit publication?
+
+01:07.581 --> 01:10.498
+Explain what must happen first, then pause.
+
+01:15.513 --> 01:17.267
+Release remains pending.
+
+01:17.267 --> 01:20.982
+The steward must confirm the consumer evidence, and the producer must supply
+
+01:20.982 --> 01:22.753
+validation and a rollout plan.
+
+01:22.753 --> 01:25.322
+Each consumer records its chosen promise rule,
+
+01:25.322 --> 01:27.244
+including treatment of an absent revision.
+
+01:27.244 --> 01:29.674
+Adding a field does not migrate consumers.
+
+01:29.674 --> 01:35.168
+After release, attach actual run, input, output and report refresh references; a
+
+01:35.168 --> 01:36.630
+planned date cannot prove delivery.
+
+01:37.552 --> 01:40.289
+Keep responsibilities and history explicit.
+
+01:40.289 --> 01:44.722
+The steward coordinates review; business teams decide their definitions.
+
+01:44.722 --> 01:48.697
+An ownership transfer remains pending until the new team accepts it.
+
+01:48.697 --> 01:53.267
+If owners and consumers approve restating history, publish a new output linked to the
+
+01:53.267 --> 01:57.440
+old one, the definition, retained inputs, code and approval.
+
+01:57.440 --> 02:00.998
+Preserve the earlier report so readers can still explain what they saw.
+
+02:02.068 --> 02:04.150
+Try the page's map exercise.
+
+02:04.150 --> 02:10.143
+In Data contract's Example record, read deliveries-v1: what does promised_at mean, and
+
+02:10.143 --> 02:12.214
+who must agree before it changes?
+
+02:12.214 --> 02:14.586
+Explain why keeping the column name and type
+
+02:14.586 --> 02:17.511
+is insufficient, then use Check your answer.
+
+02:17.511 --> 02:22.181
+The contract records a requirement; it does not establish approval or release.
+
+02:22.181 --> 02:26.375
+The page retains the complete alternative field definition and evidence requirements.
