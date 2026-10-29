@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.450 --> 00:04.153
+Production and testing both have a table called delivery_summary.
+
+00:04.153 --> 00:07.445
+A database scan and a scheduler describe that name.
+
+00:07.445 --> 00:10.480
+Is the matching table name enough to join their claims?
+
+00:10.480 --> 00:12.275
+Pause and explain what else you need.
+
+00:17.125 --> 00:20.008
+Distinguish the environment, database and table.
+
+00:20.008 --> 00:22.979
+The catalogue uses prod/parcels/delivery_summary
+
+00:22.979 --> 00:25.933
+for production and a separate test identifier.
+
+00:25.933 --> 00:28.744
+Sources must agree which dataset they mean,
+
+00:28.744 --> 00:31.261
+recording a correspondence when names differ.
+
+00:31.261 --> 00:35.941
+A reused name may identify an unrelated replacement, so check identity before
+
+00:35.941 --> 00:37.203
+attaching old explanations.
+
+00:38.337 --> 00:41.133
+Now assemble the page's invented catalogue entry.
+
+00:41.133 --> 00:44.758
+The database scan establishes that a percentage column exists.
+
+00:44.758 --> 00:48.216
+The scheduler reports which run published an output version.
+
+00:48.216 --> 00:52.419
+Service Analytics supplies the intended completed-delivery definition.
+
+00:52.419 --> 00:55.935
+These are separate claims about the same production dataset.
+
+00:55.935 --> 01:00.827
+An output version identifies one result; it does not replace the dataset identifier.
+
+01:01.833 --> 01:03.299
+Look at the scan's times.
+
+01:03.299 --> 01:06.079
+It observed the column at nine in the morning; the
+
+01:06.079 --> 01:08.858
+catalogue received the record at two minutes past nine.
+
+01:08.858 --> 01:10.860
+When was the column created?
+
+01:10.860 --> 01:13.772
+Explain what those two times can establish before continuing.
+
+01:18.722 --> 01:22.833
+Its creation time is unknown unless the source supplies that evidence.
+
+01:22.833 --> 01:27.718
+Nine is the observation time; two minutes past nine is collection time.
+
+01:27.718 --> 01:32.135
+For the scheduler record, completion occurred at five minutes past nine and collection
+
+01:32.135 --> 01:33.875
+followed a minute later.
+
+01:33.875 --> 01:37.266
+Arrival at the catalogue does not change when the source event occurred.
+
+01:38.184 --> 01:40.568
+Keep each source attached to its claim.
+
+01:40.568 --> 01:43.799
+The scan cannot identify the run that wrote the values.
+
+01:43.799 --> 01:48.317
+The definition explains intended meaning, but does not prove the calculation follows
+
+01:48.317 --> 01:51.333
+it; inspect the run's inputs and code for that.
+
+01:51.333 --> 01:55.074
+The last record collected is not automatically an authority for every fact.
+
+01:56.082 --> 01:58.637
+Keep responsibility explicit too.
+
+01:58.637 --> 02:02.388
+Service Analytics accepted responsibility in its definition record.
+
+02:02.388 --> 02:06.518
+Importing a team name alone does not establish that agreement or make the collector's
+
+02:06.518 --> 02:08.882
+operator responsible for the metric's meaning.
+
+02:08.882 --> 02:13.017
+Collecting descriptions brings evidence together; it does not settle every question.
+
+02:14.253 --> 02:16.232
+Try the page's map exercise.
+
+02:16.232 --> 02:19.185
+In Source observation's Example record, find the
+
+02:19.185 --> 02:23.056
+dataset, source, observation time and collection time.
+
+02:23.056 --> 02:25.654
+Follow Collection run to check its scope.
+
+02:25.654 --> 02:29.318
+Then inspect Run: it belongs to a different day's incident.
+
+02:29.318 --> 02:33.164
+Those examples cannot be joined just because nearby cards look related.
+
+02:33.164 --> 02:35.968
+Explain the scan's limits, then use Check your answer.
