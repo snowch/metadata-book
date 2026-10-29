@@ -1,20 +1,31 @@
-# Chapter 3 video contract and scene plan
+# Chapter 3 page learning aid: follow the evidence behind 100%
 
-Source: [Chapter 3](../../chapters/03-following-lineage.md), metadata-book commit `0fcdc702f0559c363876b5777b7034ea929a17b6`. Production method: the [authored video workflow](https://github.com/snowch/explainer-video-generator/blob/20ef33571f5b737c4fa267427964593836182205/docs/agent-video-workflow.md).
+Source: `chapters/03-following-lineage.md` and retained lineage SQL examples at
+`c144d0f04f3d6f6737c812e4836b4e0c49266856`. Audience: report readers and engineers.
+After watching, readers should follow matching identifiers from a report refresh
+to its saved output and producing run, inspect its retained input/code, and
+explain why the result was 100% without inferring that it remained current.
 
-Audience: report readers and engineers. After watching, a reader should follow matching identifiers from a displayed number to the run, retained input and code that explain it. Approximately 3–4 minutes, one calm British narrator, cream/rust/green book palette. No music, dramatic hook or unrelated artwork. Exact narration lives in `narration.json`. Coded report and record diagrams explain relationships. This is an invented SQLite-backed example, not a production incident. It explains why 100% was calculated, without claiming it was current at the 13:00 refresh or introducing Chapter 4's recovery.
+The approved Q1 original synthetic voice, book palette and coded figures are
+retained. The page supplies complete lineage/provenance definitions and record
+fields. The video demonstrates their use through one evidence trail. A persistent
+four-step trail appears during investigation, with the current step highlighted.
+Its arrows mean following references backwards, not the direction of data flow.
 
-| Scene | Chapter source | Visual and timing | Interpretation guard |
+| Scene | Page source / learning task | Visual / timing | Interpretation guard |
 |---|---|---|---|
-| opening | Opening paragraph | Report display: 100%; completed-delivery measure; 13:00 UTC, 19 Oct 2026; invented example | Do not imply all four due parcels are the denominator. |
-| route | Follow the route | Delivery records → scheduled job → saved output → report, with the report highlighted as its role is spoken | Arrows here mean data flow, not foreign keys. Refresh does not execute job. |
-| distinction | Lineage and provenance | Complete definitions side by side, with the overlap and dependency-path limit stated beneath | Both can include transformations and actors; avoid how-versus-who simplification. |
-| refresh | Which result did the report read? | F1300 card; highlight output_version summary-R1205 at the identifier cue | Refresh time does not establish result age. |
-| output | Which result did the report read? | Matching output identifiers on two cards; show run R1205 and 12:05 publication; 55-minute interval | Inspection follows references backwards; state this direction explicitly in the scene subtitle. |
-| run | Which inputs and calculation produced 100%? | Run R1205 → input S1205 and code completed-v1; reveal both references as spoken | References do not themselves preserve rows or SQL. |
-| snapshot | Saved input S1205 | Four-row table; 11:50, NULL, 11:40, NULL; promised noon | Empty means unfinished only under complete-example assumption. This is the 12:05 input, not today's table. |
-| calculation | Retained calculation | Exclude empty completion times; highlight D101/D103; 2/2 = 100% reveal | Do not substitute the later three-completed input; distinguish saved data from metadata references. |
-| recap | Core points and Chapter 4 transition | Reference trail: refresh → output → run, branching to input/code | Arrows mean investigation, not processing order. Correct for retained input does not establish currency at refresh. |
-| end | Attribution | Source chapter title and book link; synthetic-voice disclosure; five-second silent hold | No new claim or unverified copyright. |
+| report-question | Opening and refresh record | 100% /13:00; ask whether refresh time establishes calculation time; four-second hold | Completed-delivery measure; invented incident; no answer during hold |
+| route | Follow the route | Separate job→saved-result and saved-result→report actions | Refresh does not run calculation; do not substitute latest run |
+| output | Which result did report read? | Match summary-R1205 on F1300 and output cards; reveal 55-minute gap and R1205 at speech cue | Publication 12:05 differs from refresh 13:00; identifier is evidence, not a timestamp parsed from its name |
+| run-question | Which inputs/calculation? | R1205 branches to S1205 and completed-v1; ask if today's table suffices; four-second hold | References identify retained evidence; labels alone do not reproduce data/code |
+| snapshot | Saved input S1205 | D101 11:50, D102 NULL, D103 11:40, D104 NULL; all promised noon | Complete retained 12:05 example, not the later input from Chapters 1–2 |
+| calculation | Retained completed-v1 | Exclude D102/D104, retain D101/D103; reveal 2/2=100% at cue | Correct result for these inputs and this completed-only rule; no all-due substitution |
+| meaning | Provenance / core points | Brief labels after demonstration; full definitions remain on page | Terms overlap; explaining 100% does not establish currency at refresh |
+| practice | Existing reader action | Report refresh → Published output → Run → input/code | Explain first, then use page answer; map uses the same identifiers |
+| end | Return / attribution | Five-second practice card | No new claim |
 
-Scene reveals and captions use fresh ASR alignment estimates to the canonical spoken text; unmatched words are explicitly flagged in the timing metadata. Manual source and visual review are separate from automatic transcription; no listening review is claimed. Display IDs stay exact while the pronunciation map makes them speakable.
+Exact authored narration is `narration.json`. Fresh independent unprompted ASR
+supplies estimated word/sentence timing; no provider-boundary or listening claim.
+Four-second `hold_seconds` values add silence after question speech and captions,
+with the answer in the next scene. Review source meaning, recognition differences,
+encoded frames and browser behaviour separately before packaging and merging.

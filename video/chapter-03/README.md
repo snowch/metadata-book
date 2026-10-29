@@ -1,6 +1,6 @@
 # Chapter 3 explainer video
 
-A standalone narrated adaptation of [Where did this number come from?](../../chapters/03-following-lineage.md). The report’s 100% result is traced through a refresh, published output, producing run, retained input and code.
+An embedded learning aid for [Where did this number come from?](../../chapters/03-following-lineage.md). The report’s 100% result is traced through a refresh, published output, producing run, retained input and code.
 
 Production follows the [authored video workflow](https://github.com/snowch/explainer-video-generator/blob/20ef33571f5b737c4fa267427964593836182205/docs/agent-video-workflow.md). Speech synthesis and audio-audit helpers are adapted from that repository's `examples/approved-narration/`; the renderer and scene plan are specific to this chapter. No reference-video artwork or unrelated narrative is reused.
 
@@ -9,11 +9,11 @@ Production follows the [authored video workflow](https://github.com/snowch/expla
 - `narration.json`: exact display narration, in complete scene passages.
 - `project.json`: source, attribution, voice, pronunciation and duration contract.
 - `scene-plan.md`: chapter-to-scene source trail and visual interpretation checks.
-- `render.py`: record cards, reference arrows, staged highlights and the retained input table.
+- `render.py` and `../learning_aid.py`: record cards, investigation trail, reference arrows, staged highlights and retained-input parcels.
 - `synthesize.py`: cached scene speech, fresh ASR alignment estimates, sentence cues and captions.
 - `audit_audio.py`: automated transcription; it does not establish a listening review.
 
-The source is pinned to metadata-book commit `0fcdc702f0559c363876b5777b7034ea929a17b6`. Recovery belongs to Chapter 4 and is outside this video; the complete-record assumption is stated explicitly. No actual customer records appear.
+The source is pinned to metadata-book commit `c144d0f04f3d6f6737c812e4836b4e0c49266856`. Recovery belongs to Chapter 4 and is outside this video; the complete-record assumption is stated explicitly. No actual customer records appear.
 
 ## Rebuild
 
@@ -42,7 +42,7 @@ Follow the [pronunciation audit workflow](../README.md#audit-pronunciation-after
 
 ```sh
 /tmp/qwen-venv/bin/python video/chapter-03/audit_audio.py
-/tmp/qwen-venv/bin/python video/chapter-03/audit_audio.py --model small.en --scenes 2,3,4,5,8
+/tmp/qwen-venv/bin/python video/chapter-03/audit_audio.py --model small.en --scenes 0,2,3,4,6
 ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,duration -of json out/q1-chapter-03/chapter-03.mp4
 ffmpeg -hide_banner -loglevel error -i out/q1-chapter-03/chapter-03.mp4 -f null -
 ```
@@ -53,6 +53,17 @@ For a partial visual rebuild, `render.py --only 1 --no-mux` renders only scene 1
 
 ## Sharing and embedding
 
-Chapter 3 embeds the final MP4, captions, poster and transcript from `assets/video/chapter-03/`, published with the book. This deliberate final-media copy is about 5 MB; working audio, clips, generated layers and model weights remain outside git. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. The chapter embed uses `preload="none"` so the video is not fetched until requested; the poster and resource links remain visible. Check actual media URLs after each publication.
+Chapter 3 embeds the final MP4, captions, poster and transcript from `assets/video/chapter-03/`, published with the book. This deliberate final-media copy is packaged with the chapter; working audio, clips, generated layers and model weights remain outside git. A local `watch.html` is supplied with the export for preview through a static HTTP server. It uses playback controls, WebVTT captions, a transcript link, and a visible invented-example and synthetic-voice disclosure. No autoplay is enabled. The chapter embed uses `preload="none"` so the video is not fetched until requested; the poster and resource links remain visible. Check actual media URLs after each publication.
 
 See [review.md](review.md) for the measured result and checks performed on this export. No human listening review is claimed.
+
+## Page learning aid revision
+
+The revised video demonstrates the evidence trail before introducing terminology.
+Two four-second explanation holds test refresh versus recalculation and retained
+input versus today's table. A persistent investigation trail guides the viewer;
+full definitions and record fields stay on the page. The renderer uses
+`../learning_aid.py`. After standard Q1 synthesis, pronunciation screening and
+rendering, run the shared export verification, packaging and browser verification
+scripts with `--chapter 03`, as documented in `video/README.md`. Actual review
+evidence and listening limitations are in `review.md`.

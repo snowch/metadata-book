@@ -1,0 +1,167 @@
+1
+00:00:00,255 --> 00:00:05,547
+At one in the afternoon, Service Analytics' report shows 100%: the percentage of
+
+2
+00:00:05,547 --> 00:00:07,782
+completed deliveries that arrived on time.
+
+3
+00:00:07,782 --> 00:00:09,934
+Unfinished parcels are excluded.
+
+4
+00:00:09,934 --> 00:00:12,012
+This is the page's invented incident.
+
+5
+00:00:12,012 --> 00:00:15,252
+Does the report's refresh time tell us when the number was calculated?
+
+6
+00:00:15,252 --> 00:00:16,426
+Pause and explain.
+
+7
+00:00:21,425 --> 00:00:22,041
+No.
+
+8
+00:00:22,041 --> 00:00:24,404
+This report reads a saved result.
+
+9
+00:00:24,404 --> 00:00:26,718
+Refreshing it does not rerun the job.
+
+10
+00:00:26,718 --> 00:00:31,041
+To explain this number, follow the matching identifiers, starting with the refresh
+
+11
+00:00:31,041 --> 00:00:34,232
+record, rather than simply inspecting the latest successful run.
+
+12
+00:00:35,281 --> 00:00:39,973
+Refresh F1300 read summary-R1205.
+
+13
+00:00:39,973 --> 00:00:42,778
+Follow that exact output identifier.
+
+14
+00:00:42,778 --> 00:00:47,466
+Its matching output was published at twelve oh five, fifty-five minutes before the
+
+15
+00:00:47,466 --> 00:00:50,962
+refresh, and names producing run R1205.
+
+16
+00:00:50,962 --> 00:00:53,089
+We now have the execution to investigate.
+
+17
+00:00:54,083 --> 00:00:59,658
+The run points to saved input S1205 and retained code completed-v1.
+
+18
+00:00:59,658 --> 00:01:03,606
+A snapshot is a saved copy of the input at a particular time.
+
+19
+00:01:03,606 --> 00:01:07,012
+Would today's deliveries table be enough to reproduce this result?
+
+20
+00:01:07,012 --> 00:01:08,621
+Explain before continuing.
+
+21
+00:01:13,737 --> 00:01:14,662
+No.
+
+22
+00:01:14,662 --> 00:01:16,798
+Today's data and code may differ.
+
+23
+00:01:16,798 --> 00:01:19,665
+Inspect this run's retained input and calculation.
+
+24
+00:01:19,665 --> 00:01:24,134
+At twelve oh five, two parcels had arrived on time and two were unfinished.
+
+25
+00:01:24,134 --> 00:01:26,047
+All four were due by noon.
+
+26
+00:01:26,047 --> 00:01:28,040
+Assume the invented records are complete.
+
+27
+00:01:29,063 --> 00:01:32,427
+The retained calculation excludes the unfinished parcels.
+
+28
+00:01:32,427 --> 00:01:35,975
+Two completed deliveries remain, and both were on time.
+
+29
+00:01:35,975 --> 00:01:38,411
+Two out of two gives 100%.
+
+30
+00:01:38,411 --> 00:01:42,072
+The stored input and executed code explain this particular result.
+
+31
+00:01:42,917 --> 00:01:46,057
+This is how matching records establish provenance for a number.
+
+32
+00:01:46,057 --> 00:01:50,566
+Lineage describes the data's route and dependencies; provenance records a particular
+
+33
+00:01:50,566 --> 00:01:52,454
+dataset or result's history.
+
+34
+00:01:52,454 --> 00:01:53,629
+The terms overlap.
+
+35
+00:01:53,629 --> 00:01:56,993
+Explaining why the result was 100% does not establish
+
+36
+00:01:56,993 --> 00:01:59,575
+whether it was still current at the report refresh.
+
+37
+00:01:59,575 --> 00:02:01,187
+Chapter 4 examines that.
+
+38
+00:02:02,178 --> 00:02:04,667
+Try the page's metadata-map exercise.
+
+39
+00:02:04,667 --> 00:02:08,954
+Start at Report refresh, choose Example record, and
+
+40
+00:02:08,954 --> 00:02:11,728
+follow its output to Published output, then Run.
+
+41
+00:02:11,728 --> 00:02:14,231
+Find the retained input and code version.
+
+42
+00:02:14,231 --> 00:02:19,250
+Explain why the displayed result was 100%, then use Check your answer on the page.

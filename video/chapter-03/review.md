@@ -1,23 +1,67 @@
-# Chapter 3 Q1 export review — 29 October 2026
+# Chapter 3 page-learning-aid review — 29 October 2026
 
-The narration now uses the approved original synthetic **Q1 warm British female** voice. The canonical narration, chapter artwork, scene meanings and five-second silent closing card are retained. New passages use the pinned Qwen Base model with one reusable prompt from the approved Q1 reference, rather than a new voice design for each scene.
+Replaces the standalone summary with an evidence-tracing demonstration, a
+persistent investigation trail, two explanation pauses and the existing page's
+metadata-map activity. The page retains full definitions, record fields and
+retained SQL. Source: `c144d0f04f3d6f6737c812e4836b4e0c49266856`.
 
-Export: **2:45**, 1280×720, 24 fps, H.264/yuv420p, AAC and English selectable mov_text captions. There are 46 caption cues; MP4 size is 4,392,238 bytes. SHA-256: `0cd3b391d2d4f0e487aa6fc1ee8196bc420029b2eaab410c8b9b3785f61fd33e`. Measured spoken pace is about 169.9 words per minute, including raw passage pauses. The existing project duration bounds pass; no tempo alteration or padding was used to meet them.
+## Actual export
 
-## Speech and timing review
+2:25 (144.9 seconds), 1280×720, 24 fps, H.264/yuv420p, AAC and selectable English
+captions. 42 caption cues; 3,972,564 bytes. Video SHA-256:
+`d31544467a031f1ce4be54e4734eda602217e0fd5f86fcfadc3bb245c2600c73`.
+Eight new complete Q1 narration passages use the approved original synthetic
+reference and pinned Qwen Base model. No speech tempo alteration or length
+padding beyond deliberate response holds, scene boundaries and closing card.
 
-All spoken scenes received independent unprompted `small.en` transcription without vocabulary hints or digit suppression. Source ASR text and real timestamps are retained separately from canonical timing metadata. No meaningful omission, wrong number or changed logical distinction was identified in that automated screening.
+## Learning and source review
 
-The pronunciation pack ran after final synthesis and before encoding. It contains 14 contextual clips and 2 transcription differences: R1205 was written as “R12O5”, and completed-v1 as “completed version 1”. These are spelling/notation differences consistent with the intended speech. Some short clips contain ASR additions near cut context boundaries; the complete scene transcripts were used to assess meaning. The pack freshness check passed before rendering and again after the resumed exports.
+Manually compared narration and figures with the chapter and retained examples.
+The completed-delivery definition excludes unfinished parcels. The opening asks
+whether 13:00 refresh time establishes calculation time; the next scene explains
+that refresh reads a saved result without rerunning the calculation. Matching
+summary-R1205 connects F1300 to the output published at 12:05 and producing run
+R1205. Its references identify S1205 and completed-v1. Investigation arrows are
+labelled separately from the earlier forward data-flow diagram.
 
-Full-scene recognition retains F1300, summary-R1205, S1205, code version, 100%, the fifty-five-minute gap, and the distinction between refreshing a report and rerunning its calculation. Clock/identifier numeric spellings such as 12.05 are reconciled for timing; original ASR is preserved. “Root” for British “route” is an ASR spelling difference consistent with a homophone, not phonetic approval.
+The second question asks whether today's table suffices. Its answer inspects
+retained evidence: D101 at 11:50 and D103 at 11:40 are on time; D102 and D104 are
+unfinished. All four were due by noon. These are the complete 12:05 snapshot's
+rows, not the later input from Chapters 1–2. The calculation excludes the two
+unfinished rows and reveals 2/2=100% at the spoken cue. Brief terminology labels
+come after demonstration; overlap and full definitions on the page are explicit.
+Explaining 100% does not establish currency at refresh; Chapter 4 retains that
+question. The final activity uses the page's existing reference trail.
 
-**No human listening review was performed for these new passages.** Recognition cannot certify phonetics, accent or prosody, including a correct-looking term spelling. All pronunciation remains screened rather than listening-approved.
+## Speech screening
 
-Qwen supplies no word boundaries. Fresh ASR timestamps anchor estimated canonical-word timing; unmatched characters interpolate between adjacent anchors and are marked in `words-NN.json`. Numeric spelling reconciliation does not rewrite original ASR or literal spoken “point”/“zero” words. No old provider timestamps were reused. Captions concatenate exactly to canonical narration, remain ordered and do not overlap; sentence cues follow the new timing.
+Independent unprompted small.en ASR preserves questions, negations, identifiers,
+clock times, percentages, retained-input distinctions and the currency limit.
+After documented spelling/number reconciliation, every scene has 100% matched
+canonical character coverage. Original recognition is retained: examples include
+F1300/R1205/S1205, completed version 1 and 12.05/1205. These matches support text
+screening, not phonetic approval. The pronunciation pack contains 15 contextual
+clips and no term-spelling mismatches. Some excerpts contain recogniser additions
+near clipped context, including text after the late 100% occurrence; full-scene
+recognition retains the intended currency qualification. No claimed spoken
+content is inferred from those short-excerpt additions. The pack freshness check
+passed before rendering.
 
-## Media verification and retained evidence
+**No human listening review was performed.** Phonetics, accent and expressiveness
+remain screened rather than listening-approved. No learner-effectiveness study
+or delayed-recall result is claimed.
 
-Full FFmpeg decoding passed. ffprobe confirms the expected video, audio and caption streams. The complete chapter has a five-second silent closing card. Parent independent media/source QC also passed. The parent inspected all actual encoded contact sheets and confirmed staged-site playback, seeking and caption loading at 820px and 390px with no overflow. Posters, actual encoded scene frames and contact sheets are retained alongside each export; the unchanged full-size scene layouts support detailed visual review.
+## Completed checks
 
-Working evidence is in `out/q1-chapter-03/`: raw/cached speech and generation metadata, independent scene ASR, pronunciation clips/report, timing and caption files, `media-verification.json`, `parent-quality-check.json`, `poster.jpg` and `encoded-frames/`. The [production manifest](../qwen-production/production-manifest.json) retains scene hashes, reference/model provenance, SDK versions, seeds, batch membership, original ASR text and matching coverage. Exact Q1 reference bytes and transcript are retained with production source. Live publication is handled by the publishing workflow.
+- Full FFmpeg decoding; expected video/audio/caption streams, aligned media durations and five-second closing hold.
+- Captions concatenate exactly to canonical narration and remain ordered without overlaps.
+- The two four-second response holds leave 4.699 and 4.670 seconds after the final caption, respectively; answers remain in subsequent scenes.
+- Inspected actual encoded frames from every scene and both holds, plus a 390-pixel rendering; diagram labels, retained-input selection and investigation direction match the source.
+- Chromium at 960px and 390px: advancing playback, seeking, loaded captions, no active caption during response holds, no page overflow and the metadata-map Example record activity.
+- Existing pronunciation tests, SQL/example checks, metadata-map validation, layout consistency and full site build pass.
+
+Working evidence remains in ignored `out/q1-chapter-03/`: raw speech, model
+metadata, independent ASR, alignment, pronunciation excerpts, timings, captions,
+encoded frames/contact sheet, phone frame, media-verification.json,
+browser-verification.json and screenshots. The committed production manifest
+retains scene provenance.

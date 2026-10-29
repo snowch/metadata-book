@@ -1,7 +1,7 @@
 {
   "title": "Where did this number come from?",
   "source_url": "https://snowch.github.io/metadata-book/chapters/03-following-lineage.html",
-  "source_commit": "0fcdc702f0559c363876b5777b7034ea929a17b6",
+  "source_commit": "c144d0f04f3d6f6737c812e4836b4e0c49266856",
   "book_url": "https://snowch.github.io/metadata-book/",
   "attribution": "Adapted from Metadata systems · Chapter 3",
   "voice": "Q1 — original warm British female (Qwen3-TTS)",
@@ -16,14 +16,15 @@
     "completed-v1": "completed version one",
     "Chapter 4": "Chapter four"
   },
-  "min_seconds": 160,
-  "max_seconds": 260,
+  "min_seconds": 110,
+  "max_seconds": 220,
   "font_dir": "/usr/share/fonts/truetype/dejavu",
   "illustration_sheet": null,
   "pronunciation_review_terms": [
     "Lineage",
     "Provenance",
-    "Service Analytics"
+    "Service Analytics",
+    "snapshot"
   ],
   "speech_engine": {
     "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
@@ -31,5 +32,7 @@
     "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
     "reference_origin": "Original synthetic Q1 voice, designed with Qwen3-TTS-12Hz-1.7B-VoiceDesign at revision 5ecdb67327fd37bb2e042aab12ff7391903235d3; user approved",
     "timing_source": "Independent unprompted ASR aligned to canonical spoken text"
-  }
+  },
+  "purpose": "Page learning aid: follow matching identifiers from report to retained input and code; explain 100% without confusing refresh with recalculation or currency.",
+  "practice_label": "Report refresh → Published output → Run → retained input and code."
 }
