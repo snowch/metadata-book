@@ -4,7 +4,7 @@ This verifies export integrity, captions and deliberate response pauses, not
 learning effectiveness, pronunciation or human listening approval.
 """
 from pathlib import Path
-import argparse, hashlib, json, math, re, subprocess
+import argparse, array, hashlib, json, math, re, subprocess
 from PIL import Image, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -46,7 +46,12 @@ for t in timings:
     if hold:
         finish=max(c['end'] for c in t['cues'])
         assert t['duration']-finish>=hold,(t['kind'],t['duration'],finish)
-        pauses.append(dict(kind=t['kind'],requested_seconds=hold,after_last_caption=round(t['duration']-finish,3)))
+        # Check the exported audio, allowing a short AAC boundary margin.
+        samples=array.array('f',subprocess.check_output(['ffmpeg','-v','error','-ss',str(t['start']+t['duration']-hold+.2),'-i',str(movie),'-t',str(hold-.4),'-map','0:a:0','-ac','1','-ar','24000','-f','f32le','-']))
+        assert len(samples)>=(hold-.5)*24000,'Response hold audio is truncated'
+        peak=max(abs(s) for s in samples)
+        assert peak<.002,('Unexpected audio during response hold',t['kind'],peak)
+        pauses.append(dict(kind=t['kind'],requested_seconds=hold,after_last_caption=round(t['duration']-finish,3),exported_audio_peak=peak))
 # Actual encoded frames, one per scene plus midpoint of each response hold.
 frames=build/'encoded-frames';frames.mkdir(exist_ok=True)
 samples=[]

@@ -1,0 +1,21 @@
+When the records are unreliable
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/06-unreliable-records.html
+
+Yesterday's scan found delivery_summary. Today's scan does not mention it. Has the table been deleted? Pause and name another explanation before deciding.
+
+The collector might have lost permission, scanned the wrong database, or stopped early. Keep the last successful observation visible, with current status unverified. Confirm deletion using supporting evidence, such as a recorded drop operation or a complete scan that was able and expected to see the table.
+
+Now use the page's separate example from twenty first October. Scheduler event E20 reports that run R1000 published summary-R1000 at ten. The catalogue receives it at one minute past ten, then again at four minutes past ten. The source and stable event identifier identify one reported publication received twice. Matching message text alone would not establish that.
+
+At six minutes past ten, event E19 arrives. It reports that a different run, R0950, failed at nine fifty. Move it to the earlier run's history. Receiving that message last cannot make R1000 a failure. Keep event time and receipt time separate; clocks alone need not establish order across systems.
+
+The scheduler reports summary-R1000 published at ten. But database scan S7 observes the table labelled summary-R0940 at three minutes past ten. Which output does the table actually contain? Explain what is known, and what still needs investigation. Pause for more time if you need it.
+
+These records do not settle which claim is correct. Show the current published version as disputed, keeping both sources and their times. The version label could be wrong, or the scheduler could have reported publication incorrectly. Recognising a duplicate and placing the delayed failure correctly do not resolve this disagreement.
+
+Check write logs and saved output versions. If that investigation resolves the disagreement, record the evidence alongside the conclusion. One reported publication, earlier run history, and disputed current state can all coexist. Choosing whichever message arrived last would hide the reason to investigate.
+
+Try the page's map exercise. Open Source observation's Example record, then Collection run. These map records are from twentieth October, not the event example we just used. Compare observation and collection times. If tomorrow's scan omits the dataset, explain which checks you need before calling it deleted. Then use Check your answer.

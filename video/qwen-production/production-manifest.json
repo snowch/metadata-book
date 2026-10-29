@@ -2547,6 +2547,596 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "06",
+      "duration_seconds": 162.3,
+      "caption_cues": 46,
+      "end_card_seconds": 5,
+      "purpose": "Explain why duplicate, delayed, missing and conflicting records need different evidence before changing current state.",
+      "video_sha256": "93d48ca6d541cb45a68855a0dac1b5120d47dab3458f7c897749e8426a42286d",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "missing-question",
+          "raw_seconds": 9.04,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Yesterday's scan found delivery summary. Today's scan does not mention it. Has the table been deleted? Pause and name another explanation before deciding.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "a5f2569ab475cbb7e1d0afb31ba03efbc554b7fbe793aa33366fe6cf16117ca0",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "a4973622907933ca968359309580d8168ae0d35b62fbfea95a4e4533842207a7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "81b33eabf6b7a884d0c0bde43f22daa0a31bd4e6409c3008d4894090a1eb6adc",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 115.6834286989997,
+            "seconds": 9.04,
+            "sha256": "3dff8f4a04eea3b659c584845661ca0ac7d5400bb25f86ba565409adff5047ea"
+          },
+          "unprompted_asr": "Yesterday's scan found delivery summary. Today's scan does not mention it. Has the table been deleted? Pause and name another explanation before deciding.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "missing-answer",
+          "raw_seconds": 17.84,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The collector might have lost permission, scanned the wrong database, or stopped early. Keep the last successful observation visible, with current status unverified. Confirm deletion using supporting evidence, such as a recorded drop operation or a complete scan that was able and expected to see the table.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "8896205f6744309e57fabdb2b8463e65aba37068c0b5707dd1aafa8bd209c310",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 17.84,
+            "sha256": "520648868139c1eadc31f9cfb90ed9eca547de6b84bd80996f5de1724f4b4066"
+          },
+          "unprompted_asr": "The collector might have lost permission, scanned the wrong database, or stopped early, keep the last successful observation visible with current status unverified. Confirm deletion using supporting evidence such as a recorded drop operation or a complete scan that was able and expected to see the table.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "repeat",
+          "raw_seconds": 21.2,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now use the page's separate example from twenty first October. Scheduler event E twenty reports that run are one thousand published summary are one thousand at ten. The catalogue receives it at one minute past ten, then again at four minutes past ten. The source and stable event identifier identify one reported publication received twice. Matching message text alone would not establish that.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "0106d867c8b84d76c5382554f20c602101502de10e63aa3eb59769d2a74c3cd3",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 21.2,
+            "sha256": "b4f2ac0cc93c07b23f516caabd0b755424c99ce69bb42c97ae527aecce2f78f7"
+          },
+          "unprompted_asr": "Now use the page's separate example from 21st October Scheduler Event E20 reports that run our 1000 published summary our 1000 at 10. The catalog receives it at 1 minute past 10, then again at 4 minutes past 10. The source and stable event identifier identify one reported publication received twice. Matching message text alone would not establish that.",
+          "alignment": {
+            "matched_character_fraction": 0.9723076923076923,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "fir",
+                "recognised": "one"
+              },
+              {
+                "operation": "replace",
+                "expected": "a",
+                "recognised": "ou"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "replace",
+                "expected": "a",
+                "recognised": "ou"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 3,
+          "kind": "late",
+          "raw_seconds": 19.6,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "At six minutes past ten, event E nineteen arrives. It reports that a different run, are zero nine fifty, failed at nine fifty. Move it to the earlier run's history. Receiving that message last cannot make are one thousand a failure. Keep event time and receipt time separate; clocks alone need not establish order across systems.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "5234ae3c53af769c6edf745a2e91d7b9be108544e4eb767a35104ee49573b847",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 19.6,
+            "sha256": "5e3be75870f724c5ec7b228e3b8be01931b33cbaa12acd60ca66abbd9c8d84d6"
+          },
+          "unprompted_asr": "At 6 minutes past 10, event E-19 arrives. It reports that a different run, our 0-9-50, failed at 9-50. Move it to the earlier run's history. Receiving that message last cannot make our 1,000 a failure. Keep event time and receipt time separate. Clocks alone need not establish order across systems.",
+          "alignment": {
+            "matched_character_fraction": 0.9583333333333334,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "a",
+                "recognised": "ou"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "replace",
+                "expected": "a",
+                "recognised": "ou"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "replace",
+                "expected": "th",
+                "recognised": "zer"
+              },
+              {
+                "operation": "delete",
+                "expected": "usand",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "conflict-question",
+          "raw_seconds": 19.76,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The scheduler reports summary are one thousand published at ten. But database scan ess seven observes the table labelled summary are zero nine forty at three minutes past ten. Which output does the table actually contain? Explain what is known, and what still needs investigation. Pause for more time if you need it.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "0a86319390ceff2ae21d8b10bfa78eaf5dc1b0b9c6804bcfa613b9dcfa05e57a",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 19.76,
+            "sha256": "03b162776b3857887b49a4e302c085d1c17bc9500382dbd4e7ede759b496c934"
+          },
+          "unprompted_asr": "The Scheduler Report's summary are 1,000 published at 10, but Database Scan S7 observes the table labeled summary are 0940 at 3 minutes past 10. Which output does the table actually contain? Explain what is known and what still needs investigation. Pause for more time if you need it.",
+          "alignment": {
+            "matched_character_fraction": 0.9534883720930233,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "th",
+                "recognised": "zer"
+              },
+              {
+                "operation": "delete",
+                "expected": "usand",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "l",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "zero",
+                "recognised": ""
+              },
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "hundredand"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 5,
+          "kind": "conflict-answer",
+          "raw_seconds": 17.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "These records do not settle which claim is correct. Show the current published version as disputed, keeping both sources and their times. The version label could be wrong, or the scheduler could have reported publication incorrectly. Recognising a duplicate and placing the delayed failure correctly do not resolve this disagreement.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "ac7d4647f1077725e57615f45c2349fd69bfac8375232c82271a6215d42b2f49",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 17.36,
+            "sha256": "730829433090ecd9bede213a894b269c368c54d38de8061fdf3074ca76e72834"
+          },
+          "unprompted_asr": "These records do not settle which claim is correct. Show the current published version as disputed, keeping both sources and their times. The version label could be wrong, or the scheduler could have reported publication incorrectly. Recognizing a duplicate and placing the delayed failure correctly do not resolve this disagreement.",
+          "alignment": {
+            "matched_character_fraction": 0.9964028776978417,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "s",
+                "recognised": "z"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 6,
+          "kind": "investigate",
+          "raw_seconds": 16.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Check write logs and saved output versions. If that investigation resolves the disagreement, record the evidence alongside the conclusion. One reported publication, earlier run history, and disputed current state can all coexist. Choosing whichever message arrived last would hide the reason to investigate.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "59d744b82fba21ee24595a217da6839e4f1665ca3173279d2aecb6b944db862c",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "a4973622907933ca968359309580d8168ae0d35b62fbfea95a4e4533842207a7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "81b33eabf6b7a884d0c0bde43f22daa0a31bd4e6409c3008d4894090a1eb6adc",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 115.6834286989997,
+            "seconds": 16.96,
+            "sha256": "38a4128785641accebbe729d14d60e1083397d8e354b1ba91620a0e34a2af319"
+          },
+          "unprompted_asr": "Check write logs and saved output versions. If that investigation resolves the disagreement, record the evidence alongside the conclusion. One reported publication, earlier run history, and disputed current state can all coexist. Choosing whichever message arrived last would hide the reason to investigate.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 7,
+          "kind": "practice",
+          "raw_seconds": 21.68,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. Open Source observation's Example record, then Collection run. These map records are from twentieth October, not the event example we just used. Compare observation and collection times. If tomorrow's scan omits the dataset, explain which checks you need before calling it deleted. Then use Check your answer.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "87457948c4a6bd58a5cff7ba6f7c8116c53f8d13c8a158059f9fd590646e0ac0",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "1789b7d40461920854affa0064bd7f2353bdbd49f9c46749b4fb45d66cb59622",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "1f5dade23295b8e0288202640e3392872816391935698a54c6da9720bdd497ad",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "78012cd25f9c93e3477ceaa4693a9351bcad2d9661caf44ef012278f527827cd",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "90bda6bf6ea10620b356d4dd3560bd78512954e29954282a20c39136742708c7",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "6f8a3ffe37b7afa4f49a40862d5053ca2397bcabd92e7ddc6c480ad608c1bc79",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "dd82f2eed78ddcf17797184752741921fa0bc6e450a617f5eb199ca2cd38b163",
+                "path": "/workspace/metadata-book/out/q1-chapter-06/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 256.4208868040005,
+            "seconds": 21.68,
+            "sha256": "aeeff010eb3cf03433fd899fc3aa7638072958307a3c81a62bf0b51e691c89a2"
+          },
+          "unprompted_asr": "Try the pages map exercise open source observations example record then collection run These map records are from 20th October not the event example. We just used compare observation and collection times if Tomorrow's scan omits the data set explain which checks you need before calling it deleted then use check your answer",
+          "alignment": {
+            "matched_character_fraction": 0.9927272727272727,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "ie",
+                "recognised": "y"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }

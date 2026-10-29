@@ -2,6 +2,17 @@
 
 A catalogue can contain accurate observations and still mislead. A scan may cover only part of a database. An event may arrive twice, or after a newer event. Two sources may disagree. What should the catalogue display when it cannot establish a single current answer?
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-06/poster.jpg?v=2216592ae8b2" aria-label="When the records are unreliable: narrated Chapter 6 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-06/chapter-06.mp4?v=93d48ca6d541" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-06/captions.vtt?v=3f6efec9853a" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-06/chapter-06.mp4?v=93d48ca6d541">Download the video</a> or <a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">Read the transcript</a><a href="../assets/video/chapter-06/chapter-06.mp4?v=93d48ca6d541" download>Download video <span>(4.4 MB)</span></a></p>
+</figure>
+
 ## Absence needs an explanation
 
 Suppose yesterday's scan found `delivery_summary`, but today's does not report it. The table might have been deleted. The collector might also have lost permission, scanned the wrong database, or stopped before reaching it.
