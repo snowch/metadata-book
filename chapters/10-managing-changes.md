@@ -4,6 +4,17 @@ A definition can be correct today and unsuitable tomorrow. A producer may add a 
 
 Chapter 7 raised a possible change to `promised_at`: replacing the original customer promise with the latest revised promise. This chapter develops that **separate, hypothetical scenario**. The records below illustrate a review and an approved alternative; they are not changes made to the book's database or additional incident results.
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-10/poster.jpg?v=c21ce9fa70ef" aria-label="Managing definitions and dataset changes: narrated Chapter 10 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-10/captions.vtt?v=97ecb7c6847e" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09">Download the video</a> or <a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">Read the transcript</a><a href="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09" download>Download video <span>(4.2 MB)</span></a></p>
+</figure>
+
 ## Review meaning as well as structure
 
 A parcel arriving at 12:20 is late against an original noon promise but on time against a revised 12:30 promise. Changing the promise can also change whether the parcel belongs among deliveries due by noon. Keeping the column's name and type would preserve its schema while breaking consumers' agreement about its meaning.
