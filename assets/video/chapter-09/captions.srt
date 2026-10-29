@@ -1,0 +1,151 @@
+1
+00:00:00,570 --> 00:00:04,721
+A scheduler prepares a compatible JSON event saying the job completed.
+
+2
+00:00:04,721 --> 00:00:07,481
+The catalogue and investigator need that history.
+
+3
+00:00:07,481 --> 00:00:09,643
+Does the document alone establish a working
+
+4
+00:00:09,643 --> 00:00:12,153
+connection, or make the record retrievable?
+
+5
+00:00:12,153 --> 00:00:15,404
+Pause and name what else the producer and receiver must agree.
+
+6
+00:00:20,530 --> 00:00:24,553
+A configured integration must observe the execution and emit events.
+
+7
+00:00:24,553 --> 00:00:27,560
+Both ends need compatible transport, endpoint
+
+8
+00:00:27,560 --> 00:00:30,192
+and authentication, with submission permission.
+
+9
+00:00:30,192 --> 00:00:33,403
+Even a successful HTTP acknowledgement is not
+
+10
+00:00:33,403 --> 00:00:35,798
+proof that the record is already queryable.
+
+11
+00:00:35,798 --> 00:00:37,970
+Check errors, retries and gaps.
+
+12
+00:00:37,970 --> 00:00:42,275
+Neither the event schema nor HTTP guarantees exactly-once delivery.
+
+13
+00:00:43,292 --> 00:00:45,857
+Now suppose another scheduler also has a job called
+
+14
+00:00:45,857 --> 00:00:50,015
+build_delivery_summary and a local execution label R1205.
+
+15
+00:00:50,015 --> 00:00:55,055
+If both send those short names, can the receiver reliably identify which execution
+
+16
+00:00:55,055 --> 00:00:56,672
+belongs to which system?
+
+17
+00:00:56,672 --> 00:00:59,750
+Explain what identity information is missing before continuing.
+
+18
+00:01:04,670 --> 00:01:08,026
+Use a namespaced job identity and a run UUID.
+
+19
+00:01:08,026 --> 00:01:12,748
+The page explicitly maps its short R1205 label to the exchange UUID.
+
+20
+00:01:12,748 --> 00:01:15,747
+Reuse that UUID for events in the same run
+
+21
+00:01:15,747 --> 00:01:18,311
+cycle; a new execution needs a new identity.
+
+22
+00:01:18,311 --> 00:01:22,747
+Map the output's namespace and name to the catalogue's local dataset identifier,
+
+23
+00:01:22,747 --> 00:01:24,344
+retaining the correspondence.
+
+24
+00:01:24,344 --> 00:01:27,165
+A matching table name cannot infer those mappings.
+
+25
+00:01:28,130 --> 00:01:30,638
+Read the event as a sourced completion claim.
+
+26
+00:01:30,638 --> 00:01:36,098
+It names input and output datasets, but does not preserve the retained input snapshot,
+
+27
+00:01:36,098 --> 00:01:39,301
+code version, output version or report refresh.
+
+28
+00:01:39,301 --> 00:01:41,142
+Those need additional records.
+
+29
+00:01:41,142 --> 00:01:45,788
+OpenLineage supplies an event model; CloudEvents supplies a distinct general envelope.
+
+30
+00:01:45,788 --> 00:01:51,415
+The page's catalogue query API is illustrative, not an OpenLineage retrieval standard.
+
+31
+00:01:51,415 --> 00:01:53,962
+Read permission is separate from permission to submit.
+
+32
+00:01:54,757 --> 00:01:56,476
+Try the page's map exercise.
+
+33
+00:01:56,476 --> 00:01:59,286
+In Run's Example record, find the run identifier
+
+34
+00:01:59,286 --> 00:02:02,401
+and job name, then follow Job to compare the name.
+
+35
+00:02:02,401 --> 00:02:07,856
+Look for the job namespace and exchange UUID: this map example does not contain them.
+
+36
+00:02:07,856 --> 00:02:12,005
+Explain which mappings the receiver still needs, then use Check your answer.
+
+37
+00:02:12,005 --> 00:02:14,692
+The page keeps the full event and connection example;
+
+38
+00:02:14,692 --> 00:02:16,922
+its example addresses are not running services.

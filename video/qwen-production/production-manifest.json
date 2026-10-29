@@ -3958,6 +3958,435 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "09",
+      "duration_seconds": 142.8,
+      "caption_cues": 38,
+      "end_card_seconds": 5,
+      "purpose": "Separate event format, delivery configuration and explicit identity mappings, and identify evidence missing from a completion event.",
+      "video_sha256": "7bf0def5ff12e88094526561400c8042250933322ea25752d8228e263de1c988",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "connection-question",
+          "raw_seconds": 15.28,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "A scheduler prepares a compatible jay son event saying the job completed. The catalogue and investigator need that history. Does the document alone establish a working connection, or make the record retrievable? Pause and name what else the producer and receiver must agree.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "158b9c810d0bc9a3d6b0bc1c923dd690530eca7427d92f694c806fb52fa72fdb",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 15.28,
+            "sha256": "c3b3ef12d956a67db847ab8cf00e2140a46e17e1b5c9ecfbc4b222d181c7dbd5"
+          },
+          "unprompted_asr": "A scheduler prepares a compatible JSON event saying the job completed. The catalog and investigator need that history. Does the document alone establish a working connection, or make the record retrievable? Pause and name what else the producer and receiver must agree.",
+          "alignment": {
+            "matched_character_fraction": 0.9911894273127754,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "connection-answer",
+          "raw_seconds": 22.32,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "A configured integration must observe the execution and emit events. Both ends need compatible transport, endpoint and authentication, with submission permission. Even a successful H T T P acknowledgement is not proof that the record is already queryable. Check errors, retries and gaps. Neither the event schema nor H T T P guarantees exactly-once delivery.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "584ded76aecae4bc2848777b0d02a20d82db216f0d09bb2d0a11ea630405d047",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 22.32,
+            "sha256": "27d45de449c94a28ad3e8c33597e2ed9f5f4bcb605f21ee6ab2c4cb41fad1802"
+          },
+          "unprompted_asr": "A configured integration must observe the execution and emit events. Both ends need compatible transport, endpoint, and authentication, with submission permission. Even a successful HTTP acknowledgment is not proof that the record is already queryable. Check errors, retries, and gaps—neither the event schema nor HTTP guarantees exactly ONCE delivery.",
+          "alignment": {
+            "matched_character_fraction": 0.9966101694915255,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "identity-question",
+          "raw_seconds": 16.64,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now suppose another scheduler also has a job called build delivery summary and a local execution label are twelve oh five. If both send those short names, can the receiver reliably identify which execution belongs to which system? Explain what identity information is missing before continuing.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "ff99c7a7b316d503c14ba6b69ef43f81f028818934c701078f029da803545cd6",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 16.64,
+            "sha256": "ec92e7d842f58c2c6347ccf96770bcdad80861d6fa150409b023129fda6742a2"
+          },
+          "unprompted_asr": "Now suppose another scheduler also has a job called Build Delivery Summary, and a local execution label are 12.05. If both send those short names, can the receiver reliably identify which execution belongs to which system? Explain what identity information is missing before continuing.",
+          "alignment": {
+            "matched_character_fraction": 0.9959183673469387,
+            "differences": [
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "p"
+              },
+              {
+                "operation": "replace",
+                "expected": "h",
+                "recognised": "int"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 3,
+          "kind": "identity-answer",
+          "raw_seconds": 22.72,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Use a namespaced job identity and a run U U I D. The page explicitly maps its short are twelve oh five label to the exchange U U I D. Reuse that U U I D for events in the same run cycle; a new execution needs a new identity. Map the output's namespace and name to the catalogue's local dataset identifier, retaining the correspondence. A matching table name cannot infer those mappings.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "f88e2ae66aac97d04d1849b59a11118aad3998069ad4f97cf1f2dc41e310dd66",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 22.72,
+            "sha256": "602a5d0938b57c6651f76408b4abda40efe87f211ea5a12ea6dbd017e4f9f7e0"
+          },
+          "unprompted_asr": "Use a namespaced job identity and a run UUID. The page explicitly maps its short R1205 label to the Exchange UUID reuse that UUID for events in the same run cycle. A new execution needs a new identity. Map the output's namespace and name to the catalog's local dataset identifier, retaining the correspondence. A matching table name cannot infer those mappings.",
+          "alignment": {
+            "matched_character_fraction": 0.9934426229508196,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "limits",
+          "raw_seconds": 25.92,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Read the event as a sourced completion claim. It names input and output datasets, but does not preserve the retained input snapshot, code version, output version or report refresh. Those need additional records. OpenLineage supplies an event model; CloudEvents supplies a distinct general envelope. The page's catalogue query A P I is illustrative, not an OpenLineage retrieval standard. Read permission is separate from permission to submit.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "e2414559ead79ea1d6648b7aaaf957febc8cacda40c44d6f61070416b6339d39",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 25.92,
+            "sha256": "b739f861a3cc096dc6c75b0360dc77f5504c5eb9f7da05390ebf022ee84c2886"
+          },
+          "unprompted_asr": "Read the event as a sourced completion claim. It names input and output datasets, but does not preserve the retained input snapshot, code version, output version, or report refresh. Those need additional records. Open lineage supplies an event model. Cloud Events supplies a distinct general envelope. The page's catalog query, API, is illustrative, not an open lineage retrieval standard. Read permission is separate from permission to submit.",
+          "alignment": {
+            "matched_character_fraction": 0.9945205479452055,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "practice",
+          "raw_seconds": 22.48,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. In Run's Example record, find the run identifier and job name, then follow Job to compare the name. Look for the job namespace and exchange U U I D: this map example does not contain them. Explain which mappings the receiver still needs, then use Check your answer. The page keeps the full event and connection example; its example addresses are not running services.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d2cd1f37d00f230b4769a82b4ecd1bbac127d85782c2f51386d584056a10827b",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "691f0dcb954822df288496a3f4fe27aa8bca106c62f19012b9f09d38c92c51e5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2c42a8dc272cf1ba0e7cf38017613137e4372a304578603db0e7059978866a16",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "54630cf64135773d8de20b06c3f426b75cfb7c306262824b8ef304e2758be2c5",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "9afbe34bb207d0cdb1e32974834272c63c3402503a7594413ea1646625fc2953",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "63111d6a7681d7f9e82157a30d0476d5e0dac7fc62193e2d7215ab97ebbfac8f",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "a4742263729a8ac790838864eed957fa06f52af4c05cada8df9911ad773447dc",
+                "path": "/workspace/metadata-book/out/q1-chapter-09/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 272.7855776339984,
+            "seconds": 22.48,
+            "sha256": "62cbcf6836be5cd74b2599724f39bf9e68dc0d89b82bb31f05a5157638766733"
+          },
+          "unprompted_asr": "Try the page's map exercise. In Run's example record, find the run identifier and job name, then follow job to compare the name. Look for the job namespace and exchange UUID. This map example does not contain them. Explain which mappings the receiver still needs, then use check your answer. The page keeps the full event and connection example. Its example addresses are not running services.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }
