@@ -1,0 +1,17 @@
+Sharing metadata between systems
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/09-sharing-metadata.html
+
+A scheduler prepares a compatible JSON event saying the job completed. The catalogue and investigator need that history. Does the document alone establish a working connection, or make the record retrievable? Pause and name what else the producer and receiver must agree.
+
+A configured integration must observe the execution and emit events. Both ends need compatible transport, endpoint and authentication, with submission permission. Even a successful HTTP acknowledgement is not proof that the record is already queryable. Check errors, retries and gaps. Neither the event schema nor HTTP guarantees exactly-once delivery.
+
+Now suppose another scheduler also has a job called build_delivery_summary and a local execution label R1205. If both send those short names, can the receiver reliably identify which execution belongs to which system? Explain what identity information is missing before continuing.
+
+Use a namespaced job identity and a run UUID. The page explicitly maps its short R1205 label to the exchange UUID. Reuse that UUID for events in the same run cycle; a new execution needs a new identity. Map the output's namespace and name to the catalogue's local dataset identifier, retaining the correspondence. A matching table name cannot infer those mappings.
+
+Read the event as a sourced completion claim. It names input and output datasets, but does not preserve the retained input snapshot, code version, output version or report refresh. Those need additional records. OpenLineage supplies an event model; CloudEvents supplies a distinct general envelope. The page's catalogue query API is illustrative, not an OpenLineage retrieval standard. Read permission is separate from permission to submit.
+
+Try the page's map exercise. In Run's Example record, find the run identifier and job name, then follow Job to compare the name. Look for the job namespace and exchange UUID: this map example does not contain them. Explain which mappings the receiver still needs, then use Check your answer. The page keeps the full event and connection example; its example addresses are not running services.
