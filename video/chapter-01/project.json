@@ -1,7 +1,7 @@
 {
   "title": "What the data cannot tell you",
   "source_url": "https://snowch.github.io/metadata-book/chapters/01-why-metadata.html",
-  "source_commit": "46e8224334d69d9ef9eee103f0b4def368a9f807",
+  "source_commit": "476c510abafeb8fc94a847b43595d3ae0d21e487",
   "book_url": "https://snowch.github.io/metadata-book/",
   "attribution": "Adapted from Metadata systems · Chapter 1",
   "voice": "Q1 — original warm British female (Qwen3-TTS)",
@@ -11,8 +11,8 @@
     "50.0%": "fifty percent",
     "delivered_at": "delivered at"
   },
-  "min_seconds": 150,
-  "max_seconds": 240,
+  "min_seconds": 110,
+  "max_seconds": 210,
   "font_dir": "/usr/share/fonts/truetype/dejavu",
   "illustration_sheet": null,
   "pronunciation_review_terms": [
@@ -27,5 +27,7 @@
     "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
     "reference_origin": "Original synthetic Q1 voice, designed with Qwen3-TTS-12Hz-1.7B-VoiceDesign at revision 5ecdb67327fd37bb2e042aab12ff7391903235d3; user approved",
     "timing_source": "Independent unprompted ASR aligned to canonical spoken text"
-  }
+  },
+  "purpose": "Embedded learning aid: choose the denominator, check the implementation, practise with the page and metadata map.",
+  "practice_label": "Metric definition → Example record → explain the denominator."
 }

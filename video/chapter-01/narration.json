@@ -1,50 +1,12 @@
 [
-  {
-    "kind": "opening",
-    "text": "A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment."
-  },
-  {
-    "kind": "completed",
-    "text": "First, ask: of the completed deliveries, how many were on time? Three parcels have arrived. Two were on time. Two out of three gives 66.7%. The unfinished delivery is outside this calculation."
-  },
-  {
-    "kind": "due",
-    "text": "Now ask: of all deliveries due, how many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives 50.0%."
-  },
-  {
-    "kind": "compare",
-    "text": "Both calculations are valid for their stated questions. The difference is the denominator: the total number of deliveries included. Three completed deliveries, or all four deliveries due. A dashboard labelled only on-time delivery leaves readers to guess."
-  },
-  {
-    "kind": "metadata",
-    "text": "Metadata is information that describes data: its structure, meaning, origin and use. Column names and types are metadata. So are a metric’s definition and a record of the job that produced it. The values alone rarely explain what they measure."
-  },
-  {
-    "kind": "definition",
-    "text": "Suppose Delivery Operations wants to know whether all promised deliveries arrived on time. Record the decision: on time means delivered at or before the promised time. Include every delivery due by noon, even if it has not arrived. Measure at one in the afternoon, and name Delivery Operations as the team responsible for the definition."
-  },
-  {
-    "kind": "owner",
-    "text": "This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives 50.0%. Another team can legitimately use completed deliveries, provided its definition makes that choice clear."
-  },
-  {
-    "kind": "field",
-    "text": "Field names need explanation too. A column named delivered_at could record when a parcel reached a depot, or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies."
-  },
-  {
-    "kind": "mismatch",
-    "text": "But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows 66.7%, even though Delivery Operations’ definition requires 50.0%. The query can run successfully and still answer the wrong question."
-  },
-  {
-    "kind": "verify",
-    "text": "The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation."
-  },
-  {
-    "kind": "recap",
-    "text": "When you see a number, ask what counts, when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable."
-  },
-  {
-    "kind": "end",
-    "text": ""
-  }
+  {"kind":"puzzle","text":"The same four deliveries give two results: 66.7% and 50.0%. Which belongs on the dashboard? The missing piece is the question we want the number to answer."},
+  {"kind":"parcels","text":"Use the invented example on this page. Four parcels were promised by noon. At one in the afternoon, two arrived on time, one arrived late, and one is unfinished. Assume the records are complete at that moment."},
+  {"kind":"predict","text":"First, count only completed deliveries. How many parcels belong in the denominator, the total we divide by? Make your choice before we count.","hold_seconds":4},
+  {"kind":"completed","text":"Three parcels have arrived. Keep the late parcel, because it is completed. Leave the unfinished parcel outside this group. Two on time out of three completed gives 66.7%."},
+  {"kind":"due","text":"Now count all deliveries due by noon. The unfinished parcel was due too, so bring it into the group. The two on-time parcels stay the same. Two out of four gives 50.0%. Same data, different questions."},
+  {"kind":"rule","text":"Delivery Operations chooses the all-due question. Its recorded definition includes unfinished deliveries, measures at one in the afternoon, and names the responsible team. This is metadata: information describing what the measure means. The full definition is on the page."},
+  {"kind":"challenge","text":"Check your understanding. The definition includes all four deliveries due, but the dashboard shows 66.7%. Its query ran successfully. Does that prove the dashboard follows the definition? Pause and explain your answer.","hold_seconds":5},
+  {"kind":"answer","text":"No. This calculation removed the unfinished parcel and counted only three. The recorded rule requires four, giving 50.0%. A successful query can answer the wrong question. Compare the filter and denominator with the definition."},
+  {"kind":"practice","text":"Back on the page, open the metadata map. Find Metric definition, then Example record. Identify what counts, when it is measured, and which team can explain it. Then ask: does recording the rule prove the calculation follows it? Use the page's Check your answer to test your explanation."},
+  {"kind":"end","text":""}
 ]

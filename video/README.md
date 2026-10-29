@@ -69,3 +69,28 @@ is `small.en`; weights download on first use.
 After rendering, retain the chapter's full narration/content audit, visual checks,
 caption checks and browser playback checks. Pronunciation screening does not
 replace those checks.
+
+## Page learning aids
+
+The revised chapter videos reinforce a page's central learning task. Use a
+concrete demonstration, a prediction/explanation pause, and the existing reader
+activity. Long definitions and reference SQL remain available on the page.
+`hold_seconds` on a narrated scene adds silent thinking time before the next
+scene; captions end with the actual speech. The shared `learning_aid.py` renderer
+uses the same Q1 narration and ASR timing contract as the original exports.
+
+After synthesis and pronunciation screening, render the chapter, then run:
+
+```sh
+/tmp/qwen-venv/bin/python video/verify_learning_aid.py --chapter 01
+# Inspect out/q1-chapter-01/encoded-contact.jpg and the independent scene ASR.
+/tmp/qwen-venv/bin/python video/package_learning_aid.py --chapter 01
+/tmp/qwen-venv/bin/python scripts/build.py
+python video/verify_learning_aid_browser.py --chapter 01
+```
+
+The browser check requires Playwright and `/usr/bin/chromium`. Check the actual
+encoded frames, response pauses and small-screen readability manually too.
+Packaging refreshes this chapter's assets, hashes, duration and provenance only;
+it does not deploy. Commit and merge each completed chapter before starting the
+next. Record actual review evidence and listening limitations in `review.md`.

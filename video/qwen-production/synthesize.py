@@ -146,6 +146,10 @@ def assemble(chapter,build,args):
   screening.append(dict(scene=i,kind=scene['kind'],expected=spoken(scene['text'],config),recognised=asr['text'],audio_sha256=sha(raw),asr_file=f'asr-{i:02}.json',alignment=alignment))
   # Preserve all generated content. No first/last-word trim can hide omissions.
   lead=.25;tail=4.5 if scene['kind']=='pause' else .7 if scene['kind']=='title' else .45
+  hold=scene.get('hold_seconds',0)
+  if isinstance(hold,bool) or not isinstance(hold,(int,float)) or not math.isfinite(hold) or not 0<=hold<=15:
+   raise ValueError('hold_seconds must be a finite number between zero and fifteen')
+  tail+=hold
   shift=lead
   save(build/f'words-{i:02}.json',dict(signature=sha(raw),words=words,audio_time_offset_seconds=shift,timing_source='ASR alignment to canonical spoken text',asr_source=f'asr-{i:02}.json',alignment=alignment))
   audio=np.concatenate([np.zeros(round(lead*SR),dtype=np.int16),audio,np.zeros(round(tail*SR),dtype=np.int16)])
