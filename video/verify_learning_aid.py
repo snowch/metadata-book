@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--chapter',required=True,choices=['01','02','03'])
+parser.add_argument('--chapter',required=True,choices=sorted(p.name[-2:] for p in (ROOT/'video').glob('chapter-[0-9][0-9]') if (p/'project.json').is_file()))
 args=parser.parse_args()
 chapter=ROOT/'video'/f'chapter-{args.chapter}'
 build=ROOT/'out'/f'q1-chapter-{args.chapter}'

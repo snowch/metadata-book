@@ -1,0 +1,38 @@
+{
+  "title": "Why is this report out of date?",
+  "source_url": "https://snowch.github.io/metadata-book/chapters/04-outdated-reports.html",
+  "source_commit": "fac56101ce4f153f425d0150c302d1b5bb894910",
+  "book_url": "https://snowch.github.io/metadata-book/",
+  "attribution": "Adapted from Metadata systems · Chapter 4",
+  "voice": "Q1 — original warm British female (Qwen3-TTS)",
+  "rate": "natural",
+  "pronunciation": {
+    "100%": "one hundred percent",
+    "66.7%": "sixty six point seven percent",
+    "R1230": "R twelve thirty",
+    "F1312": "F thirteen twelve",
+    "summary-R1310": "summary R thirteen ten",
+    "R1310": "R thirteen ten"
+  },
+  "min_seconds": 125,
+  "max_seconds": 250,
+  "font_dir": "/usr/share/fonts/truetype/dejavu",
+  "illustration_sheet": null,
+  "pronunciation_review_terms": [
+    "denominator",
+    "destination",
+    "write-permission",
+    "publication",
+    "recovery"
+  ],
+  "speech_engine": {
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+    "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+    "reference_origin": "Original synthetic Q1 voice, designed with Qwen3-TTS-12Hz-1.7B-VoiceDesign at revision 5ecdb67327fd37bb2e042aab12ff7391903235d3; user approved",
+    "timing_source": "Independent unprompted ASR aligned to canonical spoken text"
+  },
+  "purpose": "Page learning aid: explain stale output and verify that recovery reaches the report through matching publication and refresh references.",
+  "practice_label": "Compare the map’s earlier evidence with the page’s recovery table.",
+  "example_note": "The incident is invented; all times are UTC. Narration uses a synthetic voice."
+}

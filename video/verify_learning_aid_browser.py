@@ -6,7 +6,7 @@ from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from threading import Thread
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
-ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--chapter',required=True,choices=['01','02','03']);args=ap.parse_args()
+ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--chapter',required=True,choices=sorted(p.name[-2:] for p in (ROOT/'video').glob('chapter-[0-9][0-9]') if (p/'project.json').is_file()));args=ap.parse_args()
 n=args.chapter;build=ROOT/'out'/f'q1-chapter-{n}'
 c=json.loads((ROOT/'video'/f'chapter-{n}'/'project.json').read_text());timings=json.loads((build/'timings.json').read_text())
 class Quiet(SimpleHTTPRequestHandler):

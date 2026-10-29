@@ -1,0 +1,171 @@
+1
+00:00:00,257 --> 00:00:04,329
+The report refreshes at one in the afternoon and shows 100%.
+
+2
+00:00:04,329 --> 00:00:08,215
+That saved result used two completed deliveries, both on time.
+
+3
+00:00:08,215 --> 00:00:11,207
+But a third parcel arrived late at twelve twenty.
+
+4
+00:00:11,207 --> 00:00:13,780
+Is the report now showing the current result?
+
+5
+00:00:13,780 --> 00:00:14,927
+Pause and explain.
+
+6
+00:00:20,330 --> 00:00:20,980
+No.
+
+7
+00:00:20,980 --> 00:00:23,381
+The calculation rule has not changed.
+
+8
+00:00:23,381 --> 00:00:27,056
+The saved input gave two out of two, or 100%.
+
+9
+00:00:27,056 --> 00:00:32,000
+The current delivery records give two out of three, or 66.7%.
+
+10
+00:00:32,000 --> 00:00:34,594
+Refreshing the report read the older output; it
+
+11
+00:00:34,594 --> 00:00:36,629
+did not calculate from the updated deliveries.
+
+12
+00:00:37,667 --> 00:00:39,963
+Follow the later run, R1230.
+
+13
+00:00:39,963 --> 00:00:41,730
+It failed with an injected destination
+
+14
+00:00:41,730 --> 00:00:44,521
+write-permission error before publishing a new output.
+
+15
+00:00:44,521 --> 00:00:47,419
+This is a deliberate fault in the invented simulation.
+
+16
+00:00:47,419 --> 00:00:50,016
+The failure helps explain the missing publication.
+
+17
+00:00:50,016 --> 00:00:52,327
+The report's refresh record supplies separate
+
+18
+00:00:52,327 --> 00:00:55,075
+evidence of what readers actually saw: the old output.
+
+19
+00:00:55,917 --> 00:01:00,584
+After the simulated permission problem is removed, a new run uses the same calculation
+
+20
+00:01:00,584 --> 00:01:05,833
+with updated inputs and publishes 66.7% at ten past one.
+
+21
+00:01:05,832 --> 00:01:08,339
+No further deliveries arrive during recovery.
+
+22
+00:01:08,339 --> 00:01:11,966
+Does a successful run alone establish that the report has recovered?
+
+23
+00:01:11,966 --> 00:01:13,096
+Explain before continuing.
+
+24
+00:01:18,158 --> 00:01:19,971
+Check the report refresh too.
+
+25
+00:01:19,971 --> 00:01:26,416
+F1312 refreshed at twelve minutes past one and read summary-R1310, the new output
+
+26
+00:01:26,416 --> 00:01:28,148
+published at ten past one.
+
+27
+00:01:28,148 --> 00:01:32,556
+Matching that reference shows the new 66.7% reached the report.
+
+28
+00:01:32,556 --> 00:01:35,365
+We need both the publication and the refresh that read it.
+
+29
+00:01:36,167 --> 00:01:39,792
+Recovery is one question; correct logic is another.
+
+30
+00:01:39,792 --> 00:01:43,121
+A successful run can still use the wrong denominator.
+
+31
+00:01:43,121 --> 00:01:47,400
+The page's separate hypothetical debugging example shows that problem.
+
+32
+00:01:47,400 --> 00:01:50,144
+Inspect the producing execution, retained code
+
+33
+00:01:50,144 --> 00:01:52,599
+and input before deciding why a number is wrong.
+
+34
+00:01:53,596 --> 00:01:56,274
+Keep the earlier output and refresh record.
+
+35
+00:01:56,274 --> 00:02:01,111
+They explain the 100% readers saw before recovery; that earlier calculation was
+
+36
+00:02:01,111 --> 00:02:02,894
+correct for its saved inputs.
+
+37
+00:02:02,894 --> 00:02:06,788
+To reproduce it, retain the input data and code too.
+
+38
+00:02:06,788 --> 00:02:09,365
+References cannot supply rows that have been deleted.
+
+39
+00:02:10,250 --> 00:02:12,087
+Try the page's map exercise.
+
+40
+00:02:12,087 --> 00:02:15,707
+Follow the old Report refresh to Published output and Run.
+
+41
+00:02:15,707 --> 00:02:19,212
+These map examples show the earlier evidence, not recovery.
+
+42
+00:02:19,212 --> 00:02:21,770
+Compare them with the recovery table on the page.
+
+43
+00:02:21,770 --> 00:02:26,448
+Identify the new publication and the refresh that read it, then use Check your answer.
