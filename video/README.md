@@ -91,6 +91,9 @@ python video/verify_learning_aid_browser.py --chapter 01
 
 The browser check requires Playwright and `/usr/bin/chromium`. Check the actual
 encoded frames, response pauses and small-screen readability manually too.
-Packaging refreshes this chapter's assets, hashes, duration and provenance only;
-it does not deploy. Commit and merge each completed chapter before starting the
+Packaging refreshes this chapter's assets, hashes, duration and provenance only.
+For a new chapter it inserts the video before the first section, creates a local
+preview and adds its production-manifest entry; subsequent runs update that same
+embed and record. The commands discover available `video/chapter-NN/project.json`
+files. Packaging does not deploy. Commit and merge each completed chapter before starting the
 next. Record actual review evidence and listening limitations in `review.md`.

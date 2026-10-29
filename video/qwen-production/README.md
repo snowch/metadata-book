@@ -9,9 +9,9 @@ The exact reference WAV and matching spoken transcript are retained in
 
 New passages use the official `Qwen/Qwen3-TTS-12Hz-1.7B-Base` checkpoint pinned to
 `fd4b254389122332181a7c3db7f27e918eec64e3`. A single reusable full reference prompt
-keeps this synthetic voice across chapters. Chapter 2's columns scene reuses the
-approved reference audio exactly because its spoken text is identical. No voice
-belonging to a real person is used as a reference.
+keeps this synthetic voice across chapters. Preserve the approved reference even
+when no new scene uses its exact text. No voice belonging to a real person is
+used as a reference.
 
 Install the requirements and a suitable CPU PyTorch/torchaudio build. The production environment uses CPU bfloat16, four Torch threads, and batches
 of six passages, grouped by descending length. The initial three-scene batch is
@@ -36,9 +36,11 @@ python3.12 -m venv /tmp/qwen-venv
 /tmp/qwen-venv/bin/python video/qwen-production/synthesize.py
 ```
 
-Default production destinations are `out/q1-chapter-01/`, `out/q1-chapter-02/`
-and `out/q1-chapter-03/`. The chapter `synthesize.py` adapters also use these
-isolated destinations. Set `EXPLAINER_OUT` only for a single chapter invocation.
+Each chapter adapter writes to `out/q1-chapter-NN/`. For a new chapter, use its
+`video/chapter-NN/synthesize.py` adapter or pass an explicit `--chapters NN` to
+the shared synthesizer. The shared command without arguments retains its
+original selection of Chapters 1–3. For sequential chapter work, use a single
+chapter invocation and finish its review and merge before starting the next. Set `EXPLAINER_OUT` only for a single chapter invocation.
 Reference paths and the model directory can be set with `Q1_REFERENCE`,
 `Q1_REFERENCE_TEXT`, and `--model-dir` respectively. Set `QWEN_BASE_MODEL` for the downloader when
 using a model directory other than `/workspace/scratch/qwen-base/model`. Keep the original reference

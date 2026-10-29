@@ -1,0 +1,21 @@
+Why is this report out of date?
+
+Display narration, preserved in full.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
+Source: https://snowch.github.io/metadata-book/chapters/04-outdated-reports.html
+
+The report refreshes at one in the afternoon and shows 100%. That saved result used two completed deliveries, both on time. But a third parcel arrived late at twelve twenty. Is the report now showing the current result? Pause and explain.
+
+No. The calculation rule has not changed. The saved input gave two out of two, or 100%. The current delivery records give two out of three, or 66.7%. Refreshing the report read the older output; it did not calculate from the updated deliveries.
+
+Follow the later run, R1230. It failed with an injected destination write-permission error before publishing a new output. This is a deliberate fault in the invented simulation. The failure helps explain the missing publication. The report's refresh record supplies separate evidence of what readers actually saw: the old output.
+
+After the simulated permission problem is removed, a new run uses the same calculation with updated inputs and publishes 66.7% at ten past one. No further deliveries arrive during recovery. Does a successful run alone establish that the report has recovered? Explain before continuing.
+
+Check the report refresh too. F1312 refreshed at twelve minutes past one and read summary-R1310, the new output published at ten past one. Matching that reference shows the new 66.7% reached the report. We need both the publication and the refresh that read it.
+
+Recovery is one question; correct logic is another. A successful run can still use the wrong denominator. The page's separate hypothetical debugging example shows that problem. Inspect the producing execution, retained code and input before deciding why a number is wrong.
+
+Keep the earlier output and refresh record. They explain the 100% readers saw before recovery; that earlier calculation was correct for its saved inputs. To reproduce it, retain the input data and code too. References cannot supply rows that have been deleted.
+
+Try the page's map exercise. Follow the old Report refresh to Published output and Run. These map examples show the earlier evidence, not recovery. Compare them with the recovery table on the page. Identify the new publication and the refresh that read it, then use Check your answer.

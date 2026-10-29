@@ -1532,6 +1532,507 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "04",
+      "duration_seconds": 152.2,
+      "caption_cues": 43,
+      "end_card_seconds": 5,
+      "purpose": "Page learning aid: explain stale output and verify that recovery reaches the report through matching publication and refresh references.",
+      "video_sha256": "a7253d07403df9b9f7de3386161a44e9e4274c55349f5ce8d86bb543423c8d65",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "fresh-question",
+          "raw_seconds": 14.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The report refreshes at one in the afternoon and shows one hundred percent. That saved result used two completed deliveries, both on time. But a third parcel arrived late at twelve twenty. Is the report now showing the current result? Pause and explain.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d031f4560d157bb5c86ad95d59362edc7b776863af28559d32c7cbe3545fffa4",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "a6883f59493b2e2780be1e0e88751b0a86c378f26b9828e9905133d9124b15b5",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c9e8d67f432b2efcd9eda9f09ab016f1ceb0bab8176d93aa2825d85d04e5254e",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-05.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 107.80302341599963,
+            "seconds": 14.8,
+            "sha256": "646ad42d924c26fb06019c963cb48653d18cad06e180dc06d3eaf587c88d8c79"
+          },
+          "unprompted_asr": "The report refreshes at 1 in the afternoon and shows 100%. That saved result used two completed deliveries both on time, but a third parcel arrived late at 12.20. Is the report now showing the current result? Pause and explain.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "old-result",
+          "raw_seconds": 17.2,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "No. The calculation rule has not changed. The saved input gave two out of two, or one hundred percent. The current delivery records give two out of three, or sixty six point seven percent. Refreshing the report read the older output; it did not calculate from the updated deliveries.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "1039149ac3dba09ca450d23caeb38eaf7eb95e252eb5d77cdacc07cba1968c53",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 17.2,
+            "sha256": "7b1311d153b5b9036e474bdd531979374ab69f0c828e0d241b567840d3e50464"
+          },
+          "unprompted_asr": "No, the calculation rule has not changed. The saved input gave 2 out of 2 or 100 percent. The current delivery records give 2 out of 3 or 66.7 percent. Refreshing the report read the older output. It did not calculate from the updated deliveries.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "failed-run",
+          "raw_seconds": 17.52,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Follow the later run, R twelve thirty. It failed with an injected destination write-permission error before publishing a new output. This is a deliberate fault in the invented simulation. The failure helps explain the missing publication. The report's refresh record supplies separate evidence of what readers actually saw: the old output.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "e700dd99af7f9e106844b455860c8a6d503bbdb3538472c97659569f347b4a5a",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 17.52,
+            "sha256": "1464e0b3649cb2fe11a29ea00fbeac4c2f8fb4d54601320960b54bed4565d4ed"
+          },
+          "unprompted_asr": "Follow the later run, R1230, it failed with an injected destination write permission error before publishing a new output. This is a deliberate fault in the invented simulation. The failure helps explain the missing publication, the report's refresh record supplies separate evidence of what readers actually saw, the old output.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 3,
+          "kind": "recovery-question",
+          "raw_seconds": 17.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "After the simulated permission problem is removed, a new run uses the same calculation with updated inputs and publishes sixty six point seven percent at ten past one. No further deliveries arrive during recovery. Does a successful run alone establish that the report has recovered? Explain before continuing.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "e8c6c3c484ba1a2b7e3addd4021178df2ab63b7b01e1bf237f09e8e2f0148c59",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 17.36,
+            "sha256": "5612060abf80dace52f9fd0bdf427039b36c713c11a125325b71fcac785fac40"
+          },
+          "unprompted_asr": "After the simulated permission problem is removed, a new run uses the same calculation with updated inputs and publishes 66.7% at 10 past 1. No further deliveries arrive during recovery. Does a successful run alone establish that the report has recovered? Explain before continuing.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 4,
+          "kind": "recovery-answer",
+          "raw_seconds": 17.44,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Check the report refresh too. F thirteen twelve refreshed at twelve minutes past one and read summary R thirteen ten, the new output published at ten past one. Matching that reference shows the new sixty six point seven percent reached the report. We need both the publication and the refresh that read it.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "018dd59f71dfa6290a6d1db6d652f98d491b30bda64c36ff821bfd3a919ed5eb",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 17.44,
+            "sha256": "b0b69a4cd86894428ded7fcd55a4e307a5ebfbb2b03f8e2106f24202b46cb5e4"
+          },
+          "unprompted_asr": "Check the report refresh to F1312 refreshed at 12 minutes past 1 and red summary R1310. The new output published at 10 past 1. Matching that reference shows the new 66.7% reached the report. We need both the publication and the refresh that read it.",
+          "alignment": {
+            "matched_character_fraction": 0.9919678714859438,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "o",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "a",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "limits",
+          "raw_seconds": 16.56,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Recovery is one question; correct logic is another. A successful run can still use the wrong denominator. The page's separate hypothetical debugging example shows that problem. Inspect the producing execution, retained code and input before deciding why a number is wrong.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "5dcdbe4ba8cc5418da3d65ef874100e45e92be7b14880619fc3c68c49933bdad",
+            "seed": 48,
+            "batch_size": 2,
+            "batch_members": [
+              {
+                "spoken_sha256": "a6883f59493b2e2780be1e0e88751b0a86c378f26b9828e9905133d9124b15b5",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c9e8d67f432b2efcd9eda9f09ab016f1ceb0bab8176d93aa2825d85d04e5254e",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-05.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 107.80302341599963,
+            "seconds": 16.56,
+            "sha256": "776a5c1ad73c737cbad6782f07e86100103f175d808031ef64f62b9099c3bb60"
+          },
+          "unprompted_asr": "Recovery is one question. Correct logic is another. A successful run can still use the wrong denominator. The page's separate hypothetical debugging example shows that problem. Inspect the producing execution, retained code and input before deciding why a number is wrong.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 6,
+          "kind": "retain",
+          "raw_seconds": 16.08,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Keep the earlier output and refresh record. They explain the one hundred percent readers saw before recovery; that earlier calculation was correct for its saved inputs. To reproduce it, retain the input data and code too. References cannot supply rows that have been deleted.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "e8d09e000ad198b474964b2c90063d8d10a0f1226825114b8d065a5a7af75a0c",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 16.08,
+            "sha256": "3e0f01f0488e3a3956b6a750a4de9f8466d08cd25a447d1ffd7804ad137e2880"
+          },
+          "unprompted_asr": "Keep the earlier output and refresh record. They explain the 100% readers saw before recovery that earlier calculation was correct for its saved inputs. To reproduce it, retain the input data and code too. References cannot supply rows that have been deleted.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 7,
+          "kind": "practice",
+          "raw_seconds": 16.4,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. Follow the old Report refresh to Published output and Run. These map examples show the earlier evidence, not recovery. Compare them with the recovery table on the page. Identify the new publication and the refresh that read it, then use Check your answer.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "ac148198a72b6cc82f7e9918ade7407a76d2214111fee0737c959acf21e50ce3",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "6a0c62133fbc5600a2a9526a87ffad0c57644447828e402395971a987e09b478",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "e4c5a918b50201289ed2af2dc7624a5e812a1a96c12c4e5c7ca44fe365a1c475",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "18b474123e5aadc3724c620ec4f84e1bc0763da196931faf0cb1d7d8b3e12f6f",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "e99e12afcfb68ace7ca74bdcbee46f603042586d60e223140af809f6295ee9f6",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "4286e9cd33f0098e134f6be3e87b871f675a80396ef5dba9312c57cade5c6f11",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "fe70ef612cb15abfbd315a576be564179671df20beaf76c6b6d9a9681bcfe97b",
+                "path": "/workspace/metadata-book/out/q1-chapter-04/raw-06.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 220.05503628499991,
+            "seconds": 16.4,
+            "sha256": "cb620125befa3a5cf406a6c37485ea0dd2506457ccae2b329896278665b18738"
+          },
+          "unprompted_asr": "Try the page's map exercise. Follow the old report refresh to published output and run. These map examples show the earlier evidence, not recovery. Compare them with the recovery table on the page. Identify the new publication and the refresh that read it. Then use check your answer.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }
