@@ -1,0 +1,1946 @@
+{
+  "voice": "Q1 — original warm British female",
+  "date": "2026-10-29",
+  "reference_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+  "method": "Original synthetic-reference cloning; independent unprompted ASR; estimated canonical-word alignment",
+  "human_listening_review": false,
+  "chapters": [
+    {
+      "chapter": "01",
+      "duration_seconds": 167.79166666666666,
+      "caption_cues": 50,
+      "end_card_seconds": 5,
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "opening",
+          "raw_seconds": 13.12,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "c258d1f69c9cdb164ee97c22cf04c03f726d4cfdd69518ce68926a5584b100dd",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 13.12,
+            "sha256": "6138970a7d22112d7d2f35895c8cd194197e32836bcf29b02b8d04c9719273c3"
+          },
+          "unprompted_asr": "A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 1,
+          "kind": "completed",
+          "raw_seconds": 14.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "First, ask: of the completed deliveries, how many were on time? Three parcels have arrived. Two were on time. Two out of three gives sixty six point seven percent. The unfinished delivery is outside this calculation.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d4157f511760c37c6e84f15d361292a3902977cfc0a773edf70d2aba735acdde",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 14.8,
+            "sha256": "89df0b0d262da0a13c835a31e4d98d2a7c73c453fe8cf3a5517f3de2d8f5b71a"
+          },
+          "unprompted_asr": "First, ask of the completed deliveries, how many were on time? Three parcels have arrived, two were on time. Two out of three gives 66.7 percent. The unfinished delivery is outside this calculation.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 2,
+          "kind": "due",
+          "raw_seconds": 10.56,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now ask: of all deliveries due, how many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives fifty percent.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "b3acb71a4401ed277464d0257e290730bb11af347bd71ced72bf32acebf18ed3",
+            "seed": 42,
+            "batch_size": 3,
+            "batch_members": [
+              {
+                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
+                "path": "out/q1-chapter-01/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
+                "path": "out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
+                "path": "out/q1-chapter-01/raw-10.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 312.2053978650001,
+            "seconds": 10.56,
+            "sha256": "e215ca43f6ec5ccdc201cf67d926e82cfef201e3a5cd062eb736cf5f71b2f8e2"
+          },
+          "unprompted_asr": "Now ask of all deliveries due. How many arrived on time? All four parcels were promised by noon, so all four count, including the unfinished delivery. Two out of four gives 50 percent.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 3,
+          "kind": "compare",
+          "raw_seconds": 14.64,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Both calculations are valid for their stated questions. The difference is the denominator: the total number of deliveries included. Three completed deliveries, or all four deliveries due. A dashboard labelled only on-time delivery leaves readers to guess.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "cf730b01887aaa11c2fcdf24d69f051e7a3afe4411539690468bda8a4a7f4081",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 14.64,
+            "sha256": "a82b3fd4273c80cd671d8a2bb5c6cff7831cb174a5349d1e91e6c76ee8248ec7"
+          },
+          "unprompted_asr": "Both calculations are valid for their stated questions. The difference is the denominator, the total number of deliveries included, three completed deliveries or all four deliveries due. A dashboard labeled only on-time delivery leaves readers to guess.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9952830188679245,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "l",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 4,
+          "kind": "metadata",
+          "raw_seconds": 15.76,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Metadata is information that describes data: its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. The values alone rarely explain what they measure.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "fa597b278ed64e0debac7c648c1e605c7485e5d9b4829adfbf0e637193e21eff",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 15.76,
+            "sha256": "17a810b55883f1129e636092af7c4cd6b06d9bf488ac43198b01d743b827da39"
+          },
+          "unprompted_asr": "Metadata is information that describes data, its structure, meaning, origin, and use. Column names and types are metadata, so are a metric's definition and a record of the job that produced it. The values alone rarely explain what they measure.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 5,
+          "kind": "definition",
+          "raw_seconds": 18.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Suppose Delivery Operations wants to know whether all promised deliveries arrived on time. Record the decision: on time means delivered at or before the promised time. Include every delivery due by noon, even if it has not arrived. Measure at one in the afternoon, and name Delivery Operations as the team responsible for the definition.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "9c2c88a6bfecd9eb5b2cdc0af16d9111748532c75d76ad758deac27862494b6d",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 18.96,
+            "sha256": "4c27d0782d17e1537f7910f5d185512ef35386fd5557b7f83d3b8e0238d37998"
+          },
+          "unprompted_asr": "Suppose delivery operations wants to know whether all promised deliveries arrived on time. Record the decision. On time means delivered at or before the promised time. Include every delivery due by noon. Even if it has not arrived, measure at 1 in the afternoon and name delivery operations as the team responsible for the definition.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 6,
+          "kind": "owner",
+          "raw_seconds": 12.4,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives fifty percent. Another team can legitimately use completed deliveries, provided its definition makes that choice clear.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "23638de862ab622b812217a4ca616fcc8555e70fef75db6741744d83daf457b9",
+            "seed": 42,
+            "batch_size": 3,
+            "batch_members": [
+              {
+                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
+                "path": "out/q1-chapter-01/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
+                "path": "out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
+                "path": "out/q1-chapter-01/raw-10.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 312.2053978650001,
+            "seconds": 12.4,
+            "sha256": "57f9d86edbc369221fb6b16de37cdc0795f6a70512dfea88c1df21d06c5a6cb9"
+          },
+          "unprompted_asr": "This definition makes the choice inspectable. All four parcels belong in the denominator, so the measure gives 50%. Another team can legitimately use completed deliveries, provided its definition makes that choice clear.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 7,
+          "kind": "field",
+          "raw_seconds": 14.24,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Field names need explanation too. A column named delivered at could record when a parcel reached a depot, or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "aa42d8d842ff9d68b3dfecbe3aeaa47aa072fc9c122a7c1f0674d42ad53f7465",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 14.24,
+            "sha256": "23d8bba8b7d311a5dec7da1b8869ccb4bc8e4e309df0cf3139fce461c121580c"
+          },
+          "unprompted_asr": "Field names need explanation too. A column name delivered at could record when a parcel reached a depot or when it reached the customer. Both are plausible meanings. The name alone cannot tell us which one applies.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9942857142857143,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "d",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 8,
+          "kind": "mismatch",
+          "raw_seconds": 15.36,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows sixty six point seven percent, even though Delivery Operations' definition requires fifty percent. The query can run successfully and still answer the wrong question.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "ba4f9890eadc18612e0d8b11ed50ac5192aff28b1a681b718f3608cff9a7a8a9",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 15.36,
+            "sha256": "2b8f73543afd74198eb2c485eee5d144388631a14498d4012ddb705458c3135e"
+          },
+          "unprompted_asr": "But a definition is not proof. If the dashboard removes unfinished deliveries before counting, it shows 66.7%. Even though delivery operations definition requires 50%, the query can run successfully and still answer the wrong question.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 9,
+          "kind": "verify",
+          "raw_seconds": 13.2,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "1e08723660b3bbe7c9e476858d0f42d1c007d986e763c21367ea08bf6bb69f55",
+            "seed": 66,
+            "batch_size": 1,
+            "batch_members": [
+              {
+                "spoken_sha256": "dca0fb17a435d8a22075ac62f1f04a10d6d475c4ad36e5a878582da9ba208add",
+                "path": "out/q1-chapter-01/raw-09.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 195.99278457699984,
+            "seconds": 13.2,
+            "sha256": "dd0c523dee255a17f02af1cc312a42f2830b20b16c79715abe01dbdab28ec270"
+          },
+          "unprompted_asr": "The recorded rule gives a reviewer something to check. Inspect the filter. Inspect the denominator. Compare the calculation with the four-parcel example. If the intended rule changes, review both the definition and the calculation.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 10,
+          "kind": "recap",
+          "raw_seconds": 11.84,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "When you see a number, ask what counts, when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "4f28fdad24cca3a51f53101acd95509857bd5e26a3c3e28746b8f03be3db167c",
+            "seed": 42,
+            "batch_size": 3,
+            "batch_members": [
+              {
+                "spoken_sha256": "1b2c3537401f50f4dd7263a40a568361a73b56d15980851e5e8fa5abab828498",
+                "path": "out/q1-chapter-01/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "f4da362a73780514f9fc45164441fdc0f0bdb9c648901242c3372b541666b3ef",
+                "path": "out/q1-chapter-01/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "44c1f9558b4d68fac4c7144394e50eacd66a352578406c54218455a7a31017ed",
+                "path": "out/q1-chapter-01/raw-10.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 312.2053978650001,
+            "seconds": 11.84,
+            "sha256": "5e81ccd112f63be891510817239fd3de1b1ee757f8839e077662a0853cae8db3"
+          },
+          "unprompted_asr": "When you see a number, ask what counts when it was measured, and which team can explain its meaning. Then check that the calculation follows the recorded rule. Metadata makes those questions answerable.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        }
+      ],
+      "spoken_wpm": 161.5444214876033,
+      "final_export": {
+        "chapter": "01",
+        "file": "chapter-01.mp4",
+        "sha256": "c52d425a02964507c915f31bf3186426e82c8ad0e25ac9c918ebebe5fbbf20ec",
+        "bytes": 4710935,
+        "duration_seconds": 167.8,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "caption_codec": "mov_text",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "fps": "24/1",
+        "full_ffmpeg_decode": "passed",
+        "poster": "/workspace/metadata-book/out/q1-chapter-01/poster.jpg",
+        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-01/encoded-frames/contact-sheet.jpg"
+      }
+    },
+    {
+      "chapter": "02",
+      "duration_seconds": 206.125,
+      "caption_cues": 62,
+      "end_card_seconds": 5,
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "opening",
+          "raw_seconds": 16.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "A database records descriptions of its tables: column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let's inspect four invented deliveries stored in a table named deliveries, using sequel lite.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "50e8efaa9653a5ea95f051c7f4b876e22550a3fe716bccbe5d64d59b006cabba",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 16.16,
+            "sha256": "772b4d00f19fad982548a72e06bb9176513fb6cfadf14f225e3a8a41fcada1cb"
+          },
+          "unprompted_asr": "A database records descriptions of its tables, column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let's inspect four invented deliveries stored in a table named deliveries using SQLite.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 1,
+          "kind": "columns",
+          "raw_seconds": 32.48,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "2fbf50b5e3fac6a7942b6172535da663d420096d6bd9c924f5dec494b0fd30f5",
+            "reused_approved_reference": true,
+            "generation_method": "reused approved reference",
+            "original_generation": {
+              "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+              "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+              "seed": 42
+            },
+            "sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "batch_members": []
+          },
+          "unprompted_asr": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9893048128342246,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "gh"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 2,
+          "kind": "meaning",
+          "raw_seconds": 18.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Those records describe structure, or schema. They do not explain every value. A missing delivery time could mean an unfinished parcel, a late update, or an unknown time. Assume these invented records are complete: here, null means the parcel has not yet been delivered. Meaning can also change without changing the schema.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "7de1582559a9773383eb22df10f92025dacde8913d6482e234c37159f4de20fd",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 18.96,
+            "sha256": "58a7b767b8a4293bb5990f86bad143d4e58df1a25081f845728b8737c284d79b"
+          },
+          "unprompted_asr": "Those records describe structure or schema. They do not explain every value. A missing delivery time could mean an unfinished parcel, a late update, or an unknown time. Assume these invented records are complete. Here, null means the parcel has not yet been delivered, meaning can also change without changing the schema.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 3,
+          "kind": "promise",
+          "raw_seconds": 15.52,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Suppose the original promise was noon, revised to twelve thirty. A parcel arrives at twelve twenty. It is late against the original promise, but on time against the revision. We need to know which promise the column stores. Its name and type cannot settle that.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "c9e854f64e8cfabfda943ce07dde02e15fac11a6b35f68871aa8404d7a322fab",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 15.52,
+            "sha256": "9505159b28287660ba1bed83f41113b4455957ca5b8acb2904808d235b229dc4"
+          },
+          "unprompted_asr": "Suppose the original promise was noon, revised to 1230. A parcel arrives at 1220. It is late against the original promise, but on time against the revision, we need to know which promise the column stores. Its name and type cannot settle that.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 4,
+          "kind": "view",
+          "raw_seconds": 21.76,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now read the complete saved query. A view is a named query, readable like a table. This sequel lite view calculates its result whenever it is read. Its filter removes rows with a missing delivery time. It counts the remaining deliveries, counts those arriving by the stored promise, and calculates a percentage. The zero-denominator guard returns null if none are completed.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "4d781af03ff6e32f034ac5643f5ee3ebf2b86128ca226d15ab6fd56c7adb0e8f",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 21.76,
+            "sha256": "f2f4b0c4bbdc96b66097246a5e2d594abef36dccc95ec10004c09d56a7d789e8"
+          },
+          "unprompted_asr": "Now read the complete saved query. A view is a named query, readable like a table. This SQL light view calculates its result whenever it is read. Its filter removes rows with a missing delivery time. It counts the remaining deliveries, counts those arriving by the stored promise and calculates a percentage. The zero denominator guard returns null if none are completed.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9868421052631579,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "gh"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 5,
+          "kind": "count",
+          "raw_seconds": 22.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Here are the four deliveries, all promised by noon. Two arrived on time, one arrived late, and one is unfinished. The filter leaves three completed deliveries. Two on time out of three completed gives sixty six point seven percent. Delivery Operations needs all four deliveries due in the denominator. Two out of four gives fifty percent. The view answers a different question.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "c807d6e8764a2671e502a6bfd02c68c88f82b055dd19ee8f49c473a0fb2890d9",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 22.16,
+            "sha256": "bee35a07225fe130600bf7ffa4837d180495f45c60f20a82b0c4dc3cbb9655cd"
+          },
+          "unprompted_asr": "Here are the four deliveries, all promised by noon. Two arrived on time, one arrived late, and one is unfinished. The filter leaves three completed deliveries. Two on time out of three completed gives 66.7%. Delivery operations needs all four deliveries due in the denominator. Two out of four gives 50%. The view answers a different question.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 6,
+          "kind": "assumptions",
+          "raw_seconds": 21.6,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The comparison assumes every timestamp uses the same fixed U T C text format, year first, through minutes. For these values, text order matches time order. The text declaration does not enforce that assumption. The saved query is metadata describing a calculation. The percentage it returns is output data. Reading the query reveals what it counts; it does not establish the business rule.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "a3e88f1d5f40224018e5097f99215d6de29f04a0a2b4afbbecdc3834ff1a9285",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 21.6,
+            "sha256": "cc92ebbe1ecb0fc5a3d258dca2d68837feb2133ff3afa67dc77fd5a837897676"
+          },
+          "unprompted_asr": "The comparison assumes every timestamp uses the same fixed UTC text format, year-first through minutes. For these values, text order matches time order. The text declaration does not enforce that assumption. The saved query is metadata describing a calculation. The percentage it returns is output data. Reading the query reveals what it counts. It does not establish the business rule.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 7,
+          "kind": "catalogues",
+          "raw_seconds": 29.84,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Catalogues have two overlapping jobs. Database and query-engine catalogues help software find and read data. Hive Metastore describes schemas, partitions such as a day's deliveries, storage locations, and file formats. Discovery and governance catalogues help people understand and manage data. Data Hub and Open Metadata connect technical records with definitions, responsible teams, and lineage. These are main purposes, with overlap: database catalogues can hold comments or ownership too.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "7eee412400eaeeae08cafb0f105fb50e4870cf4e39db92dfe583a6292b924c69",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 29.84,
+            "sha256": "057e85ced34fac0b7540e88c07530b15c54baf2f1a6726aa0f67e5214d7ef3e9"
+          },
+          "unprompted_asr": "Catalogs have two overlapping jobs. Database and Query Engine catalogs help software find and read data. Hive Metastore describes schemas, partitions such as a day's deliveries, storage locations, and file formats. Discovery and governance catalogs help people understand and manage data. Data Hub and Open Metadata connect technical records with definitions, responsible teams, and lineage. These are main purposes. With overlap, database catalogs can hold comments or ownership too.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9804878048780488,
+            "differences": [
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 8,
+          "kind": "recap",
+          "raw_seconds": 16.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Inspect the structure, then check the meaning and the calculation. Ask which promise is stored, what a missing time means, and which deliveries enter the denominator. Database metadata gives useful evidence. A trustworthy measure also needs an explicit definition.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "208c3d24840e233542e9f19dd7fc198e975e1e000bc26b7760538988ed49eafc",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 16.16,
+            "sha256": "a7418fb11b4c8ee68bf9bf66a2c25f383ff00cb093d355a0fa89a82878873fee"
+          },
+          "unprompted_asr": "Inspect the structure, then check the meaning and the calculation. Ask which promise is stored, what a missing time means, and which deliveries enter the denominator. Database metadata gives useful evidence. A trustworthy measure also needs an explicit definition.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        }
+      ],
+      "spoken_wpm": 157.8298397040691,
+      "final_export": {
+        "chapter": "02",
+        "file": "chapter-02.mp4",
+        "sha256": "f6c16f5b25b6684c9cda95b3f4a7d889d894eb02731c7ee9c499597edadf9171",
+        "bytes": 5776153,
+        "duration_seconds": 206.2,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "caption_codec": "mov_text",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "fps": "24/1",
+        "full_ffmpeg_decode": "passed",
+        "poster": "/workspace/metadata-book/out/q1-chapter-02/poster.jpg",
+        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-02/encoded-frames/contact-sheet.jpg"
+      }
+    },
+    {
+      "chapter": "03",
+      "duration_seconds": 164.79166666666666,
+      "caption_cues": 46,
+      "end_card_seconds": 5,
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "opening",
+          "raw_seconds": 16.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At one in the afternoon, its Delivery performance report shows one hundred percent. What produced that number? This is an invented incident, checked using sequel lite.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "9893cb005fd1884e4ec27940b4b08fdb7622f5ccd91fe16b695471fe1a575bed",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 16.96,
+            "sha256": "67814dbd7f460ef2ae264ca434d5c117afa82db55a931e2caf9efed7bb120bf1"
+          },
+          "unprompted_asr": "Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At 1 in the afternoon its delivery performance report shows 100%. What produced that number? This is an invented incident checked using SQLite.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 1,
+          "kind": "route",
+          "raw_seconds": 14.08,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "9f636f368ed7de54d63d95a24451a45c8c69c65bdfdd82dc37b4287281c4fa04",
+            "seed": 54,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "05816fcd5bb9f46bf87662300289140a278929f299cd311a8c575448d1deb5be",
+                "path": "out/q1-chapter-02/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "b92392c0f097313163d7e02c0dc85057c6848a3d702902db7690c9df38fe98f2",
+                "path": "out/q1-chapter-02/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "3c69815708a48ebb595d4a81c86e3dada75229cb0a263de9b1089a475357e03b",
+                "path": "out/q1-chapter-03/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "2dae7bc11c16e158bfbbdc79ad9c4469705dc790bc0e7ed01fc18a0fef4a986b",
+                "path": "out/q1-chapter-03/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "4e0961ae9641938e2ece1d4d9ddfd77698614aaec9258cacf2386ae930244be9",
+                "path": "out/q1-chapter-01/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "ba3042c67bf4eef167416c9c1b56546e1d83b7f792bafee1bee4d68e410b2270",
+                "path": "out/q1-chapter-01/raw-08.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 645.4415433430013,
+            "seconds": 14.08,
+            "sha256": "3dbecb73ad0ccee38db7df476d0f2bf533c3919f2c692d8184d1e706244a6dd9"
+          },
+          "unprompted_asr": "A scheduled job calculates the percentage from the delivery records and saves the result. The report reads that saved result when someone refreshes it. Refreshing the report does not rerun the calculation. Those are separate steps, so we need evidence connecting them.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 2,
+          "kind": "distinction",
+          "raw_seconds": 19.12,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result: who or what created or changed it, when, and using which sources and methods. The terms overlap, but a route alone does not explain this particular number.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "93b7c1eb08c94542f9e056570c476d2b3dacd6efcd0a9816a1d7ecf05407daef",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "4ced4259c42ebca1eb3524eb79cd43a6f8ed8aab98f66c56d5e9863bf0d3e0c2",
+                "path": "out/q1-chapter-02/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "eb35794b2ac7184f56bc7093ce5cce247942a68943b5d30a401fad254d31f8da",
+                "path": "out/q1-chapter-02/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afdd74a4784caf560504667cc8c6cbf0c0c07481b2d8e229915aade41dd552c3",
+                "path": "out/q1-chapter-02/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0636535e6f70c2757f72a774a08a6ff45b61926026819713b3ae9562781cf24e",
+                "path": "out/q1-chapter-02/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "959b5bcff040755cdac0ebe5614e9a7e4fb22d339bc6d48570eea9bf287e43d8",
+                "path": "out/q1-chapter-01/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "1703d8cde0f84527f9ad7ea6315d1b369a145bfbc7e67a06294f4c352c1eaa64",
+                "path": "out/q1-chapter-03/raw-02.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 811.1340120670002,
+            "seconds": 19.12,
+            "sha256": "0453354667a2218380cecdb27920e45d4ee600e7ba157e53460678a3f640717c"
+          },
+          "unprompted_asr": "Lineage records where data comes from, how it is transformed, and which datasets or reports depend on it. Provenance records the history of a particular dataset or result, who or what created or changed it, when and using which sources and methods. The terms overlap, but a root alone does not explain this particular number.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 0.9924242424242424,
+            "differences": [
+              {
+                "operation": "replace",
+                "expected": "u",
+                "recognised": "o"
+              },
+              {
+                "operation": "delete",
+                "expected": "e",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 3,
+          "kind": "refresh",
+          "raw_seconds": 15.76,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Start with the report refresh record, F thirteen hundred. It says the report refreshed at one in the afternoon and read output summary R twelve oh five. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "3c6267b7bdbaeab7e28f8666827f5a14db41aaefcce068fe832914c60b0b9ac3",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 15.76,
+            "sha256": "df258430b07bc78d35f2a27a6538bd297d2b128252035131f51345f227d9ba6f"
+          },
+          "unprompted_asr": "Start with the report refresh record. F1300. It says the report refreshed at 1 in the afternoon and read output summary R1205. That output identifier is the link to follow. The refresh time alone does not tell us when the result was produced.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 4,
+          "kind": "output",
+          "raw_seconds": 17.44,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The matching published output contains one hundred percent. It was published at twelve oh five, fifty-five minutes before the report refresh. Its run identifier is R twelve oh five. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "e121e638aa85aef5067ca0489a6d64c0f81ce8db78032ee5c7c5262d8a087932",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 17.44,
+            "sha256": "feb76756faf1f90c8df0f816d906f9c2e15eeaa3b987dcc7cf15ef3e3c8fa489"
+          },
+          "unprompted_asr": "The matching published output contains 100%. It was published at 12.05, 55 minutes before the report refresh. Its run identifier is R12.05. We have connected the report to a producing execution, but the stored percentage does not establish whether the calculation was correct.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 5,
+          "kind": "run",
+          "raw_seconds": 17.68,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The run record supplies two more references: input snapshot S twelve oh five, and code version completed version one. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today's table and code may be different.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "ffd119aacad80635c19dda28e02d6e45cc69d6e0afe40904b7dbdaf6f3bf5bb9",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 17.68,
+            "sha256": "ecd3c60a44cd1b549cda7d17451ae319009394dd455c6049c32252873a9e69cb"
+          },
+          "unprompted_asr": "The run record supplies two more references, input snapshot S1205 and code version completed version 1. A snapshot is a retained copy of the input data at a particular time. These references tell us which saved input and calculation to inspect. Today's table and code may be different.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 6,
+          "kind": "snapshot",
+          "raw_seconds": 17.92,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The saved input was captured at twelve oh five. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data; the run's reference to them is metadata.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "f4a3bf6e228cc19f121f45d37acb26f3a99cfdca6928cff9f35a1c88dd8aecc9",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 17.92,
+            "sha256": "69742a7dfeb21480baab06d15a39bf667f94cbccd2022f2b4219a1852b67e7a6"
+          },
+          "unprompted_asr": "The saved input was captured at 12.05. All four parcels were promised by noon. Two had arrived on time. Two had not yet arrived. In this complete example, an empty delivery time means unfinished. These saved rows are input data. The run's reference to them is metadata.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 7,
+          "kind": "calculation",
+          "raw_seconds": 15.68,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives one hundred percent. The saved input and code explain why this run produced that result.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "bf39df69ef0cf68ef2e6b0d3ec7fbe73cb05f5af3b974333dfe8ab29a568654c",
+            "seed": 60,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "54bfacb98deb042923b11a972f1e282c678a92a82f32e2c180bbc95b34ed6d53",
+                "path": "out/q1-chapter-03/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "b6104ddbfec3acde27adef1f6cfcca0d4d6d190df0505e290698115076a144ec",
+                "path": "out/q1-chapter-01/raw-00.wav"
+              },
+              {
+                "spoken_sha256": "c67166e7d54036e153ee163b2cc1a9a01882634f120f1b03d9f692663512f300",
+                "path": "out/q1-chapter-02/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "f7f6eb758435b77c224cd2c5e26fc6746e21ffe20e8417b19ef347df6b2099bb",
+                "path": "out/q1-chapter-01/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "21c217fd656c9cddd0e29a1935ff885f99624188c5bfb56eee046e10e838a698",
+                "path": "out/q1-chapter-01/raw-07.wav"
+              },
+              {
+                "spoken_sha256": "ac4a37dfd2831a9d0800f2270f3393722110352238b99291a26ebeca662d3428",
+                "path": "out/q1-chapter-01/raw-01.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 530.6921104860012,
+            "seconds": 15.68,
+            "sha256": "5c84cc9fa29063a74b15dcd5bbbe3db2f60f461d222da52b9c72863f00e09f82"
+          },
+          "unprompted_asr": "The retained calculation excludes unfinished deliveries. Only the two completed parcels remain, and both were on time. Two on time out of two completed gives 100 percent. The saved input and code explain why this run produced that result.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        },
+        {
+          "scene": 8,
+          "kind": "recap",
+          "raw_seconds": 18.64,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was one hundred percent. Whether it was still current when the report refreshed is a separate question, explored in Chapter four.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "bc159a86f4fb19b51478241a648e528c26be6a35ffff7f26f906b35e452312fc",
+            "seed": 48,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "401083eecba04dbea960202acbfa028a80f068a0a873773b39998970850862db",
+                "path": "out/q1-chapter-03/raw-08.wav"
+              },
+              {
+                "spoken_sha256": "b46cf453a0a2b73b65cad19702fd3137570214dbd391073f25487a47d66d8ab5",
+                "path": "out/q1-chapter-02/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "35b09213db263c6932eb650439a1a49c6180a234ddb3d4d77de4c3b72da35762",
+                "path": "out/q1-chapter-03/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "9782f1ba198032bd37c898df011b0f62ec9e4344132d7ac04fa3616d7f7eb864",
+                "path": "out/q1-chapter-03/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "f51d5e17e67328790445734d59bb01b0ec3f86c06384412c467a3f4146ab906b",
+                "path": "out/q1-chapter-03/raw-06.wav"
+              },
+              {
+                "spoken_sha256": "afa9672cde4c885cd2973dc6c6b6f3b5b86c5ce0dca95b765ef914b413a567ef",
+                "path": "out/q1-chapter-03/raw-03.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 658.1016848320005,
+            "seconds": 18.64,
+            "sha256": "bc1c9d51ec87b0cc80e011ae54c5d33c0c1f56d4416eae419811374445e8f13e"
+          },
+          "unprompted_asr": "Follow the report refresh to its output, the output to its producing run, and the run to its retained input and code. Matching identifiers connect the evidence. We now know why the saved result was 100 percent. Whether it was still current when the report refreshed is a separate question, explored in Chapter 4.",
+          "asr_model": "small.en",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          }
+        }
+      ],
+      "spoken_wpm": 169.88517745302718,
+      "final_export": {
+        "chapter": "03",
+        "file": "chapter-03.mp4",
+        "sha256": "0cd3b391d2d4f0e487aa6fc1ee8196bc420029b2eaab410c8b9b3785f61fd33e",
+        "bytes": 4392238,
+        "duration_seconds": 164.8,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "caption_codec": "mov_text",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "fps": "24/1",
+        "full_ffmpeg_decode": "passed",
+        "poster": "/workspace/metadata-book/out/q1-chapter-03/poster.jpg",
+        "encoded_frames": "/workspace/metadata-book/out/q1-chapter-03/encoded-frames/contact-sheet.jpg"
+      }
+    }
+  ]
+}

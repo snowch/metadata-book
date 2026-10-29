@@ -5,7 +5,7 @@ import os
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parent
-BUILD = Path(os.environ.get('EXPLAINER_OUT', str(ROOT.parents[1] / 'out' / 'chapter-02'))).resolve()
+BUILD = Path(os.environ.get('EXPLAINER_OUT', str(ROOT.parents[1] / 'out' / 'q1-chapter-02'))).resolve()
 # Load drawing definitions and timings, stopping before the encoding loop.
 source = (ROOT / 'render.py').read_text().split('renderer=hashlib.sha256')[0]
 namespace = {'__file__': str(ROOT / 'render.py')}

@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json,math,os,subprocess,sys
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parent
-P=Path(os.environ.get('EXPLAINER_OUT',str(ROOT.parents[1]/'out'/'chapter-02'))).resolve()
+P=Path(os.environ.get('EXPLAINER_OUT',str(ROOT.parents[1]/'out'/'q1-chapter-02'))).resolve()
 C=json.loads((ROOT/'project.json').read_text());T=json.loads((P/'timings.json').read_text())
 W,H=1280,720;BG='#f7f4ed';INK='#292d29';MUTED='#68685f';RUST='#96432e';WASH='#eee1d4';GREEN='#386854';SAGE='#e3eee6';LINE='#ddd8cd';SURFACE='#fffdf8'
 FD=Path(C['font_dir']);FONTS=[FD/'DejaVuSans.ttf',FD/'DejaVuSans-Bold.ttf',FD/'DejaVuSerif.ttf',FD/'DejaVuSansMono.ttf']

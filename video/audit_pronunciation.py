@@ -8,6 +8,7 @@ import bisect
 import hashlib
 import html
 import json
+import math
 from pathlib import Path
 import re
 import subprocess
@@ -28,7 +29,7 @@ def spoken(text, lexicon):
 
 
 def occurrences(text, words, lexicon, review_terms):
-    """Map canonical terms to provider word ranges, including multiword aliases."""
+    """Map canonical terms to timed spoken-word ranges, including aliases."""
     terms = set(lexicon) | set(review_terms)
     if not terms:
         return []
@@ -48,6 +49,21 @@ def occurrences(text, words, lexicon, review_terms):
         last = bisect.bisect_left(ends, after)
         result.append((match[0], intended, first, last))
     return result
+
+
+
+def audio_time_shift(word_record):
+    """Convert timed-word offsets to positions in the final scene audio.
+
+    New engines record their own padding/trim shift. Older Edge builds used
+    the first provider boundary minus 80 ms, followed by 250 ms of padding.
+    """
+    if 'audio_time_offset_seconds' in word_record:
+        shift = word_record['audio_time_offset_seconds']
+        if isinstance(shift, bool) or not isinstance(shift, (int, float)) or not math.isfinite(shift):
+            raise ValueError('Invalid audio_time_offset_seconds in word timings.')
+        return shift
+    return .25 - max(0, word_record['words'][0]['offset'] / 1e7 - .08)
 
 
 def fingerprint(chapter, build):
@@ -130,11 +146,12 @@ def main():
     for i, scene in enumerate(scenes):
         if not scene['text']:
             continue
-        words = json.loads((build / f'words-{i:02}.json').read_text())['words']
+        word_record = json.loads((build / f'words-{i:02}.json').read_text())
+        words = word_record['words']
         found = occurrences(scene['text'], words, config.get('pronunciation', {}),
                             config.get('pronunciation_review_terms', []))
-        # synthesize.py trims first offset minus 80 ms and adds 250 ms lead-in.
-        shift = .25 - max(0, words[0]['offset'] / 1e7 - .08)
+        shift = audio_time_shift(word_record)
+        timing_source = word_record.get('timing_source', 'provider word boundaries')
         with wave.open(str(build / f'audio-{i:02}.wav'), 'rb') as wav:
             params = wav.getparams()
             data = wav.readframes(wav.getnframes())
@@ -164,7 +181,8 @@ def main():
                          chapter_time=timings[i]['start'] + start, clip=filename,
                          clip_sha256=hashlib.sha256(clip.read_bytes()).hexdigest(),
                          recognised=recognised, text_match=matches,
-                         pronunciation_verified=False))
+                         pronunciation_verified=False,
+                         timing_source=timing_source, audio_time_offset_seconds=shift))
             print(f'{term}: {recognised or "(no speech recognised)"}', flush=True)
     if not entries:
         raise ValueError('No review terms found. Add technical terms or pronunciations to project.json.')

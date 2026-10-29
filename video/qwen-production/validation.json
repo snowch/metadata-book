@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-29",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+  "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+  "expected": "Metadata is information that describes data: its structure, meaning, origin and use. Two on time out of three completed gives sixty six point seven percent.",
+  "unprompted_asr": "Metadata is information that describes data, its structure, meaning, origin, and use. Two on time out of three completed gives 66.7%.",
+  "asr_model": "small.en",
+  "audio_sha256": "7a15131d9d329d8d667c613ad04a8e7f6bdf05878ee0b1534426992df279d683",
+  "audio_seconds": 10.48,
+  "generation_seconds": 135.9994413100003,
+  "assessment": "No meaningful omissions or substitutions in independent automated recognition. Number written as 66.7%; pronunciation and prosody have not received a human listening review."
+}

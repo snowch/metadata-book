@@ -1,23 +1,29 @@
 # Producing chapter videos
 
-Use the chapter's narration, scene plan and rebuild instructions. Keep the source
+The published videos use the approved Q1 synthetic voice. Start with the
+[Q1 production setup](qwen-production/README.md), then use the chapter's
+narration, scene plan and rebuild instructions. Keep the source
 text and captions unchanged when adjusting how a word is spoken.
 
 ## Audit pronunciation after generating narration
 
 Run this step **after `synthesize.py` and before `render.py`**, including after a
-pronunciation correction. Install the chapter's `requirements-audit.txt` first.
+pronunciation correction. Install the production requirements first.
 
 ```sh
-/tmp/metadata-video-venv/bin/python video/chapter-03/synthesize.py
-/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03
+/tmp/qwen-venv/bin/python video/chapter-03/synthesize.py
+/tmp/qwen-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --build out/q1-chapter-03
 ```
 
 The second command extracts every occurrence of the project's `pronunciation`
 entries and `pronunciation_review_terms` from the generated speech. It uses
-provider word timings to preserve the complete term with surrounding context.
+word timings and each engine’s recorded audio offset to extract the complete
+term with surrounding context. Qwen timings are estimated by aligning ASR words
+to the intended spoken text; they are not provider word boundaries or proof
+that every word was spoken. Independent transcription checks are retained
+separately.
 Whisper transcribes each clip **without vocabulary hints or digit suppression**.
-The output is `out/chapter-03/pronunciation-audit/index.html`, with playable clips,
+The output is `out/q1-chapter-03/pronunciation-audit/index.html`, with playable clips,
 intended speech, unprompted transcription and highlighted differences. A JSON
 report records the same findings and hashes the inputs. Working audio and reports
 remain in ignored `out/`.
@@ -51,8 +57,8 @@ Review the pack before spending time on rendering:
 Before rendering, confirm the pack still matches the current speech:
 
 ```sh
-/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --check
-/tmp/metadata-video-venv/bin/python video/chapter-03/render.py
+/tmp/qwen-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --build out/q1-chapter-03 --check
+EXPLAINER_OUT="$PWD/out/q1-chapter-03" /tmp/qwen-venv/bin/python video/chapter-03/render.py
 ```
 
 `--check` detects absent or stale reports and changed clips. It does **not**

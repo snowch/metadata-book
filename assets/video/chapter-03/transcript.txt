@@ -1,7 +1,7 @@
 Where did this number come from?
 
 Display narration, preserved in full.
-Synthetic voice: en-GB-SoniaNeural.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
 Source: https://snowch.github.io/metadata-book/chapters/03-following-lineage.html
 
 Service Analytics measures the percentage of completed deliveries that arrived on time. It excludes parcels still awaiting delivery. At one in the afternoon, its Delivery performance report shows 100%. What produced that number? This is an invented incident, checked using SQLite.

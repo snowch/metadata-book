@@ -10,28 +10,27 @@ Production follows the [authored video workflow](https://github.com/snowch/expla
 - `project.json`: source, attribution, voice, pronunciation and duration contract.
 - `scene-plan.md`: chapter-to-scene source trail and visual interpretation checks.
 - `render.py`: record cards, reference arrows, staged highlights and the retained input table.
-- `synthesize.py`: cached scene speech, provider word boundaries, sentence cues and captions.
+- `synthesize.py`: cached scene speech, fresh ASR alignment estimates, sentence cues and captions.
 - `audit_audio.py`: automated transcription; it does not establish a listening review.
 
 The source is pinned to metadata-book commit `0fcdc702f0559c363876b5777b7034ea929a17b6`. Recovery belongs to Chapter 4 and is outside this video; the complete-record assumption is stated explicitly. No actual customer records appear.
 
 ## Rebuild
 
-Use Python 3.12, FFmpeg/ffprobe and the DejaVu fonts specified in `project.json`. From the repository root:
+Use Python 3.12, FFmpeg/ffprobe and the DejaVu fonts specified in `project.json`. Create the CPU environment in the install order documented in the [Q1 production instructions](../qwen-production/README.md), then run from the repository root:
 
 ```sh
-python3 -m venv /tmp/metadata-video-venv
-/tmp/metadata-video-venv/bin/pip install -r video/chapter-03/requirements-audit.txt
-/tmp/metadata-video-venv/bin/python video/chapter-03/synthesize.py
-/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03
-# Review out/chapter-03/pronunciation-audit/index.html before rendering.
-/tmp/metadata-video-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --check
-/tmp/metadata-video-venv/bin/python video/chapter-03/render.py
+export EXPLAINER_OUT="$PWD/out/q1-chapter-03"
+/tmp/qwen-venv/bin/python video/chapter-03/synthesize.py
+/tmp/qwen-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --build "$EXPLAINER_OUT"
+# Review out/q1-chapter-03/pronunciation-audit/index.html before rendering.
+/tmp/qwen-venv/bin/python video/audit_pronunciation.py --chapter video/chapter-03 --build "$EXPLAINER_OUT" --check
+/tmp/qwen-venv/bin/python video/chapter-03/render.py
 ```
 
-The default output is ignored `out/chapter-03/`. Set `EXPLAINER_OUT` to the same absolute build directory for both commands to change it. Keep scene audio, word metadata, timings, layers and independent clips for corrections. The speech cache includes spoken text, voice, rate, provider version and boundary mode. The visual cache includes renderer source, scene timing, configuration and fonts.
+The default output is ignored `out/q1-chapter-03/`. Set `EXPLAINER_OUT` to the same absolute build directory for both commands to change it. Keep scene audio, word metadata, timings, layers and independent clips for corrections. The speech cache verifies raw audio hashes and records spoken text, model/reference hashes, SDK versions, seed and batch membership. Word timing is a fresh ASR estimate with matching coverage recorded. The visual cache includes renderer source, scene timing, configuration and fonts.
 
-The online speech client uses `HTTPS_PROXY` when configured. It adds the environment's trusted CA bundle (`SSL_CERT_FILE`, or `/etc/ssl/certs/ca-certificates.crt`) while retaining TLS verification. No service credential is stored. Hosted speech may change; preserve the rendered audio for reproducible visual edits.
+Speech uses the local pinned Qwen Base model and the approved synthetic Q1 reference. See the [Q1 production instructions](../qwen-production/README.md) for model download, reference provenance, caching and alignment limitations.
 
 Outputs include `chapter-03.mp4`, `captions.srt`, `captions.vtt`, `transcript.txt`, `narration.wav` and `timings.json`. Video is 1280×720, 24 fps, H.264/yuv420p, AAC with selectable English captions and faststart. Captions are also provided separately. No permanent subtitle strip or music is used.
 
@@ -42,11 +41,10 @@ Follow the [pronunciation audit workflow](../README.md#audit-pronunciation-after
 ## Review
 
 ```sh
-/tmp/metadata-video-venv/bin/pip install -r video/chapter-03/requirements-audit.txt
-/tmp/metadata-video-venv/bin/python video/chapter-03/audit_audio.py
-/tmp/metadata-video-venv/bin/python video/chapter-03/audit_audio.py --model small.en --scenes 2,3,4,5,8
-ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,duration -of json out/chapter-03/chapter-03.mp4
-ffmpeg -hide_banner -loglevel error -i out/chapter-03/chapter-03.mp4 -f null -
+/tmp/qwen-venv/bin/python video/chapter-03/audit_audio.py
+/tmp/qwen-venv/bin/python video/chapter-03/audit_audio.py --model small.en --scenes 2,3,4,5,8
+ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,duration -of json out/q1-chapter-03/chapter-03.mp4
+ffmpeg -hide_banner -loglevel error -i out/q1-chapter-03/chapter-03.mp4 -f null -
 ```
 
 Audit downloads Whisper weights on first use. Inspect exported frames, full and isolated transcription, negations and percentages. Digit suppression may distort number recognition, so investigate a discrepancy with normal numeral decoding too. ASR is not a phonetic guarantee. Source checks and visual meaning review are manual.

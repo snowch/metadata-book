@@ -5,14 +5,14 @@ A database keeps descriptions of its tables so it can run queries. Those records
 The examples use SQLite, with the four deliveries from Chapter 1 stored in a table named `deliveries`. Each row represents one delivery. The [source SQL](../examples/deliveries.sql) contains the setup and saved query. Every result needed to follow the explanation is shown here.
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">3 min 52 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-02/poster.jpg" aria-label="What a database already knows: narrated Chapter 2 explainer" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-02/chapter-02.mp4" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-02/captions.vtt" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt">read the transcript</a>.
+<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">3 min 26 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-02/poster.jpg?v=ac51981e3e5a" aria-label="What a database already knows: narrated Chapter 2 explainer" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-02/chapter-02.mp4?v=f6c16f5b25b6" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-02/captions.vtt?v=a4e01b56cd0a" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4?v=f6c16f5b25b6">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt?v=1788411c8e5c">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4" download>Download video <span>(6 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt?v=1788411c8e5c">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4?v=f6c16f5b25b6" download>Download video <span>(5.8 MB)</span></a></p>
 </figure>
 
 ## Inspect the columns

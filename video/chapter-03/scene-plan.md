@@ -17,4 +17,4 @@ Audience: report readers and engineers. After watching, a reader should follow m
 | recap | Core points and Chapter 4 transition | Reference trail: refresh → output → run, branching to input/code | Arrows mean investigation, not processing order. Correct for retained input does not establish currency at refresh. |
 | end | Attribution | Source chapter title and book link; synthetic-voice disclosure; five-second silent hold | No new claim or unverified copyright. |
 
-Scene reveals and captions use provider word-boundary alignment. Manual source and visual review are separate from automatic transcription; no listening review is claimed. Display IDs stay exact while the pronunciation map makes them speakable.
+Scene reveals and captions use fresh ASR alignment estimates to the canonical spoken text; unmatched words are explicitly flagged in the timing metadata. Manual source and visual review are separate from automatic transcription; no listening review is claimed. Display IDs stay exact while the pronunciation map makes them speakable.

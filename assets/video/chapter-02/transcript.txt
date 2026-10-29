@@ -1,7 +1,7 @@
 What a database already knows
 
 Display narration, preserved in full.
-Synthetic voice: en-GB-SoniaNeural.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
 Source: https://snowch.github.io/metadata-book/chapters/02-reading-a-database.html
 
 A database records descriptions of its tables: column names, declared types, and rules about allowed values. We can query them. But do they tell us what a delivery measure means? Let’s inspect four invented deliveries stored in a table named deliveries, using SQLite.

@@ -11,7 +11,7 @@ from faster_whisper import WhisperModel
 ROOT = Path(__file__).resolve().parent
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--build', type=Path, default=Path(os.environ.get(
-    'EXPLAINER_OUT', str(ROOT.parents[1] / 'out' / 'chapter-02'))))
+    'EXPLAINER_OUT', str(ROOT.parents[1] / 'out' / 'q1-chapter-02'))))
 ap.add_argument('--scenes', help='Comma-separated zero-based scenes to recheck; otherwise the complete narration')
 ap.add_argument('--model', default='base.en')
 args = ap.parse_args()

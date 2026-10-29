@@ -3,14 +3,14 @@
 Service Analytics measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery. At 13:00, its Delivery performance report shows **100%**. What produced that number?
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">3 min 5 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-03/poster.jpg" aria-label="Where did this number come from?: narrated Chapter 3 explainer" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-03/chapter-03.mp4" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-03/captions.vtt" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt">read the transcript</a>.
+<figcaption id="chapter-video-title"><span>Watch the chapter</span><span class="chapter-video-duration">2 min 45 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-03/poster.jpg?v=be44a348a40d" aria-label="Where did this number come from?: narrated Chapter 3 explainer" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-03/chapter-03.mp4?v=0cd3b391d2d4" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-03/captions.vtt?v=ce2ec34341d7" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4?v=0cd3b391d2d4">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt?v=8fdf272bc046">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The incident is invented and assumes complete records at the input capture time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4" download>Download video <span>(5 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt?v=8fdf272bc046">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4?v=0cd3b391d2d4" download>Download video <span>(4.4 MB)</span></a></p>
 </figure>
 
 ## Lineage and provenance

@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+  "license": "Apache-2.0",
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "threads": 2,
+  "seed": 42,
+  "style": "A warm adult female narrator with a natural British English accent. Explain this clearly to a colleague: conversational, thoughtful, gently varied emphasis, natural pauses, moderate pace. Avoid a theatrical or promotional delivery.",
+  "sample_rate": 24000,
+  "seconds": 32.48,
+  "load_seconds": 3.5397136579999824,
+  "generation_seconds": 316.52005085099995,
+  "max_new_tokens": 1200,
+  "sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+  "container_validation": "Full FFmpeg decode passed; 24kHz mono PCM16 WAV",
+  "reference_file": "q1.wav",
+  "transcript_file": "spoken.txt",
+  "transcript_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+  "origin": "Original synthetic voice; approved by the user as Q1"
+}

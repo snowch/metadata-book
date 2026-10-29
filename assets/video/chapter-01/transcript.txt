@@ -1,7 +1,7 @@
 What the data cannot tell you
 
 Display narration, preserved in full.
-Synthetic voice: en-GB-SoniaNeural.
+Synthetic voice: Q1 — original warm British female (Qwen3-TTS).
 Source: https://snowch.github.io/metadata-book/chapters/01-why-metadata.html
 
 A parcel company promises four deliveries by noon. At one in the afternoon, two have arrived on time, one arrived late, and one has not arrived. This is an invented example. Assume the records are complete at that moment.

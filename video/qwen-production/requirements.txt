@@ -1,0 +1,7 @@
+qwen-tts==0.1.1
+transformers==4.57.3
+faster-whisper==1.2.1
+num2words==0.5.14
+Pillow==12.3.0
+numpy==2.5.4
+soundfile==0.14.0

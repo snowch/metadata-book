@@ -7,7 +7,7 @@ import sys
 import tempfile
 import unittest
 
-from audit_pronunciation import fingerprint, occurrences
+from audit_pronunciation import audio_time_shift, fingerprint, occurrences
 
 
 def words(text):
@@ -16,6 +16,17 @@ def words(text):
 
 
 class PronunciationAuditTests(unittest.TestCase):
+    def test_explicit_padding_overrides_legacy_provider_trim(self):
+        record = {'words': [{'offset': 5000000}], 'audio_time_offset_seconds': .25}
+        self.assertEqual(audio_time_shift(record), .25)
+        del record['audio_time_offset_seconds']
+        self.assertAlmostEqual(audio_time_shift(record), -.17)
+
+    def test_invalid_explicit_offsets_are_rejected(self):
+        for value in (float('nan'), float('inf'), '0.25', True):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                audio_time_shift({'audio_time_offset_seconds': value})
+
     def test_sqlite_override_covers_both_spoken_words(self):
         result = occurrences('Using SQLite now.', words('Using sequel lite now'),
                              {'SQLite': 'sequel lite'}, [])

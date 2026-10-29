@@ -1,6 +1,6 @@
 # Chapter 2 scene plan
 
-Source: `chapters/02-reading-a-database.md` and `examples/deliveries.sql`, pinned in `project.json`. Invented four-row snapshot; no customer data. Target approximately 3–4 minutes, 500 narration words, British Sonia voice, no music. Cream, rust and green match existing chapter videos.
+Source: `chapters/02-reading-a-database.md` and `examples/deliveries.sql`, pinned in `project.json`. Invented four-row snapshot; no customer data. Target approximately 3–4 minutes, 500 narration words, original synthetic Q1 British female voice, no music. Cream, rust and green match existing chapter videos.
 
 | Scene | Source and purpose | Visual treatment |
 |---|---|---|
