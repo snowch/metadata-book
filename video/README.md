@@ -97,3 +97,6 @@ preview and adds its production-manifest entry; subsequent runs update that same
 embed and record. The commands discover available `video/chapter-NN/project.json`
 files. Packaging does not deploy. Commit and merge each completed chapter before starting the
 next. Record actual review evidence and listening limitations in `review.md`.
+Check free workspace disk space with `df -h /workspace` before starting each
+next chapter, and record the available space in that chapter's review. Preserve
+valid speech and review evidence; do not discard them merely to regenerate later.

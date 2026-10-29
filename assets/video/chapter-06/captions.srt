@@ -1,0 +1,183 @@
+1
+00:00:00,561 --> 00:00:02,977
+Yesterday's scan found delivery_summary.
+
+2
+00:00:02,977 --> 00:00:04,862
+Today's scan does not mention it.
+
+3
+00:00:04,862 --> 00:00:06,355
+Has the table been deleted?
+
+4
+00:00:06,355 --> 00:00:09,028
+Pause and name another explanation before deciding.
+
+5
+00:00:14,220 --> 00:00:16,314
+The collector might have lost permission,
+
+6
+00:00:16,314 --> 00:00:19,001
+scanned the wrong database, or stopped early.
+
+7
+00:00:19,001 --> 00:00:23,847
+Keep the last successful observation visible, with current status unverified.
+
+8
+00:00:23,847 --> 00:00:28,774
+Confirm deletion using supporting evidence, such as a recorded drop operation or a
+
+9
+00:00:28,774 --> 00:00:31,672
+complete scan that was able and expected to see the table.
+
+10
+00:00:32,545 --> 00:00:35,638
+Now use the page's separate example from twenty first October.
+
+11
+00:00:35,638 --> 00:00:41,072
+Scheduler event E20 reports that run R1000 published summary-R1000 at ten.
+
+12
+00:00:41,072 --> 00:00:45,765
+The catalogue receives it at one minute past ten, then again at four minutes past ten.
+
+13
+00:00:45,765 --> 00:00:48,204
+The source and stable event identifier identify
+
+14
+00:00:48,204 --> 00:00:50,859
+one reported publication received twice.
+
+15
+00:00:50,859 --> 00:00:53,589
+Matching message text alone would not establish that.
+
+16
+00:00:54,463 --> 00:00:57,537
+At six minutes past ten, event E19 arrives.
+
+17
+00:00:57,537 --> 00:01:02,753
+It reports that a different run, R0950, failed at nine fifty.
+
+18
+00:01:02,753 --> 00:01:04,855
+Move it to the earlier run's history.
+
+19
+00:01:04,855 --> 00:01:08,757
+Receiving that message last cannot make R1000 a failure.
+
+20
+00:01:08,757 --> 00:01:11,585
+Keep event time and receipt time separate; clocks
+
+21
+00:01:11,585 --> 00:01:13,808
+alone need not establish order across systems.
+
+22
+00:01:14,812 --> 00:01:18,727
+The scheduler reports summary-R1000 published at ten.
+
+23
+00:01:18,727 --> 00:01:22,200
+But database scan S7 observes the table labelled
+
+24
+00:01:22,200 --> 00:01:26,367
+summary-R0940 at three minutes past ten.
+
+25
+00:01:26,367 --> 00:01:29,147
+Which output does the table actually contain?
+
+26
+00:01:29,147 --> 00:01:32,634
+Explain what is known, and what still needs investigation.
+
+27
+00:01:32,634 --> 00:01:34,487
+Pause for more time if you need it.
+
+28
+00:01:39,292 --> 00:01:41,818
+These records do not settle which claim is correct.
+
+29
+00:01:41,818 --> 00:01:46,523
+Show the current published version as disputed, keeping both sources and their times.
+
+30
+00:01:46,523 --> 00:01:49,188
+The version label could be wrong, or the scheduler
+
+31
+00:01:49,188 --> 00:01:51,528
+could have reported publication incorrectly.
+
+32
+00:01:51,528 --> 00:01:54,057
+Recognising a duplicate and placing the delayed
+
+33
+00:01:54,057 --> 00:01:56,317
+failure correctly do not resolve this disagreement.
+
+34
+00:01:57,375 --> 00:02:00,012
+Check write logs and saved output versions.
+
+35
+00:02:00,012 --> 00:02:02,460
+If that investigation resolves the disagreement,
+
+36
+00:02:02,460 --> 00:02:05,124
+record the evidence alongside the conclusion.
+
+37
+00:02:05,124 --> 00:02:07,860
+One reported publication, earlier run history,
+
+38
+00:02:07,860 --> 00:02:10,533
+and disputed current state can all coexist.
+
+39
+00:02:10,533 --> 00:02:14,155
+Choosing whichever message arrived last would hide the reason to investigate.
+
+40
+00:02:15,168 --> 00:02:16,940
+Try the page's map exercise.
+
+41
+00:02:16,940 --> 00:02:21,229
+Open Source observation's Example record, then Collection run.
+
+42
+00:02:21,229 --> 00:02:26,565
+These map records are from twentieth October, not the event example we just used.
+
+43
+00:02:26,565 --> 00:02:29,108
+Compare observation and collection times.
+
+44
+00:02:29,108 --> 00:02:32,413
+If tomorrow's scan omits the dataset, explain
+
+45
+00:02:32,413 --> 00:02:34,698
+which checks you need before calling it deleted.
+
+46
+00:02:34,698 --> 00:02:36,575
+Then use Check your answer.
