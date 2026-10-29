@@ -1,23 +1,63 @@
-# Chapter 2 Q1 export review — 29 October 2026
+# Chapter 2 page-learning-aid review — 29 October 2026
 
-The narration now uses the approved original synthetic **Q1 warm British female** voice. The canonical narration, chapter artwork, scene meanings and five-second silent closing card are retained. New passages use the pinned Qwen Base model with one reusable prompt from the approved Q1 reference, rather than a new voice design for each scene.
+Replaces the full-chapter summary with a focused learning aid: predict what a
+missing delivery time means, compare original and revised promises, predict
+which parcel the saved query removes, then use the page's metadata-map exercise.
+The full SQL, detailed schema fields, storage assumptions and catalogue
+comparison remain on the page. Source: `2e8ef28ff22e9416377dba77a7819ab6e397e57f`.
 
-Export: **3:26**, 1280×720, 24 fps, H.264/yuv420p, AAC and English selectable mov_text captions. There are 62 caption cues; MP4 size is 5,776,153 bytes. SHA-256: `f6c16f5b25b6684c9cda95b3f4a7d889d894eb02731c7ee9c499597edadf9171`. Measured spoken pace is about 157.8 words per minute, including raw passage pauses. The existing project duration bounds pass; no tempo alteration or padding was used to meet them.
+## Actual export
 
-## Speech and timing review
+2:18 (137.7 seconds), 1280×720, 24 fps, H.264/yuv420p, AAC and selectable English
+captions. 38 caption cues; 3,677,228 bytes. Video SHA-256:
+`e5a199d333e14961c0be6e1c9880703f1fa7f561a62058bbae731e0fb9548809`.
+Seven complete Q1 narration passages; the original approved synthetic reference,
+pinned Qwen Base checkpoint and unaltered speech tempo are retained. Six cached
+passages survived interruption and passed content/model/hash checks; the missing
+filter-question passage was regenerated from the same reference and settings.
 
-All spoken scenes received independent unprompted `small.en` transcription without vocabulary hints or digit suppression. Source ASR text and real timestamps are retained separately from canonical timing metadata. No meaningful omission, wrong number or changed logical distinction was identified in that automated screening.
+## Learning and source review
 
-The pronunciation pack ran after final synthesis and before encoding. It contains 24 contextual clips and 3 transcription differences: two SQLite clips were written as “sequel light”, and 50.0% as “50%”. These are spelling/notation differences consistent with the intended speech. Some short clips contain ASR additions near cut context boundaries; the complete scene transcripts were used to assess meaning. The pack freshness check passed before rendering and again after the resumed exports.
+Manually compared each scene and narration with the page and example SQL.
+`delivered_at / TEXT / notnull:0` is a labelled column-record excerpt. The SQLite
+type caveat is retained. NULL's alternative meanings are presented as
+possibilities; unfinished is explicitly this complete example's convention.
+The timeline distinguishes a noon promise from a revised 12:30 deadline for a
+12:20 arrival without claiming when the revision occurred. The exact WHERE
+clause is enlarged; the unfinished parcel is crossed out only after the
+prediction scene. The late parcel remains in the completed group. The result
+2/3=66.7% is distinguished from Delivery Operations' 2/4=50.0% rule. Fixed UTC
+format and complete-record assumptions are spoken. The saved-query/output-data
+distinction is preserved. The final exercise follows the page's Column, Saved
+query and Metric definition records.
 
-The column-record scene reuses the exact approved Q1 reference WAV. Full-scene recognition retains the declared-type caveat, NULL assumption, original/revised promise distinction, view recalculation, zero-denominator guard, 66.7% versus 50%, UTC text-format assumption and catalogue names. Numeric clock spellings 1230/1220 are reconciled only for timing where the canonical scene says “twelve thirty”/“twelve twenty”.
+## Speech screening
 
-**No human listening review was performed for these new passages.** Recognition cannot certify phonetics, accent or prosody, including a correct-looking term spelling. All pronunciation remains screened rather than listening-approved.
+Independent unprompted small.en ASR preserves the full-scene questions,
+alternatives, negations and numbers. Estimated alignment coverage ranges from
+98.1% to 100%; recognitions such as SQL light / SQL lite versus the intended
+“sequel lite”, 1220/1230 versus spoken clock times, and “page is” versus “page's”
+are retained in original ASR rather than rewritten as phonetic approval.
+The pronunciation pack has 16 contextual clips and four recognition differences:
+two SQLite spellings, NULL recognised as “no” in a short excerpt (the complete
+scene recognises “null”), and 50.0% written as “50 percent”. The input-freshness
+check passed before encoding. Complete passages were consulted where excerpts
+cut surrounding words or introduced recogniser text.
 
-Qwen supplies no word boundaries. Fresh ASR timestamps anchor estimated canonical-word timing; unmatched characters interpolate between adjacent anchors and are marked in `words-NN.json`. Numeric spelling reconciliation does not rewrite original ASR or literal spoken “point”/“zero” words. No old provider timestamps were reused. Captions concatenate exactly to canonical narration, remain ordered and do not overlap; sentence cues follow the new timing.
+**No human listening review was performed.** SQLite's exact phonetics and voice
+expressiveness remain unresolved by recognition. No learner study or delayed
+recall test is claimed; prediction pauses support practice by design.
 
-## Media verification and retained evidence
+## Completed checks
 
-Full FFmpeg decoding passed. ffprobe confirms the expected video, audio and caption streams. The complete chapter has a five-second silent closing card. Parent independent media/source QC also passed. The parent inspected all actual encoded contact sheets and confirmed staged-site playback, seeking and caption loading at 820px and 390px with no overflow. Posters, actual encoded scene frames and contact sheets are retained alongside each export; the unchanged full-size scene layouts support detailed visual review.
+- Full FFmpeg decoding, expected media streams, video/audio duration agreement and five-second closing card.
+- Captions concatenate exactly to canonical narration, in order without overlap.
+- Both four-second response holds retain 4.693 and 4.508 seconds after the final caption; explanations appear in subsequent scenes.
+- Inspected actual encoded frames for every scene, both holds and a 390-pixel rendering; the SQL filter, timeline and parcel relationship remain legible without displaying the full query.
+- Chromium at 960px and 390px: playback, seeking, caption loading, no active captions during response holds, no page overflow and the metadata-map Example record activity.
+- Existing pronunciation tests, SQL/example checks, map validation, layout consistency and full site build pass.
 
-Working evidence is in `out/q1-chapter-02/`: raw/cached speech and generation metadata, independent scene ASR, pronunciation clips/report, timing and caption files, `media-verification.json`, `parent-quality-check.json`, `poster.jpg` and `encoded-frames/`. The [production manifest](../qwen-production/production-manifest.json) retains scene hashes, reference/model provenance, SDK versions, seeds, batch membership, original ASR text and matching coverage. Exact Q1 reference bytes and transcript are retained with production source. Live publication is handled by the publishing workflow.
+Working evidence is retained in ignored `out/q1-chapter-02/`: raw scene audio,
+model metadata, independent ASR, alignment, pronunciation pack, captions,
+timings, static previews, encoded contact sheet, phone frame, verification JSON
+and browser screenshots. The production manifest retains scene provenance.
