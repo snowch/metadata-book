@@ -1,0 +1,167 @@
+1
+00:00:00,387 --> 00:00:03,062
+Use the page's invented one-week pilot.
+
+2
+00:00:03,062 --> 00:00:05,396
+An engineer and reviewer must choose the meeting's
+
+3
+00:00:05,396 --> 00:00:08,635
+measure and explain the report's older hundred percent.
+
+4
+00:00:08,635 --> 00:00:11,879
+A database collector supplies table and view structure;
+
+5
+00:00:11,879 --> 00:00:14,897
+job and report records still need manual updates.
+
+6
+00:00:14,897 --> 00:00:18,431
+Would installing that collector establish the incident's explanation?
+
+7
+00:00:18,431 --> 00:00:20,944
+Name what evidence is missing, then pause.
+
+8
+00:00:26,133 --> 00:00:31,189
+The reviewer needs to trace the refresh to its output, run, retained input and code,
+
+9
+00:00:31,189 --> 00:00:33,203
+then find the later failed run.
+
+10
+00:00:33,203 --> 00:00:36,671
+A structural scan supplies none of that chain by itself.
+
+11
+00:00:36,671 --> 00:00:39,274
+Test whether an independent reviewer can open the
+
+12
+00:00:39,274 --> 00:00:42,432
+retained evidence, rather than merely see links.
+
+13
+00:00:42,432 --> 00:00:46,674
+Exports must preserve source identifiers, times and version references.
+
+14
+00:00:47,683 --> 00:00:49,694
+Now read the illustrative assessment.
+
+15
+00:00:49,694 --> 00:00:54,458
+Both questions are answered, collection failure is visible, and access checks pass for
+
+16
+00:00:54,457 --> 00:00:56,141
+tested accounts and paths.
+
+17
+00:00:56,141 --> 00:00:59,617
+Maintenance takes ninety minutes a week, within a two-hour budget.
+
+18
+00:00:59,617 --> 00:01:03,164
+Changes appear the same working day, within the one-day limit.
+
+19
+00:01:03,164 --> 00:01:07,364
+What platform decision follows, and how far can that conclusion extend?
+
+20
+00:01:07,363 --> 00:01:08,284
+Pause to explain.
+
+21
+00:01:13,167 --> 00:01:16,498
+Keep reviewed documents and SQLite for those two questions.
+
+22
+00:01:16,498 --> 00:01:20,654
+This is an invented teaching outcome, not an assessment of a catalogue product.
+
+23
+00:01:20,654 --> 00:01:24,856
+Job and report updates remain manual; other sources are untested.
+
+24
+00:01:24,856 --> 00:01:25,811
+Review weekly.
+
+25
+00:01:25,811 --> 00:01:30,051
+Trial a catalogue if maintenance exceeds two hours a week or updates take longer than
+
+26
+00:01:30,051 --> 00:01:33,182
+one working day, checking exact source and version support.
+
+27
+00:01:34,042 --> 00:01:35,813
+Continuing work needs an owner.
+
+28
+00:01:35,813 --> 00:01:38,176
+The reporting engineer handles collection failures
+
+29
+00:01:38,176 --> 00:01:41,347
+and checks the last successful observation's age.
+
+30
+00:01:41,347 --> 00:01:44,729
+Definition responsibility stays with the relevant business team.
+
+31
+00:01:44,729 --> 00:01:47,468
+Protect metadata too: descriptions, queries
+
+32
+00:01:47,468 --> 00:01:49,965
+or samples can reveal sensitive information.
+
+33
+00:01:49,965 --> 00:01:53,541
+Repeat access checks when permissions or interfaces change.
+
+34
+00:01:53,541 --> 00:01:57,892
+Collector upgrades also require checking identifiers, fields and evidence links.
+
+35
+00:01:59,060 --> 00:02:00,762
+Try the page's map exercise.
+
+36
+00:02:00,762 --> 00:02:03,368
+Open Collection run's Example record.
+
+37
+00:02:03,368 --> 00:02:08,600
+Name one structural fact the scan supports and one missing kind of incident evidence.
+
+38
+00:02:08,600 --> 00:02:11,038
+Then inspect Responsible team.
+
+39
+00:02:11,038 --> 00:02:15,284
+Explain why installing a collector neither supplies complete incident coverage nor
+
+40
+00:02:15,284 --> 00:02:17,740
+transfers definition ownership to its operator.
+
+41
+00:02:17,740 --> 00:02:19,461
+Use Check your answer.
+
+42
+00:02:19,461 --> 00:02:22,392
+The map does not measure pilot effort or assess a product.

@@ -3537,6 +3537,427 @@
           "hold_seconds": 0
         }
       ]
+    },
+    {
+      "chapter": "08",
+      "duration_seconds": 148.0,
+      "caption_cues": 42,
+      "end_card_seconds": 5,
+      "purpose": "Assess a bounded pilot using accessible evidence, limited coverage and ongoing maintenance thresholds.",
+      "video_sha256": "c7ef1d70967ce69df3cbc6444df15c9e0f74d48b057a90832ddd043931d4de49",
+      "scenes": [
+        {
+          "scene": 0,
+          "kind": "coverage-question",
+          "raw_seconds": 20.96,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Use the page's invented one-week pilot. An engineer and reviewer must choose the meeting's measure and explain the report's older hundred percent. A database collector supplies table and view structure; job and report records still need manual updates. Would installing that collector establish the incident's explanation? Name what evidence is missing, then pause.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "aaf09be9df2d11502c449cbeb1b01f8054f35c6f6ae142868e82b1aee8073d62",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 20.96,
+            "sha256": "2a7ae9619d304d6842300de5415e19023f82e24b712b31022878225ffb61b4b1"
+          },
+          "unprompted_asr": "Use the pages invented one week pilot. An engineer and reviewer must choose the meetings measure and explain the reports older 100%. A database collector supplies table and view structure. Job and report records still need manual updates. Would installing that collector establish the incident's explanation? Name what evidence is missing, then pause.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "one"
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 1,
+          "kind": "coverage-answer",
+          "raw_seconds": 21.04,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "The reviewer needs to trace the refresh to its output, run, retained input and code, then find the later failed run. A structural scan supplies none of that chain by itself. Test whether an independent reviewer can open the retained evidence, rather than merely see links. Exports must preserve source identifiers, times and version references.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "f45b8c9372169038b104a61f4a8b4cbcb3a91a27ad134fcd9b44964f0de3bf76",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 21.04,
+            "sha256": "3f55063f6a4d1789eb8ee5e653f1cbebe4cd9c54b57fa7cb4b64ffced74706a9"
+          },
+          "unprompted_asr": "The reviewer needs to trace the refresh to its output, run, retained input and code, then find the later failed run. A structural scan supplies none of that chain by itself. Test whether an independent reviewer can open the retained evidence, rather than merely see links. Exports must preserve source identifiers, times and version references.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 2,
+          "kind": "choice-question",
+          "raw_seconds": 20.8,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Now read the illustrative assessment. Both questions are answered, collection failure is visible, and access checks pass for tested accounts and paths. Maintenance takes ninety minutes a week, within a two-hour budget. Changes appear the same working day, within the one-day limit. What platform decision follows, and how far can that conclusion extend? Pause to explain.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "db3a523f0f38ff2c8f8dbef76df1a49310e0ae768102812713958ad10b507c74",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 20.8,
+            "sha256": "a6fb9efc0265121248674ced3e93b5374995cd523d21821614c77f50c0ecab20"
+          },
+          "unprompted_asr": "Now read the illustrative assessment, both questions are answered, collection failure is visible, and access checks pass for tested accounts and paths. Maintenance takes 90 minutes a week, within a two-hour budget. Changes appear the same working day, within the one-day limit. What platform decision follows, and how far can that conclusion extend? Pause to explain.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 4
+        },
+        {
+          "scene": 3,
+          "kind": "choice-answer",
+          "raw_seconds": 20.16,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Keep reviewed documents and SQLite for those two questions. This is an invented teaching outcome, not an assessment of a catalogue product. Job and report updates remain manual; other sources are untested. Review weekly. Trial a catalogue if maintenance exceeds two hours a week or updates take longer than one working day, checking exact source and version support.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "bd22633987a3a111539668237d91505c2f2891da6a09e9e02ca3bb39b5d0a13a",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 20.16,
+            "sha256": "7580dfa1f9a1a5ce5d7e860dcdc3f46c3e650b475207783c3bd651b9555739ae"
+          },
+          "unprompted_asr": "Keep reviewed documents and esquilite for those two questions. This is an invented teaching outcome, not an assessment of a catalog product. Job and report updates remain manual. Other sources are untested. Review weekly. Trial a catalog if maintenance exceeds two hours a week or updates take longer than one working day, checking exact source and version support.",
+          "alignment": {
+            "matched_character_fraction": 0.9867109634551495,
+            "differences": [
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "e"
+              },
+              {
+                "operation": "insert",
+                "expected": "",
+                "recognised": "ui"
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              },
+              {
+                "operation": "delete",
+                "expected": "ue",
+                "recognised": ""
+              }
+            ],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 4,
+          "kind": "operate",
+          "raw_seconds": 24.080041666666666,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Continuing work needs an owner. The reporting engineer handles collection failures and checks the last successful observation's age. Definition responsibility stays with the relevant business team. Protect metadata too: descriptions, queries or samples can reveal sensitive information. Repeat access checks when permissions or interfaces change. Collector upgrades also require checking identifiers, fields and evidence links.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "748cfbd8413f598a16b9fa718fbcf50607fc2cfc244bb198c1136902c4510892",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 24.080041666666666,
+            "sha256": "222b19d0a9b8d5f4925f0b74b185c848b2f5ba0ff2fbffd6ea60109fe5cc9815"
+          },
+          "unprompted_asr": "Continuing work needs an owner. The reporting engineer handles collection failures and checks the last successful observations age. Definition responsibility stays with the relevant business team. Protect metadata too. Descriptions, queries, or samples can reveal sensitive information. Repeat access checks when permissions or interfaces change. Collector upgrades also require checking identifiers, fields, and evidence links.",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        },
+        {
+          "scene": 5,
+          "kind": "practice",
+          "raw_seconds": 23.68,
+          "generation": {
+            "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+            "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+            "reference_audio_sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+            "reference_text_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+            "device": "cpu",
+            "dtype": "bfloat16",
+            "threads": 4,
+            "spoken_text": "Try the page's map exercise. Open Collection run's Example record. Name one structural fact the scan supports and one missing kind of incident evidence. Then inspect Responsible team. Explain why installing a collector neither supplies complete incident coverage nor transfers definition ownership to its operator. Use Check your answer. The map does not measure pilot effort or assess a product.",
+            "reference_origin": "User-approved Q1 original synthetic VoiceDesign sample",
+            "max_new_tokens": 1600,
+            "signature": "d0bd38c9821841d41ed745bc7c68bf31ffa9ff68bbe80f3be1d790f8df6528fc",
+            "seed": 42,
+            "batch_size": 6,
+            "batch_members": [
+              {
+                "spoken_sha256": "7adc5a42c69f8c0482774af238ceb99b1296c168464144b9c0ff3221ec04dec2",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-05.wav"
+              },
+              {
+                "spoken_sha256": "0f98667f0b92ec28cc1b17dc0792dfcdc13b1765b1b53d9992ba43c10781bcca",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-03.wav"
+              },
+              {
+                "spoken_sha256": "2d3fde97c39e9b6aa37eababa408424fe58cc9e821363120e82ecaea24871015",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-02.wav"
+              },
+              {
+                "spoken_sha256": "7464408bad32e8089975fd731d40564fd92d8cb47920a77e3e2dae99b465bf40",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-01.wav"
+              },
+              {
+                "spoken_sha256": "37ebcadf91621f5d2b469c9e0e535c9b55b5dbcf458af176ac28953edc43abaa",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-04.wav"
+              },
+              {
+                "spoken_sha256": "7b4437a2999219c56ecbca7a563a8783c1bbf8337b3206e766667766ad12327d",
+                "path": "/workspace/metadata-book/out/q1-chapter-08/raw-00.wav"
+              }
+            ],
+            "sdk_versions": {
+              "qwen-tts": "0.1.1",
+              "torch": "2.15.0+cpu",
+              "torchaudio": "2.11.1+cpu",
+              "transformers": "4.57.3",
+              "numpy": "2.5.4",
+              "soundfile": "0.14.0"
+            },
+            "generation_batch_seconds": 247.4705897549993,
+            "seconds": 23.68,
+            "sha256": "811f68b32743f2e15c90707a8890b380c7f686a1f404c49ca2e397cf517834d2"
+          },
+          "unprompted_asr": "Try the pages map exercise open collection runs example record name one structural fact the scan supports and one missing kind of incident evidence Then inspect responsible team explain why installing a collector neither supplies complete incident coverage nor transfers definition ownership to its operator Use check your answer the map does not measure pilot effort or assess a product",
+          "alignment": {
+            "matched_character_fraction": 1.0,
+            "differences": [],
+            "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+          },
+          "hold_seconds": 0
+        }
+      ]
     }
   ]
 }

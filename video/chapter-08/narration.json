@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "coverage-question",
+    "text": "Use the page's invented one-week pilot. An engineer and reviewer must choose the meeting's measure and explain the report's older hundred percent. A database collector supplies table and view structure; job and report records still need manual updates. Would installing that collector establish the incident's explanation? Name what evidence is missing, then pause.",
+    "hold_seconds": 4
+  },
+  {
+    "kind": "coverage-answer",
+    "text": "The reviewer needs to trace the refresh to its output, run, retained input and code, then find the later failed run. A structural scan supplies none of that chain by itself. Test whether an independent reviewer can open the retained evidence, rather than merely see links. Exports must preserve source identifiers, times and version references."
+  },
+  {
+    "kind": "choice-question",
+    "text": "Now read the illustrative assessment. Both questions are answered, collection failure is visible, and access checks pass for tested accounts and paths. Maintenance takes ninety minutes a week, within a two-hour budget. Changes appear the same working day, within the one-day limit. What platform decision follows, and how far can that conclusion extend? Pause to explain.",
+    "hold_seconds": 4
+  },
+  {
+    "kind": "choice-answer",
+    "text": "Keep reviewed documents and SQLite for those two questions. This is an invented teaching outcome, not an assessment of a catalogue product. Job and report updates remain manual; other sources are untested. Review weekly. Trial a catalogue if maintenance exceeds two hours a week or updates take longer than one working day, checking exact source and version support."
+  },
+  {
+    "kind": "operate",
+    "text": "Continuing work needs an owner. The reporting engineer handles collection failures and checks the last successful observation's age. Definition responsibility stays with the relevant business team. Protect metadata too: descriptions, queries or samples can reveal sensitive information. Repeat access checks when permissions or interfaces change. Collector upgrades also require checking identifiers, fields and evidence links."
+  },
+  {
+    "kind": "practice",
+    "text": "Try the page's map exercise. Open Collection run's Example record. Name one structural fact the scan supports and one missing kind of incident evidence. Then inspect Responsible team. Explain why installing a collector neither supplies complete incident coverage nor transfers definition ownership to its operator. Use Check your answer. The map does not measure pilot effort or assess a product."
+  },
+  {
+    "kind": "end",
+    "text": ""
+  }
+]
