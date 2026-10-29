@@ -35,7 +35,7 @@ def make(t,c):
             im,d=layer();y=329+j*99;box(d,64,y,1152,87)
             text(d,a,84,y+7,21,bold=True,color=RUST);text(d,b,84,y+39,31,bold=True)
             add(im,cue(t,phrase))
-        im,d=layer();text(d,'One output version does not replace the dataset identity.',64,634,25,color=MUTED);add(im,cue(t,'An output version'))
+        im,d=layer();text(d,'One output version does not replace the dataset identity.',64,634,25,color=MUTED);add(im,cue(t,'An output version identifies'))
     elif k=='time-question':
         header(d,5,'When was this column created?','Production database scan · 20 October 2026 · all times UTC')
         for x,label,value in [(64,'OBSERVED','09:00'),(646,'COLLECTED','09:02')]:

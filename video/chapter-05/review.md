@@ -8,8 +8,8 @@ times and accepted responsibility separate. Source:
 ## Export and speech
 
 2:42 (161.7 seconds), 1280×720, 24 fps, H.264/yuv420p, AAC and selectable English
-captions. 44 cues, 4,499,886 bytes. SHA-256:
-`3c713b9e9b14e7194de4b59746f932af726c8d0ced276f89a5e49ff4e256163e`.
+captions. 44 cues, 4,490,533 bytes. SHA-256:
+`d3c519e363b90607c748800ee724241a1920241be508bd52220bd79d319f128a`.
 Eight complete new passages use the approved original synthetic Q1 reference and
 pinned Qwen Base model. No speech tempo alteration or generated-word trimming.
 
@@ -54,7 +54,7 @@ latest collected claim does not become authority for every fact.
 
 - Full FFmpeg decode; expected streams and aligned media durations; five-second closing card.
 - Exact canonical caption text, ordered/non-overlapping cues; both four-second holds retain 4.600 and 4.686 seconds after final captions.
-- Inspected actual encoded frames for all scenes, source reveals, response holds and phone rendering; answer appears only after each response opportunity.
+- Inspected actual encoded frames for all scenes, all four source/footnote reveal stages, response holds and phone rendering; answer appears only after each response opportunity.
 - Chromium at 960px and 390px: playback, seeking, loaded captions, no active captions during holds, no overflow and the Source observation Example record activity.
 - Packaging rerun is idempotent: one embed and one manifest record, Chapters 1–4 provenance unchanged, original Chapter 5 prose preserved outside the embed.
 - Existing pronunciation tests, SQLite/example checks, metadata-map validation, layout consistency and full site build pass.
