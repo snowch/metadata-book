@@ -1,0 +1,88 @@
+{
+  "file": "voice-03.wav",
+  "audio_sha256": "5f6783ba9240fee0d2a0b9e70f2a737222e4c929537a8f1eb2b144b29d125ba1",
+  "method": "faster-whisper small.en CPU int8; 1 thread; beam 5; no prompt; no VAD; no previous-text conditioning",
+  "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+  "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In the SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the soul key.",
+  "differences": [
+    {
+      "kind": "replace",
+      "expected": "this sequel lite",
+      "heard": "the sql light"
+    },
+    {
+      "kind": "replace",
+      "expected": "sole",
+      "heard": "soul"
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.58,
+      "text": " The column records describe three fields,"
+    },
+    {
+      "start": 2.58,
+      "end": 5.4,
+      "text": " a delivery identifier, a promise time,"
+    },
+    {
+      "start": 5.4,
+      "end": 7.0200000000000005,
+      "text": " and a delivery time."
+    },
+    {
+      "start": 7.0200000000000005,
+      "end": 9.08,
+      "text": " All three declare text."
+    },
+    {
+      "start": 9.08,
+      "end": 10.94,
+      "text": " In the SQL light table,"
+    },
+    {
+      "start": 10.94,
+      "end": 13.4,
+      "text": " that declaration does not strictly enforce"
+    },
+    {
+      "start": 13.4,
+      "end": 15.860000000000001,
+      "text": " the type of every stored value."
+    },
+    {
+      "start": 15.860000000000001,
+      "end": 19.64,
+      "text": " The not null flag is one for the identifier and promise."
+    },
+    {
+      "start": 19.64,
+      "end": 21.82,
+      "text": " A value is required."
+    },
+    {
+      "start": 21.82,
+      "end": 24.76,
+      "text": " Zero for delivery time allows null,"
+    },
+    {
+      "start": 24.76,
+      "end": 26.46,
+      "text": " the marker for a missing value."
+    },
+    {
+      "start": 26.46,
+      "end": 31.46,
+      "text": " The primary key uniquely identifies each row."
+    },
+    {
+      "start": 31.46,
+      "end": 35.46,
+      "text": " Here, the delivery identifier is the soul key."
+    }
+  ],
+  "pronunciation_verified": false,
+  "note": "Recognition differences require listening; this does not verify naturalness or pronunciation."
+}

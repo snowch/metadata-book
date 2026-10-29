@@ -1,0 +1,652 @@
+[
+  {
+    "id": "Q1",
+    "title": "Warm British female",
+    "description": "The original Qwen sample.",
+    "file": "sample-B.mp3",
+    "seconds": 32.48,
+    "style": "A warm adult female narrator with a natural British English accent. Explain this clearly to a colleague: conversational, thoughtful, gently varied emphasis, natural pauses, moderate pace. Avoid a theatrical or promotional delivery.",
+    "audit": {
+      "name": "qwen",
+      "method": "faster-whisper small.en CPU int8; no prompt; beam 5",
+      "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "differences": [
+        {
+          "kind": "replace",
+          "expected": "sequel lite",
+          "heard": "sql light"
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.52,
+          "text": " The column records describe three fields,"
+        },
+        {
+          "start": 2.52,
+          "end": 5.32,
+          "text": " a delivery identifier, a promise time,"
+        },
+        {
+          "start": 5.32,
+          "end": 7.28,
+          "text": " and a delivery time."
+        },
+        {
+          "start": 7.28,
+          "end": 9.26,
+          "text": " All three declare text."
+        },
+        {
+          "start": 9.26,
+          "end": 11.08,
+          "text": " In this SQL light table,"
+        },
+        {
+          "start": 11.08,
+          "end": 13.36,
+          "text": " that declaration does not strictly enforce"
+        },
+        {
+          "start": 13.36,
+          "end": 15.76,
+          "text": " the type of every stored value."
+        },
+        {
+          "start": 15.76,
+          "end": 19.2,
+          "text": " The not null flag is one for the identifier and promise."
+        },
+        {
+          "start": 19.2,
+          "end": 21.56,
+          "text": " A value is required."
+        },
+        {
+          "start": 21.56,
+          "end": 23.72,
+          "text": " Zero for delivery time allows null,"
+        },
+        {
+          "start": 23.72,
+          "end": 25.86,
+          "text": " the marker for a missing value."
+        },
+        {
+          "start": 25.86,
+          "end": 29.36,
+          "text": " The primary key uniquely identifies each row."
+        },
+        {
+          "start": 29.36,
+          "end": 32.48,
+          "text": " Here, the delivery identifier is the sole key."
+        }
+      ],
+      "pronunciation_verified": false,
+      "note": "ASR is an error screen, not a listening review. Check every flagged span by ear."
+    },
+    "generation": {
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "threads": 2,
+      "seed": 42,
+      "style": "A warm adult female narrator with a natural British English accent. Explain this clearly to a colleague: conversational, thoughtful, gently varied emphasis, natural pauses, moderate pace. Avoid a theatrical or promotional delivery.",
+      "sample_rate": 24000,
+      "seconds": 32.48,
+      "load_seconds": 3.5397136579999824,
+      "generation_seconds": 316.52005085099995,
+      "max_new_tokens": 1200,
+      "sha256": "fcc306527e8923ad02fa751be3af11bd717add1b6160d19b0532014c722ee17a",
+      "container_validation": "Full FFmpeg decode passed; 24kHz mono PCM16 WAV"
+    }
+  },
+  {
+    "id": "Q2",
+    "title": "Warm British male",
+    "description": "Conversational, with a mid-low register.",
+    "file": "qwen-02.mp3",
+    "seconds": 37.12,
+    "style": "An adult male voice with a natural British English accent and a warm mid-low register. Speak conversationally as a thoughtful colleague explaining a table: moderate pace, natural pauses and gently varied emphasis. Avoid theatrical or promotional delivery.",
+    "audit": {
+      "file": "voice-01.wav",
+      "audio_sha256": "5e2a66d69b8c563133bd0c4726a628808891ee27a1f49932e6d50ed101748ef8",
+      "method": "faster-whisper small.en CPU int8; 1 thread; beam 5; no prompt; no VAD; no previous-text conditioning",
+      "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "differences": [
+        {
+          "kind": "replace",
+          "expected": "sequel lite",
+          "heard": "sql light"
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.88,
+          "text": " The column records describe three fields,"
+        },
+        {
+          "start": 2.88,
+          "end": 5.94,
+          "text": " a delivery identifier, a promise time,"
+        },
+        {
+          "start": 5.94,
+          "end": 8.28,
+          "text": " and a delivery time."
+        },
+        {
+          "start": 8.28,
+          "end": 10.8,
+          "text": " All three declare text."
+        },
+        {
+          "start": 10.8,
+          "end": 12.74,
+          "text": " In this SQL light table,"
+        },
+        {
+          "start": 12.74,
+          "end": 15.34,
+          "text": " that declaration does not strictly enforce"
+        },
+        {
+          "start": 15.34,
+          "end": 18.18,
+          "text": " the type of every stored value."
+        },
+        {
+          "start": 18.18,
+          "end": 22.22,
+          "text": " The not null flag is one for the identifier and promise."
+        },
+        {
+          "start": 22.22,
+          "end": 24.5,
+          "text": " A value is required."
+        },
+        {
+          "start": 24.5,
+          "end": 27.04,
+          "text": " Zero for delivery time allows null,"
+        },
+        {
+          "start": 27.04,
+          "end": 29.72,
+          "text": " the marker for a missing value."
+        },
+        {
+          "start": 29.72,
+          "end": 33.56,
+          "text": " The primary key uniquely identifies each row."
+        },
+        {
+          "start": 33.56,
+          "end": 37.06,
+          "text": " Here, the delivery identifier is the sole key."
+        }
+      ],
+      "pronunciation_verified": false,
+      "note": "Recognition differences require listening; this does not verify naturalness or pronunciation."
+    },
+    "generation": {
+      "name": "British male colleague",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "style": "An adult male voice with a natural British English accent and a warm mid-low register. Speak conversationally as a thoughtful colleague explaining a table: moderate pace, natural pauses and gently varied emphasis. Avoid theatrical or promotional delivery.",
+      "max_new_tokens": 1200,
+      "language": "English",
+      "source": "/workspace/scratch/voice-trial/spoken.txt",
+      "source_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+      "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "model_load_seconds": 1.1597005690000515,
+      "cloned_reference": false,
+      "post_processing": "PCM16 WAV encoding only; no trimming or time stretching",
+      "generation_seconds": 367.9640418949998,
+      "status": "complete",
+      "sample_rate": 24000,
+      "frames": 890880,
+      "seconds": 37.12,
+      "channels": 1,
+      "container": "WAV",
+      "subtype": "PCM_16",
+      "generated_peak": 0.69140625,
+      "finite": true,
+      "sha256": "5e2a66d69b8c563133bd0c4726a628808891ee27a1f49932e6d50ed101748ef8",
+      "bytes": 1781804
+    },
+    "loudness_analysis": {
+      "input_i": "-20.37",
+      "input_tp": "-3.20",
+      "input_lra": "2.40",
+      "input_thresh": "-30.87",
+      "output_i": "-18.08",
+      "output_tp": "-2.00",
+      "output_lra": "2.60",
+      "output_thresh": "-28.63",
+      "normalization_type": "dynamic",
+      "target_offset": "0.08"
+    },
+    "mp3_sha256": "b472f388d79889fa386ec32b96033ff429e5324f74bebeee44491d64b4bb4e3a"
+  },
+  {
+    "id": "Q3",
+    "title": "Relaxed American female",
+    "description": "Clear midrange voice, with an easy delivery.",
+    "file": "qwen-03.mp3",
+    "seconds": 30.48,
+    "style": "An adult female voice with a natural American English accent, relaxed clear midrange tone. Explain the table conversationally with easy clarity, moderate pace, natural pauses and subtle emphasis. Avoid theatrical or promotional delivery.",
+    "audit": {
+      "file": "voice-02.wav",
+      "audio_sha256": "c7bb9386de58c29cacce3b7c67508b8dd1a593b81ae60bfc53af04108ebc0453",
+      "method": "faster-whisper small.en CPU int8; 1 thread; beam 5; no prompt; no VAD; no previous-text conditioning",
+      "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the soul key.",
+      "differences": [
+        {
+          "kind": "replace",
+          "expected": "sequel lite",
+          "heard": "sql light"
+        },
+        {
+          "kind": "replace",
+          "expected": "sole",
+          "heard": "soul"
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": " The column records describe three fields,"
+        },
+        {
+          "start": 2.58,
+          "end": 6.98,
+          "text": " a delivery identifier, a promise time, and a delivery time."
+        },
+        {
+          "start": 6.98,
+          "end": 9.02,
+          "text": " All three declare text."
+        },
+        {
+          "start": 9.02,
+          "end": 10.6,
+          "text": " In this SQL light table,"
+        },
+        {
+          "start": 10.6,
+          "end": 12.74,
+          "text": " that declaration does not strictly enforce"
+        },
+        {
+          "start": 12.74,
+          "end": 14.84,
+          "text": " the type of every stored value."
+        },
+        {
+          "start": 14.84,
+          "end": 18.12,
+          "text": " The not null flag is one for the identifier and promise."
+        },
+        {
+          "start": 18.12,
+          "end": 20.1,
+          "text": " A value is required."
+        },
+        {
+          "start": 20.1,
+          "end": 22.42,
+          "text": " Zero for delivery time allows null,"
+        },
+        {
+          "start": 22.42,
+          "end": 24.46,
+          "text": " the marker for a missing value."
+        },
+        {
+          "start": 24.46,
+          "end": 27.78,
+          "text": " The primary key uniquely identifies each row."
+        },
+        {
+          "start": 27.78,
+          "end": 30.62,
+          "text": " Here, the delivery identifier is the soul key."
+        }
+      ],
+      "pronunciation_verified": false,
+      "note": "Recognition differences require listening; this does not verify naturalness or pronunciation."
+    },
+    "generation": {
+      "name": "American female explainer",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "seed_scope": "Reset once before the shared batch of voices02-04; not reset per voice",
+      "batch_size": 3,
+      "batch_index": 0,
+      "style": "An adult female voice with a natural American English accent, relaxed clear midrange tone. Explain the table conversationally with easy clarity, moderate pace, natural pauses and subtle emphasis. Avoid theatrical or promotional delivery.",
+      "max_new_tokens": 1200,
+      "language": "English",
+      "source": "/workspace/scratch/voice-trial/spoken.txt",
+      "source_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+      "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "model_load_seconds": 1.1930291799999395,
+      "cloned_reference": false,
+      "post_processing": "PCM16 WAV encoding only; no trimming or time stretching",
+      "batch_generation_seconds": 474.01109087199984,
+      "status": "complete",
+      "sample_rate": 24000,
+      "frames": 731520,
+      "seconds": 30.48,
+      "channels": 1,
+      "container": "WAV",
+      "subtype": "PCM_16",
+      "generated_peak": 0.765625,
+      "finite": true,
+      "sha256": "c7bb9386de58c29cacce3b7c67508b8dd1a593b81ae60bfc53af04108ebc0453",
+      "bytes": 1463084
+    },
+    "loudness_analysis": {
+      "input_i": "-20.43",
+      "input_tp": "-2.09",
+      "input_lra": "2.70",
+      "input_thresh": "-30.90",
+      "output_i": "-17.99",
+      "output_tp": "-2.00",
+      "output_lra": "2.60",
+      "output_thresh": "-28.50",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.01"
+    },
+    "mp3_sha256": "30e5f0512f8b3989b39dbe4b2ad0d1cda9c76bcfb7e97e000e7eb07002e50a73"
+  },
+  {
+    "id": "Q4",
+    "title": "Reflective American male",
+    "description": "Friendly midrange voice, with thoughtful pacing.",
+    "file": "qwen-04.mp3",
+    "seconds": 35.2,
+    "style": "An adult male voice with a natural American English accent and a friendly reflective midrange tone. Narrate thoughtfully, with moderate pace, natural pauses and gentle emphasis on the explanation. Avoid theatrical or promotional delivery.",
+    "audit": {
+      "file": "voice-03.wav",
+      "audio_sha256": "5f6783ba9240fee0d2a0b9e70f2a737222e4c929537a8f1eb2b144b29d125ba1",
+      "method": "faster-whisper small.en CPU int8; 1 thread; beam 5; no prompt; no VAD; no previous-text conditioning",
+      "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In the SQL light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the soul key.",
+      "differences": [
+        {
+          "kind": "replace",
+          "expected": "this sequel lite",
+          "heard": "the sql light"
+        },
+        {
+          "kind": "replace",
+          "expected": "sole",
+          "heard": "soul"
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": " The column records describe three fields,"
+        },
+        {
+          "start": 2.58,
+          "end": 5.4,
+          "text": " a delivery identifier, a promise time,"
+        },
+        {
+          "start": 5.4,
+          "end": 7.0200000000000005,
+          "text": " and a delivery time."
+        },
+        {
+          "start": 7.0200000000000005,
+          "end": 9.08,
+          "text": " All three declare text."
+        },
+        {
+          "start": 9.08,
+          "end": 10.94,
+          "text": " In the SQL light table,"
+        },
+        {
+          "start": 10.94,
+          "end": 13.4,
+          "text": " that declaration does not strictly enforce"
+        },
+        {
+          "start": 13.4,
+          "end": 15.860000000000001,
+          "text": " the type of every stored value."
+        },
+        {
+          "start": 15.860000000000001,
+          "end": 19.64,
+          "text": " The not null flag is one for the identifier and promise."
+        },
+        {
+          "start": 19.64,
+          "end": 21.82,
+          "text": " A value is required."
+        },
+        {
+          "start": 21.82,
+          "end": 24.76,
+          "text": " Zero for delivery time allows null,"
+        },
+        {
+          "start": 24.76,
+          "end": 26.46,
+          "text": " the marker for a missing value."
+        },
+        {
+          "start": 26.46,
+          "end": 31.46,
+          "text": " The primary key uniquely identifies each row."
+        },
+        {
+          "start": 31.46,
+          "end": 35.46,
+          "text": " Here, the delivery identifier is the soul key."
+        }
+      ],
+      "pronunciation_verified": false,
+      "note": "Recognition differences require listening; this does not verify naturalness or pronunciation."
+    },
+    "generation": {
+      "name": "American male narrator",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "seed_scope": "Reset once before the shared batch of voices02-04; not reset per voice",
+      "batch_size": 3,
+      "batch_index": 1,
+      "style": "An adult male voice with a natural American English accent and a friendly reflective midrange tone. Narrate thoughtfully, with moderate pace, natural pauses and gentle emphasis on the explanation. Avoid theatrical or promotional delivery.",
+      "max_new_tokens": 1200,
+      "language": "English",
+      "source": "/workspace/scratch/voice-trial/spoken.txt",
+      "source_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+      "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "model_load_seconds": 1.1930291799999395,
+      "cloned_reference": false,
+      "post_processing": "PCM16 WAV encoding only; no trimming or time stretching",
+      "batch_generation_seconds": 474.01109087199984,
+      "status": "complete",
+      "sample_rate": 24000,
+      "frames": 844800,
+      "seconds": 35.2,
+      "channels": 1,
+      "container": "WAV",
+      "subtype": "PCM_16",
+      "generated_peak": 0.71484375,
+      "finite": true,
+      "sha256": "5f6783ba9240fee0d2a0b9e70f2a737222e4c929537a8f1eb2b144b29d125ba1",
+      "bytes": 1689644
+    },
+    "loudness_analysis": {
+      "input_i": "-23.56",
+      "input_tp": "-2.91",
+      "input_lra": "4.60",
+      "input_thresh": "-34.23",
+      "output_i": "-19.14",
+      "output_tp": "-2.00",
+      "output_lra": "3.90",
+      "output_thresh": "-29.77",
+      "normalization_type": "dynamic",
+      "target_offset": "1.14"
+    },
+    "mp3_sha256": "1bbcf86de195aa64808e0a59db0ee54dad258437fdf6eaa60d81ac3ac5cb14a0"
+  },
+  {
+    "id": "Q5",
+    "title": "British female \u00b7 deeper voice",
+    "description": "Mature, resonant voice, with a documentary delivery.",
+    "file": "qwen-05.mp3",
+    "seconds": 36.0,
+    "style": "A mature adult female voice with a natural British English accent, a lower-pitched resonant register and grounded documentary tone. Speak with calm measured clarity, moderate pace, natural pauses and restrained emphasis. Avoid theatrical or promotional delivery.",
+    "audit": {
+      "file": "voice-04.wav",
+      "audio_sha256": "3c208d42c30a5924523e8e6759176bc19d75d90309dbaa17dc3a9f5b92761266",
+      "method": "faster-whisper small.en CPU int8; 1 thread; beam 5; no prompt; no VAD; no previous-text conditioning",
+      "expected": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "transcript": "The column records describe three fields, a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel light table, that declaration does not strictly enforce the type of every stored value. The not null flag is one for the identifier and promise. A value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "differences": [
+        {
+          "kind": "replace",
+          "expected": "lite",
+          "heard": "light"
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.5600000000000005,
+          "text": " The column records describe three fields, a delivery identifier, a promise time, and"
+        },
+        {
+          "start": 6.5600000000000005,
+          "end": 8.44,
+          "text": " a delivery time."
+        },
+        {
+          "start": 8.44,
+          "end": 10.88,
+          "text": " All three declare text."
+        },
+        {
+          "start": 10.88,
+          "end": 15.76,
+          "text": " In this sequel light table, that declaration does not strictly enforce the type of every"
+        },
+        {
+          "start": 15.76,
+          "end": 17.52,
+          "text": " stored value."
+        },
+        {
+          "start": 17.52,
+          "end": 21.52,
+          "text": " The not null flag is one for the identifier and promise."
+        },
+        {
+          "start": 21.52,
+          "end": 24.0,
+          "text": " A value is required."
+        },
+        {
+          "start": 24.0,
+          "end": 29.16,
+          "text": " Zero for delivery time allows null, the marker for a missing value."
+        },
+        {
+          "start": 29.16,
+          "end": 32.52,
+          "text": " The primary key uniquely identifies each row."
+        },
+        {
+          "start": 32.52,
+          "end": 35.88,
+          "text": " Here, the delivery identifier is the sole key."
+        }
+      ],
+      "pronunciation_verified": false,
+      "note": "Recognition differences require listening; this does not verify naturalness or pronunciation."
+    },
+    "generation": {
+      "name": "British female documentary",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "license": "Apache-2.0",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "seed_scope": "Reset once before the shared batch of voices02-04; not reset per voice",
+      "batch_size": 3,
+      "batch_index": 2,
+      "style": "A mature adult female voice with a natural British English accent, a lower-pitched resonant register and grounded documentary tone. Speak with calm measured clarity, moderate pace, natural pauses and restrained emphasis. Avoid theatrical or promotional delivery.",
+      "max_new_tokens": 1200,
+      "language": "English",
+      "source": "/workspace/scratch/voice-trial/spoken.txt",
+      "source_sha256": "12b39d4fe2c7d4e665c17ebe9392e5ece740b15be779b1244486500333a646a2",
+      "spoken_text": "The column records describe three fields: a delivery identifier, a promise time, and a delivery time. All three declare text. In this sequel lite table, that declaration does not strictly enforce the type of every stored value. The not-null flag is one for the identifier and promise: a value is required. Zero for delivery time allows null, the marker for a missing value. The primary key uniquely identifies each row. Here, the delivery identifier is the sole key.",
+      "model_load_seconds": 1.1930291799999395,
+      "cloned_reference": false,
+      "post_processing": "PCM16 WAV encoding only; no trimming or time stretching",
+      "batch_generation_seconds": 474.01109087199984,
+      "status": "complete",
+      "sample_rate": 24000,
+      "frames": 864000,
+      "seconds": 36.0,
+      "channels": 1,
+      "container": "WAV",
+      "subtype": "PCM_16",
+      "generated_peak": 0.6328125,
+      "finite": true,
+      "sha256": "3c208d42c30a5924523e8e6759176bc19d75d90309dbaa17dc3a9f5b92761266",
+      "bytes": 1728044
+    },
+    "loudness_analysis": {
+      "input_i": "-19.09",
+      "input_tp": "-3.90",
+      "input_lra": "2.40",
+      "input_thresh": "-29.60",
+      "output_i": "-18.30",
+      "output_tp": "-2.99",
+      "output_lra": "2.20",
+      "output_thresh": "-28.83",
+      "normalization_type": "dynamic",
+      "target_offset": "0.30"
+    },
+    "mp3_sha256": "592de892188aac9f212f051abc45903ecba9c4ed7b7007b501f2c82eedf2f7bb"
+  }
+]
