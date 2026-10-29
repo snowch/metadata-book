@@ -2,6 +2,17 @@
 
 A metadata platform should help a team complete a task it currently struggles with. Start with a small collection whose answers are known, then judge what a reader can establish.
 
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 28 sec</span></figcaption>
+<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-08/poster.jpg?v=e254d0ca2b9d" aria-label="Choosing and operating a metadata platform: narrated Chapter 8 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-08/captions.vtt?v=ccc2bcbc1967" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c">Download the video</a> or <a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">Read the transcript</a><a href="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c" download>Download video <span>(4.1 MB)</span></a></p>
+</figure>
+
 ## Define a bounded pilot
 
 Consider a one-week pilot for the reporting engineer and a Delivery Operations reviewer. Its two questions are concrete: which measure belongs in the operations meeting, and why did Delivery performance show 100% at 13:00 on 19 October?
