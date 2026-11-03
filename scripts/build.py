@@ -97,6 +97,7 @@ BOOK_MARK = '''<svg class="brand-mark" width="28" height="32" viewBox="0 0 28 32
 
 
 LINK_ARROW = '<svg class="external-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 9 6-6M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg>'
+GITHUB_STAR = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.6l6.3-.9L12 3Z"/></svg>'
 
 
 class Document(HTMLParser):
@@ -268,7 +269,7 @@ def build():
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map{map_close}</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map{map_close}</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a><a class="header-star" href="https://github.com/snowch/metadata-book" target="_blank" rel="noopener noreferrer" aria-label="Star Metadata systems on GitHub" title="Star Metadata systems on GitHub">{GITHUB_STAR}<span class="star-label">Star on GitHub</span></a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
   {sidebar}
