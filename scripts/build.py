@@ -168,6 +168,8 @@ def build():
     book_title = content[Path("book.md")][0]
     chapters = [p for p in sources if p.parent == Path("chapters")]
     reading_order = [Path("book.md"), *chapters, Path("summary.md")]
+    lesson_ids = {item: item.stem for item in chapters}
+    done_mark = '<span class="lesson-done" hidden><span aria-hidden="true">✓</span><span class="sr-only"> Completed</span></span>'
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "assets", OUT / "assets")
@@ -185,6 +187,11 @@ def build():
             map_data["layout"] = json.loads((ROOT / "assets/metadata-map-layout.json").read_text())
             body += render_map(map_data)
         body = re.sub(r'\b(href|src)="([^"]*)"', rewrite_link, body)
+        if source == Path("book.md"):
+            for item, lesson_id in lesson_ids.items():
+                href = relative(destination(item), page)
+                body = re.sub(r'(<a href="' + re.escape(href) + r'")(>.*?)(</a>)',
+                              lambda m: m[1] + f' data-lesson-link="{lesson_id}"' + m[2] + done_mark + m[3], body)
         reading_time = max(1, math.ceil(ReadingText(body).words / 220))
         body = body.replace("<pre>", '<pre tabindex="0" role="region" aria-label="Code example">')
         body = re.sub(r'(<pre\b[^>]*><code class="language-sql">.*?</code></pre>)',
@@ -197,8 +204,15 @@ def build():
             active = ' aria-current="page"' if item == source else ""
             label = "Introduction" if item == Path("book.md") else clean_title(content[item][0])
             nav_number = f'{number:02}' if item in chapters else '—'
-            nav.append(f'<li><a href="{escape(relative(destination(item), page))}"{active}><span class="nav-number">{nav_number}</span><span class="nav-title">{escape(label)}</span></a></li>')
+            lesson_attr = f' data-lesson-link="{lesson_ids[item]}"' if item in lesson_ids else ''
+            mark = done_mark if item in lesson_ids else ''
+            nav.append(f'<li><a href="{escape(relative(destination(item), page))}"{active}{lesson_attr}><span class="nav-number">{nav_number}</span><span class="nav-title">{escape(label)}</span>{mark}</a></li>')
         pagination = []
+        if source in lesson_ids:
+            pagination.append(f'''<div class="lesson-completion" hidden>
+<label for="lesson-done"><input type="checkbox" id="lesson-done" data-lesson-id="{lesson_ids[source]}" aria-describedby="lesson-save-status"> Mark lesson as done</label>
+<span id="lesson-save-status" role="status">Saved in this browser.</span>
+</div>''')
         if source in reading_order:
             index = reading_order.index(source)
             for offset, label in [(-1, "Previous"), (1, "Next")]:
@@ -249,6 +263,7 @@ def build():
   <title>{escape(title)} · {escape(book_title)}</title>
   <link rel="icon" type="image/svg+xml" href="{relative(Path('assets/favicon.svg'), page)}">
   <link rel="stylesheet" href="{asset_url('assets/book.css', page)}">
+  <script defer src="{asset_url('assets/lesson-completion.js', page)}"></script>
   {map_assets}
 </head>
 <body class="page-{page_type}">

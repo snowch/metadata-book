@@ -70,6 +70,18 @@ This checks chapter context, linked examples, keyboard tabs, URL state, mobile l
 
 Product-specific references appear beside the relevant explanations. The parcel company and delivery records are original, invented teaching examples. [examples/README.md](examples/README.md) explains the executable fixture, local incident simulation and their limits.
 
+## Reading progress
+
+Each chapter has a **Mark lesson as done** checkbox beside the reading navigation.
+Completion ticks appear in the book's desktop/mobile contents and introduction.
+Marks are manual, reversible and saved in this browser, separately for each
+chapter. They track reading rather than verified learning; no account is needed.
+If browser storage is unavailable, the control reports that progress was not saved.
+
+After building, run `python3 scripts/verify_completion_browser.py` with Playwright
+and Chromium installed to check persistence, keyboard operation, desktop/mobile
+contents, cross-tab updates, denied storage and the no-JavaScript fallback.
+
 ## Chapter videos
 
 Chapters 1–11 include narrated page learning aids with optional English captions and transcripts. Final media is published in each chapter's directory under `assets/video/`. Source and rebuild instructions for [Chapter 1](video/chapter-01/README.md), [Chapter 2](video/chapter-02/README.md), [Chapter 3](video/chapter-03/README.md), [Chapter 4](video/chapter-04/README.md), [Chapter 5](video/chapter-05/README.md), [Chapter 6](video/chapter-06/README.md), [Chapter 7](video/chapter-07/README.md), [Chapter 8](video/chapter-08/README.md), [Chapter 9](video/chapter-09/README.md), [Chapter 10](video/chapter-10/README.md) and [Chapter 11](video/chapter-11/README.md) retain the narration, scene plans and rendering workflow. The players do not autoplay or preload the MP4. Working media and caches remain in ignored `out/`. The [video workflow](video/README.md) includes an unprompted pronunciation audit immediately after narration generation, before rendering.
