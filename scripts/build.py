@@ -253,6 +253,7 @@ def build():
             f'<p class="sidebar-title">{escape(book_title)}</p>'
             f'<nav aria-label="Book chapters"><ol>{"".join(nav)}</ol></nav></aside>'
         )
+        lesson_style = f'<link rel="stylesheet" href="{asset_url("assets/lessons/chapter-01/book.css", page)}">' if source == Path("chapters/01-why-metadata.md") else ""
         reading_badge = "" if is_map else f'<span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span>'
         html = f'''<!doctype html>
 <html lang="en">
@@ -266,6 +267,7 @@ def build():
   <link rel="stylesheet" href="{asset_url('assets/book.css', page)}">
   <script defer src="{asset_url('assets/lesson-completion.js', page)}"></script>
   {map_assets}
+  {lesson_style}
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>

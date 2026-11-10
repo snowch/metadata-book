@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:03,148
+Delivery Operations wants to know: of all parcels
+
+2
+00:00:03,148 --> 00:00:05,468
+due by noon, how many arrived on time?
+
+3
+00:00:07,207 --> 00:00:09,891
+At one o’clock, two parcels arrived on time,
+
+4
+00:00:09,891 --> 00:00:13,026
+one arrived late, and one is unfinished. All
+
+5
+00:00:13,026 --> 00:00:15,608
+four were due by noon. Assume these records
+
+6
+00:00:15,608 --> 00:00:16,219
+are complete.
+
+7
+00:00:17,944 --> 00:00:21,421
+First, ask about completed deliveries. The late parcel
+
+8
+00:00:21,421 --> 00:00:24,966
+belongs because it arrived. The unfinished parcel stays
+
+9
+00:00:24,966 --> 00:00:27,441
+outside this group. Two on time out of
+
+10
+00:00:27,441 --> 00:00:30,540
+three completed gives sixty-six point seven percent.
+
+11
+00:00:32,265 --> 00:00:35,769
+Now answer the operations question. Which parcels belong
+
+12
+00:00:35,769 --> 00:00:38,815
+in its denominator? Pause and explain your choice.
+
+13
+00:00:44,094 --> 00:00:47,049
+All four were due, including the unfinished parcel.
+
+14
+00:00:47,049 --> 00:00:49,574
+The numerator stays at two. Two out of
+
+15
+00:00:49,574 --> 00:00:50,842
+four gives fifty percent.
+
+16
+00:00:52,557 --> 00:00:55,613
+Try a separate example with complete records: six
+
+17
+00:00:55,613 --> 00:00:58,177
+parcels due, two on time, two late and
+
+18
+00:00:58,177 --> 00:01:01,426
+two unfinished. What percentage of all parcels due
+
+19
+00:01:01,426 --> 00:01:03,993
+arrived on time? Pause before continuing.
+
+20
+00:01:09,306 --> 00:01:11,904
+Two out of six gives thirty-three point three
+
+21
+00:01:11,904 --> 00:01:15,530
+percent. Dividing by four would answer the completed-delivery
+
+22
+00:01:15,530 --> 00:01:16,551
+question instead.
+
+23
+00:01:18,324 --> 00:01:22,383
+Record the population, measurement time and responsible team.
+
+24
+00:01:22,383 --> 00:01:26,183
+Then check the calculation against that definition. A
+
+25
+00:01:26,183 --> 00:01:28,962
+successful query can still answer a different question.

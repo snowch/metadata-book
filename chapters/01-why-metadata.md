@@ -4,15 +4,26 @@ A dashboard shows a number. To use it, we need to know what it measures, where i
 
 **Metadata is information that describes data:** its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. These descriptions may live inside a database, alongside a report, or in a separate catalogue.
 
+<div class="lesson-outcome" markdown="1">
+**Your goal:** choose the population a percentage should count, explain why unfinished deliveries belong or do not belong, and check a calculation against its recorded definition.
+</div>
+
+<section class="lesson-lab" aria-labelledby="parcel-lab-title">
+<h2 id="parcel-lab-title">Make the denominator visible</h2>
+<p>Start with <strong>Completed deliveries</strong>, then switch to <strong>All parcels due</strong>. Explain what changes before trying the separate six-parcel example. <a href="../assets/lessons/chapter-01/index.html">Open the parcel lab in its own page</a>.</p>
+<iframe title="Explore which parcels belong in the denominator" src="../assets/lessons/chapter-01/index.html" width="1280" height="780" loading="lazy"></iframe>
+</section>
+
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 23 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-01/poster.jpg?v=1a67566d2352" aria-label="What the data cannot tell you: narrated Chapter 1 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-01/chapter-01.mp4?v=7e12b061b56b" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-01/captions.vtt?v=f7a42feb942a" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-01/chapter-01.mp4?v=7e12b061b56b">Download the video</a> or <a href="../assets/video/chapter-01/transcript.txt?v=91488f5b5b0d">read the transcript</a>.
+<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">1 min 33 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-01-v2/poster.jpg?v=4db57dd33c98" aria-label="What the data cannot tell you: narrated Chapter 1 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-01-v2/chapter-01.mp4?v=cbfa477eb6c1" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-01-v2/captions.vtt?v=f71fe7e9a7f2" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=cbfa477eb6c1">Download the video</a> or <a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-01/transcript.txt?v=91488f5b5b0d">Read the transcript</a><a href="../assets/video/chapter-01/chapter-01.mp4?v=7e12b061b56b" download>Download video <span>(3.9 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">Read the transcript</a><a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=cbfa477eb6c1" download>Download video <span>(5.0 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/deck.pdf">Download the slide deck</a><a href="../assets/video/chapter-01-v2/chapter-01-silent.mp4" download>Download the silent master</a></p>
 </figure>
 
 ## What a number means

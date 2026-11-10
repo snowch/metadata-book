@@ -1,3 +1,5 @@
+> The published replacement is [Chapter 1 v2](../chapter-01-v2/README.md). This directory retains the earlier Q1 production as historical source.
+
 # Chapter 1 explainer video
 
 An embedded learning aid for [What the data cannot tell you](../../chapters/01-why-metadata.md). The same four parcels explain completed-delivery and all-due denominators. Prediction and explanation pauses reinforce choosing the denominator and checking a calculation against its recorded definition. The closing activity connects to the page’s metadata map.
