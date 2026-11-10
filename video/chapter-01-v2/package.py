@@ -1,0 +1,15 @@
+from pathlib import Path
+import hashlib,json,re,subprocess
+root=Path(__file__).resolve().parents[2];dest=root/'assets/video/chapter-01-v2';build=root/'out/chapter-01-v2';scenes=json.loads((build/'scenes.json').read_text())
+(dest/'transcript.txt').write_text('What the data cannot tell you\nOriginal teaching examples; Kokoro af_heart synthetic narration.\n\n'+'\n\n'.join(s['text'] for s in scenes)+'\n')
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(dest/'chapter-01.mp4')]))
+duration=float(probe['format']['duration']);v=next(x for x in probe['streams'] if x['codec_type']=='video');assert(v['width'],v['height'],v['r_frame_rate'])==(3840,2160,'30/1')
+page=root/'chapters/01-why-metadata.md';s=page.read_text();old=re.search(r'<figure class="chapter-video".*?</figure>',s,re.S)[0];clean=re.sub(r'<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/deck.pdf".*?</p>\n?', '', old);new=clean.replace('chapter-01/', 'chapter-01-v2/').replace('width="1280" height="720"','width="3840" height="2160"');sec=round(duration);new=re.sub(r'\d+ min \d+ sec',f'{sec//60} min {sec%60:02} sec',new)
+for f in ('chapter-01.mp4','captions.vtt','poster.jpg','transcript.txt'):new=re.sub(re.escape(f)+r'\?v=[a-f0-9]+',f+'?v='+sha(dest/f)[:12],new)
+new=re.sub(r'\([0-9.]+ MB\)',f'({(dest/"chapter-01.mp4").stat().st_size/1e6:.1f} MB)',new)
+new=new.replace('</figure>','<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/deck.pdf">Download the slide deck</a><a href="../assets/video/chapter-01-v2/chapter-01-silent.mp4" download>Download the silent master</a></p>\n</figure>')
+page.write_text(s.replace(old,new))
+record=dict(source_commit='212a4f1a4fb627c08d7bce423ef4bc1123e5a8f5',recording_skill_commit='c9a7c521568632aa216932f4c965df386498602a',duration_seconds=duration,video=dict(width=3840,height=2160,fps=30),speech=json.loads((build/'audio/durations.json').read_text()),scenes=[dict(s,audio_sha256=sha(build/'audio'/f"{s['id']}.wav"),alignment=json.loads((build/'audio'/f"{s['id']}.alignment.json").read_text())) for s in scenes],assets={f.name:dict(sha256=sha(f),bytes=f.stat().st_size) for f in dest.iterdir()},human_listening_review=False,learner_outcomes='Not assessed')
+(root/'video/chapter-01-v2/production.json').write_text(json.dumps(record,indent=2,ensure_ascii=False)+'\n')
+print('Export',duration,'seconds',record['assets']['chapter-01.mp4'])

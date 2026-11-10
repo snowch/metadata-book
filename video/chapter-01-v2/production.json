@@ -1,0 +1,172 @@
+{
+  "source_commit": "212a4f1a4fb627c08d7bce423ef4bc1123e5a8f5",
+  "recording_skill_commit": "c9a7c521568632aa216932f4c965df386498602a",
+  "duration_seconds": 92.833333,
+  "video": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 30
+  },
+  "speech": {
+    "voice": "af_heart",
+    "speed": 1.0,
+    "engine": {
+      "backend": "onnx",
+      "model": "Kokoro-82M v1.0",
+      "release": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/",
+      "sha256": {
+        "kokoro-v1.0.onnx": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+        "voices-v1.0.bin": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+      },
+      "provider": "CPUExecutionProvider"
+    },
+    "durations": {
+      "task": 5.696,
+      "evidence": 9.237,
+      "demonstration": 12.8,
+      "guided": 6.827,
+      "explanation": 6.955,
+      "independent": 11.733,
+      "feedback": 7.509,
+      "application": 10.88
+    }
+  },
+  "scenes": [
+    {
+      "id": "task",
+      "step": "The question",
+      "text": "Delivery Operations wants to know: of all parcels due by noon, how many arrived on time?",
+      "say": "Delivery Operations wants to know: of all parcels due by noon, how many arrived on time?",
+      "hold": 1.5,
+      "audio_sha256": "d6f59d3fee01ff4629c07cf7f82f119ba8fbf0fb888bc75f54951d82d3cd77cb",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "evidence",
+      "step": "Four deliveries",
+      "text": "At one o’clock, two parcels arrived on time, one arrived late, and one is unfinished. All four were due by noon. Assume these records are complete.",
+      "say": "At one o’clock, two parcels arrived on time, one arrived late, and one is unfinished. All four were due by noon. Assume these records are complete.",
+      "hold": 1.5,
+      "audio_sha256": "8821406e2282285e5b0514ddb18b44bca3a96c47513cbababfafff6dae0d8a56",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "demonstration",
+      "step": "Completed deliveries",
+      "text": "First, ask about completed deliveries. The late parcel belongs because it arrived. The unfinished parcel stays outside this group. Two on time out of three completed gives sixty-six point seven percent.",
+      "say": "First, ask about completed deliveries. The late parcel belongs because it arrived. The unfinished parcel stays outside this group. Two on time out of three completed gives sixty-six point seven percent.",
+      "hold": 1.5,
+      "audio_sha256": "f8c13eaa5d38612a2e3ebdd339e735ddf58bfaecea5004411cf6f195eb374243",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "guided",
+      "step": "Choose the denominator",
+      "text": "Now answer the operations question. Which parcels belong in its denominator? Pause and explain your choice.",
+      "say": "Now answer the operations question. Which parcels belong in its denominator? Pause and explain your choice.",
+      "hold": 5,
+      "audio_sha256": "134c162a69000e0514583dfd71da3ad9ce6fe30dfb0b8af2bea23873bda3c41f",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "explanation",
+      "step": "All parcels due",
+      "text": "All four were due, including the unfinished parcel. The numerator stays at two. Two out of four gives fifty percent.",
+      "say": "All four were due, including the unfinished parcel. The numerator stays at two. Two out of four gives fifty percent.",
+      "hold": 1.5,
+      "audio_sha256": "1c439a3461e486ddf1f67d2b20ed7203103830bb66e89af50595ff44ff26ffae",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "independent",
+      "step": "A different example",
+      "text": "Try a separate example with complete records: six parcels due, two on time, two late and two unfinished. What percentage of all parcels due arrived on time? Pause before continuing.",
+      "say": "Try a separate example with complete records: six parcels due, two on time, two late and two unfinished. What percentage of all parcels due arrived on time? Pause before continuing.",
+      "hold": 5,
+      "audio_sha256": "eac68d8c80937c7341cfb1239da9334dba6cd3f359a6a8bd2e998fbf32a979bd",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "feedback",
+      "step": "Explain your answer",
+      "text": "Two out of six gives thirty-three point three percent. Dividing by four would answer the completed-delivery question instead.",
+      "say": "Two out of six gives thirty-three point three percent. Dividing by four would answer the completed-delivery question instead.",
+      "hold": 1.5,
+      "audio_sha256": "2e1465fe95be7b4d593c882c0c0cef07584448870873b7c472e74e8bdd7d5838",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    },
+    {
+      "id": "application",
+      "step": "Use the definition",
+      "text": "Record the population, measurement time and responsible team. Then check the calculation against that definition. A successful query can still answer a different question.",
+      "say": "Record the population, measurement time and responsible team. Then check the calculation against that definition. A successful query can still answer a different question.",
+      "hold": 1.5,
+      "audio_sha256": "ed72bfef98213f46bb3aff074f1a32fe77060d32626ebae74c7bc91e04f1881f",
+      "alignment": {
+        "matched_character_fraction": 1.0,
+        "differences": [],
+        "warning": "Canonical words with incomplete ASR matches use interpolated timing; inspect the independent ASR transcript for fidelity."
+      }
+    }
+  ],
+  "assets": {
+    "poster.jpg": {
+      "sha256": "4db57dd33c98dfd97580452edde142aa00ad4065535a181d2c8c5a382863cd59",
+      "bytes": 45580
+    },
+    "transcript.txt": {
+      "sha256": "fa696794bdbbb8211388b479ca6a544f1c02dc75301868e4aa984473dbe18712",
+      "bytes": 1250
+    },
+    "captions.vtt": {
+      "sha256": "f71fe7e9a7f2803207e190eceb24485b9acb786d854abb268502a75bc1165aab",
+      "bytes": 1779
+    },
+    "captions.srt": {
+      "sha256": "e5e14ab7465a452726ad3b19d5b04cdc2c4a8cf107d3f8071346d988058d6254",
+      "bytes": 1987
+    },
+    "deck.pdf": {
+      "sha256": "e3dd635d48f6ff200055e966687d8b555b949187ae83371983ce07775f995dca",
+      "bytes": 928176
+    },
+    "chapter-01.mp4": {
+      "sha256": "cbfa477eb6c17ef6623213f152dbe19fedbc5154cccfac6ed212de1b9207ea52",
+      "bytes": 4999764
+    },
+    "chapter-01-silent.mp4": {
+      "sha256": "52afd33322eb2e5a17bbee9016a708b25c272e5d66829746b811b95a69491390",
+      "bytes": 3422315
+    }
+  },
+  "human_listening_review": false,
+  "learner_outcomes": "Not assessed"
+}

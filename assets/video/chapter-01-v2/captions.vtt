@@ -1,0 +1,76 @@
+WEBVTT
+
+00:00.000 --> 00:03.148
+Delivery Operations wants to know: of all parcels
+
+00:03.148 --> 00:05.468
+due by noon, how many arrived on time?
+
+00:07.207 --> 00:09.891
+At one o’clock, two parcels arrived on time,
+
+00:09.891 --> 00:13.026
+one arrived late, and one is unfinished. All
+
+00:13.026 --> 00:15.608
+four were due by noon. Assume these records
+
+00:15.608 --> 00:16.219
+are complete.
+
+00:17.944 --> 00:21.421
+First, ask about completed deliveries. The late parcel
+
+00:21.421 --> 00:24.966
+belongs because it arrived. The unfinished parcel stays
+
+00:24.966 --> 00:27.441
+outside this group. Two on time out of
+
+00:27.441 --> 00:30.540
+three completed gives sixty-six point seven percent.
+
+00:32.265 --> 00:35.769
+Now answer the operations question. Which parcels belong
+
+00:35.769 --> 00:38.815
+in its denominator? Pause and explain your choice.
+
+00:44.094 --> 00:47.049
+All four were due, including the unfinished parcel.
+
+00:47.049 --> 00:49.574
+The numerator stays at two. Two out of
+
+00:49.574 --> 00:50.842
+four gives fifty percent.
+
+00:52.557 --> 00:55.613
+Try a separate example with complete records: six
+
+00:55.613 --> 00:58.177
+parcels due, two on time, two late and
+
+00:58.177 --> 01:01.426
+two unfinished. What percentage of all parcels due
+
+01:01.426 --> 01:03.993
+arrived on time? Pause before continuing.
+
+01:09.306 --> 01:11.904
+Two out of six gives thirty-three point three
+
+01:11.904 --> 01:15.530
+percent. Dividing by four would answer the completed-delivery
+
+01:15.530 --> 01:16.551
+question instead.
+
+01:18.324 --> 01:22.383
+Record the population, measurement time and responsible team.
+
+01:22.383 --> 01:26.183
+Then check the calculation against that definition. A
+
+01:26.183 --> 01:28.962
+successful query can still answer a different question.
