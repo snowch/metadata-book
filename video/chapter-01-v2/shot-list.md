@@ -1,11 +1,15 @@
 # What the data cannot tell you: shot list
 
-Silent master: `chapter-01-4k-silent.mp4` (3840×2160, 30 fps, 1:32.8). The narrated reference copy `chapter-01-4k-narrated.mp4` has the same picture and timing, with soft captions.
+Published silent master: `assets/video/chapter-01-v2/chapter-01-silent.mp4`
+(3840×2160, 30 fps, 1:32.8). `chapter-01.mp4` has the same picture and timing,
+with the approved narration and soft captions.
 
-Recorded in one continuous automated take.
-- **Pointer:** a standard arrow. It rests just beside whatever is being discussed and moves in one smooth path. Nothing is added on click.
-- **Scrolling:** steady, at a fixed speed.
-- **Holds:** every step ends with a still hold, so each boundary below is a clean cut point.
+The current picture is rebuilt from native browser scene renders against the
+retained timeline, with the original audio and subtitle packets copied unchanged.
+One heading and one diagram stay visible; the calculation appears at its spoken
+cue (26.4s, 49.1s and 69.3s). Parcel movement shows the change in membership.
+The bottom 20% stays clear for player controls and captions. Guided and independent
+questions retain their five-second silent response holds.
 
 | # | Time | Step | Reference narration (what is happening, and why it matters) |
 |---|---|---|---|

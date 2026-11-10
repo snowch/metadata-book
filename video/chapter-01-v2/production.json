@@ -1,4 +1,6 @@
 {
+  "picture_workflow": "Native browser scene renders synchronized to retained timeline; original audio/caption packets copied",
+  "visual_parent_commit": "aafefd5813cb51fafd75d7423ffc9f114cfca316",
   "source_commit": "212a4f1a4fb627c08d7bce423ef4bc1123e5a8f5",
   "recording_skill_commit": "c9a7c521568632aa216932f4c965df386498602a",
   "duration_seconds": 92.833333,
@@ -139,8 +141,8 @@
   ],
   "assets": {
     "poster.jpg": {
-      "sha256": "4db57dd33c98dfd97580452edde142aa00ad4065535a181d2c8c5a382863cd59",
-      "bytes": 45580
+      "sha256": "c6d8c1be214e464a1a04efaed89223db387f80de9a03e2888c5bc2279b98eb56",
+      "bytes": 27510
     },
     "transcript.txt": {
       "sha256": "fa696794bdbbb8211388b479ca6a544f1c02dc75301868e4aa984473dbe18712",
@@ -155,16 +157,16 @@
       "bytes": 1987
     },
     "deck.pdf": {
-      "sha256": "e3dd635d48f6ff200055e966687d8b555b949187ae83371983ce07775f995dca",
-      "bytes": 928176
+      "sha256": "11fd516db43999fbf376741147e134cbb0c2869b3c9d44e0cdda64c6aa4ae1f2",
+      "bytes": 218644
     },
     "chapter-01.mp4": {
-      "sha256": "cbfa477eb6c17ef6623213f152dbe19fedbc5154cccfac6ed212de1b9207ea52",
-      "bytes": 4999764
+      "sha256": "0606d5268924e683a2e71d2ad1178bb2f6ab7df254d5fc220cbd360382e6c9b6",
+      "bytes": 3429974
     },
     "chapter-01-silent.mp4": {
-      "sha256": "52afd33322eb2e5a17bbee9016a708b25c272e5d66829746b811b95a69491390",
-      "bytes": 3422315
+      "sha256": "f5076ef9a38f44fe4ebf5c7bd730fa7b7494cc3fb3072e49f17aab050ccdb1d1",
+      "bytes": 1852649
     }
   },
   "human_listening_review": false,

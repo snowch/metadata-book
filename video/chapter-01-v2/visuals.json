@@ -1,0 +1,44 @@
+{
+  "task": {
+    "heading": "Which deliveries should count?"
+  },
+  "evidence": {
+    "heading": "Four parcels. All due by noon."
+  },
+  "demonstration": {
+    "heading": "Among completed deliveries",
+    "calculation_phrase": [
+      "two",
+      "on",
+      "time"
+    ],
+    "calculation_seconds": 8.466666666666667
+  },
+  "guided": {
+    "heading": "What if we count every parcel due?"
+  },
+  "explanation": {
+    "heading": "Include the unfinished parcel",
+    "calculation_phrase": [
+      "two",
+      "out",
+      "of"
+    ],
+    "calculation_seconds": 5.033333333333333
+  },
+  "independent": {
+    "heading": "Six parcels. What counts?"
+  },
+  "feedback": {
+    "heading": "Count all six parcels due",
+    "calculation_phrase": [
+      "two",
+      "out",
+      "of"
+    ],
+    "calculation_seconds": 0.0
+  },
+  "application": {
+    "heading": "Record the rule. Check the calculation."
+  }
+}
