@@ -45,3 +45,17 @@ page links and provenance once those files exist. It does not publish remotely.
 The page uses a scoped stylesheet, leaving other lessons' presentation intact.
 See `review.md` for completed checks and limits. Do not regenerate unchanged
 speech for a visual correction. Retain working audio, frames and ASR under `out/`.
+
+## Picture-only simplification
+
+The current picture removes recording chrome, timestamps, grouping labels and
+explanatory paragraphs. `visuals.json` defines the single heading and calculation
+cue for each scene. `simplify_visuals.py` renders native 4K browser states against
+the retained frame timeline, including the parcel transition and later calculation
+reveal. It remuxes the original audio/subtitle streams, then checks their packet
+hashes and timestamps. The bottom 144px of the 720px layout stays empty.
+
+Run it with Playwright installed and the repository served on localhost:8031.
+Retain `out/chapter-01-v2/timeline.json` and `audio/*.asr.json` from the approved
+recording. `export_deck.py` uses the same simplified headings and final states.
+This correction changes picture and layout; it does not regenerate speech.

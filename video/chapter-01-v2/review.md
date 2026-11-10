@@ -26,6 +26,27 @@ explaining that it counts completed deliveries. Both question recordings leave
 five seconds after speech. Users can pause or work independently in the lab.
 Experienced readers can go directly to the six-parcel exercise.
 
+## Visual correction after screenshot review
+
+The earlier recording still showed too many simultaneous labels, and the page
+squeezed its landscape player beside the navigation. This revision removes the
+recording header, repeated context, timestamps, grouping line and explanation
+paragraph. Each scene keeps one heading and a larger labelled diagram. The
+calculation appears at its spoken cue; the bottom 20% stays clear for controls
+and captions. Six parcels use two rows, retaining readable labels.
+
+The player now uses more of the page width. Navigation collapses below 1200px;
+on a 390px screen the video spans the full 390px. At 960px and 1280px viewport
+widths the player measures 915px and 1005px. The embedded lab reports its content
+height as exercises change, removing the fixed blank area above the video.
+
+Native browser renders follow the retained 2785-frame timeline. Audio and
+subtitle packet hashes, presentation timestamps and durations exactly match the
+previous published recording. No speech or caption timing was regenerated.
+Actual encoded frames before and after calculation reveals were inspected;
+mobile/tablet/desktop checks cover frame resizing, practice feedback and overflow.
+The PDF and poster use the same simplified composition.
+
 ## Speech and media evidence
 
 92.833 seconds; native 3840×2160 at 30 fps. The silent master shares the picture
@@ -48,6 +69,9 @@ technical findings, not measured learning gains.
 ## Verification
 
 - Full FFmpeg decode and native media dimensions/frame rate.
+- Exact original/new audio and subtitle packet equality; 2785 video frames retained.
+- All eight recording scenes fit above the 144px control/caption safe area.
+- At 390px, 960px and 1280px: lab height grows and shrinks with content, no horizontal overflow, responsive player and navigation.
 - Caption text exactly matches the approved narration.
 - Exported audio is silent in both question response windows; no active captions.
 - Actual encoded frames and response holds inspected separately from deck exports.

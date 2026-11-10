@@ -7,7 +7,10 @@ with sync_playwright() as p:
  page=b.new_page(viewport={'width':1280,'height':720},device_scale_factor=3)
  page.goto('http://127.0.0.1:8031/assets/lessons/chapter-01/index.html?record');page.evaluate('document.fonts.ready');writer=PdfWriter()
  for i,s in enumerate(scenes,1):
-  page.evaluate('(id)=>showScene(id)',s['id']);page.wait_for_timeout(900)
+  visual=__import__('json').loads((root/'video/chapter-01-v2/visuals.json').read_text())[s['id']]
+  page.evaluate('([id,heading])=>setRecordingScene(id,heading)',[s['id'],visual['heading']])
+  if 'calculation_phrase' in visual:page.evaluate('revealCalculation()')
+  page.wait_for_timeout(900)
   assert page.evaluate('document.documentElement.scrollHeight<=720'),s['id']
   page.screenshot(path=str(out/'slides'/f's-{i:02}.png'))
   path=out/'slides'/f's-{i:02}.pdf';page.pdf(path=str(path),width='1280px',height='720px',print_background=True);writer.append(str(path))

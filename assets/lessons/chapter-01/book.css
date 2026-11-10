@@ -1,6 +1,13 @@
 @font-face{font-family:SourceSans;src:url(source-sans-3.ttf);font-weight:200 900;font-display:swap}
 :root{--paper:#fafcff;--surface:#fff;--ink:#172635;--muted:#4a6072;--accent:#3657d6;--accent-wash:#e9efff;--line:#d6e1ed;--wash:#edf3fa;--folio:#dce7f2;--serif:SourceSans,system-ui,sans-serif;--sans:SourceSans,system-ui,sans-serif}
-.prose{font-size:1.17rem;line-height:1.7}.prose>p:first-child{font-size:1.45rem;line-height:1.45}.chapter-header h1{font-weight:650;letter-spacing:-.045em}.prose h2{font-weight:650;letter-spacing:-.025em}.lesson-lab{margin:2rem 0}.lesson-lab iframe{display:block;width:100%;height:1090px;border:1px solid var(--line);border-radius:12px;background:#fafcff}.lesson-outcome{padding:1.1rem 1.4rem;border-left:4px solid #087d79;background:var(--wash)}.chapter-video{border-radius:12px;overflow:hidden}.worked-example{border:0;border-radius:10px;box-shadow:none;background:var(--wash)}.metadata-record{border-radius:10px}.reader-action{border-left-color:#087d79}.lesson-lab p{font-size:1rem}.chapter-meta{letter-spacing:.02em}
-@media(max-width:700px){.lesson-lab iframe{height:1090px}.prose{font-size:1.12rem}}
+.prose{font-size:1.17rem;line-height:1.7}.prose>p:first-child{font-size:1.45rem;line-height:1.45}.chapter-header h1{font-weight:650;letter-spacing:-.045em}.prose h2{font-weight:650;letter-spacing:-.025em}.lesson-lab{margin:2rem 0}.lesson-lab iframe{display:block;width:100%;height:780px;border:1px solid var(--line);border-radius:12px;background:#fafcff}.lesson-outcome{padding:1.1rem 1.4rem;border-left:4px solid #087d79;background:var(--wash)}.chapter-video{border-radius:12px;overflow:hidden}.worked-example{border:0;border-radius:10px;box-shadow:none;background:var(--wash)}.metadata-record{border-radius:10px}.reader-action{border-left-color:#087d79}.lesson-lab p{font-size:1rem}.chapter-meta{letter-spacing:.02em}
+@media(max-width:700px){.lesson-lab iframe{height:780px}.prose{font-size:1.12rem}}
 @media(prefers-color-scheme:dark){:root{--paper:#172635;--surface:#203447;--ink:#f1f6fc;--muted:#b9c9d9;--accent:#a6bbff;--accent-wash:#263e65;--line:#3c536a;--wash:#203447;--folio:#3c536a}}
 @media print{.lesson-lab iframe{display:none}}
+
+/* Keep reading lines comfortable, while giving the demonstration room. */
+.book-layout{max-width:1440px;grid-template-columns:160px minmax(0,1fr);gap:clamp(2rem,4vw,4rem);padding-inline:2rem}
+main{max-width:none}.prose>:not(.chapter-video):not(.lesson-lab){max-width:760px}
+@media(max-width:1200px){.book-sidebar{display:none}.book-layout{display:block;padding:2rem 1.4rem}.mobile-contents{display:block;padding-inline:1.4rem;border-bottom:1px solid var(--line)}.mobile-contents>summary{font-size:.8rem;color:var(--muted);min-height:44px;padding:.85rem 0}.mobile-contents nav{padding-bottom:1rem}.mobile-contents nav a{margin-left:0;min-height:44px}}
+.chapter-video{padding:0;border:0;background:transparent;overflow:visible}
+@media(max-width:700px){.chapter-video{margin-inline:-1.4rem}.chapter-video>figcaption,.chapter-video>p{padding-inline:1.4rem}.chapter-video video{border-radius:0}}
