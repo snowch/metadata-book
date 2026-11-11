@@ -1,3 +1,34 @@
+# Chapter 11 visual audit — 11 November 2026
+
+The previous film crowded purpose, identity controls, release planning and retention into dense card stacks. The revision separates recorded approval from implemented controls and permitted/denied-account tests, then distinguishes the operational dataset from the synthetic research plan. Proposed license, pending identifier and absence of release remain explicit. FAIR principles appear alongside one another without process arrows; they do not grant permission. The retention sequence separates identifying a deleted input from reproducing it and keeps unmanaged-copy limitations visible. A restarted working export failed integrity validation and was rebuilt using isolated temporary outputs before packaging; the final strict decode and browser checks passed.
+
+Memory cue: **Check purpose, dataset identity and evidence of actual control or release.** The page's map exercise retains independent
+explanation and application. Narration, canonical captions, response holds and
+example qualifications are unchanged. This is a picture/layout correction using
+the [design and learning criteria](../film-audit.md), not a new speech production.
+
+## Verified replacement
+
+- Native 3840×2160 browser renders at 24fps; 160.3s, same frame count.
+- Original/new audio and subtitle packet hashes, timestamps and durations match exactly.
+- Full FFmpeg decode; canonical caption text; both silent response windows.
+- Inspected actual encoded scene/hold frames and the staged diagram preview.
+- No label overlaps or clipping; all diagram text above the bottom 20% control area.
+- Chromium 390/960/1280px: wider player, no overflow, playback, captions, seeking,
+  no captions during response holds, and working metadata-map exercise.
+- Full site/link build; shared source/example/map checks remain passing.
+- Matching PDF of all visual states, silent master and refreshed poster packaged.
+
+Provenance and stage timecodes: `film-production.json`. Available workspace disk
+before the next chapter: 25.9 GB. No new human listening review was performed;
+existing pronunciation/prosody limitations below remain. Engagement and memorability
+are design judgments; learning, delayed recall and transfer outcomes are unmeasured.
+
+The previous export review follows for original speech/content evidence. Its old
+video hash and 720p picture describe that superseded export.
+
+---
+
 # Chapter 11 learning-aid review — 29 October 2026
 
 Source: `cca707e3c3bdd295aa85becf94984d3e4b6fa20a`. Guidance: explainer

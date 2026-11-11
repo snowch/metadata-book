@@ -4839,7 +4839,7 @@
       "caption_cues": 43,
       "end_card_seconds": 5,
       "purpose": "Distinguish recorded access approval from enforced controls, and a planned synthetic release from permission to share operational records.",
-      "video_sha256": "365ec1fb4f8884e7911baae96a51d3722deeb25f69fdce6e863efb6620973bb9",
+      "video_sha256": "bd398765fa7472aaa1fde3159f0b5849d6c2f0450f5a57a4b461faeee1f057c4",
       "scenes": [
         {
           "scene": 0,
@@ -5234,7 +5234,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-11/film-production.json"
     }
   ]
 }

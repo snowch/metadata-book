@@ -30,7 +30,7 @@ for stream in streams:
         assert abs(float(stream['duration'])-expected_duration)<.15
         assert abs(float(stream.get('start_time',0)))<.05
 assert timings[-1]['kind']=='end' and timings[-1]['duration']==5
-subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-i',str(movie),'-f','null','-'],check=True)
+subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-xerror','-i',str(movie),'-f','null','-'],check=True)
 # Compare shipped captions with canonical display narration, not speech lexicon.
 blocks=re.split(r'\n\s*\n',(build/'captions.srt').read_text().strip())
 caption_text=' '.join(' '.join(b.splitlines()[2:]) for b in blocks)

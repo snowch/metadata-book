@@ -25,6 +25,21 @@ The native browser/deck export follows the Linux-compatible
 [record-demo workflow](https://github.com/snowch/claude-skills/tree/main/plugins/demo-video/skills/record-demo).
 The existing approved Q1 speech is retained; this does not change to Kokoro.
 
+## Reviewed chapters
+
+| Chapter | Main visual correction | Review |
+|---|---|---|
+| 2 | Separate structure, meaning and filter arithmetic | [Evidence](chapter-02/review.md) |
+| 3 | Match output/run identifiers; inspect retained inputs | [Evidence](chapter-03/review.md) |
+| 4 | Match new publication to the report read | [Evidence](chapter-04/review.md) |
+| 5 | Separate dataset identity, sourced claims and kinds of time | [Evidence](chapter-05/review.md) |
+| 6 | Distinguish omissions, repeats, delayed events and conflicts | [Evidence](chapter-06/review.md) |
+| 7 | Separate meaning, quality-check scope and readiness evidence | [Evidence](chapter-07/review.md) |
+| 8 | Show pilot coverage, operating limits and ownership | [Evidence](chapter-08/review.md) |
+| 9 | Separate format, connection, retrieval and identity mapping | [Evidence](chapter-09/review.md) |
+| 10 | Show semantic change, agreement and release independently | [Evidence](chapter-10/review.md) |
+| 11 | Separate purpose, dataset identity, controls and release status | [Evidence](chapter-11/review.md) |
+
 ## Design plan and critique
 
 Use Chapter 1's parcel/evidence visual language: paper `#fafcff`, ink `#172635`,
@@ -68,6 +83,10 @@ export; retain it. Exact scene boundaries are recovered from retained generation
 durations and the original 24fps padding contract, then checked against the
 original frame count and captions. Caption cue boundaries anchor later diagram
 states; these are estimates inherited from the original caption alignment.
+
+Each encoder writes to an isolated temporary directory, so a stopped process
+cannot finalize over a restarted export. Strict decoding fails on the first
+media error before a completed movie is promoted for verification and packaging.
 
 The browser renders native 3840×2160 states and a vector PDF of all states,
 including questions before answers. Exports include narrated and silent masters,
