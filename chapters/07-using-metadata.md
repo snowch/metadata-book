@@ -4,13 +4,14 @@ Metadata helps someone choose a dataset, judge a result or prepare a change. Eac
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 19 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-07/poster.jpg?v=fe4ede1ff430" aria-label="Using metadata to make decisions: narrated Chapter 7 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-07/poster.jpg?v=27aac1e9fd80" aria-label="Using metadata to make decisions: narrated Chapter 7 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-07/captions.vtt?v=41664263dded" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7">Download the video</a> or <a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed">Download the video</a> or <a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">Read the transcript</a><a href="../assets/video/chapter-07/chapter-07.mp4?v=46791fb8f2c7" download>Download video <span>(3.8 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">Read the transcript</a><a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" download>Download video <span>(5.3 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-07/deck.pdf?v=2e3f34f4c5e1">Download the slide deck</a><a href="../assets/video/chapter-07/chapter-07-silent.mp4?v=8ed3b6a42006" download>Download the silent master</a></p>
 </figure>
 
 ## Find the measure that answers the question

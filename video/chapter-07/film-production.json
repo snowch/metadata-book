@@ -1,0 +1,170 @@
+{
+  "chapter": "07",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "46791fb8f2c73cd634b9f4253a1aa69b5affae1ece6e65c588139dacd44a73fa",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 138.66666666666666,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "measure-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 275,
+      "heading": "All parcels due. Which denominator?",
+      "cue": null
+    },
+    {
+      "scene": "measure-question",
+      "stage": 1,
+      "start_frame": 275,
+      "frames": 303,
+      "heading": "Does this answer the meeting’s question?",
+      "cue": "The completed-delivery view"
+    },
+    {
+      "scene": "measure-answer",
+      "stage": 0,
+      "start_frame": 578,
+      "frames": 112,
+      "heading": "The unfinished parcel was due too",
+      "cue": null
+    },
+    {
+      "scene": "measure-answer",
+      "stage": 1,
+      "start_frame": 690,
+      "frames": 54,
+      "heading": "All four parcels belong",
+      "cue": "Two out of four"
+    },
+    {
+      "scene": "measure-answer",
+      "stage": 2,
+      "start_frame": 744,
+      "frames": 299,
+      "heading": "Different populations answer different questions",
+      "cue": "Two out of three completed"
+    },
+    {
+      "scene": "checks-question",
+      "stage": 0,
+      "start_frame": 1043,
+      "frames": 591,
+      "heading": "Checks pass. Is the publication ready?",
+      "cue": null
+    },
+    {
+      "scene": "checks-answer",
+      "stage": 0,
+      "start_frame": 1634,
+      "frames": 120,
+      "heading": "What the checks support for this input",
+      "cue": null
+    },
+    {
+      "scene": "checks-answer",
+      "stage": 1,
+      "start_frame": 1754,
+      "frames": 111,
+      "heading": "Accuracy and timeliness need evidence",
+      "cue": "They establish neither"
+    },
+    {
+      "scene": "checks-answer",
+      "stage": 2,
+      "start_frame": 1865,
+      "frames": 139,
+      "heading": "These checks leave three questions open",
+      "cue": "They do not prove"
+    },
+    {
+      "scene": "checks-answer",
+      "stage": 3,
+      "start_frame": 2004,
+      "frames": 143,
+      "heading": "A contract records the commitment",
+      "cue": "A contract records commitments"
+    },
+    {
+      "scene": "decision",
+      "stage": 0,
+      "start_frame": 2147,
+      "frames": 317,
+      "heading": "The engineer still needs to verify readiness",
+      "cue": null
+    },
+    {
+      "scene": "decision",
+      "stage": 1,
+      "start_frame": 2464,
+      "frames": 228,
+      "heading": "The decision remains pending",
+      "cue": "The page's decision remains"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 2692,
+      "frames": 211,
+      "heading": "Compare the quality rule and observation",
+      "cue": null
+    },
+    {
+      "scene": "practice",
+      "stage": 1,
+      "start_frame": 2903,
+      "frames": 305,
+      "heading": "Find the gap and next action",
+      "cue": "Then open Decision"
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3208,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-07.mp4": {
+      "sha256": "cadf513d9eed0f9acdd7f26e752ea91bfd33f0dd62c5165393a9436bc19906f7",
+      "bytes": 5282954
+    },
+    "chapter-07-silent.mp4": {
+      "sha256": "8ed3b6a4200635af121a5c117a6057a0c03d543097ef43038000aa9d4ca350bd",
+      "bytes": 2635285
+    },
+    "deck.pdf": {
+      "sha256": "2e3f34f4c5e16a51612b713fb6a3a68ceddd47f478d359b83f8cfbf48c73f989",
+      "bytes": 492030
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-07/film.json": "1a31fd31a3425fc589bc1280d0b3ba6ea389e3230564bce65bb96ce2952a0d82",
+    "video/lesson_film.py": "38ab17465bf13f7f30a1c15921ada611a464ff6c567a0acd965084bb67bf0fc9",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-07/narration.json": "b15f4624f040b0b904d7c4baa21572be2667b4aec091bed63d332322d1d6d317",
+    "assets/video/chapter-07/captions.srt": "c0f0a95565b2349e705adddd77d0c1337845a03e068a342c19130449f85368f0"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}

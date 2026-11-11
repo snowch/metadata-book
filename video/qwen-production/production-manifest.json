@@ -3154,7 +3154,7 @@
       "caption_cues": 38,
       "end_card_seconds": 5,
       "purpose": "Choose a measure by its denominator and explain why passed input checks do not establish a ready report publication.",
-      "video_sha256": "46791fb8f2c73cd634b9f4253a1aa69b5affae1ece6e65c588139dacd44a73fa",
+      "video_sha256": "cadf513d9eed0f9acdd7f26e752ea91bfd33f0dd62c5165393a9436bc19906f7",
       "scenes": [
         {
           "scene": 0,
@@ -3546,7 +3546,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-07/film-production.json"
     },
     {
       "chapter": "08",
