@@ -4,13 +4,14 @@ The database describes the parcel company's tables. Its scheduler records execut
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-05/poster.jpg?v=28863d0e84fc" aria-label="Collecting metadata from several systems: narrated Chapter 5 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-05/chapter-05.mp4?v=d3c519e363b9" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-05/poster.jpg?v=cb0f9582ffbd" aria-label="Collecting metadata from several systems: narrated Chapter 5 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-05/captions.vtt?v=c57fc0fe5fcb" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-05/chapter-05.mp4?v=d3c519e363b9">Download the video</a> or <a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f">Download the video</a> or <a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The catalogue records are invented; their sources and times remain separate. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">Read the transcript</a><a href="../assets/video/chapter-05/chapter-05.mp4?v=d3c519e363b9" download>Download video <span>(4.5 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">Read the transcript</a><a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" download>Download video <span>(6.3 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-05/deck.pdf?v=49824c8dbf8d">Download the slide deck</a><a href="../assets/video/chapter-05/chapter-05-silent.mp4?v=6acdf8cb2e20" download>Download the silent master</a></p>
 </figure>
 
 ## Identify the same thing consistently

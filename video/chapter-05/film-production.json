@@ -1,0 +1,170 @@
+{
+  "chapter": "05",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "d3c519e363b90607c748800ee724241a1920241be508bd52220bd79d319f128a",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 161.625,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "identity-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 405,
+      "heading": "Same table name. Same dataset?",
+      "cue": null
+    },
+    {
+      "scene": "identity-answer",
+      "stage": 0,
+      "start_frame": 405,
+      "frames": 345,
+      "heading": "Agree which dataset the sources mean",
+      "cue": null
+    },
+    {
+      "scene": "identity-answer",
+      "stage": 1,
+      "start_frame": 750,
+      "frames": 164,
+      "heading": "A reused name may be a replacement",
+      "cue": "A reused name"
+    },
+    {
+      "scene": "claims",
+      "stage": 0,
+      "start_frame": 914,
+      "frames": 160,
+      "heading": "One dataset. Separate sourced claims.",
+      "cue": null
+    },
+    {
+      "scene": "claims",
+      "stage": 1,
+      "start_frame": 1074,
+      "frames": 83,
+      "heading": "One dataset. Separate sourced claims.",
+      "cue": "The scheduler reports"
+    },
+    {
+      "scene": "claims",
+      "stage": 2,
+      "start_frame": 1157,
+      "frames": 185,
+      "heading": "One dataset. Separate sourced claims.",
+      "cue": "Service Analytics supplies"
+    },
+    {
+      "scene": "claims",
+      "stage": 3,
+      "start_frame": 1342,
+      "frames": 136,
+      "heading": "Dataset identity persists across results",
+      "cue": "An output version identifies"
+    },
+    {
+      "scene": "time-question",
+      "stage": 0,
+      "start_frame": 1478,
+      "frames": 405,
+      "heading": "When was the column created?",
+      "cue": null
+    },
+    {
+      "scene": "time-answer",
+      "stage": 0,
+      "start_frame": 1883,
+      "frames": 222,
+      "heading": "Creation time is unknown from this scan",
+      "cue": null
+    },
+    {
+      "scene": "time-answer",
+      "stage": 1,
+      "start_frame": 2105,
+      "frames": 245,
+      "heading": "Keep event time and collection time",
+      "cue": "For the scheduler record"
+    },
+    {
+      "scene": "limits",
+      "stage": 0,
+      "start_frame": 2350,
+      "frames": 322,
+      "heading": "Each source has a different scope",
+      "cue": null
+    },
+    {
+      "scene": "limits",
+      "stage": 1,
+      "start_frame": 2672,
+      "frames": 104,
+      "heading": "Arrival order does not choose authority",
+      "cue": "The last record collected"
+    },
+    {
+      "scene": "responsibility",
+      "stage": 0,
+      "start_frame": 2776,
+      "frames": 434,
+      "heading": "A collected name is not an agreement",
+      "cue": null
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 3210,
+      "frames": 549,
+      "heading": "Check scope before joining evidence",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3759,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-05.mp4": {
+      "sha256": "91ac47b4cd8f7f1b94d1106f64ade0ca261a0739384057cff518e187639297f2",
+      "bytes": 6263862
+    },
+    "chapter-05-silent.mp4": {
+      "sha256": "6acdf8cb2e20f25880aa6265887ffcd50d98ee109946aa4e363a56406a3fdbfd",
+      "bytes": 3150757
+    },
+    "deck.pdf": {
+      "sha256": "49824c8dbf8d219a0f7069dee7a0c8f6b9cc4d21db964f836e45741106ebebf7",
+      "bytes": 568943
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-05/film.json": "b851d28ff44d4c9234f049f8a6b92a10d5e4ad688b624591e14b22293c0fd0c3",
+    "video/lesson_film.py": "38ab17465bf13f7f30a1c15921ada611a464ff6c567a0acd965084bb67bf0fc9",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-05/narration.json": "2a7960d9cdbb1c0ef06ddf46f091df15d57bb0014427ab141f2d993c77fe5cb7",
+    "assets/video/chapter-05/captions.srt": "54924e937f9615d2d47800299f8330c7e18d6853e6e930f82e59d13bde5336d9"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}
