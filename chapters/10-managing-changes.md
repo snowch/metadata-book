@@ -6,13 +6,14 @@ Chapter 7 raised a possible change to `promised_at`: replacing the original cust
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-10/poster.jpg?v=c21ce9fa70ef" aria-label="Managing definitions and dataset changes: narrated Chapter 10 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-10/poster.jpg?v=792741c650da" aria-label="Managing definitions and dataset changes: narrated Chapter 10 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-10/captions.vtt?v=97ecb7c6847e" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09">Download the video</a> or <a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925">Download the video</a> or <a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">Read the transcript</a><a href="../assets/video/chapter-10/chapter-10.mp4?v=fcbd3ca3df09" download>Download video <span>(4.2 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">Read the transcript</a><a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" download>Download video <span>(6.0 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-10/deck.pdf?v=0370f722009d">Download the slide deck</a><a href="../assets/video/chapter-10/chapter-10-silent.mp4?v=d35a8ce4394c" download>Download the silent master</a></p>
 </figure>
 
 ## Review meaning as well as structure

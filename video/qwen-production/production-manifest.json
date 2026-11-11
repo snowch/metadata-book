@@ -4410,7 +4410,7 @@
       "caption_cues": 40,
       "end_card_seconds": 5,
       "purpose": "Explain semantic incompatibility despite an unchanged schema, and distinguish an approved design from evidence-backed release.",
-      "video_sha256": "fcbd3ca3df09ab879b8512286edb11a08bdffb6a289a34cd22198ed3699fcd4f",
+      "video_sha256": "4a33c7d44925eee5663c70dd58df5092031c613f683a0c0cc13e452c6e9f1a22",
       "scenes": [
         {
           "scene": 0,
@@ -4829,7 +4829,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-10/film-production.json"
     },
     {
       "chapter": "11",
