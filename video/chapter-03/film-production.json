@@ -1,0 +1,146 @@
+{
+  "chapter": "03",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "d31544467a031f1ce4be54e4734eda602217e0fd5f86fcfadc3bb245c2600c73",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 144.875,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "report-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 507,
+      "heading": "Refreshed. But when calculated?",
+      "cue": null
+    },
+    {
+      "scene": "route",
+      "stage": 0,
+      "start_frame": 507,
+      "frames": 330,
+      "heading": "Refreshing does not rerun the job",
+      "cue": null
+    },
+    {
+      "scene": "output",
+      "stage": 0,
+      "start_frame": 837,
+      "frames": 190,
+      "heading": "Follow the exact output identifier",
+      "cue": null
+    },
+    {
+      "scene": "output",
+      "stage": 1,
+      "start_frame": 1027,
+      "frames": 265,
+      "heading": "Follow the exact output identifier",
+      "cue": "Its matching output"
+    },
+    {
+      "scene": "run-question",
+      "stage": 0,
+      "start_frame": 1292,
+      "frames": 467,
+      "heading": "Would today's table reproduce it?",
+      "cue": null
+    },
+    {
+      "scene": "snapshot",
+      "stage": 0,
+      "start_frame": 1759,
+      "frames": 369,
+      "heading": "Inspect the retained input at 12:05",
+      "cue": null
+    },
+    {
+      "scene": "calculation",
+      "stage": 0,
+      "start_frame": 2128,
+      "frames": 175,
+      "heading": "The code excludes unfinished parcels",
+      "cue": null
+    },
+    {
+      "scene": "calculation",
+      "stage": 1,
+      "start_frame": 2303,
+      "frames": 161,
+      "heading": "Both completed parcels were on time",
+      "cue": "Two out of two"
+    },
+    {
+      "scene": "meaning",
+      "stage": 0,
+      "start_frame": 2464,
+      "frames": 263,
+      "heading": "Explain this particular result",
+      "cue": null
+    },
+    {
+      "scene": "meaning",
+      "stage": 1,
+      "start_frame": 2727,
+      "frames": 198,
+      "heading": "Explained does not mean current",
+      "cue": "Explaining why the result"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 2925,
+      "frames": 432,
+      "heading": "Trace it in the metadata map",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3357,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-03.mp4": {
+      "sha256": "09b4648a7b04425f39da94b9793de794a48fa04d18f7de93c996df8e32310109",
+      "bytes": 5249769
+    },
+    "chapter-03-silent.mp4": {
+      "sha256": "25d11943389135eb07e62b33aae5d682fd21df12e785f1ea3ce5101dc8140aaf",
+      "bytes": 2493276
+    },
+    "deck.pdf": {
+      "sha256": "34af3086f07e4b3fea84d07d3758f933dff6285c9be22b44ed9cb0c06dad3806",
+      "bytes": 447525
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-03/film.json": "39386035789d8b3bbf9a6561aac0a8a9e77eaffb3cbf30abdbaff1ae9f54659e",
+    "video/lesson_film.py": "38ab17465bf13f7f30a1c15921ada611a464ff6c567a0acd965084bb67bf0fc9",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-03/narration.json": "6d077c6edc17014c8c129170b4ac61ec2ed8e730d227a9562d987f3cc31e1c4a",
+    "assets/video/chapter-03/captions.srt": "2881035ea004f0de2d4eba6016f4aaae8f171ffb33776b6feafb5cf89a5a1000"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}

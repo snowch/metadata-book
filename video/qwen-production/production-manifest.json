@@ -1051,7 +1051,7 @@
       "caption_cues": 42,
       "end_card_seconds": 5,
       "purpose": "Page learning aid: follow matching identifiers from report to retained input and code; explain 100% without confusing refresh with recalculation or currency.",
-      "video_sha256": "d31544467a031f1ce4be54e4734eda602217e0fd5f86fcfadc3bb245c2600c73",
+      "video_sha256": "09b4648a7b04425f39da94b9793de794a48fa04d18f7de93c996df8e32310109",
       "scenes": [
         {
           "scene": 0,
@@ -1533,7 +1533,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-03/film-production.json"
     },
     {
       "chapter": "04",

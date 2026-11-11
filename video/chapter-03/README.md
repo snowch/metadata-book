@@ -1,5 +1,10 @@
 # Chapter 3 explainer video
 
+Current picture: use [the film workflow](../film-audit.md) and `film.json`.
+The published export is now native 4K, with a matching PDF and silent master;
+approved Q1 speech and captions are unchanged. The older renderer and instructions
+below document the retained original production. See `review.md` for this audit.
+
 An embedded learning aid for [Where did this number come from?](../../chapters/03-following-lineage.md). The report’s 100% result is traced through a refresh, published output, producing run, retained input and code.
 
 Production follows the [authored video workflow](https://github.com/snowch/explainer-video-generator/blob/20ef33571f5b737c4fa267427964593836182205/docs/agent-video-workflow.md). Speech synthesis and audio-audit helpers are adapted from that repository's `examples/approved-narration/`; the renderer and scene plan are specific to this chapter. No reference-video artwork or unrelated narrative is reused.
