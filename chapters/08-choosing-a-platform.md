@@ -4,13 +4,14 @@ A metadata platform should help a team complete a task it currently struggles wi
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 28 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-08/poster.jpg?v=e254d0ca2b9d" aria-label="Choosing and operating a metadata platform: narrated Chapter 8 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-08/poster.jpg?v=5d9f1dd3d417" aria-label="Choosing and operating a metadata platform: narrated Chapter 8 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-08/captions.vtt?v=ccc2bcbc1967" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c">Download the video</a> or <a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9">Download the video</a> or <a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">Read the transcript</a><a href="../assets/video/chapter-08/chapter-08.mp4?v=c7ef1d70967c" download>Download video <span>(4.1 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">Read the transcript</a><a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" download>Download video <span>(5.7 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-08/deck.pdf?v=8f7058700145">Download the slide deck</a><a href="../assets/video/chapter-08/chapter-08-silent.mp4?v=3523972d685a" download>Download the silent master</a></p>
 </figure>
 
 ## Define a bounded pilot

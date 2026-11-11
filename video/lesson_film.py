@@ -103,7 +103,7 @@ def diagram(s):
         parts.append(f'<rect x="82" y="260" width="1116" height="68" rx="4" fill="{LINE}"/><rect x="82" y="260" width="837" height="68" rx="4" fill="{TEAL}"/>')
         parts.append(text(82,389,'90 min observed',48,TEAL,600,'start'))
         parts.append(text(1198,389,'120 min limit',48,INK,600,'end'))
-        parts.append(text(640,510,'Updates: same working day',46,INK))
+        parts.append(text(640,510,s.get('updates','Updates: same working day'),44,INK))
     else:raise ValueError(kind)
     if s.get('takeaway'):parts.append(text(640,552,s['takeaway'],40,TEAL))
     return ''.join(parts)

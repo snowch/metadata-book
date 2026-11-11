@@ -1,0 +1,154 @@
+{
+  "chapter": "08",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "c7ef1d70967ce69df3cbc6444df15c9e0f74d48b057a90832ddd043931d4de49",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 148.0,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "coverage-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 616,
+      "heading": "A collector is installed. Enough evidence?",
+      "cue": null
+    },
+    {
+      "scene": "coverage-answer",
+      "stage": 0,
+      "start_frame": 616,
+      "frames": 264,
+      "heading": "Trace the incident to retained evidence",
+      "cue": null
+    },
+    {
+      "scene": "coverage-answer",
+      "stage": 1,
+      "start_frame": 880,
+      "frames": 258,
+      "heading": "Test the investigation, not just the links",
+      "cue": "Test whether an independent"
+    },
+    {
+      "scene": "choice-question",
+      "stage": 0,
+      "start_frame": 1138,
+      "frames": 209,
+      "heading": "What decision follows from this pilot?",
+      "cue": null
+    },
+    {
+      "scene": "choice-question",
+      "stage": 1,
+      "start_frame": 1347,
+      "frames": 403,
+      "heading": "What decision follows from this pilot?",
+      "cue": "Maintenance takes ninety"
+    },
+    {
+      "scene": "choice-answer",
+      "stage": 0,
+      "start_frame": 1750,
+      "frames": 309,
+      "heading": "Keep reviewed documents + SQLite",
+      "cue": null
+    },
+    {
+      "scene": "choice-answer",
+      "stage": 1,
+      "start_frame": 2059,
+      "frames": 192,
+      "heading": "Trial trigger: exceed an agreed limit",
+      "cue": "Trial a catalogue if"
+    },
+    {
+      "scene": "operate",
+      "stage": 0,
+      "start_frame": 2251,
+      "frames": 262,
+      "heading": "Operating work needs explicit owners",
+      "cue": null
+    },
+    {
+      "scene": "operate",
+      "stage": 1,
+      "start_frame": 2513,
+      "frames": 212,
+      "heading": "Protect metadata across interfaces",
+      "cue": "Protect metadata too"
+    },
+    {
+      "scene": "operate",
+      "stage": 2,
+      "start_frame": 2725,
+      "frames": 121,
+      "heading": "Retest after a collector upgrade",
+      "cue": "Collector upgrades also"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 2846,
+      "frames": 240,
+      "heading": "What does this collection run supply?",
+      "cue": null
+    },
+    {
+      "scene": "practice",
+      "stage": 1,
+      "start_frame": 3086,
+      "frames": 346,
+      "heading": "Collection and definition have different owners",
+      "cue": "Then inspect Responsible team"
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3432,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-08.mp4": {
+      "sha256": "1b90d6a3b3a915bb5ba326a6cf73278d9a59e8766a256b4bf3b09033b839b788",
+      "bytes": 5687001
+    },
+    "chapter-08-silent.mp4": {
+      "sha256": "3523972d685a7385e8d94b8696671980aa681458d5053664ebab511d0d54369b",
+      "bytes": 2837351
+    },
+    "deck.pdf": {
+      "sha256": "8f7058700145c3997ce6c007338bf86b4a53db221f4de3efc6ac176e57ec72cf",
+      "bytes": 476577
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-08/film.json": "a1e5d8d7f417ce48c68125d52e6b4fa82650c8fc65a134477aeebb99deee253f",
+    "video/lesson_film.py": "639c8582dbab3583f71d7cc79ee8e4a0c21f9c3e6a361392357f6fa56042f046",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-08/narration.json": "d40dba4963f6676773c222b73ea31b5b555a204c6e0a04d0e25a81771eab456e",
+    "assets/video/chapter-08/captions.srt": "613b3bb4f3e604810a8d09654ee6c31e4353155630aba61ac17d283a63c3dd3c"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}
