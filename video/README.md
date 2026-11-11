@@ -1,5 +1,12 @@
 # Producing chapter videos
 
+For visually revised Chapters 2–11, use the current
+[lesson film audit and rebuild workflow](film-audit.md) and chapter `film.json`.
+It preserves the approved Q1 audio and captions while replacing the picture,
+adding a matching PDF and silent master, and widening the player. Chapter 1's
+newer recording has its own [workflow](chapter-01-v2/README.md). The older
+synthesis instructions below apply when speech actually needs to change.
+
 The published videos use the approved Q1 synthetic voice. Start with the
 [Q1 production setup](qwen-production/README.md), then use the chapter's
 narration, scene plan and rebuild instructions. Keep the source

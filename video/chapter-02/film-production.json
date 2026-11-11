@@ -1,0 +1,154 @@
+{
+  "chapter": "02",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "e5a199d333e14961c0be6e1c9880703f1fa7f561a62058bbae731e0fb9548809",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 137.625,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "schema",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 492,
+      "heading": "What does a missing time mean?",
+      "cue": null
+    },
+    {
+      "scene": "meaning",
+      "stage": 0,
+      "start_frame": 492,
+      "frames": 218,
+      "heading": "One missing time. Three possibilities.",
+      "cue": null
+    },
+    {
+      "scene": "meaning",
+      "stage": 1,
+      "start_frame": 710,
+      "frames": 204,
+      "heading": "Meaning comes from the definition",
+      "cue": "For this page's complete"
+    },
+    {
+      "scene": "promise",
+      "stage": 0,
+      "start_frame": 914,
+      "frames": 115,
+      "heading": "Which promise does the column hold?",
+      "cue": null
+    },
+    {
+      "scene": "promise",
+      "stage": 1,
+      "start_frame": 1029,
+      "frames": 67,
+      "heading": "Which promise does the column hold?",
+      "cue": "Against the original"
+    },
+    {
+      "scene": "promise",
+      "stage": 2,
+      "start_frame": 1096,
+      "frames": 215,
+      "heading": "Which promise does the column hold?",
+      "cue": "Against a revised"
+    },
+    {
+      "scene": "filter-question",
+      "stage": 0,
+      "start_frame": 1311,
+      "frames": 449,
+      "heading": "Which parcel does the filter remove?",
+      "cue": null
+    },
+    {
+      "scene": "filter-result",
+      "stage": 0,
+      "start_frame": 1760,
+      "frames": 225,
+      "heading": "The unfinished parcel is excluded",
+      "cue": null
+    },
+    {
+      "scene": "filter-result",
+      "stage": 1,
+      "start_frame": 1985,
+      "frames": 199,
+      "heading": "Three completed deliveries remain",
+      "cue": "Two out of three"
+    },
+    {
+      "scene": "compare",
+      "stage": 0,
+      "start_frame": 2184,
+      "frames": 199,
+      "heading": "Does the query follow the rule?",
+      "cue": null
+    },
+    {
+      "scene": "compare",
+      "stage": 1,
+      "start_frame": 2383,
+      "frames": 266,
+      "heading": "The description and its output",
+      "cue": "The saved query describes"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 2649,
+      "frames": 534,
+      "heading": "Explain it in the metadata map",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3183,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-02.mp4": {
+      "sha256": "36f2944bf1b9db8279b7fbcb9e5276c421a56417cba71fe338b62700bf445c70",
+      "bytes": 5133388
+    },
+    "chapter-02-silent.mp4": {
+      "sha256": "0af41ab0ed49fe16d1350be053957ec472c2221131be246a3ec84fcf4fa12e1c",
+      "bytes": 2526961
+    },
+    "deck.pdf": {
+      "sha256": "77d722f97e14689979eafcd715190eb1fbdeb223ebabbe50b5e3c32b1bee7c6b",
+      "bytes": 454738
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-02/film.json": "53958f6e48a002a7433fe88abc9c6a0a6e8a8e38d1cc06d10ec39e09f16ada31",
+    "video/lesson_film.py": "37427406755261d9efd9340b024580ba6e0f0d7ddddb83059d0250d019ff6543",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-02/narration.json": "ff4d8893f348ffe1d7add0c9d04d6d48d5084729331a01004a7a879baf9ff767",
+    "assets/video/chapter-02/captions.srt": "b229e9f19c71c297843a76991383b1d155fe2c2995cfbee8dad711b09753a0a3"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}

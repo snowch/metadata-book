@@ -1,0 +1,9 @@
+/* Spacious demonstration, with comfortable prose line lengths. */
+@font-face{font-family:SourceSans;src:url(../chapter-01/source-sans-3.ttf);font-weight:200 900;font-display:swap}
+:root{--serif:SourceSans,system-ui,sans-serif;--sans:SourceSans,system-ui,sans-serif}
+.book-layout{max-width:1440px;grid-template-columns:160px minmax(0,1fr);gap:clamp(2rem,4vw,4rem);padding-inline:2rem}
+main{max-width:none}.prose>:not(.chapter-video){max-width:760px}
+.chapter-video{padding:0;border:0;background:transparent;overflow:visible}
+.chapter-header h1,.prose h2{font-weight:650;letter-spacing:-.025em}
+@media(max-width:1200px){.book-sidebar{display:none}.book-layout{display:block;padding:2rem 1.4rem}.mobile-contents{display:block;padding-inline:1.4rem;border-bottom:1px solid var(--line)}.mobile-contents>summary{font-size:.8rem;color:var(--muted);min-height:44px;padding:.85rem 0}.mobile-contents nav{padding-bottom:1rem}.mobile-contents nav a{margin-left:0;min-height:44px}}
+@media(max-width:700px){.chapter-video{margin-inline:-1.4rem}.chapter-video>figcaption,.chapter-video>p{padding-inline:1.4rem}.chapter-video video{border-radius:0}}

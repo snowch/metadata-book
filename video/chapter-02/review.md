@@ -1,3 +1,34 @@
+# Chapter 2 visual audit — 11 November 2026
+
+The old composition put the schema caveat, question and repeated slide chrome together, then showed the filter, parcel selection and arithmetic near the controls. The revision separates structure from possible meanings, uses a persistent promise timeline, leaves the filter question unanswered during its hold, and reveals the completed-delivery arithmetic at its spoken cue. The 66.7%/50.0% comparison and metadata/output distinction occupy separate states. The full SQL and catalogue comparison stay on the page.
+
+Memory cue: **Structure permits; definition explains; query counts.** The page's map exercise retains independent
+explanation and application. Narration, canonical captions, response holds and
+example qualifications are unchanged. This is a picture/layout correction using
+the [design and learning criteria](../film-audit.md), not a new speech production.
+
+## Verified replacement
+
+- Native 3840×2160 browser renders at 24fps; 137.7s, same frame count.
+- Original/new audio and subtitle packet hashes, timestamps and durations match exactly.
+- Full FFmpeg decode; canonical caption text; both silent response windows.
+- Inspected actual encoded scene/hold frames and the staged diagram preview.
+- No label overlaps or clipping; all diagram text above the bottom 20% control area.
+- Chromium 390/960/1280px: wider player, no overflow, playback, captions, seeking,
+  no captions during response holds, and working metadata-map exercise.
+- Full site/link build; shared source/example/map checks remain passing.
+- Matching PDF of all visual states, silent master and refreshed poster packaged.
+
+Provenance and stage timecodes: `film-production.json`. Available workspace disk
+before the next chapter: 26.2 GB. No new human listening review was performed;
+existing pronunciation/prosody limitations below remain. Engagement and memorability
+are design judgments; learning, delayed recall and transfer outcomes are unmeasured.
+
+The previous export review follows for original speech/content evidence. Its old
+video hash and 720p picture describe that superseded export.
+
+---
+
 # Chapter 2 page-learning-aid review — 29 October 2026
 
 Replaces the full-chapter summary with a focused learning aid: predict what a

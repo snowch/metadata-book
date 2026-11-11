@@ -33,13 +33,18 @@ errors=[];checks=[]
 try:
  with sync_playwright() as p:
     browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
-    for width in [960,390]:
+    for width in [1280,960,390]:
         page=browser.new_page(viewport=dict(width=width,height=950));page.on('pageerror',lambda e:errors.append(str(e)))
         page.goto(f'http://127.0.0.1:{server.server_port}/chapters/'+Path(c['source_url']).name)
         video=page.locator('video');video.scroll_into_view_if_needed()
         assert video.get_attribute('controls') is not None
         assert video.get_attribute('autoplay') is None
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+        if (ROOT/'video'/f'chapter-{n}'/'film.json').is_file():
+            assert video.bounding_box()['width'] >= (width-3 if width==390 else 850)
+            if width<=1200:
+                assert not page.locator('.book-sidebar').is_visible()
+                assert page.locator('.mobile-contents').is_visible()
         video.evaluate('(v)=>{v.muted=true;v.preload="auto";v.load()}')
         page.wait_for_function('document.querySelector("video").readyState>=2')
         page.wait_for_function('document.querySelector("video").textTracks.length===1')
