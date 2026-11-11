@@ -42,7 +42,8 @@ Publish `chapter-01-4k-silent.mp4` as `chapter-01-silent.mp4`, the remuxed narra
 copy as `chapter-01.mp4`, the PDF as `deck.pdf`, SRT/VTT and a poster under
 `assets/video/chapter-01-v2/`. `package.py` refreshes content hashes, transcript,
 page links and provenance once those files exist. It does not publish remotely.
-The page uses a scoped stylesheet, leaving other lessons' presentation intact.
+The shared page theme lives in `assets/book.css` and applies throughout the book.
+Chapter 1's scoped stylesheet only sizes its embedded parcel lab.
 See `review.md` for completed checks and limits. Do not regenerate unchanged
 speech for a visual correction. Retain working audio, frames and ASR under `out/`.
 

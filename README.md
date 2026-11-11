@@ -82,6 +82,15 @@ After building, run `python3 scripts/verify_completion_browser.py` with Playwrig
 and Chromium installed to check persistence, keyboard operation, desktop/mobile
 contents, cross-tab updates, denied storage and the no-JavaScript fallback.
 
+## Shared page theme
+
+All chapters, the introduction, summary, supporting pages and metadata map use
+`assets/book.css`: the Source Sans typography, paper/indigo/teal palette and
+content panels introduced in Chapter 1. Theme selection is independent of video
+production files. Chapter 1's extra stylesheet only handles its embedded lab;
+map-specific layout remains in `assets/metadata-map.css`. Asset links include
+content hashes so a published theme change reaches each reading page.
+
 ## Chapter videos
 
 Chapters 1–11 include narrated page learning aids with optional English captions and transcripts. Final media is published in each chapter's directory under `assets/video/`. Source and rebuild instructions for [Chapter 1](video/chapter-01-v2/README.md), [Chapter 2](video/chapter-02/README.md), [Chapter 3](video/chapter-03/README.md), [Chapter 4](video/chapter-04/README.md), [Chapter 5](video/chapter-05/README.md), [Chapter 6](video/chapter-06/README.md), [Chapter 7](video/chapter-07/README.md), [Chapter 8](video/chapter-08/README.md), [Chapter 9](video/chapter-09/README.md), [Chapter 10](video/chapter-10/README.md) and [Chapter 11](video/chapter-11/README.md) retain the narration, scene plans and rendering workflow. The players do not autoplay or preload the MP4. Working media and caches remain in ignored `out/`. The [video workflow](video/README.md) includes an unprompted pronunciation audit immediately after narration generation, before rendering.

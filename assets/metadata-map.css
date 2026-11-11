@@ -8,7 +8,7 @@
 .page-map .pagination { display: none; }
 
 /* Map page styles share the book's paper, ink and typography. */
-.metadata-map { --map-positive: #3d6754; --map-positive-wash: #e4eee6; font: .84rem/1.6 var(--sans); max-width: 100%; min-width: 0; }
+.metadata-map { --map-positive: var(--positive); --map-positive-wash: var(--positive-wash); font: .84rem/1.6 var(--sans); max-width: 100%; min-width: 0; }
 .metadata-map p { margin: .6rem 0; }
 .metadata-map [hidden] { display: none !important; }
 .map-intro { font: 1.4rem/1.5 var(--serif); max-width: 800px; margin: 1.6rem 0 1rem; }
@@ -144,14 +144,10 @@
   .map-relationship-summary li { gap: .25rem; grid-template-columns: minmax(0, 1fr) 4rem minmax(0, 1fr); }
   .map-relationship-summary a { padding: .4rem; }
 }
-@media (prefers-color-scheme: dark) {
-  .metadata-map { --map-positive: #a8c9ad; --map-positive-wash: #283b30; }
-}
 @media (prefers-reduced-motion: no-preference) {
   .map-node { transition: border-color .12s, background-color .12s; }
 }
 @media print {
-  .metadata-map { --map-positive: #284d35; --map-positive-wash: #f1f5f1; }
   .metadata-map .map-section-tabs, .metadata-map .map-controls, .metadata-map .map-zoom-controls, .metadata-map .map-workspace, .metadata-map .map-status, .metadata-map .map-return { display: none !important; }
   .metadata-map .map-fallback { display: block !important; }
   .map-fallback-record { break-inside: auto; max-width: none; }
