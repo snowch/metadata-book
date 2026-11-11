@@ -1,5 +1,10 @@
 # Chapter 2 explainer video
 
+Current picture: use [the film workflow](../film-audit.md) and `film.json`.
+The published export is now native 4K, with a matching PDF and silent master;
+approved Q1 speech and captions are unchanged. The older renderer and instructions
+below document the retained original production. See `review.md` for this audit.
+
 An authored adaptation of [What a database already knows](../../chapters/02-reading-a-database.md), with actual structural metadata and SQL from the invented delivery example. Source commit is pinned in `project.json`. The renderer is chapter-specific Pillow artwork with FFmpeg fades and muxing; speech and audit helpers follow the existing Chapter 3 workflow.
 
 The production contract is `narration.json`, `project.json` and `scene-plan.md`. Review the source script before synthesis. After synthesis, review pronunciation before rendering. Original synthetic Q1 British female voice, 1280×720, 24 fps, cream/rust/green visuals, no music, selectable English captions and a five-second end card.

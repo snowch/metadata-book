@@ -6,13 +6,14 @@ The examples use SQLite, with the four deliveries from Chapter 1 stored in a tab
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 18 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-02/poster.jpg?v=202e26dc677e" aria-label="What a database already knows: narrated Chapter 2 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-02/chapter-02.mp4?v=e5a199d333e1" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-02/poster.jpg?v=8f4c3ce03df7" aria-label="What a database already knows: narrated Chapter 2 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-02/captions.vtt?v=f21734507ae5" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4?v=e5a199d333e1">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4?v=e5a199d333e1" download>Download video <span>(3.7 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" download>Download video <span>(5.1 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-02/deck.pdf?v=77d722f97e14">Download the slide deck</a><a href="../assets/video/chapter-02/chapter-02-silent.mp4?v=0af41ab0ed49" download>Download the silent master</a></p>
 </figure>
 
 ## Inspect the columns

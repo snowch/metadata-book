@@ -567,7 +567,7 @@
       "caption_cues": 38,
       "end_card_seconds": 5,
       "purpose": "Page learning aid: distinguish structure and meaning, predict the filter, compare with the business definition.",
-      "video_sha256": "e5a199d333e14961c0be6e1c9880703f1fa7f561a62058bbae731e0fb9548809",
+      "video_sha256": "36f2944bf1b9db8279b7fbcb9e5276c421a56417cba71fe338b62700bf445c70",
       "scenes": [
         {
           "scene": 0,
@@ -1041,7 +1041,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-02/film-production.json"
     },
     {
       "chapter": "03",

@@ -1,0 +1,198 @@
+{
+  "memory_anchor": "Structure permits; definition explains; query counts.",
+  "scenes": {
+    "schema": [
+      {
+        "heading": "What does a missing time mean?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Column record: delivered_at",
+            "value": "TEXT · NULL allowed"
+          },
+          {
+            "label": "SQLite type declaration",
+            "value": "Not strict value enforcement"
+          }
+        ]
+      }
+    ],
+    "meaning": [
+      {
+        "heading": "One missing time. Three possibilities.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Unfinished",
+            "value": "Parcel has not arrived"
+          },
+          {
+            "label": "Late update",
+            "value": "Record has not caught up"
+          },
+          {
+            "label": "Unknown",
+            "value": "Arrival time unavailable"
+          }
+        ]
+      },
+      {
+        "cue": "For this page's complete",
+        "heading": "Meaning comes from the definition",
+        "layout": "statement",
+        "value": "NULL = unfinished",
+        "note": "In this complete invented example"
+      }
+    ],
+    "promise": [
+      {
+        "heading": "Which promise does the column hold?",
+        "layout": "timeline",
+        "items": [
+          {
+            "value": "12:00",
+            "label": "Original\npromise"
+          },
+          {
+            "value": "12:20",
+            "label": "Parcel\narrives"
+          },
+          {
+            "value": "12:30",
+            "label": "Revised\npromise"
+          }
+        ]
+      },
+      {
+        "cue": "Against the original",
+        "heading": "Which promise does the column hold?",
+        "layout": "timeline",
+        "items": [
+          {
+            "value": "12:00",
+            "label": "Original\npromise"
+          },
+          {
+            "value": "12:20",
+            "label": "Parcel\narrives"
+          },
+          {
+            "value": "12:30",
+            "label": "Revised\npromise"
+          }
+        ],
+        "result": "Original: late"
+      },
+      {
+        "cue": "Against a revised",
+        "heading": "Which promise does the column hold?",
+        "layout": "timeline",
+        "items": [
+          {
+            "value": "12:00",
+            "label": "Original\npromise"
+          },
+          {
+            "value": "12:20",
+            "label": "Parcel\narrives"
+          },
+          {
+            "value": "12:30",
+            "label": "Revised\npromise"
+          }
+        ],
+        "result": "Original: late      Revised: on time"
+      }
+    ],
+    "filter-question": [
+      {
+        "heading": "Which parcel does the filter remove?",
+        "layout": "parcels",
+        "result": "WHERE delivered_at IS NOT NULL",
+        "result_size": 46
+      }
+    ],
+    "filter-result": [
+      {
+        "heading": "The unfinished parcel is excluded",
+        "layout": "parcels",
+        "excluded": [
+          3
+        ]
+      },
+      {
+        "cue": "Two out of three",
+        "heading": "Three completed deliveries remain",
+        "layout": "parcels",
+        "excluded": [
+          3
+        ],
+        "result": "2 / 3 = 66.7%"
+      }
+    ],
+    "compare": [
+      {
+        "heading": "Does the query follow the rule?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Query: completed",
+            "value": "66.7%",
+            "note": "3 completed deliveries"
+          },
+          {
+            "label": "Operations: all due",
+            "value": "50.0%",
+            "note": "4 parcels due"
+          }
+        ]
+      },
+      {
+        "cue": "The saved query describes",
+        "heading": "The description and its output",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Saved query",
+            "value": "Metadata",
+            "note": "Describes the calculation"
+          },
+          {
+            "label": "Returned percentage",
+            "value": "Output data",
+            "note": "Result of the calculation"
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Explain it in the metadata map",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Column → Example record",
+            "value": "Which values are allowed?"
+          },
+          {
+            "label": "Saved query",
+            "value": "Which rows does it count?"
+          },
+          {
+            "label": "Metric definition",
+            "value": "Which population is intended?"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Structure\nMeaning\nCalculation",
+        "size": 64,
+        "note": "Explain the difference in your own words."
+      }
+    ]
+  }
+}

@@ -20,7 +20,8 @@ assert [s['kind'] for s in scenes]==[s['kind'] for s in timings]
 movie=build/f'chapter-{args.chapter}.mp4'
 probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(movie)]))
 streams=probe['streams']; v=next(s for s in streams if s['codec_type']=='video')
-assert (v['width'],v['height'],v['r_frame_rate'])==(1280,720,'24/1')
+expected_size=(3840,2160) if (chapter/'film.json').is_file() else (1280,720)
+assert (v['width'],v['height'],v['r_frame_rate'])==(*expected_size,'24/1')
 assert {s['codec_type'] for s in streams}=={'video','audio','subtitle'}
 expected_duration=sum(t['duration'] for t in timings)
 assert abs(float(probe['format']['duration'])-expected_duration)<.15

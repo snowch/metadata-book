@@ -254,6 +254,9 @@ def build():
             f'<nav aria-label="Book chapters"><ol>{"".join(nav)}</ol></nav></aside>'
         )
         lesson_style = f'<link rel="stylesheet" href="{asset_url("assets/lessons/chapter-01/book.css", page)}"><script defer src="{asset_url("assets/lessons/chapter-01/embed.js", page)}"></script>' if source == Path("chapters/01-why-metadata.md") else ""
+        chapter_number = source.name[:2] if source.parent == Path("chapters") else ""
+        if (ROOT / "video" / f"chapter-{chapter_number}" / "film.json").is_file():
+            lesson_style = f'<link rel="stylesheet" href="{asset_url("assets/lessons/films/book.css", page)}">'
         reading_badge = "" if is_map else f'<span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span>'
         html = f'''<!doctype html>
 <html lang="en">
