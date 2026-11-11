@@ -1,3 +1,34 @@
+# Chapter 6 visual audit — 11 November 2026
+
+The older film stacked repeated headers and long event records while mixing three different reasoning tasks. The revision separately presents an unverified omission, one source event with two receipts, an earlier run failure received late, and two conflicting publication claims. The conflict question retains both claims without resolving them; the answer marks the current state disputed. Source identifiers, event times and receipt times remain visible. A final retrieval cue distinguishes deduplication, history ordering and investigation, preserving the independent map activity and its different example date.
+
+Memory cue: **Deduplicate by identity; keep event history; investigate conflicting claims.** The page's map exercise retains independent
+explanation and application. Narration, canonical captions, response holds and
+example qualifications are unchanged. This is a picture/layout correction using
+the [design and learning criteria](../film-audit.md), not a new speech production.
+
+## Verified replacement
+
+- Native 3840×2160 browser renders at 24fps; 162.3s, same frame count.
+- Original/new audio and subtitle packet hashes, timestamps and durations match exactly.
+- Full FFmpeg decode; canonical caption text; both silent response windows.
+- Inspected actual encoded scene/hold frames and the staged diagram preview.
+- No label overlaps or clipping; all diagram text above the bottom 20% control area.
+- Chromium 390/960/1280px: wider player, no overflow, playback, captions, seeking,
+  no captions during response holds, and working metadata-map exercise.
+- Full site/link build; shared source/example/map checks remain passing.
+- Matching PDF of all visual states, silent master and refreshed poster packaged.
+
+Provenance and stage timecodes: `film-production.json`. Available workspace disk
+before the next chapter: 26.0 GB. No new human listening review was performed;
+existing pronunciation/prosody limitations below remain. Engagement and memorability
+are design judgments; learning, delayed recall and transfer outcomes are unmeasured.
+
+The previous export review follows for original speech/content evidence. Its old
+video hash and 720p picture describe that superseded export.
+
+---
+
 # Chapter 6 learning-aid review — 29 October 2026
 
 Source: `f8bb703316888ca0fcdb78d728e0f0b5381bbb18`. Guidance: explainer

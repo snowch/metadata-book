@@ -2562,7 +2562,7 @@
       "caption_cues": 46,
       "end_card_seconds": 5,
       "purpose": "Explain why duplicate, delayed, missing and conflicting records need different evidence before changing current state.",
-      "video_sha256": "93d48ca6d541cb45a68855a0dac1b5120d47dab3458f7c897749e8426a42286d",
+      "video_sha256": "5449f4d5ce48102dc4d1672902bfccadbab94c63ee1782585ee31b3e224104b4",
       "scenes": [
         {
           "scene": 0,
@@ -3144,7 +3144,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-06/film-production.json"
     },
     {
       "chapter": "07",

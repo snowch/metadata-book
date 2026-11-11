@@ -1,0 +1,209 @@
+{
+  "memory_anchor": "Deduplicate by identity; keep event history; investigate conflicting claims.",
+  "scenes": {
+    "missing-question": [
+      {
+        "heading": "Not mentioned. Deleted?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Yesterday's scan",
+            "value": "delivery_summary observed"
+          },
+          {
+            "label": "Today's scan",
+            "value": "No mention of delivery_summary"
+          }
+        ]
+      }
+    ],
+    "missing-answer": [
+      {
+        "heading": "Keep the last evidence. Mark uncertainty.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Last successful observation",
+            "value": "delivery_summary was seen"
+          },
+          {
+            "label": "Current status",
+            "value": "Unverified"
+          }
+        ]
+      },
+      {
+        "cue": "Confirm deletion using",
+        "heading": "Confirm deletion with supporting evidence",
+        "layout": "statement",
+        "value": "Verify the omission",
+        "size": 74,
+        "note": "Recorded drop or complete scan\nable and expected to see the table."
+      }
+    ],
+    "repeat": [
+      {
+        "heading": "One scheduler event. A first receipt.",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "E20 reports publication",
+            "value": "10:00",
+            "note": "R1000 → summary-R1000"
+          },
+          {
+            "label": "First receipt",
+            "value": "10:01",
+            "note": "Same source + event ID"
+          }
+        ]
+      },
+      {
+        "cue": "The source and stable event",
+        "heading": "One reported publication received twice",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Scheduler event",
+            "value": "E20"
+          },
+          {
+            "label": "First receipt",
+            "value": "10:01"
+          },
+          {
+            "label": "Repeated receipt",
+            "value": "10:04"
+          }
+        ],
+        "takeaway": "Deduplicate by source and stable event ID."
+      }
+    ],
+    "late": [
+      {
+        "heading": "The last receipt belongs to an earlier run",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "E19: R0950 failed",
+            "value": "09:50",
+            "note": "Received 10:06 UTC"
+          },
+          {
+            "label": "E20: R1000 published",
+            "value": "10:00",
+            "note": "Received 10:01 UTC"
+          }
+        ]
+      },
+      {
+        "cue": "Receiving that message last",
+        "heading": "The last receipt belongs to an earlier run",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "E19: R0950 failed",
+            "value": "09:50",
+            "note": "Received 10:06 UTC"
+          },
+          {
+            "label": "E20: R1000 published",
+            "value": "10:00",
+            "note": "Received 10:01 UTC"
+          }
+        ],
+        "takeaway": "Keep E19 with R0950, not R1000."
+      }
+    ],
+    "conflict-question": [
+      {
+        "heading": "Which version does the table contain?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Scheduler E20",
+            "value": "summary-R1000",
+            "size": 48,
+            "note": "Reported at 10:00 UTC"
+          },
+          {
+            "label": "Database scan S7",
+            "value": "summary-R0940",
+            "size": 48,
+            "note": "Observed at 10:03 UTC"
+          }
+        ]
+      }
+    ],
+    "conflict-answer": [
+      {
+        "heading": "Current published version: disputed",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Scheduler E20",
+            "value": "summary-R1000",
+            "size": 48,
+            "note": "Reported at 10:00 UTC"
+          },
+          {
+            "label": "Database scan S7",
+            "value": "summary-R0940",
+            "size": 48,
+            "note": "Observed at 10:03 UTC"
+          }
+        ],
+        "takeaway": "Keep both claims, sources and times."
+      }
+    ],
+    "investigate": [
+      {
+        "heading": "Attach the evidence behind a conclusion",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Investigate",
+            "value": "Write logs + saved output versions"
+          },
+          {
+            "label": "If resolved",
+            "value": "Record the supporting evidence"
+          }
+        ]
+      },
+      {
+        "cue": "One reported publication",
+        "heading": "These conclusions can coexist",
+        "layout": "statement",
+        "value": "One reported publication\nEarlier run failure\nDisputed current state",
+        "size": 54,
+        "note": "Arrival order does not settle a disagreement."
+      }
+    ],
+    "practice": [
+      {
+        "heading": "What would a later omission establish?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Map example: 20 October",
+            "value": "Compare observed and collected times"
+          },
+          {
+            "label": "Hypothetical later scan",
+            "value": "Check scope, permission and outcome"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Deduplicate. Order. Investigate.",
+        "size": 64,
+        "note": "Different checks answer different questions."
+      }
+    ]
+  }
+}

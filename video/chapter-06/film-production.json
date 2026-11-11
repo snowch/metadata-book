@@ -1,0 +1,154 @@
+{
+  "chapter": "06",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "93d48ca6d541cb45a68855a0dac1b5120d47dab3458f7c897749e8426a42286d",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 162.20833333333334,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "missing-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 330,
+      "heading": "Not mentioned. Deleted?",
+      "cue": null
+    },
+    {
+      "scene": "missing-answer",
+      "stage": 0,
+      "start_frame": 330,
+      "frames": 242,
+      "heading": "Keep the last evidence. Mark uncertainty.",
+      "cue": null
+    },
+    {
+      "scene": "missing-answer",
+      "stage": 1,
+      "start_frame": 572,
+      "frames": 203,
+      "heading": "Confirm deletion with supporting evidence",
+      "cue": "Confirm deletion using"
+    },
+    {
+      "scene": "repeat",
+      "stage": 0,
+      "start_frame": 775,
+      "frames": 323,
+      "heading": "One scheduler event. A first receipt.",
+      "cue": null
+    },
+    {
+      "scene": "repeat",
+      "stage": 1,
+      "start_frame": 1098,
+      "frames": 203,
+      "heading": "One reported publication received twice",
+      "cue": "The source and stable event"
+    },
+    {
+      "scene": "late",
+      "stage": 0,
+      "start_frame": 1301,
+      "frames": 256,
+      "heading": "The last receipt belongs to an earlier run",
+      "cue": null
+    },
+    {
+      "scene": "late",
+      "stage": 1,
+      "start_frame": 1557,
+      "frames": 232,
+      "heading": "The last receipt belongs to an earlier run",
+      "cue": "Receiving that message last"
+    },
+    {
+      "scene": "conflict-question",
+      "stage": 0,
+      "start_frame": 1789,
+      "frames": 588,
+      "heading": "Which version does the table contain?",
+      "cue": null
+    },
+    {
+      "scene": "conflict-answer",
+      "stage": 0,
+      "start_frame": 2377,
+      "frames": 434,
+      "heading": "Current published version: disputed",
+      "cue": null
+    },
+    {
+      "scene": "investigate",
+      "stage": 0,
+      "start_frame": 2811,
+      "frames": 192,
+      "heading": "Attach the evidence behind a conclusion",
+      "cue": null
+    },
+    {
+      "scene": "investigate",
+      "stage": 1,
+      "start_frame": 3003,
+      "frames": 232,
+      "heading": "These conclusions can coexist",
+      "cue": "One reported publication"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 3235,
+      "frames": 538,
+      "heading": "What would a later omission establish?",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3773,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-06.mp4": {
+      "sha256": "5449f4d5ce48102dc4d1672902bfccadbab94c63ee1782585ee31b3e224104b4",
+      "bytes": 6288884
+    },
+    "chapter-06-silent.mp4": {
+      "sha256": "6d3866820cc059fd521cc5aa978887faa1fe62898cd77ad9b792ae06ff3a9b10",
+      "bytes": 3163819
+    },
+    "deck.pdf": {
+      "sha256": "62b337f6c99fee88a44309488783b865e00a138ae871f75dadb5cf6908eb08f0",
+      "bytes": 517527
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-06/film.json": "857a4ce8defc139a07289553f8fdf6447cf882453553c000abd10f168ae1f976",
+    "video/lesson_film.py": "38ab17465bf13f7f30a1c15921ada611a464ff6c567a0acd965084bb67bf0fc9",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-06/narration.json": "c7ef1cd4246460bb13a65da710e89b93544e26837720051a1ce099d6bb5b1416",
+    "assets/video/chapter-06/captions.srt": "86a18186d59bf4aab37f51966309515ad4e6e1f903dc67a87f06f78b6bd5e359"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}
