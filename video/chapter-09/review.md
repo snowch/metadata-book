@@ -1,3 +1,34 @@
+# Chapter 9 visual audit — 11 November 2026
+
+The previous film mixed event compatibility, transport, identity and retrieval in dense slide stacks. The revision opens with visibly unresolved connection links, then separates configured delivery, acknowledgement and queryability. Identical local job/run labels become a prediction task before explicit namespace/UUID and dataset-correspondence states. The event model, general envelope and illustrative query API are explained separately; missing retained versions remain explicit. The map exercise preserves its missing exchange identities and does not pretend the example services are running.
+
+Memory cue: **Format, route and identity solve different exchange problems.** The page's map exercise retains independent
+explanation and application. Narration, canonical captions, response holds and
+example qualifications are unchanged. This is a picture/layout correction using
+the [design and learning criteria](../film-audit.md), not a new speech production.
+
+## Verified replacement
+
+- Native 3840×2160 browser renders at 24fps; 142.8s, same frame count.
+- Original/new audio and subtitle packet hashes, timestamps and durations match exactly.
+- Full FFmpeg decode; canonical caption text; both silent response windows.
+- Inspected actual encoded scene/hold frames and the staged diagram preview.
+- No label overlaps or clipping; all diagram text above the bottom 20% control area.
+- Chromium 390/960/1280px: wider player, no overflow, playback, captions, seeking,
+  no captions during response holds, and working metadata-map exercise.
+- Full site/link build; shared source/example/map checks remain passing.
+- Matching PDF of all visual states, silent master and refreshed poster packaged.
+
+Provenance and stage timecodes: `film-production.json`. Available workspace disk
+before the next chapter: 25.9 GB. No new human listening review was performed;
+existing pronunciation/prosody limitations below remain. Engagement and memorability
+are design judgments; learning, delayed recall and transfer outcomes are unmeasured.
+
+The previous export review follows for original speech/content evidence. Its old
+video hash and 720p picture describe that superseded export.
+
+---
+
 # Chapter 9 learning-aid review — 29 October 2026
 
 Source: `eec9cf06927910c7eef2b73e437a03430d023cbb`. Guidance: explainer

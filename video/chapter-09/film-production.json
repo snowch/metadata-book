@@ -1,0 +1,154 @@
+{
+  "chapter": "09",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "7bf0def5ff12e88094526561400c8042250933322ea25752d8228e263de1c988",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 142.70833333333334,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "connection-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 480,
+      "heading": "Does a document establish a connection?",
+      "cue": null
+    },
+    {
+      "scene": "connection-answer",
+      "stage": 0,
+      "start_frame": 480,
+      "frames": 245,
+      "heading": "Configure and test the route",
+      "cue": null
+    },
+    {
+      "scene": "connection-answer",
+      "stage": 1,
+      "start_frame": 725,
+      "frames": 134,
+      "heading": "Acceptance does not establish retrieval",
+      "cue": "Even a successful HTTP"
+    },
+    {
+      "scene": "connection-answer",
+      "stage": 2,
+      "start_frame": 859,
+      "frames": 174,
+      "heading": "Check errors, retries and gaps",
+      "cue": "Check errors"
+    },
+    {
+      "scene": "identity-question",
+      "stage": 0,
+      "start_frame": 1033,
+      "frames": 513,
+      "heading": "Same short names. Same execution?",
+      "cue": null
+    },
+    {
+      "scene": "identity-answer",
+      "stage": 0,
+      "start_frame": 1546,
+      "frames": 87,
+      "heading": "Keep explicit job and run identities",
+      "cue": null
+    },
+    {
+      "scene": "identity-answer",
+      "stage": 1,
+      "start_frame": 1633,
+      "frames": 246,
+      "heading": "Retain the local-to-exchange mapping",
+      "cue": "The page explicitly maps"
+    },
+    {
+      "scene": "identity-answer",
+      "stage": 2,
+      "start_frame": 1879,
+      "frames": 230,
+      "heading": "Retain dataset identity correspondence",
+      "cue": "Map the output's"
+    },
+    {
+      "scene": "limits",
+      "stage": 0,
+      "start_frame": 2109,
+      "frames": 318,
+      "heading": "Completion is a sourced claim",
+      "cue": null
+    },
+    {
+      "scene": "limits",
+      "stage": 1,
+      "start_frame": 2427,
+      "frames": 112,
+      "heading": "The event model and envelope are distinct",
+      "cue": "OpenLineage supplies"
+    },
+    {
+      "scene": "limits",
+      "stage": 2,
+      "start_frame": 2539,
+      "frames": 209,
+      "heading": "Retrieval is a separate agreement",
+      "cue": "The page's catalogue query"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 2748,
+      "frames": 557,
+      "heading": "Which exchange identities are missing?",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3305,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-09.mp4": {
+      "sha256": "55fbded07c9a7e3a0c4448a482e159250e6edd8ac01ff2b2974117c2ff632f79",
+      "bytes": 5432846
+    },
+    "chapter-09-silent.mp4": {
+      "sha256": "28d27fc2cd9192f617b44021c8cd4b8193cfa28538fe3ebbf2d484ddc7e7d77f",
+      "bytes": 2698009
+    },
+    "deck.pdf": {
+      "sha256": "630f6c2094269327899ff9d731d09b49ccd897450b5601b76ea9534f1b055639",
+      "bytes": 516794
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-09/film.json": "568049e149b75e5eb4ec7d2a5eea384cac1ff15ce0711c2950388031c5e6271b",
+    "video/lesson_film.py": "a5e227e6d5f95ac66596abd62acaadeb61dd3ab7cf579ae23aed265e7d2def0f",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-09/narration.json": "4b2bdfd51b7388fba58399b191d01fe11171fbdb5e03b10f4f39023e4260b453",
+    "assets/video/chapter-09/captions.srt": "fb2109d51b2d4b49cd6b81af622e10269e67df7c43266438e3c85a6367a80785"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}
