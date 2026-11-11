@@ -3556,7 +3556,7 @@
       "caption_cues": 42,
       "end_card_seconds": 5,
       "purpose": "Assess a bounded pilot using accessible evidence, limited coverage and ongoing maintenance thresholds.",
-      "video_sha256": "c7ef1d70967ce69df3cbc6444df15c9e0f74d48b057a90832ddd043931d4de49",
+      "video_sha256": "1b90d6a3b3a915bb5ba326a6cf73278d9a59e8766a256b4bf3b09033b839b788",
       "scenes": [
         {
           "scene": 0,
@@ -3969,7 +3969,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-08/film-production.json"
     },
     {
       "chapter": "09",

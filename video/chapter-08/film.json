@@ -1,0 +1,185 @@
+{
+  "memory_anchor": "Test evidence coverage, compare operating limits, and keep ownership explicit.",
+  "scenes": {
+    "coverage-question": [
+      {
+        "heading": "A collector is installed. Enough evidence?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Two pilot questions",
+            "value": "Choose measure + explain older 100%",
+            "size": 48
+          },
+          {
+            "label": "Database collector supplies",
+            "value": "Table and view structure"
+          }
+        ]
+      }
+    ],
+    "coverage-answer": [
+      {
+        "heading": "Trace the incident to retained evidence",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Refresh",
+            "value": "Output ID",
+            "size": 40
+          },
+          {
+            "label": "Output",
+            "value": "Run ID",
+            "size": 40
+          },
+          {
+            "label": "Run",
+            "value": "References",
+            "size": 40
+          },
+          {
+            "label": "Retained",
+            "value": "Input + code",
+            "size": 40
+          }
+        ]
+      },
+      {
+        "cue": "Test whether an independent",
+        "heading": "Test the investigation, not just the links",
+        "layout": "statement",
+        "value": "Open the evidence",
+        "size": 76,
+        "note": "Can an independent reviewer inspect it?"
+      }
+    ],
+    "choice-question": [
+      {
+        "heading": "What decision follows from this pilot?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Evidence tests",
+            "value": "Both pilot questions answered"
+          },
+          {
+            "label": "Access checks",
+            "value": "Tested accounts and paths pass"
+          }
+        ]
+      },
+      {
+        "cue": "Maintenance takes ninety",
+        "heading": "What decision follows from this pilot?",
+        "layout": "budget",
+        "updates": "Updates: same day · limit: 1 working day"
+      }
+    ],
+    "choice-answer": [
+      {
+        "heading": "Keep reviewed documents + SQLite",
+        "layout": "statement",
+        "value": "Two pilot questions",
+        "size": 74,
+        "note": "Invented assessment\nNo catalogue product evaluated"
+      },
+      {
+        "cue": "Trial a catalogue if",
+        "heading": "Trial trigger: exceed an agreed limit",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Weekly maintenance",
+            "value": "More than 2 hours"
+          },
+          {
+            "label": "Update delay",
+            "value": "Longer than 1 working day"
+          }
+        ]
+      }
+    ],
+    "operate": [
+      {
+        "heading": "Operating work needs explicit owners",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Reporting engineer",
+            "value": "Collection failures + observation age"
+          },
+          {
+            "label": "Relevant business team",
+            "value": "Responsibility for its definition"
+          }
+        ]
+      },
+      {
+        "cue": "Protect metadata too",
+        "heading": "Protect metadata across interfaces",
+        "layout": "statement",
+        "value": "Search · Links · Exports · APIs",
+        "size": 64,
+        "note": "Repeat checks when permissions change."
+      },
+      {
+        "cue": "Collector upgrades also",
+        "heading": "Retest after a collector upgrade",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Identity and structure",
+            "value": "Identifiers + fields"
+          },
+          {
+            "label": "Investigation",
+            "value": "Evidence links still work"
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "heading": "What does this collection run supply?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Structural evidence",
+            "value": "Supported",
+            "note": "Name one observed fact"
+          },
+          {
+            "label": "Incident evidence",
+            "value": "Missing",
+            "note": "Name one missing kind"
+          }
+        ]
+      },
+      {
+        "cue": "Then inspect Responsible team",
+        "heading": "Collection and definition have different owners",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Collection maintenance",
+            "value": "Reporting engineer"
+          },
+          {
+            "label": "Definition responsibility",
+            "value": "Relevant business team"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Coverage · Effort · Ownership",
+        "size": 68,
+        "note": "State the limits of the pilot conclusion."
+      }
+    ]
+  }
+}

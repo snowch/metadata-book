@@ -1,5 +1,10 @@
 # Chapter 8 page learning aid
 
+Current picture: use [the film workflow](../film-audit.md) and `film.json`.
+The published export is now native 4K, with a matching PDF and silent master;
+approved Q1 speech and captions are unchanged. The older renderer and instructions
+below document the retained original production. See `review.md` for this audit.
+
 Assess a bounded pilot using accessible evidence, limited coverage and ongoing maintenance thresholds.
 
 `narration.json` is the exact authored script; `scene-plan.md` records the source,
