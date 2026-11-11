@@ -3979,7 +3979,7 @@
       "caption_cues": 38,
       "end_card_seconds": 5,
       "purpose": "Separate event format, delivery configuration and explicit identity mappings, and identify evidence missing from a completion event.",
-      "video_sha256": "7bf0def5ff12e88094526561400c8042250933322ea25752d8228e263de1c988",
+      "video_sha256": "55fbded07c9a7e3a0c4448a482e159250e6edd8ac01ff2b2974117c2ff632f79",
       "scenes": [
         {
           "scene": 0,
@@ -4400,7 +4400,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-09/film-production.json"
     },
     {
       "chapter": "10",

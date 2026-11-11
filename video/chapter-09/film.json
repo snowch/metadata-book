@@ -1,0 +1,211 @@
+{
+  "memory_anchor": "Format, route and identity solve different exchange problems.",
+  "scenes": {
+    "connection-question": [
+      {
+        "heading": "Does a document establish a connection?",
+        "layout": "flow",
+        "uncertain": true,
+        "items": [
+          {
+            "label": "Producer",
+            "value": "Scheduler"
+          },
+          {
+            "label": "Document",
+            "value": "JSON event"
+          },
+          {
+            "label": "Receiver",
+            "value": "Catalogue"
+          }
+        ],
+        "takeaway": "Illustrative example; no running services."
+      }
+    ],
+    "connection-answer": [
+      {
+        "heading": "Configure and test the route",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Produce",
+            "value": "Emit event",
+            "size": 40
+          },
+          {
+            "label": "Transport",
+            "value": "Endpoint",
+            "size": 40
+          },
+          {
+            "label": "Receiver",
+            "value": "Accept",
+            "size": 40
+          },
+          {
+            "label": "Retrieve",
+            "value": "Queryable?",
+            "size": 40
+          }
+        ]
+      },
+      {
+        "cue": "Even a successful HTTP",
+        "heading": "Acceptance does not establish retrieval",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Submission",
+            "value": "Acknowledged",
+            "size": 56,
+            "note": "Receiver accepted it"
+          },
+          {
+            "label": "Investigator retrieval",
+            "value": "Check",
+            "note": "Is it queryable yet?"
+          }
+        ]
+      },
+      {
+        "cue": "Check errors",
+        "heading": "Check errors, retries and gaps",
+        "layout": "statement",
+        "value": "No exactly-once guarantee",
+        "size": 68,
+        "note": "Neither the event schema nor HTTP supplies it."
+      }
+    ],
+    "identity-question": [
+      {
+        "heading": "Same short names. Same execution?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Scheduler A",
+            "value": "build_delivery_summary",
+            "size": 42,
+            "note": "Local run: R1205"
+          },
+          {
+            "label": "Scheduler B",
+            "value": "build_delivery_summary",
+            "size": 42,
+            "note": "Local run: R1205"
+          }
+        ]
+      }
+    ],
+    "identity-answer": [
+      {
+        "heading": "Keep explicit job and run identities",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Job identity",
+            "value": "Namespace + name",
+            "size": 50
+          },
+          {
+            "label": "Run identity",
+            "value": "Run UUID",
+            "size": 62
+          }
+        ]
+      },
+      {
+        "cue": "The page explicitly maps",
+        "heading": "Retain the local-to-exchange mapping",
+        "layout": "statement",
+        "value": "R1205 ↔ exchange UUID",
+        "size": 68,
+        "note": "Same run cycle: retain UUID\nNew execution: new identity"
+      },
+      {
+        "cue": "Map the output's",
+        "heading": "Retain dataset identity correspondence",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Exchange output dataset",
+            "value": "Namespace + name"
+          },
+          {
+            "label": "Catalogue dataset",
+            "value": "Local dataset identifier"
+          }
+        ],
+        "takeaway": "A matching table name cannot infer this mapping."
+      }
+    ],
+    "limits": [
+      {
+        "heading": "Completion is a sourced claim",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "What the event names",
+            "value": "Input + output datasets"
+          },
+          {
+            "label": "Additional evidence needed",
+            "value": "Snapshot · code · output · refresh",
+            "size": 48
+          }
+        ]
+      },
+      {
+        "cue": "OpenLineage supplies",
+        "heading": "The event model and envelope are distinct",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "OpenLineage",
+            "value": "Event model",
+            "size": 58
+          },
+          {
+            "label": "CloudEvents",
+            "value": "Envelope",
+            "size": 58
+          }
+        ]
+      },
+      {
+        "cue": "The page's catalogue query",
+        "heading": "Retrieval is a separate agreement",
+        "layout": "statement",
+        "value": "Illustrative query API",
+        "size": 70,
+        "note": "Not an OpenLineage retrieval standard\nRead permission differs from submission."
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Which exchange identities are missing?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Map: Run → Example record → Job",
+            "value": "Compare run_id and job_name"
+          },
+          {
+            "label": "Not supplied by this map example",
+            "value": "Job namespace + exchange run UUID",
+            "size": 48
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Format · Route · Identity",
+        "size": 70,
+        "note": "Explain which agreement is still missing."
+      }
+    ]
+  }
+}

@@ -4,13 +4,14 @@ The scheduler knows that `build_delivery_summary` finished. The catalogue needs 
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 23 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-09/poster.jpg?v=d51359300ee0" aria-label="Sharing metadata between systems: narrated Chapter 9 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-09/chapter-09.mp4?v=7bf0def5ff12" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-09/poster.jpg?v=e886864bc11f" aria-label="Sharing metadata between systems: narrated Chapter 9 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-09/captions.vtt?v=26f2240b9ca0" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-09/chapter-09.mp4?v=7bf0def5ff12">Download the video</a> or <a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a">Download the video</a> or <a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">Read the transcript</a><a href="../assets/video/chapter-09/chapter-09.mp4?v=7bf0def5ff12" download>Download video <span>(3.9 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">Read the transcript</a><a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" download>Download video <span>(5.4 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-09/deck.pdf?v=630f6c209426">Download the slide deck</a><a href="../assets/video/chapter-09/chapter-09-silent.mp4?v=28d27fc2cd91" download>Download the silent master</a></p>
 </figure>
 
 ## Where the records travel

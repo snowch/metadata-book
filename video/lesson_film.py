@@ -79,7 +79,7 @@ def diagram(s):
             parts.append(text(x,244,p['label'],38,MUTED,400))
             parts.append(text(x,326,p['value'],p.get('size',46),p.get('color',BLUE)))
             if p.get('note'):parts.append(text(x,432,p['note'],36,INK,400))
-            if i<count-1:parts.append(arrow(x+span*.37,326,x+span*.59,326))
+            if i<count-1:parts.append(text(x+span*.48,326,'?',52,MUTED) if s.get('uncertain') else arrow(x+span*.37,326,x+span*.59,326))
     elif kind=='parcels':
         labels=s.get('labels',['On time','On time','Late','Unfinished'])
         for i,(x,label) in enumerate(zip([202,494,786,1078],labels)):
