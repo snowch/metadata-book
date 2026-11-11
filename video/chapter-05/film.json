@@ -1,0 +1,235 @@
+{
+  "memory_anchor": "Agree the identity; keep the source and kind of time attached.",
+  "scenes": {
+    "identity-question": [
+      {
+        "heading": "Same table name. Same dataset?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Production",
+            "value": "delivery_summary",
+            "size": 46
+          },
+          {
+            "label": "Testing",
+            "value": "delivery_summary",
+            "size": 46
+          }
+        ]
+      }
+    ],
+    "identity-answer": [
+      {
+        "heading": "Agree which dataset the sources mean",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Production",
+            "value": "prod/parcels/delivery_summary",
+            "size": 46
+          },
+          {
+            "label": "Testing",
+            "value": "test/parcels/delivery_summary",
+            "size": 46
+          }
+        ]
+      },
+      {
+        "cue": "A reused name",
+        "heading": "A reused name may be a replacement",
+        "layout": "statement",
+        "value": "Check identity first",
+        "size": 74,
+        "note": "Before keeping old links and explanations."
+      }
+    ],
+    "claims": [
+      {
+        "heading": "One dataset. Separate sourced claims.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Production dataset",
+            "value": "prod/parcels/delivery_summary",
+            "size": 46
+          },
+          {
+            "label": "Database scan",
+            "value": "percentage column exists"
+          }
+        ]
+      },
+      {
+        "cue": "The scheduler reports",
+        "heading": "One dataset. Separate sourced claims.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Production dataset",
+            "value": "prod/parcels/delivery_summary",
+            "size": 46
+          },
+          {
+            "label": "Scheduler reports",
+            "value": "R0905 → summary-R0905"
+          }
+        ]
+      },
+      {
+        "cue": "Service Analytics supplies",
+        "heading": "One dataset. Separate sourced claims.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Production dataset",
+            "value": "prod/parcels/delivery_summary",
+            "size": 46
+          },
+          {
+            "label": "Service Analytics definition",
+            "value": "Completed deliveries on time"
+          }
+        ]
+      },
+      {
+        "cue": "An output version identifies",
+        "heading": "Dataset identity persists across results",
+        "layout": "statement",
+        "value": "Dataset ≠ output version",
+        "size": 66,
+        "note": "An output version identifies one result."
+      }
+    ],
+    "time-question": [
+      {
+        "heading": "When was the column created?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Scan observed",
+            "value": "09:00",
+            "note": "20 October 2026 UTC"
+          },
+          {
+            "label": "Catalogue collected",
+            "value": "09:02",
+            "note": "20 October 2026 UTC"
+          }
+        ]
+      }
+    ],
+    "time-answer": [
+      {
+        "heading": "Creation time is unknown from this scan",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Observation time",
+            "value": "09:00",
+            "note": "Column was seen"
+          },
+          {
+            "label": "Collection time",
+            "value": "09:02",
+            "note": "Description was received"
+          }
+        ]
+      },
+      {
+        "cue": "For the scheduler record",
+        "heading": "Keep event time and collection time",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Scheduler completion",
+            "value": "09:05",
+            "note": "Source event time"
+          },
+          {
+            "label": "Catalogue collection",
+            "value": "09:06",
+            "note": "Receipt time"
+          }
+        ]
+      }
+    ],
+    "limits": [
+      {
+        "heading": "Each source has a different scope",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Scan",
+            "value": "Observed structure"
+          },
+          {
+            "label": "Scheduler",
+            "value": "Reported publication"
+          },
+          {
+            "label": "Definition",
+            "value": "Intended meaning"
+          }
+        ]
+      },
+      {
+        "cue": "The last record collected",
+        "heading": "Arrival order does not choose authority",
+        "layout": "statement",
+        "value": "Last received ≠ authority",
+        "size": 66,
+        "note": "Check what each source establishes."
+      }
+    ],
+    "responsibility": [
+      {
+        "heading": "A collected name is not an agreement",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Definition record",
+            "value": "Accepted",
+            "note": "Service Analytics\nresponsibility"
+          },
+          {
+            "label": "Imported team name",
+            "value": "Unproven",
+            "note": "No acceptance\nestablished"
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Check scope before joining evidence",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Source observation",
+            "value": "20 October",
+            "size": 62,
+            "note": "Database scan example"
+          },
+          {
+            "label": "Run R1205",
+            "value": "19 October",
+            "size": 62,
+            "note": "Earlier report incident"
+          }
+        ],
+        "takeaway": "Different examples need explicit references."
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Identity · Source · Time",
+        "size": 70,
+        "note": "What can each collected record establish?"
+      }
+    ]
+  }
+}

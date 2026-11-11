@@ -1,5 +1,10 @@
 # Chapter 5 page learning aid
 
+Current picture: use [the film workflow](../film-audit.md) and `film.json`.
+The published export is now native 4K, with a matching PDF and silent master;
+approved Q1 speech and captions are unchanged. The older renderer and instructions
+below document the retained original production. See `review.md` for this audit.
+
 Reinforces [Collecting metadata from several systems](../../chapters/05-collecting-metadata.md):
 connect agreed dataset identities without confusing source authority or the kinds
 of time each record carries. The page keeps the full assembled entry and collector

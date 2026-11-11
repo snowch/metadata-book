@@ -2046,7 +2046,7 @@
       "caption_cues": 44,
       "end_card_seconds": 5,
       "purpose": "Page learning aid: connect agreed dataset identities while preserving separate source claims, observation/collection times and accepted responsibility.",
-      "video_sha256": "d3c519e363b90607c748800ee724241a1920241be508bd52220bd79d319f128a",
+      "video_sha256": "91ac47b4cd8f7f1b94d1106f64ade0ca261a0739384057cff518e187639297f2",
       "scenes": [
         {
           "scene": 0,
@@ -2552,7 +2552,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-05/film-production.json"
     },
     {
       "chapter": "06",
