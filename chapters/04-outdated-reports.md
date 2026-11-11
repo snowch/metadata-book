@@ -8,13 +8,14 @@ This continues the invented incident on 19 October 2026. All times are UTC.
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-04/poster.jpg?v=3a12cb4551e0" aria-label="Why is this report out of date?: narrated Chapter 4 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-04/chapter-04.mp4?v=a7253d07403d" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-04/poster.jpg?v=f53ebddbc3f4" aria-label="Why is this report out of date?: narrated Chapter 4 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-04/captions.vtt?v=06624093edbc" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-04/chapter-04.mp4?v=a7253d07403d">Download the video</a> or <a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367">Download the video</a> or <a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The incident is invented; all times are UTC. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">Read the transcript</a><a href="../assets/video/chapter-04/chapter-04.mp4?v=a7253d07403d" download>Download video <span>(4.1 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">Read the transcript</a><a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" download>Download video <span>(5.6 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-04/deck.pdf?v=97c2f43ec731">Download the slide deck</a><a href="../assets/video/chapter-04/chapter-04-silent.mp4?v=5a193caa7c27" download>Download the silent master</a></p>
 </figure>
 
 ## Why was the report still using the old result?

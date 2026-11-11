@@ -1,0 +1,138 @@
+{
+  "chapter": "04",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "a7253d07403df9b9f7de3386161a44e9e4274c55349f5ce8d86bb543423c8d65",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 152.125,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "fresh-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 468,
+      "heading": "Current result, or an older output?",
+      "cue": null
+    },
+    {
+      "scene": "old-result",
+      "stage": 0,
+      "start_frame": 468,
+      "frames": 430,
+      "heading": "Same rule. Different input states.",
+      "cue": null
+    },
+    {
+      "scene": "failed-run",
+      "stage": 0,
+      "start_frame": 898,
+      "frames": 302,
+      "heading": "The next run failed before publication",
+      "cue": null
+    },
+    {
+      "scene": "failed-run",
+      "stage": 1,
+      "start_frame": 1200,
+      "frames": 136,
+      "heading": "What did readers actually see?",
+      "cue": "The report's refresh record"
+    },
+    {
+      "scene": "recovery-question",
+      "stage": 0,
+      "start_frame": 1336,
+      "frames": 530,
+      "heading": "Does a successful run prove recovery?",
+      "cue": null
+    },
+    {
+      "scene": "recovery-answer",
+      "stage": 0,
+      "start_frame": 1866,
+      "frames": 250,
+      "heading": "Match the publication to the read",
+      "cue": null
+    },
+    {
+      "scene": "recovery-answer",
+      "stage": 1,
+      "start_frame": 2116,
+      "frames": 186,
+      "heading": "Match the publication to the read",
+      "cue": "Matching that reference"
+    },
+    {
+      "scene": "limits",
+      "stage": 0,
+      "start_frame": 2302,
+      "frames": 415,
+      "heading": "Recovery and logic are separate checks",
+      "cue": null
+    },
+    {
+      "scene": "retain",
+      "stage": 0,
+      "start_frame": 2717,
+      "frames": 403,
+      "heading": "Keep what explains the earlier report",
+      "cue": null
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 3120,
+      "frames": 411,
+      "heading": "Compare the map and recovery table",
+      "cue": null
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3531,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-04.mp4": {
+      "sha256": "2d0c8b94f3677c58f25873fc8171fc73202e1ccf9f96e014246f314aa7dc4de9",
+      "bytes": 5623251
+    },
+    "chapter-04-silent.mp4": {
+      "sha256": "5a193caa7c2796032da8d2d3996b33e23b69b3e1d6fe55c42b335f356cde6b19",
+      "bytes": 2711809
+    },
+    "deck.pdf": {
+      "sha256": "97c2f43ec731b9df6d3ed3206e461f5123a19a6a7eca06a05fe81c031196296e",
+      "bytes": 464793
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-04/film.json": "ea087ffd12f10a18167d7d5490dcfd8a150ac909b9b351dc4188f567ec07248a",
+    "video/lesson_film.py": "38ab17465bf13f7f30a1c15921ada611a464ff6c567a0acd965084bb67bf0fc9",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-04/narration.json": "c554337aee5a80e0e75c2d460cb1f5e12e0cf24ca621e1c4e4cf4ed820fc5812",
+    "assets/video/chapter-04/captions.srt": "fdfa52fcb2543a45c83139fbf365c9bf643ba1b9f3351ce3a775421a518e0784"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}

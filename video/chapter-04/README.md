@@ -1,5 +1,10 @@
 # Chapter 4 page learning aid
 
+Current picture: use [the film workflow](../film-audit.md) and `film.json`.
+The published export is now native 4K, with a matching PDF and silent master;
+approved Q1 speech and captions are unchanged. The older renderer and instructions
+below document the retained original production. See `review.md` for this audit.
+
 Reinforces [Why is this report out of date?](../../chapters/04-outdated-reports.md):
 explain the stale output and verify that recovery reaches the report. The
 existing map intentionally contains earlier records; recovery is checked against
