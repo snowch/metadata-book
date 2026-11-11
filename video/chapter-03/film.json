@@ -1,0 +1,226 @@
+{
+  "memory_anchor": "Match the identifiers, then inspect the retained input and code.",
+  "scenes": {
+    "report-question": [
+      {
+        "heading": "Refreshed. But when calculated?",
+        "layout": "statement",
+        "value": "100%",
+        "size": 112,
+        "note": "Report refresh: 13:00 UTC\nCompleted deliveries only"
+      }
+    ],
+    "route": [
+      {
+        "heading": "Refreshing does not rerun the job",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Scheduled job",
+            "value": "Calculates"
+          },
+          {
+            "label": "Saved output",
+            "value": "Stores result"
+          },
+          {
+            "label": "Report refresh",
+            "value": "Reads result"
+          }
+        ]
+      }
+    ],
+    "output": [
+      {
+        "heading": "Follow the exact output identifier",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Refresh F1300",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Refreshed 13:00 UTC"
+          },
+          {
+            "label": "Published output",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Published 12:05 UTC"
+          }
+        ]
+      },
+      {
+        "cue": "Its matching output",
+        "heading": "Follow the exact output identifier",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Refresh F1300",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Refreshed 13:00 UTC"
+          },
+          {
+            "label": "Published output",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Published 12:05 UTC"
+          }
+        ],
+        "takeaway": "Producing run: R1205"
+      }
+    ],
+    "run-question": [
+      {
+        "heading": "Would today's table reproduce it?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "R1205 retained input",
+            "value": "S1205",
+            "note": "Saved input copy"
+          },
+          {
+            "label": "R1205 retained code",
+            "value": "completed-v1",
+            "size": 54,
+            "note": "Executed version"
+          }
+        ]
+      }
+    ],
+    "snapshot": [
+      {
+        "layout": "parcels",
+        "labels": [
+          "On time",
+          "Unfinished",
+          "On time",
+          "Unfinished"
+        ],
+        "ids": [
+          "D101",
+          "D102",
+          "D103",
+          "D104"
+        ],
+        "times": [
+          "11:50",
+          "NULL",
+          "11:40",
+          "NULL"
+        ],
+        "heading": "Inspect the retained input at 12:05"
+      }
+    ],
+    "calculation": [
+      {
+        "layout": "parcels",
+        "labels": [
+          "On time",
+          "Unfinished",
+          "On time",
+          "Unfinished"
+        ],
+        "ids": [
+          "D101",
+          "D102",
+          "D103",
+          "D104"
+        ],
+        "times": [
+          "11:50",
+          "NULL",
+          "11:40",
+          "NULL"
+        ],
+        "heading": "The code excludes unfinished parcels",
+        "excluded": [
+          1,
+          3
+        ]
+      },
+      {
+        "layout": "parcels",
+        "labels": [
+          "On time",
+          "Unfinished",
+          "On time",
+          "Unfinished"
+        ],
+        "ids": [
+          "D101",
+          "D102",
+          "D103",
+          "D104"
+        ],
+        "times": [
+          "11:50",
+          "NULL",
+          "11:40",
+          "NULL"
+        ],
+        "cue": "Two out of two",
+        "heading": "Both completed parcels were on time",
+        "excluded": [
+          1,
+          3
+        ],
+        "result": "2 / 2 = 100%"
+      }
+    ],
+    "meaning": [
+      {
+        "heading": "Explain this particular result",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Lineage",
+            "value": "Data flow and dependencies"
+          },
+          {
+            "label": "Provenance",
+            "value": "A particular result’s history"
+          }
+        ]
+      },
+      {
+        "cue": "Explaining why the result",
+        "heading": "Explained does not mean current",
+        "layout": "statement",
+        "value": "Why 100%?",
+        "note": "Still current at refresh?\nInvestigate in Chapter 4."
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Trace it in the metadata map",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Report refresh",
+            "value": "Output ID"
+          },
+          {
+            "label": "Published output",
+            "value": "Run ID"
+          },
+          {
+            "label": "Run",
+            "value": "Input + code"
+          }
+        ],
+        "takeaway": "Explain why the result was 100%."
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Match the identifiers",
+        "size": 70,
+        "note": "Refresh → output → run → input + code"
+      }
+    ]
+  }
+}

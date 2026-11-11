@@ -1,3 +1,34 @@
+# Chapter 3 visual audit — 11 November 2026
+
+The old recording repeated its four-step investigation trail over already dense records and placed the reproduction result close to the player controls. The revised film follows one exact output identifier, then separates the producing run, retained input and retained code. The parcel diagram preserves all input identifiers and times; unfinished parcels move out of the counted group before the 100% calculation appears. Investigation arrows mean reference-following, not processing order. The final cue makes the identifier chain retrievable from memory.
+
+Memory cue: **Match the identifiers, then inspect the retained input and code.** The page's map exercise retains independent
+explanation and application. Narration, canonical captions, response holds and
+example qualifications are unchanged. This is a picture/layout correction using
+the [design and learning criteria](../film-audit.md), not a new speech production.
+
+## Verified replacement
+
+- Native 3840×2160 browser renders at 24fps; 144.9s, same frame count.
+- Original/new audio and subtitle packet hashes, timestamps and durations match exactly.
+- Full FFmpeg decode; canonical caption text; both silent response windows.
+- Inspected actual encoded scene/hold frames and the staged diagram preview.
+- No label overlaps or clipping; all diagram text above the bottom 20% control area.
+- Chromium 390/960/1280px: wider player, no overflow, playback, captions, seeking,
+  no captions during response holds, and working metadata-map exercise.
+- Full site/link build; shared source/example/map checks remain passing.
+- Matching PDF of all visual states, silent master and refreshed poster packaged.
+
+Provenance and stage timecodes: `film-production.json`. Available workspace disk
+before the next chapter: 26.2 GB. No new human listening review was performed;
+existing pronunciation/prosody limitations below remain. Engagement and memorability
+are design judgments; learning, delayed recall and transfer outcomes are unmeasured.
+
+The previous export review follows for original speech/content evidence. Its old
+video hash and 720p picture describe that superseded export.
+
+---
+
 # Chapter 3 page-learning-aid review — 29 October 2026
 
 Replaces the standalone summary with an evidence-tracing demonstration, a

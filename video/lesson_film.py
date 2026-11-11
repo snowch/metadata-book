@@ -86,7 +86,7 @@ def diagram(s):
             excluded=i in s.get('excluded',[]);parts.append(parcel(x,190+20*excluded,excluded))
             parts.append(text(x,342+20*excluded,label,40,MUTED if excluded else INK))
             if s.get('ids'):parts.append(text(x,163,s['ids'][i],36,MUTED,400))
-            if s.get('times'):parts.append(text(x,408,s['times'][i],36,MUTED,400))
+            if s.get('times'):parts.append(text(x,440,s['times'][i],36,MUTED,400))
         if s.get('result'):parts.append(text(640,522,s['result'],s.get('result_size',64),BLUE))
     elif kind=='timeline':
         parts.append(arrow(130,307,1150,307))

@@ -4,13 +4,14 @@ Service Analytics measures the percentage of **completed deliveries that arrived
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 25 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-03/poster.jpg?v=3d70d2917273" aria-label="Where did this number come from?: narrated Chapter 3 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-03/chapter-03.mp4?v=d31544467a03" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-03/poster.jpg?v=98467a5ac321" aria-label="Where did this number come from?: narrated Chapter 3 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-03/captions.vtt?v=316dcf66edc3" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4?v=d31544467a03">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The incident is invented and assumes complete records at the input capture time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4?v=d31544467a03" download>Download video <span>(4.0 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" download>Download video <span>(5.2 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-03/deck.pdf?v=34af3086f07e">Download the slide deck</a><a href="../assets/video/chapter-03/chapter-03-silent.mp4?v=25d119433891" download>Download the silent master</a></p>
 </figure>
 
 ## Lineage and provenance
