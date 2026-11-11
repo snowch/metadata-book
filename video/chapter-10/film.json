@@ -1,0 +1,222 @@
+{
+  "memory_anchor": "Review meaning, record agreement, then verify release evidence.",
+  "scenes": {
+    "meaning-question": [
+      {
+        "heading": "Same column. What changes?",
+        "layout": "timeline",
+        "items": [
+          {
+            "value": "12:00",
+            "label": "Original\npromise"
+          },
+          {
+            "value": "12:20",
+            "label": "Parcel\narrives"
+          },
+          {
+            "value": "12:30",
+            "label": "Revised\npromise"
+          }
+        ]
+      }
+    ],
+    "meaning-answer": [
+      {
+        "heading": "The same arrival changes classification",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Original promise: 12:00",
+            "value": "Late"
+          },
+          {
+            "label": "Revised promise: 12:30",
+            "value": "On time"
+          }
+        ]
+      },
+      {
+        "cue": "Changing the promise also",
+        "heading": "Due-by-noon membership changes too",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Original promise: 12:00",
+            "value": "Late",
+            "note": "Due by noon: included"
+          },
+          {
+            "label": "Revised promise: 12:30",
+            "value": "On time",
+            "note": "Due by noon: excluded"
+          }
+        ]
+      },
+      {
+        "cue": "Keep the proposal pending",
+        "heading": "Keep the proposal beside the agreement",
+        "layout": "statement",
+        "value": "Pending review",
+        "size": 82,
+        "note": "Producer + both consuming teams\nreview calculations and affected uses."
+      }
+    ],
+    "release-question": [
+      {
+        "heading": "Alternative: retain original, add revision",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Retained original field",
+            "value": "promised_at",
+            "size": 54
+          },
+          {
+            "label": "Additional field",
+            "value": "revised_promise_at",
+            "size": 46
+          }
+        ]
+      },
+      {
+        "cue": "The producer and both consumers",
+        "heading": "Design approved. May it be published?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Design approval: producer + both consumers",
+            "value": "2 November 2026"
+          },
+          {
+            "label": "Planned effect",
+            "value": "5 November 2026 · 13:00 UTC"
+          }
+        ]
+      }
+    ],
+    "release-answer": [
+      {
+        "heading": "Approved design. Release still pending.",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Steward confirms",
+            "value": "Consumer acceptance + migration evidence",
+            "size": 48
+          },
+          {
+            "label": "Producer supplies",
+            "value": "Validation results + rollout plan"
+          }
+        ]
+      },
+      {
+        "cue": "Each consumer records",
+        "heading": "A new field does not migrate consumers",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Each consumer chooses",
+            "value": "Promise rule + absent-revision treatment",
+            "size": 48
+          },
+          {
+            "label": "Implementation",
+            "value": "Consumer migration still needs evidence"
+          }
+        ]
+      },
+      {
+        "cue": "After release",
+        "heading": "Attach actual evidence after release",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Producing execution",
+            "value": "Actual run, input and output references"
+          },
+          {
+            "label": "What readers saw",
+            "value": "Actual report refresh record"
+          }
+        ]
+      }
+    ],
+    "history": [
+      {
+        "heading": "Keep responsibilities explicit",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Steward",
+            "value": "Coordinates review"
+          },
+          {
+            "label": "Business teams",
+            "value": "Decide their definitions"
+          }
+        ]
+      },
+      {
+        "cue": "An ownership transfer remains",
+        "heading": "An ownership transfer needs acceptance",
+        "layout": "statement",
+        "value": "Pending until accepted",
+        "size": 72,
+        "note": "The new team must accept responsibility."
+      },
+      {
+        "cue": "If owners and consumers approve",
+        "heading": "Restate only with the required approval",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Earlier publication",
+            "value": "Retain",
+            "note": "What readers saw"
+          },
+          {
+            "label": "Approved restatement",
+            "value": "New output ID",
+            "size": 54,
+            "note": "Link evidence + approval"
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "heading": "What has the contract agreed?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "deliveries-v1: promised_at",
+            "value": "Original customer promise"
+          },
+          {
+            "label": "Before changing it",
+            "value": "Agreement with both consuming teams"
+          }
+        ]
+      },
+      {
+        "cue": "The contract records a requirement",
+        "heading": "Find evidence for each status",
+        "layout": "statement",
+        "value": "Requirement ≠ approval ≠ release",
+        "size": 62,
+        "note": "A contract does not establish delivery."
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Meaning · Agreement · Release",
+        "size": 68,
+        "note": "Explain the difference in your own words."
+      }
+    ]
+  }
+}
