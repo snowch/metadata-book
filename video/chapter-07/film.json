@@ -1,0 +1,189 @@
+{
+  "memory_anchor": "Match the meaning, interpret checks within scope, then verify output and report read.",
+  "scenes": {
+    "measure-question": [
+      {
+        "heading": "All parcels due. Which denominator?",
+        "layout": "parcels"
+      },
+      {
+        "cue": "The completed-delivery view",
+        "heading": "Does this answer the meeting’s question?",
+        "layout": "parcels",
+        "result": "Completed: 2 / 3 = 66.7%",
+        "result_size": 52
+      }
+    ],
+    "measure-answer": [
+      {
+        "heading": "The unfinished parcel was due too",
+        "layout": "parcels"
+      },
+      {
+        "cue": "Two out of four",
+        "heading": "All four parcels belong",
+        "layout": "parcels",
+        "result": "2 / 4 = 50.0%"
+      },
+      {
+        "cue": "Two out of three completed",
+        "heading": "Different populations answer different questions",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "All parcels due",
+            "value": "50.0%",
+            "note": "Includes unfinished"
+          },
+          {
+            "label": "Completed deliveries",
+            "value": "66.7%",
+            "note": "Excludes unfinished"
+          }
+        ]
+      }
+    ],
+    "checks-question": [
+      {
+        "heading": "Checks pass. Is the publication ready?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Identifiers",
+            "value": "4 rows · 4 distinct identifiers"
+          },
+          {
+            "label": "Times",
+            "value": "4 promises · 1 allowed empty completion",
+            "size": 48
+          }
+        ]
+      }
+    ],
+    "checks-answer": [
+      {
+        "heading": "What the checks support for this input",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Identifiers",
+            "value": "Uniqueness"
+          },
+          {
+            "label": "Required values",
+            "value": "Completeness"
+          }
+        ]
+      },
+      {
+        "cue": "They establish neither",
+        "heading": "Accuracy and timeliness need evidence",
+        "layout": "statement",
+        "value": "Not established",
+        "note": "Accurate timestamps\nDelivery by the contract deadline"
+      },
+      {
+        "cue": "They do not prove",
+        "heading": "These checks leave three questions open",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Definition",
+            "value": "Does the code use the all-due rule?"
+          },
+          {
+            "label": "Publication",
+            "value": "Which output was published?"
+          },
+          {
+            "label": "Report read",
+            "value": "Did the report read that output?"
+          }
+        ]
+      },
+      {
+        "cue": "A contract records commitments",
+        "heading": "A contract records the commitment",
+        "layout": "statement",
+        "value": "Evidence tests it",
+        "size": 74,
+        "note": "Check results and delivery records"
+      }
+    ],
+    "decision": [
+      {
+        "heading": "The engineer still needs to verify readiness",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Chosen rule",
+            "value": "All due"
+          },
+          {
+            "label": "Verify result",
+            "value": "50.0%"
+          },
+          {
+            "label": "Attach evidence",
+            "value": "Output + read",
+            "size": 42
+          }
+        ]
+      },
+      {
+        "cue": "The page's decision remains",
+        "heading": "The decision remains pending",
+        "layout": "statement",
+        "value": "Missing publication",
+        "size": 70,
+        "note": "No verified all-due output attached\nNext owner: reporting engineer"
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Compare the quality rule and observation",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Expected duplicate count",
+            "value": "0",
+            "note": "Rule requirement"
+          },
+          {
+            "label": "Observed distinct IDs",
+            "value": "4",
+            "note": "Observed input result"
+          }
+        ]
+      },
+      {
+        "cue": "Then open Decision",
+        "heading": "Find the gap and next action",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Chosen rule",
+            "value": "All parcels due"
+          },
+          {
+            "label": "Missing evidence",
+            "value": "Verified all-due publication"
+          },
+          {
+            "label": "Next owner",
+            "value": "Reporting engineer"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Meaning. Checks. Evidence.",
+        "size": 70,
+        "note": "What is still missing for this use?"
+      }
+    ]
+  }
+}
