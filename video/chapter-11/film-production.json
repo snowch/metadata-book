@@ -1,0 +1,178 @@
+{
+  "chapter": "11",
+  "workflow": "Native browser states synchronized to retained Q1 timeline",
+  "visual_parent_sha": "365ec1fb4f8884e7911baae96a51d3722deeb25f69fdce6e863efb6620973bb9",
+  "audio_packets_unchanged": true,
+  "subtitle_packets_unchanged": true,
+  "duration_seconds": 160.29166666666666,
+  "native_dimensions": [
+    3840,
+    2160
+  ],
+  "fps": 24,
+  "control_safe_area_px": 144,
+  "stages": [
+    {
+      "scene": "access-question",
+      "stage": 0,
+      "start_frame": 0,
+      "frames": 582,
+      "heading": "Does an access label prove control?",
+      "cue": null
+    },
+    {
+      "scene": "access-answer",
+      "stage": 0,
+      "start_frame": 582,
+      "frames": 179,
+      "heading": "Connect approval to controls and tests",
+      "cue": null
+    },
+    {
+      "scene": "access-answer",
+      "stage": 1,
+      "start_frame": 761,
+      "frames": 130,
+      "heading": "Test permitted and restricted accounts",
+      "cue": "Test permitted and restricted"
+    },
+    {
+      "scene": "access-answer",
+      "stage": 2,
+      "start_frame": 891,
+      "frames": 136,
+      "heading": "Approval is limited to its recorded purpose",
+      "cue": "Team membership does not"
+    },
+    {
+      "scene": "access-answer",
+      "stage": 3,
+      "start_frame": 1027,
+      "frames": 156,
+      "heading": "Revocation does not retrieve copies",
+      "cue": "Revoking a grant cannot"
+    },
+    {
+      "scene": "reuse-question",
+      "stage": 0,
+      "start_frame": 1183,
+      "frames": 676,
+      "heading": "Which dataset and status does this cover?",
+      "cue": null
+    },
+    {
+      "scene": "reuse-answer",
+      "stage": 0,
+      "start_frame": 1859,
+      "frames": 227,
+      "heading": "A separate dataset needs its own permission",
+      "cue": null
+    },
+    {
+      "scene": "reuse-answer",
+      "stage": 1,
+      "start_frame": 2086,
+      "frames": 265,
+      "heading": "FAIR supports reuse, not permission",
+      "cue": "FAIR means"
+    },
+    {
+      "scene": "reuse-answer",
+      "stage": 2,
+      "start_frame": 2351,
+      "frames": 124,
+      "heading": "Check actual publication status",
+      "cue": "A planned identifier and license"
+    },
+    {
+      "scene": "retention",
+      "stage": 0,
+      "start_frame": 2475,
+      "frames": 272,
+      "heading": "Protect the evidence itself",
+      "cue": null
+    },
+    {
+      "scene": "retention",
+      "stage": 1,
+      "start_frame": 2747,
+      "frames": 80,
+      "heading": "Agree retention by artifact and purpose",
+      "cue": "Agree retention by artifact"
+    },
+    {
+      "scene": "retention",
+      "stage": 2,
+      "start_frame": 2827,
+      "frames": 160,
+      "heading": "Identification does not restore the input",
+      "cue": "Once the input snapshot is deleted"
+    },
+    {
+      "scene": "retention",
+      "stage": 3,
+      "start_frame": 2987,
+      "frames": 93,
+      "heading": "Keep the limits of deletion evidence visible",
+      "cue": "A deletion record does not"
+    },
+    {
+      "scene": "practice",
+      "stage": 0,
+      "start_frame": 3080,
+      "frames": 201,
+      "heading": "Compare approval and enforcement",
+      "cue": null
+    },
+    {
+      "scene": "practice",
+      "stage": 1,
+      "start_frame": 3281,
+      "frames": 446,
+      "heading": "Compare dataset identity and status",
+      "cue": "Then open Reuse description"
+    },
+    {
+      "scene": "end",
+      "stage": 0,
+      "start_frame": 3727,
+      "frames": 120,
+      "heading": "Try it on the page",
+      "cue": null
+    }
+  ],
+  "assets": {
+    "chapter-11.mp4": {
+      "sha256": "bd398765fa7472aaa1fde3159f0b5849d6c2f0450f5a57a4b461faeee1f057c4",
+      "bytes": 6490454
+    },
+    "chapter-11-silent.mp4": {
+      "sha256": "fee93e250fd286946b2b63dd793758fbae5a22f560c572d6f171096720f0fbc2",
+      "bytes": 3370740
+    },
+    "deck.pdf": {
+      "sha256": "cf813e1f6304a2a3f249cabeb05aa4f211fa5a75abdd05196457e3aded943135",
+      "bytes": 585687
+    }
+  },
+  "human_listening_review": false,
+  "learning_outcomes": "Not measured",
+  "sources": {
+    "video/chapter-11/film.json": "62b71eaad7ee8322f6035f51f4cd310f71b5d312485d69186e3352b7ce9fb2bc",
+    "video/lesson_film.py": "76adbe5d256b9e0113f8ccf198bfb07f64f4bd3d4be00dba808260e98a3c7eab",
+    "assets/lessons/chapter-01/source-sans-3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "video/chapter-11/narration.json": "89f1025cf994b71e529bf3d1d59633a6d81c0364c3edc3b1408a51cc1326a59f",
+    "assets/video/chapter-11/captions.srt": "93d454b1100cf3ae5afad792c614cb0155d38a0b0e6549306ce0ecc9abbe12cd"
+  },
+  "verification": {
+    "full_decode": true,
+    "canonical_captions": true,
+    "silent_response_holds": true,
+    "browser_widths": [
+      1280,
+      960,
+      390
+    ],
+    "encoded_frames_visually_inspected": true
+  }
+}

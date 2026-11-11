@@ -1,0 +1,230 @@
+{
+  "memory_anchor": "Check purpose, dataset identity and evidence of actual control or release.",
+  "scenes": {
+    "access-question": [
+      {
+        "heading": "Does an access label prove control?",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Recorded classification",
+            "value": "Restricted operational data"
+          },
+          {
+            "label": "Recorded purpose",
+            "value": "Approved analysts investigate performance",
+            "size": 48
+          }
+        ]
+      }
+    ],
+    "access-answer": [
+      {
+        "heading": "Connect approval to controls and tests",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "Decide",
+            "value": "Purpose + scope",
+            "size": 44
+          },
+          {
+            "label": "Implement",
+            "value": "Groups + grants",
+            "size": 44
+          },
+          {
+            "label": "Test",
+            "value": "Allowed + denied",
+            "size": 44
+          }
+        ]
+      },
+      {
+        "cue": "Test permitted and restricted",
+        "heading": "Test permitted and restricted accounts",
+        "layout": "statement",
+        "value": "Database · Search · APIs · Exports",
+        "size": 62,
+        "note": "Check every supported retrieval path."
+      },
+      {
+        "cue": "Team membership does not",
+        "heading": "Approval is limited to its recorded purpose",
+        "layout": "statement",
+        "value": "Purpose needs a decision",
+        "size": 70,
+        "note": "Team membership is not blanket approval."
+      },
+      {
+        "cue": "Revoking a grant cannot",
+        "heading": "Revocation does not retrieve copies",
+        "layout": "statement",
+        "value": "A downloaded copy remains",
+        "size": 70,
+        "note": "Revoking a grant cannot retrieve it."
+      }
+    ],
+    "reuse-question": [
+      {
+        "heading": "Which dataset and status does this cover?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Operational dataset",
+            "value": "deliveries",
+            "size": 64,
+            "note": "Restricted investigation"
+          },
+          {
+            "label": "Separate research plan",
+            "value": "Synthetic v1.0",
+            "size": 56,
+            "note": "Proposed CC BY 4.0\nPending ID; no release"
+          }
+        ]
+      }
+    ],
+    "reuse-answer": [
+      {
+        "heading": "A separate dataset needs its own permission",
+        "layout": "statement",
+        "value": "Synthetic ≠ operational",
+        "size": 72,
+        "note": "Invented parcels\nOperational export not authorised"
+      },
+      {
+        "cue": "FAIR means",
+        "heading": "FAIR supports reuse, not permission",
+        "layout": "flow",
+        "items": [
+          {
+            "label": "F",
+            "value": "Findable",
+            "size": 40
+          },
+          {
+            "label": "A",
+            "value": "Accessible",
+            "size": 40
+          },
+          {
+            "label": "I",
+            "value": "Interoperable",
+            "size": 38
+          },
+          {
+            "label": "R",
+            "value": "Reusable",
+            "size": 40
+          }
+        ],
+        "takeaway": "FAIR does not require public access.",
+        "connect": false
+      },
+      {
+        "cue": "A planned identifier and license",
+        "heading": "Check actual publication status",
+        "layout": "statement",
+        "value": "Planned ≠ deposited",
+        "size": 76,
+        "note": "Proposed license + pending identifier\nDo not establish a completed deposit."
+      }
+    ],
+    "retention": [
+      {
+        "heading": "Protect the evidence itself",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Potentially revealing material",
+            "value": "Saved queries + samples"
+          },
+          {
+            "label": "Copies and discovery paths",
+            "value": "Check indexes and exported copies"
+          }
+        ]
+      },
+      {
+        "cue": "Agree retention by artifact",
+        "heading": "Agree retention by artifact and purpose",
+        "layout": "statement",
+        "value": "Include the copies",
+        "size": 80,
+        "note": "Different artifacts can need different periods."
+      },
+      {
+        "cue": "Once the input snapshot is deleted",
+        "heading": "Identification does not restore the input",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Metadata may explain",
+            "value": "Which input",
+            "size": 60,
+            "note": "The reference can remain"
+          },
+          {
+            "label": "An exact rerun",
+            "value": "Needs data",
+            "size": 60,
+            "note": "Metadata cannot restore rows"
+          }
+        ]
+      },
+      {
+        "cue": "A deletion record does not",
+        "heading": "Keep the limits of deletion evidence visible",
+        "layout": "statement",
+        "value": "Deletion audit ≠ all copies gone",
+        "size": 64,
+        "note": "Unmanaged copies need separate evidence."
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Compare approval and enforcement",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Access decision: Example record",
+            "value": "Which purpose was approved?"
+          },
+          {
+            "label": "Evidence of controls",
+            "value": "Which implementation and tests exist?"
+          }
+        ]
+      },
+      {
+        "cue": "Then open Reuse description",
+        "heading": "Compare dataset identity and status",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Research dataset",
+            "value": "Synthetic version 1.0"
+          },
+          {
+            "label": "Publication status",
+            "value": "Pending ID + proposed license"
+          },
+          {
+            "label": "Operational sharing",
+            "value": "No authorisation established"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Purpose · Dataset · Evidence",
+        "size": 70,
+        "note": "Which permission and status are established?"
+      }
+    ]
+  }
+}

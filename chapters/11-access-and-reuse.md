@@ -4,13 +4,14 @@ A reader can find the right delivery dataset and still lack permission to use it
 
 <figure class="chapter-video" aria-labelledby="chapter-video-title">
 <figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 40 sec</span></figcaption>
-<video controls playsinline preload="none" width="1280" height="720" poster="../assets/video/chapter-11/poster.jpg?v=8c0f742575d5" aria-label="Controlling access and enabling reuse: narrated Chapter 11 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88" type="video/mp4">
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-11/poster.jpg?v=a8887c04e13a" aria-label="Controlling access and enabling reuse: narrated Chapter 11 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" type="video/mp4">
 <track kind="captions" src="../assets/video/chapter-11/captions.vtt?v=40392cd03c43" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88">Download the video</a> or <a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">read the transcript</a>.
+Your browser cannot play this video. <a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74">Download the video</a> or <a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">read the transcript</a>.
 </video>
 <p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">Read the transcript</a><a href="../assets/video/chapter-11/chapter-11.mp4?v=365ec1fb4f88" download>Download video <span>(4.4 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">Read the transcript</a><a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" download>Download video <span>(6.5 MB)</span></a></p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-11/deck.pdf?v=cf813e1f6304">Download the slide deck</a><a href="../assets/video/chapter-11/chapter-11-silent.mp4?v=fee93e250fd2" download>Download the silent master</a></p>
 </figure>
 
 ## Decide who may do what

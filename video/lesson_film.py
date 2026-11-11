@@ -6,7 +6,7 @@ use the original synthesis padding contract and retained speech provenance.
 No TTS, resampling, speech normalization or caption retiming occurs here.
 """
 from pathlib import Path
-import argparse, base64, hashlib, html, json, math, re, shutil, subprocess
+import argparse, base64, hashlib, html, json, math, re, shutil, subprocess, tempfile
 from PIL import Image, ImageDraw
 from playwright.sync_api import sync_playwright
 from pypdf import PdfReader, PdfWriter
@@ -79,7 +79,7 @@ def diagram(s):
             parts.append(text(x,244,p['label'],38,MUTED,400))
             parts.append(text(x,326,p['value'],p.get('size',46),p.get('color',BLUE)))
             if p.get('note'):parts.append(text(x,432,p['note'],36,INK,400))
-            if i<count-1:parts.append(text(x+span*.48,326,'?',52,MUTED) if s.get('uncertain') else arrow(x+span*.37,326,x+span*.59,326))
+            if i<count-1 and s.get('connect',True):parts.append(text(x+span*.48,326,'?',52,MUTED) if s.get('uncertain') else arrow(x+span*.37,326,x+span*.59,326))
     elif kind=='parcels':
         labels=s.get('labels',['On time','On time','Late','Unfinished'])
         for i,(x,label) in enumerate(zip([202,494,786,1078],labels)):
@@ -164,12 +164,19 @@ def main():
     sheet.save(work/'film-preview.jpg')
     if args.preview:print(work/'film-preview.jpg');return
     concat=work/'film-concat.txt';concat.write_text(''.join(f"file '{p}'\nduration {duration:.9f}\n" for p,duration in segments)+f"file '{segments[-1][0]}'\n")
-    duration=sum(t['frames'] for t in timings)/24;silent=work/f'chapter-{n}-silent.mp4';movie=work/f'chapter-{n}.mp4'
+    duration=sum(t['frames'] for t in timings)/24
+    # A stopped encoder may still finalize its MP4. Never let it share an output
+    # inode with a restarted render; promote only completed, checked exports.
+    staging=Path(tempfile.mkdtemp(prefix='film-export-',dir=work))
+    silent=staging/f'chapter-{n}-silent.mp4';movie=staging/f'chapter-{n}.mp4'
     subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(concat),'-vf','fps=24,format=yuv420p','-t',str(duration),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-movflags','+faststart',str(silent)],check=True)
     subprocess.run(['ffmpeg','-v','error','-y','-i',str(silent),'-i',str(original),'-map','0:v','-map','1:a','-map','1:s','-c','copy','-movflags','+faststart',str(movie)],check=True)
     for stream in ('a','s'):assert packet_hashes(original,stream)==packet_hashes(movie,stream),stream
     final=json.loads(run('ffprobe','-v','error','-show_streams','-of','json',movie));v=next(s for s in final['streams'] if s['codec_type']=='video')
     assert (v['width'],v['height'],v['r_frame_rate'],int(v['nb_frames']))==(3840,2160,'24/1',round(duration*24))
+    subprocess.run(['ffmpeg','-v','error','-xerror','-i',str(movie),'-f','null','-'],check=True)
+    silent.replace(work/silent.name);movie.replace(work/movie.name);staging.rmdir()
+    silent=work/f'chapter-{n}-silent.mp4';movie=work/f'chapter-{n}.mp4'
     # Existing verifier also checks decoded audio/captions and actual question holds.
     for f in ('captions.srt','captions.vtt','transcript.txt'):shutil.copyfile(dest/f,work/f)
     report=dict(chapter=n,workflow='Native browser states synchronized to retained Q1 timeline',visual_parent_sha=sha(original),audio_packets_unchanged=True,subtitle_packets_unchanged=True,duration_seconds=duration,native_dimensions=[3840,2160],fps=24,control_safe_area_px=144,stages=boundaries,assets={f.name:dict(sha256=sha(f),bytes=f.stat().st_size) for f in [movie,silent,work/'deck.pdf']},human_listening_review=False,learning_outcomes='Not measured')
