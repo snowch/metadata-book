@@ -1,0 +1,181 @@
+{
+  "memory_anchor": "A new publication and a matching report read establish recovery.",
+  "scenes": {
+    "fresh-question": [
+      {
+        "heading": "Current result, or an older output?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Report refresh: 13:00",
+            "value": "100%",
+            "note": "Saved input: 2 completed"
+          },
+          {
+            "label": "Third parcel arrived",
+            "value": "12:20",
+            "note": "Late arrival"
+          }
+        ]
+      }
+    ],
+    "old-result": [
+      {
+        "heading": "Same rule. Different input states.",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Saved input: 12:05",
+            "value": "2 / 2 = 100%",
+            "size": 58,
+            "note": "Both arrivals on time"
+          },
+          {
+            "label": "Current records",
+            "value": "2 / 3 = 66.7%",
+            "size": 58,
+            "note": "Third arrival was late"
+          }
+        ],
+        "takeaway": "The 13:00 refresh read the older output."
+      }
+    ],
+    "failed-run": [
+      {
+        "heading": "The next run failed before publication",
+        "layout": "statement",
+        "value": "R1230 failed",
+        "note": "Injected write-permission fault\nNo new output published"
+      },
+      {
+        "cue": "The report's refresh record",
+        "heading": "What did readers actually see?",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Old output",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Published 12:05 UTC"
+          },
+          {
+            "label": "Report refresh",
+            "value": "summary-R1205",
+            "size": 48,
+            "note": "Read at 13:00 UTC"
+          }
+        ]
+      }
+    ],
+    "recovery-question": [
+      {
+        "heading": "Does a successful run prove recovery?",
+        "layout": "statement",
+        "value": "66.7%",
+        "size": 110,
+        "note": "New publication: 13:10 UTC\nHas the report read it?"
+      }
+    ],
+    "recovery-answer": [
+      {
+        "heading": "Match the publication to the read",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Published output",
+            "value": "summary-R1310",
+            "size": 48,
+            "note": "Published 13:10 UTC"
+          },
+          {
+            "label": "Refresh F1312",
+            "value": "summary-R1310",
+            "size": 48,
+            "note": "Read at 13:12 UTC"
+          }
+        ]
+      },
+      {
+        "cue": "Matching that reference",
+        "heading": "Match the publication to the read",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Published output",
+            "value": "summary-R1310",
+            "size": 48,
+            "note": "Published 13:10 UTC"
+          },
+          {
+            "label": "Refresh F1312",
+            "value": "summary-R1310",
+            "size": 48,
+            "note": "Read at 13:12 UTC"
+          }
+        ],
+        "takeaway": "66.7% reached the report."
+      }
+    ],
+    "limits": [
+      {
+        "heading": "Recovery and logic are separate checks",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Recovery",
+            "value": "Did the report read the new output?"
+          },
+          {
+            "label": "Correct logic",
+            "value": "Does the code follow the definition?"
+          }
+        ]
+      }
+    ],
+    "retain": [
+      {
+        "heading": "Keep what explains the earlier report",
+        "layout": "pair",
+        "items": [
+          {
+            "label": "Explain what readers saw",
+            "value": "Output + refresh",
+            "size": 54,
+            "note": "Earlier 100% report"
+          },
+          {
+            "label": "Reproduce the calculation",
+            "value": "Input + code",
+            "size": 54,
+            "note": "Retained data and execution"
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "heading": "Compare the map and recovery table",
+        "layout": "rows",
+        "items": [
+          {
+            "label": "Map: earlier evidence",
+            "value": "Refresh → output → run"
+          },
+          {
+            "label": "Page: recovery table",
+            "value": "New output + matching refresh"
+          }
+        ]
+      }
+    ],
+    "end": [
+      {
+        "heading": "Try it on the page",
+        "layout": "statement",
+        "value": "Published and read",
+        "size": 72,
+        "note": "Find both records before claiming recovery."
+      }
+    ]
+  }
+}

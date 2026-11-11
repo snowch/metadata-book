@@ -1543,7 +1543,7 @@
       "caption_cues": 43,
       "end_card_seconds": 5,
       "purpose": "Page learning aid: explain stale output and verify that recovery reaches the report through matching publication and refresh references.",
-      "video_sha256": "a7253d07403df9b9f7de3386161a44e9e4274c55349f5ce8d86bb543423c8d65",
+      "video_sha256": "2d0c8b94f3677c58f25873fc8171fc73202e1ccf9f96e014246f314aa7dc4de9",
       "scenes": [
         {
           "scene": 0,
@@ -2036,7 +2036,9 @@
           },
           "hold_seconds": 0
         }
-      ]
+      ],
+      "picture_workflow": "Browser-rendered native 4K states; unchanged Q1 audio/subtitle packets",
+      "picture_provenance": "video/chapter-04/film-production.json"
     },
     {
       "chapter": "05",
