@@ -281,7 +281,7 @@ def build():
     <div class="prose">{body}</div>
     </article>
     <nav class="pagination" aria-label="Continue reading">{''.join(pagination)}</nav>
-    <footer class="page-footer"><span>{escape(book_title)}</span><a href="https://github.com/snowch/metadata-book">Source on GitHub {LINK_ARROW}</a></footer>
+    <footer class="page-footer"><span>{escape(book_title)}</span><a href="https://github.com/snowch/metadata-book/blob/main/LICENSE">Copyright © 2026 Christopher Snow. All rights reserved.</a><a href="https://github.com/snowch/metadata-book">Source on GitHub {LINK_ARROW}</a></footer>
   </main>
 </div>
 </body>

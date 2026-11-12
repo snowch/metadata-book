@@ -184,7 +184,7 @@ pre code { padding: 0; background: none; font-size: 1em; color: inherit; }
 .lesson-completion input { width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--accent); flex: none; }
 #lesson-save-status { color: var(--muted); font: .75rem/1.5 var(--sans); }
 .pagination a:hover .pagination-title { color: var(--accent); }
-.page-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .65rem; color: var(--muted); }
+.page-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .75rem; color: var(--muted); }
 .page-footer a { text-decoration: none; color: var(--muted); }
 .page-introduction .chapter-header { padding-right: 0; }
 .page-introduction h1 { font-size: clamp(3.8rem, 7vw, 6.2rem); max-width: 600px; }
@@ -232,7 +232,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   .code-label { padding-inline: 1rem; }
   .pagination { gap: 1rem; }
   .pagination-title { font-size: 1.15rem; }
-  .page-footer { font-size: .6rem; }
+  .page-footer { font-size: .75rem; }
 }
 @media (max-width: 700px) {
   .prose { font-size: 1.12rem; }
