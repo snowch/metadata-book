@@ -4,31 +4,9 @@ A dashboard shows a number. To use it, we need to know what it measures, where i
 
 **Metadata is information that describes data:** its structure, meaning, origin and use. Column names and types are metadata. So are a metric's definition and a record of the job that produced it. These descriptions may live inside a database, alongside a report, or in a separate catalogue.
 
-<div class="lesson-outcome" markdown="1">
-**Your goal:** choose the population a percentage should count, explain why unfinished deliveries belong or do not belong, and check a calculation against its recorded definition.
-</div>
-
-<section class="lesson-lab" aria-labelledby="parcel-lab-title">
-<h2 id="parcel-lab-title">Make the denominator visible</h2>
-<p>Start with <strong>Completed deliveries</strong>, then switch to <strong>All parcels due</strong>. Explain what changes before trying the separate six-parcel example. <a href="../assets/lessons/chapter-01/index.html">Open the parcel lab in its own page</a>.</p>
-<iframe title="Explore which parcels belong in the denominator" src="../assets/lessons/chapter-01/index.html?embed" width="1280" height="780" loading="lazy"></iframe>
-</section>
-
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">1 min 33 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-01-v2/poster.jpg?v=c6d8c1be214e" aria-label="What the data cannot tell you: narrated Chapter 1 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-01-v2/captions.vtt?v=f71fe7e9a7f2" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924">Download the video</a> or <a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">Read the transcript</a><a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924" download>Download video <span>(3.4 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/deck.pdf">Download the slide deck</a><a href="../assets/video/chapter-01-v2/chapter-01-silent.mp4" download>Download the silent master</a></p>
-</figure>
-
 ## What a number means
 
-Even a familiar label such as “on-time delivery” leaves room for different calculations.
+Even “on-time delivery” leaves room for different calculations. The **denominator** is the total number of deliveries included in a percentage. The people using the result need to agree which deliveries count.
 
 <figure class="worked-example" markdown="1">
 <figcaption>Worked example · Two ways to count deliveries</figcaption>
@@ -44,7 +22,12 @@ Both calculations are valid for their stated questions. The first measures punct
 
 </figure>
 
-The disagreement comes from the denominator: the total number of deliveries included—three completed deliveries or all four deliveries due. Choosing that group is a business decision. A correct calculation can still answer the wrong question for the person reading the report.
+<section class="lesson-lab" aria-labelledby="parcel-lab-title">
+<h2 id="parcel-lab-title">Compare the two denominators</h2>
+<p>The activity starts with the same four parcels. Select <strong>Completed deliveries</strong> and <strong>All parcels due</strong> in turn. Compare the count below the parcels and the denominator in the calculation. Which parcel changes the count?</p>
+<p>Then select <strong>Try six parcels</strong>. Enter the number of parcels due in <strong>Your denominator</strong> and select <strong>Check my answer</strong>. <a href="../assets/lessons/chapter-01/index.html?v=2">Open the parcel activity in its own page</a>.</p>
+<iframe title="Compare a four-parcel calculation and practise with six parcels" src="../assets/lessons/chapter-01/index.html?embed&amp;v=2" width="1280" height="780" loading="lazy"></iframe>
+</section>
 
 ## Record the decision
 
@@ -64,9 +47,7 @@ Suppose Delivery Operations uses the second definition: of all deliveries promis
 
 <p class="evidence-reading"><strong>What this tells us</strong> All four parcels belong in the denominator, including the unfinished delivery. Two arrived on time, so the defined measure gives 50.0%.</p>
 
-Another team could legitimately use the completed-delivery measure, provided its definition makes that choice clear.
-
-The definition should name the team that can explain what the metric means—for example, Delivery Operations.
+Another team can use the completed-delivery measure if its definition states the population and names the responsible team.
 
 Column names also need explanation. Does `delivered_at` record when a parcel reached a depot or when it reached the customer? Both are plausible meanings; the name alone cannot tell us which one applies.
 
@@ -88,20 +69,34 @@ A database already records some of the information that helps with this check: i
 - **Record the definition and responsible team.** Readers need to know what is included, when it is measured and whom to ask about its meaning.
 - **A definition is something to check against.** Inspect the calculation to verify that its filters and denominator follow the recorded rule.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">1 min 33 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-01-v2/poster.jpg?v=c6d8c1be214e" aria-label="What the data cannot tell you: narrated Chapter 1 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-01-v2/captions.vtt?v=f71fe7e9a7f2" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924">Download the video</a> or <a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-01-v2/transcript.txt?v=fa696794bdbb">Read the transcript</a><a href="../assets/video/chapter-01-v2/chapter-01.mp4?v=0606d5268924" download>Download video <span>(3.4 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore the metadata map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=1"><strong>Open the Metadata map</strong></a>, with Chapter 1 highlighted.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=1&amp;record=metric-definition&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on the Metric definition.</p>
 <ol>
-<li>Select <strong>Metric definition</strong>, then <strong>Example record</strong>. Find the denominator. Does it include unfinished deliveries?</li>
-<li>In the <strong>Responsible team</strong> row, select <strong>Delivery Operations</strong> to open its record. What responsibility does this team have?</li>
-<li>Return to this chapter using the header’s <strong>Metadata map</strong> button.</li>
+<li>Find <strong>Denominator</strong>. Does it include unfinished deliveries?</li>
+<li>Under <strong>Responsible team</strong>, select <strong>Delivery Operations</strong>. Read <strong>Definition responsibility</strong>.</li>
 </ol>
 <p><strong>Think about it:</strong> Does the recorded definition prove that the calculation follows the rule?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>The denominator includes <strong>all deliveries due by noon</strong>, including unfinished deliveries. <strong>Delivery Operations</strong> can explain and approve the measure’s meaning. The definition does not prove that the calculation follows it: a reviewer still needs to check the query’s filters and denominator.</p>
 </details>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

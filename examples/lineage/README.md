@@ -11,6 +11,8 @@ python3 scripts/verify_examples.py
 
 Both commands use only Python's standard library and SQLite in memory. They create no persistent database and make no network calls. All timestamps are UTC on 19 October 2026.
 
+In the terminal’s **Report refreshes** output, read the version and percentage beside `F1300` and `F1312`. Use the **Trace F1300** row to identify the earlier run, code version and input snapshot. Compare the results with the records below.
+
 The simulation retains the same four invented parcels as `examples/deliveries.sql`. At 12:05 D102 has no recorded completion; at 12:20 it gains its late completion. D104 remains uncompleted. The retained [completed-v1.sql](completed-v1.sql) executes the same calculation as the original view. Each run reads a saved copy of all four input rows, and `replay()` executes the retained SQL on a fresh copy of those rows. It raises `ValueError` if the code or capture record is missing, or if the retained row count differs from the count recorded at capture. A recorded zero-row snapshot remains a valid empty input. This count check detects missing rows; it does not detect changes that preserve the count.
 
 | Record | Result |

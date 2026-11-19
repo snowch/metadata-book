@@ -7,9 +7,9 @@ This book is for software and data engineers who can read a table and a simple S
 <aside class="reader-action" aria-labelledby="before-you-start">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="before-you-start">Before you start</p>
+<p class="reader-action-title" id="before-you-start">Explore the records as you read</p>
 <p><a href="metadata-map.md"><strong>Open the Metadata map</strong></a> for an overview of the book. The whole map shows how the records fit together. Select a record to highlight its connections, then choose <strong>Example record</strong> for its values or <strong>Fields &amp; types</strong> for its field definitions. Select its chapter badge to read the explanation.</p>
-<p>Return using the header’s <strong>Metadata map</strong> button as you read; it highlights your current chapter. Click the button again to return to your reading.</p>
+<p>While reading a chapter, use the header’s <strong>Metadata map</strong> link to highlight that chapter’s records. Select <strong>Close metadata map</strong> to return to your reading.</p>
 </div>
 </aside>
 
@@ -43,6 +43,6 @@ People need different evidence from the same system. One person may hold several
 | Security, privacy or audit reviewer | Which uses are approved, where are restrictions enforced, and what evidence is retained? |
 | Researcher or external consumer | Can I find, cite, access and reuse this version under its stated conditions? |
 
-Worked examples carry the explanation. Each chapter’s **Core points** recap its main lessons. Records, query outputs and decisions appear beside the questions they answer, with highlighted fields and short explanations. No code execution is needed. Each chapter ends with a short, optional map activity and a collapsible answer. All eleven chapters also offer captioned videos with transcripts. The [closing summary](summary.md) connects the lessons and provides a final recall exercise.
+The chapter text includes its worked records and query outputs. Chapter 1 also offers a browser activity. After each chapter, you can watch a captioned recap, read its transcript or try a map activity before revealing the worked answer. The [closing summary](summary.md) connects the lessons and provides a final recall exercise.
 
 The company and its records are invented. The database examples and the incident simulation supporting Chapters 3–4 use the real SQLite engine. The additional debugging scenario, collection histories, decisions, pilot assessment and publication descriptions are illustrative. The OpenLineage event is checked against its schema; it is not captured from a running integration. Product-specific explanations link to the tools' documentation. To run the examples yourself, see [Reproducing the worked results](examples/README.md).

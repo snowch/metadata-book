@@ -2,17 +2,6 @@
 
 A catalogue can contain accurate observations and still mislead. A scan may cover only part of a database. An event may arrive twice, or after a newer event. Two sources may disagree. What should the catalogue display when it cannot establish a single current answer?
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-06/poster.jpg?v=6f4d455fffa2" aria-label="When the records are unreliable: narrated Chapter 6 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-06/captions.vtt?v=3f6efec9853a" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48">Download the video</a> or <a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">Read the transcript</a><a href="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48" download>Download video <span>(6.3 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-06/deck.pdf?v=62b337f6c99f">Download the slide deck</a><a href="../assets/video/chapter-06/chapter-06-silent.mp4?v=6d3866820cc0" download>Download the silent master</a></p>
-</figure>
 
 ## Absence needs an explanation
 
@@ -61,20 +50,34 @@ Metadata has [provenance](03-following-lineage.md#provenance) too. Keep each cla
 - **Arrival order is not event order.** Retain run identities, event times and receipt times.
 - **Preserve conflicting claims and show uncertainty.** Record the evidence used to resolve the disagreement.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-06/poster.jpg?v=6f4d455fffa2" aria-label="When the records are unreliable: narrated Chapter 6 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-06/captions.vtt?v=3f6efec9853a" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48">Download the video</a> or <a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-06/transcript.txt?v=e3a1a3ab6e98">Read the transcript</a><a href="../assets/video/chapter-06/chapter-06.mp4?v=5449f4d5ce48" download>Download video <span>(6.3 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=6&amp;record=source-observation"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=6&amp;record=source-observation&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Source observation.</p>
 <ol>
-<li>Find what the database scan actually claimed and compare <strong>Observed at</strong> with <strong>Collected at</strong>.</li>
-<li>Open <strong>Collection run</strong>. Read its scope and evidence limit. Suppose tomorrow’s scan omits this dataset: list what you would investigate.</li>
+<li>Read <strong>Claim</strong>. Compare <strong>Observed at</strong> and <strong>Collected at</strong>. Which time tells you when the scan saw the column?</li>
+<li>Select <strong>Collected by the schema scan · Collection run</strong> under <strong>Related record types</strong>. Read <strong>Scope</strong> and <strong>Limits of this evidence</strong>. If the next scan omits this dataset, what would you check?</li>
 </ol>
 <p><strong>Think about it:</strong> Does this observation establish creation at 09:02, or would a later omission establish deletion?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>Neither follows. The scan saw <code>percentage</code> in <code>prod/parcels/delivery_summary</code> at 09:00 on 20 October; the catalogue received that observation two minutes later. Those times describe observation and receipt, not creation. A later omission needs investigation of scope, permissions and collection outcome. Keep the last observation visible and mark current status unverified until deletion has supporting evidence; this map supplies no later scan or deletion record.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

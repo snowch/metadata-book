@@ -1439,7 +1439,8 @@
           "value": "Purpose change, role change or approval expiry"
         }
       ],
-      "interpretation": "The decision connects an allowed use to responsible people and required controls. Effective grants and access tests are still needed to show enforcement.",
+      "interpretation": "Investigating delivery performance is the approved purpose. The record names the approved readers and the controls that should apply.",
+      "limit": "To verify enforcement, inspect effective grants and test the listed access paths with permitted and restricted accounts.",
       "related": [
         {
           "target": "dataset",
@@ -1506,7 +1507,8 @@
           "value": "Planned DataCite properties and versioned field dictionary"
         }
       ],
-      "interpretation": "This separate synthetic example describes the information needed for discovery and reuse. FAIR principles do not by themselves establish quality, publication approval or legal compliance.",
+      "interpretation": "This synthetic dataset has its own description for discovery, citation and reuse.",
+      "limit": "The identifier is pending and the license is proposed. Confirm the release and access conditions before relying on either. Approval for operational deliveries is a separate decision.",
       "related": [
         {
           "target": "dataset",

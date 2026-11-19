@@ -2,17 +2,6 @@
 
 The database describes the parcel company's tables. Its scheduler records executions of `build_delivery_summary`. Service Analytics maintains the definition used by that job. How can a discovery catalogue bring those descriptions together without confusing what each source establishes?
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-05/poster.jpg?v=cb0f9582ffbd" aria-label="Collecting metadata from several systems: narrated Chapter 5 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-05/captions.vtt?v=c57fc0fe5fcb" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f">Download the video</a> or <a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The catalogue records are invented; their sources and times remain separate. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">Read the transcript</a><a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" download>Download video <span>(6.3 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-05/deck.pdf?v=49824c8dbf8d">Download the slide deck</a><a href="../assets/video/chapter-05/chapter-05-silent.mp4?v=6acdf8cb2e20" download>Download the silent master</a></p>
-</figure>
 
 ## Identify the same thing consistently
 
@@ -65,20 +54,34 @@ If the company later stores delivery data in Hive, its metastore describes table
 - **Keep sources and times visible.** Occurrence, observation and collection may happen at different times.
 - **Collection does not assign responsibility.** Record the responsible team's agreement.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 42 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-05/poster.jpg?v=cb0f9582ffbd" aria-label="Collecting metadata from several systems: narrated Chapter 5 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-05/captions.vtt?v=c57fc0fe5fcb" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f">Download the video</a> or <a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The catalogue records are invented; their sources and times remain separate. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-05/transcript.txt?v=383f59dad326">Read the transcript</a><a href="../assets/video/chapter-05/chapter-05.mp4?v=91ac47b4cd8f" download>Download video <span>(6.3 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=5&amp;record=source-observation"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=5&amp;record=source-observation&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Source observation.</p>
 <ol>
-<li>Find the dataset identifier, source, observation time and collection time. Follow <strong>Collection run</strong> to compare its scope.</li>
-<li>Select <strong>Run</strong> and compare its date and identity with the scan. These are separate examples, not one joined execution.</li>
+<li>Read <strong>Dataset identifier</strong>, <strong>Source</strong>, <strong>Observed at</strong> and <strong>Collected at</strong>. Select <strong>Collected by the schema scan · Collection run</strong> under <strong>Related record types</strong>. What dataset does <strong>Scope</strong> cover?</li>
+<li>Open the <strong>Map</strong> tab, select <strong>Run</strong>, then select <strong>Example record</strong>. Compare <code>run_id</code> and <code>finished_at</code> with the scan’s dataset identifier and observation date. What further evidence would let you connect the examples?</li>
 </ol>
 <p><strong>Think about it:</strong> Can the scan establish which run produced the summary’s values, or when the column was created?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>The production database scan observed <code>percentage</code> in <code>prod/parcels/delivery_summary</code> at 09:00 on 20 October; collection followed at 09:02. Neither time is the column’s creation time. The map’s run <code>R1205</code> belongs to the 19 October incident. Matching record types or nearby cards cannot join those examples; identifying the producing run needs explicit execution and publication references.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

@@ -24,6 +24,7 @@ def _details(record, records):
 
     fields = record.get('fields', [])
     example = ''.join(f'<div><dt><code>{_e(field["name"])}</code></dt><dd>{value(field)}</dd></div>' for field in fields)
+    value_hint = '<p class="map-value-hint">Select a linked value to open the matching record.</p>' if any(field.get('target') in records for field in fields) else ''
     schema = ''.join(f'<tr><th scope="row"><code>{_e(field["name"])}</code></th><td><code>{_e(field["type"])}</code></td><td>{_e(field["description"])}</td></tr>' for field in fields)
     rows = record.get('rows')
     row_html = ''
@@ -38,15 +39,14 @@ def _details(record, records):
     )
     related_html = f'<div class="map-related"><h3>Related record types</h3><p>These associations may refer to different examples.</p><ul>{related}</ul></div>' if related else ''
     return f'''<div class="map-record-content" data-detail-record="{_e(record['id'])}">
-      <p class="map-eyebrow">Selected record type</p>
       <h2 tabindex="-1">{_e(record['label'])}</h2>
       <p class="map-record-description">{_e(record['description'])}</p>
       <p class="map-evidence">{_e(record['evidence'])}</p>
       <section class="map-example-panel"><h3>Example · {_e(record.get('exampleLabel', record['label']))}</h3>
-        <p class="map-value-hint">Linked values open the matching example record.</p>
+        {value_hint}
         <dl class="map-example-values">{example}</dl>{row_html}{code}
         <div class="map-reading"><h3>What this tells us</h3><p>{_e(record.get('interpretation', ''))}</p></div>
-        <div class="map-limit"><h3>What it does not tell us</h3><p>{_e(record.get('limit', ''))}</p></div>
+        <div class="map-limit"><h3>Limits of this evidence</h3><p>{_e(record.get('limit', ''))}</p></div>
       </section>
       <section class="map-fields-panel"><h3>Fields and types</h3>
         <p>Types describe this example; real systems may use different names and representations.</p>
@@ -75,7 +75,7 @@ def render_map(data):
     safe_json = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return f'''<section class="metadata-map" aria-label="Interactive metadata map">
       <a class="map-return" hidden></a>
-      <details class="map-explainer"><summary>What does this map show?</summary><p>The book’s metadata record types, grouped by purpose. The whole map keeps all record types and their relationships visible. Select a record to highlight its connections. Choose Example record to inspect its values, or Fields &amp; types to read the field definitions. Connections describe relationships, not processing order or a physical database schema. Each example says whether it is computed or illustrative.</p></details>
+      <details class="map-explainer"><summary>How to read the connections</summary><p>The arrows name relationships between types of records. Read the labels to see what two records have in common. Follow linked values in <strong>Example record</strong> for direct evidence, such as the output version a report read. Each example identifies its source and what the record can establish.</p></details>
       <div class="map-controls" hidden>
         <div class="map-filter"><label for="map-chapter-filter">Highlight chapter</label><select id="map-chapter-filter"><option value="all">Show all chapters</option>{chapter_options}</select></div>
       </div>
@@ -94,7 +94,7 @@ def render_map(data):
           <div class="map-viewport" tabindex="0" aria-label="Record map. Scroll to explore the diagram."><div class="map-scale-frame"><div class="map-canvas"><svg class="map-connections" aria-hidden="true"></svg><div class="map-focus-nodes"></div></div></div></div>
           <details class="map-relationship-text" hidden><summary>Connections as text</summary><div class="map-relationship-summary" hidden></div></details>
           <section class="map-overview" aria-label="All metadata record types"><h2>Explore another record type</h2><div class="map-groups">{''.join(groups)}</div></section>
-          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Arrows name relationships. Rust highlights the selected record’s connections.</span></p>
+          <p class="map-legend" hidden><span class="map-legend-selected">Selected record</span><span class="map-legend-chapter">Chapter highlight</span><span>Highlighted arrows connect the selected record. Each arrow names the relationship.</span></p>
         </div>
         <aside class="map-detail" id="map-record-panel" aria-label="Selected record details" hidden></aside>
       </div>

@@ -2,17 +2,6 @@
 
 Service Analytics measures the percentage of **completed deliveries that arrived on time**. It excludes parcels still awaiting delivery. At 13:00, its Delivery performance report shows **100%**. What produced that number?
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 25 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-03/poster.jpg?v=98467a5ac321" aria-label="Where did this number come from?: narrated Chapter 3 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-03/captions.vtt?v=316dcf66edc3" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The incident is invented and assumes complete records at the input capture time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" download>Download video <span>(5.2 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-03/deck.pdf?v=34af3086f07e">Download the slide deck</a><a href="../assets/video/chapter-03/chapter-03-silent.mp4?v=25d119433891" download>Download the silent master</a></p>
-</figure>
 
 ## Lineage and provenance
 
@@ -121,20 +110,34 @@ The records now connect the report to a specific calculation and its inputs. Tha
 - **Follow the report to its saved output, then to the producing run.** The matching identifiers connect the records.
 - **Check the run's inputs and code.** Today's data and calculation may differ from those that produced the result.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 25 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-03/poster.jpg?v=98467a5ac321" aria-label="Where did this number come from?: narrated Chapter 3 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-03/captions.vtt?v=316dcf66edc3" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04">Download the video</a> or <a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The incident is invented and assumes complete records at the input capture time. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-03/transcript.txt?v=b7ca98edb418">Read the transcript</a><a href="../assets/video/chapter-03/chapter-03.mp4?v=09b4648a7b04" download>Download video <span>(5.2 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=3&amp;record=report-refresh"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=3&amp;record=report-refresh&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Report refresh.</p>
 <ol>
-<li>Find refresh <code>F1300</code>’s <code>output_version</code>, then follow that value to <strong>Published output</strong>. Compare refresh and publication times.</li>
-<li>Follow the output’s <code>run_id</code> to <strong>Run</strong>. Note the input snapshot and code version it used.</li>
+<li>In <strong>Report refresh</strong>, read <code>refreshed_at</code>. Select <code>summary-R1205</code> in the <code>output_version</code> row. How many minutes separate the refresh and <code>published_at</code>?</li>
+<li>Select <code>R1205</code> in the output’s <code>run_id</code> row. Read the run’s <code>input_snapshot_id</code> and <code>code_version</code>.</li>
 </ol>
 <p><strong>Think about it:</strong> Which execution explains the displayed 100%, and would the current deliveries table be enough to reproduce it?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p><code>F1300</code> read <code>summary-R1205</code>, published at 12:05 and refreshed at 13:00. Its producing execution was <code>R1205</code>, using <code>S1205</code> and <code>completed-v1</code>. Reproduction needs the retained input rows and executed code, not just today’s table or the version labels. The matching identifiers establish the chain behind this particular result.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

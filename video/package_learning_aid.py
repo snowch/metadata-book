@@ -22,8 +22,10 @@ if '<figure class="chapter-video"' not in s:
     base=f'../assets/video/chapter-{n}/'
     urls={f:base+f+'?v='+sha(dest/f)[:12] for f in [f'chapter-{n}.mp4','captions.vtt','transcript.txt','poster.jpg']}
     movie=urls[f'chapter-{n}.mp4'];poster=urls['poster.jpg'];vtt=urls['captions.vtt'];transcript=urls['transcript.txt']
-    embed=f'''<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">{duration}</span></figcaption>
+    embed=f'''<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">{duration}</span></figcaption>
 <video controls playsinline preload="none" width="1280" height="720" poster="{poster}" aria-label="{title}: narrated Chapter {int(n)} learning aid" aria-describedby="chapter-video-note">
 <source src="{movie}" type="video/mp4">
 <track kind="captions" src="{vtt}" srclang="en" label="English">
@@ -31,15 +33,18 @@ Your browser cannot play this video. <a href="{movie}">Download the video</a> or
 </video>
 <p class="chapter-video-note" id="chapter-video-note">{note}</p>
 <p class="chapter-video-links"><a href="{transcript}">Read the transcript</a><a href="{movie}" download>Download video <span>({media['bytes']/1e6:.1f} MB)</span></a></p>
-</figure>'''
-    before,separator,after=s.partition('\n## ')
-    if not separator:raise ValueError('No section boundary for the new chapter video')
-    s=before.rstrip()+'\n\n'+embed+'\n'+separator+after
+</figure>
+</details>'''
+    map_activity = '<aside class="reader-action" aria-labelledby="explore-metadata-map">'
+    if map_activity in s:
+        s = s.replace(map_activity, embed + '\n\n' + map_activity, 1)
+    else:
+        s = s.rstrip() + '\n\n' + embed + '\n'
 s=re.sub(r'(<span class="chapter-video-duration">).*?(</span>)',lambda m:m[1]+duration+m[2],s)
 for f in [f'chapter-{n}.mp4','captions.vtt','transcript.txt','poster.jpg']:
     s=re.sub(re.escape(f)+r'\?v=[a-f0-9]+',f+'?v='+sha(dest/f)[:12],s)
 s=re.sub(r'Download video <span>\([\d.]+ MB\)</span>',f'Download video <span>({media["bytes"]/1e6:.1f} MB)</span>',s)
-s=s.replace('Watch the chapter','Practise the chapter').replace('explainer" aria-describedby','learning aid" aria-describedby')
+s=s.replace('explainer" aria-describedby','learning aid" aria-describedby')
 page.write_text(s)
 # Retain an accurate local preview for existing and newly added chapters.
 p=chapter/'watch.html'
