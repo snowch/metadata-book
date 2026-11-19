@@ -172,6 +172,7 @@ with sync_playwright() as p:
    page.locator('.map-view-record').click()
    assert page.locator('.map-detail h2').inner_text()=='Dataset'
    assert page.locator('.map-selection-label').is_visible()
+   expect(page.locator('#map-chapter-filter')).to_be_hidden()
    page.locator('button[data-pane="example"]').press('ArrowRight')
    expect(page.locator('button[data-pane="fields"]')).to_be_focused()
    assert page.locator('.map-detail .map-fields-panel').is_visible()
@@ -186,6 +187,7 @@ with sync_playwright() as p:
    expect(page.locator('button[data-pane="fields"]')).to_be_focused()
    page.locator('.map-back-to-records').click()
    expect(page.locator('[data-focus-record="dataset"]')).to_be_focused()
+   expect(page.locator('#map-chapter-filter')).to_be_visible()
    page.reload();page.wait_for_selector('.metadata-map.is-ready')
    assert page.locator('.metadata-map').get_attribute('data-view')=='whole'
    assert page.locator('button[data-view]').count()==0
