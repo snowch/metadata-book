@@ -26,7 +26,11 @@
   const status = root.querySelector('.map-status');
   const summary = root.querySelector('.map-relationship-summary');
   const zoomControls = root.querySelector('.map-zoom-controls');
-  const defaults = {1: 'metric-definition', 2: 'column', 3: 'report-refresh', 4: 'report-refresh', 5: 'source-observation', 6: 'source-observation', 7: 'quality-check', 8: 'decision'};
+  const defaults = {
+    1: 'metric-definition', 2: 'column', 3: 'report-refresh', 4: 'report-refresh',
+    5: 'source-observation', 6: 'source-observation', 7: 'quality-check', 8: 'decision',
+    9: 'run', 10: 'data-contract', 11: 'access-policy',
+  };
   const initial = new URLSearchParams(window.location.search);
   const origin = chapters.has(initial.get('chapter')) ? initial.get('chapter') : null;
   let chapter = chapters.has(initial.get('focus')) ? initial.get('focus') : initial.get('focus') === 'all' ? 'all' : origin || 'all';

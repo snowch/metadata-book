@@ -2,17 +2,6 @@
 
 The scheduler knows that `build_delivery_summary` finished. The catalogue needs that history, and a report investigator needs to retrieve it. Sharing metadata requires a common description, a delivery route and an agreement about identifiers. A compatible JSON document alone does not connect the systems.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 23 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-09/poster.jpg?v=e886864bc11f" aria-label="Sharing metadata between systems: narrated Chapter 9 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-09/captions.vtt?v=26f2240b9ca0" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a">Download the video</a> or <a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">Read the transcript</a><a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" download>Download video <span>(5.4 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-09/deck.pdf?v=630f6c209426">Download the slide deck</a><a href="../assets/video/chapter-09/chapter-09-silent.mp4?v=28d27fc2cd91" download>Download the silent master</a></p>
-</figure>
 
 ## Where the records travel
 
@@ -130,20 +119,34 @@ OpenLineage supplies the lineage objects and event vocabulary. [CloudEvents](htt
 - **Read events as sourced claims.** Retain additional evidence needed to explain a particular result.
 - **Separate event models, envelopes and query APIs.** Each solves a different part of sharing metadata.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 23 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-09/poster.jpg?v=e886864bc11f" aria-label="Sharing metadata between systems: narrated Chapter 9 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-09/captions.vtt?v=26f2240b9ca0" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a">Download the video</a> or <a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-09/transcript.txt?v=a8e00d920bb7">Read the transcript</a><a href="../assets/video/chapter-09/chapter-09.mp4?v=55fbded07c9a" download>Download video <span>(5.4 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=9&amp;record=run"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=9&amp;record=run&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Run.</p>
 <ol>
-<li>Find <code>run_id</code> and <code>job_name</code>. Follow the job reference and check that its name matches.</li>
-<li>Look at the fields that identify the run and job. Does this example include a job namespace or an OpenLineage run UUID?</li>
+<li>Read <code>run_id</code> and <code>job_name</code>. Select <code>build_delivery_summary</code> in <code>job_name</code> and check the job’s name.</li>
+<li>Use <strong>Fields &amp; types</strong> to see the job’s identifiers. Compare the map’s <code>run_id</code> and <code>job_name</code> with <code>run.runId</code> and <code>job.namespace</code> in <a href="#send-a-run-event">Send a run event</a>.</li>
 </ol>
 <p><strong>Think about it:</strong> Would sending these short identifiers alone reliably identify the execution in another system?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>No. Names such as <code>build_delivery_summary</code> can occur in different schedulers. The receiver needs the namespaced job identity and an explicit mapping from <code>R1205</code> to the exchange run UUID. Those mappings are additional metadata; this map example does not contain them. A shared format also does not establish transport or access permission.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

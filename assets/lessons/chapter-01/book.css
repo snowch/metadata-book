@@ -2,5 +2,4 @@
 .lesson-lab { margin: 2rem 0; }
 .lesson-lab iframe { display: block; width: 100%; height: 780px; border: 1px solid var(--line); border-radius: 12px; background: #fafcff; }
 .lesson-lab p { font-size: 1rem; }
-.lesson-outcome { padding: 1.1rem 1.4rem; border-left: 4px solid var(--positive); background: var(--wash); }
 @media print { .lesson-lab iframe { display: none; } }

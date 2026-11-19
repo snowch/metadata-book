@@ -2,7 +2,7 @@
 
 **Metadata describes data’s structure, meaning, origin and use.** Across this book, the practical task has been to connect a question to the records that can answer it—and make clear what those records leave uncertain.
 
-Use this page to revisit the eleven chapters or explain their lessons in your own words. Each chapter link returns to its examples, video and practice activity. The company and records are invented; the later policy decisions, platform assessment and research release are illustrative, not reports of a deployed system.
+Use this page to revisit the eleven chapters or explain their lessons in your own words. Each chapter link returns to its worked examples, video recap and map activity. The book uses an invented parcel company and records. The platform assessment, policy decisions and research release are teaching scenarios.
 
 ## Understand and explain a result
 
@@ -72,7 +72,7 @@ Refreshing the completed-delivery report can address its age; it does not change
 
 ## Check what you can explain
 
-Before opening the answers, explain these to a colleague or write a sentence for each. Try again later without rereading, then apply the questions to a report you know.
+Explain these to a colleague or write a sentence for each in your own notes. Then open **Compare with the worked answers** below. Try again later without rereading and apply the questions to a report you know.
 
 1. Why can a report be fresh and correctly calculated yet unsuitable for a meeting?
 2. What is missing if you have a dependency diagram and a successful run status, but need to explain a displayed number?
@@ -81,7 +81,7 @@ Before opening the answers, explain these to a colleague or write a sentence for
 5. Why does the planned public synthetic dataset not authorise sharing operational deliveries?
 
 <details markdown="1">
-<summary>Check your answers</summary>
+<summary>Compare with the worked answers</summary>
 
 1. Its definition may answer a different question. Completed deliveries exclude the unfinished parcel; the meeting needs all deliveries due. Freshness and arithmetic do not choose the right population.
 2. You need the actual refresh-to-output-to-run links, retained input and code, and the definition used to judge the calculation. A dependency is a possible route; success does not prove the right values reached the reader.

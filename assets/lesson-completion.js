@@ -11,20 +11,26 @@
   const unsaved = new Map();
   const read = id => {
     if (unsaved.has(id)) return unsaved.get(id);
-    try { return localStorage.getItem(prefix + id) === "true"; }
-    catch { return false; }
+    try {
+      const value = localStorage.getItem(prefix + id);
+      return value === null ? undefined : value === "true";
+    } catch { return null; }
   };
   function render() {
     for (const link of links) {
-      const completed = read(link.dataset.lessonLink);
+      const completed = read(link.dataset.lessonLink) === true;
       link.classList.toggle("is-complete", completed);
       link.querySelector(".lesson-done").hidden = !completed;
     }
     if (checkbox) {
-      checkbox.checked = read(checkbox.dataset.lessonId);
-      status.textContent = unsaved.has(checkbox.dataset.lessonId)
-        ? "Progress could not be saved in this browser."
-        : "Saved in this browser.";
+      const id = checkbox.dataset.lessonId;
+      const value = read(id);
+      checkbox.checked = value === true;
+      if (unsaved.has(id)) status.textContent = "Progress could not be saved in this browser.";
+      else if (value === null) status.textContent = "Saved progress could not be read in this browser.";
+      else if (value === true) status.textContent = "Reading mark saved in this browser.";
+      else if (value === false) status.textContent = "Reading mark cleared in this browser.";
+      else status.textContent = "";
     }
   }
   if (checkbox) {

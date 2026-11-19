@@ -26,6 +26,7 @@
 .map-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: .6rem; }
 .map-tools .map-zoom-controls { margin: 0; }
 .map-status { color: var(--muted); font-size: .74rem; min-height: 1.7em; margin: .6rem 0; }
+.metadata-map:is([data-pane="example"], [data-pane="fields"]) :is(.map-explainer, .map-controls, .map-status) { display: none; }
 .map-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 400px); gap: 1.25rem; align-items: start; }
 .map-explorer, .map-detail { min-width: 0; }
 .map-section-tabs { display: flex; align-items: end; gap: .2rem; padding: 0; margin-top: 1rem; border-bottom: 1px solid var(--line); scroll-margin-top: .5rem; }
@@ -85,7 +86,6 @@
 .map-legend-chapter::before { background: var(--map-positive); }
 .map-back-to-records { display: none; }
 .map-detail { border: 1px solid var(--line); background: var(--surface); border-top: 3px solid var(--accent); border-radius: 8px; padding: 1.25rem; position: sticky; top: 1rem; max-height: calc(100dvh - 2rem); overflow-y: auto; scrollbar-width: thin; scroll-margin-top: 1rem; }
-.map-eyebrow { color: var(--accent); font-size: .63rem; letter-spacing: .09em; text-transform: uppercase; margin: 0 0 .6rem; }
 .map-record-content h2 { font-size: 1.9rem; margin: 0 0 .75rem; }
 .map-record-content h3 { font: 600 .75rem/1.5 var(--sans); margin: 1.2rem 0 .5rem; }
 .map-record-description { font: 1.05rem/1.45 var(--serif); margin: .45rem 0 !important; }

@@ -2,17 +2,6 @@
 
 Metadata helps someone choose a dataset, judge a result or prepare a change. Each decision needs different evidence: a definition explains what a measure counts; a quality check result describes particular records; a dependency points to a possible consumer.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 19 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-07/poster.jpg?v=27aac1e9fd80" aria-label="Using metadata to make decisions: narrated Chapter 7 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-07/captions.vtt?v=41664263dded" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed">Download the video</a> or <a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">Read the transcript</a><a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" download>Download video <span>(5.3 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-07/deck.pdf?v=2e3f34f4c5e1">Download the slide deck</a><a href="../assets/video/chapter-07/chapter-07-silent.mp4?v=8ed3b6a42006" download>Download the silent master</a></p>
-</figure>
 
 ## Find the measure that answers the question
 
@@ -127,20 +116,34 @@ Recorded dependencies may omit a monthly report or downloaded spreadsheet. Recor
 - **Dependencies identify places to investigate.** Collection may miss consumers.
 - **Leave an actionable decision.** Name the evidence gap, next action and owner.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 19 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-07/poster.jpg?v=27aac1e9fd80" aria-label="Using metadata to make decisions: narrated Chapter 7 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-07/captions.vtt?v=41664263dded" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed">Download the video</a> or <a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-07/transcript.txt?v=23b4b254a681">Read the transcript</a><a href="../assets/video/chapter-07/chapter-07.mp4?v=cadf513d9eed" download>Download video <span>(5.3 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=7&amp;record=quality-check"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=7&amp;record=quality-check&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Quality check result.</p>
 <ol>
-<li>Find the checked input, identifier rule and observed identifier count. Distinguish the recorded result from the rule’s expectation.</li>
-<li>Select <strong>Decision</strong>. Read the chosen rule, current gap and next action with its owner.</li>
+<li>Read <strong>Source</strong> and <strong>Identifier check</strong>. Select <code>delivery-ids-unique-v1</code> in <strong>Identifier rule</strong> to compare the observed count with <strong>Expectation</strong>.</li>
+<li>Open the <strong>Map</strong> tab, select <strong>Decision</strong>, then select <strong>Example record</strong>. Read <strong>Decision</strong>, <strong>Current gap</strong> and <strong>Next action and owner</strong>.</li>
 </ol>
 <p><strong>Think about it:</strong> Do the passed checks make the meeting’s all-due publication ready to use?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>No. The review covers <code>decision-input-1300</code>: four rows and four distinct identifiers satisfy <code>delivery-ids-unique-v1</code>. That supports uniqueness for this input. The meeting chooses all-due, expecting 50.0%, but its decision still has no verified all-due publication attached. The reporting engineer must verify the calculation and attach the output identifier and report refresh evidence. Passing checks does not establish the denominator or delivery to the report.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

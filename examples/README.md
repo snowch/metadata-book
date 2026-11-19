@@ -1,6 +1,6 @@
 # Reproducing the worked results
 
-The book is readable without execution. To check its SQLite results, run this from the repository root:
+The chapter pages include the worked outputs. To reproduce them, open a terminal in a local copy of this repository and run the following with Python 3.11 or later:
 
 ```sh
 python3 scripts/verify_examples.py
@@ -10,7 +10,7 @@ This uses Python's standard-library SQLite engine in memory. It creates no persi
 
 The four delivery records are invented. All timestamps share the format `YYYY-MM-DD HH:MM` and are UTC. At the 13:00 snapshot, two deliveries are on time, one is late and one is not recorded as completed. A null means no recorded completion in this fixture; this is a scenario assumption, not a universal interpretation of nulls.
 
-The verifier checks the catalogue queries and view result printed in Chapter 2, both denominators from Chapter 1, and the empty-input behaviour.
+Find the line beginning `Verified with SQLite`. Compare 66.7% and 50.0% with the completed-delivery and all-due results in Chapter 1. The check also verifies the schema, earlier 100.0% result and empty input.
 
 ## SQLite types and timestamps
 
@@ -26,13 +26,11 @@ Ordinary SQLite tables use type affinity rather than strict type enforcement. SQ
 python3 examples/lineage/simulate.py
 ```
 
-It computes the earlier 100% result, injects a publication failure, and then recovers to 66.7%. The earlier output and report refresh remain available after recovery. The same verifier checks those records, rollback after failure, replay using retained code and inputs, and rejection of missing evidence.
+In **Report refreshes**, compare the output versions and percentages for `F1300` and `F1312`. They identify the earlier 100.0% and recovered 66.7% results. In **Runs**, look for the injected failure in `R1230` and compare it with the successful recovery `R1310`. The verifier checks the rollback, replay from retained evidence and rejection of missing evidence.
 
 The incident's times and fault are scripted. The program demonstrates the evidence and publication behaviour locally; it does not connect to a live scheduler, reporting tool, dbt or OpenLineage service. It does not send alerts or enforce the simulation reference's suggested retention policy.
 
 Chapters 5–7 use illustrative collection records and decisions, rather than records captured from a running catalogue. Chapter 8 shows an illustrative pilot assessment and decision. These are invented teaching records, not reported results from testing DataHub or OpenMetadata.
-
-The SQL example runs natively for verification. A browser WASM database is not included; that would be a separate optional reading feature, subject to measuring its usefulness and loading cost.
 
 ## Sharing and governance examples
 

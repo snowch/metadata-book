@@ -2,17 +2,6 @@
 
 A reader can find the right delivery dataset and still lack permission to use it for a particular purpose. Metadata should explain that boundary, identify who decides, and connect the decision to controls that enforce it. The same records can help another reader reuse an approved dataset without guessing its meaning.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 40 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-11/poster.jpg?v=a8887c04e13a" aria-label="Controlling access and enabling reuse: narrated Chapter 11 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-11/captions.vtt?v=40392cd03c43" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74">Download the video</a> or <a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">Read the transcript</a><a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" download>Download video <span>(6.5 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-11/deck.pdf?v=cf813e1f6304">Download the slide deck</a><a href="../assets/video/chapter-11/chapter-11-silent.mp4?v=fee93e250fd2" download>Download the silent master</a></p>
-</figure>
 
 ## Decide who may do what
 
@@ -89,20 +78,34 @@ FAIR does not require public access: authentication and a documented approval ro
 - **Retain by purpose.** State what deletion prevents you from reproducing.
 - **Make reuse explicit.** Identifiers, versions, licenses and provenance help; FAIR alone grants no permission.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 40 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-11/poster.jpg?v=a8887c04e13a" aria-label="Controlling access and enabling reuse: narrated Chapter 11 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-11/captions.vtt?v=40392cd03c43" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74">Download the video</a> or <a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-11/transcript.txt?v=0c1cd8dc174c">Read the transcript</a><a href="../assets/video/chapter-11/chapter-11.mp4?v=bd398765fa74" download>Download video <span>(6.5 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=11&amp;record=access-policy"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=11&amp;record=access-policy&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Access decision.</p>
 <ol>
-<li>Read the dataset, permitted purpose, readers and controls. Distinguish the recorded approval from evidence that permissions are enforced.</li>
-<li>Select <strong>Reuse description</strong>. Compare its dataset version, identifier status and proposed license with the access decision’s operational dataset.</li>
+<li>Read <strong>Dataset</strong>, <strong>Permitted purpose</strong>, <strong>Readers</strong> and <strong>Controls</strong>. Which controls would you test to verify the recorded approval is enforced?</li>
+<li>Open the <strong>Map</strong> tab, select <strong>Reuse description</strong>, then select <strong>Example record</strong>. Compare <strong>Dataset version</strong>, <strong>Identifier status</strong> and <strong>License and access</strong> with the access decision’s operational dataset.</li>
 </ol>
 <p><strong>Think about it:</strong> Does the planned public research release authorise sharing the operational deliveries table?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>No. The access decision concerns restricted <code>deliveries</code> records for approved Delivery Operations analysts investigating performance. Grants and access tests are still needed. The reuse description concerns a separate synthetic dataset, version 1.0, with a persistent identifier pending and proposed CC BY 4.0 access. It is a planned release, not a published deposit or permission to export operational records. Purpose, dataset identity and release status must remain explicit.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

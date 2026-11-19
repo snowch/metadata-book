@@ -4,17 +4,6 @@ A definition can be correct today and unsuitable tomorrow. A producer may add a 
 
 Chapter 7 raised a possible change to `promised_at`: replacing the original customer promise with the latest revised promise. This chapter develops that **separate, hypothetical scenario**. The records below illustrate a review and an approved alternative; they are not changes made to the book's database or additional incident results.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-10/poster.jpg?v=792741c650da" aria-label="Managing definitions and dataset changes: narrated Chapter 10 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-10/captions.vtt?v=97ecb7c6847e" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925">Download the video</a> or <a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">Read the transcript</a><a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" download>Download video <span>(6.0 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-10/deck.pdf?v=0370f722009d">Download the slide deck</a><a href="../assets/video/chapter-10/chapter-10-silent.mp4?v=d35a8ce4394c" download>Download the silent master</a></p>
-</figure>
 
 ## Review meaning as well as structure
 
@@ -75,20 +64,34 @@ Whether to recalculate history is a policy decision for the definition owner and
 - **Version agreements and publications explicitly.** Dataset identity does not describe every change.
 - **Preserve accepted ownership and historical decisions.** Restatement requires a traceable revised publication.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-10/poster.jpg?v=792741c650da" aria-label="Managing definitions and dataset changes: narrated Chapter 10 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-10/captions.vtt?v=97ecb7c6847e" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925">Download the video</a> or <a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-10/transcript.txt?v=8841759a1c87">Read the transcript</a><a href="../assets/video/chapter-10/chapter-10.mp4?v=4a33c7d44925" download>Download video <span>(6.0 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=10&amp;record=data-contract"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=10&amp;record=data-contract&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Data contract.</p>
 <ol>
-<li>Find <code>deliveries-v1</code>’s meaning of <code>promised_at</code> and its change agreement rule.</li>
-<li>Find the teams named in the agreement. Identify who must agree before the meaning changes.</li>
+<li>Read <strong>Meaning</strong> and <strong>Changes</strong> in <code>deliveries-v1</code>. Which customer promise does <code>promised_at</code> record?</li>
+<li>Find <strong>Consumers</strong>. Which teams must agree before the field’s meaning changes?</li>
 </ol>
 <p><strong>Think about it:</strong> Could a producer start putting revised delivery promises into this column while keeping its name and type?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>That would violate the recorded agreement. <code>deliveries-v1</code> specifies the original customer promise and requires agreement with both consuming teams before a new contract version. An unchanged schema does not establish that the meaning remains compatible. The contract records the requirement; it does not prove that approval, validation or release has happened.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

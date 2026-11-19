@@ -4,17 +4,6 @@ A database keeps descriptions of its tables so it can run queries. Those records
 
 The examples use SQLite, with the four deliveries from Chapter 1 stored in a table named `deliveries`. Each row represents one delivery. The [source SQL](../examples/deliveries.sql) contains the setup and saved query. Every result needed to follow the explanation is shown here.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 18 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-02/poster.jpg?v=8f4c3ce03df7" aria-label="What a database already knows: narrated Chapter 2 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-02/captions.vtt?v=f21734507ae5" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" download>Download video <span>(5.1 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-02/deck.pdf?v=77d722f97e14">Download the slide deck</a><a href="../assets/video/chapter-02/chapter-02-silent.mp4?v=0af41ab0ed49" download>Download the silent master</a></p>
-</figure>
 
 ## Inspect the columns
 
@@ -126,20 +115,34 @@ This view recalculates when read. [Chapter 3](03-following-lineage.md) follows a
 - **Read the calculation to see what it counts.** The completed-delivery view excludes unfinished deliveries, so it cannot answer the all-due question.
 - **Catalogues serve different purposes.** Database catalogues help software find and read data; discovery catalogues connect technical records with definitions, owners and lineage. These roles overlap.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 18 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-02/poster.jpg?v=8f4c3ce03df7" aria-label="What a database already knows: narrated Chapter 2 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-02/captions.vtt?v=f21734507ae5" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9">Download the video</a> or <a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The delivery example is invented and assumes complete records at the measurement time. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-02/transcript.txt?v=431ab4f0eac2">Read the transcript</a><a href="../assets/video/chapter-02/chapter-02.mp4?v=36f2944bf1b9" download>Download video <span>(5.1 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=2&amp;record=column"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=2&amp;record=column&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Column.</p>
 <ol>
-<li>Find <code>delivered_at</code>’s declared type and <code>notnull</code> value. What does the database permit?</li>
-<li>Select <strong>Saved query</strong>. Compare its filter and denominator with <strong>Metric definition</strong>.</li>
+<li>In <strong>Column</strong>, find <code>delivered_at</code>’s <code>type</code> and <code>notnull</code>. What can the database store?</li>
+<li>Open the <strong>Map</strong> tab, select <strong>Saved query</strong>, then select <strong>Example record</strong>. Read <strong>Filter</strong> and <strong>Denominator</strong>. Compare them with <strong>Denominator</strong> in <strong>Metric definition</strong>, reached from the map in the same way.</li>
 </ol>
 <p><strong>Think about it:</strong> Can the saved query implement the all-due definition, and does the column declaration explain a missing delivery time?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p><code>TEXT</code> declares a text field; <code>notnull: 0</code> allows <code>NULL</code>, SQL’s marker for a missing value. They do not explain its meaning. The saved query filters out those rows with <code>delivered_at IS NOT NULL</code> and counts completed deliveries; the all-due definition includes unfinished parcels. The schema describes allowed structure; the filter reveals the calculation’s narrower population.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

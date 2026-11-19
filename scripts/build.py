@@ -97,7 +97,6 @@ BOOK_MARK = '''<svg class="brand-mark" width="28" height="32" viewBox="0 0 28 32
 
 
 LINK_ARROW = '<svg class="external-arrow" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 9 6-6M3 3h6v6" stroke="currentColor" stroke-width="1.2"/></svg>'
-GITHUB_STAR = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.6l6.3-.9L12 3Z"/></svg>'
 
 
 class Document(HTMLParser):
@@ -212,7 +211,7 @@ def build():
         if source in lesson_ids:
             pagination.append(f'''<div class="lesson-completion" hidden>
 <label for="lesson-done"><input type="checkbox" id="lesson-done" data-lesson-id="{lesson_ids[source]}" aria-describedby="lesson-save-status"> Mark lesson as done</label>
-<span id="lesson-save-status" role="status">Saved in this browser.</span>
+<span id="lesson-save-status" role="status"></span>
 </div>''')
         if source in reading_order:
             index = reading_order.index(source)
@@ -230,31 +229,27 @@ def build():
         toc = f'<details class="page-contents"><summary>On this page</summary>{converter.toc}</details>' if converter.toc_tokens and not is_map else ""
         page_type = "map" if is_map else "introduction" if source == Path("book.md") else "chapter" if source in chapters else "reference"
         chapter_number = f'{chapters.index(source) + 1:02}' if source in chapters else ""
-        chapter_meta = f"CHAPTER {chapter_number}" if chapter_number else "A PRACTICAL GUIDE" if page_type == "introduction" else "REFERENCE"
-        decoration = f'<span class="chapter-number" aria-hidden="true">{chapter_number}</span>' if chapter_number else ""
         map_href = relative(Path("metadata-map.html"), page)
         if source in chapters:
             map_href += f"?chapter={chapters.index(source) + 1}"
         if is_map:
             map_href = relative(Path('index.html'), page) + '#contents'
         map_current = ' aria-label="Close metadata map" title="Close metadata map"' if is_map else ''
-        map_close = '<span aria-hidden="true"> ×</span>' if is_map else ''
+        map_label = "Close metadata map" if is_map else "Metadata map"
         map_assets = (
             f'<link rel="stylesheet" href="{asset_url("assets/metadata-map.css", page)}">'
             f'<script defer src="{asset_url("assets/metadata-map-arrows.js", page)}"></script>'
             f'<script defer src="{asset_url("assets/metadata-map.js", page)}"></script>'
         ) if is_map else ""
-        if is_map:
-            chapter_meta = "VISUAL INDEX"
-        elif source == Path("summary.md"):
-            chapter_meta = "BOOK SUMMARY"
         sidebar = "" if is_map else (
-            f'<aside class="book-sidebar"><p class="sidebar-label">THE BOOK</p>'
-            f'<p class="sidebar-title">{escape(book_title)}</p>'
+            '<aside class="book-sidebar"><p class="sidebar-title">Chapters</p>'
             f'<nav aria-label="Book chapters"><ol>{"".join(nav)}</ol></nav></aside>'
         )
         lesson_style = f'<link rel="stylesheet" href="{asset_url("assets/lessons/chapter-01/book.css", page)}"><script defer src="{asset_url("assets/lessons/chapter-01/embed.js", page)}"></script>' if source == Path("chapters/01-why-metadata.md") else ""
-        reading_badge = "" if is_map else f'<span class="meta-separator" aria-hidden="true">/</span><span class="reading-time">{reading_time} min read</span>'
+        chapter_detail = (
+            f'<p class="chapter-meta"><span>Chapter {int(chapter_number)}</span>'
+            f'<span class="meta-separator" aria-hidden="true">·</span><span class="reading-time">{reading_time} min read</span></p>'
+        ) if chapter_number else ""
         html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -271,12 +266,12 @@ def build():
 </head>
 <body class="page-{page_type}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><span class="header-note">A field guide to data</span><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>Metadata map{map_close}</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a><a class="header-star" href="https://github.com/snowch/metadata-book" target="_blank" rel="noopener noreferrer" aria-label="Star Metadata systems on GitHub" title="Star Metadata systems on GitHub">{GITHUB_STAR}<span class="star-label">Star on GitHub</span></a></header>
+<header class="site-header"><a class="brand" href="{relative(Path('index.html'), page)}">{BOOK_MARK}<span class="brand-name">{escape(book_title)}</span></a><a class="header-map" href="{escape(map_href, quote=True)}"{map_current}>{map_label}</a><a class="header-link" href="{relative(Path('index.html'), page)}#contents">Contents {LINK_ARROW}</a></header>
 <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Book chapters on mobile"><ol>{''.join(nav)}</ol></nav></details>
 <div class="book-layout">
   {sidebar}
   <main id="main" tabindex="-1">
-    <article><header class="chapter-header">{decoration}<p class="chapter-meta"><span>{chapter_meta}</span>{reading_badge}</p><h1>{escape(clean_title(title))}</h1></header>
+    <article><header class="chapter-header">{chapter_detail}<h1>{escape(clean_title(title))}</h1></header>
     {toc}
     <div class="prose">{body}</div>
     </article>

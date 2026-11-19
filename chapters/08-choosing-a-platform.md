@@ -2,17 +2,6 @@
 
 A metadata platform should help a team complete a task it currently struggles with. Start with a small collection whose answers are known, then judge what a reader can establish.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 28 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-08/poster.jpg?v=5d9f1dd3d417" aria-label="Choosing and operating a metadata platform: narrated Chapter 8 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-08/captions.vtt?v=ccc2bcbc1967" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9">Download the video</a> or <a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses the approved synthetic Q1 voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">Read the transcript</a><a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" download>Download video <span>(5.7 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-08/deck.pdf?v=8f7058700145">Download the slide deck</a><a href="../assets/video/chapter-08/chapter-08-silent.mp4?v=3523972d685a" download>Download the silent master</a></p>
-</figure>
 
 ## Define a bounded pilot
 
@@ -73,20 +62,34 @@ If a catalogue trial becomes worthwhile, verify exact source and version support
 - **Budget for ongoing ownership and freshness.** Maintenance continues after setup.
 - **Choose the smallest arrangement that passes.** Expand only with evidence that it works and reduces effort.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 28 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-08/poster.jpg?v=5d9f1dd3d417" aria-label="Choosing and operating a metadata platform: narrated Chapter 8 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-08/captions.vtt?v=ccc2bcbc1967" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9">Download the video</a> or <a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The examples are invented. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-08/transcript.txt?v=0a100e85ac32">Read the transcript</a><a href="../assets/video/chapter-08/chapter-08.mp4?v=1b90d6a3b3a9" download>Download video <span>(5.7 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=8&amp;record=collection-run"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=8&amp;record=collection-run&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Collection run.</p>
 <ol>
-<li>Read the collector’s scope and claim. Name one supported fact and one missing kind of evidence.</li>
-<li>Select <strong>Responsible team</strong>. Compare its definition responsibility with the chapter’s assignment of collection maintenance to the reporting engineer.</li>
+<li>Read <strong>Scope</strong> and <strong>Collected claim</strong>. Which structural fact does the scan support? Which records would you need to explain a particular report result?</li>
+<li>Open the <strong>Map</strong> tab, select <strong>Responsible team</strong>, then select <strong>Example record</strong>. Compare <strong>Definition responsibility</strong> with who maintains collection in <a href="#budget-for-continuing-work">Budget for continuing work</a>.</li>
 </ol>
 <p><strong>Think about it:</strong> Would installing this collector establish complete incident coverage or transfer definition ownership to its operator?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>No. This scan supports a structural observation about <code>prod/parcels/delivery_summary</code>: <code>percentage</code> exists. It does not supply the run-to-output-to-refresh chain or establish a complete scan. Delivery Operations confirms the all-due denominator and original-promise rule; collection maintenance is separate work. A pilot should test evidence access and maintenance against its budget. The map records do not measure that effort or assess a catalogue product.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>

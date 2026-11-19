@@ -192,9 +192,6 @@ def package(n,chapter,dest,work,report):
     for f in (f'chapter-{n}.mp4','poster.jpg'):s=re.sub(re.escape(f)+r'\?v=[a-f0-9]+',f+'?v='+sha(dest/f)[:12],s)
     s=re.sub(r'Download video <span>\([\d.]+ MB\)</span>',f'Download video <span>({(dest/f"chapter-{n}.mp4").stat().st_size/1e6:.1f} MB)</span>',s)
     s=s.replace('width="1280" height="720" poster=','width="3840" height="2160" poster=')
-    links=f'<p class="chapter-video-links"><a href="../assets/video/chapter-{n}/deck.pdf?v={sha(dest/"deck.pdf")[:12]}">Download the slide deck</a><a href="../assets/video/chapter-{n}/chapter-{n}-silent.mp4?v={sha(dest/f"chapter-{n}-silent.mp4")[:12]}" download>Download the silent master</a></p>'
-    if 'Download the slide deck' in s:s=re.sub(r'<p class="chapter-video-links">[^\n]*Download the slide deck[^\n]*</p>',lambda _:links,s)
-    else:s=s.replace('</figure>',links+'\n</figure>',1)
     page.write_text(s)
     preview=chapter/'watch.html';local=re.search(r'<figure class="chapter-video".*?</figure>',s,re.S)[0].replace(f'../assets/video/chapter-{n}/','')
     old=preview.read_text();old=re.sub(r'<figure class="chapter-video".*?</figure>',lambda _:local,old,flags=re.S);preview.write_text(old)

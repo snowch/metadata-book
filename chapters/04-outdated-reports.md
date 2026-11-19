@@ -6,17 +6,6 @@ The calculation rule had not changed. The report was displaying an older result.
 
 This continues the invented incident on 19 October 2026. All times are UTC.
 
-<figure class="chapter-video" aria-labelledby="chapter-video-title">
-<figcaption id="chapter-video-title"><span>Practise the chapter</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
-<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-04/poster.jpg?v=f53ebddbc3f4" aria-label="Why is this report out of date?: narrated Chapter 4 learning aid" aria-describedby="chapter-video-note">
-<source src="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" type="video/mp4">
-<track kind="captions" src="../assets/video/chapter-04/captions.vtt?v=06624093edbc" srclang="en" label="English">
-Your browser cannot play this video. <a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367">Download the video</a> or <a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">read the transcript</a>.
-</video>
-<p class="chapter-video-note" id="chapter-video-note">The incident is invented; all times are UTC. Narration uses a synthetic voice.</p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">Read the transcript</a><a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" download>Download video <span>(5.6 MB)</span></a></p>
-<p class="chapter-video-links"><a href="../assets/video/chapter-04/deck.pdf?v=97c2f43ec731">Download the slide deck</a><a href="../assets/video/chapter-04/chapter-04-silent.mp4?v=5a193caa7c27" download>Download the silent master</a></p>
-</figure>
 
 ## Why was the report still using the old result?
 
@@ -92,20 +81,34 @@ In a working system, the reporting tool records which output it read, the publis
 - **A successful run can use the wrong logic.** Trace the affected field, inspect filters and joins, and correlate logs with the producing execution.
 - **Keep the evidence needed to explain earlier reports.** Reproducing an old calculation requires its inputs and code, not just references to them.
 
+<details class="chapter-media">
+<summary>Watch the chapter recap or read the transcript</summary>
+<figure class="chapter-video" aria-labelledby="chapter-video-title">
+<figcaption id="chapter-video-title"><span>Chapter recap</span><span class="chapter-video-duration">2 min 32 sec</span></figcaption>
+<video controls playsinline preload="none" width="3840" height="2160" poster="../assets/video/chapter-04/poster.jpg?v=f53ebddbc3f4" aria-label="Why is this report out of date?: narrated Chapter 4 learning aid" aria-describedby="chapter-video-note">
+<source src="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" type="video/mp4">
+<track kind="captions" src="../assets/video/chapter-04/captions.vtt?v=06624093edbc" srclang="en" label="English">
+Your browser cannot play this video. <a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367">Download the video</a> or <a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">read the transcript</a>.
+</video>
+<p class="chapter-video-note" id="chapter-video-note">The incident is invented; all times are UTC. Narration uses a synthetic voice.</p>
+<p class="chapter-video-links"><a href="../assets/video/chapter-04/transcript.txt?v=b91b02aba97a">Read the transcript</a><a href="../assets/video/chapter-04/chapter-04.mp4?v=2d0c8b94f367" download>Download video <span>(5.6 MB)</span></a></p>
+</figure>
+</details>
+
 <aside class="reader-action" aria-labelledby="explore-metadata-map">
 <svg class="reader-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Z"/><path d="M9 3v16M15 5v16"/></svg>
 <div>
-<p class="reader-action-title" id="explore-metadata-map">Explore this chapter in the map · 2 minutes</p>
-<p><a href="../metadata-map.md?chapter=4&amp;record=report-refresh"><strong>Open the Metadata map</strong></a>, then choose <strong>Example record</strong>.</p>
+<p class="reader-action-title" id="explore-metadata-map">Try the metadata map</p>
+<p><a href="../metadata-map.md?chapter=4&amp;record=report-refresh&amp;panel=example"><strong>Open the Metadata map</strong></a>. The <strong>Example record</strong> tab opens on Report refresh.</p>
 <ol>
-<li>Compare <code>F1300</code>’s refresh time with its linked <strong>Published output</strong>’s publication time and percentage.</li>
-<li>Follow that output to <strong>Run</strong>. Note which execution succeeded; compare these map examples with the recovery table in this chapter.</li>
+<li>Read <code>F1300</code>’s <code>refreshed_at</code>. Select <code>summary-R1205</code> in <code>output_version</code> and find <code>published_at</code> and <code>percentage</code>.</li>
+<li>Select <code>R1205</code> in <code>run_id</code> and check its <code>status</code>. Return to the chapter and compare the map’s output version and refresh ID with <strong>After recovery</strong> in the <a href="#what-confirms-the-report-recovered">recovery table</a>.</li>
 </ol>
 <p><strong>Think about it:</strong> Do the map’s records establish recovery? Which publication and refresh references would you need?</p>
 <details class="reader-action-answer">
 <summary>Check your answer</summary>
 <p>The map shows the earlier evidence: <code>F1300</code> at 13:00 read <code>summary-R1205</code>, published at 12:05 with 100.0%. Its successful run <code>R1205</code> does not establish recovery. The chapter’s later evidence connects <code>F1312</code> to <code>summary-R1310</code>, containing 66.7%. That new publication and the refresh that read it are both needed; they are not additional examples in this map.</p>
 </details>
-<p>Return here using the header’s <strong>Metadata map</strong> button.</p>
+<p>Select the header’s <strong>Close metadata map</strong> control to return to this chapter.</p>
 </div>
 </aside>
